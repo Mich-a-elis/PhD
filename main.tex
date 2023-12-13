@@ -1,0 +1,62 @@
+
+\documentclass[12pt,a4paper,twoside]{book}
+
+\include{config}
+
+% ===================== DOCUMENT ============================== % 
+\begin{document}\raggedbottom
+%\includepdf[scale=1]{couverture_these.pdf}
+\cleardoublepage
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\cleardoublepage
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\itshape\nouppercase{\rightmark}}
+\fancyhead[RE]{\itshape\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.5pt}
+\dominitoc
+\pagenumbering{roman}
+\setcounter{page}{1}
+%\chapter*{Remerciements}
+%\input{./remerciements.tex}
+
+\cleardoublepage
+\pdfbookmark[0]{\contentsname}{Contents}
+\tableofcontents
+%\renewcommand{\nomname}{Acronymes et Notations}
+%\printnomenclature[2.5 cm] 
+%\cleardoublepage
+%\adjustmtc
+%-------------------------------------------------------------%
+
+\pagenumbering{arabic}
+
+\input{2-chapters/2-1-introduction}
+
+\input{2-chapters/2-2-theoritical}
+
+\input{2-chapters/2-3-algorithme}
+
+\input{2-chapters/2-4-surface_courbe}
+
+\input{2-chapters/2-5-conclusion}
+
+\input{2-chapters/2-6-annexes}
+
+\[\]
+\appendix
+Annexes\\
+Caractéristique d'Euler\\
+Résolution numérique laplacien-Beltrami\\
+
+%\printbibliography
+\bibliographystyle{apalike}
+\bibliography{references}
+\end{document}
+
