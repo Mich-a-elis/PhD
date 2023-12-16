@@ -1,17 +1,17 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Représentation discrète}{\reset@font\mtcSfont 3}{section.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}Maillage triangulaire et représentation des champs de croix}{\reset@font\mtcSSfont 3}{subsection.1.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}Points singuliers, indice et ligne de champs}{\reset@font\mtcSSfont 4}{subsection.1.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}Maillage triangulaire}{\reset@font\mtcSSfont 4}{subsection.1.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}Champ de croix}{\reset@font\mtcSSfont 4}{subsection.1.1.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Partitionnement de $\partial \Omega _h$}{\reset@font\mtcSfont 5}{section.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Recherche de points singuliers}{\reset@font\mtcSSfont 5}{subsection.1.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.1}Recherche de points singuliers}{\reset@font\mtcSSfont 6}{subsection.1.2.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.2}Construction des séparatrices}{\reset@font\mtcSSfont 6}{subsection.1.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Nombre de séparatrices:}{\reset@font\mtcPfont 6}{section*.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Directions initiales:}{\reset@font\mtcPfont 6}{section*.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Intégration des séparatrices:}{\reset@font\mtcPfont 7}{section*.5}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Traversé d'un triangle singulier:}{\reset@font\mtcPfont 7}{section*.8}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Fusion de séparatrices:}{\reset@font\mtcPfont 7}{section*.9}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Nombre de séparatrices:}{\reset@font\mtcPfont 6}{section*.4}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Directions initiales:}{\reset@font\mtcPfont 6}{section*.5}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Intégration des séparatrices:}{\reset@font\mtcPfont 7}{section*.7}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Traversé d'un triangle singulier:}{\reset@font\mtcPfont 7}{section*.10}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Fusion de séparatrices:}{\reset@font\mtcPfont 8}{section*.11}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.2.3}Assemblage des partitions}{\reset@font\mtcSSfont 9}{subsection.1.2.3}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Opération d'alignement}{\reset@font\mtcSfont 9}{section.1.3}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Etude de la méthode}{\reset@font\mtcSfont 11}{section.1.4}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.1}Analyse de convergence}{\reset@font\mtcSSfont 11}{subsection.1.4.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.4.2}Lien entre $\overline {u}$ et $\overline {u}_h$}{\reset@font\mtcSSfont 11}{subsection.1.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.5}Génération de champs de croix}{\reset@font\mtcSfont 11}{section.1.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.5}Génération de champs de croix}{\reset@font\mtcSfont 12}{section.1.5}}

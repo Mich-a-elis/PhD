@@ -1,21 +1,21 @@
 \babel@toc {french}{}\relax 
 \contentsline {chapter}{\numberline {1}Discrétisation, algorithmes et exemples}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Représentation discrète}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Maillage triangulaire et représentation des champs de croix}{3}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Points singuliers, indice et ligne de champs}{4}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.1}Maillage triangulaire}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Champ de croix}{4}{subsection.1.1.2}%
 \contentsline {section}{\numberline {1.2}Partitionnement de $\partial \Omega _h$}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Recherche de points singuliers}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.1}Recherche de points singuliers}{6}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Construction des séparatrices}{6}{subsection.1.2.2}%
-\contentsline {paragraph}{Nombre de séparatrices:}{6}{section*.2}%
-\contentsline {paragraph}{Directions initiales:}{6}{section*.3}%
-\contentsline {paragraph}{Intégration des séparatrices:}{7}{section*.5}%
-\contentsline {paragraph}{Traversé d'un triangle singulier:}{7}{section*.8}%
-\contentsline {paragraph}{Fusion de séparatrices:}{7}{section*.9}%
+\contentsline {paragraph}{Nombre de séparatrices:}{6}{section*.4}%
+\contentsline {paragraph}{Directions initiales:}{6}{section*.5}%
+\contentsline {paragraph}{Intégration des séparatrices:}{7}{section*.7}%
+\contentsline {paragraph}{Traversé d'un triangle singulier:}{7}{section*.10}%
+\contentsline {paragraph}{Fusion de séparatrices:}{8}{section*.11}%
 \contentsline {subsection}{\numberline {1.2.3}Assemblage des partitions}{9}{subsection.1.2.3}%
 \contentsline {section}{\numberline {1.3}Opération d'alignement}{9}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Etude de la méthode}{11}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Analyse de convergence}{11}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}Lien entre $\overline {u}$ et $\overline {u}_h$}{11}{subsection.1.4.2}%
-\contentsline {section}{\numberline {1.5}Génération de champs de croix}{11}{section.1.5}%
+\contentsline {section}{\numberline {1.5}Génération de champs de croix}{12}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Annexes}{17}{chapter.2}%
-\contentsline {chapter}{Références}{19}{chapter*.23}%
+\contentsline {chapter}{Références}{19}{chapter*.25}%

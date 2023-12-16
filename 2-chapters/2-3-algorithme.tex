@@ -10,7 +10,14 @@ Dans le précédent chapitre, la méthode a été élaborée dans un cadre conti
 
 \section{Représentation discrète}
 
-\subsection{Maillage triangulaire et représentation des  champs de croix}
+Soit $\Omega$ un
+
+\subsection{Maillage triangulaire}
+
+\subsection{Champ de croix}
+
+
+\subsection*{Maillage triangulaire et représentation des  champs de croix}
 
 Considérons maintenant une triangulation h de la surface Ω. Par là, nous entendons que h est une surface polyédrique orientable compacte de dimension deux, de classe C0, et en notant Th l'ensemble des triangles fermés non vides tels que $∪T \in Th T = Ω$, nous supposons que tous les sommets appartiennent à Ω, et que toute intersection entre deux triangles est soit vide, soit un sommet, soit un côté. Soit $h_T = diam(T) et h = max{h_T : T \in Th}$
 
@@ -41,7 +48,7 @@ où $g$ est définie pour tout $p\in\Omega_h$ par:
 \end{equation}
 avec $(s_i)_{i\in\llbracket 1, 3\rrbracket}$ les sommets d'un triangle de $\Omega_h$ contenant $p$ et $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans ce triangle. Remarquons que le champ de croix $\bar{u}_h$ ainsi défini est presque-$\mathcal{C}^1$ sur chaque triangle puisque $g$ est linéaire sur chaque triangle.
 
-\subsection{Points singuliers, indice et ligne de champs}
+\subsection*{Points singuliers, indice et ligne de champs}
 
 L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singuliers de $\bar{u}_h$, est constitué des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$. \color{red} Dans la suite, nous supposerons que les points singuliers de $\bar{u}_h$ sont isolés. \color{black} Pour tout $p\in\Omega_h$, nous définissons $F_p$ comme l'ensemble des triangles de $\Omega_h$ contenant le point $p$.
 \begin{lemma}
