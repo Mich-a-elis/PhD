@@ -14,11 +14,20 @@ Soit $\Omega$ un domaine compact et connexe de $\mathbb{R}^2$ dont le bord $\par
 
 \subsection{Maillage triangulaire}
 
-Considérons maintenat une triangulation $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ et on note $V$ l'ensemble des sommets de $\Omega_h$, $E$ l'ensemble des arêtes, et $F$ l'ensemble des triangles fermés non vide composant $\Omega_h$. On suppose que tout les sommets de $\Omega_h$ appartiennent à $\Omega$ ($V\subset\Omega$) et que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. $h$ représente le diamètre maximal des triangles constituant $\Omega_h$.
+Considérons maintenant une triangulation $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ et on note $V$ l'ensemble des sommets de $\Omega_h$, $E$ l'ensemble des arêtes, et $F$ l'ensemble des triangles fermés non vide composant $\Omega_h$. On suppose que tout les sommets de $\Omega_h$ appartiennent à $\Omega$ ($V\subset\Omega$) et que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. $h$ représente le diamètre maximal des triangles constituant $\Omega_h$.
 
 \subsection{Champ de croix}
 
-Le champ de croix $\bar{u}$ sur $\Omega_h$ est représenté par un champ de croix noté $\bar{u}_h$, dont la définition est exposée dans les lignes suivantes.
+Nous cherchons maintenant à construire une représentation du champ de croix $\bar{u}$ sur le maillage triangulaire $\Omega_h$. Pour se faire, nous commençons par définir la notion d'angle signé entre deux croix. Etant donné deux croix $\mathbf{c}_1,\mathbf{c}_2$ non nulles, l'angle signé entre $\mathbf{c}_1$ et $\mathbf{c}_2$ noté $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) est l'unique élément de l'ensemble:
+$$
+\{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
+$$
+Tel que définit, $\delta\theta(\mathbf{c}_1, \mathbf{c}_2)$ représente la variation d'angle entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a
+$$
+\mathbf{c}_2=\mathbf{c}_1+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
+$$
+Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini si $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$.\\\\
+Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$, dont la définition est exposée dans les lignes suivantes. On se donne un ensemble de valeurs de $\bar{u}$ défini sur les sommets de $\Omega_h$. Autrement dit, pour tout $p\in V$, $\bar{u}_h(p)=\bar{u}(p)$.
 
 
 \subsection*{Maillage triangulaire et représentation des  champs de croix}
