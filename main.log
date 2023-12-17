@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.13)  16 DEC 2023 10:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.13)  17 DEC 2023 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2329,6 +2329,10 @@ Chapitre 1.
 \openout3 = `main.mtc'.
 
 (./main.mtc1)
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 1
+3.
+ (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
+[3]
 
 ! LaTeX Error: Unicode character Ω (U+03A9)
                not set up for use with LaTeX.
@@ -2337,7 +2341,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.22 ...enant une triangulation h de la surface Ω
+l.26 ...enant une triangulation h de la surface Ω
                                                   . Par là, nous entendons ...
 
 You may provide a definition with
@@ -2351,7 +2355,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.22 ... triangles fermés non vides tels que $∪
+l.26 ... triangles fermés non vides tels que $∪
                                                   T \in Th T = Ω$, nous sup...
 
 You may provide a definition with
@@ -2365,7 +2369,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.22 ...és non vides tels que $∪T \in Th T = Ω
+l.26 ...és non vides tels que $∪T \in Th T = Ω
                                                   $, nous supposons que tous...
 
 You may provide a definition with
@@ -2379,219 +2383,206 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.22 ...s que tous les sommets appartiennent à Ω
+l.26 ...s que tous les sommets appartiennent à Ω
                                                   , et que toute intersectio...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[3]
-LaTeX Font Info:    Trying to load font information for U+bbold on input line 2
-4.
- (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [4]
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 88.
+(hyperref)                removing `math shift' on input line 92.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 88.
+(hyperref)                removing `\partial' on input line 92.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 88.
+(hyperref)                removing `\Omega' on input line 92.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 88.
+(hyperref)                removing `subscript' on input line 92.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 88.
+(hyperref)                removing `math shift' on input line 92.
 
 
-LaTeX Warning: Reference `alg:algo_main' on page 5 undefined on input line 90.
+LaTeX Warning: Reference `alg:algo_main' on page 5 undefined on input line 94.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 118--120
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 [6]
-<images/triangle separatrices 3.png, id=210, 300.1614pt x 266.79675pt>
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+<images/triangle separatrices 3.png, id=207, 300.1614pt x 266.79675pt>
 File: images/triangle separatrices 3.png Graphic file (type png)
 <use images/triangle separatrices 3.png>
 Package pdftex.def Info: images/triangle separatrices 3.png  used on input line
- 163.
+ 167.
 (pdftex.def)             Requested size: 223.07211pt x 198.27733pt.
-<images/triangle separatrices 5.png, id=212, 298.11375pt x 264.5082pt>
+<images/triangle separatrices 5.png, id=209, 298.11375pt x 264.5082pt>
 File: images/triangle separatrices 5.png Graphic file (type png)
 <use images/triangle separatrices 5.png>
 Package pdftex.def Info: images/triangle separatrices 5.png  used on input line
- 170.
+ 174.
 (pdftex.def)             Requested size: 223.07211pt x 197.92458pt.
-<images/stream_1.png, id=214, 300.1614pt x 266.79675pt>
+[7 <./images/triangle separatrices 3.png> <./images/triangle separatrices 5.png
+>]
+<images/stream_1.png, id=223, 300.1614pt x 266.79675pt>
 File: images/stream_1.png Graphic file (type png)
 <use images/stream_1.png>
-Package pdftex.def Info: images/stream_1.png  used on input line 188.
+Package pdftex.def Info: images/stream_1.png  used on input line 192.
 (pdftex.def)             Requested size: 223.07211pt x 198.27733pt.
 File: images/stream_1.png Graphic file (type png)
 <use images/stream_1.png>
-Package pdftex.def Info: images/stream_1.png  used on input line 195.
+Package pdftex.def Info: images/stream_1.png  used on input line 199.
 (pdftex.def)             Requested size: 223.07211pt x 198.27733pt.
-<images/demi_disc_second_phi_first.pdf, id=215, 1495.5875pt x 785.93625pt>
+<images/demi_disc_second_phi_first.pdf, id=224, 1495.5875pt x 785.93625pt>
 File: images/demi_disc_second_phi_first.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_first.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_first.pdf  used on input l
-ine 209.
+ine 213.
 (pdftex.def)             Requested size: 295.90588pt x 155.49353pt.
 
 
-LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 7 undefi
-ned on input line 210.
+LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 8 undefi
+ned on input line 214.
 
 
-LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 7 undefi
-ned on input line 210.
+LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 8 undefi
+ned on input line 214.
 
-<images/demi_disc_second_phi_second.pdf, id=216, 1475.5125pt x 739.76375pt>
+<images/demi_disc_second_phi_second.pdf, id=225, 1475.5125pt x 739.76375pt>
 File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_second.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
-line 215.
+line 219.
 (pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 3503) in paragraph at lines 227--228
+Underfull \hbox (badness 3503) in paragraph at lines 231--232
  []\T1/cmr/bx/n/12 Fusion de s�-pa-ra-trices :[] \T1/cmr/m/n/12 De ma-ni�re si-
 mi-laire � ce qui est r�a-lis� dans
  []
 
-[7 <./images/triangle separatrices 3.png> <./images/triangle separatrices 5.png
->] [8 <./images/stream_1.png> <./images/demi_disc_second_phi_first.pdf> <./imag
-es/demi_disc_second_phi_second.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_second_phi_second.pd
-f): PDF inclusion: multiple pdfs with page group included in a single page
->]
 File: images/demi_disc_second_phi_first.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_first.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_first.pdf  used on input l
-ine 234.
+ine 238.
 (pdftex.def)             Requested size: 295.90588pt x 155.49353pt.
 File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_second.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
-line 240.
+line 244.
 (pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
 File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_second.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
-line 246.
+line 250.
 (pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
 
+LaTeX Warning: Reference `eqn:principe_def_phi' on page 8 undefined on input li
+ne 254.
 
-LaTeX Warning: Reference `eqn:principe_def_phi' on page 9 undefined on input li
-ne 250.
 
+LaTeX Warning: Reference `eqn:principe_def_phi' on page 8 undefined on input li
+ne 254.
 
-LaTeX Warning: Reference `eqn:principe_def_phi' on page 9 undefined on input li
-ne 250.
-
+[8 <./images/stream_1.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--262
+Underfull \hbox (badness 10000) in paragraph at lines 261--266
 
  []
 
+[9 <./images/demi_disc_second_phi_first.pdf> <./images/demi_disc_second_phi_sec
+ond.pdf
 
-LaTeX Warning: Reference `chap:theoritical' on page 9 undefined on input line 2
-67.
+pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_second_phi_second.pd
+f): PDF inclusion: multiple pdfs with page group included in a single page
+>]
 
-[9] [10]
+LaTeX Warning: Reference `chap:theoritical' on page 10 undefined on input line 
+271.
+
+[10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bool_gset_true:N' on input line 316.
+(hyperref)                removing `\bool_gset_true:N' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\g__siunitx_emulation_unit_warning_\bar_boo
-l' on input line 316.
+l' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\msg_warning:nnnn' on input line 316.
+(hyperref)                removing `\msg_warning:nnnn' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
+(hyperref)                removing `math shift' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bool_gset_true:N' on input line 316.
+(hyperref)                removing `\bool_gset_true:N' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\g__siunitx_emulation_unit_warning_\bar_boo
-l' on input line 316.
+l' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\msg_warning:nnnn' on input line 316.
+(hyperref)                removing `\msg_warning:nnnn' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 316.
+(hyperref)                removing `subscript' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 316.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
-
- []
+(hyperref)                removing `math shift' on input line 320.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 326--327
@@ -2618,61 +2609,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 334--335
 
  []
 
-
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
 [12] [13]
 
-LaTeX Warning: Reference `' on page 14 undefined on input line 405.
+LaTeX Warning: Reference `' on page 14 undefined on input line 409.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
 
 
 LaTeX Warning: Reference `chap:theoritical' on page 14 undefined on input line 
-407.
+411.
 
 <images/Omega_h_tilde.png, id=290, 512.91624pt x 211.79124pt>
 File: images/Omega_h_tilde.png Graphic file (type png)
 <use images/Omega_h_tilde.png>
-Package pdftex.def Info: images/Omega_h_tilde.png  used on input line 437.
+Package pdftex.def Info: images/Omega_h_tilde.png  used on input line 441.
 (pdftex.def)             Requested size: 333.3916pt x 137.66267pt.
 [14 <./images/Omega_h_tilde.png>]
 <images/nacas_normal.png, id=300, 309.85762pt x 157.18726pt>
 File: images/nacas_normal.png Graphic file (type png)
 <use images/nacas_normal.png>
-Package pdftex.def Info: images/nacas_normal.png  used on input line 479.
+Package pdftex.def Info: images/nacas_normal.png  used on input line 483.
 (pdftex.def)             Requested size: 201.40504pt x 102.17049pt.
 <images/naca_obus.png, id=301, 309.85762pt x 157.18726pt>
 File: images/naca_obus.png Graphic file (type png)
 <use images/naca_obus.png>
-Package pdftex.def Info: images/naca_obus.png  used on input line 480.
+Package pdftex.def Info: images/naca_obus.png  used on input line 484.
 (pdftex.def)             Requested size: 201.40504pt x 102.17049pt.
 
 
-LaTeX Warning: Reference `eq:z-ai' on page 15 undefined on input line 481.
+LaTeX Warning: Reference `eq:z-ai' on page 15 undefined on input line 485.
 
 
-LaTeX Warning: Reference `eq:z-ai' on page 15 undefined on input line 481.
+LaTeX Warning: Reference `eq:z-ai' on page 15 undefined on input line 485.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--487
+Underfull \hbox (badness 10000) in paragraph at lines 489--491
 
  []
 
 <images/inspi_1.png, id=302, 245.11575pt x 137.313pt>
 File: images/inspi_1.png Graphic file (type png)
 <use images/inspi_1.png>
-Package pdftex.def Info: images/inspi_1.png  used on input line 499.
+Package pdftex.def Info: images/inspi_1.png  used on input line 503.
 (pdftex.def)             Requested size: 245.11514pt x 137.31265pt.
 [15 <./images/nacas_normal.png> <./images/naca_obus.png>]
 
@@ -2683,7 +2684,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.517 ion we develop a 3 −
+l.521 ion we develop a 3 −
                              5 pair cancellation operation. It is possible
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2696,7 +2697,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.518 that the last step of a 3 −
+l.522 that the last step of a 3 −
                                     5 pair cancellation is equivalent to one
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2709,7 +2710,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.519 3 −
+l.523 3 −
             3 − 5 − 5 removal operation and two pairs of irregular vertices
 
 You may provide a definition with
@@ -2723,7 +2724,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.519 3 − 3 −
+l.523 3 − 3 −
                   5 − 5 removal operation and two pairs of irregular vertices
 
 You may provide a definition with
@@ -2737,7 +2738,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.519 3 − 3 − 5 −
+l.523 3 − 3 − 5 −
                         5 removal operation and two pairs of irregular vertices
 
 You may provide a definition with
@@ -2751,7 +2752,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.521 Irregular Vertex Merging: A 3 −
+l.525 Irregular Vertex Merging: A 3 −
                                         3 pair can be merged to a v2
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2764,7 +2765,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.522 vertex and a 5 −
+l.526 vertex and a 5 −
                          5 pair can be merged to a v6 vertex when their
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2777,7 +2778,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.526 rems 7.2 and 7.3, arbitrary 3 −
+l.530 rems 7.2 and 7.3, arbitrary 3 −
                                         3 and 5 − 5 pairs can be aligned
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2790,7 +2791,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.526 ... 7.2 and 7.3, arbitrary 3 − 3 and 5 −
+l.530 ... 7.2 and 7.3, arbitrary 3 − 3 and 5 −
                                                    5 pairs can be aligned
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2803,7 +2804,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.541 Chi-Han Peng∗
+l.545 Chi-Han Peng∗
                      
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -2858,7 +2859,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  69633 strings out of 478287
  1563162 string characters out of 5849288
- 2184177 words of memory out of 5000000
+ 2184178 words of memory out of 5000000
  86281 multiletter control sequences out of 15000+600000
  500725 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2890,7 +2891,7 @@ rm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/stmaryrd/stmary8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on main.pdf (25 pages, 1445788 bytes).
+Output written on main.pdf (25 pages, 1449618 bytes).
 PDF statistics:
  579 PDF objects out of 1000 (max. 8388607)
  444 compressed objects within 5 object streams
