@@ -30,433 +30,103 @@
 \@newglossary{acronym}{alg}{acr}{acn}
 \babel@aux{french}{}
 \@writefile{@@@}{\chapterbegin }
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Génération de maillages quadrilatéraux à partir de champs de croix prescrits}{3}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Discrétisation, algorithmes et exemples}{3}{chapter.1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Génération de maillages quadrilatéraux à partir de champs de croix prescrits}{3}{chapter.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {xchapter}{Génération de maillages quadrilatéraux à partir de champs de croix prescrits}{3}{chapter.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {xchapter}{Discrétisation, algorithmes et exemples}{3}{chapter.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {xchapter}{Discrétisation, algorithmes et exemples}{3}{chapter.1}\protected@file@percent }
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chap:theoritical}{{1}{3}{Génération de maillages quadrilatéraux à partir de champs de croix prescrits}{chapter.1}{}}
-\newlabel{chap:theoritical@cref}{{[chapter][1][]1}{[1][3][]3}}
-\citation{beaufort2017computing}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Cadre théorique}{4}{section.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Champ de croix}{4}{subsection.1.1.1}\protected@file@percent }
-\newlabel{eq:croix}{{1.1}{4}{Champ de croix}{equation.1.1.1}{}}
-\newlabel{eq:croix@cref}{{[equation][1][1]1.1}{[1][4][]4}}
-\newlabel{eq:matricerotation}{{1.2}{4}{Champ de croix}{equation.1.1.2}{}}
-\newlabel{eq:matricerotation@cref}{{[equation][2][1]1.2}{[1][4][]4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration d'une croix.\relax }}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{chap:alorithme}{{1}{3}{Discrétisation, algorithmes et exemples}{chapter.1}{}}
+\newlabel{chap:alorithme@cref}{{[chapter][1][]1}{[1][3][]3}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Représentation discrète}{3}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}Maillage triangulaire}{4}{subsection.1.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Champ de croix}{4}{subsection.1.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Partitionnement de $\partial \Omega _h$}{6}{section.1.2}\protected@file@percent }
+\newlabel{alg:discr_algo_main}{{1}{6}{Partitionnement de $\partial \Omega _h$}{algocfline.1}{}}
+\newlabel{alg:discr_algo_main@cref}{{[line][1][]1}{[1][6][]6}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Algorithme de partitionnement $\Omega _h$\relax }}{6}{algocf.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Recherche de points singuliers}{6}{subsection.1.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Construction des séparatrices}{6}{subsection.1.2.2}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:croix}{{1.1}{4}{Illustration d'une croix.\relax }{figure.caption.2}{}}
-\newlabel{fig:croix@cref}{{[figure][1][1]1.1}{[1][4][]4}}
-\citation{kowalski2013pde}
-\citation{viertel2019approach}
-\newlabel{def:cont}{{1.2}{5}{}{definition.1.2}{}}
-\newlabel{def:cont@cref}{{[definition][2][1]1.2}{[1][5][]5}}
-\newlabel{prop:cont1}{{1.1}{5}{}{proposition.1.1}{}}
-\newlabel{prop:cont1@cref}{{[proposition][1][1]1.1}{[1][5][]5}}
-\newlabel{eq:repr_to_cross}{{1.3}{5}{}{equation.1.1.3}{}}
-\newlabel{eq:repr_to_cross@cref}{{[equation][3][1]1.3}{[1][5][]5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Illustration d'un champ de représentation (en gauche) et du champ de croix associé (à droite).\relax }}{6}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:repr_to_cross}{{1.2}{6}{Illustration d'un champ de représentation (en gauche) et du champ de croix associé (à droite).\relax }{figure.caption.3}{}}
-\newlabel{fig:repr_to_cross@cref}{{[figure][2][1]1.2}{[1][6][]6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Illustration de la rotation d'un champ de croix par rapport à un champ d'angle sur un domaine quelconque. \'A gauche : champ de croix initial, au milieu: champ d'angle (en radian), à droite: champ de croix résultant.\relax }}{7}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:rot_cross}{{1.3}{7}{Illustration de la rotation d'un champ de croix par rapport à un champ d'angle sur un domaine quelconque. \'A gauche : champ de croix initial, au milieu: champ d'angle (en radian), à droite: champ de croix résultant.\relax }{figure.caption.4}{}}
-\newlabel{fig:rot_cross@cref}{{[figure][3][1]1.3}{[1][6][]7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}Indice}{7}{subsection.1.1.2}\protected@file@percent }
-\newlabel{def:cross_angle}{{1.5}{7}{}{definition.1.5}{}}
-\newlabel{def:cross_angle@cref}{{[definition][5][1]1.5}{[1][7][]7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Illustration d'un champ de croix et du champ d'angle (en radian) correspondant.\relax }}{8}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:cross_field}{{1.4}{8}{Illustration d'un champ de croix et du champ d'angle (en radian) correspondant.\relax }{figure.caption.5}{}}
-\newlabel{fig:cross_field@cref}{{[figure][4][1]1.4}{[1][8][]8}}
-\newlabel{prop:angular_cont}{{1.2}{8}{}{proposition.1.2}{}}
-\newlabel{prop:angular_cont@cref}{{[proposition][2][1]1.2}{[1][8][]8}}
-\newlabel{cor:relevement_continu}{{1.1}{9}{}{corollary.1.1}{}}
-\newlabel{cor:relevement_continu@cref}{{[corollary][1][1]1.1}{[1][9][]9}}
-\@writefile{toc}{\contentsline {paragraph}{Construction d'un recouvrement de la courbe $\gamma $:}{9}{section*.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Construction de $\theta _{\overline  {u}}^\gamma $ par morceau:}{9}{section*.7}\protected@file@percent }
-\newlabel{lem:index_saga_first}{{1.2}{10}{}{lemma.1.2}{}}
-\newlabel{lem:index_saga_first@cref}{{[lemma][2][1]1.2}{[1][10][]10}}
-\newlabel{eqn:sum_F_u}{{1.5}{11}{}{equation.1.1.5}{}}
-\newlabel{eqn:sum_F_u@cref}{{[equation][5][1]1.5}{[1][10][]11}}
-\newlabel{lem:index_saga_second}{{1.3}{12}{}{lemma.1.3}{}}
-\newlabel{lem:index_saga_second@cref}{{[lemma][3][1]1.3}{[1][11][]12}}
-\newlabel{lem:index_saga_third}{{1.4}{12}{}{lemma.1.4}{}}
-\newlabel{lem:index_saga_third@cref}{{[lemma][4][1]1.4}{[1][12][]12}}
-\newlabel{def:index}{{1.8}{12}{}{definition.1.8}{}}
-\newlabel{def:index@cref}{{[definition][8][1]1.8}{[1][12][]12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Gauche: $id_{\overline  {u}}(p)=-\frac  {1}{4}$, milieu: $id_{\overline  {u}}(p)=\frac  {1}{4}$, droite: $id_{\overline  {u}}(p)=1$\relax }}{13}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:index_illustration}{{1.5}{13}{Gauche: $id_{\bar {u}}(p)=-\frac {1}{4}$, milieu: $id_{\bar {u}}(p)=\frac {1}{4}$, droite: $id_{\bar {u}}(p)=1$\relax }{figure.caption.8}{}}
-\newlabel{fig:index_illustration@cref}{{[figure][5][1]1.5}{[1][12][]13}}
-\newlabel{prop:relation_u_Rthetau}{{1.4}{13}{}{proposition.1.4}{}}
-\newlabel{prop:relation_u_Rthetau@cref}{{[proposition][4][1]1.4}{[1][12][]13}}
-\citation{ray2008n}
-\newlabel{eqn:Indexboundary}{{1.6}{14}{Indice}{equation.1.1.6}{}}
-\newlabel{eqn:Indexboundary@cref}{{[equation][6][1]1.6}{[1][13][]14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.3}Théorème de Poincaré-Hopf}{14}{subsection.1.1.3}\protected@file@percent }
-\newlabel{subsec:Poincare_Hopf}{{1.1.3}{14}{Théorème de Poincaré-Hopf}{subsection.1.1.3}{}}
-\newlabel{subsec:Poincare_Hopf@cref}{{[subsection][3][1,1]1.1.3}{[1][14][]14}}
-\newlabel{eqn:first_Poincare_Hopf}{{1.7}{14}{Théorème de Poincaré-Hopf}{equation.1.1.7}{}}
-\newlabel{eqn:first_Poincare_Hopf@cref}{{[equation][7][1]1.7}{[1][14][]14}}
-\newlabel{eqn:poin_hopf_gen}{{1.8}{14}{Théorème de Poincaré-Hopf}{equation.1.1.8}{}}
-\newlabel{eqn:poin_hopf_gen@cref}{{[subsection][3][1,1]1.1.3}{[1][14][]14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.4}Ligne de champ et séparatrices}{15}{subsection.1.1.4}\protected@file@percent }
-\newlabel{def:SL}{{1.9}{15}{}{definition.1.9}{}}
-\newlabel{def:SL@cref}{{[definition][9][1]1.9}{[1][15][]15}}
-\newlabel{eqn:pi_u_S}{{1.9}{15}{}{equation.1.1.9}{}}
-\newlabel{eqn:pi_u_S@cref}{{[equation][9][1]1.9}{[1][15][]15}}
-\newlabel{eqn:streamline}{{1.10}{15}{}{equation.1.1.10}{}}
-\newlabel{eqn:streamline@cref}{{[equation][10][1]1.10}{[1][15][]15}}
-\newlabel{lem:def_streamline_lemma}{{1.5}{15}{}{lemma.1.5}{}}
-\newlabel{lem:def_streamline_lemma@cref}{{[lemma][5][1]1.5}{[1][15][]15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Illustration de la preuve du lemme \ref  {lem:def_streamline_lemma}.\relax }}{15}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:streamline_construction}{{1.6}{15}{Illustration de la preuve du lemme \ref {lem:def_streamline_lemma}.\relax }{figure.caption.9}{}}
-\newlabel{fig:streamline_construction@cref}{{[figure][6][1]1.6}{[1][15][]15}}
-\@writefile{toc}{\contentsline {paragraph}{Définition d'un champ de vecteur de classe $\mathcal  {C}^1$ dans un voisinnage de $p_0$.}{15}{section*.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Construction de la restriction de $\pi _{\overline  {u}}^S$ au voisinage de $p_0$.}{16}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Construction de la restriction de la ligne de courant au voisinage de $p$.}{16}{section*.12}\protected@file@percent }
-\newlabel{eqn:streamline_in_V}{{1.11}{16}{Construction de la restriction de la ligne de courant au voisinage de $p$}{equation.1.1.11}{}}
-\newlabel{eqn:streamline_in_V@cref}{{[equation][11][1]1.11}{[1][16][]16}}
-\newlabel{def:sep}{{1.10}{16}{Séparatrice}{definition.1.10}{}}
-\newlabel{def:sep@cref}{{[definition][10][1]1.10}{[1][16][]16}}
-\newlabel{prop:stream_from_interior_sing}{{1.5}{17}{}{proposition.1.5}{}}
-\newlabel{prop:stream_from_interior_sing@cref}{{[proposition][5][1]1.5}{[1][16][]17}}
-\newlabel{prop:stream_from_bord_sing}{{1.6}{18}{}{proposition.1.6}{}}
-\newlabel{prop:stream_from_bord_sing@cref}{{[proposition][6][1]1.6}{[1][18][]18}}
-\newlabel{eqn:Winding}{{1.14}{20}{Ligne de champ et séparatrices}{equation.1.1.14}{}}
-\newlabel{eqn:Winding@cref}{{[equation][14][1]1.14}{[1][19][]20}}
-\newlabel{rmk:W_p_gamma}{{1.2}{20}{}{remark.1.2}{}}
-\newlabel{rmk:W_p_gamma@cref}{{[remark][2][1]1.2}{[1][20][]20}}
-\newlabel{lem:decoup_voisinnage}{{1.6}{20}{}{lemma.1.6}{}}
-\newlabel{lem:decoup_voisinnage@cref}{{[lemma][6][1]1.6}{[1][20][]20}}
-\newlabel{prop:align_sepa_voisinnage}{{1.7}{21}{}{proposition.1.7}{}}
-\newlabel{prop:align_sepa_voisinnage@cref}{{[proposition][7][1]1.7}{[1][21][]21}}
-\newlabel{prop:align_sepa_voisinnage_bord}{{1.8}{22}{}{proposition.1.8}{}}
-\newlabel{prop:align_sepa_voisinnage_bord@cref}{{[proposition][8][1]1.8}{[1][21][]22}}
-\citation{viertel2019approach}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).\relax }}{23}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:separatrice_illustration}{{1.7}{23}{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).\relax }{figure.caption.13}{}}
-\newlabel{fig:separatrice_illustration@cref}{{[figure][7][1]1.7}{[1][22][]23}}
-\newlabel{prop:loveprop}{{1.9}{23}{}{proposition.1.9}{}}
-\newlabel{prop:loveprop@cref}{{[proposition][9][1]1.9}{[1][22][]23}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Méthode de partitionnement à partir d'un champ de croix}{24}{section.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Principe de la méthode}{24}{subsection.1.2.1}\protected@file@percent }
-\newlabel{subsec:principe_methode}{{1.2.1}{24}{Principe de la méthode}{subsection.1.2.1}{}}
-\newlabel{subsec:principe_methode@cref}{{[subsection][1][1,2]1.2.1}{[1][24][]24}}
-\newlabel{alg:algo_main}{{1}{24}{Principe de la méthode}{algocfline.1}{}}
-\newlabel{alg:algo_main@cref}{{[line][1][]1}{[1][24][]24}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Algorithme de partitionnement\relax }}{24}{algocf.1}\protected@file@percent }
-\newlabel{fig:demi_disc_align_first}{{1.8a}{26}{Champ de croix aligné sur le bord du domaine (points singuliers en rouge).\relax }{figure.caption.15}{}}
-\newlabel{fig:demi_disc_align_first@cref}{{[subfigure][1][1,8]1.8a}{[1][25][]26}}
-\newlabel{sub@fig:demi_disc_align_first}{{a}{26}{Champ de croix aligné sur le bord du domaine (points singuliers en rouge).\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:demi_disc_align_first@cref}{{[subfigure][1][1,8]1.8a}{[1][25][]26}}
-\newlabel{fig:demi_disc_align_second}{{1.8b}{26}{Partitionnement du Domaine.\relax }{figure.caption.15}{}}
-\newlabel{fig:demi_disc_align_second@cref}{{[subfigure][2][1,8]1.8b}{[1][25][]26}}
-\newlabel{sub@fig:demi_disc_align_second}{{b}{26}{Partitionnement du Domaine.\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:demi_disc_align_second@cref}{{[subfigure][2][1,8]1.8b}{[1][25][]26}}
-\newlabel{fig:demi_disc_align_third}{{1.8c}{26}{Maillage quadilatéral du domaine.\relax }{figure.caption.15}{}}
-\newlabel{fig:demi_disc_align_third@cref}{{[subfigure][3][1,8]1.8c}{[1][25][]26}}
-\newlabel{sub@fig:demi_disc_align_third}{{c}{26}{Maillage quadilatéral du domaine.\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:demi_disc_align_third@cref}{{[subfigure][3][1,8]1.8c}{[1][25][]26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Maillage quadrilatéral d'un domaine à partir d'un champ de croix aligné sur le bord du domaine.\relax }}{26}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:demi_disc_align}{{1.8}{26}{Maillage quadrilatéral d'un domaine à partir d'un champ de croix aligné sur le bord du domaine.\relax }{figure.caption.15}{}}
-\newlabel{fig:demi_disc_align@cref}{{[figure][8][1]1.8}{[1][25][]26}}
-\newlabel{fig:demiDiscValPropSheet_first}{{1.9a}{27}{Un mode propre du Laplacien sur le demi disque.\relax }{figure.caption.17}{}}
-\newlabel{fig:demiDiscValPropSheet_first@cref}{{[subfigure][1][1,9]1.9a}{[1][25][]27}}
-\newlabel{sub@fig:demiDiscValPropSheet_first}{{a}{27}{Un mode propre du Laplacien sur le demi disque.\relax }{figure.caption.17}{}}
-\newlabel{sub@fig:demiDiscValPropSheet_first@cref}{{[subfigure][1][1,9]1.9a}{[1][25][]27}}
-\newlabel{fig:demiDiscValPropSheet_second}{{1.9b}{27}{Champ de croix construit à partir du mode propre.\relax }{figure.caption.17}{}}
-\newlabel{fig:demiDiscValPropSheet_second@cref}{{[subfigure][2][1,9]1.9b}{[1][25][]27}}
-\newlabel{sub@fig:demiDiscValPropSheet_second}{{b}{27}{Champ de croix construit à partir du mode propre.\relax }{figure.caption.17}{}}
-\newlabel{sub@fig:demiDiscValPropSheet_second@cref}{{[subfigure][2][1,9]1.9b}{[1][25][]27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces Génération d'un champ de croix à partir d'un mode propre du Laplacien.\relax }}{27}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:demiDisc_valProp}{{1.9}{27}{Génération d'un champ de croix à partir d'un mode propre du Laplacien.\relax }{figure.caption.17}{}}
-\newlabel{fig:demiDisc_valProp@cref}{{[figure][9][1]1.9}{[1][25][]27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces Découpage invalide obtenue à partir du champ de croix de la figure \ref  {fig:demiDisc_valProp}.\relax }}{27}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:demiDisc_valProp_mauvaix_decoup}{{1.10}{27}{Découpage invalide obtenue à partir du champ de croix de la figure \ref {fig:demiDisc_valProp}.\relax }{figure.caption.18}{}}
-\newlabel{fig:demiDisc_valProp_mauvaix_decoup@cref}{{[figure][10][1]1.10}{[1][25][]27}}
-\@writefile{toc}{\contentsline {paragraph}{Domaine simplement connexe:}{27}{section*.19}\protected@file@percent }
-\newlabel{eqn:first_phi_computation}{{1.15}{28}{Domaine simplement connexe:}{equation.1.2.15}{}}
-\newlabel{eqn:first_phi_computation@cref}{{[equation][15][1]1.15}{[1][28][]28}}
-\newlabel{eqn:hyp_I_p}{{1.16}{28}{Domaine simplement connexe:}{equation.1.2.16}{}}
-\newlabel{eqn:hyp_I_p@cref}{{[equation][16][1]1.16}{[1][28][]28}}
-\newlabel{eqn:principe_hypothese_u}{{1.17}{28}{Domaine simplement connexe:}{equation.1.2.17}{}}
-\newlabel{eqn:principe_hypothese_u@cref}{{[equation][17][1]1.17}{[1][28][]28}}
-\newlabel{fig:demi_disc_first_cond_phi_first}{{1.11a}{29}{Champ de croix initial avec un point singulier interne d'indice $1/4$.\relax }{figure.caption.20}{}}
-\newlabel{fig:demi_disc_first_cond_phi_first@cref}{{[subfigure][1][1,11]1.11a}{[1][28][]29}}
-\newlabel{sub@fig:demi_disc_first_cond_phi_first}{{a}{29}{Champ de croix initial avec un point singulier interne d'indice $1/4$.\relax }{figure.caption.20}{}}
-\newlabel{sub@fig:demi_disc_first_cond_phi_first@cref}{{[subfigure][1][1,11]1.11a}{[1][28][]29}}
-\newlabel{fig:demi_disc_first_cond_phi_second}{{1.11b}{29}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.20}{}}
-\newlabel{fig:demi_disc_first_cond_phi_second@cref}{{[subfigure][2][1,11]1.11b}{[1][28][]29}}
-\newlabel{sub@fig:demi_disc_first_cond_phi_second}{{b}{29}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.20}{}}
-\newlabel{sub@fig:demi_disc_first_cond_phi_second@cref}{{[subfigure][2][1,11]1.11b}{[1][28][]29}}
-\newlabel{fig:demi_disc_first_cond_phi_third}{{1.11c}{29}{Maillage quadilatéral du domaine présentant un quadrangle dégénéré.\relax }{figure.caption.20}{}}
-\newlabel{fig:demi_disc_first_cond_phi_third@cref}{{[subfigure][3][1,11]1.11c}{[1][28][]29}}
-\newlabel{sub@fig:demi_disc_first_cond_phi_third}{{c}{29}{Maillage quadilatéral du domaine présentant un quadrangle dégénéré.\relax }{figure.caption.20}{}}
-\newlabel{sub@fig:demi_disc_first_cond_phi_third@cref}{{[subfigure][3][1,11]1.11c}{[1][28][]29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eqn:first_phi_computation}\unskip \@@italiccorr )}}.\relax }}{29}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:demi_disc_first_cond_phi}{{1.11}{29}{Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \eqref {eqn:first_phi_computation}.\relax }{figure.caption.20}{}}
-\newlabel{fig:demi_disc_first_cond_phi@cref}{{[figure][11][1]1.11}{[1][28][]29}}
-\newlabel{eqn:principe_def_v}{{1.18}{30}{Domaine simplement connexe:}{equation.1.2.18}{}}
-\newlabel{eqn:principe_def_v@cref}{{[equation][18][1]1.18}{[1][29][]30}}
-\newlabel{eqn:principe_def_phi}{{1.19}{30}{Domaine simplement connexe:}{equation.1.2.19}{}}
-\newlabel{eqn:principe_def_phi@cref}{{[equation][19][1]1.19}{[1][30][]30}}
-\newlabel{fig:demi_disc_second_cond_phi_first}{{1.12a}{30}{Alignement du champ de croix présenté sur la figure \ref {fig:demiDisc_valProp_mauvaix_decoup} sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.21}{}}
-\newlabel{fig:demi_disc_second_cond_phi_first@cref}{{[subfigure][1][1,12]1.12a}{[1][30][]30}}
-\newlabel{sub@fig:demi_disc_second_cond_phi_first}{{a}{30}{Alignement du champ de croix présenté sur la figure \ref {fig:demiDisc_valProp_mauvaix_decoup} sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:demi_disc_second_cond_phi_first@cref}{{[subfigure][1][1,12]1.12a}{[1][30][]30}}
-\newlabel{fig:demi_disc_second_cond_phi_second}{{1.12b}{30}{Maillage quadrilatéral du domaine.\relax }{figure.caption.21}{}}
-\newlabel{fig:demi_disc_second_cond_phi_second@cref}{{[subfigure][2][1,12]1.12b}{[1][30][]30}}
-\newlabel{sub@fig:demi_disc_second_cond_phi_second}{{b}{30}{Maillage quadrilatéral du domaine.\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:demi_disc_second_cond_phi_second@cref}{{[subfigure][2][1,12]1.12b}{[1][30][]30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.12}{\ignorespaces Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eqn:principe_def_phi}\unskip \@@italiccorr )}}.\relax }}{30}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:demi_disc_second_cond_phi}{{1.12}{30}{Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \eqref {eqn:principe_def_phi}.\relax }{figure.caption.21}{}}
-\newlabel{fig:demi_disc_second_cond_phi@cref}{{[figure][12][1]1.12}{[1][30][]30}}
-\newlabel{alg:algo_simply_connected}{{2}{31}{Domaine simplement connexe:}{algocfline.2}{}}
-\newlabel{alg:algo_simply_connected@cref}{{[line][2][]2}{[1][31][]31}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Algorithme de partitionnement pour un domaine simplement connexe basé sur un champ de croix non aligné\relax }}{31}{algocf.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Domaine non-simplement connexe:}{31}{section*.23}\protected@file@percent }
-\newlabel{eqn:principe_hypothese_u_prime}{{1.20}{31}{Domaine non-simplement connexe:}{equation.1.2.20}{}}
-\newlabel{eqn:principe_hypothese_u_prime@cref}{{[equation][20][1]1.20}{[1][31][]31}}
-\newlabel{fig:rect_demi_disc_first}{{1.13a}{32}{Champ de croix initial avec deux points singuliers internes d'indice $1/4$.\relax }{figure.caption.22}{}}
-\newlabel{fig:rect_demi_disc_first@cref}{{[subfigure][1][1,13]1.13a}{[1][31][]32}}
-\newlabel{sub@fig:rect_demi_disc_first}{{a}{32}{Champ de croix initial avec deux points singuliers internes d'indice $1/4$.\relax }{figure.caption.22}{}}
-\newlabel{sub@fig:rect_demi_disc_first@cref}{{[subfigure][1][1,13]1.13a}{[1][31][]32}}
-\newlabel{fig:rect_demi_disc_second}{{1.13b}{32}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.22}{}}
-\newlabel{fig:rect_demi_disc_second@cref}{{[subfigure][2][1,13]1.13b}{[1][31][]32}}
-\newlabel{sub@fig:rect_demi_disc_second}{{b}{32}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.22}{}}
-\newlabel{sub@fig:rect_demi_disc_second@cref}{{[subfigure][2][1,13]1.13b}{[1][31][]32}}
-\newlabel{fig:rect_demi_disc_third}{{1.13c}{32}{Maillage quadilatéral du domaine présentant un quadrangle dégénéré.\relax }{figure.caption.22}{}}
-\newlabel{fig:rect_demi_disc_third@cref}{{[subfigure][3][1,13]1.13c}{[1][31][]32}}
-\newlabel{sub@fig:rect_demi_disc_third}{{c}{32}{Maillage quadilatéral du domaine présentant un quadrangle dégénéré.\relax }{figure.caption.22}{}}
-\newlabel{sub@fig:rect_demi_disc_third@cref}{{[subfigure][3][1,13]1.13c}{[1][31][]32}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.13}{\ignorespaces Une autre illustration de l'opération d'alignement à partir du champ d'angle donné.\relax }}{32}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:rect_demi_disc}{{1.13}{32}{Une autre illustration de l'opération d'alignement à partir du champ d'angle donné.\relax }{figure.caption.22}{}}
-\newlabel{fig:rect_demi_disc@cref}{{[figure][13][1]1.13}{[1][31][]32}}
-\newlabel{eqn:principe_hypothese_u_second}{{1.21}{33}{Domaine non-simplement connexe:}{equation.1.2.21}{}}
-\newlabel{eqn:principe_hypothese_u_second@cref}{{[equation][21][1]1.21}{[1][33][]33}}
-\@writefile{toc}{\contentsline {paragraph}{Correction d'un champ de croix ne vérifiant pas la condition \ref  {eqn:principe_hypothese_u_second}:}{33}{section*.26}\protected@file@percent }
-\newlabel{fig:carre_demi_disc_vide_mauvais_first}{{1.14a}{34}{Champ de croix initial avec deux points singuliers internes, chacun d'indice $1/4$ et vérifiant l'équation \ref {eqn:principe_hypothese_u_prime}.\relax }{figure.caption.24}{}}
-\newlabel{fig:carre_demi_disc_vide_mauvais_first@cref}{{[subfigure][1][1,14]1.14a}{[1][33][]34}}
-\newlabel{sub@fig:carre_demi_disc_vide_mauvais_first}{{a}{34}{Champ de croix initial avec deux points singuliers internes, chacun d'indice $1/4$ et vérifiant l'équation \ref {eqn:principe_hypothese_u_prime}.\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:carre_demi_disc_vide_mauvais_first@cref}{{[subfigure][1][1,14]1.14a}{[1][33][]34}}
-\newlabel{fig:carre_demi_disc_vide_mauvais_second}{{1.14b}{34}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.24}{}}
-\newlabel{fig:carre_demi_disc_vide_mauvais_second@cref}{{[subfigure][2][1,14]1.14b}{[1][33][]34}}
-\newlabel{sub@fig:carre_demi_disc_vide_mauvais_second}{{b}{34}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:carre_demi_disc_vide_mauvais_second@cref}{{[subfigure][2][1,14]1.14b}{[1][33][]34}}
-\newlabel{fig:carre_demi_disc_vide_mauvais_third}{{1.14c}{34}{Maillage quadilatéral du domaine présentant des quadrangles dégénérés.\relax }{figure.caption.24}{}}
-\newlabel{fig:carre_demi_disc_vide_mauvais_third@cref}{{[subfigure][3][1,14]1.14c}{[1][33][]34}}
-\newlabel{sub@fig:carre_demi_disc_vide_mauvais_third}{{c}{34}{Maillage quadilatéral du domaine présentant des quadrangles dégénérés.\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:carre_demi_disc_vide_mauvais_third@cref}{{[subfigure][3][1,14]1.14c}{[1][33][]34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.14}{\ignorespaces Illustration de l'opération d'alignement sur un domaine non-simplement connexe à partir d'un champ de croix vérifiant la condition \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eqn:principe_hypothese_u_prime}\unskip \@@italiccorr )}}.\relax }}{34}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:carre_demi_disc_vide_mauvais}{{1.14}{34}{Illustration de l'opération d'alignement sur un domaine non-simplement connexe à partir d'un champ de croix vérifiant la condition \eqref {eqn:principe_hypothese_u_prime}.\relax }{figure.caption.24}{}}
-\newlabel{fig:carre_demi_disc_vide_mauvais@cref}{{[figure][14][1]1.14}{[1][33][]34}}
-\newlabel{fig:carre_demi_disc_vide_bon_first}{{1.15a}{35}{Champ de croix initial avec deux points singuliers internes, chacun d'indice $1/4$ et vérifiant l'équation \ref {eqn:principe_hypothese_u_second}.\relax }{figure.caption.25}{}}
-\newlabel{fig:carre_demi_disc_vide_bon_first@cref}{{[subfigure][1][1,15]1.15a}{[1][33][]35}}
-\newlabel{sub@fig:carre_demi_disc_vide_bon_first}{{a}{35}{Champ de croix initial avec deux points singuliers internes, chacun d'indice $1/4$ et vérifiant l'équation \ref {eqn:principe_hypothese_u_second}.\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:carre_demi_disc_vide_bon_first@cref}{{[subfigure][1][1,15]1.15a}{[1][33][]35}}
-\newlabel{fig:carre_demi_disc_vide_bon_second}{{1.15b}{35}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.25}{}}
-\newlabel{fig:carre_demi_disc_vide_bon_second@cref}{{[subfigure][2][1,15]1.15b}{[1][33][]35}}
-\newlabel{sub@fig:carre_demi_disc_vide_bon_second}{{b}{35}{Alignement du champ de croix initial sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:carre_demi_disc_vide_bon_second@cref}{{[subfigure][2][1,15]1.15b}{[1][33][]35}}
-\newlabel{fig:carre_demi_disc_vide_bon_third}{{1.15c}{35}{Maillage quadilatéral du domaine.\relax }{figure.caption.25}{}}
-\newlabel{fig:carre_demi_disc_vide_bon_third@cref}{{[subfigure][3][1,15]1.15c}{[1][33][]35}}
-\newlabel{sub@fig:carre_demi_disc_vide_bon_third}{{c}{35}{Maillage quadilatéral du domaine.\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:carre_demi_disc_vide_bon_third@cref}{{[subfigure][3][1,15]1.15c}{[1][33][]35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.15}{\ignorespaces Illustration de l'opération d'alignement sur un domaine non-simplement connexe à partir d'un champ de croix vérifiant la condition \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eqn:principe_hypothese_u_second}\unskip \@@italiccorr )}}.\relax }}{35}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:carre_demi_disc_vide_bon}{{1.15}{35}{Illustration de l'opération d'alignement sur un domaine non-simplement connexe à partir d'un champ de croix vérifiant la condition \eqref {eqn:principe_hypothese_u_second}.\relax }{figure.caption.25}{}}
-\newlabel{fig:carre_demi_disc_vide_bon@cref}{{[figure][15][1]1.15}{[1][33][]35}}
-\citation{gourdain2010advanced}
-\citation{gourdain2010advanced}
-\newlabel{alg:algo_non_simply_connected}{{3}{36}{Correction d'un champ de croix ne vérifiant pas la condition \ref {eqn:principe_hypothese_u_second}:}{algocfline.3}{}}
-\newlabel{alg:algo_non_simply_connected@cref}{{[line][3][]3}{[1][34][]36}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Algorithme de partitionnement pour un domaine non-simplement connexe basé sur un champ de croix non aligné\relax }}{36}{algocf.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.16}{\ignorespaces Maillage du LS89 blade (géométrie détaillée dans \cite  {gourdain2010advanced}).\relax }}{36}{figure.caption.27}\protected@file@percent }
-\newlabel{LS89}{{1.16}{36}{Maillage du LS89 blade (géométrie détaillée dans \cite {gourdain2010advanced}).\relax }{figure.caption.27}{}}
-\newlabel{LS89@cref}{{[figure][16][1]1.16}{[1][36][]36}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Etude de la méthode}{36}{subsection.1.2.2}\protected@file@percent }
-\newlabel{subsec:etude_de_la_methode}{{1.2.2}{36}{Etude de la méthode}{subsection.1.2.2}{}}
-\newlabel{subsec:etude_de_la_methode@cref}{{[subsection][2][1,2]1.2.2}{[1][36][]36}}
-\newlabel{thm:theorem1}{{1.2}{36}{}{theorem.1.2}{}}
-\newlabel{thm:theorem1@cref}{{[theorem][2][1]1.2}{[1][36][]36}}
-\@writefile{toc}{\contentsline {paragraph}{\'Etude de l'opération d'alignement}{37}{section*.28}\protected@file@percent }
-\newlabel{eqn:etude_def_I}{{1.23}{37}{\'Etude de l'opération d'alignement}{equation.1.2.23}{}}
-\newlabel{eqn:etude_def_I@cref}{{[equation][23][1]1.23}{[1][37][]37}}
-\newlabel{eqn:etude_hypothese_u}{{1.24}{37}{\'Etude de l'opération d'alignement}{equation.1.2.24}{}}
-\newlabel{eqn:etude_hypothese_u@cref}{{[equation][24][1]1.24}{[1][37][]37}}
-\newlabel{eqn:etude_def_phi}{{1.25}{37}{\'Etude de l'opération d'alignement}{equation.1.2.25}{}}
-\newlabel{eqn:etude_def_phi@cref}{{[equation][25][1]1.25}{[1][37][]37}}
-\citation{hopf1935drehung}
-\citation{rotskoff2010gauss}
-\newlabel{lem:marvelous_lemma}{{1.7}{38}{}{lemma.1.7}{}}
-\newlabel{lem:marvelous_lemma@cref}{{[lemma][7][1]1.7}{[1][37][]38}}
-\newlabel{eqn:etude_def_v}{{1.26}{39}{\'Etude de l'opération d'alignement}{equation.1.2.26}{}}
-\newlabel{eqn:etude_def_v@cref}{{[equation][26][1]1.26}{[1][38][]39}}
-\newlabel{thm:theorem2}{{1.3}{39}{}{theorem.1.3}{}}
-\newlabel{thm:theorem2@cref}{{[theorem][3][1]1.3}{[1][39][]39}}
-\citation{hopf1935drehung}
-\citation{rotskoff2010gauss}
-\newlabel{eqn:etude_hypothese_u_second}{{1.28}{41}{\'Etude de l'opération d'alignement}{equation.1.2.28}{}}
-\newlabel{eqn:etude_hypothese_u_second@cref}{{[equation][28][1]1.28}{[1][41][]41}}
-\newlabel{eqn:etude_def_phi_second}{{1.29}{41}{\'Etude de l'opération d'alignement}{equation.1.2.29}{}}
-\newlabel{eqn:etude_def_phi_second@cref}{{[equation][29][1]1.29}{[1][41][]41}}
-\newlabel{lem:marvelous_lemma_second}{{1.8}{41}{}{lemma.1.8}{}}
-\newlabel{lem:marvelous_lemma_second@cref}{{[lemma][8][1]1.8}{[1][41][]41}}
-\newlabel{eqn:etude_def_v_second}{{1.30}{42}{\'Etude de l'opération d'alignement}{equation.1.2.30}{}}
-\newlabel{eqn:etude_def_v_second@cref}{{[equation][30][1]1.30}{[1][42][]42}}
-\newlabel{thm:theorem3}{{1.4}{42}{}{theorem.1.4}{}}
-\newlabel{thm:theorem3@cref}{{[theorem][4][1]1.4}{[1][42][]42}}
-\citation{hopf1935drehung}
-\citation{rotskoff2010gauss}
-\newlabel{eqn:etude_hypothese_w}{{1.33}{46}{\'Etude de l'opération d'alignement}{equation.1.2.33}{}}
-\newlabel{eqn:etude_hypothese_w@cref}{{[equation][33][1]1.33}{[1][46][]46}}
-\newlabel{eqn:etude_def_v_third}{{1.34}{47}{\'Etude de l'opération d'alignement}{equation.1.2.34}{}}
-\newlabel{eqn:etude_def_v_third@cref}{{[equation][34][1]1.34}{[1][47][]47}}
-\newlabel{eqn:etude_def_phi_third}{{1.35}{47}{\'Etude de l'opération d'alignement}{equation.1.2.35}{}}
-\newlabel{eqn:etude_def_phi_third@cref}{{[equation][35][1]1.35}{[1][47][]47}}
-\newlabel{thm:theorem4}{{1.5}{47}{}{theorem.1.5}{}}
-\newlabel{thm:theorem4@cref}{{[theorem][5][1]1.5}{[1][47][]47}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Discussions}{48}{section.1.3}\protected@file@percent }
-\newlabel{sec:discussion}{{1.3}{48}{Discussions}{section.1.3}{}}
-\newlabel{sec:discussion@cref}{{[section][3][1]1.3}{[1][47][]48}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Sur la signification pratique de l'hypothèse $0<\#\mathcal  {S}_{\overline  {u}}<\infty $}{48}{subsection.1.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.17}{\ignorespaces Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }}{48}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:anneau}{{1.17}{48}{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }{figure.caption.29}{}}
-\newlabel{fig:anneau@cref}{{[figure][17][1]1.17}{[1][48][]48}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Sur la conservation des propriétés du champ de croix initial}{48}{subsection.1.3.2}\protected@file@percent }
-\citation{macq2020ginzburg}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}Sur les singularités de bord}{49}{subsection.1.3.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Distribution usuelle d'angles-index de singularités de bord.\relax }}{49}{table.caption.30}\protected@file@percent }
-\newlabel{tabul}{{1.1}{49}{Distribution usuelle d'angles-index de singularités de bord.\relax }{table.caption.30}{}}
-\newlabel{tabul@cref}{{[table][1][1]1.1}{[1][49][]49}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}Sur la construction du champ de correction}{50}{subsection.1.3.4}\protected@file@percent }
-\newlabel{eqn:disc_hypothese_w}{{1.39}{50}{Sur la construction du champ de correction}{equation.1.3.39}{}}
-\newlabel{eqn:disc_hypothese_w@cref}{{[equation][39][1]1.39}{[1][50][]50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.18}{\ignorespaces Maillage du demi disque avec trois points singuliers d'indices $1/4$ sur le bord du domaine.\relax }}{51}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:demiDisc_sing_bord_first}{{1.18}{51}{Maillage du demi disque avec trois points singuliers d'indices $1/4$ sur le bord du domaine.\relax }{figure.caption.31}{}}
-\newlabel{fig:demiDisc_sing_bord_first@cref}{{[figure][18][1]1.18}{[1][50][]51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.19}{\ignorespaces Maillage du demi disque avec trois points singuliers d'indices $1/4$ sur le bord du domaine.\relax }}{52}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:demiDisc_sing_bord_second}{{1.19}{52}{Maillage du demi disque avec trois points singuliers d'indices $1/4$ sur le bord du domaine.\relax }{figure.caption.32}{}}
-\newlabel{fig:demiDisc_sing_bord_second@cref}{{[figure][19][1]1.19}{[1][50][]52}}
-\newlabel{eqn:disc_lefeu_1}{{1.41}{52}{Sur la construction du champ de correction}{equation.1.3.41}{}}
-\newlabel{eqn:disc_lefeu_1@cref}{{[equation][41][1]1.41}{[1][51][]52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.20}{\ignorespaces Déplacement d'un point singulier sur le bord du domaine dans le champ de croix illustré sur la figure \ref  {fig:demiDisc_sing_bord_second}.\relax }}{53}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:demiDisc_sing_bord_third}{{1.20}{53}{Déplacement d'un point singulier sur le bord du domaine dans le champ de croix illustré sur la figure \ref {fig:demiDisc_sing_bord_second}.\relax }{figure.caption.33}{}}
-\newlabel{fig:demiDisc_sing_bord_third@cref}{{[figure][20][1]1.20}{[1][50][]53}}
-\newlabel{eqn:disc_repr_to_cross}{{1.42}{53}{Sur la construction du champ de correction}{equation.1.3.42}{}}
-\newlabel{eqn:disc_repr_to_cross@cref}{{[equation][42][1]1.42}{[1][52][]53}}
-\newlabel{eqn:disc_lefeu_2}{{1.43}{53}{Sur la construction du champ de correction}{equation.1.3.43}{}}
-\newlabel{eqn:disc_lefeu_2@cref}{{[equation][43][1]1.43}{[1][53][]53}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.5}Sur les multi-matériaux}{54}{subsection.1.3.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.21}{\ignorespaces Un exemple de géométrie multi-matériaux. Gauche: Domaine, droite: maillage quadrilatéral.\relax }}{54}{figure.caption.34}\protected@file@percent }
-\newlabel{connexe3}{{1.21}{54}{Un exemple de géométrie multi-matériaux. Gauche: Domaine, droite: maillage quadrilatéral.\relax }{figure.caption.34}{}}
-\newlabel{connexe3@cref}{{[figure][21][1]1.21}{[1][54][]54}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Discrétisation, algorithmes et exemples}{55}{chapter.2}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Discrétisation, algorithmes et exemples}{55}{chapter.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {xchapter}{Discrétisation, algorithmes et exemples}{55}{chapter.2}\protected@file@percent }
-\@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chap:alorithme}{{2}{55}{Discrétisation, algorithmes et exemples}{chapter.2}{}}
-\newlabel{chap:alorithme@cref}{{[chapter][2][]2}{[1][55][]55}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Représentation discrète}{55}{section.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Maillage triangulaire}{56}{subsection.2.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Champ de croix}{56}{subsection.2.1.2}\protected@file@percent }
-\newlabel{eqn:def_u_h}{{2.1}{56}{Maillage triangulaire et représentation des champs de croix}{equation.2.1.1}{}}
-\newlabel{eqn:def_u_h@cref}{{[equation][1][2]2.1}{[1][56][]56}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Partitionnement de $\partial \Omega _h$}{58}{section.2.2}\protected@file@percent }
-\newlabel{alg:discr_algo_main}{{4}{58}{Partitionnement de $\partial \Omega _h$}{algocfline.4}{}}
-\newlabel{alg:discr_algo_main@cref}{{[line][4][]4}{[1][58][]58}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Algorithme de partitionnement $\Omega _h$\relax }}{58}{algocf.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Recherche de points singuliers}{58}{subsection.2.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Construction des séparatrices}{59}{subsection.2.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Nombre de séparatrices:}{59}{section*.37}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Directions initiales:}{59}{section*.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Intégration des séparatrices:}{59}{section*.40}\protected@file@percent }
+\newlabel{fig:y equals x}{{1.1a}{7}{$y=x$\relax }{figure.caption.5}{}}
+\newlabel{fig:y equals x@cref}{{[subfigure][1][1,1]1.1a}{[1][7][]7}}
+\newlabel{sub@fig:y equals x}{{a}{7}{$y=x$\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:y equals x@cref}{{[subfigure][1][1,1]1.1a}{[1][7][]7}}
+\newlabel{fig:three sin x}{{1.1b}{7}{$y=3\sin x$\relax }{figure.caption.5}{}}
+\newlabel{fig:three sin x@cref}{{[subfigure][2][1,1]1.1b}{[1][7][]7}}
+\newlabel{sub@fig:three sin x}{{b}{7}{$y=3\sin x$\relax }{figure.caption.5}{}}
+\newlabel{sub@fig:three sin x@cref}{{[subfigure][2][1,1]1.1b}{[1][7][]7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Three simple graphs\relax }}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:three graphs}{{1.1}{7}{Three simple graphs\relax }{figure.caption.5}{}}
+\newlabel{fig:three graphs@cref}{{[figure][1][1]1.1}{[1][7][]7}}
+\@writefile{toc}{\contentsline {paragraph}{Nombre de séparatrices:}{7}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Directions initiales:}{7}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Intégration des séparatrices:}{7}{section*.6}\protected@file@percent }
 \citation{marcon2019high}
-\newlabel{fig:y equals x}{{2.1a}{60}{$y=x$\relax }{figure.caption.39}{}}
-\newlabel{fig:y equals x@cref}{{[subfigure][1][2,1]2.1a}{[1][59][]60}}
-\newlabel{sub@fig:y equals x}{{a}{60}{$y=x$\relax }{figure.caption.39}{}}
-\newlabel{sub@fig:y equals x@cref}{{[subfigure][1][2,1]2.1a}{[1][59][]60}}
-\newlabel{fig:three sin x}{{2.1b}{60}{$y=3\sin x$\relax }{figure.caption.39}{}}
-\newlabel{fig:three sin x@cref}{{[subfigure][2][2,1]2.1b}{[1][59][]60}}
-\newlabel{sub@fig:three sin x}{{b}{60}{$y=3\sin x$\relax }{figure.caption.39}{}}
-\newlabel{sub@fig:three sin x@cref}{{[subfigure][2][2,1]2.1b}{[1][59][]60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Three simple graphs\relax }}{60}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:three graphs}{{2.1}{60}{Three simple graphs\relax }{figure.caption.39}{}}
-\newlabel{fig:three graphs@cref}{{[figure][1][2]2.1}{[1][59][]60}}
-\@writefile{toc}{\contentsline {paragraph}{Traversé d'un triangle singulier:}{60}{section*.43}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Fusion de séparatrices:}{60}{section*.44}\protected@file@percent }
-\newlabel{fig:y equals x}{{2.2a}{61}{$y=x$\relax }{figure.caption.41}{}}
-\newlabel{fig:y equals x@cref}{{[subfigure][1][2,2]2.2a}{[1][59][]61}}
-\newlabel{sub@fig:y equals x}{{a}{61}{$y=x$\relax }{figure.caption.41}{}}
-\newlabel{sub@fig:y equals x@cref}{{[subfigure][1][2,2]2.2a}{[1][59][]61}}
-\newlabel{fig:three sin x}{{2.2b}{61}{$y=3\sin x$\relax }{figure.caption.41}{}}
-\newlabel{fig:three sin x@cref}{{[subfigure][2][2,2]2.2b}{[1][59][]61}}
-\newlabel{sub@fig:three sin x}{{b}{61}{$y=3\sin x$\relax }{figure.caption.41}{}}
-\newlabel{sub@fig:three sin x@cref}{{[subfigure][2][2,2]2.2b}{[1][59][]61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Three simple graphs\relax }}{61}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:draw_stream}{{2.2}{61}{Three simple graphs\relax }{figure.caption.41}{}}
-\newlabel{fig:draw_stream@cref}{{[figure][2][2]2.2}{[1][59][]61}}
-\newlabel{fig:first_dir_first}{{2.3a}{61}{Alignement du champ de croix présenté sur la figure \ref {fig:demiDisc_valProp_mauvaix_decoup} sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.42}{}}
-\newlabel{fig:first_dir_first@cref}{{[subfigure][1][2,3]2.3a}{[1][60][]61}}
-\newlabel{sub@fig:first_dir_first}{{a}{61}{Alignement du champ de croix présenté sur la figure \ref {fig:demiDisc_valProp_mauvaix_decoup} sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.42}{}}
-\newlabel{sub@fig:first_dir_first@cref}{{[subfigure][1][2,3]2.3a}{[1][60][]61}}
-\newlabel{fig:first_dir_second}{{2.3b}{61}{Maillage quadrilatéral du domaine.\relax }{figure.caption.42}{}}
-\newlabel{fig:first_dir_second@cref}{{[subfigure][2][2,3]2.3b}{[1][60][]61}}
-\newlabel{sub@fig:first_dir_second}{{b}{61}{Maillage quadrilatéral du domaine.\relax }{figure.caption.42}{}}
-\newlabel{sub@fig:first_dir_second@cref}{{[subfigure][2][2,3]2.3b}{[1][60][]61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Direction de sortie différentes.\relax }}{61}{figure.caption.42}\protected@file@percent }
-\newlabel{fig:first_dir}{{2.3}{61}{Direction de sortie différentes.\relax }{figure.caption.42}{}}
-\newlabel{fig:first_dir@cref}{{[figure][3][2]2.3}{[1][60][]61}}
-\newlabel{fig:merge_sepa_first}{{2.4a}{62}{Sans fusion\relax }{figure.caption.45}{}}
-\newlabel{fig:merge_sepa_first@cref}{{[subfigure][1][2,4]2.4a}{[1][60][]62}}
-\newlabel{sub@fig:merge_sepa_first}{{a}{62}{Sans fusion\relax }{figure.caption.45}{}}
-\newlabel{sub@fig:merge_sepa_first@cref}{{[subfigure][1][2,4]2.4a}{[1][60][]62}}
-\newlabel{fig:merge_sepa_second}{{2.4b}{62}{detection fusion.\relax }{figure.caption.45}{}}
-\newlabel{fig:merge_sepa_second@cref}{{[subfigure][2][2,4]2.4b}{[1][60][]62}}
-\newlabel{sub@fig:merge_sepa_second}{{b}{62}{detection fusion.\relax }{figure.caption.45}{}}
-\newlabel{sub@fig:merge_sepa_second@cref}{{[subfigure][2][2,4]2.4b}{[1][60][]62}}
-\newlabel{fig:merge_sepa_third}{{2.4c}{62}{fusion.\relax }{figure.caption.45}{}}
-\newlabel{fig:merge_sepa_third@cref}{{[subfigure][3][2,4]2.4c}{[1][60][]62}}
-\newlabel{sub@fig:merge_sepa_third}{{c}{62}{fusion.\relax }{figure.caption.45}{}}
-\newlabel{sub@fig:merge_sepa_third@cref}{{[subfigure][3][2,4]2.4c}{[1][60][]62}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eqn:principe_def_phi}\unskip \@@italiccorr )}}.\relax }}{62}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:merge_sepa}{{2.4}{62}{Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \eqref {eqn:principe_def_phi}.\relax }{figure.caption.45}{}}
-\newlabel{fig:merge_sepa@cref}{{[figure][4][2]2.4}{[1][60][]62}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Assemblage des partitions}{62}{subsection.2.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Opération d'alignement}{63}{section.2.3}\protected@file@percent }
-\newlabel{eqn:etude_hyp_u_simple}{{2.8}{63}{Opération d'alignement}{equation.2.3.8}{}}
-\newlabel{eqn:etude_hyp_u_simple@cref}{{[equation][8][2]2.8}{[1][63][]63}}
-\newlabel{eqn:etude_def_v_second}{{2.9}{63}{Opération d'alignement}{equation.2.3.9}{}}
-\newlabel{eqn:etude_def_v_second@cref}{{[equation][9][2]2.9}{[1][63][]63}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Etude de la méthode}{64}{section.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Analyse de convergence}{64}{subsection.2.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Lien entre $\overline  {u}$ et $\overline  {u}_h$}{64}{subsection.2.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Génération de champs de croix}{64}{section.2.5}\protected@file@percent }
-\newlabel{eq:phi_computation_omega_h}{{2.11}{65}{Interprétation du partitionnement}{equation.2.5.11}{}}
-\newlabel{eq:phi_computation_omega_h@cref}{{[equation][11][2]2.11}{[1][65][]65}}
-\newlabel{eq:phi_computation_omega_tilde}{{2.12}{65}{Interprétation du partitionnement}{equation.2.5.12}{}}
-\newlabel{eq:phi_computation_omega_tilde@cref}{{[equation][12][2]2.12}{[1][65][]65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces \relax }}{66}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:omega_h_tilde}{{2.5}{66}{\relax }{figure.caption.53}{}}
-\newlabel{fig:omega_h_tilde@cref}{{[figure][5][2]2.5}{[1][66][]66}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Mesh of Naca0012 with two different configurations of singular points. The initial cross-fields were obtained using formula (\ref  {eq:z-ai}) .\relax }}{67}{figure.caption.56}\protected@file@percent }
-\newlabel{connexe2}{{2.6}{67}{Mesh of Naca0012 with two different configurations of singular points. The initial cross-fields were obtained using formula (\ref {eq:z-ai}) .\relax }{figure.caption.56}{}}
-\newlabel{connexe2@cref}{{[figure][6][2]2.6}{[1][67][]67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Caption\relax }}{68}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:enter-label}{{2.7}{68}{Caption\relax }{figure.caption.57}{}}
-\newlabel{fig:enter-label@cref}{{[figure][7][2]2.7}{[1][67][]68}}
+\newlabel{fig:y equals x}{{1.2a}{8}{$y=x$\relax }{figure.caption.7}{}}
+\newlabel{fig:y equals x@cref}{{[subfigure][1][1,2]1.2a}{[1][8][]8}}
+\newlabel{sub@fig:y equals x}{{a}{8}{$y=x$\relax }{figure.caption.7}{}}
+\newlabel{sub@fig:y equals x@cref}{{[subfigure][1][1,2]1.2a}{[1][8][]8}}
+\newlabel{fig:three sin x}{{1.2b}{8}{$y=3\sin x$\relax }{figure.caption.7}{}}
+\newlabel{fig:three sin x@cref}{{[subfigure][2][1,2]1.2b}{[1][8][]8}}
+\newlabel{sub@fig:three sin x}{{b}{8}{$y=3\sin x$\relax }{figure.caption.7}{}}
+\newlabel{sub@fig:three sin x@cref}{{[subfigure][2][1,2]1.2b}{[1][8][]8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Three simple graphs\relax }}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:draw_stream}{{1.2}{8}{Three simple graphs\relax }{figure.caption.7}{}}
+\newlabel{fig:draw_stream@cref}{{[figure][2][1]1.2}{[1][8][]8}}
+\@writefile{toc}{\contentsline {paragraph}{Traversé d'un triangle singulier:}{8}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fusion de séparatrices:}{8}{section*.10}\protected@file@percent }
+\newlabel{fig:first_dir_first}{{1.3a}{9}{Alignement du champ de croix présenté sur la figure \ref {fig:demiDisc_valProp_mauvaix_decoup} sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.8}{}}
+\newlabel{fig:first_dir_first@cref}{{[subfigure][1][1,3]1.3a}{[1][8][]9}}
+\newlabel{sub@fig:first_dir_first}{{a}{9}{Alignement du champ de croix présenté sur la figure \ref {fig:demiDisc_valProp_mauvaix_decoup} sur le bord du domaine et partitionnement du domaine.\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:first_dir_first@cref}{{[subfigure][1][1,3]1.3a}{[1][8][]9}}
+\newlabel{fig:first_dir_second}{{1.3b}{9}{Maillage quadrilatéral du domaine.\relax }{figure.caption.8}{}}
+\newlabel{fig:first_dir_second@cref}{{[subfigure][2][1,3]1.3b}{[1][8][]9}}
+\newlabel{sub@fig:first_dir_second}{{b}{9}{Maillage quadrilatéral du domaine.\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:first_dir_second@cref}{{[subfigure][2][1,3]1.3b}{[1][8][]9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Direction de sortie différentes.\relax }}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:first_dir}{{1.3}{9}{Direction de sortie différentes.\relax }{figure.caption.8}{}}
+\newlabel{fig:first_dir@cref}{{[figure][3][1]1.3}{[1][8][]9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Assemblage des partitions}{9}{subsection.1.2.3}\protected@file@percent }
+\newlabel{fig:merge_sepa_first}{{1.4a}{10}{Sans fusion\relax }{figure.caption.11}{}}
+\newlabel{fig:merge_sepa_first@cref}{{[subfigure][1][1,4]1.4a}{[1][9][]10}}
+\newlabel{sub@fig:merge_sepa_first}{{a}{10}{Sans fusion\relax }{figure.caption.11}{}}
+\newlabel{sub@fig:merge_sepa_first@cref}{{[subfigure][1][1,4]1.4a}{[1][9][]10}}
+\newlabel{fig:merge_sepa_second}{{1.4b}{10}{detection fusion.\relax }{figure.caption.11}{}}
+\newlabel{fig:merge_sepa_second@cref}{{[subfigure][2][1,4]1.4b}{[1][9][]10}}
+\newlabel{sub@fig:merge_sepa_second}{{b}{10}{detection fusion.\relax }{figure.caption.11}{}}
+\newlabel{sub@fig:merge_sepa_second@cref}{{[subfigure][2][1,4]1.4b}{[1][9][]10}}
+\newlabel{fig:merge_sepa_third}{{1.4c}{10}{fusion.\relax }{figure.caption.11}{}}
+\newlabel{fig:merge_sepa_third@cref}{{[subfigure][3][1,4]1.4c}{[1][9][]10}}
+\newlabel{sub@fig:merge_sepa_third}{{c}{10}{fusion.\relax }{figure.caption.11}{}}
+\newlabel{sub@fig:merge_sepa_third@cref}{{[subfigure][3][1,4]1.4c}{[1][9][]10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eqn:principe_def_phi}\unskip \@@italiccorr )}}.\relax }}{10}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:merge_sepa}{{1.4}{10}{Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \eqref {eqn:principe_def_phi}.\relax }{figure.caption.11}{}}
+\newlabel{fig:merge_sepa@cref}{{[figure][4][1]1.4}{[1][9][]10}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Opération d'alignement}{10}{section.1.3}\protected@file@percent }
+\newlabel{eqn:etude_hyp_u_simple}{{1.6}{11}{Opération d'alignement}{equation.1.3.6}{}}
+\newlabel{eqn:etude_hyp_u_simple@cref}{{[equation][6][1]1.6}{[1][11][]11}}
+\newlabel{eqn:etude_def_v_second}{{1.7}{11}{Opération d'alignement}{equation.1.3.7}{}}
+\newlabel{eqn:etude_def_v_second@cref}{{[equation][7][1]1.7}{[1][11][]11}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Etude de la méthode}{11}{section.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Analyse de convergence}{11}{subsection.1.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Lien entre $\overline  {u}$ et $\overline  {u}_h$}{11}{subsection.1.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Génération de champs de croix}{12}{section.1.5}\protected@file@percent }
+\newlabel{eq:phi_computation_omega_h}{{1.9}{13}{Interprétation du partitionnement}{equation.1.5.9}{}}
+\newlabel{eq:phi_computation_omega_h@cref}{{[equation][9][1]1.9}{[1][13][]13}}
+\newlabel{eq:phi_computation_omega_tilde}{{1.10}{13}{Interprétation du partitionnement}{equation.1.5.10}{}}
+\newlabel{eq:phi_computation_omega_tilde@cref}{{[equation][10][1]1.10}{[1][13][]13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces \relax }}{14}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:omega_h_tilde}{{1.5}{14}{\relax }{figure.caption.19}{}}
+\newlabel{fig:omega_h_tilde@cref}{{[figure][5][1]1.5}{[1][14][]14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Mesh of Naca0012 with two different configurations of singular points. The initial cross-fields were obtained using formula (\ref  {eq:z-ai}) .\relax }}{15}{figure.caption.22}\protected@file@percent }
+\newlabel{connexe2}{{1.6}{15}{Mesh of Naca0012 with two different configurations of singular points. The initial cross-fields were obtained using formula (\ref {eq:z-ai}) .\relax }{figure.caption.22}{}}
+\newlabel{connexe2@cref}{{[figure][6][1]1.6}{[1][15][]15}}
 \bibstyle{apalike}
 \bibdata{references}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Annexes}{69}{chapter.3}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Annexes}{69}{chapter.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {xchapter}{Annexes}{69}{chapter.3}\protected@file@percent }
-\@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chap:annexes}{{3}{69}{Annexes}{chapter.3}{}}
-\newlabel{chap:annexes@cref}{{[chapter][3][]3}{[1][69][]69}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Caption\relax }}{16}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:enter-label}{{1.7}{16}{Caption\relax }{figure.caption.23}{}}
+\newlabel{fig:enter-label@cref}{{[figure][7][1]1.7}{[1][15][]16}}
 \bibcite{allaire2005analyse}{Allaire, 2005}
 \bibcite{alliez2003anisotropic}{Alliez et~al., 2003}
 \bibcite{arnold2000discontinuous}{Arnold et~al., 2000}
@@ -473,7 +143,7 @@
 \bibcite{catmull1998recursively}{Catmull and Clark, 1998}
 \bibcite{cohen2002conforming}{Cohen-Steiner et~al., 2002}
 \@writefile{@@@}{\chapterbegin }
-\@writefile{toc}{\contentsline {chapter}{Références}{71}{chapter*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Références}{17}{chapter*.24}\protected@file@percent }
 \bibcite{d2000bilinear}{D'azevedo, 2000}
 \bibcite{de2009fast}{de~Moura~Pinto and Freitas, 2009}
 \bibcite{ern2004theory}{Ern and Guermond, 2004}
@@ -531,4 +201,4 @@
 \bibcite{yerry1983finite}{Yerry and Shephard, 1983}
 \bibcite{zienkiewicz2005finite}{Zienkiewicz and Taylor, 2005}
 \global\mtcsecondpartfalse
-\gdef \@abspage@last{77}
+\gdef \@abspage@last{23}

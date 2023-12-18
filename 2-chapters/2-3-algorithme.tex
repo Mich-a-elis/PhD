@@ -14,21 +14,44 @@ Soit $\Omega$ un domaine compact et connexe de $\mathbb{R}^2$ dont le bord $\par
 
 \subsection{Maillage triangulaire}
 
-Considérons maintenant une triangulation $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ et on note $V$ l'ensemble des sommets de $\Omega_h$, $E$ l'ensemble des arêtes, et $F$ l'ensemble des triangles fermés non vide composant $\Omega_h$. On suppose que tout les sommets de $\Omega_h$ appartiennent à $\Omega$ ($V\subset\Omega$) et que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. $h$ représente le diamètre maximal des triangles constituant $\Omega_h$.
+Considérons maintenant une triangulation $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ et on note $V$ l'ensemble des sommets de $\Omega_h$, $E$ l'ensemble des arêtes, et $F$ l'ensemble des triangles fermés non vide composant $\Omega_h$. On suppose que tout les sommets de $\Omega_h$ appartiennent à $\Omega$ ($V\subset\Omega$) et que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. $h$ représente le diamètre maximal des triangles constituant $\Omega_h$. Pour tout $p\in\Omega_h$, on désigne par $F_p$ l'ensemble des triangles de $\Omega_h$ contenant $p$.
 
 \subsection{Champ de croix}
 
-Nous cherchons maintenant à construire une représentation du champ de croix $\bar{u}$ sur le maillage triangulaire $\Omega_h$. Pour se faire, nous commençons par définir la notion d'angle signé entre deux croix. Etant donné deux croix $\mathbf{c}_1,\mathbf{c}_2$ non nulles, l'angle signé entre $\mathbf{c}_1$ et $\mathbf{c}_2$ noté $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) est l'unique élément de l'ensemble:
+Nous cherchons maintenant à construire une représentation du champ de croix $\bar{u}$ sur le maillage triangulaire $\Omega_h$. Pour se faire, nous commençons par définir la notion d'angle signé entre deux croix.
+
+\begin{definition}
+Soient deux croix $\mathbf{c}_1,\mathbf{c}_2$ non nulles. L'angle signé entre $\mathbf{c}_1$ et $\mathbf{c}_2$ noté $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) est l'unique élément de l'ensemble:
 $$
-\{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
+\{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}:=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
 $$
+\end{definition}
 Tel que définit, $\delta\theta(\mathbf{c}_1, \mathbf{c}_2)$ représente la variation d'angle entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a
 $$
-\mathbf{c}_2=\mathbf{c}_1+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
+\theta_{\mathbf{c}_2}=\theta_{\mathbf{c}_1}+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
 $$
-Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini si $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$.\\\\
-Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$, dont la définition est exposée dans les lignes suivantes. On se donne un ensemble de valeurs de $\bar{u}$ défini sur les sommets de $\Omega_h$ et on défini pour tout $p\in V$, $\bar{u}_h(p)=\bar{u}(p)$. On suppose alors que pour chaque arête $e\in E$ avec des sommets $s_1$ et $s_2$ tels que $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$, $\delta\theta(\bar{u}_h(), \bar{u}_h())$ soit défini.
+Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini si $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$.
+Nous supposons que pour chaque arête $e\in E$ avec des sommets $s_1$ et $s_2$, on a $\bar{u}(s_1)\neq 0$ ou $\bar{u}(s_2)\neq 0$. On suppose de plus que si $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$ alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ est défini.
+\\\\
+Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$ défini pour tout $p\in\Omega_h$ par:\\
+\begin{itemize}
+ \item[$\bullet$] si $p\in V$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
+ \item[$\bullet$] sinon, soit $T$ un triangle de $\Omega_h$ ayant pour sommets $s_1, s_2, s_3$ tel que $p\in T$. On distingue trois cas:\\[-0.2cm]
+ \begin{itemize}
+  \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$\\[-0.2cm]
+  \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$\\[-0.2cm]
+  \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$
+ \end{itemize}
+\end{itemize}
 
+
+\[\]
+
+dont la définition est exposée dans les lignes suivantes. On se donne un ensemble de valeurs de $\bar{u}$ défini sur les sommets de $\Omega_h$ et on défini pour tout $p\in V$, $\bar{u}_h(p)=\bar{u}(p)$. Pour définir complètement $\bar{u}_h$, il reste à dire ce que vaut $\bar{u}_h$ pour tout $p\in\Omega_h\backslash$  Nous introduisons alors la nomenclature suivante: Suposons de plus que
+
+\newpage
+
+\begin{comment}
 \subsection*{Maillage triangulaire et représentation des  champs de croix}
 
 Considérons maintenant une triangulation h de la surface Ω. Par là, nous entendons que h est une surface polyédrique orientable compacte de dimension deux, de classe C0, et en notant Th l'ensemble des triangles fermés non vides tels que $∪T \in Th T = Ω$, nous supposons que tous les sommets appartiennent à Ω, et que toute intersection entre deux triangles est soit vide, soit un sommet, soit un côté. Soit $h_T = diam(T) et h = max{h_T : T \in Th}$
@@ -59,6 +82,7 @@ où $g$ est définie pour tout $p\in\Omega_h$ par:
     \end{pmatrix},
 \end{equation}
 avec $(s_i)_{i\in\llbracket 1, 3\rrbracket}$ les sommets d'un triangle de $\Omega_h$ contenant $p$ et $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans ce triangle. Remarquons que le champ de croix $\bar{u}_h$ ainsi défini est presque-$\mathcal{C}^1$ sur chaque triangle puisque $g$ est linéaire sur chaque triangle.
+\end{comment}
 
 \subsection*{Points singuliers, indice et ligne de champs}
 
