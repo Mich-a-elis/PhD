@@ -36,6 +36,16 @@ Nous supposons que pour chaque arête $e\in E$ avec des sommets $s_1$ et $s_2$, 
 Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$ défini pour tout $p\in\Omega_h$ par:\\
 \begin{itemize}
  \item[$\bullet$] si $p\in V$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
+ \item[$\bullet$] si $p\in e$, où $e\in E$ est une arête de $\Omega_h$ de sommets $s_1$ et $s_2$, alors on a:
+ $$
+ \left\{
+ \begin{array}{l}
+ \bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_{\bar{u}_h}(p)+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
+ \theta_{\bar{u}_h}(p)=\theta_{\bar{u}_h}(s_1)+\displaystyle\frac{\|\overrightarrow{s_1p}\|}{\|\overrightarrow{s_1s_2\|}\delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2).
+ \end{array}
+ \right.
+ $$
+ $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
  \item[$\bullet$] sinon, soit $T$ un triangle de $\Omega_h$ ayant pour sommets $s_1, s_2, s_3$ tel que $p\in T$. On distingue trois cas:\\[-0.2cm]
  \begin{itemize}
   \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$\\[-0.2cm]
@@ -86,11 +96,12 @@ avec $(s_i)_{i\in\llbracket 1, 3\rrbracket}$ les sommets d'un triangle de $\Omeg
 
 \subsection*{Points singuliers, indice et ligne de champs}
 
-L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singuliers de $\bar{u}_h$, est constitué des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$. \color{red} Dans la suite, nous supposerons que les points singuliers de $\bar{u}_h$ sont isolés. \color{black} Pour tout $p\in\Omega_h$, nous définissons $F_p$ comme l'ensemble des triangles de $\Omega_h$ contenant le point $p$.
+L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singuliers de $\bar{u}_h$, est constitué des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$.
 \begin{lemma}
-    Soit $p$ un point singulier de $\bar{u}_h$. Alors on a $F_p\cap\mathcal{S}_{\bar{u}_h}=\{p\}$.
+    Les points singuliers de $\bar{u}_h$ sont isolés.
 \end{lemma}
 \begin{proof}
+    Soit $p$ un point singulier de $\bar{u}_h$. Le point $p$ est isolé puisque par construction, on a $F_p\cap\mathcal{S}_{\bar{u}_h}=\{p\}$. En effet, pour tout $q\in F_p\backslash\{p\}$ on a $\bar{u}_h(q)=$ pour tout $p\in\mathcal{S}_{\bar{u}_h}$, F
     Par définition, $p\in F_p$. Supposons maintenant qu'il existe un point singulier $q$ tel que $q\in F_p$ et $q\neq p$. Soit $\mathcal{T}$ un triangle de $\Omega_h$ contenant $q$ et inclus dans $F_p$. Puisque $p\in\mathcal{T}$ par définition de $F_p$, et que $g$ est linéaire sur $\mathcal{T}$, cela implique que pour tout $r\in[pq]$, $g(r)=(0, 0)$, car $g(p)=g(q)=(0,0)$. Autrement dit, pour tout $r\in[pq]$, $r\in\mathcal{S}_{\bar{u}_h}$ car $\bar{u}_h(r)=0$. Par conséquent, les points singuliers de $\bar{u}_h$ ne peuvent pas être isolés, ce qui contredit l'hypothèse selon laquelle les points singuliers de $\bar{u}_h$ sont isolés. On peut donc en conclure que $F_p\cap\mathcal{S}_{\bar{u}_h}=\{p\}$.
 \end{proof}
 
