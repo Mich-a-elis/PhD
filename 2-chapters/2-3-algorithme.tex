@@ -26,12 +26,26 @@ $$
 \{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}:=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
 $$
 \end{definition}
-Tel que définit, $\delta\theta(\mathbf{c}_1, \mathbf{c}_2)$ représente la variation d'angle entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a
+Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini si $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$. $\delta\theta(\mathbf{c}_1, \mathbf{c}_2)$ représente la variation d'angle entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a:
 $$
 \theta_{\mathbf{c}_2}=\theta_{\mathbf{c}_1}+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
 $$
-Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini si $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$.
-Nous supposons que pour chaque arête $e\in E$ avec des sommets $s_1$ et $s_2$, on a $\bar{u}(s_1)\neq 0$ ou $\bar{u}(s_2)\neq 0$. On suppose de plus que si $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$ alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ est défini.
+Dans tout la suite, nous imposons les contraintes suivantes sur le maillage $\Omega_h$ :\\[-0.2cm]
+\begin{itemize}
+ \item pour chaque arête $e\in E$ ayant des sommets $s_1$ et $s_2$, soit $\bar{u}(s_1)\neq 0$ soit $\bar{u}(s_2)\neq 0$. De plus, si à la fois $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ est défini.\\[-0.2cm]
+ \item pour chaque arête $e\in E$ ayant des sommets $s_1$ et $s_2$, soit $\bar{u}(s_1)\neq 0$ soit $\bar{u}(s_2)\neq 0$. De plus, si à la fois $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ est défini.\\[-0.2cm]
+\end{itemize}
+Dans la pratique, il sera donc impératif d'affiner ou de modifier localement un maillage qui ne satisfait pas ces contraintes. L'importance de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$. Nous introduisons maintenant la notion de triangle singulier via la définition suivante:
+
+\begin{definition}
+ Un triangle $T$ de $\Omega_h$ et de sommets $s_1$, $s_2$ et $s_3$ est dit singulier si l'une des assertions suivantes est vérifiée:\\[-0.2cm]
+ \begin{itemize}
+  \item[i.)] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$\\[-0.2cm]
+  \item[ii.)]$\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$.
+ \end{itemize}
+
+\end{definition}
+
 \\\\
 Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$ défini pour tout $p\in\Omega_h$ par:\\
 \begin{itemize}
@@ -40,15 +54,43 @@ Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de cr
  $$
  \left\{
  \begin{array}{l}
- \bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_{\bar{u}_h}(p)+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
- \theta_{\bar{u}_h}(p)=\theta_{\bar{u}_h}(s_1)+\displaystyle\frac{\|\overrightarrow{s_1p}\|}{\|\overrightarrow{s_1s_2\|}\delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2).
+ \bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
+ \theta_p=\theta_{\bar{u}_h}(s_1)+\displaystyle\frac{\|\overrightarrow{s_1p}\|}{\|\overrightarrow{s_1s_2}\|}\delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2)).
  \end{array}
  \right.
  $$
- $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
- \item[$\bullet$] sinon, soit $T$ un triangle de $\Omega_h$ ayant pour sommets $s_1, s_2, s_3$ tel que $p\in T$. On distingue trois cas:\\[-0.2cm]
+ %\\[-0.2cm]
+ \item[$\bullet$] sinon, soit $T$ un triangle de $\Omega_h$ de sommets $s_1, s_2$ et $s_3$ tel que $p\in T$. On distingue trois cas:\\[-0.2cm]
  \begin{itemize}
-  \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$\\[-0.2cm]
+  \item si on a
+  $$
+  \left\{
+  \begin{array}{l}
+  (\bar{u}_h(s_1), \bar{u}_h(s_2), \bar{u}_h(s_3))\neq (0, 0, 0),\\\\
+  \displaystyle\sum_{i\in\llbracket 1, 3\rrbracket}\delta\theta(\bar{u}_h(s_i), \bar{u}_h(s_{i+1}))=0~~(\mbox{avec } s_4:=s_1),
+  \end{array}
+  \right
+  $$
+  alors on pose
+    $$
+  \left\{
+  \begin{array}{l}
+  \theta_1 = \theta_{\bar{u}_h}(s_1)\\\\
+  \theta_2 = \theta_1 + \delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2))\\\\
+  \theta_3 = \theta_2 + \delta\theta(\bar{u}_h(s_2),\bar{u}_h(s_3))
+  \end{array}
+  \right
+  $$
+  et on a
+  $$
+  \left\{
+  \begin{array}{l}
+  \bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
+  \theta_p=\displaystyle\sum_{i\in\llbracket1, 3\rrbracket}\lambda_i\theta_i.
+  \end{array}
+  \right.
+  $$
+  \\[-0.2cm]
   \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$\\[-0.2cm]
   \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$
  \end{itemize}

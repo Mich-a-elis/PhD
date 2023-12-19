@@ -132,13 +132,6 @@ George, P.~L. and Seveno, {\'E}. (1994).
 \newblock {\em International Journal for Numerical Methods in Engineering},
   37(21):3605--3619.
 
-\bibitem[Gourdain et~al., 2010]{gourdain2010advanced}
-Gourdain, N., Duchaine, F., Gicquel, L.~Y., and Collado, E. (2010).
-\newblock Advanced numerical simulation dedicated to the prediction of heat
-  transfer in a highly loaded turbine guide vane.
-\newblock In {\em Turbo Expo: Power for Land, Sea, and Air}, volume 44021,
-  pages 807--820.
-
 \bibitem[Gurung et~al., 2011]{gurung2011squad}
 Gurung, T., Laney, D., Lindstrom, P., and Rossignac, J. (2011).
 \newblock Squad: Compact representation for triangle meshes.
@@ -154,11 +147,6 @@ H{\"o}hring, R.~H., M{\"u}ller-Hannemann, M., and Wiehe, K. (1997).
 \newblock Mesh refinement via bidirected flows: Modeling, complexity, and
   computational results.
 \newblock {\em Journal of the ACM (JACM)}, 44(3):395--426.
-
-\bibitem[Hopf, 1935]{hopf1935drehung}
-Hopf, H. (1935).
-\newblock {\"U}ber die drehung der tangenten und sehnen ebener kurven.
-\newblock {\em Compositio mathematica}, 2:50--62.
 
 \bibitem[Ives, 1995]{ives1995geometric}
 Ives, D. (1995).
@@ -223,11 +211,6 @@ Macq, A., Reberol, M., Henrotte, F., Beaufort, P.-A., Chemin, A., Remacle,
 \newblock Ginzburg-landau energy and placement of singularities in generated
   cross fields.
 \newblock {\em arXiv preprint arXiv:2010.16381}.
-
-\bibitem[Marcon et~al., 2019]{marcon2019high}
-Marcon, J., Kopriva, D.~A., Sherwin, S.~J., and Peir{\'o}, J. (2019).
-\newblock A high resolution pde approach to quadrilateral mesh generation.
-\newblock {\em Journal of Computational Physics}, 399:108918.
 
 \bibitem[Marinov and Kobbelt, 2004]{marinov2004direct}
 Marinov, M. and Kobbelt, L. (2004).
@@ -327,11 +310,6 @@ Rivi{\`e}re, B. (2008).
 \newblock {\em Discontinuous Galerkin methods for solving elliptic and
   parabolic equations: theory and implementation}.
 \newblock SIAM.
-
-\bibitem[Rotskoff, 2010]{rotskoff2010gauss}
-Rotskoff, G. (2010).
-\newblock {\em The Gauss-Bonnet Theorem}.
-\newblock PhD thesis, Master thesis, University of Chicago.
 
 \bibitem[Schneiders, 1996]{schneiders1996grid}
 Schneiders, R. (1996).
