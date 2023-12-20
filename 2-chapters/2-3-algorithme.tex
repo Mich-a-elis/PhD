@@ -32,76 +32,70 @@ $$
 $$
 Dans tout la suite, nous imposons les contraintes suivantes sur le maillage $\Omega_h$ :\\[-0.2cm]
 \begin{itemize}
- \item pour chaque arête $e\in E$ ayant des sommets $s_1$ et $s_2$, soit $\bar{u}(s_1)\neq 0$ soit $\bar{u}(s_2)\neq 0$. De plus, si à la fois $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ est défini.\\[-0.2cm]
- \item pour chaque arête $e\in E$ ayant des sommets $s_1$ et $s_2$, soit $\bar{u}(s_1)\neq 0$ soit $\bar{u}(s_2)\neq 0$. De plus, si à la fois $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ est défini.\\[-0.2cm]
+ \item pour chaque arête $e\in E$ de sommets $s_1$ et $s_2$, on doit avoir $\bar{u}(s_1)\neq 0$ ou $\bar{u}(s_2)\neq 0$\\[-0.2cm]
+ \item de plus, si $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ doit être défini.\\[-0.2cm]
 \end{itemize}
-Dans la pratique, il sera donc impératif d'affiner ou de modifier localement un maillage qui ne satisfait pas ces contraintes. L'importance de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$. Nous introduisons maintenant la notion de triangle singulier via la définition suivante:
+Dans la pratique, il sera donc impératif d'affiner ou de modifier localement un maillage qui ne satisfait pas ces contraintes. La pertinence de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$. Nous introduisons à présent le concept de triangle singulier avec la définition suivante :
 
 \begin{definition}
  Un triangle $T$ de $\Omega_h$ et de sommets $s_1$, $s_2$ et $s_3$ est dit singulier si l'une des assertions suivantes est vérifiée:\\[-0.2cm]
  \begin{itemize}
-  \item[i.)] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$\\[-0.2cm]
-  \item[ii.)]$\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$.
+  \item[i.)] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$,\\[-0.2cm]
+  \item[ii.)] $\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$.
  \end{itemize}
 
 \end{definition}
-
-\\\\
 Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$ défini pour tout $p\in\Omega_h$ par:\\
 \begin{itemize}
- \item[$\bullet$] si $p\in V$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
- \item[$\bullet$] si $p\in e$, où $e\in E$ est une arête de $\Omega_h$ de sommets $s_1$ et $s_2$, alors on a:
- $$
- \left\{
- \begin{array}{l}
- \bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
- \theta_p=\theta_{\bar{u}_h}(s_1)+\displaystyle\frac{\|\overrightarrow{s_1p}\|}{\|\overrightarrow{s_1s_2}\|}\delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2)).
- \end{array}
- \right.
- $$
- %\\[-0.2cm]
- \item[$\bullet$] sinon, soit $T$ un triangle de $\Omega_h$ de sommets $s_1, s_2$ et $s_3$ tel que $p\in T$. On distingue trois cas:\\[-0.2cm]
- \begin{itemize}
-  \item si on a
-  $$
-  \left\{
-  \begin{array}{l}
-  (\bar{u}_h(s_1), \bar{u}_h(s_2), \bar{u}_h(s_3))\neq (0, 0, 0),\\\\
-  \displaystyle\sum_{i\in\llbracket 1, 3\rrbracket}\delta\theta(\bar{u}_h(s_i), \bar{u}_h(s_{i+1}))=0~~(\mbox{avec } s_4:=s_1),
-  \end{array}
-  \right
-  $$
-  alors on pose
-    $$
-  \left\{
-  \begin{array}{l}
-  \theta_1 = \theta_{\bar{u}_h}(s_1)\\\\
-  \theta_2 = \theta_1 + \delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2))\\\\
-  \theta_3 = \theta_2 + \delta\theta(\bar{u}_h(s_2),\bar{u}_h(s_3))
-  \end{array}
-  \right
-  $$
-  et on a
-  $$
-  \left\{
-  \begin{array}{l}
-  \bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
-  \theta_p=\displaystyle\sum_{i\in\llbracket1, 3\rrbracket}\lambda_i\theta_i.
-  \end{array}
-  \right.
-  $$
-  \\[-0.2cm]
-  \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$\\[-0.2cm]
-  \item si $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ et $\bar{u}_h(s_3)\neq 0$ et $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))+\delta\theta(\bar{u}_h(s_2), \bar{u}_h(s_3))+\delta\theta(\bar{u}_h(s_3), \bar{u}_h(s_1))$
- \end{itemize}
+\item[$\bullet$] si $p\in V$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
+\item[$\bullet$] si $p\in e$, où $e\in E$ est une arête de $\Omega_h$ de sommets $s_1$ et $s_2$, alors on a:
+$$
+\left\{
+\begin{array}{l}
+\bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
+\theta_p=\theta_{\bar{u}_h}(s_1)+\displaystyle\frac{\|\overrightarrow{s_1p}\|}{\|\overrightarrow{s_1s_2}\|}\delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2)).
+\end{array}
+\right.
+$$
+%\\[-0.2cm]
+\item[$\bullet$] si $p\in T$ où $T$ est un triangle de $\Omega_h$ non-singulier, alors on pose :%\\[-0.3cm]
+$$
+\left\{
+\begin{array}{l}
+\theta_1 = \theta_{\bar{u}_h}(s_1)\\\\
+\theta_2 = \theta_1 + \delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2))\\\\
+\theta_3 = \theta_2 + \delta\theta(\bar{u}_h(s_2),\bar{u}_h(s_3))
+\end{array}
+\right
+$$
+où $s_1$, $s_2$ et $s_3$ sont les sommets du triangle $T$. La croix $\bar{u}_h(p)$ est alors donnée par :
+$$
+\left\{
+\begin{array}{l}
+\bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
+\theta_p=\displaystyle\sum_{i\in\llbracket1, 3\rrbracket}\lambda_i\theta_i,
+\end{array}
+\right.
+$$
+avec $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans le triangle $T$. Autrement dit, ils vérifient $p=\sum_{i=1}^3\lambda_i s_i$ et $\sum_{i=1}^3\lambda_i=1$.
+\\[-0.2cm]
+\item[$\bullet$] si $p\in T$ avec $T$ un triangle singulier de $\Omega_h$ et $p$ barycentre de $T$ (c'est à dire $p=1/3(s_1+s_2+s_3)$ avec $s_1$, $s_2$ et $s_3$ les sommets de $T$) alors on pose $\bar{u}_h(p)=0$.\\[-0.2cm]
+\item[$\bullet$] sinon, il existe $q\in T$ tel que $\bar{u}_h(q)=0$ avec $T$ est un triangle de $\Omega_h$ contenant $p$. La croix $\bar{u}_h(p)$ est alors donnée par:
+$$
+\left\{
+\begin{array}{l}
+\bar{u}_h(p)=\bar{u}_h(\widetilde{p}),\\\\
+\{\widetilde{p}\}=[qp)\cap\partial F_q.
+\end{array}
+\right.
+$$
+Noter que l'ensemble $[qp)\cap\partial F_q$ est bien réduit à un singleton puisque $F_q$ est une réunion de simplexes donc convexe.
 \end{itemize}
 
+\begin{remark}
+ Sur la pertinence des restrictions sur le maillage trianglulaire.
+\end{remark}
 
-\[\]
-
-dont la définition est exposée dans les lignes suivantes. On se donne un ensemble de valeurs de $\bar{u}$ défini sur les sommets de $\Omega_h$ et on défini pour tout $p\in V$, $\bar{u}_h(p)=\bar{u}(p)$. Pour définir complètement $\bar{u}_h$, il reste à dire ce que vaut $\bar{u}_h$ pour tout $p\in\Omega_h\backslash$  Nous introduisons alors la nomenclature suivante: Suposons de plus que
-
-\newpage
 
 \begin{comment}
 \subsection*{Maillage triangulaire et représentation des  champs de croix}
@@ -143,18 +137,18 @@ L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singul
     Les points singuliers de $\bar{u}_h$ sont isolés.
 \end{lemma}
 \begin{proof}
-    Soit $p$ un point singulier de $\bar{u}_h$. Le point $p$ est isolé puisque par construction, on a $F_p\cap\mathcal{S}_{\bar{u}_h}=\{p\}$. En effet, pour tout $q\in F_p\backslash\{p\}$ on a $\bar{u}_h(q)=$ pour tout $p\in\mathcal{S}_{\bar{u}_h}$, F
-    Par définition, $p\in F_p$. Supposons maintenant qu'il existe un point singulier $q$ tel que $q\in F_p$ et $q\neq p$. Soit $\mathcal{T}$ un triangle de $\Omega_h$ contenant $q$ et inclus dans $F_p$. Puisque $p\in\mathcal{T}$ par définition de $F_p$, et que $g$ est linéaire sur $\mathcal{T}$, cela implique que pour tout $r\in[pq]$, $g(r)=(0, 0)$, car $g(p)=g(q)=(0,0)$. Autrement dit, pour tout $r\in[pq]$, $r\in\mathcal{S}_{\bar{u}_h}$ car $\bar{u}_h(r)=0$. Par conséquent, les points singuliers de $\bar{u}_h$ ne peuvent pas être isolés, ce qui contredit l'hypothèse selon laquelle les points singuliers de $\bar{u}_h$ sont isolés. On peut donc en conclure que $F_p\cap\mathcal{S}_{\bar{u}_h}=\{p\}$.
+    Soit $q$ un point singulier de $\bar{u}_h$. Le point $q$ est isolé puisque par construction, on a $F_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$. En effet, pour tout $p\in F_q\backslash\{q\}$ on a $\bar{u}_h(p)=\bar{u}_h(\widetilde{p})$ où $\widetilde{p}$ est le point d'intersection entre la demi-droite $[qp)$ et le bord $\partial F_q$ de $F_q$. Il existe donc une arête $e$ de $\Omega_h$ vérifiant $\{e\}\subset E\cap\partial F_q$ et contenant le point $\widetilde{p}$. Par ailleurs pour tout $r\in e$, on a $\bar{u}_h(r)\neq 0$ par construction puisque $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ (avec $s_1$ et $s_2$ les sommets de $e$). Il vient alors que $\bar{u}_h(\widetilde{p})\neq 0$ et par conséquent $p\notin \mathcal{S}_{\bar{u}_h}$. Autrement dit, $F_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$.
 \end{proof}
 
 Examinons à présent l'indice des points singuliers de $\bar{u}_h$. Soit $p$ un point singulier de $\bar{u}_h$ avec $p\in\Omega_h\backslash\partial\Omega_h$. L'indice de $p$ est donné par:
 $$
-id_{\bar{u}_h}(p)=\int_0^1 d\theta^\gamma_{\bar{u}_h}=\sum_{\mathcal{C}\in F\cap\gamma}\int_0^1 d\theta^{\mathcal{C}}_{\bar{u}_h}.
+id_{\bar{u}_h}(p)=\int_0^1 d\theta^\gamma_{\bar{u}_h}=\sum_{\mathcal{C}\in F_p\cap\gamma}\int_0^1 d\theta^{\mathcal{C}}_{\bar{u}_h}.
 $$
-où $\gamma$ est un chemin fermé englobant $p$ et ne contenant aucun autre point singulier de $\bar{u}_h$. En pratique, nous calculerons l'indice d'un point $p$ en utilisant une paramétrisation $\gamma$ du bord $\partial F_p$ de $F_p$. Soit $S_p=(s_i)_{i\in\llbracket 1, n_{S_p}\rrbracket}$ l'ensemble des sommets des triangles de $F_p$, privés du point $p$, et numérotés dans le sens anti-horaire.  Il vient alors que:
+où $\gamma$ est un chemin fermé paramétré sur $[0, 1]$ englobant $p$ et ne contenant aucun autre point singulier de $\bar{u}_h$. En pratique, nous calculerons l'indice d'un point $p$ en utilisant une paramétrisation $\gamma$ du bord $\partial F_p$ de $F_p$. De ce fait, l'indice du point $p$ s'écrit:
 \begin{equation}
     id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\displaystyle\sum_{i=1}^{n_{S_p}}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)=\displaystyle\frac{1}{2\pi}\sum\Delta,
 \end{equation}
+ Soit $S_p=(s_i)_{i\in\llbracket 1, n_{S_p}\rrbracket}$ l'ensemble des sommets des triangles de $F_p$, privés du point $p$, et numérotés dans le sens anti-horaire.  Il vient alors que:
 où  nous avons défini $s_{n_{S_p}+1}:=s_1$.
 Si $p\in\partial\Omega_h$ alors l'indice de $p$ est donné par:
 \begin{equation}
@@ -348,6 +342,12 @@ Localement dans chaque triangle,\\
 on ajoute les points constituant les separatrices a $\Omega_h$ modifiant ainsi la topologie du maillage triangulaire initial,\\
 Pour se faire, on exécute localement l'algorithme d'insertition de point localement dans chaque triangle.\\
 donné par\\
+
+\subsection{Génération du maillage quadrilatéral}
+
+equation\\
+Tracé directement dans le champ de croix\\
+Interpolation transfini.
 
 \section{Opération d'alignement}
 

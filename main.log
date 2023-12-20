@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.13)  19 DEC 2023 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.13)  20 DEC 2023 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2354,252 +2354,185 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
  []
 
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.49 \\\\
-         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.50 N
-      ous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un ch...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
-
- []
+! Missing delimiter (. inserted).
+<to be read again> 
+                   $
+l.70 $
+      $
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-
- []
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   $
-l.73   $
-        $
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   $
-l.83   $
-        $
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
 
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 94--95
-[]\T1/cmr/m/n/12 si $[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 )
- \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$ \T1/cmr/m/n/12 et $[][]\OT1/cmr/m/n/12 
-(\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$ \
-T1/cmr/m/n/12 et $[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 ) \O
-MS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$ \T1/cmr/m/n/12 et $\OML/cmm/m/it/12 ^^N^^R
-\OT1/cmr/m/n/12 ([][](\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [
-][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 )) +
- []
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
-
- []
-
-
-Underfull \hbox (badness 1077) in paragraph at lines 95--96
-[]\T1/cmr/m/n/12 si $[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 )
- \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$ \T1/cmr/m/n/12 et $[][]\OT1/cmr/m/n/12 
-(\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$ \
-T1/cmr/m/n/12 et $[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 ) \O
-MS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0$ \T1/cmr/m/n/12 et $\OML/cmm/m/it/12 ^^N^^R
-\OT1/cmr/m/n/12 ([][](\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [
-][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 )) +
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 177.
+(hyperref)                removing `math shift' on input line 171.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 177.
+(hyperref)                removing `\partial' on input line 171.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 177.
+(hyperref)                removing `\Omega' on input line 171.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 177.
+(hyperref)                removing `subscript' on input line 171.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 177.
+(hyperref)                removing `math shift' on input line 171.
 
 
-LaTeX Warning: Reference `alg:algo_main' on page 6 undefined on input line 179.
+LaTeX Warning: Reference `alg:algo_main' on page 6 undefined on input line 173.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-
- []
-
-<images/triangle separatrices 3.png, id=204, 300.1614pt x 266.79675pt>
+<images/triangle separatrices 3.png, id=215, 300.1614pt x 266.79675pt>
 File: images/triangle separatrices 3.png Graphic file (type png)
 <use images/triangle separatrices 3.png>
 Package pdftex.def Info: images/triangle separatrices 3.png  used on input line
- 252.
+ 246.
 (pdftex.def)             Requested size: 223.07211pt x 198.27733pt.
-<images/triangle separatrices 5.png, id=206, 298.11375pt x 264.5082pt>
+<images/triangle separatrices 5.png, id=217, 298.11375pt x 264.5082pt>
 File: images/triangle separatrices 5.png Graphic file (type png)
 <use images/triangle separatrices 5.png>
 Package pdftex.def Info: images/triangle separatrices 5.png  used on input line
- 259.
+ 253.
 (pdftex.def)             Requested size: 223.07211pt x 197.92458pt.
-[8 <./images/triangle separatrices 3.png> <./images/triangle separatrices 5.png
->]
-<images/stream_1.png, id=221, 300.1614pt x 266.79675pt>
+<images/stream_1.png, id=219, 300.1614pt x 266.79675pt>
 File: images/stream_1.png Graphic file (type png)
 <use images/stream_1.png>
-Package pdftex.def Info: images/stream_1.png  used on input line 277.
+Package pdftex.def Info: images/stream_1.png  used on input line 271.
 (pdftex.def)             Requested size: 223.07211pt x 198.27733pt.
 File: images/stream_1.png Graphic file (type png)
 <use images/stream_1.png>
-Package pdftex.def Info: images/stream_1.png  used on input line 284.
+Package pdftex.def Info: images/stream_1.png  used on input line 278.
 (pdftex.def)             Requested size: 223.07211pt x 198.27733pt.
-<images/demi_disc_second_phi_first.pdf, id=222, 1495.5875pt x 785.93625pt>
+<images/demi_disc_second_phi_first.pdf, id=220, 1495.5875pt x 785.93625pt>
 File: images/demi_disc_second_phi_first.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_first.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_first.pdf  used on input l
-ine 298.
+ine 292.
 (pdftex.def)             Requested size: 295.90588pt x 155.49353pt.
 
 
-LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 9 undefi
-ned on input line 299.
+LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 8 undefi
+ned on input line 293.
 
 
-LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 9 undefi
-ned on input line 299.
+LaTeX Warning: Reference `fig:demiDisc_valProp_mauvaix_decoup' on page 8 undefi
+ned on input line 293.
 
-<images/demi_disc_second_phi_second.pdf, id=223, 1475.5125pt x 739.76375pt>
+<images/demi_disc_second_phi_second.pdf, id=221, 1475.5125pt x 739.76375pt>
 File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_second.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
-line 304.
+line 298.
 (pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Citation `marcon2019high' on page 9 undefined on input line 316.
+LaTeX Warning: Citation `marcon2019high' on page 8 undefined on input line 310.
 
 
-[9 <./images/stream_1.png>]
+[8 <./images/triangle separatrices 3.png> <./images/triangle separatrices 5.png
+>] [9 <./images/stream_1.png> <./images/demi_disc_second_phi_first.pdf> <./imag
+es/demi_disc_second_phi_second.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_second_phi_second.pd
+f): PDF inclusion: multiple pdfs with page group included in a single page
+>]
 File: images/demi_disc_second_phi_first.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_first.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_first.pdf  used on input l
-ine 323.
+ine 317.
 (pdftex.def)             Requested size: 295.90588pt x 155.49353pt.
+File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
+<use images/demi_disc_second_phi_second.pdf>
+Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
+line 323.
+(pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
 File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_second.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
 line 329.
 (pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
-File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
-<use images/demi_disc_second_phi_second.pdf>
-Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
-line 335.
-(pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
 
 
 LaTeX Warning: Reference `eqn:principe_def_phi' on page 10 undefined on input l
-ine 339.
+ine 333.
 
 
 LaTeX Warning: Reference `eqn:principe_def_phi' on page 10 undefined on input l
-ine 339.
+ine 333.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--351
+Underfull \hbox (badness 10000) in paragraph at lines 340--345
 
  []
 
-[10 <./images/demi_disc_second_phi_first.pdf> <./images/demi_disc_second_phi_se
-cond.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_second_phi_second.pd
-f): PDF inclusion: multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Reference `chap:theoritical' on page 11 undefined on input line 
+LaTeX Warning: Reference `chap:theoritical' on page 10 undefined on input line 
 356.
 
-[11]
+[10] [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 405.
@@ -2666,7 +2599,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
-[12]
+
 Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
@@ -2686,7 +2619,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
@@ -2704,18 +2637,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 494--495
 LaTeX Warning: Reference `chap:theoritical' on page 15 undefined on input line 
 496.
 
-<images/Omega_h_tilde.png, id=286, 512.91624pt x 211.79124pt>
+<images/Omega_h_tilde.png, id=293, 512.91624pt x 211.79124pt>
 File: images/Omega_h_tilde.png Graphic file (type png)
 <use images/Omega_h_tilde.png>
 Package pdftex.def Info: images/Omega_h_tilde.png  used on input line 526.
 (pdftex.def)             Requested size: 333.3916pt x 137.66267pt.
 [15 <./images/Omega_h_tilde.png>]
-<images/nacas_normal.png, id=296, 309.85762pt x 157.18726pt>
+<images/nacas_normal.png, id=303, 309.85762pt x 157.18726pt>
 File: images/nacas_normal.png Graphic file (type png)
 <use images/nacas_normal.png>
 Package pdftex.def Info: images/nacas_normal.png  used on input line 568.
 (pdftex.def)             Requested size: 201.40504pt x 102.17049pt.
-<images/naca_obus.png, id=297, 309.85762pt x 157.18726pt>
+<images/naca_obus.png, id=304, 309.85762pt x 157.18726pt>
 File: images/naca_obus.png Graphic file (type png)
 <use images/naca_obus.png>
 Package pdftex.def Info: images/naca_obus.png  used on input line 569.
@@ -2732,7 +2665,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 574--576
 
  []
 
-<images/inspi_1.png, id=298, 245.11575pt x 137.313pt>
+<images/inspi_1.png, id=305, 245.11575pt x 137.313pt>
 File: images/inspi_1.png Graphic file (type png)
 <use images/inspi_1.png>
 Package pdftex.def Info: images/inspi_1.png  used on input line 588.
@@ -2904,13 +2837,13 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 547A9AE9F988A1E95076BDFED2B9DDA4;2947.
+(rerunfilecheck)             Checksum: 8422A977BC5CAC66A2928CC30805715E;3207.
  ) 
 Here is how much of TeX's memory you used:
- 69595 strings out of 478287
- 1562558 string characters out of 5849288
- 2184790 words of memory out of 5000000
- 86258 multiletter control sequences out of 15000+600000
+ 69598 strings out of 478287
+ 1562602 string characters out of 5849288
+ 2185780 words of memory out of 5000000
+ 86259 multiletter control sequences out of 15000+600000
  499195 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,20n,122p,1283b,906s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2941,10 +2874,10 @@ rm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/stmaryrd/stmary8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on main.pdf (24 pages, 1447184 bytes).
+Output written on main.pdf (24 pages, 1451907 bytes).
 PDF statistics:
- 562 PDF objects out of 1000 (max. 8388607)
- 428 compressed objects within 5 object streams
- 146 named destinations out of 1000 (max. 500000)
- 322 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 569 PDF objects out of 1000 (max. 8388607)
+ 435 compressed objects within 5 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 330 words of extra memory for PDF output out of 10000 (max. 10000000)
 
