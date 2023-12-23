@@ -14,7 +14,11 @@ Soit $\Omega$ un domaine compact et connexe de $\mathbb{R}^2$ dont le bord $\par
 
 \subsection{Maillage triangulaire}
 
-Considérons maintenant une triangulation $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ et on note $V$ l'ensemble des sommets de $\Omega_h$, $E$ l'ensemble des arêtes, et $F$ l'ensemble des triangles fermés non vide composant $\Omega_h$. On suppose que tout les sommets de $\Omega_h$ appartiennent à $\Omega$ ($V\subset\Omega$) et que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. $h$ représente le diamètre maximal des triangles constituant $\Omega_h$. Pour tout $p\in\Omega_h$, on désigne par $F_p$ l'ensemble des triangles de $\Omega_h$ contenant $p$.
+Considérons maintenant un maillage triangulaire $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ représentant une triangulation conforme de $\Omega$. Autrement dit, $\Omega_h$ formé par l'union de $N_t$ triangles fermés non vide: $\Omega_h=\cup_{k=1}^{N_t}T_k$ tel que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. De plus, tous les sommets de $\Omega_h$ appartiennent à $\Omega$. Nous noterons $\mathcal{T}_h$ l'ensemble des triangles formant $\Omega_h$, l'indice $h$ faisant référence à la finesse du maillage, que l’on définit par le diamètre maximal des triangles constituant $\Omega_h$.
+$$
+h:=\max_{T\in\mathcal{T}_h} diam(T)
+$$
+Le diamètre d’un triangle est la distance maximale entre deux points du triangle. Nous notons de plus $\mathcal{A}_h$ et $\mathcal{S}_h$ les ensembles respectivement des sommets et des arêtes de $\Omega_h$. Pour tout $p\in\Omega_h$, Nous désignons par $T_p$ la partie du plan formé par l'ensemble des triangles de $\Omega_h$ contenant $p$: $T_p=\displaystyle\cup_{T\in\mathcal{T}_h\atop~p\in T~}T$.
 
 \subsection{Champ de croix}
 
@@ -26,19 +30,20 @@ $$
 \{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}:=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
 $$
 \end{definition}
-Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini si $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$. $\delta\theta(\mathbf{c}_1, \mathbf{c}_2)$ représente la variation d'angle entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a:
+Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini lorsque $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$. Cette fonction mesure la variation angulaire entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a:
 $$
 \theta_{\mathbf{c}_2}=\theta_{\mathbf{c}_1}+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
 $$
-Dans tout la suite, nous imposons les contraintes suivantes sur le maillage $\Omega_h$ :\\[-0.2cm]
+Dans toute la suite, nous imposons les contraintes suivantes sur le maillage $\Omega_h$ :\\[-0.2cm]
 \begin{itemize}
- \item pour chaque arête $e\in E$ de sommets $s_1$ et $s_2$, on doit avoir $\bar{u}(s_1)\neq 0$ ou $\bar{u}(s_2)\neq 0$\\[-0.2cm]
- \item de plus, si $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, alors $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ doit être défini.\\[-0.2cm]
+ \item pour chaque arête $a\in\mathcal{A}_h$ délimitée par les sommets $s_1$ et $s_2$, il est requis que $\bar{u}(s_1)\neq 0$ ou $\bar{u}(s_2)\neq 0$.\\[-0.2cm]
+ \item De plus, dans le cas où $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, la quantité $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ doit être définie.\\[-0.2cm]
 \end{itemize}
 Dans la pratique, il sera donc impératif d'affiner ou de modifier localement un maillage qui ne satisfait pas ces contraintes. La pertinence de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$. Nous introduisons à présent le concept de triangle singulier avec la définition suivante :
 
 \begin{definition}
- Un triangle $T$ de $\Omega_h$ et de sommets $s_1$, $s_2$ et $s_3$ est dit singulier si l'une des assertions suivantes est vérifiée:\\[-0.2cm]
+\label{def:triangle_singulier}
+ Un triangle $T$ de $\mathcal{T}_h$ et de sommets $s_1$, $s_2$ et $s_3$ est dit singulier si l'une des assertions suivantes est vérifiée:\\[-0.2cm]
  \begin{itemize}
   \item[i.)] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$,\\[-0.2cm]
   \item[ii.)] $\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$.
@@ -47,8 +52,8 @@ Dans la pratique, il sera donc impératif d'affiner ou de modifier localement un
 \end{definition}
 Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$ défini pour tout $p\in\Omega_h$ par:\\
 \begin{itemize}
-\item[$\bullet$] si $p\in V$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
-\item[$\bullet$] si $p\in e$, où $e\in E$ est une arête de $\Omega_h$ de sommets $s_1$ et $s_2$, alors on a:
+\item[$\bullet$] si $p\in\mathcal{S}_h$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
+\item[$\bullet$] si $p\in a$, où $a\in\mathcal{A}_h$ est une arête de sommets $s_1$ et $s_2$, alors on a:
 $$
 \left\{
 \begin{array}{l}
@@ -58,7 +63,7 @@ $$
 \right.
 $$
 %\\[-0.2cm]
-\item[$\bullet$] si $p\in T$ où $T$ est un triangle de $\Omega_h$ non-singulier, alors on pose :%\\[-0.3cm]
+\item[$\bullet$] si $p\in T$ où $T\in\mathcal{T}_h$ est un triangle non-singulier, alors on pose :%\\[-0.3cm]
 $$
 \left\{
 \begin{array}{l}
@@ -79,17 +84,17 @@ $$
 $$
 avec $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans le triangle $T$. Autrement dit, ils vérifient $p=\sum_{i=1}^3\lambda_i s_i$ et $\sum_{i=1}^3\lambda_i=1$.
 \\[-0.2cm]
-\item[$\bullet$] si $p\in T$ avec $T$ un triangle singulier de $\Omega_h$ et $p$ barycentre de $T$ (c'est à dire $p=1/3(s_1+s_2+s_3)$ avec $s_1$, $s_2$ et $s_3$ les sommets de $T$) alors on pose $\bar{u}_h(p)=0$.\\[-0.2cm]
-\item[$\bullet$] sinon, il existe $q\in T$ tel que $\bar{u}_h(q)=0$ avec $T$ est un triangle de $\Omega_h$ contenant $p$. La croix $\bar{u}_h(p)$ est alors donnée par:
+\item[$\bullet$] si $p\in T$ avec $T\in\mathcal{T}_h$ un triangle singulier  et $p$ barycentre de $T$ (c'est à dire $p=1/3(s_1+s_2+s_3)$ avec $s_1$, $s_2$ et $s_3$ les sommets de $T$) alors on pose $\bar{u}_h(p)=0$.\\[-0.2cm]
+\item[$\bullet$] sinon $p$ appartient à un triangle singulier $T$ tel qu'il existe $q\in T$ avec $\bar{u}_h(q)=0$. La croix $\bar{u}_h(p)$ est alors donnée par:
 $$
 \left\{
 \begin{array}{l}
 \bar{u}_h(p)=\bar{u}_h(\widetilde{p}),\\\\
-\{\widetilde{p}\}=[qp)\cap\partial F_q.
+\{\widetilde{p}\}=[qp)\cap\partial T_q.
 \end{array}
 \right.
 $$
-Noter que l'ensemble $[qp)\cap\partial F_q$ est bien réduit à un singleton puisque $F_q$ est une réunion de simplexes donc convexe.
+Noter que l'ensemble $[qp)\cap\partial T_q$ est bien réduit à un singleton puisque $T_q$ est une réunion de simplexes donc convexe.
 \end{itemize}
 
 \begin{remark}
@@ -137,27 +142,28 @@ L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singul
     Les points singuliers de $\bar{u}_h$ sont isolés.
 \end{lemma}
 \begin{proof}
-    Soit $q$ un point singulier de $\bar{u}_h$. Le point $q$ est isolé puisque par construction, on a $F_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$. En effet, pour tout $p\in F_q\backslash\{q\}$ on a $\bar{u}_h(p)=\bar{u}_h(\widetilde{p})$ où $\widetilde{p}$ est le point d'intersection entre la demi-droite $[qp)$ et le bord $\partial F_q$ de $F_q$. Il existe donc une arête $e$ de $\Omega_h$ vérifiant $\{e\}\subset E\cap\partial F_q$ et contenant le point $\widetilde{p}$. Par ailleurs pour tout $r\in e$, on a $\bar{u}_h(r)\neq 0$ par construction puisque $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ (avec $s_1$ et $s_2$ les sommets de $e$). Il vient alors que $\bar{u}_h(\widetilde{p})\neq 0$ et par conséquent $p\notin \mathcal{S}_{\bar{u}_h}$. Autrement dit, $F_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$.
+    Soit $q$ un point singulier de $\bar{u}_h$. Le point $q$ est isolé puisque par construction, on a $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$. En effet, pour tout $p\in T_q\backslash\{q\}$ on a $\bar{u}_h(p)=\bar{u}_h(\widetilde{p})$ où $\widetilde{p}$ est le point d'intersection entre la demi-droite $[qp)$ et le bord $\partial T_q$ de $F_q$. Il existe donc une arête $a\in\mathcal{A}_h$ vérifiant $\{a\}\subset\partial T_q$ et contenant le point $\widetilde{p}$. Par ailleurs pour tout $r\in a$, on a $\bar{u}_h(r)\neq 0$ par construction puisque $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ (avec $s_1$ et $s_2$ les sommets de $a$). Il vient alors que $\bar{u}_h(\widetilde{p})\neq 0$ et par conséquent $p\notin \mathcal{S}_{\bar{u}_h}$. Autrement dit, $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$.
 \end{proof}
 
 Examinons à présent l'indice des points singuliers de $\bar{u}_h$. Soit $p$ un point singulier de $\bar{u}_h$ avec $p\in\Omega_h\backslash\partial\Omega_h$. L'indice de $p$ est donné par:
 $$
-id_{\bar{u}_h}(p)=\int_0^1 d\theta^\gamma_{\bar{u}_h}=\sum_{\mathcal{C}\in F_p\cap\gamma}\int_0^1 d\theta^{\mathcal{C}}_{\bar{u}_h}.
+id_{\bar{u}_h}(p)=\frac{1}{2\pi}\int_0^1 d\theta^\gamma_{\bar{u}_h}=\frac{1}{2\pi}\sum_{\gamma_T\in\{\gamma\cap T,~T\in\mathcal{T}_h\}}\int_0^1 d\theta^{\gamma_T}_{\bar{u}_h}.
 $$
 où $\gamma$ est un chemin fermé paramétré sur $[0, 1]$ englobant $p$ et ne contenant aucun autre point singulier de $\bar{u}_h$. En pratique, nous calculerons l'indice d'un point $p$ en utilisant une paramétrisation $\gamma$ du bord $\partial F_p$ de $F_p$. De ce fait, l'indice du point $p$ s'écrit:
 \begin{equation}
-    id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\displaystyle\sum_{i=1}^{n_{S_p}}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)=\displaystyle\frac{1}{2\pi}\sum\Delta,
+    \label{eqn:ind_int}
+    id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)=\displaystyle\frac{1}{2\pi}\sum_{i=1}^{n_s}\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1})),
 \end{equation}
- Soit $S_p=(s_i)_{i\in\llbracket 1, n_{S_p}\rrbracket}$ l'ensemble des sommets des triangles de $F_p$, privés du point $p$, et numérotés dans le sens anti-horaire.  Il vient alors que:
-où  nous avons défini $s_{n_{S_p}+1}:=s_1$.
+où $(s_i)_{i\in\llbracket 1, n_s\rrbracket}=\mathcal{S}_h\cap\partial T_p$ désigne l'ensemble des sommets des triangles formant $T_p$, privés du point $p$, et numérotés dans le sens positif avec $s_{n_s+1}:=s_1$.
 Si $p\in\partial\Omega_h$ alors l'indice de $p$ est donné par:
 \begin{equation}
-    id_{\bar{u}_h}(p)=\pi-\widehat{p}+\displaystyle\frac{1}{2\pi}\displaystyle\sum_{i=1}^{n_{S_p}}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right),
+    \label{eqn:ind_bord}
+    id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right],
 \end{equation}
 où $\gamma$ dans ce cas est la paramétrisation de $\partial F_p\backslash\partial\Omega_h$. C'est à dire la partie de $\partial F_p$ se trouvant à l'intérieur de $\Omega_h$.
 
 \begin{proposition}
-    Pour tout $p\in\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\llbracket -d, d\rrbracket$ où $d=\#(\partial F_p\cap E)$ si $p\in\Omega_h\backslash\partial\Omega_h$ et $d=\#((\partial F_p\backslash\partial\Omega_h)\cap E)$ si $p\in\partial\Omega_h$.
+    Pour tout $p\in\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\llbracket -d, d\rrbracket$ où $d=\#(\mathcal{P}(\partial F_p)\cap E)$ si $p\in\Omega_h\backslash\partial\Omega_h$ et $d=\#((\partial F_p\backslash\partial\Omega_h)\cap E)$ si $p\in\partial\Omega_h$.
 \end{proposition}
 
 \begin{proof}
@@ -168,9 +174,10 @@ où $\gamma$ dans ce cas est la paramétrisation de $\partial F_p\backslash\part
 Illustrer les singularité se démultipliant  en coloriant juste les triangles et en disant qu'on a pas besoin de la localisation spécifique.\\
 
 Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$ dans $\Omega_h$. \'Etant donné un point $p_0\in\Omega_h$ et un vecteur $\overrightarrow{u_0}\in\mathbb{R}^2$, la ligne de champ $SL(p_0, \overrightarrow{u_0})$ d'origine $p_0$ sera représenté par 
+
 \section{Partitionnement de $\partial\Omega_h$}
 
-L'adaptation de l'algorithme \ref{alg:algo_main} au maillage $\Omega_h$ est donné par:\\
+L'adaptation de l'algorithme de partitionnement \ref{alg:algo_main} au maillage $\Omega_h$ est donné par:\\
 
 \begin{algorithm}[H]
 \label{alg:discr_algo_main}
@@ -190,20 +197,19 @@ On considère que l'algorithme a convergé si les séparatrices ne convergent pa
 
 \subsection{Recherche de points singuliers}
 
-Étant donné que pour tout $p\in\Omega_h$, $\bar{u}_h(p)=0$ si et seulement si $g(p)=0$, rechercher les points singuliers de $\bar{u}_h$ revient à trouver les zéros de la fonction $g$. Puisque cette dernière est linéaire sur chaque triangle de $\Omega_h$, la recherche de ces points peut être effectuée localement sur chaque triangle comme suit : Soit $\mathcal{T}$ un triangle de $\Omega_h$ avec des sommets $s_1$, $s_2$ et $s_3$. S'il existe $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}\subset[0, 1]$ vérifiant le système suivant :
-\begin{equation}
-    \left\{
-    \begin{array}{lcl}
-    \displaystyle\sum_{i=1}^3\lambda_i g(s_i) & = & 0,\\[0.3cm]
-    \displaystyle\sum_{i=1}^3\lambda_i & = & 1,
-    \end{array}
-    \right.
-\end{equation}
-alors le point $p=\sum_{i=1}^3\lambda_i s_i$ est un point singulier de $\bar{u}_h$ situé dans le triangle $\mathcal{T}$.\\
+Par construction, les points singuliers du champ de croix $\bar{u}_h$ se situent soit aux sommets du maillage $\Omega_h$, soit à l'intérieur des triangles qui le constituent.En pratique, la recherche de ces points peut être effectuée localement sur chaque triangle. Cela implique de tester le caractère singulier ou non de chaque triangle (voir la définition \ref{def:triangle_singulier}). Considérons $T\in\mathcal{T}_h$ comme un triangle singulier de $\Omega_h$. Par conception, il contient nécessairement un point singulier. Nous distinguons alors deux cas :\\
+\begin{itemize}
+ \item le point singulier correspond à l'un des sommets du triangle $T$.\\
+ \item sinon, le point singulier se trouve à l'intérieur du triangle. Conformément à notre représentation de $\bar{u}_h$, dans ce cas précis, il s'agit du barycentre du triangle. Cependant rien empêche de choisir un autre point à l'intérieur du triangle tout en modifiant le calcul des valeurs du champ dans le triangle.
+\end{itemize}
+Remarquons que tous les points singuliers de bord sont sur des sommets.
+
+Une fois la localisation des points singulier identifié, on peut facilement calculé leur index grâce aux formules \ref{eqn:ind_int} ou \ref{eqn:ind_bord} en fonction de leur localisation.
 
 \begin{remark}
-    Grace à la proposition on peut chosir l'emplacement du point singulier dans $F_p$. en l'occurence, pour ne pas avoir à en faire la recherche on peut choisir le barycentre du triangle.\\
+    Grace à la proposition on peut chosir l'emplacement du point singulier dans $T_p$. en l'occurence, pour ne pas avoir à en faire la recherche on peut choisir le barycentre du triangle.\\
 \end{remark}
+
 
 On peut rasssembler plusieurs singularité voisine en une.. permet d'éviter les problématiques de point trop proche par exemple.
 Illustrer tout ça 
@@ -225,21 +231,19 @@ Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la
 
 \paragraph{Directions initiales:}
 
-Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0a_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(a_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial F_{p_0}$ est construite de la manière suivante:\\
+Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0q_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(q_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial T_{p_0}$ est construite de la manière suivante (voir figure \ref{fig:init_streams}):\\
 \begin{itemize}
-    \item[$\bullet$] le premier point $a_1$ est tout point de $\partial F_{p_0}$ tel que $\overrightarrow{p_0a_1}.\|\overrightarrow{p_0a_1}\|^{-1}\in\bar{u}_h(a_1)$\\
-    \item[$\bullet$] soit $t_1\in[0, 1]$ tel que $\gamma(t_1)=a_1$. Pour tout $i\in\llbracket 2, N_s(p_0)\rrbracket$, on a:
+    \item[$\bullet$] le premier point $q_1$ est tout point de $\partial T_{p_0}$ tel que $\overrightarrow{p_0q_1}.\|\overrightarrow{p_0q_1}\|^{-1}\in\bar{u}_h(q_1)$\\
+    \item[$\bullet$] soit $t_1\in[0, 1]$ tel que $\gamma(t_1)=q_1$. Pour tout $i\in\llbracket 2, N_s(p_0)\rrbracket$, on a:
     $$
-    a_i=\gamma(t_i)\mbox{ avec }\int_{t_{i-1}}^{t_i}dW_{p_0}^\gamma=-\frac{\pi}{2},
+    q_i=\gamma(t_i)\mbox{ avec }\int_{t_{i-1}}^{t_i}dW_{p_0}^\gamma=-\frac{\pi}{2},
     $$
-    où $\gamma$ est une paramétrisation de $\partial F_{p_0}$ sur $[0, 1]$ dans le sens anti-horaire et la fonction $W^\gamma_{p_0}$ est donné pour tout $t\in[0, 1]$ par:
+    où $\gamma$ est une paramétrisation de $\partial T_{p_0}$ sur $[0, 1]$ dans le sens positif et la fonction $W^\gamma_{p_0}$ est donné pour tout $t\in[0, 1]$ par:
     $$
     W_{p_0}^\gamma(t)=\theta^\gamma_{\bar{u}_h}(t)-\arg \overrightarrow{p_0\gamma(t)}.
     $$
-\end{itemize}
-Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
 
-\begin{figure}
+\begin{figure}[!h]
      \centering
      \begin{subfigure}[b]{0.49\textwidth}
          \centering
@@ -255,16 +259,23 @@ Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
          \label{fig:three sin x}
      \end{subfigure}
         \caption{Three simple graphs}
-        \label{fig:three graphs}
+        \label{fig:init_streams}
 \end{figure}
+
+\end{itemize}
+Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
+
+\color{red}
 On veut etre mesh tri aussi grossier quer possible donc mailler le vrai domaine et non le mesh tri
+\color{black}
+
 \paragraph{Intégration des séparatrices:} Considérons $SL_{\bar{u}_h}(p_0,\overrightarrow{p_0p_1})$ la séparatrice émanant de $p_0$ dans la direction du vecteur $\overrightarrow{p_0p_1}$, où $p_1\in\partial F{p_0}$. Nous procédons à la construction d'une approximation $SL^h_{\bar{u}_h}(p_0, \overrightarrow{p_0p_1})$ de $SL_{\bar{u}_h}(p_0, \overrightarrow{p_0p_1})$ sur $\Omega_h$ sous la forme d'une succession de segments. Le premier segment est représenté par $[p_0p_1]$. Ensuite, pour tout $i\geq 1$, on construit le segment  $[p_ip_{i+1}]$ en cherchant le point $p_{i+1}$ comme le point d'intersection entre $\partial F_{p_i}$ et la demi-droite d'origine $p_i$ et dirigée par le vecteur $P(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})+P(\bar{u}_h(p'_{i+1}), \overrightarrow{p_{i-1}p_i})$. Dans cette formule, $p'_{i+1}$ est le point d'intersection entre $\partial F_{p_i}$ et la demi-droite d'origine $p_i$ et dirigé par le vecteur $P(\bar{u}_h(p_i), d_i)$ et pour tout $(\mathbf{c},d)\in\mathbf{C}\backslash\{0\}\times\mathbb{R}^2$, $P(\mathbf{c}, d)$ désigne le vecteur $\mathbf{c}$ qui s'aligne le mieux avec la direction $d$. Autrement dit, il s'agit de l'unique élément de l'ensemble
 $$
 \left\{c_k~ |~ c_k = \displaystyle\min_{k\in\llbracket 0, 3\rrbracket}|c_k.d-1|\right\}=\underset{c_k\in\mathbf{c},k\in\llbracket1, 4\rrbracket}{\mathrm{argmin}}|c_k.d-1|.
 $$
-La figure \ref{fig:draw_stream} illustre la construction du segment $[p_ip_{i+1}]$.
+La figure \ref{fig:draw_streams} illustre la construction du segment $[p_ip_{i+1}]$.
 
-\begin{figure}
+\begin{figure}[!h]
      \centering
      \begin{subfigure}[b]{0.49\textwidth}
          \centering
@@ -280,7 +291,7 @@ La figure \ref{fig:draw_stream} illustre la construction du segment $[p_ip_{i+1}
          \label{fig:three sin x}
      \end{subfigure}
         \caption{Three simple graphs}
-        \label{fig:draw_stream}
+        \label{fig:draw_streams}
 \end{figure}
 
 

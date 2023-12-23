@@ -1,0 +1,18 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Représentation discrète}{\reset@font\mtcSfont 55}{section.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.1}Maillage triangulaire}{\reset@font\mtcSSfont 56}{subsection.2.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.1.2}Champ de croix}{\reset@font\mtcSSfont 56}{subsection.2.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Partitionnement de $\partial \Omega _h$}{\reset@font\mtcSfont 58}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Recherche de points singuliers}{\reset@font\mtcSSfont 59}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Construction des séparatrices}{\reset@font\mtcSSfont 59}{subsection.2.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Nombre de séparatrices:}{\reset@font\mtcPfont 60}{section*.36}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Directions initiales:}{\reset@font\mtcPfont 60}{section*.37}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Intégration des séparatrices:}{\reset@font\mtcPfont 61}{section*.39}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Traversé d'un triangle singulier:}{\reset@font\mtcPfont 61}{section*.42}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Fusion de séparatrices:}{\reset@font\mtcPfont 61}{section*.43}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Assemblage des partitions}{\reset@font\mtcSSfont 62}{subsection.2.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.4}Génération du maillage quadrilatéral}{\reset@font\mtcSSfont 64}{subsection.2.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Opération d'alignement}{\reset@font\mtcSfont 64}{section.2.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Etude de la méthode}{\reset@font\mtcSfont 65}{section.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.1}Analyse de convergence}{\reset@font\mtcSSfont 65}{subsection.2.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.2}Lien entre $\overline {u}$ et $\overline {u}_h$}{\reset@font\mtcSSfont 65}{subsection.2.4.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.5}Génération de champs de croix}{\reset@font\mtcSfont 65}{section.2.5}}
