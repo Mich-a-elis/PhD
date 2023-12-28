@@ -50,7 +50,8 @@ Dans la pratique, il sera donc impératif d'affiner ou de modifier localement un
  \end{itemize}
 
 \end{definition}
-Nous représentons le champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix noté $\bar{u}_h$ défini pour tout $p\in\Omega_h$ par:\\
+
+Avec ces concepts en main, nous décrivons à présent la représentation du champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix $\bar{u}_h$. Ce dernier est défini pour tout $p\in\Omega_h$ par :\\
 \begin{itemize}
 \item[$\bullet$] si $p\in\mathcal{S}_h$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
 \item[$\bullet$] si $p\in a$, où $a\in\mathcal{A}_h$ est une arête de sommets $s_1$ et $s_2$, alors on a:
@@ -71,7 +72,7 @@ $$
 \theta_2 = \theta_1 + \delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2))\\\\
 \theta_3 = \theta_2 + \delta\theta(\bar{u}_h(s_2),\bar{u}_h(s_3))
 \end{array}
-\right
+\right.
 $$
 où $s_1$, $s_2$ et $s_3$ sont les sommets du triangle $T$. La croix $\bar{u}_h(p)$ est alors donnée par :
 $$
@@ -98,7 +99,7 @@ Noter que l'ensemble $[qp)\cap\partial T_q$ est bien réduit à un singleton pui
 \end{itemize}
 
 \begin{remark}
- Sur la pertinence des restrictions sur le maillage trianglulaire.
+La variation angulaire du champ de croix le long des arêtes du maillage constitue le fondement de la représentation mentionnée précédemment. Il est donc essentiel de pouvoir définir les croix en chaque point le long de chaque arête, d'où la pertinence des contraintes imposées au maillage précédemment évoquées.
 \end{remark}
 
 
@@ -135,14 +136,14 @@ où $g$ est définie pour tout $p\in\Omega_h$ par:
 avec $(s_i)_{i\in\llbracket 1, 3\rrbracket}$ les sommets d'un triangle de $\Omega_h$ contenant $p$ et $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans ce triangle. Remarquons que le champ de croix $\bar{u}_h$ ainsi défini est presque-$\mathcal{C}^1$ sur chaque triangle puisque $g$ est linéaire sur chaque triangle.
 \end{comment}
 
-\subsection*{Points singuliers, indice et ligne de champs}
+\subsection{Points singuliers, indice et ligne de champs}
 
 L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singuliers de $\bar{u}_h$, est constitué des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$.
 \begin{lemma}
     Les points singuliers de $\bar{u}_h$ sont isolés.
 \end{lemma}
 \begin{proof}
-    Soit $q$ un point singulier de $\bar{u}_h$. Le point $q$ est isolé puisque par construction, on a $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$. En effet, pour tout $p\in T_q\backslash\{q\}$ on a $\bar{u}_h(p)=\bar{u}_h(\widetilde{p})$ où $\widetilde{p}$ est le point d'intersection entre la demi-droite $[qp)$ et le bord $\partial T_q$ de $F_q$. Il existe donc une arête $a\in\mathcal{A}_h$ vérifiant $\{a\}\subset\partial T_q$ et contenant le point $\widetilde{p}$. Par ailleurs pour tout $r\in a$, on a $\bar{u}_h(r)\neq 0$ par construction puisque $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ (avec $s_1$ et $s_2$ les sommets de $a$). Il vient alors que $\bar{u}_h(\widetilde{p})\neq 0$ et par conséquent $p\notin \mathcal{S}_{\bar{u}_h}$. Autrement dit, $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$.
+    Soit $q$ un point singulier de $\bar{u}_h$. Le point $q$ est isolé puisque par construction, on a $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$. En effet, pour tout $p\in T_q\backslash\{q\}$ on a $\bar{u}_h(p)=\bar{u}_h(\widetilde{p})$ où $\widetilde{p}$ est le point d'intersection entre la demi-droite $[qp)$ et le bord $\partial T_q$ de $F_q$. Il existe donc une arête $a\in\mathcal{A}_h$ vérifiant $a\subset\partial T_q$ et contenant le point $\widetilde{p}$. Par ailleurs pour tout $r\in a$, on a $\bar{u}_h(r)\neq 0$ par construction puisque $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ (avec $s_1$ et $s_2$ les sommets de $a$). Il vient alors que $\bar{u}_h(\widetilde{p})\neq 0$ et par conséquent $p\notin \mathcal{S}_{\bar{u}_h}$. Autrement dit, $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$.
 \end{proof}
 
 Examinons à présent l'indice des points singuliers de $\bar{u}_h$. Soit $p$ un point singulier de $\bar{u}_h$ avec $p\in\Omega_h\backslash\partial\Omega_h$. L'indice de $p$ est donné par:
@@ -158,22 +159,82 @@ où $(s_i)_{i\in\llbracket 1, n_s\rrbracket}=\mathcal{S}_h\cap\partial T_p$ dés
 Si $p\in\partial\Omega_h$ alors l'indice de $p$ est donné par:
 \begin{equation}
     \label{eqn:ind_bord}
-    id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right],
+    id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right]=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right],
 \end{equation}
-où $\gamma$ dans ce cas est la paramétrisation de $\partial F_p\backslash\partial\Omega_h$. C'est à dire la partie de $\partial F_p$ se trouvant à l'intérieur de $\Omega_h$.
+où $\gamma$ dans ce cas est la paramétrisation de $\partial T_p\backslash\partial\Omega_h$ (c'est à dire la partie de $\partial T_p$ se trouvant à l'intérieur de $\Omega_h$) et $(s_i)_{i\in\llbracket 1, n_s\rrbracket}$ l'ensemble des sommets de $\Omega_h$ appartenant à $\partial T_p\backslash\partial\Omega_h$.
 
 \begin{proposition}
-    Pour tout $p\in\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\llbracket -d, d\rrbracket$ où $d=\#(\mathcal{P}(\partial F_p)\cap E)$ si $p\in\Omega_h\backslash\partial\Omega_h$ et $d=\#((\partial F_p\backslash\partial\Omega_h)\cap E)$ si $p\in\partial\Omega_h$.
+    Pour tout $p\in\Omega_h\backslash\partial\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\rrbracket -n_a/4, n_a/4\llbracket$ où $n_a$ est le nombre d'arête inclut dans $\partial T_p$.
 \end{proposition}
 
 \begin{proof}
-    Si $F_p$ est réduit à un unique triangle, alors on a $n$
+Soit $p\in\Omega_h$. On sait que:
+$$
+id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\sum_{i=1}^{n_s}\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1})).
+$$
+Or pour tout $i\in\llbracket 1, n_s\rrbracket$, on a $\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1}))\in]-\frac{\pi}{4}, \frac{\pi}{4}[$. Autrement dit,
+$$
+\displaystyle\frac{1}{2\pi}\sum_{i=1}^{n_s}\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1}))\in\left]-\frac{n_s}{8}, \frac{n_s}{8}\right[.
+$$
+Or on sait que $4id_{\bar{u}_h}\in\mathbb{Z}$ et $n_s=n_a$. Par conséquent,
+$$
+4id_{\bar{u}_h}(p)\in\left\rrbracket-\frac{n_a}{4}, \frac{n_a}{4}\right\llbracket.
+$$
 \end{proof}
+Un corollaire direct de la proposition précédente est que si un point singulier est localiser à l'intérieur d'un triangle alors les seuls indices possible pour ce point sont $-1/4, 0$ et $1/4$.
+
+Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$ dans $\Omega_h$. Rappelons que étant donné un point $p_0\in\Omega_h$ et un vecteur $\overrightarrow{u_0}\in\mathbb{R}^2$, la ligne de champ $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ d'origine $p_0$ est la courbe $S$ telle que :
+
+\begin{enumerate}
+\item il existe $\pi_{\bar{u}_h}^S:\Omega\longrightarrow\mathbb{R}^2$ une application telle que $\pi_{\bar{u}_h}^S(p_0)=\overrightarrow{u_0}$ et pour tout $p\in Im S$ il existe un voisinnage $V_p$ de $p$ tel que:
+\begin{equation}
+\pi_{\bar{u}_h}^S\in\mathcal{C}^1(V_p) \mbox{ et }  \forall q\in V_p, \pi_{\bar{u}_h}^S(q)\in \bar{u}_h(q),
+\end{equation}
+\item $S$ est une solution maximale dans $\Omega$ de l'équation différentielle
+\begin{equation}
+\frac{dS(t)}{dt}=\pi_{\bar{u}_h}^S(S(t)),t\in \mathbb{R} \text{ et }  S(0)=p_0.
+\end{equation}
+\end{enumerate}
+Pour représenter cette ligne de champ, nous procédons à la construction d'une approximation $SL^h_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ de $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ sur $\Omega_h$ sous la forme d'une succession de segments. Le premier segment est représenté par $[p_0p_1]$ où $p_1$ est le point d'intersection entre $\partial T_{p_0}$ et la demi-droite d'origine $p_0$ et de vecteur directeur $\overrightarrow{u_0}$. Ensuite, pour tout $i\geq 1$, on construit le segment  $[p_ip_{i+1}]$ en cherchant le point $p_{i+1}$ comme le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigée par le vecteur
+$$
+\overrightarrow{u_i}=P(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})+P(\bar{u}_h(p'_{i+1}), \overrightarrow{p_{i-1}p_i}).
+$$
+Dans cette formule, $p'_{i+1}$ est le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigé par le vecteur $P(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})$ et pour tout $(\mathbf{c},d)\in\mathbf{C}\backslash\{0\}\times\mathbb{R}^2$, $P(\mathbf{c}, d)$ désigne le vecteur $\mathbf{c}$ qui s'aligne le mieux avec la direction $d$. Autrement dit, il s'agit de l'unique élément de l'ensemble
+$$
+\{\mathbf{P}(\mathbf{c}, d)\}=\left\{c_k~ |~ c_k = \displaystyle\min_{k\in\llbracket 0, 3\rrbracket}|c_k.d-1|\right\}=\underset{c_k\in\mathbf{c},k\in\llbracket1, 4\rrbracket}{\mathrm{argmin}}|c_k.d-1|.
+$$
+La figure \ref{fig:draw_streams} illustre la construction du segment $[p_ip_{i+1}]$.
+
+\begin{figure}[!h]
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/stream_1.png}
+         \caption{$y=x$}
+         \label{fig:y equals x}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/stream_1.png}
+         \caption{$y=3\sin x$}
+         \label{fig:three sin x}
+     \end{subfigure}
+        \caption{Three simple graphs}
+        \label{fig:draw_streams}
+\end{figure}
+
+
+\subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
+
+\begin{lemma}
+    $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{u}_h}$
+\end{lemma}
+
+Lorsque h tend vers 0, uh tend vers u\\z
 
 
 Illustrer les singularité se démultipliant  en coloriant juste les triangles et en disant qu'on a pas besoin de la localisation spécifique.\\
-
-Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$ dans $\Omega_h$. \'Etant donné un point $p_0\in\Omega_h$ et un vecteur $\overrightarrow{u_0}\in\mathbb{R}^2$, la ligne de champ $SL(p_0, \overrightarrow{u_0})$ d'origine $p_0$ sera représenté par 
 
 \section{Partitionnement de $\partial\Omega_h$}
 
@@ -231,7 +292,7 @@ Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la
 
 \paragraph{Directions initiales:}
 
-Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0q_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(q_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial T_{p_0}$ est construite de la manière suivante (voir figure \ref{fig:init_streams}):\\
+Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0q_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(q_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial T_{p_0}$ est construite de la manière suivante (voir figure \ref{fig:init_streams_int}):\\
 \begin{itemize}
     \item[$\bullet$] le premier point $q_1$ est tout point de $\partial T_{p_0}$ tel que $\overrightarrow{p_0q_1}.\|\overrightarrow{p_0q_1}\|^{-1}\in\bar{u}_h(q_1)$\\
     \item[$\bullet$] soit $t_1\in[0, 1]$ tel que $\gamma(t_1)=q_1$. Pour tout $i\in\llbracket 2, N_s(p_0)\rrbracket$, on a:
@@ -243,6 +304,7 @@ Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné qu
     W_{p_0}^\gamma(t)=\theta^\gamma_{\bar{u}_h}(t)-\arg \overrightarrow{p_0\gamma(t)}.
     $$
 
+\begin{comment}
 \begin{figure}[!h]
      \centering
      \begin{subfigure}[b]{0.49\textwidth}
@@ -261,38 +323,34 @@ Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné qu
         \caption{Three simple graphs}
         \label{fig:init_streams}
 \end{figure}
+\end{comment}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.755]{images/triangle separatrices 3.png}
+\includegraphics[scale=0.755]{images/triangle separatrices 5.png}
+\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
+\label{fig:init_streams_int}
+\end{figure}
 
 \end{itemize}
 Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
 
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.755]{images/triangle separatrices bord.png}
+\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
+\label{fig:init_streams_bord}
+\end{figure}
+
+
+
+15 min\\
 \color{red}
 On veut etre mesh tri aussi grossier quer possible donc mailler le vrai domaine et non le mesh tri
 \color{black}
 
-\paragraph{Intégration des séparatrices:} Considérons $SL_{\bar{u}_h}(p_0,\overrightarrow{p_0p_1})$ la séparatrice émanant de $p_0$ dans la direction du vecteur $\overrightarrow{p_0p_1}$, où $p_1\in\partial F{p_0}$. Nous procédons à la construction d'une approximation $SL^h_{\bar{u}_h}(p_0, \overrightarrow{p_0p_1})$ de $SL_{\bar{u}_h}(p_0, \overrightarrow{p_0p_1})$ sur $\Omega_h$ sous la forme d'une succession de segments. Le premier segment est représenté par $[p_0p_1]$. Ensuite, pour tout $i\geq 1$, on construit le segment  $[p_ip_{i+1}]$ en cherchant le point $p_{i+1}$ comme le point d'intersection entre $\partial F_{p_i}$ et la demi-droite d'origine $p_i$ et dirigée par le vecteur $P(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})+P(\bar{u}_h(p'_{i+1}), \overrightarrow{p_{i-1}p_i})$. Dans cette formule, $p'_{i+1}$ est le point d'intersection entre $\partial F_{p_i}$ et la demi-droite d'origine $p_i$ et dirigé par le vecteur $P(\bar{u}_h(p_i), d_i)$ et pour tout $(\mathbf{c},d)\in\mathbf{C}\backslash\{0\}\times\mathbb{R}^2$, $P(\mathbf{c}, d)$ désigne le vecteur $\mathbf{c}$ qui s'aligne le mieux avec la direction $d$. Autrement dit, il s'agit de l'unique élément de l'ensemble
-$$
-\left\{c_k~ |~ c_k = \displaystyle\min_{k\in\llbracket 0, 3\rrbracket}|c_k.d-1|\right\}=\underset{c_k\in\mathbf{c},k\in\llbracket1, 4\rrbracket}{\mathrm{argmin}}|c_k.d-1|.
-$$
-La figure \ref{fig:draw_streams} illustre la construction du segment $[p_ip_{i+1}]$.
-
-\begin{figure}[!h]
-     \centering
-     \begin{subfigure}[b]{0.49\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/stream_1.png}
-         \caption{$y=x$}
-         \label{fig:y equals x}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.49\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/stream_1.png}
-         \caption{$y=3\sin x$}
-         \label{fig:three sin x}
-     \end{subfigure}
-        \caption{Three simple graphs}
-        \label{fig:draw_streams}
-\end{figure}
+\paragraph{Intégration des séparatrices:}
 
 
 direction de sortie mieux chez moi que chez les autres
@@ -315,7 +373,7 @@ direction de sortie mieux chez moi que chez les autres
 \end{figure}
 
 
-\paragraph{Traversé d'un triangle singulier:} lorsque le segment $[p_ip_{i+1}]$ traverse un triangle singulier, l'angle du champ varie beaucoup. On remplace alors le segment en question par une succecion d'autre segment calculé en raffinant localement le maillage dans le triangle singulier.
+\paragraph{Traversé d'un triangle singulier:} lors de l'intégration d'une séparatrice, il peut arrivé que. lorsque le segment $[p_ip_{i+1}]$ traverse un triangle singulier, l'angle du champ varie beaucoup. On remplace alors le segment en question par une succecion d'autre segment calculé en raffinant localement le maillage dans le triangle singulier.
 
 \paragraph{Fusion de séparatrices:} 
 De manière similaire à ce qui est réalisé dans \cite{marcon2019high}, les séparatrices du champ de croix sont construites simultanément en incrémentant chacune d'elles progressivement, et la rencontre entre deux séparatrices est anticipée en comparant à chaque incrément, d'une part, la distance entre les derniers points calculés et, d'autre part, les directions des derniers segments construits. En d'autres termes, on cherche à déterminer si, à un moment donné, deux séparatrices données avancent dans des directions opposées et si elles sont suffisamment proches l'une de l'autre. On compare ces deux mesures à des seuils prédéfinis, et en fonction du résultat, on décide de fusionner ou non les deux séparatrices.
@@ -408,18 +466,8 @@ avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière e
 ne pas oublié thetah pour le non-simplement connexe
 
 
-\section{Etude de la méthode}
+\section{Analyse de convergence}
 
-\subsection{Analyse de convergence}
-
-
-\subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
-
-\begin{lemma}
-    $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{u}_h}$
-\end{lemma}
-
-Lorsque h tend vers 0, uh tend vers u\\
 
 champ de croix u isolé donc uh isolé\\
 
@@ -606,8 +654,7 @@ preserver les points singuliers\\
 Montrer simplement phi=N-U et sa trace\\
 deplacer ensuite les singularité vers où ion veut
 
-\[\]
-
+;\begin{comment}
 Complementary Operations
 Irregular Vertex Cancellation: We can move a v3 vertex to col-
 lide with a v5 vertex, or vice versa, by applying multiple pair-wise
@@ -647,3 +694,4 @@ Arizona State University
 Peter Wonka§
 Arizona State University /
 KAUST
+\end{comment}
