@@ -186,7 +186,7 @@ Un corollaire direct de la proposition précédente est que si un point singulie
 Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$ dans $\Omega_h$. Rappelons que étant donné un point $p_0\in\Omega_h$ et un vecteur $\overrightarrow{u_0}\in\mathbb{R}^2$, la ligne de champ $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ d'origine $p_0$ est la courbe $S$ telle que :
 
 \begin{enumerate}
-\item il existe $\pi_{\bar{u}_h}^S:\Omega\longrightarrow\mathbb{R}^2$ une application telle que $\pi_{\bar{u}_h}^S(p_0)=\overrightarrow{u_0}$ et pour tout $p\in Im S$ il existe un voisinnage $V_p$ de $p$ tel que:
+\item il existe $\pi_{\bar{u}_h}^S:\Omega_h\longrightarrow\mathbb{R}^2$ une application telle que $\pi_{\bar{u}_h}^S(p_0)=\overrightarrow{u_0}$ et pour tout $p\in Im S$ il existe un voisinnage $V_p$ de $p$ tel que:
 \begin{equation}
 \pi_{\bar{u}_h}^S\in\mathcal{C}^1(V_p) \mbox{ et }  \forall q\in V_p, \pi_{\bar{u}_h}^S(q)\in \bar{u}_h(q),
 \end{equation}
@@ -197,31 +197,49 @@ Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$
 \end{enumerate}
 Pour représenter cette ligne de champ, nous procédons à la construction d'une approximation $SL^h_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ de $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ sur $\Omega_h$ sous la forme d'une succession de segments. Le premier segment est représenté par $[p_0p_1]$ où $p_1$ est le point d'intersection entre $\partial T_{p_0}$ et la demi-droite d'origine $p_0$ et de vecteur directeur $\overrightarrow{u_0}$. Ensuite, pour tout $i\geq 1$, on construit le segment  $[p_ip_{i+1}]$ en cherchant le point $p_{i+1}$ comme le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigée par le vecteur
 $$
-\overrightarrow{u_i}=P(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})+P(\bar{u}_h(p'_{i+1}), \overrightarrow{p_{i-1}p_i}).
+\overrightarrow{u_i}=\mathbf{P}(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})+\mathbf{P}(\bar{u}_h(p'_{i+1}), \overrightarrow{p_{i-1}p_i}).
 $$
-Dans cette formule, $p'_{i+1}$ est le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigé par le vecteur $P(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})$ et pour tout $(\mathbf{c},d)\in\mathbf{C}\backslash\{0\}\times\mathbb{R}^2$, $P(\mathbf{c}, d)$ désigne le vecteur $\mathbf{c}$ qui s'aligne le mieux avec la direction $d$. Autrement dit, il s'agit de l'unique élément de l'ensemble
+Dans cette formule, $p'_{i+1}$ est le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigé par le vecteur $\mathbf{P}(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})$ et pour tout $(\mathbf{c},d)\in\mathbf{C}\backslash\{0\}\times\mathbb{R}^2$, $\mathbf{P}(\mathbf{c}, d)$ désigne le vecteur $\mathbf{c}$ qui s'aligne le mieux avec la direction $d$. Autrement dit, il s'agit de l'unique élément de l'ensemble
 $$
-\{\mathbf{P}(\mathbf{c}, d)\}=\left\{c_k~ |~ c_k = \displaystyle\min_{k\in\llbracket 0, 3\rrbracket}|c_k.d-1|\right\}=\underset{c_k\in\mathbf{c},k\in\llbracket1, 4\rrbracket}{\mathrm{argmin}}|c_k.d-1|.
+\{\mathbf{P}(\mathbf{c}, d)\}=\underset{c_k\in\mathbf{c},~k\in\llbracket1, 4\rrbracket}{\mathrm{argmin}}|c_k.d.\|d\|^{-1}-1|.
 $$
-La figure \ref{fig:draw_streams} illustre la construction du segment $[p_ip_{i+1}]$.
+Une illustration de ce processus est donné sur la figure \ref{fig:draw_streams_1}.  Une alternative plus pratique et plus rapide pour la construction des segments $[p_ip_{i+1}]$ pour $i\geq 1$ consiste à exploiter la\\
+Soit $S\cap T$
 
 \begin{figure}[!h]
      \centering
-     \begin{subfigure}[b]{0.49\textwidth}
+     \begin{subfigure}[b]{0.7\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{images/stream_1.png}
+         \includegraphics[width=\textwidth]{images/draw_streams_11.pdf}
          \caption{$y=x$}
          \label{fig:y equals x}
      \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.49\textwidth}
+     \begin{subfigure}[b]{0.7\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{images/stream_1.png}
+         \includegraphics[width=\textwidth]{images/draw_streams_12.pdf}
          \caption{$y=3\sin x$}
          \label{fig:three sin x}
      \end{subfigure}
         \caption{Three simple graphs}
-        \label{fig:draw_streams}
+        \label{fig:draw_streams_1}
+\end{figure}
+
+\begin{figure}[!h]
+     \centering
+     \begin{subfigure}[b]{0.7\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/draw_streams_21.pdf}
+         \caption{$y=x$}
+         \label{fig:y equals x}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.7\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/draw_streams_22.pdf}
+         \caption{$y=3\sin x$}
+         \label{fig:three sin x}
+     \end{subfigure}
+        \caption{Three simple graphs}
+        \label{fig:draw_streams_1}
 \end{figure}
 
 
@@ -235,6 +253,14 @@ Lorsque h tend vers 0, uh tend vers u\\z
 
 
 Illustrer les singularité se démultipliant  en coloriant juste les triangles et en disant qu'on a pas besoin de la localisation spécifique.\\
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.27]{images/u_sing.pdf}\hspace{0.2cm}
+  \includegraphics[scale=0.27]{images/u_sing.pdf}
+  \caption{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).}
+  \label{fig:separatrice_illustration}
+\end{figure}
 
 \section{Partitionnement de $\partial\Omega_h$}
 
@@ -261,9 +287,8 @@ On considère que l'algorithme a convergé si les séparatrices ne convergent pa
 Par construction, les points singuliers du champ de croix $\bar{u}_h$ se situent soit aux sommets du maillage $\Omega_h$, soit à l'intérieur des triangles qui le constituent.En pratique, la recherche de ces points peut être effectuée localement sur chaque triangle. Cela implique de tester le caractère singulier ou non de chaque triangle (voir la définition \ref{def:triangle_singulier}). Considérons $T\in\mathcal{T}_h$ comme un triangle singulier de $\Omega_h$. Par conception, il contient nécessairement un point singulier. Nous distinguons alors deux cas :\\
 \begin{itemize}
  \item le point singulier correspond à l'un des sommets du triangle $T$.\\
- \item sinon, le point singulier se trouve à l'intérieur du triangle. Conformément à notre représentation de $\bar{u}_h$, dans ce cas précis, il s'agit du barycentre du triangle. Cependant rien empêche de choisir un autre point à l'intérieur du triangle tout en modifiant le calcul des valeurs du champ dans le triangle.
+ \item sinon, le point singulier se trouve à l'intérieur du triangle. Conformément à notre représentation de $\bar{u}_h$, dans ce cas précis, il s'agit du barycentre du triangle. Cependant rien empêche de choisir un autre point à l'intérieur du triangle tout en modifiant le calcul des valeurs du champ dans le triangle. Remarquons que tous les points singuliers de bord sont sur des sommets.\\
 \end{itemize}
-Remarquons que tous les points singuliers de bord sont sur des sommets.
 
 Une fois la localisation des points singulier identifié, on peut facilement calculé leur index grâce aux formules \ref{eqn:ind_int} ou \ref{eqn:ind_bord} en fonction de leur localisation.
 
@@ -290,7 +315,7 @@ Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la
     \right.
 \end{equation}
 
-\paragraph{Directions initiales:}
+\paragraph{Directions initiales et intégration:}
 
 Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0q_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(q_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial T_{p_0}$ est construite de la manière suivante (voir figure \ref{fig:init_streams_int}):\\
 \begin{itemize}
