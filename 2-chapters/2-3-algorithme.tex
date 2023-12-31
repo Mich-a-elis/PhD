@@ -257,7 +257,7 @@ Illustrer les singularité se démultipliant  en coloriant juste les triangles e
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.27]{images/u_sing.pdf}\hspace{0.2cm}
-  \includegraphics[scale=0.27]{images/u_sing.pdf}
+  \includegraphics[scale=0.26]{images/u_h_sing.pdf}
   \caption{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).}
   \label{fig:separatrice_illustration}
 \end{figure}
@@ -300,6 +300,7 @@ Une fois la localisation des points singulier identifié, on peut facilement cal
 On peut rasssembler plusieurs singularité voisine en une.. permet d'éviter les problématiques de point trop proche par exemple.
 Illustrer tout ça 
 
+
 \subsection{Construction des séparatrices}
 
 Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la création des séparatrices sur $\Omega_h$. Cette étape comprend le calcul du nombre de séparatrices à assigner à chaque point singulier, la détermination des directions initiales pour chaque séparatrice, ainsi que l'intégration de ces séparatrices.
@@ -329,36 +330,15 @@ Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné qu
     W_{p_0}^\gamma(t)=\theta^\gamma_{\bar{u}_h}(t)-\arg \overrightarrow{p_0\gamma(t)}.
     $$
 
-\begin{comment}
-\begin{figure}[!h]
-     \centering
-     \begin{subfigure}[b]{0.49\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/triangle separatrices 3.png}
-         \caption{$y=x$}
-         \label{fig:y equals x}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.49\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{images/triangle separatrices 5.png}
-         \caption{$y=3\sin x$}
-         \label{fig:three sin x}
-     \end{subfigure}
-        \caption{Three simple graphs}
-        \label{fig:init_streams}
-\end{figure}
-\end{comment}
-
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.755]{images/triangle separatrices 3.png}
-\includegraphics[scale=0.755]{images/triangle separatrices 5.png}
-\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
-\label{fig:init_streams_int}
-\end{figure}
-
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.755]{images/triangle separatrices 3.png}
+    \includegraphics[scale=0.755]{images/triangle separatrices 5.png}
+    \caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
+    \label{fig:init_streams_int}
+    \end{figure}
 \end{itemize}
+
 Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
 
 \begin{figure}[!h]
@@ -368,15 +348,7 @@ Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
 \label{fig:init_streams_bord}
 \end{figure}
 
-
-
-15 min\\
-\color{red}
-On veut etre mesh tri aussi grossier quer possible donc mailler le vrai domaine et non le mesh tri
-\color{black}
-
-\paragraph{Intégration des séparatrices:}
-
+\[\]
 
 direction de sortie mieux chez moi que chez les autres
 
@@ -398,7 +370,17 @@ direction de sortie mieux chez moi que chez les autres
 \end{figure}
 
 
-\paragraph{Traversé d'un triangle singulier:} lors de l'intégration d'une séparatrice, il peut arrivé que. lorsque le segment $[p_ip_{i+1}]$ traverse un triangle singulier, l'angle du champ varie beaucoup. On remplace alors le segment en question par une succecion d'autre segment calculé en raffinant localement le maillage dans le triangle singulier.
+\paragraph{Traversé d'un triangle singulier:} lors de l'intégration d'une séparatrice, il peut arrivé que. lorsque le segment $[p_ip_{i+1}]$ traverse un triangle singulier, l'angle du champ varie beaucoup. On remplace alors le segment en question par une succecion d'autre segment calculé en raffinant localement le maillage dans le triangle singulier. L'idée est d'isoler le point singulier par rapport à la trajectoire de la séparatrice.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}\hfill
+\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}\vspace{1cm}
+\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}\hfill
+\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}
+\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
+\label{fig:init_streams_bord}
+\end{figure}
 
 \paragraph{Fusion de séparatrices:} 
 De manière similaire à ce qui est réalisé dans \cite{marcon2019high}, les séparatrices du champ de croix sont construites simultanément en incrémentant chacune d'elles progressivement, et la rencontre entre deux séparatrices est anticipée en comparant à chaque incrément, d'une part, la distance entre les derniers points calculés et, d'autre part, les directions des derniers segments construits. En d'autres termes, on cherche à déterminer si, à un moment donné, deux séparatrices données avancent dans des directions opposées et si elles sont suffisamment proches l'une de l'autre. On compare ces deux mesures à des seuils prédéfinis, et en fonction du résultat, on décide de fusionner ou non les deux séparatrices.
@@ -508,7 +490,8 @@ Lorsque h tend vers 0\\
 
 Le partitionnement Qh obtenu suite au partitionnement est 'il une decomposisition en région de quatres côtés de $\Omega_h$ ?\\
 
-En quel sens le partitionnement Qh obtenu est 
+En quel sens le partitionnement Qh obtenu est;\\
+On peu ainsi reconstruit le bord en ordre supérieur
 
 
 \section{Génération de champs de croix}
