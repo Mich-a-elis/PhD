@@ -3,53 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: references.bib
-Warning--empty publisher in alliez2003anisotropic
-Warning--empty journal in barth2003finite
-Warning--can't use both volume and number fields in bommes2013quad
-Warning--empty publisher in catmull1998recursively
-Warning--can't use both volume and number fields in gurung2011squad
-Warning--empty journal in hecht2007maillage
-Warning--can't use both volume and number fields in kalberer2007quadcover
-Warning--can't use both volume and number fields in nieser2011cubecover
-You've used 71 entries,
+You've used 2 entries,
             1935 wiz_defined-function locations,
-            861 strings with 15162 characters,
-and the built_in function-call counts, 28435 in all, are:
-= -- 2848
-> -- 1015
-< -- 69
-+ -- 352
-- -- 332
-* -- 2306
-:= -- 4823
-add.period$ -- 219
-call.type$ -- 71
-change.case$ -- 509
-chr.to.int$ -- 71
-cite$ -- 79
-duplicate$ -- 1166
-empty$ -- 2064
-format.name$ -- 437
-if$ -- 5669
+            485 strings with 4083 characters,
+and the built_in function-call counts, 724 in all, are:
+= -- 66
+> -- 30
+< -- 1
++ -- 12
+- -- 10
+* -- 57
+:= -- 137
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 15
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 27
+empty$ -- 49
+format.name$ -- 12
+if$ -- 134
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 74
-newline$ -- 354
-num.names$ -- 213
-pop$ -- 482
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 6
+pop$ -- 12
 preamble$ -- 1
-purify$ -- 521
+purify$ -- 15
 quote$ -- 0
-skip$ -- 899
+skip$ -- 22
 stack$ -- 0
-substring$ -- 2050
-swap$ -- 208
-text.length$ -- 24
+substring$ -- 44
+swap$ -- 2
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 408
-warning$ -- 8
-while$ -- 246
+type$ -- 12
+warning$ -- 0
+while$ -- 5
 width$ -- 0
-write$ -- 916
-(There were 8 warnings)
+write$ -- 27

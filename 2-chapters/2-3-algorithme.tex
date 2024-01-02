@@ -316,6 +316,21 @@ Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la
     \right.
 \end{equation}
 
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.755]{images/triangle separatrices 3.png}
+\includegraphics[scale=0.755]{images/triangle separatrices 5.png}
+\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
+\label{fig:init_streams_int}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.755]{images/triangle separatrices bord.png}
+\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
+\label{fig:init_streams_bord}
+\end{figure}
+
 \paragraph{Directions initiales et intégration:}
 
 Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0q_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(q_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial T_{p_0}$ est construite de la manière suivante (voir figure \ref{fig:init_streams_int}):\\
@@ -329,45 +344,27 @@ Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné qu
     $$
     W_{p_0}^\gamma(t)=\theta^\gamma_{\bar{u}_h}(t)-\arg \overrightarrow{p_0\gamma(t)}.
     $$
-
-    \begin{figure}[!h]
-    \centering
-    \includegraphics[scale=0.755]{images/triangle separatrices 3.png}
-    \includegraphics[scale=0.755]{images/triangle separatrices 5.png}
-    \caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
-    \label{fig:init_streams_int}
-    \end{figure}
 \end{itemize}
+
+
 
 Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
 
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.755]{images/triangle separatrices bord.png}
-\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
-\label{fig:init_streams_bord}
-\end{figure}
+
 
 \[\]
 
 direction de sortie mieux chez moi que chez les autres
 
+
 \begin{figure}[!h]
 \centering
-\begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{images/demi_disc_second_phi_first.pdf}
-    \caption{Alignement du champ de croix présenté sur la figure \ref{fig:demiDisc_valProp_mauvaix_decoup} sur le bord du domaine et partitionnement du domaine.}
-    \label{fig:first_dir_first}
-\end{subfigure}
-\\[0.5cm]
-\begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{images/demi_disc_second_phi_second.pdf}
-    \caption{Maillage quadrilatéral du domaine.}
-    \label{fig:first_dir_second}
-\end{subfigure}        
+\includegraphics[scale=0.23]{images/depart_sepa_1.png}\hfill
+\includegraphics[scale=0.23]{images/depart_sepa_1.png}
 \caption{Direction de sortie différentes.}
 \label{fig:first_dir}
 \end{figure}
+
 
 
 \paragraph{Traversé d'un triangle singulier:} lors de l'intégration d'une séparatrice, il peut arrivé que. lorsque le segment $[p_ip_{i+1}]$ traverse un triangle singulier, l'angle du champ varie beaucoup. On remplace alors le segment en question par une succecion d'autre segment calculé en raffinant localement le maillage dans le triangle singulier. L'idée est d'isoler le point singulier par rapport à la trajectoire de la séparatrice.
@@ -390,34 +387,62 @@ La fusion se réalise en créant une nouvelle séparatrice par une fusion linéa
 \begin{figure}[!h]
 \centering
 \begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{images/demi_disc_second_phi_first.pdf}
+    \includegraphics[width=\textwidth]{images/decoup_sans_fusion.pdf}
     \caption{Sans fusion}
-    \label{fig:merge_sepa_first}
+    \label{fig:decoup_sans_fusion}
 \end{subfigure}
 \\[0.5cm]
 \begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{images/demi_disc_second_phi_second.pdf}
+    \includegraphics[width=\textwidth]{images/decoup_detect_fusion.pdf}
     \caption{detection fusion.}
-    \label{fig:merge_sepa_second}
+    \label{fig:decoup_detect_fusion}
 \end{subfigure}        
 \\[0.5cm]
 \begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{images/demi_disc_second_phi_second.pdf}
+    \includegraphics[width=\textwidth]{images/decoup_fusion.pdf}
     \caption{fusion.}
-    \label{fig:merge_sepa_third}
+    \label{fig:decoup_fusion}
 \end{subfigure}        
 \caption{Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \eqref{eqn:principe_def_phi}.}
-\label{fig:merge_sepa}
+\label{fig:fusion}
 \end{figure}
 
 
 \subsection{Assemblage des partitions}
 
-Une fois les séparatrices construites, le maillage triangulaire $\Omega_h$ sous-jacent à la méthode est divisé en plusieurs régions. Pour identifier ces régions, nous commençons par modifier $\Omega_h$ en un nouveau maillage. On récupère chaque région sous la forme d'un sous-maillage de $\Omega_h$ en faisant:
+Une fois les séparatrices construites, le maillage triangulaire $\Omega_h$ est divisé en plusieurs régions. Pour identifier ces régions, nous modifions $\Omega_h$ en y insérant les segments constituants les séparatrices construites générant ainsi un nouveau maillage. L'objectif est de récupérer chaque région sous la forme d'un sous-maillage de $\Omega_h$. Cette opération peut être réalisée localement dans chaque triangle du maillage $\Omega_h$, ce qui permet en pratique de bénéficier des capacités de calcul parallèle pour accélérer le processus.
+
+Considérons $T$ comme un triangle de $\Omega_h$ traversé par certains segments des séparatrices construites. Pour insérer ces segments dans $T$, nous commençons par introduire les points de bord de ces segments tout en conservant la structure en triangles du triangle initial. De cette manière, nous obtenons un maillage triangulaire pour $T$. En utilisant des opérations de retournement d'arêtes, nous cherchons ensuite à retrouver les segments constituant les séparatrices ayant traversé $T$. Cette procédure s'inspire de la génération de maillages selon la méthode de type Voronoi présentée dans \cite{georgegeneration}. Notons $K$\\
+Pour insérer un point $p$ dans $T$, on commence par chercher tout l'élément ou les deux éléments de $T$ contenant $p$ puis on insère $p$ dans ses éléments tout en générant de nouveaux triangles de la manière suivante:\\
+\begin{itemize}
+ \item si $p$ se trouve à l'intérieur d'un triangle $K$ alors on insère $p$ dans $T$ en créant trois nouveaux triangles en reliant $p$ aux sommets de $K$\\
+ \item si $p$ se trouve sur une arête d'un triangle $K$ de $T$, on inère $p$ dans $T$ en créant deux nouveaux \ref{fig:insert_pt}
+\end{itemize}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.37]{images/insert_pt_1.pdf}\hfill
+\includegraphics[scale=0.37]{images/insert_pt_2.pdf}
+\caption{Direction de sortie différentes.}
+\label{fig:insert_pt}
+\end{figure}
+
+ Trouver l'élément ou les deux éléments de $T$ contenant $p$.
+Insérer $p$ dans ces éléments
+\[\]
+en faisant:
 Localement dans chaque triangle,\\
 on ajoute les points constituant les separatrices a $\Omega_h$ modifiant ainsi la topologie du maillage triangulaire initial,\\
 Pour se faire, on exécute localement l'algorithme d'insertition de point localement dans chaque triangle.\\
 donné par\\
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.25]{images/eclatement.pdf}
+\caption{Direction de sortie différentes.}
+\label{fig:eclatement}
+\end{figure}
 
 \subsection{Génération du maillage quadrilatéral}
 
@@ -426,8 +451,7 @@ Tracé directement dans le champ de croix\\
 Interpolation transfini.
 
 \section{Opération d'alignement}
-
-cos laplacien rtheta...
+s'inspirer de kennan cos laplacien rtheta...
 \[\]
 Nous abordons maintenant la discrétisation de l'opération d'alignement présenté dans le chapitre \ref{chap:theoritical}. Étant donné une représentation $\bar{N}_h$ du champ de croix $\bar{N}$ sur le bord $\partial\Omega_h$ de $\Omega_h$, nous cherchons à modifier $\bar{u}_h$ en construisant un nouveau champ de croix $\bar{v}_h$ qui soit aligné avec $\partial\Omega_h$. Autrement dit, on veut que pour tout $p\in\partial\Omega_h$, $\bar{v}_h(p)\in\{\bar{N}_h(p), 0\}$. Pour se faire, on commence par définir l'ensemble des points singuliers de bord du champ de croix $\bar{v}$ que l'on note $\mathcal{B}$. On associe un paramètre $I_p$ pour tout $p\in\mathcal{B}$ représentant l'indice que nous souhaitons qu'il possède dans le champ de croix $\bar{v}$ et vérifiant:
 \begin{equation}
