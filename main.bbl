@@ -1,14 +1,422 @@
 \begin{thebibliography}{}
 
+\bibitem[Allaire, 2005]{allaire2005analyse}
+Allaire, G. (2005).
+\newblock Analyse num{\'e}rique et optimisation: Une introductiona la
+  mod{\'e}lisation math{\'e}matique eta la simulation num{\'e}rique.
+\newblock {\em Editions Ecole Polytechnique}, 22.
+
+\bibitem[Alliez et~al., 2003]{alliez2003anisotropic}
+Alliez, P., Cohen-Steiner, D., Devillers, O., L{\'e}vy, B., and Desbrun, M.
+  (2003).
+\newblock Anisotropic polygonal remeshing.
+\newblock In {\em ACM SIGGRAPH 2003 Papers}, pages 485--493.
+
+\bibitem[Arnold et~al., 2000]{arnold2000discontinuous}
+Arnold, D.~N., Brezzi, F., Cockburn, B., and Marini, D. (2000).
+\newblock Discontinuous galerkin methods for elliptic problems.
+\newblock In {\em Discontinuous Galerkin Methods: Theory, Computation and
+  Applications}, pages 89--101. Springer.
+
+\bibitem[Ascher and Petzold, 1998]{ascher1998computer}
+Ascher, U.~M. and Petzold, L.~R. (1998).
+\newblock {\em Computer methods for ordinary differential equations and
+  differential-algebraic equations}, volume~61.
+\newblock Siam.
+
+\bibitem[Baker, 2005]{baker2005mesh}
+Baker, T.~J. (2005).
+\newblock Mesh generation: Art or science?
+\newblock {\em Progress in Aerospace Sciences}, 41(1):29--63.
+
+\bibitem[Barth and Ohlberger, 2003]{barth2003finite}
+Barth, T. and Ohlberger, M. (2003).
+\newblock Finite volume methods: foundation and analysis.
+
+\bibitem[Beaufort et~al., 2017]{beaufort2017computing}
+Beaufort, P.-A., Lambrechts, J., Henrotte, F., Geuzaine, C., and Remacle, J.-F.
+  (2017).
+\newblock Computing cross fields a pde approach based on the ginzburg-landau
+  theory.
+\newblock {\em Procedia engineering}, 203:219--231.
+
+\bibitem[Blacker and Stephenson, 1991]{blacker1991paving}
+Blacker, T.~D. and Stephenson, M.~B. (1991).
+\newblock Paving: A new approach to automated quadrilateral mesh generation.
+\newblock {\em International journal for numerical methods in engineering},
+  32(4):811--847.
+
+\bibitem[Bommes et~al., 2013]{bommes2013quad}
+Bommes, D., L{\'e}vy, B., Pietroni, N., Puppo, E., Silva, C., Tarini, M., and
+  Zorin, D. (2013).
+\newblock Quad-mesh generation and processing: A survey.
+\newblock In {\em Computer graphics forum}, volume~32, pages 51--76. Wiley
+  Online Library.
+
+\bibitem[Bommes et~al., 2009]{bommes2009mixed}
+Bommes, D., Zimmer, H., and Kobbelt, L. (2009).
+\newblock Mixed-integer quadrangulation.
+\newblock {\em ACM Transactions On Graphics (TOG)}, 28(3):1--10.
+
+\bibitem[Botella, 2016]{botella2016generation}
+Botella, A. (2016).
+\newblock {\em G{\'e}n{\'e}ration de maillages non structur{\'e}s volumiques de
+  mod{\`e}les g{\'e}ologiques pour la simulation de ph{\'e}nom{\`e}nes
+  physiques}.
+\newblock PhD thesis, Universit{\'e} de Lorraine.
+
+\bibitem[Bowyer, 1981]{bowyer1981computing}
+Bowyer, A. (1981).
+\newblock Computing dirichlet tessellations.
+\newblock {\em The computer journal}, 24(2):162--166.
+
+\bibitem[Bunin, 2008]{bunin2008towards}
+Bunin, G. (2008).
+\newblock Towards unstructured mesh generation using the inverse poisson
+  problem.
+\newblock {\em arXiv preprint arXiv:0802.2399}.
+
+\bibitem[Campen et~al., 2015]{campen2015quantized}
+Campen, M., Bommes, D., and Kobbelt, L. (2015).
+\newblock Quantized global parametrization.
+\newblock {\em Acm Transactions On Graphics (tog)}, 34(6):1--12.
+
+\bibitem[Catmull and Clark, 1998]{catmull1998recursively}
+Catmull, E. and Clark, J. (1998).
+\newblock Recursively generated b-spline surfaces on arbitrary topological
+  meshes.
+\newblock In {\em Seminal graphics: pioneering efforts that shaped the field},
+  pages 183--188.
+
+\bibitem[Cohen-Steiner et~al., 2002]{cohen2002conforming}
+Cohen-Steiner, D., De~Verdiere, E.~C., and Yvinec, M. (2002).
+\newblock Conforming delaunay triangulations in 3d.
+\newblock In {\em Proceedings of the eighteenth annual symposium on
+  Computational geometry}, pages 199--208.
+
+\bibitem[D'azevedo, 2000]{d2000bilinear}
+D'azevedo, E.~F. (2000).
+\newblock Are bilinear quadrilaterals better than linear triangles?
+\newblock {\em SIAM Journal on Scientific Computing}, 22(1):198--217.
+
+\bibitem[de~Moura~Pinto and Freitas, 2009]{de2009fast}
+de~Moura~Pinto, F. and Freitas, C. M. D.~S. (2009).
+\newblock Fast medial axis transform for planar domains with general
+  boundaries.
+\newblock In {\em 2009 XXII Brazilian Symposium on Computer Graphics and Image
+  Processing}, pages 96--103. IEEE.
+
+\bibitem[Ern and Guermond, 2004]{ern2004theory}
+Ern, A. and Guermond, J.-L. (2004).
+\newblock {\em Theory and practice of finite elements}, volume 159.
+\newblock Springer.
+
+\bibitem[Fogg et~al., 2015]{fogg2015automatic}
+Fogg, H.~J., Armstrong, C.~G., and Robinson, T.~T. (2015).
+\newblock Automatic generation of multiblock decompositions of surfaces.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  101(13):965--991.
+
+\bibitem[Forsythe et~al., 1961]{forsythe1961finite}
+Forsythe, G.~E., Wasow, W.~R., and Nachbar, W. (1961).
+\newblock Finite-difference methods for partial differential equations.
+
 \bibitem[George, 1991]{georgegeneration}
 George, P.~L. (1991).
 \newblock G{\'e}n{\'e}ration de maillages par une m{\'e}thode de type
   vorono{\"\i}.
 \newblock {\em Rapports de recherche- INRIA}.
 
+\bibitem[George and Borouchaki, 1997]{george1997triangulation}
+George, P.~L. and Borouchaki, H. (1997).
+\newblock {\em Triangulation de Delaunay et maillage: applications aux
+  {\'e}l{\'e}ments finis}.
+\newblock Hermes.
+
+\bibitem[George and Frey, 2013]{george2013mesh}
+George, P.~L. and Frey, P. (2013).
+\newblock {\em Mesh generation: application to finite elements}.
+\newblock John Wiley \& Sons.
+
+\bibitem[George and Seveno, 1994]{george1994advancing}
+George, P.~L. and Seveno, {\'E}. (1994).
+\newblock The advancing-front mesh generation method revisited.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  37(21):3605--3619.
+
+\bibitem[Gourdain et~al., 2010]{gourdain2010advanced}
+Gourdain, N., Duchaine, F., Gicquel, L.~Y., and Collado, E. (2010).
+\newblock Advanced numerical simulation dedicated to the prediction of heat
+  transfer in a highly loaded turbine guide vane.
+\newblock In {\em Turbo Expo: Power for Land, Sea, and Air}, volume 44021,
+  pages 807--820.
+
+\bibitem[Gurung et~al., 2011]{gurung2011squad}
+Gurung, T., Laney, D., Lindstrom, P., and Rossignac, J. (2011).
+\newblock Squad: Compact representation for triangle meshes.
+\newblock In {\em Computer Graphics Forum}, volume~30, pages 355--364. Wiley
+  Online Library.
+
+\bibitem[Hecht, 2007]{hecht2007maillage}
+Hecht, F. (2007).
+\newblock Maillage 2d, 3d, adaptation.
+
+\bibitem[H{\"o}hring et~al., 1997]{hohring1997mesh}
+H{\"o}hring, R.~H., M{\"u}ller-Hannemann, M., and Wiehe, K. (1997).
+\newblock Mesh refinement via bidirected flows: Modeling, complexity, and
+  computational results.
+\newblock {\em Journal of the ACM (JACM)}, 44(3):395--426.
+
+\bibitem[Hopf, 1935]{hopf1935drehung}
+Hopf, H. (1935).
+\newblock {\"U}ber die drehung der tangenten und sehnen ebener kurven.
+\newblock {\em Compositio mathematica}, 2:50--62.
+
+\bibitem[Ives, 1995]{ives1995geometric}
+Ives, D. (1995).
+\newblock Geometric grid generation. surface modeling, grid generation, and
+  related issues in computational fluid dynamic (cfd) solutions.
+\newblock In {\em Proceedings NASA-conference, Cleveland, Ohio, NASA CP-3291}.
+
+\bibitem[Jezdimirovic et~al., 2021]{jezdimirovic2021quad}
+Jezdimirovic, J., Chemin, A., Reberol, M., Henrotte, F., and Remacle, J.-F.
+  (2021).
+\newblock Quad layouts with high valence singularities for flexible quad
+  meshing.
+\newblock {\em Proceedings of the 29th Meshing Roundtable}.
+
+\bibitem[K{\"a}lberer et~al., 2007]{kalberer2007quadcover}
+K{\"a}lberer, F., Nieser, M., and Polthier, K. (2007).
+\newblock Quadcover-surface parameterization using branched coverings.
+\newblock In {\em Computer graphics forum}, volume~26, pages 375--384. Wiley
+  Online Library.
+
+\bibitem[Kirkup, 2019]{kirkup2019boundary}
+Kirkup, S. (2019).
+\newblock The boundary element method in acoustics: A survey.
+\newblock {\em Applied Sciences}, 9(8):1642.
+
+\bibitem[Kowalski et~al., 2013]{kowalski2013pde}
+Kowalski, N., Ledoux, F., and Frey, P. (2013).
+\newblock A pde based approach to multidomain partitioning and quadrilateral
+  meshing.
+\newblock In {\em Proceedings of the 21st international meshing roundtable},
+  pages 137--154. Springer.
+
+\bibitem[LeVeque, 2002]{leveque2002finite}
+LeVeque, R.~J. (2002).
+\newblock {\em Finite volume methods for hyperbolic problems}, volume~31.
+\newblock Cambridge university press.
+
+\bibitem[Liu et~al., 2006]{liu2006spectral}
+Liu, Y., Vinokur, M., and Wang, Z.~J. (2006).
+\newblock Spectral difference method for unstructured grids i: Basic
+  formulation.
+\newblock {\em Journal of Computational Physics}, 216(2):780--801.
+
+\bibitem[Lo, 1989]{lo1989generating}
+Lo, S. (1989).
+\newblock Generating quadrilateral elements on plane and over curved surfaces.
+\newblock {\em Computers \& structures}, 31(3):421--426.
+
+\bibitem[L{\"o}hner, 1996]{lohner1996progress}
+L{\"o}hner, R. (1996).
+\newblock Progress in grid generation via the advancing front technique.
+\newblock {\em Engineering with computers}, 12:186--210.
+
+\bibitem[L{\"o}hner, 2014]{lohner2014recent}
+L{\"o}hner, R. (2014).
+\newblock Recent advances in parallel advancing front grid generation.
+\newblock {\em Archives of Computational Methods in Engineering}, 21:127--140.
+
+\bibitem[Macq et~al., 2020]{macq2020ginzburg}
+Macq, A., Reberol, M., Henrotte, F., Beaufort, P.-A., Chemin, A., Remacle,
+  J.-F., and Van~Schaftingen, J. (2020).
+\newblock Ginzburg-landau energy and placement of singularities in generated
+  cross fields.
+\newblock {\em arXiv preprint arXiv:2010.16381}.
+
 \bibitem[Marcon et~al., 2019]{marcon2019high}
 Marcon, J., Kopriva, D.~A., Sherwin, S.~J., and Peir{\'o}, J. (2019).
 \newblock A high resolution pde approach to quadrilateral mesh generation.
 \newblock {\em Journal of Computational Physics}, 399:108918.
+
+\bibitem[Marinov and Kobbelt, 2004]{marinov2004direct}
+Marinov, M. and Kobbelt, L. (2004).
+\newblock Direct anisotropic quad-dominant remeshing.
+\newblock In {\em 12th Pacific Conference on Computer Graphics and
+  Applications, 2004. PG 2004. Proceedings.}, pages 207--216. IEEE.
+
+\bibitem[Mitchell, 2000]{mitchell2000high}
+Mitchell, S.~A. (2000).
+\newblock High fidelity interval assignment.
+\newblock {\em International Journal of Computational Geometry \&
+  Applications}, 10(04):399--415.
+
+\bibitem[Mitchell, 2014]{mitchell2014simple}
+Mitchell, S.~A. (2014).
+\newblock Simple and fast interval assignment using nonlinear and piecewise
+  linear objectives.
+\newblock In {\em Proceedings of the 22nd International Meshing Roundtable},
+  pages 203--221. Springer.
+
+\bibitem[Myles et~al., 2014]{myles2014robust}
+Myles, A., Pietroni, N., and Zorin, D. (2014).
+\newblock Robust field-aligned global parametrization.
+\newblock {\em ACM Trans. Graph.}, 33(4):135--1.
+
+\bibitem[Nackman and Srinivasan, 1989]{nackman1989method}
+Nackman, L.~R. and Srinivasan, V. (1989).
+\newblock Method of generating finite elements using the symmetric axis
+  transform.
+\newblock US Patent 4,797,842.
+
+\bibitem[N{\'e}d{\'e}lec, 2001]{nedelec2001acoustic}
+N{\'e}d{\'e}lec, J.-C. (2001).
+\newblock {\em Acoustic and electromagnetic equations: integral representations
+  for harmonic problems}, volume 144.
+\newblock Springer.
+
+\bibitem[Nieser et~al., 2011]{nieser2011cubecover}
+Nieser, M., Reitebuch, U., and Polthier, K. (2011).
+\newblock Cubecover--parameterization of 3d volumes.
+\newblock In {\em Computer graphics forum}, volume~30, pages 1397--1406. Wiley
+  Online Library.
+
+\bibitem[Norrie and De~Vries, 2014]{norrie2014finite}
+Norrie, D.~H. and De~Vries, G. (2014).
+\newblock {\em The finite element method: fundamentals and applications}.
+\newblock Academic Press.
+
+\bibitem[Owen, 1998]{owen1998survey}
+Owen, S.~J. (1998).
+\newblock A survey of unstructured mesh generation technology.
+\newblock {\em IMR}, 239(267):15.
+
+\bibitem[Owen et~al., 1998]{owen1998quad}
+Owen, S.~J., Staten, M.~L., Canann, S.~A., and Saigal, S. (1998).
+\newblock Quad-morphing: advancing front quad meshing using triangle
+  transformations.
+\newblock {\em Proceedings 7th International Meshing Roundtable, Dearborn, MI}.
+
+\bibitem[Owen et~al., 1999]{owen1999q}
+Owen, S.~J., Staten, M.~L., Canann, S.~A., and Saigal, S. (1999).
+\newblock Q-morph: an indirect approach to advancing front quad meshing.
+\newblock {\em International journal for numerical methods in engineering},
+  44(9):1317--1340.
+
+\bibitem[Palacios and Zhang, 2007]{palacios2007rotational}
+Palacios, J. and Zhang, E. (2007).
+\newblock Rotational symmetry field design on surfaces.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 26(3):55--es.
+
+\bibitem[Ray et~al., 2006]{ray2006periodic}
+Ray, N., Li, W.~C., L{\'e}vy, B., Sheffer, A., and Alliez, P. (2006).
+\newblock Periodic global parameterization.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 25(4):1460--1485.
+
+\bibitem[Ray et~al., 2008]{ray2008n}
+Ray, N., Vallet, B., Li, W.~C., and L{\'e}vy, B. (2008).
+\newblock N-symmetry direction field design.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 27(2):1--13.
+
+\bibitem[Reberol, 2018]{reberol2018maillages}
+Reberol, M. (2018).
+\newblock {\em Maillages hex-dominants: g{\'e}n{\'e}ration, simulation et
+  {\'e}valuation}.
+\newblock PhD thesis, Phd Thesis). Universit{\'e} de Lorraine.
+
+\bibitem[Remacle et~al., 2012]{remacle2012blossom}
+Remacle, J.-F., Lambrechts, J., Seny, B., Marchandise, E., Johnen, A., and
+  Geuzainet, C. (2012).
+\newblock Blossom-quad: A non-uniform quadrilateral mesh generator using a
+  minimum-cost perfect-matching algorithm.
+\newblock {\em International journal for numerical methods in engineering},
+  89(9):1102--1119.
+
+\bibitem[Rivi{\`e}re, 2008]{riviere2008discontinuous}
+Rivi{\`e}re, B. (2008).
+\newblock {\em Discontinuous Galerkin methods for solving elliptic and
+  parabolic equations: theory and implementation}.
+\newblock SIAM.
+
+\bibitem[Rotskoff, 2010]{rotskoff2010gauss}
+Rotskoff, G. (2010).
+\newblock {\em The Gauss-Bonnet Theorem}.
+\newblock PhD thesis, Master thesis, University of Chicago.
+
+\bibitem[Schneiders, 1996]{schneiders1996grid}
+Schneiders, R. (1996).
+\newblock A grid-based algorithm for the generation of hexahedral element
+  meshes.
+\newblock {\em Engineering with computers}, 12:168--177.
+
+\bibitem[Shepherd and Johnson, 2008]{shepherd2008hexahedral}
+Shepherd, J.~F. and Johnson, C.~R. (2008).
+\newblock Hexahedral mesh generation constraints.
+\newblock {\em Engineering with Computers}, 24(3):195--213.
+
+\bibitem[Smith, 1985]{smith1985numerical}
+Smith, G.~D. (1985).
+\newblock {\em Numerical solution of partial differential equations: finite
+  difference methods}.
+\newblock Oxford university press.
+
+\bibitem[Stummel, 2006]{stummel2006difference}
+Stummel, F. (2006).
+\newblock Difference methods for linear initial value problems.
+\newblock In {\em Numerische Behandlung nichtlinearer Integrodifferential-und
+  Differentialgleichungen: Vortr{\"a}ge einer Tagung im Mathematischen
+  Forschungsinstitut Oberwolfach, 2. 12.--7. 12. 1973}, pages 123--135.
+  Springer.
+
+\bibitem[Taghavi, 1994]{taghavi1994automatic}
+Taghavi, R. (1994).
+\newblock Automatic parallel and fault tolerant mesh generation from cad on
+  cray research super computers.
+\newblock In {\em Proc. CUG Conference, Tours, France}.
+
+\bibitem[Tam, 1991]{tam19912d}
+Tam, T. (1991).
+\newblock 2d finite element mesh generation by medial axis subdivision.
+\newblock {\em Advances in engineering software and workstations},
+  13(5-6):313--324.
+
+\bibitem[Van~den Abeele et~al., 2008]{van2008stability}
+Van~den Abeele, K., Lacor, C., and Wang, Z.~J. (2008).
+\newblock On the stability and accuracy of the spectral difference method.
+\newblock {\em Journal of Scientific Computing}, 37:162--188.
+
+\bibitem[Viertel and Osting, 2019]{viertel2019approach}
+Viertel, R. and Osting, B. (2019).
+\newblock An approach to quad meshing based on harmonic cross-valued maps and
+  the ginzburg--landau theory.
+\newblock {\em SIAM Journal on Scientific Computing}, 41(1):A452--A479.
+
+\bibitem[Watson, 1981]{watson1981computing}
+Watson, D.~F. (1981).
+\newblock Computing the n-dimensional delaunay tessellation with application to
+  voronoi polytopes.
+\newblock {\em The computer journal}, 24(2):167--172.
+
+\bibitem[White and Kinney, 1997]{white1997redesign}
+White, D.~R. and Kinney, P. (1997).
+\newblock Redesign of the paving algorithm: Robustness enhancements through
+  element by element meshing.
+\newblock In {\em 6th international meshing roundtable}, volume~10, page 830.
+
+\bibitem[Wu, 2002]{wu2002boundary}
+Wu, T. (2002).
+\newblock Boundary element acoustics fundamentals and computer codes.
+
+\bibitem[Yerry and Shephard, 1983]{yerry1983finite}
+Yerry, M. and Shephard, M. (1983).
+\newblock Finite element mesh generation based on a modified-quadtree approach.
+\newblock {\em IEEE Computer Graphics and Applications}, 3(1):36--46.
+
+\bibitem[Zienkiewicz and Taylor, 2005]{zienkiewicz2005finite}
+Zienkiewicz, O.~C. and Taylor, R.~L. (2005).
+\newblock {\em The finite element method for solid and structural mechanics}.
+\newblock Elsevier.
 
 \end{thebibliography}

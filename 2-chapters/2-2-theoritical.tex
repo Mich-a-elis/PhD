@@ -4,9 +4,9 @@
 
 \[\]
 
-Dans le précédent chapitre, nous avons annoncé notre intention d'améliorer la topologie des maillages quadrilatéraux générés par la méthode de partitionnement basée sur les champs de croix, afin de remédier aux différentes limitations mentionnées. Il est important de noter que les champs de croix présentent les mêmes types de singularités que l'on observe dans les maillages quadrilatéraux générés. Par conséquent, la génération d'un maillage quadrilatéral très régulier ou présentant d'autres propriétés est étroitement liée à la génération d'un champ de croix possédant ces propriétés souhaitées. À partir de cette observation, nous choisissons d'initier la méthode de partitionnement avec un champ de croix prédéfini, puis, au besoin, de le modifier pour qu'il puisse être utilisé dans le processus de partitionnement du domaine de calcul. Plusieurs questions se posent alors : quel champ choisir, quelle devrait être sa régularité, combien de singularités doit-il contenir et de quel type doivent-elles être, etc. Toutes ces questions soulignent l'importance de bien définir le concept de champ de croix et d'étudier de manière plus approfondie ses propriétés.
+Dans le chapitre précédent, nous avons annoncé notre intention d'améliorer la topologie des maillages quadrilatéraux générés par la méthode de partitionnement basée sur les champs de croix, afin de remédier aux différentes limitations mentionnées. Il est important de noter que les champs de croix présentent les mêmes types de singularités que l'on observe dans les maillages quadrilatéraux générés. Par conséquent, la génération d'un maillage quadrilatéral très régulier ou présentant d'autres propriétés est étroitement liée à la génération d'un champ de croix possédant les propriétés souhaitées. À partir de cette observation, nous choisissons d'initier la méthode de partitionnement avec un champ de croix prédéfini, puis, au besoin, de le modifier pour qu'il puisse être utilisé dans le processus de partitionnement du domaine de calcul. Plusieurs questions se posent alors : quel champ choisir? quelle devrait être sa régularité? combien de singularités doit-il contenir? et de quel type doivent-elles être? Toutes ces questions soulignent l'importance de bien définir le concept de champ de croix et d'étudier de manière plus approfondie ses propriétés.
 
-Dans ce chapitre, nous établissons un cadre théorique exhaustif et mettons à disposition une variété d'outils pour la manipulation des champs de croix. Nous explorons des concepts tels que l'angle d'une croix, l'indice d'un point dans un champ de croix, ainsi que de ligne de champ dans un champ de croix. Ensuite, nous abordons la méthode de partitionnement proprement dite. À cet effet, nous présentons différents algorithmes élaborés pour les géométries tant simplement connexes que non simplement connexes, ainsi que diverses opérations permettant d'ajuster un champ de croix donné en fonction du domaine à mailler. Enfin, nous exposons un ensemble de résultats qui justifient les algorithmes présentés et garantissent leur efficacité.
+Dans ce chapitre, nous établissons un cadre théorique exhaustif et mettons à disposition une variété d'outils pour la manipulation des champs de croix. Nous prposons des définitions tels que l'angle d'une croix, l'indice d'un point dans un champ de croix, ainsi que de ligne de champ dans un champ de croix. Ensuite, nous abordons la méthode de partitionnement proprement dite. À cet effet, nous présentons différents algorithmes élaborés pour les géométries tant simplement connexes que non simplement connexes, ainsi que diverses opérations permettant d'ajuster un champ de croix donné en fonction du domaine à mailler. Enfin, nous exposons un ensemble de résultats qui justifient les algorithmes présentés et garantissent leur efficacité.
 
 
 
@@ -16,20 +16,20 @@ Dans cette section, nous présentons le concept de champ de croix défini sur un
 
 \subsection{Champ de croix}
 
-Soit $\mathbb{S}^1$ la sphère unité de $\mathbb{R}^2$ définit par $\mathbb{S}^1=\{(x,y)\in\mathbb{R}^2~|~x^2+y^2=1\}$ et soit $\mathcal{Q}$ le groupe de symétrie quadrilatérale défini comme l'ensemble des transformations $r_k$ pour $k = 0, 1, 2, 3$  où chaque $r_k$ représente une rotation de $k\pi/2$. Une croix $\mathbf{c}$ est un élément de $\mathbf{C}:=\mathbb{S}^1/\mathcal{Q}\cup\{0\}$ \cite{beaufort2017computing} (voir figure \ref{fig:croix}). En d'autres termes, $\mathbf{c}$ représente une classe d'équivalence dont les éléments, nommés branches de la croix, répondent à la relation suivante :
+Soit $\mathbb{S}^1$ la sphère unité de $\mathbb{R}^2$ définie par $\mathbb{S}^1=\{(x,y)\in\mathbb{R}^2~|~x^2+y^2=1\}$ et soit $\mathcal{Q}$ le groupe de symétrie quadrilatérale défini comme l'ensemble des rotations d'angle $k\pi/2$, $k\in\{0, 1, 2, 3\}$. Une croix $\mathbf{c}$ est un élément de $\mathbf{C}:=\mathbb{S}^1/\mathcal{Q}\cup\{0\}$ \cite{beaufort2017computing} (voir figure \ref{fig:croix}). En d'autres termes, $\mathbf{c}$ représente une classe d'équivalence dont les éléments, nommés branches de la croix, répondent à la relation suivante :
 
 \begin{equation}
 \label{eq:croix}
 \forall~(c^1, c^2)\in\mathbf{c}\times\mathbf{c},~\exists~m\in\mathbb{Z},~c^1=\mathbf{R}\left(\frac{m\pi}{2}\right)c^2,
 \end{equation}
-où $\mathbf{R}(.)$ est la matrice de rotation définie par:
+où $\mathbf{R}(.)$ est l'opérateur de rotation défini par:
 \begin{equation}
 \label{eq:matricerotation}
 \mathbf{R}(.)=
 \begin{pmatrix}
 \cos(.) & -\sin(.) \\
 \sin(.) & \cos(.) \\
-\end{pmatrix}
+\end{pmatrix}.
 \end{equation}
 
 \begin{figure}[!h]
@@ -55,7 +55,7 @@ $\bar{u}$ est de classe $\mathcal{C}^1$ en un point $p$ s'il existe une applicat
 Comme toutes les composantes de $\bar{u}$ sont obtenues par rotations d'angles $m\pi/2$, où $m\in\mathbb{Z}$, la propriété énoncée précédemment peut être reformulée en tant qu'exigence de continuité $C^1$ pour toutes les composantes dans le voisinage de $p$.
 
 \begin{definition}
-    $\bar{u}$ est un champ de croix \emph{presque-$\mathcal{C}^1$} si $\#\mathcal{S}_{\bar{u}}<\infty$ et si $\bar{u}$ est de classe $\mathcal{C}^1$ en tout point $p\in\Omega\backslash\mathcal{S}_{\bar{u}}$.
+    $\bar{u}$ est un champ de croix \emph{presque-$\mathcal{C}^1$} si $\#\mathcal{S}_{\bar{u}}<\infty$ et si $\bar{u}$ est de classe $\mathcal{C}^1$ en tout point $p\in\Omega\backslash\mathcal{S}_{\bar{u}}$ (où $\#\mathcal{S}_{\bar{u}}$ est le cardinal de $\mathcal{S}_{\bar{u}}$).
 \end{definition}
 
 
@@ -79,7 +79,7 @@ Le résultat suivant établit la régularité des champs de croix construits à 
 \end{equation}
 est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$.
 
-\item Soit $\bar{u}$ un champ de croix sur $\Omega$ et $\theta : \Omega \rightarrow \mathbb{R}$ une fonction définie sur $\Omega$. Alors l'application $\bar{v}:p\mapsto \bar{v}(p)=\mathbf{R}(\theta(p))\bar{u}(p):=\{\mathbf{R}(\theta(p)) u,~u\in \bar{u}(p)\}$ est un champ de croix sur $\Omega$. De plus, $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$, et si $\theta$ est de classe $\mathcal{C}^1$ alors $\bar{u}$ est de classe $\mathcal{C}^1$ en $p\in \Omega$ (respectivement presque-$\mathcal{C}^1$ sur $\Omega$) si et seulement si $\bar{v}$ l'est.
+\item Soit $\bar{u}$ un champ de croix sur $\Omega$ et $\theta : \Omega \rightarrow \mathbb{R}$ une fonction définie sur $\Omega$. Alors l'application $\bar{v}:p\mapsto \bar{v}(p)=\mathbf{R}(\theta(p))\bar{u}(p):=\{\mathbf{R}(\theta(p)) u,~u\in \bar{u}(p)\}$ est un champ de croix sur $\Omega$. De plus $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ et si $\theta$ est de classe $\mathcal{C}^1$ sur $\Omega$ alors $\bar{u}$ est de classe $\mathcal{C}^1$ sur $\Omega$ (respectivement presque-$\mathcal{C}^1$ sur $\Omega$) si et seulement si $\bar{v}$ l'est.
 \end{enumerate}
 \end{proposition}
 
@@ -89,12 +89,11 @@ est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$.
 \begin{enumerate}
 \item Pour tout $p\in\Omega$, si $\bar{u}(p)\neq 0$ alors pour tout $(u^1, u^2)\in\bar{u}(p)\times\bar{u}(p)$, il existe $m_1,m_2\in\mathbb{Z}$ tel que $u_1=\mathbf{R}(\frac{m_1\pi}{2})\frac{f(p)}{\left\|f(p)\right\|}$ et $u_2=\mathbf{R}(\frac{m_2\pi}{2})\frac{f(p)}{\left\|f(p)\right\|}$. On a donc $u^1=\mathbf{R}(\frac{(m_1-m_2)\pi}{2})u^2$ ce qui implique que $\bar{u}(p)\in\mathbf{C}\backslash\{0\}$. Autrement, $\bar{u}(p)=0$. Il vient donc que $\bar{u}$ est un champ de croix.
 
-Soit $F$ l'ensemble des points où $f$ s'annule. L'application $\pi_{\bar{u}}:=f/\|f\|^{-1}$ définie sur $\Omega\backslash F$ est de classe $\mathcal{C}^1$ puisque $f$ l'est. De plus, pour tout $p\in\Omega\backslash F$, $\pi_{\bar{u}}(p)\in\bar{u}(p)$ donc $\bar{u}$ est de classe $\mathcal{C}^1$ sur $\Omega\backslash F$. Par définition, $\mathcal{S}_{\bar{u}}=F$ donc $\bar{u}$ est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$.\\
+Soit $F$ l'ensemble des points où $f$ s'annule. L'application $\pi_{\bar{u}}:=f/\|f\|^{-1}$ définie sur $\Omega\backslash F$ est de classe $\mathcal{C}^1$ puisque $f$ l'est. De plus, pour tout $p\in\Omega\backslash F$, $\pi_{\bar{u}}(p)\in\bar{u}(p)$ donc $\bar{u}$ est de classe $\mathcal{C}^1$ sur $\Omega\backslash F$. Par définition on a donc $\mathcal{S}_{\bar{u}}=F$ de cardinal fini, donc $\bar{u}$ est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$.\\
 
-\item Soit $p\in\Omega$. Si $\bar{u}(p)=0$ alors $\bar{v}(p)=0$ sinon $\bar{u}(p)\in\mathbf{C}\backslash\{0\}$ ce qui implique que $\bar{v}(p)\in\mathbf{C}\backslash\{0\}$. En effet, soit $(v^1, v^2)\in\bar{v}(p)\times\bar{v}(p)$. Par définition, il existe $(u^1, u^2)\in\bar{u}(p)\times\bar{u}(p)$ tel que $v^1=\mathbf{R}(\theta)u^1$ et $v^2=\mathbf{R}(\theta)u^2$. Or $\bar{u}(p)\in\mathbf{C}\backslash\{0\}$, donc il existe $m\in\mathbb{Z}$ tel que:
+\item Soit $p\in\Omega$. Si $\bar{u}(p)=0$ alors $\bar{v}(p)=0$, sinon $\bar{u}(p)\in\mathbf{C}\backslash\{0\}$ ce qui implique que $\bar{v}(p)\in\mathbf{C}\backslash\{0\}$. En effet, soit $(v^1, v^2)\in\bar{v}(p)\times\bar{v}(p)$. Par définition, il existe $(u^1, u^2)\in\bar{u}(p)\times\bar{u}(p)$ tel que $v^1=\mathbf{R}(\theta)u^1$ et $v^2=\mathbf{R}(\theta)u^2$. Or $\bar{u}(p)\in\mathbf{C}\backslash\{0\}$, donc il existe $m\in\mathbb{Z}$ tel que $u^1=\mathbf{R}\left(\frac{m\pi}{2}\right)u^2$. Ainsi:
 $$
-u^1=\mathbf{R}\left(\frac{m\pi}{2}\right)u^2\Longrightarrow
-\mathbf{R}(\theta)u^1=\mathbf{R}(\theta)\mathbf{R}\left(\frac{m\pi}{2}\right)u^2\Longrightarrow
+\mathbf{R}(\theta)u^1=\mathbf{R}(\theta)\mathbf{R}\left(\frac{m\pi}{2}\right)u^2,\mbox{ et donc }
 v^1=\mathbf{R}\left(\frac{m\pi}{2}\right)v^2.
 $$
 Ce qui implique que $\bar{v}(p)\in\mathbf{C}\backslash\{0\}$. Autrement dit, $\bar{v}$ est un champ de croix sur $\Omega$. De plus $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ puisque pour tout $p\in\Omega$, on a:
@@ -141,7 +140,7 @@ Nous pouvons alors introduire la notion d'alignement du champ de croix par la d�
 
 \subsection{Indice}
 
-L'indice de Poincaré est un concept mathématique profondément enraciné dans la topologie et la géométrie différentielle. Elle permet de quantifier le comportement des courbes et des champs de vecteurs à travers leurs singularités. Dans cette partie, à l'instar du concept d'indices pour les champs de vecteurs, nous introduisons un indice spécifique pour les champs de croix. Ces indices seront plus tard relié à la notion de \emph{séparatrices}.
+L'indice de Poincaré est un concept mathématique très usité dans la topologie et la géométrie différentielle. Il permet de quantifier le comportement des courbes et des champs de vecteurs à travers leurs singularités. Dans cette partie, à l'instar du concept d'indices pour les champs de vecteurs, nous introduisons un indice spécifique pour les champs de croix. Cet indice sera plus tard relié à la notion de \emph{séparatrices}.
 
 Pour commencer, nous définissons la notion d'angle pour une croix. À chaque croix, nous associons une représentation angulaire. Cette approche consiste à attribuer à la croix une valeur représentant son orientation par rapport à une référence donnée.
 
@@ -159,19 +158,19 @@ Pour commencer, nous définissons la notion d'angle pour une croix. À chaque cr
 
 \begin{proof}
     Existence: L'ensemble $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]$ est non vide. En effet, si $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]=\emptyset$, alors $\left\{\arg c,~c\in \mathbf{c}\right\}=\emptyset$. Autrement dit, $\mathbf{c}=0$ ce qui est exclut.\\
-    Unicité: Supposons que $\mathbf{c}$ ait deux angles $\theta_{\mathbf{c}}$ et $\theta^{'}_{\mathbf{c}}$. Par définition il existe $m, n\in\mathbb{Z}$ et $c,c^{'}\in\mathbf{c}$ tel que:
+    Unicité: Supposons que $\mathbf{c}$ ait deux angles $\theta_{\mathbf{c}}$ et $\theta^{'}_{\mathbf{c}}$. Par définition il existe $m, m'\in\mathbb{Z}$ et $c,c^{'}\in\mathbf{c}$ tel que:
     $$
-    \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=atan2(c_y, c_x)+2m\pi-atan2(c^{'}_y, c^{'}_x)-2n\pi.
+    \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=atan2(c_y, c_x)+2m\pi-atan2(c^{'}_y, c^{'}_x)-2m'\pi.
     $$
-    De plus, il existe $l\in\mathbb{Z}$ tel que:
+    De plus par définition il existe $l\in\mathbb{Z}$ tel que:
     $$
     atan2(c^{'}_y,c^{'}_x)=atan2(c_y,c_x)+l\frac{\pi}{2}.
     $$
     On a donc:
     $$
-    \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=2m\pi-2n\pi-l\frac{\pi}{2}=k\frac{\pi}{2},
+    \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=2m\pi-2m'\pi-l\frac{\pi}{2}=k\frac{\pi}{2},
     $$
-    où $k=4m-4n-l$.
+    où $k=4m-4m'-l$.
     Sachant que $\theta_{\mathbf{c}},\theta_{\mathbf{c}}^{'}\in\left]-\frac{\pi}{4},\frac{\pi}{4}\right]$, on a $\theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ ce qui implique que:
     $$
     -\frac{\pi}{2}<k\frac{\pi}{2}<\frac{\pi}{2}.
@@ -181,7 +180,7 @@ Pour commencer, nous définissons la notion d'angle pour une croix. À chaque cr
 
 %Comme dans \cite{beaufort2017computing}, $\Theta$ peut être vue comme l'angle minimum des vecteurs composant la croix $\mathbf{c}$.
 
-En considérant un champ de croix $\bar{u}$, la définition précédente nous autorise à attribuer à $\bar{u}$ un champ scalaire formé par les angles des croix de $\bar{u}$. Ce champ est défini de la manière suivante :
+En considérant un champ de croix $\bar{u}$, la définition précédente nous autorise donc à attribuer à $\bar{u}$ un champ scalaire formé par les angles des croix de $\bar{u}$. Ce champ est défini de la manière suivante :
 
 \begin{definition}
     Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$. Le champ d'angle associé à $\bar{u}$ est l'application définie par:
@@ -216,7 +215,7 @@ Grâce au résultat précédent, nous pouvons déduire le corollaire suivant per
 
 \begin{corollary}
     \label{cor:relevement_continu}
-    Soit $\gamma: [0, 1] \longrightarrow \Omega$ un arc sur $\Omega$ et $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ tel que pour tout $p\in\gamma([0, 1)$, $\bar{u}(p)\neq 0$. Alors, il existe $\theta^\gamma_{\bar{u}}: [0, 1] \longrightarrow \mathbb{R}$  une fonction de classe $\mathcal{C}^1$ sur $]0,1[$ telle que $\theta^\gamma_{\bar{u}}(t) \equiv \theta_{\bar{u}}(\gamma(t)) \pmod{\frac{\pi}{2}}$. De plus, si $\alpha_{\bar{u}}^\gamma$ et $\beta_{\bar{u}}^\gamma$ sont deux fonctions de classe $\mathcal{C}^1$ satisfaisant cette propriété, alors il existe $m \in \mathbb{Z}$ tel que $\alpha_{\bar{u}}^\gamma(t) = \beta_{\bar{u}}^\gamma(t) + m\frac{\pi}{2}$ pour tout $t \in [0, 1]$.
+    Soit $\gamma: [0, 1] \longrightarrow \Omega$ un arc sur $\Omega$ et $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ tel que pour tout $p\in\gamma([0, 1])$, $\bar{u}(p)\neq 0$. Alors, il existe $\theta^\gamma_{\bar{u}}: [0, 1] \longrightarrow \mathbb{R}$  une fonction de classe $\mathcal{C}^1$ sur $]0,1[$ telle que $\theta^\gamma_{\bar{u}}(t) \equiv \theta_{\bar{u}}(\gamma(t)) \pmod{\frac{\pi}{2}}$. De plus, si $\alpha_{\bar{u}}^\gamma$ et $\beta_{\bar{u}}^\gamma$ sont deux fonctions de classe $\mathcal{C}^1$ satisfaisant cette propriété, alors il existe $m \in \mathbb{Z}$ tel que $\alpha_{\bar{u}}^\gamma(t) = \beta_{\bar{u}}^\gamma(t) + m\frac{\pi}{2}$ pour tout $t \in [0, 1]$.
 \end{corollary}
 
 \begin{proof}
@@ -224,11 +223,11 @@ Grâce au résultat précédent, nous pouvons déduire le corollaire suivant per
 
     \paragraph{Construction d'un recouvrement de la courbe $\gamma$:} Soit $p\in\gamma([0, 1])$. D'après la proposition \ref{prop:angular_cont}, il existe $V_p\subset\Omega\backslash\mathcal{S}_{\bar{u}}$ et une fonction $\theta_{\bar{u}}^{V_p}\in\mathcal{C}^1$ vérifiant $\theta_{\bar{u}}^{V_p}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$ pour tout $q\in V_p$. Notons maintenant $\widetilde{V_p}$ la composante connexe de l'ensemble $V_p\cap\gamma([0, 1])$ et contenant $p$. Il est clair que la famille $(\widetilde{V_p})_{p\in\gamma([0, 1])}$ recouvre $\gamma([0, 1])$ puisque $\displaystyle\cup_{p\in\gamma([0, 1])}\widetilde{V_p}$ contient $\gamma([0, 1])$. $\gamma$ étant continu et $[0, 1]$ étant compact, on peut extraire de ce recouvrement, un sous-recouvrement fini de $\gamma([0, 1])$. Autrement dit, il existe $I\subset\mathbb{N}$ une partie finie de $\mathbb{N}$ et une sous-famille $(V_i)_{i\in I}$ de $(\widetilde{V_p})_{p\in\gamma([0, 1])}$ recouvrant $\gamma([0, 1])$.
 
-    \paragraph{Construction de $\theta_{\bar{u}}^\gamma$ par morceau:} Soit $\{p_0\}=\gamma^{-1}(0)$ et $V_0\in(V_i)_{i\in I}$ tel que $p_0\in V_0$. On définit $\theta_{\bar{u}}^\gamma(t):=\theta_{\bar{u}}^{V_0}\circ\gamma(t)$ pour tout $t\in\gamma^{-1}(V_0\cap\gamma([0, 1]))$. Il est clair que $\theta_{\bar{u}}^\gamma\in\mathcal{C}^1(\gamma^{-1}(V_0\cap\gamma(]0, 1[))$ et $\theta_{\bar{u}}^\gamma(t)\equiv\theta_{\bar{u}}(\gamma(t))\pmod{\frac{\pi}{2}}$ pour tout $t\in\gamma^{-1}(V_0\cap\gamma([0, 1]))$. À partir de là, nous itérons la construction de $\theta^\gamma_{\bar{u}}$ de la manière suivante: pour $n>0$, on choisit le point $p_n$ tel que $p_n\in\partial V_{n-1}\cap\gamma([0, 1])$ et $p_n\notin\{p_0,\dots,p_{n-1}\}$. On choisit ensuite $V_n$ tel que $V_n\in(V_i)_{i\in I}$ et $p_n\in V_n$. D'après la proposition \ref{prop:angular_cont}, il existe $\theta_{\bar{u}}^{V_n}\in\mathcal{C}^1(V_n)$ et pour tout $q\in V_n$, $\theta_{\bar{u}}^{V_n}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$. Soit $m\in\mathbb{Z}$ tel que $\theta^{V_n}_{\bar{u}}\circ\gamma(t)+m\frac{\pi}{2}=\theta^\gamma_{\bar{u}}(t)$ pour tout $t\in\gamma^{-1}(V_{n-1}\cap\gamma([0, 1]))\cap\gamma^{-1}(V_n\cap\gamma([0, 1]))$. On définit alors $\theta_{\bar{u}}^\gamma(t):=\theta^{V_n}_{\bar{u}}\circ\gamma(t)+m\frac{\pi}{2}$ pour tout $t\in\gamma^{-1}(V_n\cap\gamma([0, 1)])$. Il est clair que $\theta_{\bar{u}}^\gamma$ ainsi définit est de classe $\mathcal{C}^1$ sur $\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma(]0, 1[))$ et $\theta_{\bar{u}}^\gamma(t)\equiv\theta_{\bar{u}}\circ\gamma(t)\pmod{\frac{\pi}{2}}$ pour tout $t\in\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma([0, 1]))$. On poursuit itérativement cette construction jusqu'à ce que $\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma([0, 1]))=\gamma([0, 1])$. Le nombre d'itération à faire est finie puisque $(V_i)_{i\in I}$ est un recouvrement fini de $\gamma([0, 1])$.
+    \paragraph{Construction de $\theta_{\bar{u}}^\gamma$ par morceau:} Soit $\{p_0\}=\gamma^{-1}(0)$ et $V_0\in(V_i)_{i\in I}$ tel que $p_0\in V_0$. On définit $\theta_{\bar{u}}^\gamma(t):=\theta_{\bar{u}}^{V_0}\circ\gamma(t)$ pour tout $t\in\gamma^{-1}(V_0\cap\gamma([0, 1]))$. Il est clair que $\theta_{\bar{u}}^\gamma\in\mathcal{C}^1(\gamma^{-1}(V_0\cap\gamma(]0, 1[))$ et $\theta_{\bar{u}}^\gamma(t)\equiv\theta_{\bar{u}}(\gamma(t))\pmod{\frac{\pi}{2}}$ pour tout $t\in\gamma^{-1}(V_0\cap\gamma([0, 1]))$. À partir de là, nous itérons la construction de $\theta^\gamma_{\bar{u}}$ de la manière suivante: pour $n>0$, on choisit le point $p_n$ tel que $p_n\in\partial V_{n-1}\cap\gamma([0, 1])$ et $p_n\notin\{p_0,\dots,p_{n-1}\}$. On choisit ensuite $V_n$ tel que $V_n\in(V_i)_{i\in I}$, $V_n\neq V_k,~k<n$ et $p_n\in V_n$. D'après la proposition \ref{prop:angular_cont}, il existe $\theta_{\bar{u}}^{V_n}\in\mathcal{C}^1(V_n)$ et pour tout $q\in V_n$, $\theta_{\bar{u}}^{V_n}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$. Soit $m\in\mathbb{Z}$ tel que $\theta^{V_n}_{\bar{u}}\circ\gamma(t)+m\frac{\pi}{2}=\theta^\gamma_{\bar{u}}(t)$ pour tout $t\in\gamma^{-1}(V_{n-1}\cap\gamma([0, 1]))\cap\gamma^{-1}(V_n\cap\gamma([0, 1]))$. On définit alors $\theta_{\bar{u}}^\gamma(t):=\theta^{V_n}_{\bar{u}}\circ\gamma(t)+m\frac{\pi}{2}$ pour tout $t\in\gamma^{-1}(V_n\cap\gamma([0, 1)])$. Il est clair que $\theta_{\bar{u}}^\gamma$ ainsi définit est de classe $\mathcal{C}^1$ sur $\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma(]0, 1[))$ et $\theta_{\bar{u}}^\gamma(t)\equiv\theta_{\bar{u}}\circ\gamma(t)\pmod{\frac{\pi}{2}}$ pour tout $t\in\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma([0, 1]))$. On poursuit itérativement cette construction jusqu'à ce que $\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma([0, 1]))=\gamma([0, 1])$. Le nombre d'itération à faire est fini puisque $(V_i)_{i\in I}$ est un recouvrement fini de $\gamma([0, 1])$.
     \[\]
-    Supposons maintenant que $\alpha_{\bar{u}}^\gamma$ et $\beta_{\bar{u}}^\gamma$ sont deux fonctions de classe $\mathcal{C}^1$ qui satisfont cette propriété, alors, il existe des fonctions $g:[0, 1]\longrightarrow\mathbb{Z}$ et $h:[0, 1]\longrightarrow\mathbb{Z}$ telles que $\alpha^\gamma_{\bar{u}}(t) = \theta_{\bar{u}}(\gamma(t)) + g(t)\frac{\pi}{2}$ et $\beta^\gamma_{\bar{u}}(t) =\theta_{\bar{u}}(\gamma(t)) + h(t)\frac{\pi}{2}$. Par conséquent, pour tout $t\in[0, 1]$ on a:
+    Supposons maintenant que $\alpha_{\bar{u}}^\gamma$ et $\beta_{\bar{u}}^\gamma$ soient deux fonctions de classe $\mathcal{C}^1$ qui satisfont cette propriété, alors, il existe des fonctions $g:[0, 1]\longrightarrow\mathbb{Z}$ et $h:[0, 1]\longrightarrow\mathbb{Z}$ telles que $\alpha^\gamma_{\bar{u}}(t) = \theta_{\bar{u}}(\gamma(t)) + g(t)\frac{\pi}{2}$ et $\beta^\gamma_{\bar{u}}(t) =\theta_{\bar{u}}(\gamma(t)) + h(t)\frac{\pi}{2}$. Par conséquent, pour tout $t\in[0, 1]$ on a:
     $$\alpha_{\bar{u}}^\gamma(t) = \beta_{\bar{u}}^\gamma(t) + g(t)\frac{\pi}{2}-h(t)\frac{\pi}{2}.$$
-    $\alpha^\gamma_{\bar{u}}$ et $\beta^\gamma_{\bar{u}}$ étant continue sur $[0, 1]$, il vient que la fonction $g-h$ est continue sur $[0, 1]$. Autrement dit, $g-h$ est constant. Soit $m\in\mathbb{Z}$ tel que $m=(g-h)(t)$, pour tout $t\in[0, 1]$, On a:
+    $\alpha^\gamma_{\bar{u}}$ et $\beta^\gamma_{\bar{u}}$ étant continue sur $[0, 1]$, il vient que la fonction $g-h$ est continue sur $[0, 1]$. Autrement dit, $g-h$ est constant car continue et à valeur dans $\mathbb{Z}$. Soit $m\in\mathbb{Z}$ tel que $m=(g-h)(t)$, pour tout $t\in[0, 1]$, On a:
     $$\forall t\in[0, 1],\quad\alpha_{\bar{u}}^\gamma(t) = \beta_{\bar{u}}^\gamma(t) + m\frac{\pi}{2}.$$
 \end{proof}
 
@@ -260,7 +259,7 @@ Grâce à cette notion, nous sommes désormais en mesure de définir l'indice d'
 \end{comment}
 
 \begin{definition}
-    On appelle chemin fermé tout lacet $\Gamma$ qui soit $\mathcal{C}^0\cap\mathcal{C}^1_m$. On appellera paramétrisation simple de $\Gamma$, toute paramétrisation $\gamma : I\subset\mathbb{R}\longrightarrow\Gamma$ telle que l’ensemble $\{s\in I, \exists t\in I,~s\neq t,~ \gamma(s) = \gamma(t)\}$ est d’intérieur vide dans $\mathbb{R}$.
+    On appelle chemin fermé tout lacet $\Gamma$ qui est $\mathcal{C}^0\cap\mathcal{C}^1_m$. On appellera paramétrisation simple de $\Gamma$, toute paramétrisation $\gamma : I\subset\mathbb{R}\longrightarrow\Gamma$ telle que l’ensemble $\{s\in I, \exists t\in I,~s\neq t,~ \gamma(s) = \gamma(t)\}$ est d’intérieur vide dans $\mathbb{R}$.
 \end{definition}
 
 Dans tout ce qui suit, les paramétrisations des lacets seront supposées être des paramétrisations simple et on aura par définition
@@ -605,7 +604,7 @@ Notons que si $\bar{u}$ est aligné avec la frontière, alors pour tout $p\in \p
 Une séparatrice dans un champ de croix est une ligne de champ qui commence ou se termine en un point singulier.
 \end{definition}
 
-Cette définition d'une séparatrice induit un problème bien connu dans les équations différentielles ordinaires : comment tracer une ligne de champ à partir d'un point singulier donné ? Cette question peut être difficile étant donné que $\bar{u}(p)={0}$ pour tout $p\in \mathcal{S}_{\bar{u}}$. Cependant, nous proposons le résultat suivant qui sera utilisé par la suite pour contourner ce problème.
+Cette définition d'une séparatrice induit un problème bien connu dans les équations différentielles ordinaires : comment tracer une ligne de champ à partir d'un point singulier donné ? Cette question peut être difficile étant donné que $\bar{u}(p)={0}$ pour tout $p\in \mathcal{S}_{\bar{u}}$. Cependant, nous proposons le résultat suivant qui sera utilisé par la suite pour résoudre ce problème.
 \begin{proposition}
 \label{prop:stream_from_interior_sing}
 Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ et $p\in \Omega\backslash\partial\Omega$. Soit $V_p\subset\Omega$ un voisinnage de $p$ tel que le bord $\partial V_p$ de $V_p$ est de classe $\mathcal{C}^1$ et $\partial V_p\cap\mathcal{S}_{\bar{u}}=\emptyset$. On suppose de plus que $V_p$ est étoilé par rapport à $p$. Alors il existe un champ de croix $\bar{v}$ tel que:\\[-0.3cm]
@@ -1806,7 +1805,7 @@ Dans cette section, nous procédons à un examen approfondi de certains détails
 
 L'hypothèse $0<\#\mathcal{S}_{\bar{u}}<\infty$, telle que présentée dans le théorème \ref{thm:theorem1}, revêt une importance significative pour la mise en œuvre pratique d'un code basé sur notre travail. Elle qu'il faut que le champ de croix doit avoir au moins un poins singulier dans le domaine de calcul. Autrement dit, la présence d'un point singulier est essentielle pour le processus de partitionnement du domaine, même si le champ de croix satisfait toutes les autres hypothèses énoncées dans le théorème \ref{thm:theorem1}.
 
-Pour illustrer ce point (voir figure \ref{fig:anneau}), considérons l'exemple d'un domaine en forme d'anneau avec un champ de croix radial. Un tel champ de croixne comporte aucun point singulier. Par conséquent l'application de l'algorithme de partitionnement ne produit qu'une région correspondant au domaine de départ (voir figure \ref{fig:anneau}). L'introduction d'un point singulier de bord sur le champ de croix permet de résoudre ce problème. En introduisant, par exemple, une singularité d'indice 0 sur l'une des frontières du domaine (voir figure \ref{fig:anneau}), une séparatrice est créée, permettant ainsi un maillage complet du domaine.
+Pour illustrer ce point (voir figure \ref{fig:anneau}), considérons l'exemple d'un domaine en forme d'anneau avec un champ de croix radial. Un tel champ de croix ne comporte aucun point singulier. Par conséquent l'application de l'algorithme de partitionnement ne produit qu'une région correspondant au domaine de départ (voir figure \ref{fig:anneau}). L'introduction d'un point singulier de bord sur le champ de croix permet de résoudre ce problème. En introduisant, par exemple, une singularité d'indice 0 sur l'une des frontières du domaine (voir figure \ref{fig:anneau}), une séparatrice est créée, permettant ainsi un maillage complet du domaine.
 
 \begin{figure}[!h]
 \centering

@@ -18,7 +18,7 @@ Considérons maintenant un maillage triangulaire $\Omega_h$ de $\Omega$. Par là
 $$
 h:=\max_{T\in\mathcal{T}_h} diam(T)
 $$
-Le diamètre d’un triangle est la distance maximale entre deux points du triangle. Nous notons de plus $\mathcal{A}_h$ et $\mathcal{S}_h$ les ensembles respectivement des sommets et des arêtes de $\Omega_h$. Pour tout $p\in\Omega_h$, Nous désignons par $T_p$ la partie du plan formé par l'ensemble des triangles de $\Omega_h$ contenant $p$: $T_p=\displaystyle\cup_{T\in\mathcal{T}_h\atop~p\in T~}T$.
+Le diamètre d’un triangle est la distance maximale entre deux points du triangle. Nous notons de plus $\mathcal{A}_h$ et $\mathcal{S}_h$ les ensembles respectivement des sommets et des arêtes de $\Omega_h$. Pour tout $p\in\Omega_h$, nous désignons par $T_p$ la partie du plan formé par l'ensemble des triangles de $\Omega_h$ contenant $p$: $T_p=\displaystyle\cup_{T\in\mathcal{T}_h\atop~p\in T~}T$.
 
 \subsection{Champ de croix}
 
@@ -99,7 +99,7 @@ Noter que l'ensemble $[qp)\cap\partial T_q$ est bien réduit à un singleton pui
 \end{itemize}
 
 \begin{remark}
-La variation angulaire du champ de croix le long des arêtes du maillage constitue le fondement de la représentation mentionnée précédemment. Il est donc essentiel de pouvoir définir les croix en chaque point le long de chaque arête, d'où la pertinence des contraintes imposées au maillage précédemment évoquées.
+La variation angulaire du champ de croix le long des arêtes du maillage constitue le fondement de la représentation mentionnée précédemment. Il est donc essentiel de pouvoir définir les croix en chaque point le long de chaque arête, d'où la pertinence des contraintes précédemment évoquées imposées au maillage .
 \end{remark}
 
 
@@ -137,6 +137,7 @@ avec $(s_i)_{i\in\llbracket 1, 3\rrbracket}$ les sommets d'un triangle de $\Omeg
 \end{comment}
 
 \subsection{Points singuliers, indice et ligne de champs}
+\label{subsec:pt_sing_ind_lign_champ}
 
 L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singuliers de $\bar{u}_h$, est constitué des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$.
 \begin{lemma}
@@ -150,7 +151,7 @@ Examinons à présent l'indice des points singuliers de $\bar{u}_h$. Soit $p$ un
 $$
 id_{\bar{u}_h}(p)=\frac{1}{2\pi}\int_0^1 d\theta^\gamma_{\bar{u}_h}=\frac{1}{2\pi}\sum_{\gamma_T\in\{\gamma\cap T,~T\in\mathcal{T}_h\}}\int_0^1 d\theta^{\gamma_T}_{\bar{u}_h}.
 $$
-où $\gamma$ est un chemin fermé paramétré sur $[0, 1]$ englobant $p$ et ne contenant aucun autre point singulier de $\bar{u}_h$. En pratique, nous calculerons l'indice d'un point $p$ en utilisant une paramétrisation $\gamma$ du bord $\partial F_p$ de $F_p$. De ce fait, l'indice du point $p$ s'écrit:
+où $\gamma$ est un chemin fermé paramétré sur $[0, 1]$ englobant $p$ et ne contenant aucun autre point singulier de $\bar{u}_h$. En pratique, nous calculerons l'indice d'un point $p$ en utilisant une paramétrisation $\gamma$ du bord $\partial T_p$ de $T_p$. De ce fait, l'indice du point $p$ s'écrit:
 \begin{equation}
     \label{eqn:ind_int}
     id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)=\displaystyle\frac{1}{2\pi}\sum_{i=1}^{n_s}\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1})),
@@ -159,12 +160,12 @@ où $(s_i)_{i\in\llbracket 1, n_s\rrbracket}=\mathcal{S}_h\cap\partial T_p$ dés
 Si $p\in\partial\Omega_h$ alors l'indice de $p$ est donné par:
 \begin{equation}
     \label{eqn:ind_bord}
-    id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right]=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right],
+    id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right]=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1}))\right],
 \end{equation}
 où $\gamma$ dans ce cas est la paramétrisation de $\partial T_p\backslash\partial\Omega_h$ (c'est à dire la partie de $\partial T_p$ se trouvant à l'intérieur de $\Omega_h$) et $(s_i)_{i\in\llbracket 1, n_s\rrbracket}$ l'ensemble des sommets de $\Omega_h$ appartenant à $\partial T_p\backslash\partial\Omega_h$.
 
 \begin{proposition}
-    Pour tout $p\in\Omega_h\backslash\partial\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\rrbracket -n_a/4, n_a/4\llbracket$ où $n_a$ est le nombre d'arête inclut dans $\partial T_p$.
+    Pour tout $p\in\Omega_h\backslash\partial\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\rrbracket -n_a/4, n_a/4\llbracket$ où $n_a$ est le nombre d'arête de $\Omega_h$ inclut dans $\partial T_p$.
 \end{proposition}
 
 \begin{proof}
@@ -181,7 +182,7 @@ $$
 4id_{\bar{u}_h}(p)\in\left\rrbracket-\frac{n_a}{4}, \frac{n_a}{4}\right\llbracket.
 $$
 \end{proof}
-Un corollaire direct de la proposition précédente est que si un point singulier est localiser à l'intérieur d'un triangle alors les seuls indices possible pour ce point sont $-1/4, 0$ et $1/4$.
+Un corollaire direct de la proposition précédente est que si un point singulier est localiser à l'intérieur d'un triangle alors les seuls indices possible pour ce point sont $-1/4, 0$ et $1/4$.\\
 
 Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$ dans $\Omega_h$. Rappelons que étant donné un point $p_0\in\Omega_h$ et un vecteur $\overrightarrow{u_0}\in\mathbb{R}^2$, la ligne de champ $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ d'origine $p_0$ est la courbe $S$ telle que :
 
@@ -195,71 +196,78 @@ Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$
 \frac{dS(t)}{dt}=\pi_{\bar{u}_h}^S(S(t)),t\in \mathbb{R} \text{ et }  S(0)=p_0.
 \end{equation}
 \end{enumerate}
-Pour représenter cette ligne de champ, nous procédons à la construction d'une approximation $SL^h_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ de $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ sur $\Omega_h$ sous la forme d'une succession de segments. Le premier segment est représenté par $[p_0p_1]$ où $p_1$ est le point d'intersection entre $\partial T_{p_0}$ et la demi-droite d'origine $p_0$ et de vecteur directeur $\overrightarrow{u_0}$. Ensuite, pour tout $i\geq 1$, on construit le segment  $[p_ip_{i+1}]$ en cherchant le point $p_{i+1}$ comme le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigée par le vecteur
-$$
+Pour représenter cette ligne de champ, nous procédons à la construction d'une approximation $SL^h_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ de $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ sur $\Omega_h$.  Cette représentation prend la forme d'une séquence de segments, élaborée en utilisant la méthode de Heun \cite{ascher1998computer} telle qu'exposée dans \cite{kowalski2013pde}. Le premier segment est représenté par $[p_0p_1]$ où $p_1$ est le point d'intersection entre $\partial T_{p_0}$ et la demi-droite d'origine $p_0$ et de vecteur directeur $\overrightarrow{u_0}$. Ensuite, pour tout $i\geq 1$, on construit le segment  $[p_ip_{i+1}]$ en cherchant le point $p_{i+1}$ comme le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigée par le vecteur:
+\begin{equation}
 \overrightarrow{u_i}=\mathbf{P}(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})+\mathbf{P}(\bar{u}_h(p'_{i+1}), \overrightarrow{p_{i-1}p_i}).
-$$
-Dans cette formule, $p'_{i+1}$ est le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigé par le vecteur $\mathbf{P}(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})$ et pour tout $(\mathbf{c},d)\in\mathbf{C}\backslash\{0\}\times\mathbb{R}^2$, $\mathbf{P}(\mathbf{c}, d)$ désigne le vecteur $\mathbf{c}$ qui s'aligne le mieux avec la direction $d$. Autrement dit, il s'agit de l'unique élément de l'ensemble
-$$
-\{\mathbf{P}(\mathbf{c}, d)\}=\underset{c_k\in\mathbf{c},~k\in\llbracket1, 4\rrbracket}{\mathrm{argmin}}|c_k.d.\|d\|^{-1}-1|.
-$$
-Une illustration de ce processus est donné sur la figure \ref{fig:draw_streams_1}.  Une alternative plus pratique et plus rapide pour la construction des segments $[p_ip_{i+1}]$ pour $i\geq 1$ consiste à exploiter la\\
-Soit $S\cap T$
+\end{equation}
+Dans cette formule, $p'_{i+1}$ est le point d'intersection entre $\partial T_{p_i}$ et la demi-droite d'origine $p_i$ et dirigé par le vecteur $\mathbf{P}(\bar{u}_h(p_i), \overrightarrow{p_{i-1}p_i})$ et pour tout $(\mathbf{c},d)\in\mathbf{C}\backslash\{0\}\times\mathbb{R}^2$, $\mathbf{P}(\mathbf{c}, d)$ désigne le vecteur $\mathbf{c}$ qui s'aligne le mieux avec la direction $d$. Autrement dit, il s'agit de l'unique élément de l'ensemble:
+\begin{equation}
+\{\mathbf{P}(\mathbf{c}, d)\}=\underset{c_k\in\mathbf{c},~k\in\llbracket1, 4\rrbracket}{\mathrm{argmin}}|c_k.d\|d\|^{-1}-1|.
+\end{equation}
+Une illustration de ce processus est donné sur la figure \ref{fig:draw_streams_1}.
 
 \begin{figure}[!h]
      \centering
      \begin{subfigure}[b]{0.7\textwidth}
          \centering
          \includegraphics[width=\textwidth]{images/draw_streams_11.pdf}
-         \caption{$y=x$}
-         \label{fig:y equals x}
+         \caption{Construction du premier segment de la ligne de champ.}
      \end{subfigure}
      \begin{subfigure}[b]{0.7\textwidth}
          \centering
          \includegraphics[width=\textwidth]{images/draw_streams_12.pdf}
-         \caption{$y=3\sin x$}
-         \label{fig:three sin x}
+         \caption{Intégration de la ligne de champ dans un triangle.}
      \end{subfigure}
-        \caption{Three simple graphs}
+        \caption{Approximation d'une ligne de champ par la méthode de Heun's.}
         \label{fig:draw_streams_1}
 \end{figure}
+
+Une approche alternative, plus efficace et rapide pour construire les segments $[p_ip_{i+1}]$ pour $i\geq 1$, consiste à exploiter la proposition \ref{prop:align_sepa_voisinnage}. Considérons $L_T=SL_{\bar{u}_h}\cap T$, la portion de la ligne de champ $SL_{\bar{u}_h}$ se trouvant dans un triangle $T$ et que l'on souhaite représenter par un segment $[p_ip_{i+1}]$. Ici, $p_i$ et $p_{i+1}$ représentent les points d'intersection entre $L$ et le bord de $T$ (c'est-à-dire, $\{p_i, p_{i+1}\}=L\cap\partial T$) et le but est de trouver le point $p_{i+1}$. Or d'après la proposition \ref{prop:align_sepa_voisinnage}, nous savons que pour tout $p\in L_T$ on a:
+\begin{equation}
+W^\gamma_{\bar{u}_h}(p_{i+1})-W^\gamma_{\bar{u}_h}(p_i)=-\pi,
+\label{eqn:formule_W}
+\end{equation}
+où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial T$ dans le sens positif et pour tout $t\in[0, 1]$ on a $W^\gamma_{\bar{u}_h}(t)=\theta_{\bar{u}_h}^\gamma(t)-\arg{\overrightarrow{p\gamma(t)}}$. Il suffit donc de trouver une approximation du point $p$ puis d'exploiter l'équation \ref{eqn:formule_W} pour trouver une approximation de $p_{i+1}$. Dans notre cas, nous choisissons comme approximation du point $p$, le point $p_i^{'}$ vérifiant:
+$$
+p_i^{'}\in T\mbox{ et }\overrightarrow{p_ip_i^{'}}=\epsilon\overrightarrow{p_{i-1}p_i}, \mbox{ avec }\epsilon\in]0, 1[.
+$$
+On trouve ensuite $p_{i+1}$ en utilisant l'équation \ref{eqn:formule_W} avec $W^\gamma_{\bar{u}_h}(t)=\theta_{\bar{u}_h}^\gamma(t)-\arg{\overrightarrow{p_i^{'}\gamma(t)}}$ (voir la figure \ref{fig:draw_streams_2}).
 
 \begin{figure}[!h]
      \centering
      \begin{subfigure}[b]{0.7\textwidth}
          \centering
          \includegraphics[width=\textwidth]{images/draw_streams_21.pdf}
-         \caption{$y=x$}
-         \label{fig:y equals x}
+         \caption{Construction du premier segment de la ligne de champ.}
      \end{subfigure}
      \begin{subfigure}[b]{0.7\textwidth}
          \centering
          \includegraphics[width=\textwidth]{images/draw_streams_22.pdf}
-         \caption{$y=3\sin x$}
-         \label{fig:three sin x}
+         \caption{Intégration de la ligne de champ dans un triangle.}
      \end{subfigure}
-        \caption{Three simple graphs}
-        \label{fig:draw_streams_1}
+        \caption{Approche alternative pour l'intéfration des lignes de champ dans un champ de croix.}
+        \label{fig:draw_streams_2}
 \end{figure}
 
 
 \subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
 
-\begin{lemma}
-    $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{u}_h}$
-\end{lemma}
-
-Lorsque h tend vers 0, uh tend vers u\\z
-
-
-Illustrer les singularité se démultipliant  en coloriant juste les triangles et en disant qu'on a pas besoin de la localisation spécifique.\\
+\color{red}
+$u_h$ tend vers $u$ quand $h$ tend vers $0$ ???\\
+$\theta_h$ linéaire dans chaque triangle non singulier donc $u_h$ tend vers $u$ dans ces triangles\\
+Dans les triangles non singulier.....
+\color{black}
+\[\]
+Un conséquence de la représentation du champ de croix que nous avons présenté est que les points singuliers de $u$ ne correspondent pas aux points singuliers de $u$ ($\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{u}_h}$). \color{red} Cependant la somme des indices des points singuliers de $u$ est équivalent à la somme des indices des points singuliers de $\bar{u}_h$.\color{black}.
+\[\]
+Par exemple, dans la figure \ref{fig:eclatement_point_sing}, nous disposons d'un champ de croix comprenant un point singulier d'indice $1$ représenté sur un maillage triangulaire. On observe dans le champ de croix présenté la présence d'une multitude de points singuliers d'indice $1/4$ et d'indices $-1/4$, localisés dans divers triangles. Il est à noter que la somme des indices de ces points singuliers correspond bien à l'indice du point singulier initial.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.27]{images/u_sing.pdf}\hspace{0.2cm}
   \includegraphics[scale=0.26]{images/u_h_sing.pdf}
-  \caption{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).}
-  \label{fig:separatrice_illustration}
+  \caption{.}
+  \label{fig:eclatement_point_sing}
 \end{figure}
 
 \section{Partitionnement de $\partial\Omega_h$}
@@ -293,13 +301,10 @@ Par construction, les points singuliers du champ de croix $\bar{u}_h$ se situent
 Une fois la localisation des points singulier identifié, on peut facilement calculé leur index grâce aux formules \ref{eqn:ind_int} ou \ref{eqn:ind_bord} en fonction de leur localisation.
 
 \begin{remark}
-    Grace à la proposition on peut chosir l'emplacement du point singulier dans $T_p$. en l'occurence, pour ne pas avoir à en faire la recherche on peut choisir le barycentre du triangle.\\
+L'emplacement d'un point singulier $p$ dans $T_p$ n'est pas fixé de manière absolue. La proposition \ref{prop:stream_from_interior_sing} indique qu'il est possible de faire correspondre ce point singulier à tout point à l'intérieur de $T_p$, moyennant une modification du champ dans $T_p$ comme spécifié dans ladite proposition. Dans notre représentation des champs de croix précédemment exposée, nous avons opté pour le barycentre des triangles lorsque $T_p$ correspond à un triangle.
+
+En poursuivant cette logique, il est envisageable de substituer un groupe de singularités par un unique point singulier. Pour cela, il suffit de définir l'ensemble $T_p$ de manière à ce qu'il englobe tous les points singuliers que l'on souhaite regrouper avec $p$, le nouveau point singulier. Cette approche est bénéfique car elle permet de traiter les points singuliers situés trop près les uns des autres, par exemple, ceux présents dans deux triangles voisins.
 \end{remark}
-
-
-On peut rasssembler plusieurs singularité voisine en une.. permet d'éviter les problématiques de point trop proche par exemple.
-Illustrer tout ça 
-
 
 \subsection{Construction des séparatrices}
 
@@ -346,41 +351,81 @@ Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné qu
     $$
 \end{itemize}
 
+Le principe demeure inchangé lorsque $p_0$ est un point singulier de bord ($p_0\in\mathcal{S}_{\bar{u}h}\cap\partial\Omega_h$) (voir la figure \ref{fig:init_streams_bord}). Dans ce cas, le premier point $q_1$ est unique et correspond à $\gamma(0)$ où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial T{p_0}\backslash\partial\Omega_h$ dans le sens positif. Une fois les orientations initiales déterminées, l'intégration d'une séparatrice correspond exactement au processus d'intégration d'une ligne de champ tel que décrit dans la section \ref{subsec:pt_sing_ind_lign_champ}.
 
-
-Si $p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$ alors
-
-
-
-\[\]
-
-direction de sortie mieux chez moi que chez les autres
-
+\begin{remark}
+Dans la littérature, les directions initiales sont souvent calculées de manière uniforme autour du point singulier. Par exemple, pour un point singulier d'indice $1/4$, les directions initiales des trois séparatrices sont espacées d'une différence angulaire de $2\pi/3$ les unes des autres. Nous observons ainsi que la méthode d'initialisation que nous proposons ci-dessus est plus précise et fournit de meilleurs résultats (voir la figure \ref{fig:first_dir}).
+\end{remark}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.23]{images/depart_sepa_1.png}\hfill
-\includegraphics[scale=0.23]{images/depart_sepa_1.png}
-\caption{Direction de sortie différentes.}
+\begin{subfigure}[b]{0.7\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/depart_sepa_1.pdf}
+    \caption{Répartition uniforme des différences angulaires entre les directions de sortie.}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}[b]{0.7\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/depart_sepa_2.pdf}
+    \caption{Calcul des directions de sortie à l'aide de notre méthode.}
+\end{subfigure}
+\caption{Illustration des directions de sortie des séparatrices d'un point singulier d'indice $1/4$, utilisant deux méthodes distinctes.}
 \label{fig:first_dir}
 \end{figure}
 
 
+\paragraph{Traversé d'un triangle singulier:} lors de l'intégration d'une séparatrice, il peut arriver qu'elle doive traverser un triangle singulier. Dans ce cas, le processus d'intégration tel que décrit précédemment peut échouer (voir la figure \ref{fig:draw_streams_sing_1}). Cela résulte du fait que le champ d'angle associé au champ de croix dans le triangle n'est pas linéaire et présente des variations importantes. Pour surmonter ce problème, nous cherchons à représenter la séparatrice dans le triangle singulier en utilisant une succession d'autres segments calculés par un raffinement local du maillage à l'intérieur du triangle singulier. L'objectif est d'isoler le point singulier par rapport à la trajectoire de la séparatrice. Voici le procédé:
 
-\paragraph{Traversé d'un triangle singulier:} lors de l'intégration d'une séparatrice, il peut arrivé que. lorsque le segment $[p_ip_{i+1}]$ traverse un triangle singulier, l'angle du champ varie beaucoup. On remplace alors le segment en question par une succecion d'autre segment calculé en raffinant localement le maillage dans le triangle singulier. L'idée est d'isoler le point singulier par rapport à la trajectoire de la séparatrice.
+Considérons $T$ comme un triangle singulier que doit traverser une séparatrice dont l'origine ne se trouve pas dans $T$. On commence en subdivisant $T$ en trois triangles en reliant les milieux des arêtes de $T$.
+
+\begin{comment}
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.24]{images/draw_streams_sing_1.pdf}\hfill
+\includegraphics[scale=0.24]{images/draw_streams_sing_2.pdf}\vspace{1cm}
+\includegraphics[scale=0.24]{images/draw_streams_sing_3.pdf}\hfill
+\includegraphics[scale=0.24]{images/draw_streams_sing_4.pdf}
+\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
+\label{fig:draw_streams_sing}
+\end{figure}
+\end{comment}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}\hfill
-\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}\vspace{1cm}
-\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}\hfill
-\includegraphics[scale=0.2]{images/draw_streams_sing_2.pdf}
-\caption{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.}
-\label{fig:init_streams_bord}
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_1.pdf}
+    \caption{\'Echec d'intégration d'une séparatrice dans un triangle singulier.}
+    \label{fig:draw_streams_sing_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_2.pdf}
+    \caption{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.}
+    \label{fig:draw_streams_sing_2}
+\end{subfigure}
+\\[0.8cm]
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_3.pdf}
+    \caption{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.}
+    \label{fig:draw_streams_sing_3}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_4.pdf}
+    \caption{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.}
+    \label{fig:draw_streams_sing_4}
+\end{subfigure}
+\caption{Illustration de l'intégration d'une séparatice dans un triangle singulier.}
+\label{fig:draw_streams_sing}
 \end{figure}
 
 \paragraph{Fusion de séparatrices:} 
-De manière similaire à ce qui est réalisé dans \cite{marcon2019high}, les séparatrices du champ de croix sont construites simultanément en incrémentant chacune d'elles progressivement, et la rencontre entre deux séparatrices est anticipée en comparant à chaque incrément, d'une part, la distance entre les derniers points calculés et, d'autre part, les directions des derniers segments construits. En d'autres termes, on cherche à déterminer si, à un moment donné, deux séparatrices données avancent dans des directions opposées et si elles sont suffisamment proches l'une de l'autre. On compare ces deux mesures à des seuils prédéfinis, et en fonction du résultat, on décide de fusionner ou non les deux séparatrices.
+de manière similaire à ce qui est réalisé dans \cite{marcon2019high}, les séparatrices du champ de croix sont construites simultanément en incrémentant chacune d'elles progressivement, et la rencontre entre deux séparatrices est anticipée en comparant à chaque incrément, d'une part, la distance entre les derniers points calculés et, d'autre part, les directions des derniers segments construits. En d'autres termes, on cherche à déterminer si, à un moment donné, deux séparatrices données avancent dans des directions opposées et si elles sont suffisamment proches l'une de l'autre. On compare ces deux mesures à des seuils prédéfinis, et en fonction du résultat, on décide de fusionner ou non les deux séparatrices.
 
 La fusion se réalise en créant une nouvelle séparatrice par une fusion linéaire des points des deux séparatrices impliquées. Pour se faire, chaque séparatrice est prolongée à travers $\Omega_h$ jusqu'à atteindre la position de départ de l'autre, tout en maintenant le même nombre de points pour chacune des séparatrices. L'intérêt de fusionner les séparatrices réside dans la réduction de leur nombre, ce qui se traduit directement par une diminution du nombre de régions générées lors du découpage du domaine. Nous illustrons la fusion de deux séparatrices sur la figure \ref{fig:merge_sepa}. On observe sur que la non fusion donne plus de region qui sont notemment tres etirer et non homogene par rapport aux autres ce qui induit des mesh quad non homogene.
 
@@ -402,7 +447,7 @@ La fusion se réalise en créant une nouvelle séparatrice par une fusion linéa
     \includegraphics[width=\textwidth]{images/decoup_fusion.pdf}
     \caption{fusion.}
     \label{fig:decoup_fusion}
-\end{subfigure}        
+\end{subfigure}
 \caption{Illustration de l'opération d'alignement à partir du champ d'angle donné par l'équation \eqref{eqn:principe_def_phi}.}
 \label{fig:fusion}
 \end{figure}
@@ -427,6 +472,15 @@ Pour insérer un point $p$ dans $T$, on commence par chercher tout l'élément o
 \label{fig:insert_pt}
 \end{figure}
 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.58]{images/decoup_triangle.pdf}\hfill
+\includegraphics[scale=0.58]{images/decoup_triangle.pdf}
+\caption{Direction de sortie différentes.}
+\label{fig:insert_pt}
+\end{figure}
+
  Trouver l'élément ou les deux éléments de $T$ contenant $p$.
 Insérer $p$ dans ces éléments
 \[\]
@@ -436,15 +490,20 @@ on ajoute les points constituant les separatrices a $\Omega_h$ modifiant ainsi l
 Pour se faire, on exécute localement l'algorithme d'insertition de point localement dans chaque triangle.\\
 donné par\\
 
-
+Il ne reste plus qu'a travailler chaque partition en la maillant \ref{subsec:gen_mesh_quad}
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.25]{images/eclatement.pdf}
+\includegraphics[scale=0.28]{images/eclatement_1.pdf}
+\hfill
+\includegraphics[scale=0.28]{images/eclatement_2.pdf}
+\\[1cm]
+\includegraphics[scale=0.45]{images/eclatement_3.pdf}
 \caption{Direction de sortie différentes.}
 \label{fig:eclatement}
 \end{figure}
 
 \subsection{Génération du maillage quadrilatéral}
+\label{subsec:gen_mesh_quad}
 
 equation\\
 Tracé directement dans le champ de croix\\
@@ -515,7 +574,8 @@ Lorsque h tend vers 0\\
 Le partitionnement Qh obtenu suite au partitionnement est 'il une decomposisition en région de quatres côtés de $\Omega_h$ ?\\
 
 En quel sens le partitionnement Qh obtenu est;\\
-On peu ainsi reconstruit le bord en ordre supérieur
+On peu ainsi reconstruit le bord en ordre supérieur\\
+Faire plusieurs cercles avec different size mesh pour montrer la difference entre avec hermitte et sans hermitte
 
 
 \section{Génération de champs de croix}
