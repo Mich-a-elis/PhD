@@ -543,15 +543,27 @@ Considérons $T$ comme un triangle de $\Omega_h$ traversé par certains segments
 \label{fig:exemple_insert_pt}
 \end{figure}
 
-Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous avons quatre segments de séparatrices à considérer ($DH$, $HE$, $HG$, $FH$). Nous procédons donc à l'insertion séquentielle des points $D$, $E$, $F$, $G$, $H$ (l'ordre d'insertion est sans importance). On se retrouve alors avec un raffinement local contenant tous les points nécessaire à la suite du processus. Le raffinement ainsi produit ne contient pas en général dans la liste de ses arêtes les segments des séparatrices. La suite du processus consistera à recenser les segments des séparatrices qui n'ont pas été généré suite à l'insertion des points puis à procéder à des ajustements locaux pour garantir leur présence dans le raffinement effectué. Plus précisement, nous effectuerons des retournements d'arêtes en nous inspirant de la méthode de génération de maillages de type Voronoi, telle qu'exposée dans \cite{georgegeneration}: soit $T$ le maillage local correspondant au raffinement précédemment construit. Avec cette notation, nous identifions le triangle $T$ et son maillage local. Soit $AB$ un segment non présente dans $T$ et $T_{AB}$ l'ensemble des éléments de $T$ dont une arête est coupée par $AB$.
+Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous avons quatre segments de séparatrices à considérer ($DH$, $HE$, $HG$, $FH$). Nous procédons donc à l'insertion séquentielle des points $D$, $E$, $F$, $G$, $H$ (l'ordre d'insertion est sans importance). On se retrouve alors avec un raffinement local contenant tous les points nécessaire à la suite du processus. Le raffinement ainsi produit ne contient pas en général dans la liste de ses arêtes les segments des séparatrices. La suite du processus consistera à recenser les segments des séparatrices qui n'ont pas été généré suite à l'insertion des points puis à procéder à des ajustements locaux pour garantir leur présence dans le raffinement effectué. Plus précisement, nous effectuerons des retournements d'arêtes en nous inspirant de la méthode de génération de maillages de type Voronoi, telle qu'exposée dans \cite{georgegeneration}: soit $T$ le maillage local correspondant au raffinement précédemment construit. Avec cette notation, nous identifions le triangle $T$ et son maillage local. Soit $AB$ un segment non présente dans $T$ et $T_{AB}$ l'ensemble des éléments de $T$ dont une arête est coupée par $AB$. Si le premier triangle de $T_{AB}$ (contenant $A$ comme sommet) et le second triangle de cet ensemble (le voisin d'arête commune, oposée à $A$) forment un polygone convexe, on peut appliquer le retournement d'arête. On supprime ainsi l'arête commune et on génère une nouvelle arête sans intersection avec $AB$. Ce processus est similaire pour le dernier élément (ayant $B$ comme sommet) et l'avant-dernier. Cela permet d'avancer sans que l'arête nouvellement créée ne croise $AB$. En itérant ce processus, le polygone $T_{AB}$ est remaillé et l'arête $AB$ est désormais présente comme une arête d'un triangle (voir figure \ref{fig:retournement_arete_george}).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.275]{images/retourn_arete_george-1.pdf}\hfill
 \includegraphics[scale=0.275]{images/retourn_arete_george-2.pdf}
-\caption{Direction de sortie différentes.}
-\label{fig:retournement_arete}
+\caption{Forçage par retournement. Source: \cite{georgegeneration}.}
+\label{fig:retournement_arete_george}
 \end{figure}
+
+\vspace{0.5cm}
+\begin{algorithm}[H]
+\vspace{0.2cm}
+1.) Identification des points singuliers du champ de croix,\\\vspace{0.2cm}
+2.) Détermination du nombre de séparatrices pour chaque point singulier,\\\vspace{0.2cm}
+3.) Intégration des séparatrices,\\\vspace{0.2cm}
+4.) Identification des régions.\\\vspace{0.2cm}
+\caption{Algorithme de partitionnement $\Omega_h$}
+\end{algorithm}
+\vspace{0.5cm}
+
 
 
 
@@ -560,7 +572,7 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 \centering
 \includegraphics[scale=0.275]{images/retournement_arete-1.pdf}\hfill
 \includegraphics[scale=0.275]{images/retournement_arete-2.pdf}
-\caption{Direction de sortie différentes. Source: \cite{georgegeneration}.}
+\caption{Direction de sortie différentes.}
 \label{fig:retournement_arete}
 \end{figure}
 
