@@ -483,7 +483,7 @@ Une fois les séparatrices construites, nous procédons à la subdivision du mai
 
 \paragraph{Intersections de séparatrices:}
 
-Comme annoncé, la première étape de ce processus consiste à déterminer les frontières des régions. La recherche des points d'intersection entre les séparatrices peut être réalisée localement dans chaque triangle et simultanément. Étant donné que les séparatrices sont constituées de segments, il suffit de vérifier l'intersection de ces segments les uns par rapport aux autres. En découpant les séparatrices au niveau de ces points d'intersection, cela met en évidence les contours des régions, comme illustré sur la figure \ref{fig:detect_intersection}.
+Comme annoncé, la première étape de ce processus consiste à déterminer les frontières des régions. La recherche des points d'intersection entre les séparatrices peut être réalisée localement dans chaque triangle et simultanément. Étant donné que les séparatrices sont constituées de segments, il suffit de vérifier l'intersection de ces segments les uns par rapport aux autres. En découpant les séparatrices au niveau de ces points d'intersection, cela met en évidence les contours des régions, comme illustré sur la figure \ref{fig:detect_intersection} avec une couleur différente pour chaque séparatice.
 
 \paragraph{Identification des partitions:}
 Dans cette phase, notre objectif est de découper le maillage triangulaire initial $\Omega_h$ en plusieurs sous-maillages, représentant chacun une partition. Pour y parvenir, nous enrichissons $\Omega_h$ en y insérant les points qui constituent les séparatrices, puis nous ajustons le maillage pour qu'il intègre les segments formés par ces séparatrices. Cette étape de modification du maillage peut être réalisée localement au niveau de chaque triangle de $\Omega_h$, exploitant ainsi les capacités de calcul parallèle pour accélérer le processus.
@@ -583,7 +583,7 @@ Pour se faire, on exécute localement l'algorithme d'insertition de point locale
 donné par\\
 En utilisant des opérations de retournement d'arêtes, nous cherchons ensuite à retrouver les segments constituant les séparatrices ayant traversé $T$. Cette procédure s'inspire de la génération de maillages selon la méthode de type Voronoi présentée dans \cite{georgegeneration}. Notons $K$\\
 Il ne reste plus qu'a travailler chaque partition en la maillant \ref{subsec:gen_mesh_quad}
-\begin{figure}[!h]
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.29]{images/eclatement_2.pdf}
 \hfill
@@ -592,8 +592,81 @@ Il ne reste plus qu'a travailler chaque partition en la maillant \ref{subsec:gen
 \label{fig:eclatement}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.29]{images/separatrice_echantillonage_1.pdf}
+\hfill
+\includegraphics[scale=0.347]{images/separatrice_echantillonage_2.pdf}
+\caption{Extraction des régions en tant que sous-maillages.}
+\label{fig:separatrice_echantillonage}
+\end{figure}
+
 \subsection{Génération du maillage quadrilatéral}
 \label{subsec:gen_mesh_quad}
+
+On définit un pas de mailler\\
+A partir de là onn affecte un nombre de noeud à chaque sepratrice\\
+glouton\\
+On cherche ensuite les sepa commun\\
+on prend par exemple le max ou le min de leur nombre\\
+
+\paragraph{Interpolation transfinie}
+
+Il faut ensuite mailler les blocs obtenus. Il s'agit de régions de quatre cotés, mais dont les côtés sont déformés. Nous utilisons donc une interpolation transfinie afin de construire sur ces régions un maillage structuré. De façon générale, il s'agit de construire une quadrangulation structurée $\mathcal{C}^0$-continue d'un quadrangle $\mathcal{Q}$ de $\mathbb{R}^d$. Cette méthode est due à W. A. Cook \cite{ref4} et est décrite dans \cite{ref5}.\\
+Soient $C_i(t),~~t\in[0,1]$ et $i\in\{1,2,3,4\}$ des paramétrisations de chacun des quatre côtés de la région. Ces courbes peuvent aussi être vues comme les restrictions aux quatre côtés d'une surface notée Q(x,y) avec:
+$$Q(t,0)=C_1(t);~~Q(1,t)=C_2(t);~~Q(t,1)=C_3(t);~~Q(0,t)=C_4(t);$$
+Soient :\\
+$U_{i0}$ les $n+1$ points choisis et connus sur le côté 1 de $Q$ avec $i=0,...,m$;\\
+$U_{in}$ les $n+1$ points choisis et connus sur le côté 2 de $Q$ avec $i=0,...,m$;\\
+$U_{0j}$ les $m+1$ points choisis et connus sur le côté 3 de $Q$ avec $i=0,...,n$;\\
+$U_{mj}$ les $m+1$ points choisis et connus sur le côté 4 de $Q$ avec $i=0,...,n$;\\
+Les points $U_{ij}$ sont ensuite reportés sur les côtés du carré unité via les formules suivantes:
+\tiny
+\begin{eqnarray}
+u_{i0}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{k0}-U_{k-10}\|}{\displaystyle\sum_{k=1}^i\|U_{k0}-U_{k-10}\|},~~u_{i1}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{k1}-U_{k-11}\|}{\displaystyle\sum_{k=1}^i\|U_{k1}-U_{k-11}\|},~~u_{0j}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{0k}-U_{0k-1}\|}{\displaystyle\sum_{k=1}^i\|U_{0k}-U_{0k-1}\|},~~u_{1j}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{1k}-U_{1k-1}\|}{\displaystyle\sum_{k=1}^i\|U_{1k}-U_{1k-1}\|}
+\end{eqnarray}
+\normalsize
+Une quadrangulation du carré unité est obtenue en trouvant les points de coordonnées $(x_{ij},y_{ij})$, intersection des segment $u_{i0}u_{in}$ et $u_{0j}u_{mj}$. Ces points sont ensuite reportés sur le domaine grâce à l'application (\ref{appli}).
+
+\begin{eqnarray}
+T_c(x,y)&=&
+\begin{bmatrix}
+(1-x),x
+\end{bmatrix}
+\begin{bmatrix}
+C_4(y)\\\\
+C_2(y)
+\end{bmatrix}
++
+\begin{bmatrix}
+(1-y),y
+\end{bmatrix}
+\begin{bmatrix}
+C_1(y)\\\\
+C_3(y)
+\end{bmatrix}\nonumber\\\nonumber\\
+&&-
+\begin{bmatrix}
+(1-x),x
+\end{bmatrix}
+\begin{bmatrix}
+U_{00}&U_{mn}\\\\
+U_{m0}&U_{0n}
+\end{bmatrix}
+\begin{bmatrix}
+(1-y)\\\\
+y
+\end{bmatrix}
+\label{appli}
+\end{eqnarray}
+
+Cette application réalise une transformation d'un maillage régulier dans l’espace paramétrique en un réseau de deux familles de lignes de maillage dans l’espace physique avec les propriétés suivantes :
+\begin{enumerate}
+\item la première et la dernière ligne de maillage de chaque famille épousent les frontières respectives du domaine,
+\item les lignes intermédiaires du maillage sont adaptées aux frontières et varient de manière monotone d’une frontière à l’autre,
+\item le maillage n’est pas nécessairement orthogonal.
+\end{enumerate}
+Nous illustrons le processus d'interpolation transfinie sur la figure \ref{fig:interpol}
 
 equation\\
 Tracé directement dans le champ de croix\\
