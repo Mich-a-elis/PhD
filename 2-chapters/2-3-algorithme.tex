@@ -264,7 +264,8 @@ On trouve ensuite $p_{i+1}$ en utilisant l'équation \ref{eqn:formule_W} avec $W
 
 À présent, nous nous posons la question de savoir quel lien on peut exhiber entre le champ de coix $\bar{u}$ et sa représentation $\bar{u}_h$ construite dans les parties précedentes.
 
-Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait que $\theta_{\bar{u}_h}$ est linéaire par construction dans $T$. Il vient alors que $\theta_{\bar{u}_h}$ tend vers $\theta_{\bar{u}}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. Autrement dit, $\bar{u}_h$ tend vers $\bar{u}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. \color{red} Cependant la somme des indices des points singuliers de $u$ est équivalent à la somme des indices des points singuliers de $\bar{u}_h$.\color{black}.
+Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait que $\theta_{\bar{u}_h}$ est linéaire par construction dans $T$. Il vient alors que $\theta_{\bar{u}_h}$ tend vers $\theta_{\bar{u}}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. Autrement dit, $\bar{u}_h$ tend vers $\bar{u}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. \color{red} Cependant la somme des indices des points singuliers de $u$ est équivalent à la somme des indices des points singuliers de $\bar{u}_h$.\\
+Pas besoin de modifier le maillage grace etoilage penser a Jovanna\color{black}.
 \[\]
 Une conséquence de la représentation du champ de croix que nous avons présentée est que les points singuliers de $\bar{u}$ ne correspondent pas aux points singuliers de $\bar{u}_h$ ($\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{u}_h}$). Par exemple, sur la figure \ref{fig:eclatement_point_sing}, nous avons un champ de croix contenant un point singulier d'indice $1$ que nous représentons sur un maillage triangulaire. On observe alors la présence d'une multitude de points singuliers d'indice $1/4$ et d'indices $-1/4$, localisés dans divers triangles. Il est à noter cependant que la somme des indices de ces points singuliers correspond bien à l'indice du point singulier initial. D'où le lemme suivant:
 
@@ -611,6 +612,58 @@ On cherche ensuite les sepa commun\\
 on prend par exemple le max ou le min de leur nombre\\
 
 \paragraph{Interpolation transfinie}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{images/transfini_1.pdf}
+    \caption{Insertion de $D$.}
+    \label{fig:transfini_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=\textwidth]{images/transfini_2.pdf}
+    \caption{Insertion de $E$.}
+    \label{fig:transfini_2}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{images/transfini_3.pdf}
+    \caption{Insertion de $F$.}
+    \label{fig:transfini_3}
+\end{subfigure}
+\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\label{fig:transfini}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_equation_1.pdf}
+    \caption{Insertion de $D$.}
+    \label{fig:quad_equation_1}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_equation_2.pdf}
+    \caption{Insertion de $E$.}
+    \label{fig:quad_equation_2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_equation_3.pdf}
+    \caption{Insertion de $F$.}
+    \label{fig:quad_equation_3}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_equation_4.pdf}
+    \caption{Insertion de $G$.}
+    \label{fig:quad_equation_4}
+\end{subfigure}
+\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\label{fig:quad_equation}
+\end{figure}
 
 Il faut ensuite mailler les blocs obtenus. Il s'agit de régions de quatre cotés, mais dont les côtés sont déformés. Nous utilisons donc une interpolation transfinie afin de construire sur ces régions un maillage structuré. De façon générale, il s'agit de construire une quadrangulation structurée $\mathcal{C}^0$-continue d'un quadrangle $\mathcal{Q}$ de $\mathbb{R}^d$. Cette méthode est due à W. A. Cook \cite{ref4} et est décrite dans \cite{ref5}.\\
 Soient $C_i(t),~~t\in[0,1]$ et $i\in\{1,2,3,4\}$ des paramétrisations de chacun des quatre côtés de la région. Ces courbes peuvent aussi être vues comme les restrictions aux quatre côtés d'une surface notée Q(x,y) avec:
