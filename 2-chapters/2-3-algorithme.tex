@@ -588,7 +588,7 @@ Il ne reste plus qu'a travailler chaque partition en la maillant \ref{subsec:gen
 \centering
 \includegraphics[scale=0.29]{images/eclatement_2.pdf}
 \hfill
-\includegraphics[scale=0.352]{images/eclatement_3.pdf}
+\includegraphics[scale=0.3575]{images/eclatement_3.pdf}
 \caption{Extraction des régions en tant que sous-maillages.}
 \label{fig:eclatement}
 \end{figure}
@@ -597,7 +597,7 @@ Il ne reste plus qu'a travailler chaque partition en la maillant \ref{subsec:gen
 \centering
 \includegraphics[scale=0.29]{images/separatrice_echantillonage_1.pdf}
 \hfill
-\includegraphics[scale=0.347]{images/separatrice_echantillonage_2.pdf}
+\includegraphics[scale=0.3535]{images/separatrice_echantillonage_2.pdf}
 \caption{Extraction des régions en tant que sous-maillages.}
 \label{fig:separatrice_echantillonage}
 \end{figure}
@@ -663,6 +663,24 @@ on prend par exemple le max ou le min de leur nombre\\
 \end{subfigure}
 \caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
 \label{fig:quad_equation}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_eclatement.pdf}
+    \caption{Insertion de $D$.}
+    \label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_carre.pdf}
+    \caption{Insertion de $E$.}
+    \label{fig:quad_carre}
+\end{subfigure}
+\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\label{fig:maillage_quad_carre}
 \end{figure}
 
 Il faut ensuite mailler les blocs obtenus. Il s'agit de régions de quatre cotés, mais dont les côtés sont déformés. Nous utilisons donc une interpolation transfinie afin de construire sur ces régions un maillage structuré. De façon générale, il s'agit de construire une quadrangulation structurée $\mathcal{C}^0$-continue d'un quadrangle $\mathcal{Q}$ de $\mathbb{R}^d$. Cette méthode est due à W. A. Cook \cite{ref4} et est décrite dans \cite{ref5}.\\
