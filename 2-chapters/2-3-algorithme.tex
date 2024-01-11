@@ -291,23 +291,40 @@ Une conséquence de la représentation du champ de croix que nous avons présent
 
 \section{Partitionnement de $\partial\Omega_h$}
 
-L'adaptation de l'algorithme de partitionnement \ref{alg:algo_main} au maillage $\Omega_h$ est donné par:\\
+L'adaptation de l'algorithme de partitionnement \ref{alg:algo_main} au maillage $\Omega_h$ est donné par l'algorithme \ref{alg:discr_algo_main}. On considère que l'algorithme a convergé si les séparatrices ne convergent pas vers un cycle limite. Examinons maintenant en détail certaines étapes de cet algorithme.
 
+\begin{comment}
 \begin{algorithm}[H]
-\label{alg:discr_algo_main}
-\SetKwInOut{Input}{Entrée}
-\SetKwInOut{Output}{Sortie}
-\Input{$\Omega_h$ un maillage triangulaire, champ de croix $\bar{u}_h$ linéaire par morceau sur chaque triangle de $\Omega_h$.}
-\Output{Partition de $\Omega_h$ en ensembles de régions.}
-\vspace{0.2cm}
-1.) Identification des points singuliers du champ de croix,\\\vspace{0.2cm}
-2.) Détermination du nombre de séparatrices pour chaque point singulier,\\\vspace{0.2cm}
-3.) Intégration des séparatrices,\\\vspace{0.2cm}
-4.) Identification des régions.\\\vspace{0.2cm}
-\caption{Algorithme de partitionnement $\Omega_h$}
+  \SetAlgoLined
+  \KwData{this text}
+  \KwResult{how to write algorithm with \LaTeX2e }
+  initialization\;
+  \While{not at end of this document}{
+    read current\;
+    \eIf{understand}{
+      go to next section\;
+      current section becomes this one\;
+    }{
+      go back to the beginning of current section\;
+    }
+  }
+  \caption{How to write algorithms in English}
 \end{algorithm}
-\vspace{0.5cm}
-On considère que l'algorithme a convergé si les séparatrices ne convergent pas vers un cycle limite. Examinons maintenant en détail certaines étapes de cet algorithme:
+\end{comment}
+
+\begin{algorithm}[h!]
+\label{alg:discr_algo_main}
+\renewcommand{\algorithmcfname}{Algorithme}%
+\SetAlgoLined
+\Entree{$\Omega_h$ un maillage triangulaire, champ de croix $\bar{u}_h$}
+\Sortie{Partition de $\Omega_h$ en ensembles de régions}
+\vspace{0.2cm}
+1.\quad Identification des points singuliers du champ de croix\\[0.2cm]
+2.\quad Détermination du nombre de séparatrices pour chaque point singulier\\[0.2cm]
+3.\quad Intégration des séparatrices\\[0.2cm]
+4.\quad Identification des régions\\[0.2cm]
+\caption{Partitionnement $\Omega_h$}
+\end{algorithm}
 
 \subsection{Recherche de points singuliers}
 
@@ -473,7 +490,7 @@ La fusion se réalise en créant une nouvelle séparatrice par une fusion linéa
 \includegraphics[scale=0.2755]{images/eclatement_1.pdf}
 \hfill
 \includegraphics[scale=0.2755]{images/intersect_stream.pdf}
-\caption{Direction de sortie différentes.}
+\caption{Intersection de séparatrices.}
 \label{fig:detect_intersection}
 \end{figure}
 
@@ -544,7 +561,7 @@ Considérons $T$ comme un triangle de $\Omega_h$ traversé par certains segments
 \label{fig:exemple_insert_pt}
 \end{figure}
 
-Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous avons quatre segments de séparatrices à considérer ($DH$, $HE$, $HG$, $FH$). Nous procédons donc à l'insertion séquentielle des points $D$, $E$, $F$, $G$, $H$ (l'ordre d'insertion est sans importance). On se retrouve alors avec un raffinement local contenant tous les points nécessaire à la suite du processus. Le raffinement ainsi produit ne contient pas en général dans la liste de ses arêtes les segments des séparatrices. La suite du processus consistera à recenser les segments des séparatrices qui n'ont pas été généré suite à l'insertion des points puis à procéder à des ajustements locaux pour garantir leur présence dans le raffinement effectué. Plus précisement, nous effectuerons des retournements d'arêtes en nous inspirant de la méthode de génération de maillages de type Voronoi, telle qu'exposée dans \cite{georgegeneration}: soit $T$ le maillage local correspondant au raffinement précédemment construit. Avec cette notation, nous identifions le triangle $T$ et son maillage local. Soit $AB$ un segment non présente dans $T$ et $T_{AB}$ l'ensemble des éléments de $T$ dont une arête est coupée par $AB$. Si le premier triangle de $T_{AB}$ (contenant $A$ comme sommet) et le second triangle de cet ensemble (le voisin d'arête commune, oposée à $A$) forment un polygone convexe, on peut appliquer le retournement d'arête. On supprime ainsi l'arête commune et on génère une nouvelle arête sans intersection avec $AB$. Ce processus est similaire pour le dernier élément (ayant $B$ comme sommet) et l'avant-dernier. Cela permet d'avancer sans que l'arête nouvellement créée ne croise $AB$. En itérant ce processus, le polygone $T_{AB}$ est remaillé et l'arête $AB$ est désormais présente comme une arête d'un triangle (voir figure \ref{fig:retournement_arete_george}).
+Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous avons quatre segments de séparatrices à considérer ($DH$, $HE$, $HG$, $FH$). Nous procédons donc à l'insertion séquentielle des points $D$, $E$, $F$, $G$, $H$ (l'ordre d'insertion est sans importance). On se retrouve alors avec un raffinement local contenant tous les points nécessaire à la suite du processus. Le raffinement ainsi produit ne contient pas en général dans la liste de ses arêtes les segments des séparatrices. La suite du processus consistera à recenser les segments des séparatrices qui n'ont pas été généré suite à l'insertion des points puis à procéder à des ajustements locaux pour garantir leur présence dans le raffinement effectué. Plus précisement, nous effectuerons des retournements d'arêtes en nous inspirant de la méthode de génération de maillages de type Voronoi, telle qu'exposée dans \cite{georgegeneration}: soit $T_{mesh}$ le maillage local correspondant au raffinement précédemment construit. Soit $AB$ un segment non présente dans $T_{mesh}$ et $T_{AB}$ l'ensemble des éléments de $T_{mesh}$ dont une arête est coupée par $AB$. Si le premier triangle de $T_{AB}$ (contenant $A$ comme sommet) et le second triangle de cet ensemble (le voisin d'arête commune, oposée à $A$) forment un polygone convexe, on peut appliquer le retournement d'arête. On supprime ainsi l'arête commune et on génère une nouvelle arête sans intersection avec $AB$. Ce processus est similaire pour le dernier élément (ayant $B$ comme sommet) et l'avant-dernier. Cela permet d'avancer sans que l'arête nouvellement créée ne croise $AB$. En itérant ce processus, le polygone $T_{AB}$ est remaillé et l'arête $AB$ est désormais présente comme une arête d'un triangle (voir figure \ref{fig:retournement_arete_george}). Une formalistaion de ce procédé est illustré par l'algorithme \ref{alg:retournement_arete}.
 
 \begin{figure}[h!]
 \centering
@@ -556,53 +573,83 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 
 \vspace{0.5cm}
 \begin{algorithm}[H]
+\label{alg:retournement_arete}
+\renewcommand{\algorithmcfname}{Algorithme}%
+\SetAlgoLined
+\Entree{Triangle $T$, Liste des séparatrices}
+\Sortie{Maillage local $T_{mesh}$ de $T$ contenant dans sa liste d'arêtes les segments des séparatrices inclus dans $T$}
 \vspace{0.2cm}
-1.) Identification des points singuliers du champ de croix,\\\vspace{0.2cm}
-2.) Détermination du nombre de séparatrices pour chaque point singulier,\\\vspace{0.2cm}
-3.) Intégration des séparatrices,\\\vspace{0.2cm}
-4.) Identification des régions.\\\vspace{0.2cm}
-\caption{Algorithme de partitionnement $\Omega_h$}
+1.\quad Initialisation $T_{mesh}=T$\\[0.2cm]
+2.\quad Insertion des points aux extrémités des segments comme illustré sur la figure \ref{fig:insert_pt}\\[0.2cm]
+\PourTous{segment $AB$ n'appartenant pas à la liste des arêtes de $T_{mesh}$}{
+\vspace{0.2cm}
+3.\quad Construire $T_{AB}$\\[0.2cm]
+\Repeter{ce que $Card(T_{AB})=2$}{
+\vspace{0.2cm}
+\Repeter{ce que le retournement d'arête marche}{
+\vspace{0.2cm}
+4.\quad Itérer sur les arêtes de $T_{AB}$ interscectant $AB$\\[0.2cm]
+5.\quad Tenter le retournement d'arête
+\vspace{0.2cm}
+}
+\vspace{0.2cm}
+6.\quad Mettre à jour $T_{AB}$
+\vspace{0.2cm}
+}
+\vspace{0.2cm}
+}
+\caption{Forçage }
 \end{algorithm}
 \vspace{0.5cm}
 
-
-
-
+En appliquant cet algorithme (\ref{alg:retournement_arete}) à l'exemple de la figure \ref{fig:exemple_insert_pt}, on observe que le segment $GH$ n'est pas inclus parmi les arêtes de $T_{mesh}$. On forme ensuite $T_{GH}$ à partir des triangles $BDG$ et $BHD$. En modifiant l'arête $DB$ en $GH$, nous constatons que le polygone $DGBH$ reste convexe, confirmant ainsi le succès du retournement d'arête. Cela nous donne les nouveaux triangles $DGH$ et $GBH$ inclus parmi les triangles de $T_{mesh}$, ainsi que l'arête $GH$ ajoutée aux arêtes de $T_{mesh}$ que nous cherchions à récupérer (voir figure \ref{fig:retournement_arete}).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.275]{images/retournement_arete-1.pdf}\hfill
 \includegraphics[scale=0.275]{images/retournement_arete-2.pdf}
-\caption{Direction de sortie différentes.}
+\caption{Retrournement d'arête suite à l'exemple de la figure \ref{fig:exemple_insert_pt}.}
 \label{fig:retournement_arete}
 \end{figure}
 
+En appliquant le processus précédemment décrit sur l'exemple de la figure \ref{fig:detect_intersection}, on modifie localement chaque triangle traversé par une séparatrice ce qui nous donne un maillage global adapté au partitionnement effectué. Il ne reste plus qu'à récupérer chaque partition sous la forme d'un sous-maillage, ce qui peut être réalisé grâce à un algorithme glouton (voir Annexe). Le résultat est illustré sur la figure \ref{fig:eclatement}.
 
-Localement dans chaque triangle,\\
-on ajoute les points constituant les separatrices a $\Omega_h$ modifiant ainsi la topologie du maillage triangulaire initial,\\
-Pour se faire, on exécute localement l'algorithme d'insertition de point localement dans chaque triangle.\\
-donné par\\
-En utilisant des opérations de retournement d'arêtes, nous cherchons ensuite à retrouver les segments constituant les séparatrices ayant traversé $T$. Cette procédure s'inspire de la génération de maillages selon la méthode de type Voronoi présentée dans \cite{georgegeneration}. Notons $K$\\
-Il ne reste plus qu'a travailler chaque partition en la maillant \ref{subsec:gen_mesh_quad}
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.29]{images/eclatement_2.pdf}
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/eclatement_2.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
 \hfill
-\includegraphics[scale=0.3575]{images/eclatement_3.pdf}
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/eclatement_3.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
 \caption{Extraction des régions en tant que sous-maillages.}
 \label{fig:eclatement}
 \end{figure}
 
+
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.29]{images/separatrice_echantillonage_1.pdf}
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/separatrice_echantillonage_1.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
 \hfill
-\includegraphics[scale=0.3535]{images/separatrice_echantillonage_2.pdf}
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/separatrice_echantillonage_2.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
 \caption{Extraction des régions en tant que sous-maillages.}
 \label{fig:separatrice_echantillonage}
 \end{figure}
 
-\subsection{Génération du maillage quadrilatéral}
+\section{Génération du maillage quadrilatéral}
 \label{subsec:gen_mesh_quad}
 
 On définit un pas de mailler\\
@@ -668,15 +715,15 @@ on prend par exemple le max ou le min de leur nombre\\
 
 \begin{figure}[h!]
 \centering
-\begin{subfigure}{0.48\textwidth}
+\begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{images/quad_eclatement.pdf}
-    \caption{Insertion de $D$.}
+    %\caption{Insertion de $D$.}
     \label{fig:quad_eclatement}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.48\textwidth}
+\begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{images/quad_carre.pdf}
-    \caption{Insertion de $E$.}
+    %\caption{Insertion de $E$.}
     \label{fig:quad_carre}
 \end{subfigure}
 \caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}

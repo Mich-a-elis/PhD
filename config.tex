@@ -14,7 +14,7 @@
 %\usepackage{algorithm}
 %\usepackage{algorithmic}
 %\usepackage[noend]{algpseudocode}
-\usepackage{algorithm2e}
+%\usepackage{algorithm2e}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{imakeidx}
@@ -49,6 +49,37 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{bbold}
+
+\usepackage{algorithm2e}
+\renewcommand{\listalgorithmcfname}{Liste des Algorithmes}%
+\renewcommand{\algorithmcfname}{Algorithme}%
+\renewcommand{\algorithmautorefname}{algorithme}%
+\renewcommand{\algorithmcflinename}{ligne}%
+%\renewcommand{\algocf@typo}{\ }%
+%\renewcommand{\@algocf@procname}{Proc\'edure}%
+%\renewcommand{\@algocf@funcname}{Fonction}%
+\renewcommand{\procedureautorefname}{proc\'edure}%
+\renewcommand{\functionautorefname}{fonction}%
+%\renewcommand{\algocf@languagechoosen}{french}%
+
+%\SetKwHangingKw{HDonnees}{Donnees$\rightarrow$}
+%\SetKwInput{Donnees}{Donn\'ees}%
+%\SetKwInput{Res}{R\'esultat}%
+\SetKwInput{Entree}{Entr\'ees}%
+\SetKwInput{Sortie}{Sortie}%
+\SetKwInput{Sorties}{Sorties}%
+%\SetKw{KwA}{\`a}%
+%\SetKw{Retour}{retourner}%
+%\SetKwBlock{Deb}{d\'ebut}{fin}%
+\SetKwRepeat{Repeter}{r\'ep\'eter}{jusqu'\`a}%
+%
+\SetKwIF{Si}{SinonSi}{Sinon}{si}{alors}{sinon si}{sinon}{fin si}%
+\SetKwSwitch{Suivant}{Cas}{Autre}{suivant}{faire}{cas o\`u}{autres cas}{fin cas}{fin d'alternative}%
+\SetKwFor{Pour}{pour}{faire}{fin pour}%
+\SetKwFor{PourPar}{pour}{faire en parall\`ele}{fin pour}%
+\SetKwFor{PourCh}{pour chaque}{faire}{fin pour chaque}%
+\SetKwFor{PourTous}{pour tous}{faire}{fin pour tous}%
+\SetKwFor{Tq}{tant que}{faire}{fin tq}%
 
 
 
@@ -371,7 +402,6 @@
 \def\reshape{\texttt{reshape}}
 %\renewcommand{\algorithmicrequire}{\textbf{In :}}
 %\renewcommand{\algorithmicensure}{\textbf{Out :}}
-\floatname{algorithm}{Algorithme}
 \newcommand{\zkron}{\ensuremath{\oslash}}
 \def\maxvol{\texttt{maxvol}}
 \def\rmaxvol{\texttt{rect_maxvol}}
