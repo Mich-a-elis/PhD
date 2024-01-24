@@ -600,7 +600,7 @@ Nous nous tournons maintenant vers la génération du maillage quadrilatéral pr
 \label{fig:echec_partitionnement}
 \end{figure}
 
-\paragraph{Uniformisation:}
+\subsection{Uniformisation}
 
 Afin d'uniformiser la discrétisation, il est nécessaire de former des ensembles de séparatrices parallèles entre elles et de leur attribuer le même nombre de nœuds. Deux séparatrices opposées d'un même bloc sont dites \emph{parallèles}. Cette notion peut être étendue à l'ensemble du partitionnement de la manière suivante : soient $SP_1$ et $SP_2$ deux séparatrices quelconques. On dira que $SP_1$ est parallèle à $SP_2$ s'il existe un bloc contenant $SP_1$, et que le côté opposé à $SP_1$ est parallèle à $SP_2$. L'algorithme ci-dessous permet de partitionner l'ensemble des séparatrices en sous-ensembles distincts de séparatrices parallèles.
 
@@ -644,7 +644,7 @@ Nous présentons sur la figure \ref{fig:separatrice_echantillonage} un exemple d
 \label{fig:separatrice_echantillonage}
 \end{figure}
 
-\paragraph{Interpolation transfinie:}
+\subsection{Interpolation transfinie}
 
 De façon générale, il s'agit de construire une quadrangulation structurée $\mathcal{C}^0$-continue d'un quadrilatère dans $\mathbb{R}^d$ \cite{cook1974body}. Soient $C_i,~i\in\llbracket 1, 4\rrbracket$ les séparatrices représentant les côtés d'un bloc donné, numéroté dans le sens positif, et posons:
 \begin{itemize}
@@ -713,13 +713,13 @@ Nous illustrons le processus d'interpolation transfinie sur la figure \ref{fig:t
     \caption{Maillage du bloc par transformation du maillage du carré unité (interpolation transfinie).}
     \label{fig:transfini_3}
 \end{subfigure}
-\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\caption{Illustration du processus d'interpolation transfinie.}
 \label{fig:transfini}
 \end{figure}
 
 
 
-\paragraph{Maillage par tracé direct de lignes de champ dans le champ de croix:}
+\subsection{Maillage par tracé direct de lignes de champ dans le champ de croix}
 Dans ce cas, l'idée consiste à utiliser directement le champ de croix restreint $\bar{u}_h$ au bloc que l'on manipule pour construire le maillage du bloc. Il est important de noter que ce champ restreint est bien aligné avec les bords du bloc, étant donné que ces bords sont précisément les séparatrices construites précédemment en intégrant le champ de croix.
 figure avec les lignes de champ tracé dans le champ.
 
@@ -744,7 +744,7 @@ Le maillage proprement dit suit alors le même principe. On trace des lignes de 
 
 
 
-\paragraph{Méthode basée sur des EDP}
+\subsection{Méthode basée sur des EDP}
 Cette approche implique de générer le maillage pour un bloc spécifique en résolvant une Équation aux Dérivées Partielles (EDP), en utilisant la forme du contour du bloc comme condition aux bords. Considérons $C_i$, avec $i \in \llbracket 1, 4 \rrbracket$, comme les séparatrices (numérotées dans le sens positif) définissant les côtés d'un bloc particulier, noté $\Gamma$. Supposons que les côtés opposés $C_1$ et $C_3$ soient discrétisés en $m$ nœuds, tandis que les côtés opposés $C_2$ et $C_4$ soient discrétisés en $n$ nœuds. L'idée sous-jacente consiste à élaborer le maillage en construisant deux familles de lignes de niveau, l'une parallèle (au sens où elles ne s'intersectent pas) à $C_1$ et $C_3$, et l'autre orthogonale (au niveau des points d'intersection) à $C_2$ et $C_4$, et inversement pour l'autre famille de lignes de niveau. Soient $U$ et $V$ les solutions des équations suivantes :
 $$
 \left\{
@@ -817,9 +817,11 @@ où $U_h$ et $V_h$ représentent les discrétisations de $U$ et $V$. Le point $P
     \caption{Maillage.}
     \label{fig:quad_equation_4}
 \end{subfigure}
-\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\caption{Illustration du maillage d'un bloc par résolution d'EDP.}
 \label{fig:quad_equation}
 \end{figure}
+
+C'est cette dernière méthode que nous choisissons d'adopter dans notre implémentation en raison de sa simplicité, particulièrement dans le contexte d'une extension aux surfaces courbes dans l'espace (voir le chapitre \ref{chap:surface_courbe}). Le maillage du partitionnement présenté sur la figure \ref{fig:separatrice_echantillonage} est représenté sur la figure \ref{fig:maillage_quad_carre} à partir de cette méthode.
 
 \begin{figure}[h!]
 \centering
@@ -834,7 +836,7 @@ où $U_h$ et $V_h$ représentent les discrétisations de $U$ et $V$. Le point $P
     %\caption{Insertion de $E$.}
     \label{fig:quad_carre}
 \end{subfigure}
-\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\caption{Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref{fig:separatrice_echantillonage}.}
 \label{fig:maillage_quad_carre}
 \end{figure}
 
@@ -870,7 +872,7 @@ Après la construction du champ de croix $\bar{N}_h$, nous entamons l'opération
 \begin{equation}
 I_p=\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1
 \end{equation}
-Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}_h$. Un critère a priori pour choisir automatiquement ce paramètre a été exposé dans la sous-section \ref{subsec:sing_bord}. Ensuite, nous définissons l'ensemble $\mathcal{B}$ qui regroupe les points que nous souhaitons rendre singuliers dans le champ de croix $\bar{v}_h$. Cet ensemble doit, naturellement, inclure tous les points $p$ tels que $I_p\neq 0$, car ces points auront un indice non nul dans $\bar{v}_h$. Cependant, il est également envisageable d'inclure dans $\mathcal{B}$ des points dont le paramètre $I_p$ est nul. L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ de $\bar{N}_h$. Ces points étant déjà singulier dans $\bar{N}_h$, ils resteront singuliers dans $\bar{v}_h$ après l'opération d'alignement. Pour finir, il est impératif que le champ de croix $\bar{u}_h$ satisfasse:\\
+Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Un critère a priori pour choisir automatiquement ce paramètre a été exposé dans la sous-section \ref{subsec:sing_bord}. Ensuite, nous définissons l'ensemble $\mathcal{B}$ qui regroupe les points que nous souhaitons rendre singuliers dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Cet ensemble doit, naturellement, inclure tous les points $p$ tels que $I_p\neq 0$, car ces points auront un indice non nul dans $\bar{v}_h$. Cependant, il est également envisageable d'inclure dans $\mathcal{B}$ des points dont le paramètre $I_p$ est nul. L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ de $\bar{N}_h$. Ces points étant déjà singulier dans $\bar{N}_h$, ils resteront singuliers dans $\bar{v}_h$ après l'opération d'alignement. Pour finir, il est impératif que le champ de croix $\bar{u}_h$ satisfasse:\\
 \begin{itemize}
  \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}_h})<\infty$,\\
  \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}_h}$, $id_{\bar{u}_h}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
@@ -908,42 +910,46 @@ $$
 $$
 avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$.
 
-En pratique, nous résolvons l'equation \eqref{eqn:algorithm_def_phi} par la méthode des éléments finis  P1 en utilisant la formule des cotangeante \cite{solomon2014laplace, nealen2006laplacian, belkin2008discrete} (Voir Annexe).
+En pratique, la résolution de l'équation \eqref{eqn:algorithm_def_phi} est effectuée par la méthode des éléments finis $\mathbb{P}_1$, en utilisant la formule du Laplacien cotangente pour la discrétisation de l'opérateur Laplacien \cite{solomon2014laplace, nealen2006laplacian, belkin2008discrete} (voir Annexe \ref{chap:annexes} pour plus de détails). Cette approche est privilégiée en raison de sa simplicité, facilitant l'extension de l'opération d'alignement dans le cas des surfaces courbes dans l'espace (voir le chapitre \ref{chap:surface_courbe}).
 
 \begin{remark}
-
+\[\]
+\vspace{-1cm}
+\begin{enumerate}
+\item Le champ de croix $\bar{v}_h$ conserve certaines propriétés du champ de croix $\bar{u}_h$. Ainsi, on a $\mathcal{S}_{\bar{v}_h}\cap(\Omega_h\backslash\partial\Omega_h)=\mathcal{S}_{\bar{u}h}\cap(\Omega_h\backslash\partial\Omega_h)$, puisque $\phi_h$ est $\mathcal{C}^0$ sur $\Omega_h\backslash\partial\Omega_h$. Les indices des points constituant ces ensembles sont également préservés. Autrement dit, pour tout point $p\in\Omega_h\backslash\partial\Omega_h$, on a $id_{\bar{u}_h}(p)=id_{\bar{v}_h}(p)$.
+\item Pour tout $p\in\partial\Omega_h$, si $p\in\mathcal{S}_h$, alors $id{\bar{v}_h}(p)=I_p$ ; sinon, $id{\bar{v}_h}
+(p)=0$.
+\item Lorsque $\Omega_h$ est un domaine non simplement connexe, la procédure d'alignement reste conforme à celle développée dans le chapitre \ref{chap:theoritical}. Il convient toutefois de définir avec précision $\bar{N}_h$ et $\mathcal{B}$ pour chaque composante connexe de $\partial\Omega_h$.
+\end{enumerate}
 \end{remark}
-
-
-
-non simplement connexe, preservation propriété (une fois l'opération d'alignement réalisée)
+Nous présentons le processus d'alignement à travers un exemple illustré à la figure \ref{fig:alignment}.
 
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.515\textwidth}
     \includegraphics[width=\textwidth]{images/alignment_1.pdf}
-    %\caption{Insertion de $D$.}
+    \caption{Champ de croix $\bar{u}_h$}
     \label{fig:alignment_1}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.478\textwidth}
     \includegraphics[width=\textwidth]{images/alignment_2.pdf}
-    %\caption{Insertion de $E$.}
+    \caption{Champ scalaire $\phi_h$ (en randian)}
     \label{fig:alignment_2}
 \end{subfigure}
 \\[0.5cm]
 \begin{subfigure}{0.51\textwidth}
     \includegraphics[width=\textwidth]{images/alignment_3.pdf}
-    %\caption{Insertion de $E$.}
+    \caption{Champ de croix $\bar{v}_h$ (suite à l'opération d'alignement).}
     \label{fig:alignment_3}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.482\textwidth}
     \includegraphics[width=\textwidth]{images/alignment_4.pdf}
-    %\caption{Insertion de $E$.}
+    \caption{Maillage.}
     \label{fig:alignment_4}
 \end{subfigure}
-\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\caption{Illustration du processus d'alignement dans un cadre discret.}
 \label{fig:alignment}
 \end{figure}
 

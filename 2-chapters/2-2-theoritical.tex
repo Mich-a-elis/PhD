@@ -1083,7 +1083,15 @@ L'opération d'alignement est alors formulé de la manière suivante:\\\\
 \label{eqn:principe_def_v}
 \end{equation}
 où $\phi:\Omega\longrightarrow\mathbb{R}$ est définie comme la solution de l'équation de Laplace suivante:
-
+\begin{equation}
+\left\{
+\begin{array}{lcll}
+\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+\phi(\gamma(t))&=&\theta_{\bar{N}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}})),
+\end{array}
+\right.
+\label{eqn:principe_def_phi}
+\end{equation}
 où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}}))$ par:
 $$
 \mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
