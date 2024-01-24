@@ -2,13 +2,226 @@
 \label{chap:surface_courbe}
 \minitoc
 
+
+
 Nous proposons dans cette partie une extension de la méthode présenté dans les parties précédentes aux surfaces courbes. Pour se faire, nous reviendrons dans ce contexte sur les grandes étapes de la méthodes.
+\[\]
+La Difficulté pricipale qui va se poser lorsqu'on se place dans le cadre des surface courbe est le calcul des agles des croix.
+\[\]
+Commencçons par passer en revue dans le cadre des surfaces courbes les différents résultats obtenus dans le chapitre \ref{chap:theoritical}
+\[\]
+\subsection{Etude de la méthode}
+
+Dans la section précédente, nous avons exposé des algorithmes qui, sous certaines conditions, permettent de subdiviser un domaine en régions à quatres côtés. Dans cette partie, nous allons présenter plusieurs résultats visant à garantir l'efficacité de ces méthodes. Commençons par le cas où le champ de croix est aligné avec le bord du domaine. Nous avons le résultat suivant:
+\begin{theorem}
+
+Soit $\Omega$ un domaine borné et fermé dans $\mathbb{R}^2$ avec une frontière régulière par morceau et soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ aligné avec $\partial\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout $p\in\Omega$, $id_{\bar{u}}(p)=k/4$ où $k\in\mathbb{Z}$ et $k\leq 1$. Si l'algorithme de partitionnement \ref{alg:algo_main} appliqué à $\bar{u}$ converge alors le partitionnement résultant est une décomposition de $\Omega$ en régions à quatre côtés.
+\end{theorem}
+
+
+\paragraph{\'Etude de l'opération d'alignement}
+
+Soit $\Omega$ un domaine fermé et borné dans $\mathbb{R}^2$ avec une frontière lisse par morceaux. Supposons dans un premier temps que $\Omega$ est simplement connexe. Soit $\mathcal{B}\subset\partial\Omega$ un ensemble de point isolé de $\partial\Omega$ et $I_p$ un paramètre associé à chaque point $p\in\Omega$ tel que:
+\begin{equation}
+I_p=
+\left\{
+\begin{array}{ll}
+\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1& \mbox{ si } p\in\mathcal{B}\\[0.5cm]
+0& \mbox{ sinon }
+\end{array}
+\right.
+\label{eqn:etude_def_I}
+\end{equation}
+Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
+\begin{equation}
+    \label{eqn:etude_hypothese_u}
+    \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
+\end{equation}
+où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial\Omega$ orientée positivement et vérifiant $\gamma(0)=\gamma(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}$.
+Soit $\phi$, la fonction définie par l'équation de Laplace suivant:
+\begin{equation}
+\left\{
+\begin{array}{lcll}
+\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+\phi(\gamma(t))&=&\theta_{\bar{N}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})),
+\end{array}
+\right.
+\label{eqn:etude_def_phi}
+\end{equation}
+où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}))$ par:
+$$
+\mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
+$$
+avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$. Nous avons alors le lemme suivant:
+
+\begin{lemma}
+    \label{lem:marvelous_lemma}
+    $\phi(\gamma(1))-\phi(\gamma(0))=0$.
+\end{lemma}
+
+
+L'opération d'alignement consiste à calculer le champ de croix $\bar{v}$ défini pour tout $p\in\Omega$ par:
+\begin{equation}
+\bar{v}(p)=
+\left\{
+\begin{array}{ll}
+\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
+\bar{N}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
+\end{array}
+\right.
+\label{eqn:etude_def_v}
+\end{equation}
+Nous avons alors le théorème suivant:
+\begin{theorem}
+\label{thm:theorem2}
+Le champ de croix $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$. De plus, pour tout $p\in\Omega$, on a:
+\begin{equation}
+id_{\bar{v}}(p)=
+\left\{
+\begin{array}{ll}
+    id_{\bar{u}}(p) & \mbox{ si } p\in\Omega\backslash\partial\Omega,\\\\
+    I_p & \mbox{ sinon }.
+\end{array}
+\right.
+\end{equation}
+\end{theorem}
+
+
+
+Nous donnons maintenant la généralisation du théorème précédent aux domaines non-simplement connexe. On suppose que $\Omega$ est borné et fermé et que $\partial\Omega=\cup_i\Gamma_i$, où $\Gamma_i,~i\in\llbracket 0, n_b-1\rrbracket$ désigne les composantes connexes de $\partial\Omega$ et $n_b$ le nombre de composantes connexes de $\partial\Omega$. Dans ce cas, nous modifions la condition \eqref{eqn:etude_hypothese_u} comme suit:
+\begin{equation}
+    \left\{
+    \begin{array}{lcll}
+    \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p,&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p,&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
+    \end{array}
+    \right.
+    \label{eqn:etude_hypothese_u_second}
+\end{equation}
+où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétrisation sur $[0, 1]$ de $\Gamma_i$ orientée positivement et vérifiant $\gamma_i(0)=\gamma_i(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}$. L'équation \eqref{eqn:etude_def_phi} devient alors:
+\begin{equation}
+\left\{
+\begin{array}{lcll}
+\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+\phi(\gamma_i(t))&=&\theta_{\bar{N}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
+\end{array}
+\right.
+\label{eqn:etude_def_phi_second}
+\end{equation}
+où la fonction $\mathcal{I}$ est donnée pour tout $i\in\llbracket0, n_b-1\rrbracket$, et pour tout $t\in{\gamma_i}^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}))$ par:
+$$
+\mathcal{I}(t)=\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma_i}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma_i}_{\bar{N}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
+$$
+avec $\widehat{\gamma_i(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma_i(s)$. Nous avons alors le lemme suivant:
+
+\begin{lemma}
+    Pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\phi(\gamma_i(1))-\phi(\gamma_i(0))=0$.
+    \label{lem:marvelous_lemma_second}
+\end{lemma}
+
+
+De manière similaire à la procédure précédente, le champ de croix $\bar{v}$ obtenu à partir de l'opération d'alignement est défini pour tout $p\in\Omega$ par:
+\begin{equation}
+\bar{v}(p)=
+\left\{
+\begin{array}{ll}
+\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
+\bar{N}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
+\end{array}
+\right.
+\label{eqn:etude_def_v_second}
+\end{equation}
+On a alors le théorème suivant:
+\begin{theorem}
+\label{thm:theorem3}
+Le champ de croix $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$. De plus, pour tout $p\in\Omega$, on a:
+\begin{equation}
+id_{\bar{v}}(p)=
+\left\{
+\begin{array}{ll}
+    id_{\bar{u}}(p) & \mbox{ si } p\in\Omega\backslash\partial\Omega,\\\\
+    I_p & \mbox{ sinon }.
+\end{array}
+\right.
+\end{equation}
+\end{theorem}
+
+
+En cas de non-conformité du champ de croix $\bar{u}$ à la condition \eqref{eqn:etude_hypothese_u_second}, nous introduisons un processus de correction visant à obtenir un champ de croix satisfaisant cette condition. Considérons $\bar{u}$ comme un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, sans nécessité d'alignement sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ tel que:
+\begin{equation}
+    \displaystyle\sum_{i=0}^{n_b-1}\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}}I_p.
+\end{equation}
+où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétrisation sur $[0, 1]$ de $\Gamma_i$ orientée positivement et vérifiant $\gamma_i(0)=\gamma_i(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}$.
+Soit $\bar{w}$ un champ de croix presque-$\mathcal{C}^1$ définit sur $\Omega$ et vérifiant:
+\begin{equation}
+    \left\{
+    \begin{array}{lcll}
+    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p\right),&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p\right),&\mbox{ sur }\Gamma_i,\\\\
+    &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
+    \end{array}
+    \right.
+    \label{eqn:etude_hypothese_w}
+\end{equation}
+
+Dans la section \ref{sec:discussion}, nous aborderons les diverses approches pour la construction d'un tel champ de croix
+
+\begin{proposition}
+    Le champ de croix $\bar{u}_c$ défini par $\bar{u}_c:=\mathbf{R}(\theta_{\bar{w}})\bar{u}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et vérifie la condition \eqref{eqn:etude_hypothese_u_second}.
+\end{proposition}
+
+
+Après cela, l'opération d'alignement peut être exécutée sur le champ $\bar{u}_c$, aboutissant au champ de croix $\bar{v}$ défini pour tout $p\in\Omega$ par :
+\begin{equation}
+\bar{v}(p)=
+\left\{
+\begin{array}{ll}
+\mathbf{R}(\phi(p))\bar{u}_c(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)),\\[0.5cm]
+\bar{N}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)\backslash(\mathcal{B}\cap\mathcal{S}_{\bar{N}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
+\end{array}
+\right.
+\label{eqn:etude_def_v_third}
+\end{equation}
+
+où $\phi$ est donné par:
+\begin{equation}
+\left\{
+\begin{array}{lcll}
+\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+\phi(\gamma_i(t))&=&\theta_{\bar{N}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}_c}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}_c})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
+\end{array}
+\right.
+\label{eqn:etude_def_phi_third}
+\end{equation}
+
+On a alors le théorème suivant:
+\begin{theorem}
+\label{thm:theorem4}
+Le champ de croix $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$. Si de plus $\mathcal{S}_{\bar{w}}=\emptyset$, alors on a $\mathcal{S}_{\bar{v}}\backslash\partial\Omega=\mathcal{S}_{\bar{u}}\backslash\partial\Omega$ et pour tout $p\in\Omega$, on a:
+\begin{equation}
+id_{\bar{v}}(p)=
+\left\{
+\begin{array}{ll}
+    id_{\bar{u}}(p) & \mbox{ si } p\in\Omega\backslash\partial\Omega,\\\\
+    I_p & \mbox{ sinon }.
+\end{array}
+\right.
+\end{equation}
+\end{theorem}
+
+
+\section{Difficulté à l'extension}
+
+\section{Extension des résultats principaux du cas planaire}
+
+\section{Discrétisation}
 
 Champ de croix\\
 Index\\
 Separatrices\\
 Operation d'alignement\\
-Les théorèmes\\
-mikatex\\
-kile\\
-oKular
+Les théorèmes
+generation des champs de croix

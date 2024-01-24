@@ -16,7 +16,13 @@ Dans cette section, nous présentons le concept de champ de croix défini sur un
 
 \subsection{Champ de croix}
 
-Soit $\mathbb{S}^1$ la sphère unité de $\mathbb{R}^2$ définie par $\mathbb{S}^1=\{(x,y)\in\mathbb{R}^2~|~x^2+y^2=1\}$ et soit $\mathcal{Q}$ le groupe de symétrie quadrilatérale défini comme l'ensemble des rotations d'angle $k\pi/2$, $k\in\{0, 1, 2, 3\}$. Une croix $\mathbf{c}$ est un élément de $\mathbf{C}:=\mathbb{S}^1/\mathcal{Q}\cup\{0\}$ \cite{beaufort2017computing} (voir figure \ref{fig:croix}). En d'autres termes, $\mathbf{c}$ représente une classe d'équivalence dont les éléments, nommés branches de la croix, répondent à la relation suivante :
+Soit $\mathbb{S}^1$ la sphère unité de $\mathbb{R}^2$ définie par $\mathbb{S}^1=\{(x,y)\in\mathbb{R}^2~|~x^2+y^2=1\}$ et soit $\mathcal{Q}$ le groupe de symétrie quadrilatérale défini comme l'ensemble des rotations d'angle $k\pi/2$, $k\in\{0, 1, 2, 3\}$.
+
+\begin{definition}[\cite{beaufort2017computing}]
+  Une croix $\mathbf{c}$ est un élément de $\mathbf{C}:=\mathbb{S}^1/\mathcal{Q}\cup\{0\}$.
+\end{definition}
+
+En d'autres termes, $\mathbf{c}$ représente une classe d'équivalence dont les éléments, nommés branches de la croix, répondent à la relation suivante (voir figure \ref{fig:croix}):
 
 \begin{equation}
 \label{eq:croix}
@@ -55,7 +61,7 @@ $\bar{u}$ est de classe $\mathcal{C}^1$ en un point $p$ s'il existe une applicat
 Comme toutes les composantes de $\bar{u}$ sont obtenues par rotations d'angles $m\pi/2$, où $m\in\mathbb{Z}$, la propriété énoncée précédemment peut être reformulée en tant qu'exigence de continuité $C^1$ pour toutes les composantes dans le voisinage de $p$.
 
 \begin{definition}
-    $\bar{u}$ est un champ de croix \emph{presque-$\mathcal{C}^1$} si $\#\mathcal{S}_{\bar{u}}<\infty$ et si $\bar{u}$ est de classe $\mathcal{C}^1$ en tout point $p\in\Omega\backslash\mathcal{S}_{\bar{u}}$ (où $\#\mathcal{S}_{\bar{u}}$ est le cardinal de $\mathcal{S}_{\bar{u}}$).
+    $\bar{u}$ est un champ de croix \emph{presque-$\mathcal{C}^1$} si $Card(\mathcal{S}_{\bar{u}})<\infty$ et si $\bar{u}$ est de classe $\mathcal{C}^1$ en tout point $p\in\Omega\backslash\mathcal{S}_{\bar{u}}$ (où $Card(\mathcal{S}_{\bar{u}})$ est le cardinal de $\mathcal{S}_{\bar{u}}$).
 \end{definition}
 
 
@@ -79,7 +85,7 @@ Le résultat suivant établit la régularité des champs de croix construits à 
 \end{equation}
 est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$.
 
-\item Soit $\bar{u}$ un champ de croix sur $\Omega$ et $\theta : \Omega \rightarrow \mathbb{R}$ une fonction définie sur $\Omega$. Alors l'application $\bar{v}:p\mapsto \bar{v}(p)=\mathbf{R}(\theta(p))\bar{u}(p):=\{\mathbf{R}(\theta(p)) u,~u\in \bar{u}(p)\}$ est un champ de croix sur $\Omega$. De plus $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ et si $\theta$ est de classe $\mathcal{C}^1$ sur $\Omega$ alors $\bar{u}$ est de classe $\mathcal{C}^1$ sur $\Omega$ (respectivement presque-$\mathcal{C}^1$ sur $\Omega$) si et seulement si $\bar{v}$ l'est.
+\item Soit $\bar{u}$ un champ de croix sur $\Omega$ et $\theta : \Omega \rightarrow \mathbb{R}$ une fonction définie sur $\Omega$. Alors l'application $\bar{v}:p\mapsto \bar{v}(p)=\mathbf{R}(\theta(p))\bar{u}(p):=\{\mathbf{R}(\theta(p)) u,~u\in \bar{u}(p)\}$ est un champ de croix sur $\Omega$. De plus $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ et si $\theta$ est de classe $\mathcal{C}^1$ en $p\in\Omega$ (resp. sur $\Omega$) alors $\bar{v}$ est de classe $\mathcal{C}^1$ en $p$ (resp. presque-$\mathcal{C}^1$ sur $\Omega$) si et seulement si $\bar{u}$ l'est.
 \end{enumerate}
 \end{proposition}
 
@@ -98,27 +104,32 @@ v^1=\mathbf{R}\left(\frac{m\pi}{2}\right)v^2.
 $$
 Ce qui implique que $\bar{v}(p)\in\mathbf{C}\backslash\{0\}$. Autrement dit, $\bar{v}$ est un champ de croix sur $\Omega$. De plus $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ puisque pour tout $p\in\Omega$, on a:
 $$\bar{v}(p)=\{0\} \Leftrightarrow \left(\forall u\in \bar{u}(p),~\mathbf{R}(\theta(p)) u=0\right)\Leftrightarrow \left(\forall u\in \bar{u}(p),~u=0\right) \Leftrightarrow \bar{u}(p)=\{0\}.$$
-Maintenant considérons que $\theta$  et $\bar{u}$ soient de classe $\mathcal{C}^1$ et soit $p\in\Omega$. Par définition, il existe une application $\pi_{\bar{u}}$ de classe $\mathcal{C}^1$ dans un voisinnage $V_p$ de $p$. $\theta$ étant de classe $\mathcal{C}^1$, l'application $\pi_{\bar{v}}:=\mathbf{R}(\theta)\pi_{\bar{u}}$ est de classe $\mathcal{C}^1$ sur $V_p$. De plus, pour tout $q\in V_p$, $\pi_{\bar{v}}(q)=\mathbf{R}(\theta(q))\pi_{\bar{u}}(q)$ et comme $\pi_{\bar{u}}(q)\in\bar{u}(q)$ on a par définition $\pi_{\bar{v}}(q)\in\bar{v}(q)$. En conclusion, $\bar{v}$ est de classe $\mathcal{C}^1$ sur $\Omega$. Réciproquement, si $\bar{v}$ est de classe $\mathcal{C}^1$ sur $\Omega$, alors par définition il existe une application $\pi_{\bar{v}}$ de classe $\mathcal{C}^1$ dans un voisinnage $V_p$ de $p$. $\theta$ étant de classe $\mathcal{C}^1$, l'application $\pi_{\bar{u}}:=\mathbf{R}(-\theta)\pi_{\bar{v}}$ est de classe $\mathcal{C}^1$ sur $V_p$. De plus, pour tout $q\in V_p$, $\pi_{\bar{u}}(q)=\mathbf{R}(-\theta(q))\pi_{\bar{v}}(q)$. Or $\pi_{\bar{v}}(q)\in\bar{v}(q)$ donc par définition il existe $u\in\bar{u}(q)$ tel que $\pi_{\bar{v}}(q)=\mathbf{R}(\theta(q))u$. On a donc :
+Maintenant considérons que $\theta$  et $\bar{u}$ soient de classe $\mathcal{C}^1$ au voisinage de $p\in\Omega$. Par définition, il existe une application $\pi_{\bar{u}}$ de classe $\mathcal{C}^1$ dans un voisinnage $V_p$ de $p$. $\theta$ étant de classe $\mathcal{C}^1$, l'application $\pi_{\bar{v}}:=\mathbf{R}(\theta)\pi_{\bar{u}}$ est de classe $\mathcal{C}^1$ sur $V_p$. De plus, pour tout $q\in V_p$, $\pi_{\bar{v}}(q)=\mathbf{R}(\theta(q))\pi_{\bar{u}}(q)$ et comme $\pi_{\bar{u}}(q)\in\bar{u}(q)$ on a par définition $\pi_{\bar{v}}(q)\in\bar{v}(q)$. En conclusion, $\bar{v}$ est de classe $\mathcal{C}^1$ au voisinage de $p$.\\
+Réciproquement, si $\bar{v}$ est de classe $\mathcal{C}^1$ au voisinage de $p\in\Omega$, alors par définition il existe une application $\pi_{\bar{v}}$ de classe $\mathcal{C}^1$ dans un voisinnage $V_p$ de $p$. $\theta$ étant de classe $\mathcal{C}^1$, l'application $\pi_{\bar{u}}:=\mathbf{R}(-\theta)\pi_{\bar{v}}$ est de classe $\mathcal{C}^1$ sur $V_p$. De plus, pour tout $q\in V_p$, $\pi_{\bar{u}}(q)=\mathbf{R}(-\theta(q))\pi_{\bar{v}}(q)$. Or $\pi_{\bar{v}}(q)\in\bar{v}(q)$ donc par définition il existe $u\in\bar{u}(q)$ tel que $\pi_{\bar{v}}(q)=\mathbf{R}(\theta(q))u$. On a donc :
 $$
 \pi_{\bar{u}}(q)=\mathbf{R}(-\theta(q))\mathbf{R}(\theta(q))u=u\Longrightarrow\pi_{\bar{u}}\in\bar{u}(q).
 $$
-En conclusion, $\bar{v}$ est de classe $\mathcal{C}^1$ sur $\Omega$. Pour finir, puisque $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ alors $\bar{u}$ est un champ de croix presque-$\mathcal{C}^1$ si et seulement si $\bar{v}$ est un champ de croix presque-$\mathcal{C}^1$.
+En conclusion, $\bar{u}$ est de classe $\mathcal{C}^1$ au voisinage de $p$.\\
+Pour finir, puisque $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ alors $\bar{u}$ est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$ si et seulement si $\bar{v}$ est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$.
 \end{enumerate}
 \end{proof}
 
-\begin{figure}[!h]
+\begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.28]{images/repre_field.pdf}\hspace{0.5cm}
-  \includegraphics[scale=0.28]{images/cross_from_repre_field.pdf}
+  \includegraphics[scale=0.3]{images/repre_field.pdf}
+  \hfill
+  \includegraphics[scale=0.3]{images/cross_from_repre_field.pdf}
   \caption{Illustration d'un champ de représentation (en gauche) et du champ de croix associé (à droite).}
   \label{fig:repr_to_cross}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.18]{images/cross_from_repre_field.pdf}\hspace{0.5cm}
-  \includegraphics[scale=0.188]{images/scal_field.pdf}\hspace{0.5cm}
-  \includegraphics[scale=0.18]{images/result_field.pdf}
+  \includegraphics[scale=0.195]{images/cross_from_repre_field.pdf}
+  \hfill
+  \includegraphics[scale=0.205]{images/scal_field.pdf}
+  \hfill
+  \includegraphics[scale=0.195]{images/result_field.pdf}
   \caption{Illustration de la rotation d'un champ de croix par rapport à un champ d'angle sur un domaine quelconque. \'A gauche : champ de croix initial, au milieu: champ d'angle (en radian), à droite: champ de croix résultant.}
   \label{fig:rot_cross}
 \end{figure}
@@ -137,6 +148,14 @@ Nous pouvons alors introduire la notion d'alignement du champ de croix par la d�
 \begin{definition}
     Le champ de croix $\bar{u}$ est dit aligné par rapport à $\partial\Omega$ ou aligné sur le bord de $\Omega$ si pour tout point $p\in\partial\Omega$, $\bar{u}(p)\in\{\bar{N}(p), 0\}$.
 \end{definition}
+Nous donnons sur la figure \ref{fig:align_bord} une illustration d'un champ de croix aligné sur le bord d'un domaine.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.35]{images/align_bord.pdf}
+  \caption{Mise en évidence d'un champ de croix aligné le long du bord d'un carré, avec une annulation du champ dans les coins.}
+  \label{fig:align_bord}
+\end{figure}
 
 \subsection{Indice}
 
@@ -157,7 +176,12 @@ Pour commencer, nous définissons la notion d'angle pour une croix. À chaque cr
 \end{lemma}
 
 \begin{proof}
-    Existence: L'ensemble $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]$ est non vide. En effet, si $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]=\emptyset$, alors $\left\{\arg c,~c\in \mathbf{c}\right\}=\emptyset$. Autrement dit, $\mathbf{c}=0$ ce qui est exclut.\\
+    Existence: L'ensemble $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]$ est non vide. En effet, supposons que $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]=\emptyset$. Par définition, on sait que pour tout $\mathbf{c}\in\mathbf{C}\backslash\{0\}$, alors on a:\\
+    \begin{itemize}
+     \item soit \\
+     \item soit \\
+    \end{itemize}
+$\left\{\arg c,~c\in \mathbf{c}\right\}=\emptyset$. Autrement dit, $\mathbf{c}=0$ ce qui est exclut.\\
     Unicité: Supposons que $\mathbf{c}$ ait deux angles $\theta_{\mathbf{c}}$ et $\theta^{'}_{\mathbf{c}}$. Par définition il existe $m, m'\in\mathbb{Z}$ et $c,c^{'}\in\mathbf{c}$ tel que:
     $$
     \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=atan2(c_y, c_x)+2m\pi-atan2(c^{'}_y, c^{'}_x)-2m'\pi.
@@ -190,7 +214,7 @@ En considérant un champ de croix $\bar{u}$, la définition précédente nous au
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.32]{images/cross_ang_field.pdf}
+  \includegraphics[scale=0.35]{images/cross_ang_field.pdf}
   \caption{Illustration d'un champ de croix et du champ d'angle (en radian) correspondant.}
   \label{fig:cross_field}
 \end{figure}
@@ -233,7 +257,7 @@ Grâce au résultat précédent, nous pouvons déduire le corollaire suivant per
 
 Le relèvement continu du champ de croix le long d'une courbe paramétrée permet de quantifier le nombre de fois que le champ tourne sur lui-même le long de la courbe. Cependant, la construction du Corollaire \ref{cor:relevement_continu} ne fonctionne pas si $\mathcal{S}_{\bar{u}}\cap\gamma([0,1])\neq\emptyset$. Dans ce cas, nous construisons le relèvement par morceaux le long de $\gamma$ de la manière suivante :
 
-Soit $I:=\gamma^{-1}(\mathcal{S}_{\bar{u}}\cap\gamma([0, 1]))\cup\{0, 1\}$. On a $\#I<\infty$ puisque $\#\mathcal{S}_{\bar{u}}<\infty$. Il existe donc $(t_i)_{i\in\llbracket 1, n_I\rrbracket}\subset[0,1]$ tel que $I=(t_i)_{i\in\llbracket 1, n_I\rrbracket}$ avec $0=t_1<\dots<t_{n_I}=1$ et $n_I=\#I$. Par construction, il est clair que pour tout $i\in\llbracket 1, n_I-1 \rrbracket$, on a $\mathcal{S}_{\bar{u}}\cap\gamma(]t_i, t_{i+1}[)=\emptyset$. Ainsi, à partir du Corollaire \ref{cor:relevement_continu}, nous pouvons construire pour tout $i\in\llbracket 1, n_I-1\rrbracket$ une fonction $\theta^{\gamma_i}_{\bar{u}}$ sur $[0,1]$ et de classe $\mathcal{C}^1$ sur $]0,1[$ telle que $\theta_{\bar{u}}^{\gamma_i}(t)\equiv\theta_{\bar{u}}(\gamma_i(t))\pmod{\frac{\pi}{2}}$ avec $\gamma_i$, l'arc défini sur $[0, 1]$ par :
+Soit $I:=\gamma^{-1}(\mathcal{S}_{\bar{u}}\cap\gamma([0, 1]))\cup\{0, 1\}$. On a $Card(I)<\infty$ puisque $Card(\mathcal{S}_{\bar{u}})<\infty$. Il existe donc $(t_i)_{i\in\llbracket 1, n_I\rrbracket}\subset[0,1]$ tel que $I=(t_i)_{i\in\llbracket 1, n_I\rrbracket}$ avec $0=t_1<\dots<t_{n_I}=1$ et $n_I=Card(I)$. Par construction, il est clair que pour tout $i\in\llbracket 1, n_I-1 \rrbracket$, on a $\mathcal{S}_{\bar{u}}\cap\gamma(]t_i, t_{i+1}[)=\emptyset$. Ainsi, à partir du Corollaire \ref{cor:relevement_continu}, nous pouvons construire pour tout $i\in\llbracket 1, n_I-1\rrbracket$ une fonction $\theta^{\gamma_i}_{\bar{u}}$ sur $[0,1]$ et de classe $\mathcal{C}^1$ sur $]0,1[$ telle que $\theta_{\bar{u}}^{\gamma_i}(t)\equiv\theta_{\bar{u}}(\gamma_i(t))\pmod{\frac{\pi}{2}}$ avec $\gamma_i$, l'arc défini sur $[0, 1]$ par :
 $$
 \forall t\in[0, 1],~\gamma_i(t)=\gamma(t_i+t(t_{i+1}-t_i)).
 $$
@@ -262,11 +286,11 @@ Grâce à cette notion, nous sommes désormais en mesure de définir l'indice d'
     On appelle chemin fermé tout lacet $\Gamma$ qui est $\mathcal{C}^0\cap\mathcal{C}^1_m$. On appellera paramétrisation simple de $\Gamma$, toute paramétrisation $\gamma : I\subset\mathbb{R}\longrightarrow\Gamma$ telle que l’ensemble $\{s\in I, \exists t\in I,~s\neq t,~ \gamma(s) = \gamma(t)\}$ est d’intérieur vide dans $\mathbb{R}$.
 \end{definition}
 
-Dans tout ce qui suit, les paramétrisations des lacets seront supposées être des paramétrisations simple et on aura par définition
+Dans tout ce qui suit, les paramétrisations des lacets seront supposées être des paramétrisations simple et on aura par définition l'intégrale sur $\Gamma$ d'une fonction notée $f$ par rapport au lacet $\gamma$ de $\Gamma$
 $$
-\int_\gamma f:=\int_If(\gamma(s)\gamma'(s)ds,
+\int_\gamma f:=\int_If(\gamma(s))\gamma'(s)ds,
 $$
-indépendante de $\gamma$. On notera $V^\Gamma$ la partie de $\Omega$ délimitée par $\Gamma$. Soit $\overrightarrow{n}(q)$ la normale extérieur en $q$ à $\Gamma$. On dit que $\gamma$ paramétrise $\Gamma$ dans le sens positif si pour tout $t\in I$, $(\gamma'(t)\wedge\overrightarrow{n}(\gamma(t))).(0,0,1)^t>0$ Dans la suite, nous adoptons la notation suivante:
+indépendante de $\gamma$. On notera $V^\Gamma$ une partie de $\Omega$ délimitée par $\Gamma$. Soit $\overrightarrow{n}(q)$ la normale extérieur en $q$ à $V^\Gamma$. On dit que $\gamma$ paramétrise $\Gamma$ dans le sens positif si pour tout $t\in I$, $(\gamma'(t)\wedge\overrightarrow{n}(\gamma(t))).(0,0,1)^t>0$ Dans la suite, nous adoptons la notation suivante:
 
 $$
 \int_\Gamma d\theta_{\bar{u}}:=\int_\gamma d\theta_{\bar{u}}:=\int_a^b d\theta_{\bar{u}}^\gamma.
@@ -278,7 +302,7 @@ $$
     $$
     F_{\bar{u}}(\Gamma):=\frac{1}{2\pi}\int_a^b d\theta_{\bar{u}}^\gamma,
     $$
-    vérifie $4F_{\bar{u}}(\Gamma)\in\mathbb{Z}$. En outre, si $(V^{\Gamma_i})_{i\in\llbracket 1, n_\Gamma\rrbracket}$ forme une partition de $V^\Gamma$ tels que $\bar{u}(p)\neq 0,~\forall p\in\Gamma_i,~\forall i\in\llbracket 1, n_\Gamma\rrbracket$, alors on a:
+    vérifie $4F_{\bar{u}}(\Gamma)\in\mathbb{Z}$. En outre, si $(V^{\Gamma_i})_{i\in\llbracket 1, n_\Gamma\rrbracket}$ forme une partition de $V^\Gamma$ telle que $\bar{u}(p)\neq 0,~\forall p\in\Gamma_i,~\forall i\in\llbracket 1, n_\Gamma\rrbracket$, alors on a:
     \begin{equation}
         F_{\bar{u}}(\Gamma)=\sum_{i=1}^{n_\Gamma}F_{\bar{u}}(\Gamma_i).
         \label{eqn:sum_F_u}
@@ -286,7 +310,11 @@ $$
 \end{lemma}
 
 \begin{proof}
-    Soit $w-z=e^{4i\theta_{\bar{u}}^\gamma}$ avec $z\in\mathbb{Z}$ alors
+    Soit $w(p)-z=e^{4i\theta_{\bar{u}}^\gamma(p)}$ si $\bar{u}(p)\neq 0$ et $w(p)-z=0$ sinon, avec $z\in\mathbb{C}$ alors on a (comme dans \cite{rudin1998analyse}):
+    $$
+    \int_\gamma\frac{dw}{w-z}=\int_\gamma d \ln(w-z)=\int_\gamma 4id\theta_{\bar{u}}^\gamma.
+    $$
+    Il vient donc que:
     $$
     2\pi F_{\bar{u}}(\Gamma)=\frac{1}{4}Im\left(\int_\gamma\frac{dw}{w-z}\right).
     $$
@@ -294,6 +322,7 @@ $$
     $$
     exp\left(\int_a^b\frac{w'(\gamma(t))\gamma'(t)}{w(\gamma(t))-z}dt\right)=1
     $$
+    si $w\circ\gamma(t)\neq z$ hormis un sous-ensemble discret de valeurs $t\in[a, b]$ (ce qui est le cas pour $z = 0$ avec $\bar{u}$ n’ayant que des zéros isolés).\\
     Posons
     $$
     \varphi(t):=exp\left(\int_a^t\frac{w'(\gamma(t))\gamma'(t)}{w(\gamma(t))-z}dt\right),~t\in[a,b],
@@ -311,7 +340,7 @@ $$
     \exists k\in\mathbb{Z},~\int_a^b\frac{w'(\gamma(t))\gamma't)}{w(\gamma(t))-z}dt=2ik\pi.
     $$
     Ainsi $4F_{\bar{u}}(\Gamma)\in\mathbb{Z}$.\\\\
-    Pour la propriété d'additivité de $F_{\bar{u}}$ on commence par décomposer les frontières de chaque $V^{\Gamma_i}$ de la manière suivante: $\Gamma_{i,0}=\Gamma_i\cap\Gamma$ et $\Gamma_{i,j}=\Gamma_i\cap\Gamma_j$ pour $j\neq i$. Par convention on pose $\Gamma_{i,i}=\emptyset$, $\forall i\in\llbracket 1, n_\Gamma\rrbracket$. On a alors $\Gamma_i=\cup_{i\in\llbracket1, n_\Gamma\rrbracket}\Gamma_{i,j}$ et $\Gamma_{i,j}=\Gamma_{j,i}$ et on peut écrire:
+    Pour la propriété d'additivité de $F_{\bar{u}}$ on commence par décomposer les frontières de chaque $V^{\Gamma_i}$ de la manière suivante: $\Gamma_{i,0}=\Gamma_i\cap\Gamma$ et $\Gamma_{i,j}=\Gamma_i\cap\Gamma_j$ pour $j\neq i$. Par convention on pose $\Gamma_{i,i}=\emptyset$, $\forall i\in\llbracket 1, n_\Gamma\rrbracket$. On a alors $\Gamma_i=\cup_{j\in\llbracket1, n_\Gamma\rrbracket}\Gamma_{i,j}$ et $\Gamma_{i,j}=\Gamma_{j,i}$ et on peut écrire:
     $$
     \sum_{i=1}^{n_\Gamma}F_{\bar{u}}(\Gamma_i)=\frac{1}{2\pi}\sum_{i=1}^{n_\Gamma}\sum_{j=0}^{n_\Gamma}\int_{\Gamma_{i,j}}d\theta_{\bar{u}}^\gamma=\frac{1}{2\pi}\sum_{i=1}^{n_\Gamma}\int_{\Gamma\cap\Gamma_i}d\theta_{\bar{u}}+\frac{1}{2\pi}\sum_{i=1}^{n_\Gamma}\sum_{j=1}^{n_\Gamma}\int_{\Gamma_{i,j}}d\theta_{\bar{u}}.
     $$
@@ -344,7 +373,7 @@ $$
 \end{lemma}
 
 \begin{proof}
-    Soient $\Gamma_1$et $\Gamma_2$ deux lacets vérifiant les hypothèses du lemme. En notant $V_3=V^{\Gamma_1}\cap V^{\Gamma_2}$ et $\Gamma_3=\partial V^{\Gamma_3}$ qui est $\mathcal{C}^0\cap\mathcal{C}^1_m$ et $(V^i_j)_{j\in\llbracket 1, k_i\rrbracket}$ les composantes connexes de $v^{\Gamma_i}\backslash V^3$, pour $i=1,2$. En notant $\Gamma_i^j=\partial V^i_j$, qui est donc $\mathcal{C}^0\cap\mathcal{C}^1_m$. En appliquant \eqref{eqn:sum_F_u},on obtient:
+    Soient $\Gamma_1$ et $\Gamma_2$ deux lacets vérifiant les hypothèses du lemme. En notant $V_3=V^{\Gamma_1}\cap V^{\Gamma_2}$ et $\Gamma_3=\partial V^{\Gamma_3}$ qui est $\mathcal{C}^0\cap\mathcal{C}^1_m$ et $(V^i_j)_{j\in\llbracket 1, k_i\rrbracket}$ les composantes connexes de $V^{\Gamma_i}\backslash V^3$, pour $i=1,2$. En notant $\Gamma_i^j=\partial V^i_j$, qui est donc $\mathcal{C}^0\cap\mathcal{C}^1_m$. En appliquant \eqref{eqn:sum_F_u}, on obtient:
     $$
     \forall i=1,2,~F_{\bar{u}}(\Gamma_i)=\sum_{j=1,\dots,k_i}F_{\bar{u}}(\Gamma_i^j)=F_{\bar{u}}(\Gamma_3),
     $$
@@ -375,15 +404,28 @@ On peut alors retrouver les propriétés principales de l'indice, résumées dan
 \begin{theorem}
     L'indice du point $p$ dans le champ $u$ vérifie les propriétés suivantes:
     \begin{enumerate}
-        \item $id_{\bar{u}}^\gamma(p)\in\mathbb{Z}$,
-        \item si $u$ est $\mathcal{C}^1$ en $p$ alors $ind_u(p)=0$,
-        \item pour tout chemin fermé $\Gamma$ tel que $p\in V^\Gamma$ et que $u\in\mathcal{C}^1(V^\Gamma\backslash\{p\})$, $id_{\bar{u}}^\gamma(p)=F_{\bar{u}}(\Gamma)$.
+        \item $id_{\bar{u}}^\gamma(p)=k/4$, $k\in\mathbb{Z}$,
+        \item si $u$ est $\mathcal{C}^1$ en $p$ alors $id_{\bar{u}}(p)=0$,
+        \item pour tout chemin fermé $\Gamma$ tel que $p\in V^\Gamma$ et que $\bar{u}\in\mathcal{C}^1(V^\Gamma\backslash\{p\})$, $id_{\bar{u}}^\gamma(p)=F_{\bar{u}}(\Gamma)$.
     \end{enumerate}
 \end{theorem}
 
 \begin{proof}
     Ces résultats sont respectivement des conséquences directes des lemmes \ref{lem:index_saga_first}, \ref{lem:index_saga_second} et \ref{lem:index_saga_third}.
 \end{proof}
+
+Par extension, en utilisant le lemme \ref{lem:index_saga_first} on a:
+
+\begin{corollary}
+\begin{equation}
+ F_{\bar{u}}(\Gamma)=\sum_{p\in V^\Gamma\cap\mathcal{S}_{\bar{u}}} id_{\bar{u}}(p)
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+
+\end{proof}
+
 
 \begin{comment}
     \begin{definition}[Indice]
@@ -401,14 +443,16 @@ De manière intuitive, l'indice d'un point dans un champ exprime combien de fois
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.25]{images/index_-025.pdf}
-  \includegraphics[scale=0.25]{images/index_025.pdf}
-  \includegraphics[scale=0.25]{images/index_1.pdf}
+  \includegraphics[scale=0.251]{images/index_-025.pdf}
+  \hfill
+  \includegraphics[scale=0.251]{images/index_025.pdf}
+  \hfill
+  \includegraphics[scale=0.251]{images/index_1.pdf}
   \caption{Gauche: $id_{\bar{u}}(p)=-\frac{1}{4}$, milieu: $id_{\bar{u}}(p)=\frac{1}{4}$, droite: $id_{\bar{u}}(p)=1$}
   \label{fig:index_illustration}
 \end{figure}
 
-Après avoir énoncé cette définition, on peut se demander comment l'indice d'un point évolue lorsqu'on effectue rotation sur le champ de croix. Le résultat suivant fournit une réponse à cette interrogation.
+Après avoir énoncé cette définition, on peut se demander comment l'indice d'un point évolue lorsqu'on effectue la rotation sur le champ de croix. Le résultat suivant fournit une réponse à cette interrogation.
 
 \begin{proposition}
 \label{prop:relation_u_Rthetau}
@@ -833,8 +877,9 @@ $$\displaystyle\int_{t_1}^{t_f} dW_p^\gamma= \sum_{i=1}^{-k}\displaystyle\int_{t
 La figure \ref{fig:separatrice_illustration} illustre le partitionnement du voisinnages de points singulier par les séparatrices issues de ces points singuliers. En effet, en fonction de l'index du point ces séparatrices divisent le voisinnage du point en un nombre fini de de secteur. Par rapport à ces secteurs, nous avons la proposition suivante:
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.27]{images/sepa_5.pdf}\hspace{0.2cm}
-  \includegraphics[scale=0.27]{images/sepa_3.pdf}
+  \includegraphics[scale=0.282]{images/sepa_5.pdf}
+  \hfill
+  \includegraphics[scale=0.282]{images/sepa_3.pdf}
   \caption{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).}
   \label{fig:separatrice_illustration}
 \end{figure}
@@ -872,25 +917,23 @@ Nous abordons maintenant le cœur de ce chapitre en présentant la méthode de p
 \subsection{Principe de la méthode}
 \label{subsec:principe_methode}
 
-Considérons un domaine $\Omega$ borné et fermé dans $\mathbb{R}^2$ possédant une frontière $\partial\Omega$ régulière par morceaux. L'algorithme suivant permet de partitionner ce domaine en régions distincts.\\
+Considérons un domaine $\Omega$ borné et fermé dans $\mathbb{R}^2$ possédant une frontière $\partial\Omega$ régulière par morceaux. L'algorithme suivant permet de partitionner ce domaine en régions distincts.
 
+\vspace{0.5cm}
 \RestyleAlgo{ruled}
-
 \begin{algorithm}[H]
 \label{alg:algo_main}
-\SetKwInOut{Input}{Entrée}
-\SetKwInOut{Output}{Sortie}
-\Input{$\Omega$ un domaine borné et fermé; Un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ est tel que l'indice des points dans ce champ est égal à $k/4$, où $k\in\mathbb{Z}$ et $k\leq 1$.}
-\Output{Partition de $\Omega$ en ensembles de régions.}
+\renewcommand{\algorithmcfname}{Algorithme}%
+\SetAlgoLined
+\Entrees{$\Omega$ un domaine borné et fermé; Un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ est tel que l'indice des points dans ce champ est égal à $k/4$, où $k\in\mathbb{Z}$ et $k\leq 1$.}
+\Sortie{Partition de $\Omega$ en ensembles de régions.}
 \vspace{0.2cm}
-1.) Identification des points singuliers du champ de croix,\\\vspace{0.2cm}
-2.) Détermination du nombre de séparatrices pour chaque point singulier,\\\vspace{0.2cm}
-3.) Intégration des séparatrices,\\\vspace{0.2cm}
-4.) Identification des régions.\\\vspace{0.2cm}
+1.\quad Identification des points singuliers du champ de croix,\\\vspace{0.2cm}
+2.\quad Détermination du nombre de séparatrices pour chaque point singulier,\\\vspace{0.2cm}
+3.\quad Intégration des séparatrices,\\\vspace{0.2cm}
+4.\quad Identification des régions.\\\vspace{0.2cm}
 \caption{Algorithme de partitionnement}
 \end{algorithm}
-\vspace{0.5cm}
-On considère que l'algorithme a convergé si les séparatrices ne convergent pas vers un cycle limite. Examinons en détail les différentes étapes de cet algorithme pour en comprendre les nuances et les implications:
 \vspace{0.5cm}
 
 \begin{enumerate}
@@ -968,7 +1011,7 @@ Cependant, lorsqu'un champ de croix, tel que décrit ci-dessus, est utilisé pou
 Pour remédier à cette difficulté, nous introduisons une opération sur le champ de croix appelée \emph{opération d'alignement}. L'objectif est d'ajuster le champ de croix pour qu'il soit aligné avec la frontière du domaine. Pour ce faire, nous cherchons un champ scalaire avec une certaine régularité tel que la rotation du champ de croix initial par rapport à ce champ scalaire donne un nouveau champ de croix aligné avec les frontières du domaine tout en préservant certaines propriétés du champ de croix initial. Dans la suite, nous détaillerons cette opération tout en désignant par \emph{champ d'alignement} le champ scalaire décrit ci-dessus. Pour simplifier la présentation, nous mettons en place l'opération d'alignement dans un premier temps sur un domaine simplement connexe avant de l'étendre aux domaines non-simplement connexes.
 
 \paragraph{Domaine simplement connexe:}
-On suppose $\Omega$ simplement connexe. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<\#\mathcal{S}_{\bar{u}}<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. A priori, une façon simple de réaliser l'opération d'alignement serait de calculer la différence angulaire entre le champ de croix $\bar{u}$ et le champ de croix normal $\bar{N}$ puis de diffuser continûment cette différence angulaire à l'intérieur du domaine. En faisant cela on construirait un champ scalaire régulier sur tout le domaine tel que la rotation du champ de croix par rapport à ce champ scalaire donnerait un champ de croix aligné sur le bord du domaine et n'affectant pas les points singuliers du champ de croix initial en vertu de la proposition $\ref{prop:cont1}$. Un bon candidat pour la diffusion serait alors l'équation de Laplace donné par:\begin{equation}
+On suppose $\Omega$ simplement connexe. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. A priori, une façon simple de réaliser l'opération d'alignement serait de calculer la différence angulaire entre le champ de croix $\bar{u}$ et le champ de croix normal $\bar{N}$ puis de diffuser continûment cette différence angulaire à l'intérieur du domaine. En faisant cela on construirait un champ scalaire régulier sur tout le domaine tel que la rotation du champ de croix par rapport à ce champ scalaire donnerait un champ de croix aligné sur le bord du domaine et n'affectant pas les points singuliers du champ de croix initial en vertu de la proposition $\ref{prop:cont1}$. Un bon candidat pour la diffusion serait alors l'équation de Laplace donné par:\begin{equation}
 \left\{
 \begin{array}{lcll}
 \Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
@@ -1040,15 +1083,7 @@ L'opération d'alignement est alors formulé de la manière suivante:\\\\
 \label{eqn:principe_def_v}
 \end{equation}
 où $\phi:\Omega\longrightarrow\mathbb{R}$ est définie comme la solution de l'équation de Laplace suivante:
-\begin{equation}
-\left\{
-\begin{array}{lcll}
-\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(\gamma(t))&=&\theta_{\bar{N}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}})),
-\end{array}
-\right.
-\label{eqn:principe_def_phi}
-\end{equation}
+
 où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}}))$ par:
 $$
 \mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
@@ -1128,7 +1163,7 @@ En appliquant cet algorithme au champ de croix représenté sur la figure \ref{f
 \end{figure}
 
 \paragraph{Domaine non-simplement connexe:}
-Nous supposons maintenant que $\Omega$ est un domaine non-simplement connexe. Autrement dit sa frontière $\partial\Omega$ peut potentiellement être constitué de plusieurs composantes connexes. On a donc $\partial\Omega=\cup_i\Gamma_i$, où $\Gamma_i,~i\in\llbracket 0, n_b-1\rrbracket$ désigne les composantes connexes de $\partial\Omega$ et $n_b$ le nombre de composantes connexes de $\partial\Omega$. Pour tout $i\in\llbracket0, n_b-1\rrbracket$, on note $\gamma_i$ la paramétrisation de $\Gamma_i$ sur $[0, 1]$ dans le sens positif. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<\#\mathcal{S}_{\bar{u}}<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. En appliquant le processus présenté dans la partie précédente, la condition \eqref{eqn:principe_hypothese_u} devient:
+Nous supposons maintenant que $\Omega$ est un domaine non-simplement connexe. Autrement dit sa frontière $\partial\Omega$ peut potentiellement être constitué de plusieurs composantes connexes. On a donc $\partial\Omega=\cup_i\Gamma_i$, où $\Gamma_i,~i\in\llbracket 0, n_b-1\rrbracket$ désigne les composantes connexes de $\partial\Omega$ et $n_b$ le nombre de composantes connexes de $\partial\Omega$. Pour tout $i\in\llbracket0, n_b-1\rrbracket$, on note $\gamma_i$ la paramétrisation de $\Gamma_i$ sur $[0, 1]$ dans le sens positif. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. En appliquant le processus présenté dans la partie précédente, la condition \eqref{eqn:principe_hypothese_u} devient:
 
 \begin{equation}
     \sum_{i=0}^{n_b-1}\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
@@ -1239,7 +1274,7 @@ De ce fait, le champ de croix corrigé $\bar{u}_c$ répond à la condition \eqre
 Dans la section précédente, nous avons exposé des algorithmes qui, sous certaines conditions, permettent de subdiviser un domaine en régions à quatres côtés. Dans cette partie, nous allons présenter plusieurs résultats visant à garantir l'efficacité de ces méthodes. Commençons par le cas où le champ de croix est aligné avec le bord du domaine. Nous avons le résultat suivant:
 \begin{theorem}
 \label{thm:theorem1}
-Soit $\Omega$ un domaine borné et fermé dans $\mathbb{R}^2$ avec une frontière régulière par morceau et soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ aligné avec $\partial\Omega$ tel que $0<\#\mathcal{S}_{\bar{u}}<\infty$ et pour tout $p\in\Omega$, $id_{\bar{u}}(p)=k/4$ où $k\in\mathbb{Z}$ et $k\leq 1$. Si l'algorithme de partitionnement \ref{alg:algo_main} appliqué à $\bar{u}$ converge alors le partitionnement résultant est une décomposition de $\Omega$ en régions à quatre côtés.
+Soit $\Omega$ un domaine borné et fermé dans $\mathbb{R}^2$ avec une frontière régulière par morceau et soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ aligné avec $\partial\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout $p\in\Omega$, $id_{\bar{u}}(p)=k/4$ où $k\in\mathbb{Z}$ et $k\leq 1$. Si l'algorithme de partitionnement \ref{alg:algo_main} appliqué à $\bar{u}$ converge alors le partitionnement résultant est une décomposition de $\Omega$ en régions à quatre côtés.
 \end{theorem}
 
 \begin{proof}
@@ -1247,7 +1282,7 @@ Selon les propositions \ref{prop:stream_from_interior_sing} et \ref{prop:stream_
 
 Soit $\mathcal{R}$ l'une de ces régions. Selon le Théorème de Poincaré-Hopf, on a $\chi(\mathcal{R})=\sum_{i=1}^{n_c} id_{\bar{u}}(c_i)$, où $(c_i)_{i\in\llbracket1,n_c\rrbracket}$ désigne les coins de $\mathcal{R}$ (c'est à dire les points d'intersections des séparatrices formant la région $\mathcal{R}$) et $n_c$ est le nombre de coins. $\chi(\mathcal{R})\geq0$ car, d'après la proposition \ref{prop:loveprop}, nous avons $id_{\bar{u}}(c_i)=1/4>0$ pour chaque coin $c_i$ de $\mathcal{R}$. De plus, on sait que $\chi(\mathcal{R}) = 2 - 2g - b$, où $g$ représente le genre de $\mathcal{R}$ et $b$ le nombre de composantes connexes de $\partial\mathcal{R}$. Comme $\mathcal{R}$ est une partie du plan, on a $g = 0$, ce qui implique que $\chi(\mathcal{R})\in\{0, 1\}$.
 \begin{itemize}
-\item $\chi(\mathcal{R})=0$: dans ce cas on a $n_c=0$ et $\mathcal{R}=\Omega$. Cela mène à une contradiction puisque, selon les hypothèses du théorème on a $\#\mathcal{S}_{\bar{u}}>0$.
+\item $\chi(\mathcal{R})=0$: dans ce cas on a $n_c=0$ et $\mathcal{R}=\Omega$. Cela mène à une contradiction puisque, selon les hypothèses du théorème on a $Card(\mathcal{S}_{\bar{u}})>0$.
 \item $\chi(\mathcal{R})=1$: cela implique que :
 $$1=\sum_{i=1}^{n_c}id_u(c_i)=\sum_{i=1}^{n_c}\frac{1}{4}\Longrightarrow n_c=4.$$
 Ainsi, $\mathcal{R}$ est une région à quatre côtés.
@@ -1267,7 +1302,7 @@ I_p=
 \right.
 \label{eqn:etude_def_I}
 \end{equation}
-Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que $0<\#\mathcal{S}_{\bar{u}}<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
+Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
 \begin{equation}
     \label{eqn:etude_hypothese_u}
     \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
@@ -1670,7 +1705,7 @@ id_{\bar{v}}(p)=
     \end{itemize}
 \end{proof}
 
-En cas de non-conformité du champ de croix $\bar{u}$ à la condition \eqref{eqn:etude_hypothese_u_second}, nous introduisons un processus de correction visant à obtenir un champ de croix satisfaisant cette condition. Considérons $\bar{u}$ comme un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, sans nécessité d'alignement sur $\partial\Omega$, tel que $0<\#\mathcal{S}_{\bar{u}}<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ tel que:
+En cas de non-conformité du champ de croix $\bar{u}$ à la condition \eqref{eqn:etude_hypothese_u_second}, nous introduisons un processus de correction visant à obtenir un champ de croix satisfaisant cette condition. Considérons $\bar{u}$ comme un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, sans nécessité d'alignement sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ tel que:
 \begin{equation}
     \displaystyle\sum_{i=0}^{n_b-1}\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}}I_p.
 \end{equation}
@@ -1801,9 +1836,9 @@ id_{\bar{v}}(p)=
 
 Dans cette section, nous procédons à un examen approfondi de certains détails et implications de la méthode présentée précédemment. Nous analysons en détail les aspects spécifiques de cette approche et explorons leurs implications dans le contexte de notre travail.
 
-\subsection{Sur la signification pratique de l'hypothèse $0<\#\mathcal{S}_{\bar{u}}<\infty$}
+\subsection{Sur la signification pratique de l'hypothèse $0<Card(\mathcal{S}_{\bar{u}})<\infty$}
 
-L'hypothèse $0<\#\mathcal{S}_{\bar{u}}<\infty$, telle que présentée dans le théorème \ref{thm:theorem1}, revêt une importance significative pour la mise en œuvre pratique d'un code basé sur notre travail. Elle qu'il faut que le champ de croix doit avoir au moins un poins singulier dans le domaine de calcul. Autrement dit, la présence d'un point singulier est essentielle pour le processus de partitionnement du domaine, même si le champ de croix satisfait toutes les autres hypothèses énoncées dans le théorème \ref{thm:theorem1}.
+L'hypothèse $0<Card(\mathcal{S}_{\bar{u}})<\infty$, telle que présentée dans le théorème \ref{thm:theorem1}, revêt une importance significative pour la mise en œuvre pratique d'un code basé sur notre travail. Elle qu'il faut que le champ de croix doit avoir au moins un poins singulier dans le domaine de calcul. Autrement dit, la présence d'un point singulier est essentielle pour le processus de partitionnement du domaine, même si le champ de croix satisfait toutes les autres hypothèses énoncées dans le théorème \ref{thm:theorem1}.
 
 Pour illustrer ce point (voir figure \ref{fig:anneau}), considérons l'exemple d'un domaine en forme d'anneau avec un champ de croix radial. Un tel champ de croix ne comporte aucun point singulier. Par conséquent l'application de l'algorithme de partitionnement ne produit qu'une région correspondant au domaine de départ (voir figure \ref{fig:anneau}). L'introduction d'un point singulier de bord sur le champ de croix permet de résoudre ce problème. En introduisant, par exemple, une singularité d'indice 0 sur l'une des frontières du domaine (voir figure \ref{fig:anneau}), une séparatrice est créée, permettant ainsi un maillage complet du domaine.
 
@@ -1822,7 +1857,7 @@ Pour illustrer ce point (voir figure \ref{fig:anneau}), considérons l'exemple d
 Malheureusement, notre méthode actuelle ne semble pas préserver efficacement cette caractéristique. L'approche que nous avons élaborée, basée sur l'alignement par un champ d'angle global du domaine, altère considérablement la forme du champ de croix initial. Cette altération ne permet pas de conserver les orientations spécifiques présentes dans le champ de croix initial. Cependant, notre méthode parvient à maintenir la localisation des points singuliers du champ de croix initial ainsi que leurs indices.
 
 \subsection{Sur les singularités de bord}
-
+\label{subsec:sing_bord}
 Il est parfois obligatoire pour les simulations numériques de délimiter des parties de la frontière du domaine avec des nœuds physiques. C'est particulièrement le cas lors de l'application de conditions aux limites morcelées. Lorsque ces nœuds ne coïncident pas avec les nœuds géométriques (comme les coins), une manière de prendre en compte cette information serait de les considérer dans le champ de croix comme des points singuliers de bord.
 
 La présence d'une singularité en bordure indique une rotation locale du champ de croix associée à la normale sortante. La quantification de cette rotation fournit la valeur de l'indice associé à la singularité (voir l'équation \eqref{eqn:Indexboundary}). Dans la littérature, les associations (angle de coin - indice) proposées tendent à minimiser la rotation du champ sur la frontière afin de maintenir le champ de croix à l'intérieur du domaine aussi lisse que possible. La distribution conventionnelle proposée dans la littérature correspond aux valeurs du tableau \ref{tabul} avec différentes tolérances autour des angles donnés (voir les détails dans \cite{macq2020ginzburg}).

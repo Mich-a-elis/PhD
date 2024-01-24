@@ -9,7 +9,7 @@ Dans le précédent chapitre, la méthode a été élaborée dans un cadre conti
 \'Etant donné un tel maillage représentant un domaine donné, le but de ce chapitre est de démontrer qu'à partir d'un champ de croix donné, il est possible de construire sur le maillage triangulaire un maillage quadrilatéral, et d'expliquer dans quelle mesure ce maillage représente fidèlement le domaine initial.
 
 \section{Représentation discrète}
-
+\label{sec:repr_discrete}
 Soit $\Omega$ un domaine compact et connexe de $\mathbb{R}^2$ dont le bord $\partial\Omega$ est lisse par morceau. On désigne par $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$.
 
 \subsection{Maillage triangulaire}
@@ -30,7 +30,7 @@ $$
 \{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}:=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
 $$
 \end{definition}
-Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini lorsque $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$. Cette fonction mesure la variation angulaire entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a:
+Cette fonction mesure la variation angulaire entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a:
 $$
 \theta_{\mathbf{c}_2}=\theta_{\mathbf{c}_1}+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
 $$
@@ -38,10 +38,42 @@ Une conséquence directe de cette définition est l'antisymétrie de l'angle, ce
 $$
 \delta\theta(\mathbf{c}_1, \mathbf{c}_2)=-\delta\theta(\mathbf{c}_2,\mathbf{c}_1).
 $$
-Soit $\bar{u}_h$ la représentation du champ de croix $\bar{u}$ sur $\Omega_h$ que nous définissons pour tout $p\in\Omega_h$ de la manière suivante:\\
+Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini lorsque $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$.
+Cette définition nous permet d'introduire l'assertion suivante.
+\begin{assertion}
+\label{ass:triangle_singulier}
+ Soit triangle $T$ et de sommets $s_1$, $s_2$ et $s_3$ vérifiant l'une des propriétés suivantes:\\
+ \begin{itemize}
+  \item[1.] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$,\\%[-0.2cm]
+  \item[2.] il existe  $i,j\in\llbracket 1, 3\rrbracket$, tel que  $\delta\theta(\bar{u}(s_i),\bar{u}(s_{j}))$ n'est pas défini,\\%[-0.2cm]
+  \item[3.] pour tout $i\in\llbracket 1, 3\rrbracket$, $\bar{u}(s_i)\neq 0$ et $\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$ où on a posé $s_4:=s_1$.\\[-0.2cm]
+ \end{itemize}
+\end{assertion}
+
+On peut subdiviser l'ensemble des triangles vérifiant l'assertion \ref{ass:triangle_singulier} en plusieurs partitions, dont les parties du plan correspondant seront appelées \emph{zones singulières}. Pour assembler ces partitions, on regroupe les triangles singuliers qui ont un ou plusieurs triangles singuliers comme voisins. Voici un exemple illustrant la construction de zones singulières sur la figure \ref{fig:zone_singuliere}. Dans ce cas, on se donne une configuration où la couleur rouge indique les lieux où l'une des propriétés de l'assertion \ref{ass:triangle_singulier} est vérifiée. Nous affichons ensuite les zones singulières correspondantes en bleu. Cette configuration particulière conduit à la création de cinq zones singulières que nous présentons sur la même figure. Dans la suite, nous utiliserons la notation $\mathbf{Z}=\cup_{i=1}^{N_Z}Z_i$ pour représenter la partie du plan occupé par l'ensemble des zones singulières. Ici, $Z_i$ désigne une zone singulière spécifique, et $N_z$ représente le nombre total de zones singulières. Ce nombre est nécessairefini puisque le champ de croix $\bar{u}$ possède un nombre fini de points singuliers. Nous associons ensuite à chaque zone singulière $Z\in \mathbf{Z}$ un point arbitrairement choisi dans $Z$, que nous notons $S_Z$ (par exemple, lorsque $Z$ est réduit à un unique triangle, on peut choisir $S_Z$ comme le barycentre du triangle en question).
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/zone_singuliere_1.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/zone_singuliere_2.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
+\caption{Illustration de la construction de zones singulières.}
+\label{fig:zone_singuliere}
+\end{figure}
+
+Avec ces outils, nous sommes à présent en mesure de présenter notre proposition de représentation $\bar{u}_h$ sur $\Omega_h$ d'un champ de croix $\bar{u}$ défini sur $\Omega$. Pour tout $p\in\Omega_h$, nous définissons $\bar{u}_h$ de la manière suivante:\\
+
 \begin{itemize}
-\item[$\bullet$] si $p\in\mathcal{S}_h$, alors $\bar{u}_h(p)=\bar{u}(p)$,\\[-0.2cm]
-\item[$\bullet$] si $p\in T$ où $T\in\mathcal{T}_h$ est un triangle non-singulier, alors on pose :%\\[-0.3cm]
+\item[$\bullet$] si $p\in(\mathcal{S}_h\backslash\mathbf{Z})\cap\partial Z$, alors $\bar{u}_h(p)=\bar{u}(p)$.\\%[-0.3cm]
+\item[$\bullet$] si $p\in\Omega_h\backslash\mathbf{Z}$ alors il existe $T\in\mathcal{T}_h$ tel que $p\in T$ et $T$ ne vérifie pas l'assertion \ref{ass:triangle_singulier}. On pose alors:
 $$
 \left\{
 \begin{array}{l}
@@ -51,7 +83,7 @@ $$
 \end{array}
 \right.
 $$
-où $s_1$, $s_2$ et $s_3$ sont les sommets du triangle $T$. La croix $\bar{u}_h(p)$ est alors donnée par :
+où $s_1$, $s_2$ et $s_3$ sont les sommets du triangle $T$. La croix $\bar{u}_h(p)$ est alors donnée par:
 $$
 \left\{
 \begin{array}{l}
@@ -60,122 +92,68 @@ $$
 \end{array}
 \right.
 $$
-avec $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans le triangle $T$. Autrement dit, ils vérifient $p=\sum_{i=1}^3\lambda_i s_i$ et $\sum_{i=1}^3\lambda_i=1$.
-\\[-0.2cm]
-\item[$\bullet$] si $p\in T$ avec $T\in\mathcal{T}_h$ un triangle singulier  et $p$ barycentre de $T$ (c'est à dire $p=1/3(s_1+s_2+s_3)$ avec $s_1$, $s_2$ et $s_3$ les sommets de $T$) alors on pose $\bar{u}_h(p)=0$.\\[-0.2cm]
-\item[$\bullet$] sinon $p$ appartient à un triangle singulier $T$ tel qu'il existe $q\in T$ avec $\bar{u}_h(q)=0$. La croix $\bar{u}_h(p)$ est alors donnée par:
+avec $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans le triangle $T$. Autrement dit, ils vérifient $p=\sum_{i=1}^3\lambda_i s_i$ et $\sum_{i=1}^3\lambda_i=1$.\\
+\item[$\bullet$] si $p\in\mathbf{Z}$ alors il existe une zone singulière $Z\subset\mathbf{Z}$ tel que $p\in Z$. On a alors:\\
+\begin{itemize}
+ \item si $p=S_Z$, alors $\bar{u}_h(p)=0$.\\
+ \item sinon la croix $\bar{u}_h(p)$ est donnée par:
 $$
 \left\{
 \begin{array}{l}
 \bar{u}_h(p)=\bar{u}_h(\widetilde{p}),\\\\
-\{\widetilde{p}\}=[qp)\cap\partial T_q.
+\{\widetilde{p}\}=[S_Zp)\cap\partial Z.
 \end{array}
 \right.
 $$
-
-
-si $p\in a$, où $a\in\mathcal{A}_h$ est une arête de sommets $s_1$ et $s_2$, alors on a:
-$$
-\left\{
-\begin{array}{l}
-\bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
-\theta_p=\theta_{\bar{u}_h}(s_1)+\displaystyle\frac{\|\overrightarrow{s_1p}\|}{\|\overrightarrow{s_1s_2}\|}\delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2)).
-\end{array}
-\right.
-$$
-
-
-Noter que l'ensemble $[qp)\cap\partial T_q$ est bien réduit à un singleton puisque $T_q$ est une réunion de simplexes donc convexe.
+Notons que l'ensemble $[S_Zp)\cap\partial Z$ est bien réduit à un singleton puisque $Z$ est une réunion de simplexes donc convexe.\\
 \end{itemize}
-
-Dans toute la suite, nous imposons les contraintes suivantes sur le maillage $\Omega_h$ :\\[-0.2cm]
-\begin{itemize}
- \item pour chaque arête $a\in\mathcal{A}_h$ délimitée par les sommets $s_1$ et $s_2$, il est requis que $\bar{u}(s_1)\neq 0$ ou $\bar{u}(s_2)\neq 0$.\\[-0.2cm]
- \item De plus, dans le cas où $\bar{u}(s_1)\neq 0$ et $\bar{u}(s_2)\neq 0$, la quantité $\delta\theta(\bar{u}(s_1), \bar{u}(s_2))$ doit être définie.\\[-0.2cm]
 \end{itemize}
-Dans la pratique, il sera donc impératif d'affiner ou de modifier localement un maillage qui ne satisfait pas ces contraintes. La pertinence de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$. Nous introduisons à présent le concept de triangle singulier avec la définition suivante :
-
-\begin{definition}
-\label{def:triangle_singulier}
- Un triangle $T$ de $\mathcal{T}_h$ et de sommets $s_1$, $s_2$ et $s_3$ est dit singulier si l'une des assertions suivantes est vérifiée:\\[-0.2cm]
- \begin{itemize}
-  \item[i.)] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$,\\[-0.2cm]
-  \item[ii.)] $\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$.
- \end{itemize}
-
-\end{definition}
-
-Avec ces concepts en main, nous décrivons à présent la représentation du champ de croix $\bar{u}$ sur $\Omega_h$ par un champ de croix $\bar{u}_h$. Ce dernier est défini pour tout $p\in\Omega_h$ par :\\
-
 
 \begin{remark}
-La variation angulaire du champ de croix le long des arêtes du maillage constitue le fondement de la représentation mentionnée précédemment. Il est donc essentiel de pouvoir définir les croix en chaque point le long de chaque arête, d'où la pertinence des contraintes précédemment évoquées imposées au maillage .
+La représentation du champ de croix que nous proposons (dans la suite) se base sur l'angle signé entre les croix des arêtes du maillage. Plus précisément, nous utilisons les variations du champ de croix le long des arêtes pour construire notre représentation en chaque point et pour évaluer les indices des points singuliers. Ainsi, lorsque cette variation angulaire n'est pas définie, notre représentation induit des points singuliers non isolés, comme nous le verrons dans le lemme \ref{lem:isolation_pt_sing}.
+Pour palier à ce désagrément, nous imposons dans toute la suite les conditions suivantes:\\
+\begin{itemize}
+ \item si on a $Z\subset\mathbf{Z}$ tel que $Z\cap\partial\Omega_h=\emptyset$, on doit avoir pour tout $p\in\partial Z\cap\mathcal{S}_h$, $\bar{u}(p)\neq 0$ et pour tout arête $s_1s_2\subset\partial Z$, $\delta\theta(\bar{u}(s_1),\bar{u}(s_2))$ doit être défini.\\
+ \item si on a $Z\subset\mathbf{Z}$ tel que $Z\cap\partial\Omega_h\neq\emptyset$, on impose $S_Z\in\partial\Omega_h$ et on doit avoir pour tout $p\in(\partial Z\cap\mathcal{S}_h)\backslash\{S_Z\}$, $\bar{u}(p)\neq 0$ et pour tout arête $s_1s_2\subset\partial Z$, $\delta\theta(\bar{u}(s_1),\bar{u}(s_2))$ doit être défini.\\
+\end{itemize}
+Dans la pratique, il sera donc impératif de modifier un maillage qui ne satisfait pas ces contraintes. %La pertinence de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$.
+Étant donné que les points singuliers du champ de croix $\bar{u}$ sont isolés, on peut toujours satisfaire ces contraintes en affinant ou en modifiant localement (par exemple, par des opérations de retournement d'arêtes) un maillage qui ne satisfait pas ces contraintes.
 \end{remark}
 
-
-\begin{comment}
-\subsection*{Maillage triangulaire et représentation des  champs de croix}
-
-Considérons maintenant une triangulation h de la surface Ω. Par là, nous entendons que h est une surface polyédrique orientable compacte de dimension deux, de classe C0, et en notant Th l'ensemble des triangles fermés non vides tels que $∪T \in Th T = Ω$, nous supposons que tous les sommets appartiennent à Ω, et que toute intersection entre deux triangles est soit vide, soit un sommet, soit un côté. Soit $h_T = diam(T) et h = max{h_T : T \in Th}$
-
-Considérons $\Omega$ comme un domaine borné et fermé dans $\mathbb{R}^2$. Pour le représenter, nous utilisons un maillage triangulaire noté $\Omega_h=(V, E, F)$, où $h$ est la taille des éléments du maillage. Ici, $V$ désigne l'ensemble des sommets de $\Omega_h$, $E$ représente l'ensemble des arêtes, et $F$ correspond à l'ensemble des triangles qui composent $\Omega_h$. Si $\bar{u}$ est un champ de croix défini sur $\Omega$, on se donne un ensemble de valeurs de $\bar{u}$ défini sur les sommets de $\Omega_h$. Une représentation $\bar{u}_h$ de $\bar{u}$ est alors construite pour tout $p\in\Omega_h$ de la manière suivante:
-
-\begin{equation}
-    \bar{u}_h(p) =
-\left\{ 
-    \begin{array}{lc}
-        \displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)
-        \begin{pmatrix} 
-          cos(\arg{g(p)}/4)\\\\
-          sin(\arg{g(p)}/4)
-        \end{pmatrix},
-        ~ m\in \mathbb{Z}\right\} &\text{ si }g(p)\neq (0, 0)\\\\
-        0& \text{sinon}
-    \end{array} 
-\right.
-\label{eqn:def_u_h}
-\end{equation}
-où $g$ est définie pour tout $p\in\Omega_h$ par:
-\begin{equation}
-    g(p)=\sum_{i=1}^3\lambda_i
-    \begin{pmatrix} 
-      cos(4\theta_{\bar{u}_h}(s_i))\\\\
-      sin(4\theta_{\bar{u}_h}(s_i))
-    \end{pmatrix},
-\end{equation}
-avec $(s_i)_{i\in\llbracket 1, 3\rrbracket}$ les sommets d'un triangle de $\Omega_h$ contenant $p$ et $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans ce triangle. Remarquons que le champ de croix $\bar{u}_h$ ainsi défini est presque-$\mathcal{C}^1$ sur chaque triangle puisque $g$ est linéaire sur chaque triangle.
-\end{comment}
 
 \subsection{Points singuliers, indice et ligne de champs}
 \label{subsec:pt_sing_ind_lign_champ}
 
-L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singuliers de $\bar{u}_h$, est constitué des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$.
+L'ensemble $\mathcal{S}_{\bar{u}_h}$, défini comme l'ensemble des points singuliers de $\bar{u}_h$, est constitué des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$. Par construction, les points singuliers de $\bar{u}_h$ sont isolés. C'est ce que montre le lemme suivant:
+
 \begin{lemma}
+\label{lem:isolation_pt_sing}
     Les points singuliers de $\bar{u}_h$ sont isolés.
 \end{lemma}
 \begin{proof}
-    Soit $q$ un point singulier de $\bar{u}_h$. Le point $q$ est isolé puisque par construction, on a $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$. En effet, pour tout $p\in T_q\backslash\{q\}$ on a $\bar{u}_h(p)=\bar{u}_h(\widetilde{p})$ où $\widetilde{p}$ est le point d'intersection entre la demi-droite $[qp)$ et le bord $\partial T_q$ de $F_q$. Il existe donc une arête $a\in\mathcal{A}_h$ vérifiant $a\subset\partial T_q$ et contenant le point $\widetilde{p}$. Par ailleurs pour tout $r\in a$, on a $\bar{u}_h(r)\neq 0$ par construction puisque $\bar{u}_h(s_1)\neq 0$ et $\bar{u}_h(s_2)\neq 0$ (avec $s_1$ et $s_2$ les sommets de $a$). Il vient alors que $\bar{u}_h(\widetilde{p})\neq 0$ et par conséquent $p\notin \mathcal{S}_{\bar{u}_h}$. Autrement dit, $T_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$.
+    Soit $q$ un point singulier de $\bar{u}_h$. Par construction, il existe une zone singulière $Z_q\subset\mathbf{Z}$ tel que $q=S_Z$. Le point $q$ est isolé puisqu'on a $Z_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$. En effet, pour tout $p\in Z_q\backslash\{q\}$ on a $\bar{u}_h(p)=\bar{u}_h(\widetilde{p})$ où $\widetilde{p}$ est le point d'intersection entre la demi-droite $[qp)$ et le bord $\partial Z_q$ de $Z_q$. Il existe donc une arête $s_1s_2\in\mathcal{A}_h$ (de sommets $s_1$ et $s_2$) vérifiant $s_1s_2\subset\partial T_q$, contenant le point $\widetilde{p}$ et tel que $\delta\theta(\bar{u}_h(s_1), \bar{u}_h(s_2))$ est défini. Ainsi, pour tout $r\in s_1s_2$, on a $\bar{u}_h(r)\neq 0$. Il vient alors que $\bar{u}_h(\widetilde{p})\neq 0$ et par conséquent $p\notin \mathcal{S}_{\bar{u}_h}$. Autrement dit, $Z_q\cap\mathcal{S}_{\bar{u}_h}=\{q\}$.
 \end{proof}
+Dans la suite, étant donné $p\in\mathcal{S}_{\bar{u}_h}$ un point singulier de $\bar{u}_h$ nous désignerons par $Z_p$ la zone singulière contenant $p$.\\
 
 Examinons à présent l'indice des points singuliers de $\bar{u}_h$. Soit $p$ un point singulier de $\bar{u}_h$ avec $p\in\Omega_h\backslash\partial\Omega_h$. L'indice de $p$ est donné par:
 $$
 id_{\bar{u}_h}(p)=\frac{1}{2\pi}\int_0^1 d\theta^\gamma_{\bar{u}_h}=\frac{1}{2\pi}\sum_{\gamma_T\in\{\gamma\cap T,~T\in\mathcal{T}_h\}}\int_0^1 d\theta^{\gamma_T}_{\bar{u}_h}.
 $$
-où $\gamma$ est un chemin fermé paramétré sur $[0, 1]$ englobant $p$ et ne contenant aucun autre point singulier de $\bar{u}_h$. En pratique, nous calculerons l'indice d'un point $p$ en utilisant une paramétrisation $\gamma$ du bord $\partial T_p$ de $T_p$. De ce fait, l'indice du point $p$ s'écrit:
+où $\gamma$ est un chemin fermé paramétré sur $[0, 1]$ englobant $p$ et ne contenant aucun autre point singulier de $\bar{u}_h$. En pratique, nous calculerons l'indice d'un point $p$ en utilisant une paramétrisation $\gamma$ du bord $\partial Z_p$ de $Z_p$. De ce fait, l'indice du point $p$ s'écrit:
 \begin{equation}
     \label{eqn:ind_int}
     id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)=\displaystyle\frac{1}{2\pi}\sum_{i=1}^{n_s}\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1})),
 \end{equation}
-où $(s_i)_{i\in\llbracket 1, n_s\rrbracket}=\mathcal{S}_h\cap\partial T_p$ désigne l'ensemble des sommets des triangles formant $T_p$, privés du point $p$, et numérotés dans le sens positif avec $s_{n_s+1}:=s_1$.
+où $(s_i)_{i\in\llbracket 1, n_s\rrbracket}=\mathcal{S}_h\cap\partial Z_p$ désigne l'ensemble des sommets des triangles formant $Z_p$, privés du point $p$, et numérotés dans le sens positif avec $s_{n_s+1}:=s_1$.
 Si $p\in\partial\Omega_h$ alors l'indice de $p$ est donné par:
 \begin{equation}
     \label{eqn:ind_bord}
     id_{\bar{u}_h}(p)=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\left(\theta^\gamma_{\bar{u}_h}(s_{i+1})-\theta^\gamma_{\bar{u}_h}(s_i)\right)\right]=\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\sum_{i=1}^{n_s}\delta\theta(\bar{u}_h(s_i),\bar{u}_h(s_{i+1}))\right],
 \end{equation}
-où $\gamma$ dans ce cas est la paramétrisation de $\partial T_p\backslash\partial\Omega_h$ (c'est à dire la partie de $\partial T_p$ se trouvant à l'intérieur de $\Omega_h$) et $(s_i)_{i\in\llbracket 1, n_s\rrbracket}$ l'ensemble des sommets de $\Omega_h$ appartenant à $\partial T_p\backslash\partial\Omega_h$.
+où $\gamma$ dans ce cas est la paramétrisation de $\partial Z_p$ avec $\gamma(0)=\gamma(1)=p$ et $(s_i)_{i\in\llbracket 1, n_s\rrbracket}$ l'ensemble des sommets de $\Omega_h$ appartenant à $\partial Z_p\backslash\{p\}$ et numéroté dans le sens positif.
 
 \begin{proposition}
-    Pour tout $p\in\Omega_h\backslash\partial\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\rrbracket -n_a/4, n_a/4\llbracket$ où $n_a$ est le nombre d'arête de $\Omega_h$ inclut dans $\partial T_p$.
+    Pour tout $p\in\Omega_h\backslash\partial\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\rrbracket -n_a/4, n_a/4\llbracket$ où $n_a$ est le nombre d'arête de $\Omega_h$ inclut dans $\partial Z_p$.
 \end{proposition}
 
 \begin{proof}
@@ -192,7 +170,7 @@ $$
 4id_{\bar{u}_h}(p)\in\left\rrbracket-\frac{n_a}{4}, \frac{n_a}{4}\right\llbracket.
 $$
 \end{proof}
-Un corollaire direct de la proposition précédente est que si un point singulier est localiser à l'intérieur d'un triangle alors les seuls indices possible pour ce point sont $-1/4, 0$ et $1/4$.\\
+Un corollaire direct de la proposition précédente est que si un point singulier est localiser à l'intérieur d'un triangle alors les seuls indices possible pour ce point sont $-1/4, 0$ et $1/4$. Il vient donc que pour modéliser des points singuliers d'ordre élevé, il est préférable qu'il soit localisé au sommet des maillages. Puisque la position d'un point singulier est arbitraire dans une zone singulière, on peut donc en profiter pour placer les points singuliers sur des sommets ou encore effectuer un remaillage locale permettant de capturer le point singulier sur un sommet comme dans \cite{jezdimirovic2021quad}\\
 
 Nous abordons à présent la représentation des lignes de champs de $\bar{u}_h$ dans $\Omega_h$. Rappelons que étant donné un point $p_0\in\Omega_h$ et un vecteur $\overrightarrow{u_0}\in\mathbb{R}^2$, la ligne de champ $SL_{\bar{u}_h}(p_0, \overrightarrow{u_0})$ d'origine $p_0$ est la courbe $S$ telle que :
 
@@ -259,59 +237,13 @@ On trouve ensuite $p_{i+1}$ en utilisant l'équation \ref{eqn:formule_W} avec $W
         \label{fig:draw_streams_2}
 \end{figure}
 
-
-\subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
-
-À présent, nous nous posons la question de savoir quel lien on peut exhiber entre le champ de coix $\bar{u}$ et sa représentation $\bar{u}_h$ construite dans les parties précedentes.
-
-Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait que $\theta_{\bar{u}_h}$ est linéaire par construction dans $T$. Il vient alors que $\theta_{\bar{u}_h}$ tend vers $\theta_{\bar{u}}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. Autrement dit, $\bar{u}_h$ tend vers $\bar{u}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. \color{red} Cependant la somme des indices des points singuliers de $u$ est équivalent à la somme des indices des points singuliers de $\bar{u}_h$.\\
-Pas besoin de modifier le maillage grace etoilage penser a Jovanna\color{black}.
-\[\]
-Une conséquence de la représentation du champ de croix que nous avons présentée est que les points singuliers de $\bar{u}$ ne correspondent pas aux points singuliers de $\bar{u}_h$ ($\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{u}_h}$). Par exemple, sur la figure \ref{fig:eclatement_point_sing}, nous avons un champ de croix contenant un point singulier d'indice $1$ que nous représentons sur un maillage triangulaire. On observe alors la présence d'une multitude de points singuliers d'indice $1/4$ et d'indices $-1/4$, localisés dans divers triangles. Il est à noter cependant que la somme des indices de ces points singuliers correspond bien à l'indice du point singulier initial. D'où le lemme suivant:
-
-\begin{lemma}
- Soit $\bar{u}_h$ une représentation de $\bar{u}$ sur $\Omega_h$. Alors on a:
- $$
- \sum_{p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega}id_{\bar{u}}(p)=\sum_{p\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h}id_{\bar{u}_h}(p).
- $$
-\end{lemma}
-
-\begin{proof}
-
-\end{proof}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.27]{images/u_sing.pdf}\hspace{0.2cm}
-  \includegraphics[scale=0.26]{images/u_h_sing.pdf}
-  \caption{.}
-  \label{fig:eclatement_point_sing}
-\end{figure}
-
 \section{Partitionnement de $\partial\Omega_h$}
+\label{sec:partitionnement_omega_h}
 
 L'adaptation de l'algorithme de partitionnement \ref{alg:algo_main} au maillage $\Omega_h$ est donné par l'algorithme \ref{alg:discr_algo_main}. On considère que l'algorithme a convergé si les séparatrices ne convergent pas vers un cycle limite. Examinons maintenant en détail certaines étapes de cet algorithme.
 
-\begin{comment}
-\begin{algorithm}[H]
-  \SetAlgoLined
-  \KwData{this text}
-  \KwResult{how to write algorithm with \LaTeX2e }
-  initialization\;
-  \While{not at end of this document}{
-    read current\;
-    \eIf{understand}{
-      go to next section\;
-      current section becomes this one\;
-    }{
-      go back to the beginning of current section\;
-    }
-  }
-  \caption{How to write algorithms in English}
-\end{algorithm}
-\end{comment}
-
+\vspace{0.5cm}
+\RestyleAlgo{ruled}
 \begin{algorithm}[h!]
 \label{alg:discr_algo_main}
 \renewcommand{\algorithmcfname}{Algorithme}%
@@ -325,21 +257,26 @@ L'adaptation de l'algorithme de partitionnement \ref{alg:algo_main} au maillage 
 4.\quad Identification des régions\\[0.2cm]
 \caption{Partitionnement $\Omega_h$}
 \end{algorithm}
+\vspace{0.5cm}
 
 \subsection{Recherche de points singuliers}
 
-Par construction, les points singuliers du champ de croix $\bar{u}_h$ se situent soit aux sommets du maillage $\Omega_h$, soit à l'intérieur des triangles qui le constituent.En pratique, la recherche de ces points peut être effectuée localement sur chaque triangle. Cela implique de tester le caractère singulier ou non de chaque triangle (voir la définition \ref{def:triangle_singulier}). Considérons $T\in\mathcal{T}_h$ comme un triangle singulier de $\Omega_h$. Par conception, il contient nécessairement un point singulier. Nous distinguons alors deux cas :\\
+Par construction, les points singuliers du champ de croix $\bar{u}_h$ se situent soit aux sommets du maillage $\Omega_h$, soit sur une arête, soit à l'intérieur d'un triangle qui le constituent. Dans tous les cas la recherche des points singuliers n'est pas un problème. Ces points singuliers coincides exactement avec les points $S_Z$ où $Z\subset\mathbf{Z}$.
+
+\begin{comment}
+En pratique, la recherche de ces points peut être effectuée localement sur chaque triangle. Cela implique de tester le caractère singulier ou non de chaque triangle (voir la définition \ref{def:triangle_singulier}). Considérons $T\in\mathcal{T}_h$ comme un triangle singulier de $\Omega_h$. Par conception, il contient nécessairement un point singulier. Nous distinguons alors deux cas :\\
 \begin{itemize}
  \item le point singulier correspond à l'un des sommets du triangle $T$.\\
  \item sinon, le point singulier se trouve à l'intérieur du triangle. Conformément à notre représentation de $\bar{u}_h$, dans ce cas précis, il s'agit du barycentre du triangle. Cependant rien empêche de choisir un autre point à l'intérieur du triangle tout en modifiant le calcul des valeurs du champ dans le triangle. Remarquons que tous les points singuliers de bord sont sur des sommets.\\
 \end{itemize}
+\end{comment}
 
 Une fois la localisation des points singulier identifié, on peut facilement calculé leur index grâce aux formules \ref{eqn:ind_int} ou \ref{eqn:ind_bord} en fonction de leur localisation.
 
 \begin{remark}
-L'emplacement d'un point singulier $p$ dans $T_p$ n'est pas fixé de manière absolue. La proposition \ref{prop:stream_from_interior_sing} indique qu'il est possible de faire correspondre ce point singulier à tout point à l'intérieur de $T_p$, moyennant une modification du champ dans $T_p$ comme spécifié dans ladite proposition. Dans notre représentation des champs de croix précédemment exposée, nous avons opté pour le barycentre des triangles lorsque $T_p$ correspond à un triangle.
+L'emplacement d'un point singulier $p$ dans $Z_p$ n'est pas fixé de manière absolue. La proposition \ref{prop:stream_from_interior_sing} indique qu'il est possible de faire correspondre ce point singulier à tout point à l'intérieur de $Z_p$, moyennant une modification du champ dans $Z_p$ comme spécifié dans plus haut.
 
-En poursuivant cette logique, il est envisageable de substituer un groupe de singularités par un unique point singulier. Pour cela, il suffit de définir l'ensemble $T_p$ de manière à ce qu'il englobe tous les points singuliers que l'on souhaite regrouper avec $p$, le nouveau point singulier. Cette approche est bénéfique car elle permet de traiter les points singuliers situés trop près les uns des autres, par exemple, ceux présents dans deux triangles voisins.
+En poursuivant cette logique, il est envisageable de substituer un groupe de singularités par un unique point singulier. Pour cela, il suffit de redéfinir l'ensemble $Z_p$ de manière à ce qu'il englobe tous les points singuliers que l'on souhaite regrouper avec $p$. Cette approche est bénéfique car elle permet de traiter les points singuliers situés trop près les uns des autres.
 \end{remark}
 
 \subsection{Construction des séparatrices}
@@ -374,20 +311,20 @@ Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la
 
 \paragraph{Directions initiales et intégration:}
 
-Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0q_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(q_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial T_{p_0}$ est construite de la manière suivante (voir figure \ref{fig:init_streams_int}):\\
+Soit $p_0\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h$. Étant donné que $\bar{u}_h$ s'annule en $p_0$, notre première étape consiste à déterminer les orientations initiales des séparatrices. Les directions initiales des séparatrices émanant de $p_0$ sont données par les vecteurs $\overrightarrow{p_0q_i}$, $i\in\llbracket 1, N_s(p_0) \rrbracket$ où la suite de points $(q_i)_{i\in\llbracket 1, N_s(p_0)\rrbracket}\subset\partial Z_{p_0}$ est construite de la manière suivante (voir figure \ref{fig:init_streams_int}):\\
 \begin{itemize}
-    \item[$\bullet$] le premier point $q_1$ est tout point de $\partial T_{p_0}$ tel que $\overrightarrow{p_0q_1}.\|\overrightarrow{p_0q_1}\|^{-1}\in\bar{u}_h(q_1)$\\
+    \item[$\bullet$] le premier point $q_1$ est tout point de $\partial Z_{p_0}$ tel que $\overrightarrow{p_0q_1}.\|\overrightarrow{p_0q_1}\|^{-1}\in\bar{u}_h(q_1)$\\
     \item[$\bullet$] soit $t_1\in[0, 1]$ tel que $\gamma(t_1)=q_1$. Pour tout $i\in\llbracket 2, N_s(p_0)\rrbracket$, on a:
     $$
     q_i=\gamma(t_i)\mbox{ avec }\int_{t_{i-1}}^{t_i}dW_{p_0}^\gamma=-\frac{\pi}{2},
     $$
-    où $\gamma$ est une paramétrisation de $\partial T_{p_0}$ sur $[0, 1]$ dans le sens positif et la fonction $W^\gamma_{p_0}$ est donné pour tout $t\in[0, 1]$ par:
+    où $\gamma$ est une paramétrisation de $\partial Z_{p_0}$ sur $[0, 1]$ dans le sens positif et la fonction $W^\gamma_{p_0}$ est donné pour tout $t\in[0, 1]$ par:
     $$
     W_{p_0}^\gamma(t)=\theta^\gamma_{\bar{u}_h}(t)-\arg \overrightarrow{p_0\gamma(t)}.
     $$
 \end{itemize}
 
-Le principe demeure inchangé lorsque $p_0$ est un point singulier de bord ($p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$) (voir la figure \ref{fig:init_streams_bord}). Dans ce cas, le premier point $q_1$ est unique et correspond à $\gamma(0)$ où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial T{p_0}\backslash\partial\Omega_h$ dans le sens positif. Une fois les orientations initiales déterminées, l'intégration d'une séparatrice correspond exactement au processus d'intégration d'une ligne de champ tel que décrit dans la section \ref{subsec:pt_sing_ind_lign_champ}.
+Le principe demeure inchangé lorsque $p_0$ est un point singulier de bord ($p_0\in\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h$) (voir la figure \ref{fig:init_streams_bord}). Dans ce cas, le premier point $q_1$ est unique et correspond à $\gamma(0)$ où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial Z{p_0}\backslash\partial\Omega_h$ dans le sens positif. Une fois les orientations initiales déterminées, l'intégration d'une séparatrice correspond exactement au processus d'intégration d'une ligne de champ tel que décrit dans la section \ref{subsec:pt_sing_ind_lign_champ}.
 
 \begin{figure}[h!]
 \centering
@@ -472,7 +409,7 @@ Dans la littérature, les directions initiales sont souvent calculées de maniè
 \end{figure}
 
 
-lors de l'intégration d'une séparatrice, il peut arriver qu'elle doive traverser un triangle singulier. Dans ce cas, le processus d'intégration tel que décrit précédemment peut échouer (voir la figure \ref{fig:draw_streams_sing_1}). Cela résulte du fait que le champ d'angle associé au champ de croix dans le triangle n'est pas linéaire et présente des variations importantes. Pour surmonter ce problème, nous cherchons à représenter la séparatrice dans le triangle singulier en utilisant une succession d'autres segments calculés par un raffinement local du maillage à l'intérieur du triangle singulier. L'objectif est d'isoler le point singulier par rapport à la trajectoire de la séparatrice. Voici le procédé:
+Nous désignons par \emph{triangle singulier}, tout triangle contenant un point singulier. Lors de l'intégration d'une séparatrice, il peut arriver qu'elle doive traverser un triangle singulier. Dans ce cas, le processus d'intégration tel que décrit précédemment peut échouer (voir la figure \ref{fig:draw_streams_sing_1}). Cela résulte du fait que le champ d'angle associé au champ de croix dans le triangle n'est pas continue et présente des variations importantes. Pour surmonter ce problème, nous cherchons à représenter la séparatrice dans le triangle singulier en utilisant une succession d'autres segments calculés par un raffinement local du maillage à l'intérieur du triangle singulier. L'objectif est d'isoler le point singulier par rapport à la trajectoire de la séparatrice. Voici le procédé:
 
 Considérons $T$ comme un triangle contenant un point singulier que doit traverser une séparatrice dont l'origine ne se trouve pas dans $T$. En d'autres termes, le dernier point calculé lors de la construction de cette séparatrice appartient à $T$ et le processus habituel d'intégration a généreé un segment traversant $T$ (voir figure \ref{fig:draw_streams_1}). Dans la suite nous appellerons ce "dernier point" le point d'entrée de la séparatrice dans $T$. On commence en subdivisant $T$ en quatre triangles. Cette subdivision peut être réalisée en reliant, par exemple, les milieux des arêtes de $T$ Il est essentiel de noter que si le point d'entrée coincide avec le milieu d'une arête, un autre point de cette arête doit être choisi pour la subdivision. L'objectif est que le point d'entrée se retrouve associé à un triangle issu de la subdivision et ne contenant pas de point singulier. On peut alors appliquer le processus d'intégration dans ce triangle, tel que décrit précédemment (voir figure \ref{fig:draw_streams_sing_2}). Il ne reste plus qu'à itérer ce schéma de construction jusqu'à ce que la séparatrice sorte de la partie du plan correspondant au triangle initial (voir figures \ref{fig:draw_streams_sing_3} et \ref{fig:draw_streams_sing_4}). On se retouve ainsi avec un raffinement local et adapté du maillage en fonction de la trajectoire de la séparatrice ce qui permet en pratique de ne pas raffiner l'intégralité du maillage pour avoir une bonne approximation de la séparatice. Il convient de souligner qu'il n'est pas nécessaire d'apporter des modifications locales au maillage dans sa globalité. Après avoir construit la séparatrice, nous conservons uniquement ses points de passage et supprimons tout raffinement local utilisé.
 
@@ -487,9 +424,17 @@ La fusion se réalise en créant une nouvelle séparatrice par une fusion linéa
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.2755]{images/eclatement_1.pdf}
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/eclatement_1.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
 \hfill
-\includegraphics[scale=0.2755]{images/intersect_stream.pdf}
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/intersect_stream.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
 \caption{Intersection de séparatrices.}
 \label{fig:detect_intersection}
 \end{figure}
@@ -572,6 +517,7 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 \end{figure}
 
 \vspace{0.5cm}
+\RestyleAlgo{ruled}
 \begin{algorithm}[H]
 \label{alg:retournement_arete}
 \renewcommand{\algorithmcfname}{Algorithme}%
@@ -598,7 +544,7 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 }
 \vspace{0.2cm}
 }
-\caption{Forçage }
+\caption{Forçage des segments des séparatrices}
 \end{algorithm}
 \vspace{0.5cm}
 
@@ -632,6 +578,55 @@ En appliquant le processus précédemment décrit sur l'exemple de la figure \re
 \end{figure}
 
 
+\section{Génération du maillage quadrilatéral}
+\label{sec:gen_mesh_quad}
+
+Nous nous tournons maintenant vers la génération du maillage quadrilatéral proprement dit. L'approche consiste à réaliser le maillage de manière indépendante pour chaque partition construite lors du processus de partitionnement du domaine (voir section \ref{sec:partitionnement_omega_h}). Nous désignerons par \emph{blocs} ces partitions dans la suite. Il est impératif que chaque bloc soit constitué de 4 côtés, c'est-à-dire que ses bords doivent avoir été formés par exactement 4 séparatrices. En l'absence de cette condition, comme illustré sur la figure \ref{fig:echec_partitionnement}, les approches utilisées ultérieurement pour générer le maillage ne fonctionneront pas correctement. Les conditions pour garantir que le partitionnement sera constitiué de blocs de quatres côtés sont abordés dans la section \ref{subsec:analyse_convergence}. En attendant supposons que le partitionnement a bien généré des blocs de quatre côtés et définissons un pas de maille pour le maillage à générer. Pour chaque séparatrice nous déterminons le nombre de nœuds uniformément répartis sur celle-ci par rapport au pas de maille défini. Cependant, pour mailler un bloc, il est nécessaire de s'assurer que ses côtés opposés sont appariés deux à deux.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/echec_partitionnement_1.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/echec_partitionnement_2.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
+\caption{Echec du Partitionnement. Tous les partitions n'ont pas 4 côtés.}
+\label{fig:echec_partitionnement}
+\end{figure}
+
+\paragraph{Uniformisation:}
+
+Afin d'uniformiser la discrétisation, il est nécessaire de former des ensembles de séparatrices parallèles entre elles et de leur attribuer le même nombre de nœuds. Deux séparatrices opposées d'un même bloc sont dites \emph{parallèles}. Cette notion peut être étendue à l'ensemble du partitionnement de la manière suivante : soient $SP_1$ et $SP_2$ deux séparatrices quelconques. On dira que $SP_1$ est parallèle à $SP_2$ s'il existe un bloc contenant $SP_1$, et que le côté opposé à $SP_1$ est parallèle à $SP_2$. L'algorithme ci-dessous permet de partitionner l'ensemble des séparatrices en sous-ensembles distincts de séparatrices parallèles.
+
+\vspace{0.5cm}
+\RestyleAlgo{ruled}
+\begin{algorithm}[H]
+\label{alg:separatrice_echantillonage}
+\renewcommand{\algorithmcfname}{Algorithme}%
+\SetAlgoLined
+\Entree{Ensemble $SP$ des séparatrices}
+\Sortie{Maillage local $T_{mesh}$ de $T$ contenant dans sa liste d'arêtes les segments des séparatrices inclus dans $T$}
+\vspace{0.2cm}
+\Repeter{$SP$ soit vide}
+{
+\vspace{0.2cm}
+1.\quad Piocher un element de la liste\\[0.2cm]
+2.\quad former l'ensemble des separatrices parallèle a cet element. Pour se faire trouver les separatrices parallele à l'éléments puis recurcivement faire de même pour ce séparatrices jusqu'a ce qu'il n'y en ai plus\\[0.2cm]
+3.\quad retirer ces elements de $SP$\\[0.2cm]
+}
+\vspace{0.2cm}
+\caption{Assemblage de séparatrices parallèles.}
+\end{algorithm}
+\vspace{0.5cm}
+
+Nous présentons sur la figure \ref{fig:separatrice_echantillonage} un exemple d'application de l'algorithme \ref{alg:separatrice_echantillonage}, où les séparatrices parallèles entre elles sont identifiées par la même couleur. Ensuite, il est possible d'assigner un nombre uniforme de nœuds à ces séparatrices en calculant la moyenne, le maximum ou le minimum du nombre de nœuds précédemment déterminé pour chaque séparatrice. Les côtés opposés de chaque bloc ont alors le même nombre de nœuds, et nous pouvons procéder à la génération du maillage pour chaque bloc. Nous présentons dans la suite plusieurs méthodes pour ce faire.
+
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.49\textwidth}
@@ -645,73 +640,186 @@ En appliquant le processus précédemment décrit sur l'exemple de la figure \re
     %\caption{Insertion de $E$.}
     %\label{fig:quad_carre}
 \end{subfigure}
-\caption{Extraction des régions en tant que sous-maillages.}
+\caption{Exemple d'identification de séparatrices parallèles.}
 \label{fig:separatrice_echantillonage}
 \end{figure}
 
-\section{Génération du maillage quadrilatéral}
-\label{subsec:gen_mesh_quad}
+\paragraph{Interpolation transfinie:}
 
-On définit un pas de mailler\\
-A partir de là onn affecte un nombre de noeud à chaque sepratrice\\
-glouton\\
-On cherche ensuite les sepa commun\\
-on prend par exemple le max ou le min de leur nombre\\
+De façon générale, il s'agit de construire une quadrangulation structurée $\mathcal{C}^0$-continue d'un quadrilatère dans $\mathbb{R}^d$ \cite{cook1974body}. Soient $C_i,~i\in\llbracket 1, 4\rrbracket$ les séparatrices représentant les côtés d'un bloc donné, numéroté dans le sens positif, et posons:
+\begin{itemize}
+ \item[$\bullet$] $P_{1j}$, $j\in\llbracket 1, m\rrbracket$ les $m$ noeuds de la discrétisation de la séparatrice $C_1$,\\
+ \item[$\bullet$] $P_{im}$, $i\in\llbracket 1, n\rrbracket$ les $n$ noeuds de la discrétisation de la séparatrice $C_2$,\\
+ \item[$\bullet$] $P_{nj}$, $j\in\llbracket 1, m\rrbracket$ les $m$ noeuds de la discrétisation de la séparatrice $C_3$,\\
+ \item[$\bullet$] $P_{i1}$, $i\in\llbracket 1, n\rrbracket$ les $n$ noeuds de la discrétisation de la séparatrice $C_4$.\\
+\end{itemize}
 
-\paragraph{Interpolation transfinie}
+avec $P_{ij}^x$ et $P_{ij}^y$ désignant les coordonnées de $P_{ij}$ pour tout $i\in\llbracket 1, n\rrbracket$ et $j\in\llbracket 1, m\rrbracket$. On se donne une quadrangulation uniforme du carré unité dont les nœuds sont notés $p_{ij}$ pour tout $i\in\llbracket 1, n\rrbracket$ et $j\in\llbracket 1, m\rrbracket$. Ces points sont ensuite reportés sur la partition via la transformation $T:p_{ij}\mapsto P_{ij}$ telle que :
+
+$$
+P_{ij}^x=(1-p_{ij}^x)P_{1j}^x+p_{ij}^xP_{mj}^x+(1-p_{ij}^y)P_{i0}^x+p_{ij}^y P_{in}^x-
+\begin{bmatrix}
+(1-p_{ij}^x), p_{ij}^x
+\end{bmatrix}
+\begin{bmatrix}
+P_{00}^x&P_{mn}^x\\\\
+P_{m0}^x&P_{0n}^x
+\end{bmatrix}
+\begin{bmatrix}
+(1-p_{ij}^y)\\\\
+p_{ij}^y
+\end{bmatrix},
+$$
+
+$$
+P_{ij}^y=(1-p_{ij}^x)P_{1j}^y+p_{ij}^xP_{mj}^y+(1-p_{ij}^y)P_{i0}^y+p_{ij}^y P_{in}^y-
+\begin{bmatrix}
+(1-p_{ij}^x), p_{ij}^x
+\end{bmatrix}
+\begin{bmatrix}
+P_{00}^y&P_{mn}^y\\\\
+P_{m0}^y&P_{0n}^y
+\end{bmatrix}
+\begin{bmatrix}
+(1-p_{ij}^y)\\\\
+p_{ij}^y
+\end{bmatrix}.
+$$
+
+Cette opération réalise une transformation d'un maillage régulier dans l’espace paramétrique en un réseau de deux familles de lignes de maillage dans l’espace physique, avec les propriétés suivantes:\\
+\begin{itemize}
+ \item[$\bullet$]     La première et la dernière ligne de maillage de chaque famille épousent les frontières respectives du domaine.\\
+ \item[$\bullet$] Les lignes intermédiaires du maillage sont adaptées aux frontières et varient de manière monotone d’une frontière à l’autre.\\
+ \item[$\bullet$] Le maillage n’est pas nécessairement orthogonal.\\
+\end{itemize}
+Nous illustrons le processus d'interpolation transfinie sur la figure \ref{fig:transfini}.
 
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.5\textwidth}
     \includegraphics[width=\textwidth]{images/transfini_1.pdf}
-    \caption{Insertion de $D$.}
+    \caption{Discrétisation des séparatrices bordant le bloc.}
     \label{fig:transfini_1}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.4\textwidth}
+\begin{subfigure}{0.42\textwidth}
     \includegraphics[width=\textwidth]{images/transfini_2.pdf}
-    \caption{Insertion de $E$.}
+    \caption{Maillage du carré unité.}
     \label{fig:transfini_2}
 \end{subfigure}
 \\[0.5cm]
 \begin{subfigure}{0.5\textwidth}
     \includegraphics[width=\textwidth]{images/transfini_3.pdf}
-    \caption{Insertion de $F$.}
+    \caption{Maillage du bloc par transformation du maillage du carré unité (interpolation transfinie).}
     \label{fig:transfini_3}
 \end{subfigure}
 \caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
 \label{fig:transfini}
 \end{figure}
 
+
+
+\paragraph{Maillage par tracé direct de lignes de champ dans le champ de croix:}
+Dans ce cas, l'idée consiste à utiliser directement le champ de croix restreint $\bar{u}_h$ au bloc que l'on manipule pour construire le maillage du bloc. Il est important de noter que ce champ restreint est bien aligné avec les bords du bloc, étant donné que ces bords sont précisément les séparatrices construites précédemment en intégrant le champ de croix.
+figure avec les lignes de champ tracé dans le champ.
+
+Le maillage proprement dit suit alors le même principe. On trace des lignes de champ en intégrant le champ de croix dans la région délimitée par le bloc, en utilisant comme point de départ les points de discrétisation des séparatrices de bord. Les lignes de champ servent de guides pour définir la disposition des points du maillage. Les intersections de ces lignes sont considérées comme des nœuds du maillage, et les éléments du maillage sont construits en reliant ces nœuds. Deux possibilités se présentent alors : soit initier les lignes de champ à partir d'un bord et les intégrer vers le bord opposé, soit initier les lignes de champ à partir de tous les bords du bloc, puis fusionner les lignes de champs provenant de points opposés grâce à la méthode de fusion de lignes de champ présentée plus haut. Dans le premier cas, la qualité du maillage sera fortement dépendante de la qualité des lignes de champ tracées. On observe que les erreurs d'intégration font dévier la ligne de champ, et on se retrouve bien souvent avec un maillage complètement déformé et inhomogène. La deuxième approche semble plus efficace. La dépendance à l'intégration est atténuée par la fusion des lignes de champ. Nous présentons une illustration de cette méthode sur la figure \ref{fig:mesh_by_streamline}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/mesh_by_streamline_1.pdf}
+    %\caption{Insertion de $D$.}
+    \label{fig:mesh_by_streamline_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/mesh_by_streamline_2.pdf}
+    %\caption{Insertion de $E$.}
+    \label{fig:mesh_by_streamline_2}
+\end{subfigure}
+\caption{Maillage par tracé direct de lignes de champ dans le champ de croix.}
+\label{fig:mesh_by_streamline}
+\end{figure}
+
+
+
+\paragraph{Méthode basée sur des EDP}
+Cette approche implique de générer le maillage pour un bloc spécifique en résolvant une Équation aux Dérivées Partielles (EDP), en utilisant la forme du contour du bloc comme condition aux bords. Considérons $C_i$, avec $i \in \llbracket 1, 4 \rrbracket$, comme les séparatrices (numérotées dans le sens positif) définissant les côtés d'un bloc particulier, noté $\Gamma$. Supposons que les côtés opposés $C_1$ et $C_3$ soient discrétisés en $m$ nœuds, tandis que les côtés opposés $C_2$ et $C_4$ soient discrétisés en $n$ nœuds. L'idée sous-jacente consiste à élaborer le maillage en construisant deux familles de lignes de niveau, l'une parallèle (au sens où elles ne s'intersectent pas) à $C_1$ et $C_3$, et l'autre orthogonale (au niveau des points d'intersection) à $C_2$ et $C_4$, et inversement pour l'autre famille de lignes de niveau. Soient $U$ et $V$ les solutions des équations suivantes :
+$$
+\left\{
+\begin{array}{lcll}
+\Delta U &=& 0 &\mbox{ dans }\Gamma,\\\\
+U(p)&=& 0 & \mbox{ sur } C_1,\\\\
+\displaystyle\frac{\partial U}{\partial n}(p)&=&0 & \mbox{ sur } C_2,\\\\
+U(p)&=& n-1 & \mbox{ sur } C_3,\\\\
+\displaystyle\frac{\partial U}{\partial n}(p)&=&0 & \mbox{ sur } C_4.
+\end{array}
+\right.
+\quad\quad\quad\quad\quad\quad\quad\quad
+\left\{
+\begin{array}{lcll}
+\Delta V &=& 0 &\mbox{ dans }\Gamma,\\\\
+\displaystyle\frac{\partial V}{\partial n}(p)&=&0 & \mbox{ sur } C_1,\\\\
+V(p)&=& m-1 & \mbox{ sur } C_2,\\\\
+\displaystyle\frac{\partial V}{\partial n}(p)&=&0 & \mbox{ sur } C_3,\\\\
+V(p)&=& 0 & \mbox{ sur } C_4.
+\end{array}
+\right.
+$$
+\[\]
+Les lignes de niveau des champs scalaires $U$ et $V$ forment ainsi une grille régulière à partir de laquelle on peut déduire un maillage pour le bloc $\Gamma$. Pour ce faire, il suffit de considérer les lignes de niveau correspondant aux valeurs prises par les nœuds de discrétisation sur les bords de ces champs. Cela est illustré dans les figures \ref{fig:quad_equation_1}, \ref{fig:quad_equation_2} et \ref{fig:quad_equation_3}. Dans cet exemple, nous choisissons $m=n=12$. Les intersections des lignes de niveaux sont alors considérées comme des nœuds du maillage, et les éléments du maillage sont construits en reliant ces nœuds. Cependant, un tel maillage peut être insatisfaisant car on observe que les cellules ne sont pas homogènes, surtout aux abords du bloc. Pour remédier à cela, nous introduisons une grille régulière notée $(u_{ij}){\substack{i\in\llbracket 1, n\rrbracket\j\in\llbracket 1, m\rrbracket}}$ de taille $n\times m$, dont les nœuds $u{ij}$ sont donnés par:
+\begin{equation}
+u_{ij}=(u_{ij}^x, u_{ij}^y)=(i-1, j-1),\quad i\in\llbracket 1, n\rrbracket,\quad j\in\llbracket 1, m\rrbracket.
+\end{equation}
+Le maillage (voir \ref{fig:quad_equation_4}) est alors obtenu en cherchant dans $\Gamma$ et en reliant les points $P_{ij}=(P_{ij}^x, P_{ij}^y)$, $i\in\llbracket 2, n-1\rrbracket$, $j\in\llbracket 2, m-1\rrbracket$ vérifiant:
+\begin{equation}
+\left\{
+\begin{array}{lcl}
+U(P_{ij})&=&u_{ij}^x,\\\\
+V(P_{ij})&=&u_{ij}^y.
+\end{array}
+\right.
+\end{equation}
+Avec une discrétisation linéaire par morceaux des champs scalaires $U$ et $V$ sur un maillage triangulaire du bloc, les points $P_{ij}$, pour $i \in \llbracket 2, n-1 \rrbracket$ et $j \in \llbracket 2, m-1 \rrbracket$, peuvent être recherchés simultanément à l'intérieur de chaque triangle. Ainsi, $P_{ij}$, pour $i \in \llbracket 2, n-1 \rrbracket$ et $j \in \llbracket 2, m-1 \rrbracket$, appartient à un triangle $T$ ayant pour sommets $A_1$, $A_2$ et $A_3$ s'il existe $(\lambda_k)_{k \in \llbracket 1, 3 \rrbracket} \subset [0, 1]$ vérifiant le système suivant :
+\begin{equation}
+\left\{
+\begin{array}{lcl}
+\displaystyle\sum_{k=1}^3\lambda_k U_h(A_k) & = & u_{ij}^x,\\
+\displaystyle\sum_{k=1}^3\lambda_k V_h(A_k) & = & u_{ij}^y,\\
+\displaystyle\sum_{k=1}^3\lambda_k & = & 1.
+\end{array}
+\right.
+\end{equation}
+où $U_h$ et $V_h$ représentent les discrétisations de $U$ et $V$. Le point $P_{ij}$ est alors déterminé par $P_{ij}=\sum_{k=1}^3\lambda_kA_k$. Les points $P_{1j}$, $P_{i1}$, $P_{nj}$, $P_{im}$, avec $i \in \llbracket 1, n \rrbracket$ et $j \in \llbracket 1, m \rrbracket$, sont définis par les nœuds de discrétisation des points de bord.
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.48\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_1.pdf}
-    \caption{Insertion de $D$.}
+    \caption{Champ scalaire $V$.}
     \label{fig:quad_equation_1}
 \end{subfigure}
 \\[0.5cm]
 \begin{subfigure}{0.48\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_2.pdf}
-    \caption{Insertion de $E$.}
+    \caption{Champ scalaire $U$.}
     \label{fig:quad_equation_2}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.48\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_3.pdf}
-    \caption{Insertion de $F$.}
+    \caption{Lignes de niveau associées aux valeurs des nœuds de discrétisation situés sur le bord.}
     \label{fig:quad_equation_3}
 \end{subfigure}
 \\[0.5cm]
 \begin{subfigure}{0.48\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_4.pdf}
-    \caption{Insertion de $G$.}
+    \caption{Maillage.}
     \label{fig:quad_equation_4}
 \end{subfigure}
 \caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
 \label{fig:quad_equation}
 \end{figure}
-
 
 \begin{figure}[h!]
 \centering
@@ -730,85 +838,49 @@ on prend par exemple le max ou le min de leur nombre\\
 \label{fig:maillage_quad_carre}
 \end{figure}
 
-Il faut ensuite mailler les blocs obtenus. Il s'agit de régions de quatre cotés, mais dont les côtés sont déformés. Nous utilisons donc une interpolation transfinie afin de construire sur ces régions un maillage structuré. De façon générale, il s'agit de construire une quadrangulation structurée $\mathcal{C}^0$-continue d'un quadrangle $\mathcal{Q}$ de $\mathbb{R}^d$. Cette méthode est due à W. A. Cook \cite{ref4} et est décrite dans \cite{ref5}.\\
-Soient $C_i(t),~~t\in[0,1]$ et $i\in\{1,2,3,4\}$ des paramétrisations de chacun des quatre côtés de la région. Ces courbes peuvent aussi être vues comme les restrictions aux quatre côtés d'une surface notée Q(x,y) avec:
-$$Q(t,0)=C_1(t);~~Q(1,t)=C_2(t);~~Q(t,1)=C_3(t);~~Q(0,t)=C_4(t);$$
-Soient :\\
-$U_{i0}$ les $n+1$ points choisis et connus sur le côté 1 de $Q$ avec $i=0,...,m$;\\
-$U_{in}$ les $n+1$ points choisis et connus sur le côté 2 de $Q$ avec $i=0,...,m$;\\
-$U_{0j}$ les $m+1$ points choisis et connus sur le côté 3 de $Q$ avec $i=0,...,n$;\\
-$U_{mj}$ les $m+1$ points choisis et connus sur le côté 4 de $Q$ avec $i=0,...,n$;\\
-Les points $U_{ij}$ sont ensuite reportés sur les côtés du carré unité via les formules suivantes:
-\tiny
-\begin{eqnarray}
-u_{i0}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{k0}-U_{k-10}\|}{\displaystyle\sum_{k=1}^i\|U_{k0}-U_{k-10}\|},~~u_{i1}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{k1}-U_{k-11}\|}{\displaystyle\sum_{k=1}^i\|U_{k1}-U_{k-11}\|},~~u_{0j}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{0k}-U_{0k-1}\|}{\displaystyle\sum_{k=1}^i\|U_{0k}-U_{0k-1}\|},~~u_{1j}=\displaystyle\frac{\displaystyle\sum_{k=1}^i\|U_{1k}-U_{1k-1}\|}{\displaystyle\sum_{k=1}^i\|U_{1k}-U_{1k-1}\|}
-\end{eqnarray}
-\normalsize
-Une quadrangulation du carré unité est obtenue en trouvant les points de coordonnées $(x_{ij},y_{ij})$, intersection des segment $u_{i0}u_{in}$ et $u_{0j}u_{mj}$. Ces points sont ensuite reportés sur le domaine grâce à l'application (\ref{appli}).
-
-\begin{eqnarray}
-T_c(x,y)&=&
-\begin{bmatrix}
-(1-x),x
-\end{bmatrix}
-\begin{bmatrix}
-C_4(y)\\\\
-C_2(y)
-\end{bmatrix}
-+
-\begin{bmatrix}
-(1-y),y
-\end{bmatrix}
-\begin{bmatrix}
-C_1(y)\\\\
-C_3(y)
-\end{bmatrix}\nonumber\\\nonumber\\
-&&-
-\begin{bmatrix}
-(1-x),x
-\end{bmatrix}
-\begin{bmatrix}
-U_{00}&U_{mn}\\\\
-U_{m0}&U_{0n}
-\end{bmatrix}
-\begin{bmatrix}
-(1-y)\\\\
-y
-\end{bmatrix}
-\label{appli}
-\end{eqnarray}
-
-Cette application réalise une transformation d'un maillage régulier dans l’espace paramétrique en un réseau de deux familles de lignes de maillage dans l’espace physique avec les propriétés suivantes :
-\begin{enumerate}
-\item la première et la dernière ligne de maillage de chaque famille épousent les frontières respectives du domaine,
-\item les lignes intermédiaires du maillage sont adaptées aux frontières et varient de manière monotone d’une frontière à l’autre,
-\item le maillage n’est pas nécessairement orthogonal.
-\end{enumerate}
-Nous illustrons le processus d'interpolation transfinie sur la figure \ref{fig:interpol}
-
-equation\\
-Tracé directement dans le champ de croix\\
-Interpolation transfini.
-
 \section{Opération d'alignement}
-s'inspirer de kennan cos laplacien rtheta...
-\[\]
-Nous abordons maintenant la discrétisation de l'opération d'alignement présenté dans le chapitre \ref{chap:theoritical}. Étant donné une représentation $\bar{N}_h$ du champ de croix $\bar{N}$ sur le bord $\partial\Omega_h$ de $\Omega_h$, nous cherchons à modifier $\bar{u}_h$ en construisant un nouveau champ de croix $\bar{v}_h$ qui soit aligné avec $\partial\Omega_h$. Autrement dit, on veut que pour tout $p\in\partial\Omega_h$, $\bar{v}_h(p)\in\{\bar{N}_h(p), 0\}$. Pour se faire, on commence par définir l'ensemble des points singuliers de bord du champ de croix $\bar{v}$ que l'on note $\mathcal{B}$. On associe un paramètre $I_p$ pour tout $p\in\mathcal{B}$ représentant l'indice que nous souhaitons qu'il possède dans le champ de croix $\bar{v}$ et vérifiant:
+
+Abordons à présent la discrétisation de l'opération d'alignement exposée dans le chapitre \ref{chap:theoritical}, en supposant que $\Omega$ soit un domaine simplement connexe. Pour rappel, cette opération vise à créer un champ de croix $\bar{v}=\mathbf{R}(\phi)\bar{u}$ aligné sur $\partial\Omega$ (c'est-à-dire aligné sur le champ de croix $\bar{N}$ associé à la normale sortante de $\partial\Omega$). Ceci est réalisé à partir d'un champ de croix $\bar{u}$ presque-$\mathcal{C}^1$ défini sur $\Omega$, mais non nécessairement aligné par rapport au bord de $\Omega$. La fonction $\phi$ est définie par l'équation \eqref{eqn:principe_def_phi}.
+
+Considérons $\bar{u}_h$ comme une représentation discrète de $\bar{u}$ sur $\Omega_h$. Dans le contexte discret, cette opération équivaut à aligner $\bar{u}_h$ sur un champ de croix défini sur $\partial\Omega_h$ et représentant le champ de croix associé à la normale extérieure de $\partial\Omega$. Commençons par construire cette représentation que nous notons $\bar{N}_h$. Pour tout sommet $a\in\mathcal{S}_h\cap\partial\Omega_h$, avec $b$ et $c$ comme ses sommets voisins également situés sur $\partial\Omega_h$, nous avons :
 \begin{equation}
-I_p=
-\left\{
-\begin{array}{ll}
-\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1&\mbox{ si }p\in\mathcal{B},\\[0.5cm]
-0&\mbox{ sinon }.
-\end{array}
-\right.
+\bar{N}_h(a)=\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)g(a),~ m\in\mathbb{Z}\right\},
 \end{equation}
-Le champ de croix $\bar{u}_h$ choisit comme champ initial doit alors vérifié $0<\#\mathcal{S}_{\bar{u}_h}<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}_h}$, $id_{\bar{u}_h}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus que:
+où $g(a)$ est donné par:
 \begin{equation}
+g(a)=\displaystyle\frac{1}{\|\overrightarrow{ab}\|+\|\overrightarrow{ac}\|}\left(\overrightarrow{ab}+\overrightarrow{ac}\right).
+\end{equation}
+Ensuite, on élimine les arêtes de bord où la variation angulaire $\delta\theta$ du champ $\bar{N}_h$ n'est pas définie, soit en effectuant un raffinement local ou global du maillage, soit en insérant dans le maillage un nouveau point situé au milieu de l'arête en question. Ce point sera considéré comme un point singulier dans le champ $\bar{N}_h$, et par conséquent, pour un tel point $a\in\mathcal{S}_h\cap\partial\Omega_h$, nous fixons $\bar{N}_h(a)=0$. Ainsi, on se retrouve avec deux types d'arêtes incluses dans $\partial\Omega_h$ : les arêtes avec un sommet singulier dans $\bar{N}_h$ et les arêtes où la variation angulaire $\delta\theta$ de $\bar{N}_h$ est bien définie. La construction de $\bar{N}_h$ se poursuit alors de la manière suivante : pour tout point $p\in ab$ avec $ab$ une arête incluse dans $\partial\Omega_h$, on a:\\
+\begin{itemize}
+\item[$\bullet$] Si $\delta\theta(\bar{N}_h(a), \bar{N}_h(b))$ est défini, alors:
+ $$
+ \left\{
+ \begin{array}{l}
+ \bar{N}_h(p)=\mathbf{R}(\theta_p)\bar{N}_h(a),\\\\
+ \theta_p = \theta_{\bar{N}_h}(a)+\displaystyle\frac{\|\overrightarrow{ap}\|}{\|\overrightarrow{ab}\|}\delta\theta(\bar{N}_h(a), \bar{N}_h(b)).
+ \end{array}
+ \right.
+ $$
+ \item[$\bullet$] Sinon, par construction, l'un des deux sommets de l'arête $ab$ est nul et l'autre non nul. Supposons sans perte de généralité qu'il s'agit de $a$. On pose alors:
+ $$
+ \bar{N}_h(p)=\bar{N}_h(b).
+ $$
+\end{itemize}
+Après la construction du champ de croix $\bar{N}_h$, nous entamons l'opération d'alignement proprement dite. L'objectif est d'ajuster $\bar{u}_h$ pour former un nouveau champ de croix $\bar{v}_h$ tel que $\bar{v}_h=\bar{N}_h$ sur $\Omega_h$, à l'exception d'un nombre limité de points où il s'annule. En d'autres termes, nous visons à ce que, pour tout $p\in\partial\Omega_h$, $\bar{v}_h(p)\in\{\bar{N}_h(p), 0\}$. Pour y parvenir, nous débutons en associant à chaque sommet $p\in\partial\mathcal{S}_h\cap\Omega_h$ un paramètre $I_p$ vérifiant:
+\begin{equation}
+I_p=\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1
+\end{equation}
+Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}_h$. Un critère a priori pour choisir automatiquement ce paramètre a été exposé dans la sous-section \ref{subsec:sing_bord}. Ensuite, nous définissons l'ensemble $\mathcal{B}$ qui regroupe les points que nous souhaitons rendre singuliers dans le champ de croix $\bar{v}_h$. Cet ensemble doit, naturellement, inclure tous les points $p$ tels que $I_p\neq 0$, car ces points auront un indice non nul dans $\bar{v}_h$. Cependant, il est également envisageable d'inclure dans $\mathcal{B}$ des points dont le paramètre $I_p$ est nul. L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ de $\bar{N}_h$. Ces points étant déjà singulier dans $\bar{N}_h$, ils resteront singuliers dans $\bar{v}_h$ après l'opération d'alignement. Pour finir, il est impératif que le champ de croix $\bar{u}_h$ satisfasse:\\
+\begin{itemize}
+ \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}_h})<\infty$,\\
+ \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}_h}$, $id_{\bar{u}_h}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
+ \item[$\bullet$] Soit $\gamma$ une paramétrisation de $\partial\Omega_h$ dans le sens positif. Il existe $\theta_{\bar{u}_h}^\gamma$ vérifiant:
+ \begin{equation}
     \label{eqn:etude_hyp_u_simple}
-    \theta_{\bar{u}_h}-\theta_{\bar{u}_h}=\chi(\Omega)-\sum_{p\in\mathcal{B}}I(p).
+    \theta_{\bar{u}_h}^\gamma(1)-\theta_{\bar{u}_h}^\gamma(0)=\chi(\Omega_h)-\sum_{p\in\mathcal{B}}I_p.
 \end{equation}
-Le champ de croix $\bar{v}_h$ est alors donné par:
+\end{itemize}
+Ces critères sont automatiquement vérifiés si les points singuliers de $\bar{u}$ sont isolés et que le maillage $\Omega_h$ est adapté à la représentation discrète que nous avons présentée dans la sous-section \ref{sec:repr_discrete}. Le champ de croix $\bar{v}_h$ est alors défini pour tout $p\in\Omega_h$ par:
 \begin{equation}
 \bar{v}_h(p)=
 \left\{
@@ -820,19 +892,191 @@ Le champ de croix $\bar{v}_h$ est alors donné par:
 \right.
 \label{eqn:etude_def_v_second}
 \end{equation}
-où $\phi_h$ est une approximation de la fonction $\phi$ définie par l'équation de Laplace suivant:\begin{equation}
+où $\phi_h$ est définie par l'équation de Laplace suivant:
+\begin{equation}
 \left\{
 \begin{array}{lcll}
-\Delta\phi &=& 0 &\mbox{ dans }\Omega_h,\\[0.5cm]
-\phi_h(\gamma(t))&=&\theta^\gamma_{\bar{N}_h}(t)+\mathcal{I}(t)-\theta_{\bar{u}_h}(\gamma(t)) & \mbox{ sur } \gamma^{-1}(\partial\Omega_h\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}_h})),
+\Delta\phi_h &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+\phi_h(\gamma(t))&=&\theta_{\bar{N}_h}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}_h}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega_h\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}_h})),
 \end{array}
 \right.
+\label{eqn:algorithm_def_phi}
 \end{equation}
-où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial\Omega_h$ et la fonction $\mathcal{I}$ est donnée par:
+où la fonction $\mathcal{I}$ est donnée par:
 $$
 \mathcal{I}(t)=\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\displaystyle\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}_h}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}_h}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
 $$
 avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$.
 
-ne pas oublié thetah pour le non-simplement connexe
+En pratique, nous résolvons l'equation \eqref{eqn:algorithm_def_phi} par la méthode des éléments finis  P1 en utilisant la formule des cotangeante \cite{solomon2014laplace, nealen2006laplacian, belkin2008discrete} (Voir Annexe).
 
+\begin{remark}
+
+\end{remark}
+
+
+
+non simplement connexe, preservation propriété (une fois l'opération d'alignement réalisée)
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.515\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_1.pdf}
+    %\caption{Insertion de $D$.}
+    \label{fig:alignment_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.478\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_2.pdf}
+    %\caption{Insertion de $E$.}
+    \label{fig:alignment_2}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.51\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_3.pdf}
+    %\caption{Insertion de $E$.}
+    \label{fig:alignment_3}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.482\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_4.pdf}
+    %\caption{Insertion de $E$.}
+    \label{fig:alignment_4}
+\end{subfigure}
+\caption{Adaptation locale du triangle en fonction des points de passage des séparatrices.}
+\label{fig:alignment}
+\end{figure}
+
+
+\section{Analyse de convergence}
+\label{subsec:analyse_convergence}
+
+Dans les sections précédentes, nous avons examiné le problème du partitionnement d'un domaine défini par un maillage triangulaire, ainsi que celui de la génération d'un maillage quadrangulaire à partir du partitionnement construit. Cependant, une condition cruciale pour le bon déroulement de ce processus est que tous les blocs issus du partitionnement possèdent quatre côtés (en d'autres termes, les bords des blocs doivent résulter de l'intersection de quatre séparatrices distinctes). La question qui se pose alors est de savoir qu'est cequi garantit que le processus de partitionnement aboutit bien a un partitionnement en blocs de quatre côtés. La réponse à cette interrogation a été exposée dans le chapitre \ref{chap:theoritical}, à travers les théorèmes \ref{thm:theorem1}, \ref{thm:theorem2}, et \ref{thm:theorem3}. Ces théorèmes établissent la garantie du processus de partitionnement lorsqu'il est appliqué à un champ de croix presque-$\mathcal{C}^1$, aligné par rapport au bord du domaine où il est défini.
+
+
+\color{red}
+Mesh $Q_2$\\
+Hermitte récupere de la courbure
+\color{black}
+
+
+
+\section{Génération de champ de croix}
+\label{subsec:gen_cross_field}
+
+Nous terminons ce chapitre en exposant quelques méthodes de génération de champ de croix que l'on rencontre daans la littérature. Dans notre travail, nous avons notemment utilisé ces méthodes pour créer les champ de croix initiaux qui sont le point d'entrée de notre opération d'alignement.
+
+\subsection{L'Equation de Laplace}
+
+L'idée principale de cette méthode tel que décrite dans \ref{kowalski2013pde} consiste à propager dans le domaine de calcul un champ de vecteur unitaire prescrit sur la frontière. On formule alors cette construction dans la résolution de l'équation de Laplace avec dees condition de Dirichlet sur la frontière donné par les croix associées aux normales sortantes. L'ensemble des champs de croix ne formant pas un expace vectoriel, on utilise à la place un champ de représentation donné par:
+$$
+\mathcal{R}: \mathbf{c}\in\mathbf{C}\mapsto\mathcal{R}(\mathbf{c})=
+\left\{
+\begin{array}{ll}
+\mathbf{R}(4\theta_{\mathbf{c}})(1, 0)^t& \mbox{ si }\mathbf{c}\neq 0,\\\\
+0&\mbox{ sinon}.
+\end{array}
+\right.
+$$
+L'opération inverse est donné par:
+$$
+\mathcal{R}^{-1}: u=(u^1, u^2)\in\mathbb{R}^2\mapsto\mathcal{R}^{-1}(u)=
+\left\{
+\begin{array}{ll}
+\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}+\frac{atan2(u^2, u^1)}{4}\right)(1, 0)^t,~ m\in \mathbb{Z}\right\} &\mbox{ si }u\neq (0,0),\\\\
+0&\mbox{ sinon}.
+\end{array}
+\right.
+$$
+L'équation de propagation est alors donné par:
+\begin{equation}
+\left\{
+\begin{array}{lcll}
+\Delta u_r &=& 0 &\mbox{ dans }\Omega,\\\\
+u_r(p)&=&\mathcal{R}(\bar{N}) & \mbox{ sur } \partial\Omega,
+\end{array}
+\right.
+\label{eqn:frey_vectoriel}
+\end{equation}
+où $\Omega$ est le domaine de calcul et pour tout $p\in\Omega$, on a posé $u_r=\mathcal{R}(\bar{u})$. L'équation \eqref{eqn:frey_vectoriel} est une équation vectoriel qui peut être vu comme deux équation scalaire:
+$$
+\left\{
+\begin{array}{lcll}
+\Delta u_r^1 &=& 0 &\mbox{ dans }\Omega,\\\\
+u_r^1(p)&=&\mathcal{R}(\bar{N}).(1, 0)^t & \mbox{ sur } \partial\Omega.
+\end{array}
+\right.
+\quad\quad\quad
+\left\{
+\begin{array}{lcll}
+\Delta u_r^2 &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+u_r^2(p)&=&\mathcal{R}(\bar{N}).(0, 1)^t & \mbox{ sur } \partial\Omega.
+\end{array}
+\right.
+$$
+En pratique, ces équations sont approchées en utilisant la méthode des éléments finis de Galerkin appliquée à un maillage triangulaire $\Omega_h$ de $\Omega$ avec des éléments $P_1$-Lagrange. On assemble ensuite $u_r$ puis on reconstitu $\bar{u}$ pour tout $p\in\Omega$ par:
+$$
+\bar{u}(p)=\mathcal{R}^{-1}(u_r(p))
+$$
+On obtient un champ de croix aligné sur le bord du domaine de calcul et dont les point singulier de bord correspondent à une rotation minimale du champ de croix dans le voisinnage du point.
+
+
+\subsection{Une expression analytique}
+
+On se donne un configuration composé de la localisation des points singuliers que l'on souhaite ainsi que de leur indice repectif
+On commence par construire un champ de représentation
+\begin{equation}
+g(p)=
+\left\{
+\begin{array}{ll}
+\mathbf{R}\left(\displaystyle\sum k_i atan2(\overrightarrow{a_ip})\right)(1,~0)^t&\mbox{ si }p=a_i\\\\
+(0,~0) &\mbox{ sinon }
+\end{array}
+\right.
+\end{equation}
+
+Le champ de croix est ensuite obtenu par rotation d'angle $\pi/2$:
+\begin{equation}
+\bar{u}(p)=
+\left\{
+\begin{array}{ll}
+\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)g(p),~ m\in \mathbb{Z}\right\} &\mbox{ si }g(p)\neq (0,0)\\\\
+0& \text{sinon}.
+\end{array}
+\right.
+\end{equation}
+Il est à noter que cette construction offre une grande flexibilité dans la mise en place du champ, contrairement à l'approche précédente. On a un contrôle sur la position des points singuliers dans le domaine ainsi que sur leurs indices. Cependant, le champ de croix ainsi obtenu ne dépend d'aucun domaine particulier, car il est construit dans $\mathbb{R}^2$. Par conséquent, contrairement à l'approche précédente, le champ de croix n'est pas nécessairement aligné. Ainsi, il est impératif d'utiliser l'approche d'alignement présentée précédemment pour orienter le champ par rapport au domaine que l'on souhaite mailler.
+\subsection{Connection triviale}
+
+Etant donné un maillage triangulaire $\Omega_h$, un moyen de construire un champ de croix arbitraire consiste à calculer une connection sur $\Omega_h$. Cette méthode est présenter dans
+
+
+
+\subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
+
+À présent, nous nous posons la question de savoir quel lien on peut exhiber entre le champ de coix $\bar{u}$ et sa représentation $\bar{u}_h$ construite dans les parties précedentes.
+
+Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait que $\theta_{\bar{u}_h}$ est linéaire par construction dans $T$. Il vient alors que $\theta_{\bar{u}_h}$ tend vers $\theta_{\bar{u}}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. Autrement dit, $\bar{u}_h$ tend vers $\bar{u}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. \color{red} Cependant la somme des indices des points singuliers de $u$ est équivalent à la somme des indices des points singuliers de $\bar{u}_h$.\\
+Pas besoin de modifier le maillage grace etoilage penser a Jovanna\color{black}.
+\[\]
+Une conséquence de la représentation du champ de croix que nous avons présentée est que les points singuliers de $\bar{u}$ ne correspondent pas aux points singuliers de $\bar{u}_h$ ($\mathcal{S}_{\bar{u}}\neq\mathcal{S}_{\bar{u}_h}$). Par exemple, sur la figure \ref{fig:eclatement_point_sing}, nous avons un champ de croix contenant un point singulier d'indice $1$ que nous représentons sur un maillage triangulaire. On observe alors la présence d'une multitude de points singuliers d'indice $1/4$ et d'indices $-1/4$, localisés dans divers triangles. Il est à noter cependant que la somme des indices de ces points singuliers correspond bien à l'indice du point singulier initial. D'où le lemme suivant:
+
+\begin{lemma}
+ Soit $\bar{u}_h$ une représentation de $\bar{u}$ sur $\Omega_h$. Alors on a:
+ $$
+ \sum_{p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega}id_{\bar{u}}(p)=\sum_{p\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h}id_{\bar{u}_h}(p).
+ $$
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.27]{images/u_sing.pdf}\hspace{0.2cm}
+  \includegraphics[scale=0.26]{images/u_h_sing.pdf}
+  \caption{.}
+  \label{fig:eclatement_point_sing}
+\end{figure}

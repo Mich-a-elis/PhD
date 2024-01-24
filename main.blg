@@ -1,47 +1,55 @@
 This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-I found no \bibdata command---while reading file main.aux
-I found no \bibstyle command---while reading file main.aux
-You've used 6 entries,
-            0 wiz_defined-function locations,
-            89 strings with 553 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
-int.to.chr$ -- 0
+The style file: apalike.bst
+Database file #1: references.bib
+Warning--empty publisher in alliez2003anisotropic
+Warning--empty journal in barth2003finite
+Warning--can't use both volume and number fields in bommes2013quad
+Warning--empty publisher in catmull1998recursively
+Warning--can't use both volume and number fields in gurung2011squad
+Warning--empty journal in hecht2007maillage
+Warning--can't use both volume and number fields in kalberer2007quadcover
+Warning--can't use both volume and number fields in nieser2011cubecover
+You've used 79 entries,
+            1935 wiz_defined-function locations,
+            899 strings with 16440 characters,
+and the built_in function-call counts, 31562 in all, are:
+= -- 3155
+> -- 1126
+< -- 77
++ -- 390
+- -- 368
+* -- 2546
+:= -- 5349
+add.period$ -- 243
+call.type$ -- 79
+change.case$ -- 565
+chr.to.int$ -- 79
+cite$ -- 87
+duplicate$ -- 1307
+empty$ -- 2298
+format.name$ -- 483
+if$ -- 6301
+int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+missing$ -- 84
+newline$ -- 394
+num.names$ -- 237
+pop$ -- 549
+preamble$ -- 1
+purify$ -- 579
 quote$ -- 0
-skip$ -- 0
+skip$ -- 1003
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 2247
+swap$ -- 236
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
+type$ -- 452
+warning$ -- 8
+while$ -- 272
 width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+write$ -- 1018
+(There were 8 warnings)

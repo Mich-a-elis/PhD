@@ -31,7 +31,7 @@ Les méthodes SD pour \emph{Spectral Difference} sont des méthodes numériques 
 
 La méthode BEM pour \emph{Boundary Element Method}, également connue sous le nom de méthode des éléments de frontière, est une méthode numérique qui se concentre sur la discrétisation de la frontière du domaine plutôt que sur l'intérieur \cite{nedelec2001acoustic, wu2002boundary, kirkup2019boundary}. Elle permet de réduire la dimension du problème en transformant l'EDP en une équation intégrale définie sur la frontière ensuite approchée par une représentation FE. Cette méthode se révèle particulièrement avantageuse pour les situations où la géométrie du problème est bidimensionnelle, car elle permet d'éviter la complexité liée à la discrétisation de l'intérieur du domaine. De plus, elle est particulièrement efficace lorsque la solution est régulière le long de la frontière.\\
 
-Toutes ces méthodes numériques partagent un point commun fondamental : la discrétisation du domaine de calcul. En effet, pour pouvoir effectuer des calculs numériques sur ordinateur, il est nécessaire de représenter le domaine continu par un maillage discret. La discrétisation du domaine consiste à subdiviser l'espace en un ensemble fini de points, d'éléments ou de volumes de contrôle. Cette subdivision permet de représenter le problème continu sous une forme discrète, ce qui facilite la résolution numérique. En décomposant le domaine en éléments discrets, on réduit la complexité du problème et on le transforme en un ensemble de calculs dénombrables. Le maillage utilisé peut prendre différentes formes en fonction de la nature du problème et des exigences spécifiques.
+Toutes ces méthodes numériques partagent un point commun fondamental : la discrétisation du domaine de calcul. En effet, pour pouvoir effectuer des calculs numériques sur ordinateur, il est nécessaire de représenter le domaine continu par un maillage discret. La discrétisation du domaine consiste à subdiviser l'espace en un ensemble fini de points, d'éléments ou de volumes de contrôle. Cette subdivision permet de représenter le problème continu sous une forme discrète, ce qui facilite la résolution numérique. En décomposant le domaine en éléments discrets, on réduit la complexité du problème et on le transforme en un ensemble de calculs dénombrables (finis). Le maillage utilisé peut prendre différentes formes en fonction de la nature du problème et des exigences spécifiques.
 
 
 \subsection{Influence du maillage}
@@ -44,11 +44,24 @@ La question de la précision des résultats dans le contexte de la modélisation
 
 À l'opposé, l'utilisation d'un maillage grossier peut introduire des erreurs substantielles dans les solutions numériques. En effet, les variations spatiales et les détails géométriques sont sous-représentés dans un maillage grossier, ce qui peut conduire à des estimations biaisées ou incorrectes des phénomènes étudiés. Les gradients élevés ne sont pas correctement résolus, ce qui peut aboutir à des approximations inexactes et des prédictions éloignées des véritables comportements.
 
+
+\paragraph{Temps de calcul :}
+
+Un des défis incontournables de la modélisation numérique réside dans la gestion des temps de calcul, qui est étroitement liée au nombre d'inconnues à calculer, proportionnel au nombre de cellules. En effet, la finesse du maillage peut avoir un impact significatif sur la durée nécessaire pour effectuer les simulations, en particulier pour les problèmes en trois dimensions.
+
+Pour résoudre le dilemme entre précision et temps de calcul, une variété d'approches peuvent être envisagées. L'une de ces approches repose sur l'adaptation de maillage, consistant à accroître la résolution dans les régions d'intérêt tout en conservant un maillage moins détaillé dans les zones moins critiques. En complément, les techniques de parallélisation se montrent efficaces pour répartir la charge de calcul sur plusieurs processeurs, entraînant une accélération du temps de résolution global. En outre, la réduction du nombre de degrés de liberté contribue à diminuer les coûts mémoire.
+
+\paragraph{Adaptation du maillage :}
+
+L'adaptation du maillage représente une avancée significative dans le domaine de la modélisation numérique, offrant une approche dynamique pour résoudre efficacement et précisément des problèmes complexes. Les maillages adaptatifs apportent une réponse ingénieuse aux défis posés par des phénomènes variés et hétérogènes en ajustant automatiquement la taille et la distribution des éléments du maillage en fonction des caractéristiques locales du système étudié. L'idée sous-jacente à l'adaptation du maillage est d'assigner davantage de ressources numériques là où elles sont le plus nécessaires pour capturer les détails importants du phénomène. Plutôt que d'utiliser un maillage uniforme, les maillages adaptatifs identifient les zones où des variations significatives se produisent, telles que des gradients élevés de variables physiques ou des interfaces entre différentes phases. En conséquence, les éléments du maillage sont raffinés dans ces régions d'intérêt, permettant une représentation plus fine et plus précise du phénomène, tandis que les régions moins critiques sont traitées avec des éléments plus gros, réduisant ainsi le coût global du calcul.
+
+L'impact positif de cette approche est multiple. Tout d'abord, elle permet de réaliser des simulations plus efficaces en concentrant les ressources de calcul là où elles sont les plus nécessaires. Cela se traduit par des temps de calcul réduits, car les régions moins dynamiques ne nécessitent pas autant de détails pour obtenir une solution précise. Deuxièmement, l'adaptation du maillage améliore la qualité des résultats. Les détails locaux, tels que les chocs ou les frontières complexes, sont mieux capturés, renforçant la validité physique des simulations.
+
 \paragraph{Stabilité du schéma numérique :}
 
-La stabilité des schémas numériques joue un rôle crucial dans la précision des résultats obtenus lors de simulations numériques. Il convient de noter que cette notion peut être étroitement liée à la taille des éléments du maillage utilisé. Certains schémas numériques, connus sous le nom de schémas conditionnellement stables, présentent une particularité¨: leur stabilité dépend de la taille du pas de temps et des dimensions des éléments de maillage. Si la taille du pas de temps est choisie de manière inappropriée ou si le maillage est trop fin, cela peut conduire à des instabilités numériques, générant des résultats non convergents ou incorrects.
+La stabilité des schémas numériques joue un rôle crucial dans la précision des résultats obtenus lors de simulations numériques. Il convient de noter que cette notion peut être étroitement liée à la taille des éléments du maillage utilisé. Certains schémas numériques, connus sous le nom de schémas conditionnellement stables, présentent une particularité: leur stabilité dépend de la taille du pas de temps et des dimensions des éléments de maillage. Si la taille du pas de temps est choisie de manière inappropriée ou si le maillage est trop fin, cela peut conduire à des instabilités numériques, générant des résultats non convergents ou incorrects.
 
-D'un point de vue pratique, cela signifie que même si un maillage fin permet potentiellement de capturer avec précision les détails géométriques et les variations spatiales, la stabilité du schéma numérique doit être soigneusement considérée. Le choix d'un pas de temps adapté à la taille du maillage peut devenir une tâche délicate, nécessitant des compromis entre la précision des résultats et la stabilité numérique.
+D'un point de vue pratique, cela signifie que même si l'utilisation d'un maillage fin puisse potentiellement permettre une capture précise des détails géométriques et des variations spatiales, il est essentiel de prendre soigneusement en compte la stabilité du schéma numérique. La forme des éléments et l'inhomogénéité du maillage ont un impact direct sur le nombre de CFL, et le choix d'un pas de temps approprié par rapport à la taille du maillage peut devenir une tâche complexe, impliquant des compromis entre la précision des résultats et la stabilité numérique.
 
 
 \paragraph{Conservation des propriétés physiques :}
@@ -57,17 +70,6 @@ Généralement la modélisation numérique reposent sur la préservation des loi
 
 Considérons par exemple un fluide en mouvement dans une simulation. Si le maillage n'est pas adapté, il pourrait ne pas représenter correctement les gradients de vitesse, ce qui résulterait en une violation de la conservation de la quantité de mouvement. Cela signifierait que la simulation ne tiendrait pas compte de la manière dont le fluide interagit avec les forces extérieures et ne reproduirait pas fidèlement les comportements réels. De même si les cellules du maillage sont mal positionnées ou de tailles inégales, cela pourrait conduire à une mauvaise estimation des densités et donc à une non-conservation de la masse.
 
-\paragraph{Temps de calcul :}
-
-L'un des aspects incontournables de la modélisation numérique est le défi des temps de calcul, qui est étroitement lié à la complexité du maillage choisi. En effet, la finesse du maillage peut avoir un impact significatif sur la durée nécessaire pour effectuer les simulations, en particulier pour les problèmes en trois dimensions.
-
-Pour résoudre le dilemme entre précision et temps de calcul, une variété d'approches peuvent être envisagées. L'une de ces approches repose sur l'adaptation de maillage, consistant à accroître la résolution dans les régions d'intérêt tout en conservant un maillage moins détaillé dans les zones moins critiques. En complément, les techniques de parallélisation se montrent efficaces pour répartir la charge de calcul sur plusieurs processeurs, entraînant une accélération du temps de résolution global.
-
-\paragraph{Adaptation du maillage :}
-
-L'adaptation du maillage représente une avancée significative dans le domaine de la modélisation numérique, offrant une approche dynamique pour résoudre efficacement et précisément des problèmes complexes. Les maillages adaptatifs apportent une réponse ingénieuse aux défis posés par des phénomènes variés et hétérogènes en ajustant automatiquement la taille et la distribution des éléments du maillage en fonction des caractéristiques locales du système étudié. L'idée sous-jacente à l'adaptation du maillage est d'assigner davantage de ressources numériques là où elles sont le plus nécessaires pour capturer les détails importants du phénomène. Plutôt que d'utiliser un maillage uniforme, les maillages adaptatifs identifient les zones où des variations significatives se produisent, telles que des gradients élevés de variables physiques ou des interfaces entre différentes phases. En conséquence, les éléments du maillage sont raffinés dans ces régions d'intérêt, permettant une représentation plus fine et plus précise du phénomène, tandis que les régions moins critiques sont traitées avec des éléments plus gros, réduisant ainsi le coût global du calcul.
-
-L'impact positif de cette approche est multiple. Tout d'abord, elle permet de réaliser des simulations plus efficaces en concentrant les ressources de calcul là où elles sont les plus nécessaires. Cela se traduit par des temps de calcul réduits, car les régions moins dynamiques ne nécessitent pas autant de détails pour obtenir une solution précise. Deuxièmement, l'adaptation du maillage améliore la qualité des résultats. Les détails locaux, tels que les chocs ou les frontières complexes, sont mieux capturés, renforçant la validité physique des simulations.
 
 \paragraph{Parallélisation :}
 
@@ -124,7 +126,9 @@ tandis que la méthode des éléments finis $\mathbb{Q}_k$ est définie par l'es
 $$V_h=\{v\in C(\bar{\Omega)}\text{ tel que }v|_{K}\in\mathbb{Q}_k\text{ pour tout }K\in\mathcal{T}_h\}$$
 où $\mathbb{Q}_k$ est l'ensemble des polynômes à coefficients réels de $\mathbb{R}^N$ dans $\mathbb{R}$ de degré inférieur ou égal à $k$ \textbf{par rapport à chaque variable}, c'est à dire que pour tout $q\in\mathbb{Q}_k$,
 $$q(x)=\displaystyle\sum_{0\leq i_1\leq k,\dots,0\leq i_N\leq k}\alpha_{i_1,\dots,i_N}x_1^{i_1}\dots x_N^{i_N}\text{ avec }x=(x_1,\dots,x_N).$$
-
+\color{red}
+les degré de liberté des q match bien avec les quad et les degre de liberté des p match bien avec les t
+\color{black}
 Il vient donc qu'à l'ordre $k$, les polynômes de $\mathbb{Q}_k$ ont des termes supplémentaires capables de représenter des solutions plus complexes et des comportements non linéaires plus fidèlement. Ils permettent ainsi une meilleure approximation des fonctions lisses, comme on peut l'observer sur la comparaison entre $\mathbb{P}_1$ et $\mathbb{Q}_1$ sur la figure \ref{fig:p1_vs_p2} \cite{reberol2018maillages}.
 \begin{figure}
     \centering
@@ -139,21 +143,17 @@ Ce qui est remarquable du point de vue de la méthode des éléments finis, c'es
 
 Un autre avantage majeur des éléments Qk est leur utilisation plus efficace des nœuds dans le maillage. Contrairement aux éléments Pk, qui nécessitent davantage de nœuds pour représenter des polynômes de degré supérieur, les éléments Qk utilisent moins de degrés de liberté par élément, ce qui entraîne un maillage plus simple et des temps de calcul plus courts. Pour les simulations de grande échelle ou les problèmes nécessitant des ressources de calcul limitées, les éléments Qk sont donc une option attrayante.
 
-\subsubsection{Maillage triangulaire vs maillage quadrilatéral}
-
 Il est également intéressant de noter que les maillages quadrilatéraux ont besoin de moins d’éléments que les maillages triangulaires pour couvrir la même surface. Par exemple il faut au minimum deux triangles pour mailler un carré unité. De plus, il y'a moins d'arêtes dans un maillage quadrilatéral. Ces diférences se révèlent significatives pour des méthodes comme la méthode de Galerkin discontinue où il faut calculer des flux entre éléments, ou encore les méthodes d’hybridation. D'autres part, en élasticité linéaire et avec la formulation en déplacement, les triangles linéaires sont particulièrement connus pour leurs mauvaises performances, car le maillage ne se déforme pas autant qu'il devrait \cite{reberol2018maillages}.
+
+ La structure tensorielle dans le contexte des éléments quadrilatéraux se réfère au fait que côtés ou les arêtes de ces éléments sont naturellement alignés avec les axes de coordonnées. Cela signifie que les directions tangentes et normales sont bien définies le long de ces côtés ou arêtes. Cette propriété intrinsèque simplifie la définition et l'interprétation des fonctions de base dans les cas où les comportements physiques ou mathématiques dépendent de ces directions.
+
+ Lors de la modélisation des ondes électromagnétiques par exemple, il est essentiel de prendre en compte les propriétés de continuité et de compatibilité des composantes tangentielles et normales des champs. Les éléments quadrangulaires offrent une base solide pour satisfaire à ces exigences car leurs arêtes et faces partagées permettent un alignement naturel des composantes. En conséquence, il est généralement plus simple et plus efficace de définir des fonctions de base qui préservent les propriétés de continuité et de compatibilité sur ces types de maillages. Cela se traduit par une formulation discrète plus directe des équations de Maxwell, où les termes de sauts et de sauts normaux entre les éléments adjacents peuvent être calculés plus facilement. De plus, les interpolations des champs électromagnétiques aux nœuds du maillage sont plus cohérentes, ce qui peut conduire à des résultats numériques plus précis et stables.
 
 \subsubsection{Etirement anisotropique}
 
 L'étirement anisotropique permet de contrôler la déformation d'un maillage d'une manière plus ciblée. Dans certaines situations, il est nécessaire de préserver la forme dans certaines directions tout en autorisant des déformations plus importantes dans d'autres directions. Selon la théorie de l'approximation, pour une surface donnée et une allocation de points déterminée, la manière la plus optimale d'obtenir une approximation de qualité est d'utiliser un maillage où les éléments sont agencés de manière rapprochée le long des directions principales de courbure \cite{d2000bilinear}. Par exemple, dans la modélisation de tissus biologiques ou de matériaux déformables, un étirement anisotropique peut permettre de simuler avec précision les caractéristiques de déformation du matériau. En mécanique des fluides, particulièrement pour les fluides visqueux, il est très important de modéliser avec un maillage très raffiné le comportement du fluide au contact d’un obstacle, car des variations très fortes des champs ont lieu dans cette couche limite \cite{reberol2018maillages}. De même, il est souhaitable de comprimer les éléments dans la direction normale de l'aile d'un avion car les phénomènes physiques les plus significatifs se produisent dans la couche limite \cite{bommes2013quad}.
 
 Du fait que la couche limite tend généralement à être localement plane, avec une concentration notable dans la direction perpendiculaire à la surface, l'utilisation de maillages structurés se révèle particulièrement appropriée pour son modélisme. Cette pertinence est renforcée par la caractéristique des hexaèdres qui peuvent présenter une grande anisotropie tout en préservant des angles droits. 
-
-\subsubsection{Structure tensorielle}
-
- La structure tensorielle dans le contexte des éléments quadrilatéraux se réfère au fait que côtés ou les arêtes de ces éléments sont naturellement alignés avec les axes de coordonnées. Cela signifie que les directions tangentes et normales sont bien définies le long de ces côtés ou arêtes. Cette propriété intrinsèque simplifie la définition et l'interprétation des fonctions de base dans les cas où les comportements physiques ou mathématiques dépendent de ces directions.
- 
- Lors de la modélisation des ondes électromagnétiques par exemple, il est essentiel de prendre en compte les propriétés de continuité et de compatibilité des composantes tangentielles et normales des champs. Les éléments quadrangulaires offrent une base solide pour satisfaire à ces exigences car leurs arêtes et faces partagées permettent un alignement naturel des composantes. En conséquence, il est généralement plus simple et plus efficace de définir des fonctions de base qui préservent les propriétés de continuité et de compatibilité sur ces types de maillages. Cela se traduit par une formulation discrète plus directe des équations de Maxwell, où les termes de sauts et de sauts normaux entre les éléments adjacents peuvent être calculés plus facilement. De plus, les interpolations des champs électromagnétiques aux nœuds du maillage sont plus cohérentes, ce qui peut conduire à des résultats numériques plus précis et stables.
 
 
 Cependant, les maillages triangulaires peuvent être modifiés localement, ce qui leur permet de s’adapter plus facilement aux particularités des solutions.
@@ -218,7 +218,7 @@ Le maillage de Delaunay est ensuite généré en tant que maillage dual des diag
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=0.55]{images/Maillage_delauney.png}
+    \includegraphics[scale=0.6]{images/Maillage_delauney.pdf}
     \caption{Maillage de Delauney. Source : \cite{hecht2007maillage}.}
     \label{fig:maillage_delauney}
 \end{figure}
@@ -333,7 +333,7 @@ Les maillages à bases de quadrilatères sont caractérisé par la nature des so
 Dans le contexte des simulations numériques, les caractéristiques recherchées pour les maillages quadrilatéraux revêtent une importance significative. Les attributs visés se déclinent généralement comme suit :\\
 
 \begin{itemize}
-    \item Minimalité des irrégularités : il est préférable d'avoir le moins possible de points irréguliers dans les maillages. La minimisation de ces irrégularités contribue à maintenir la cohérence et la régularité du maillage, améliorant ainsi la stabilité et la précision des simulations.\\
+    \item Minimalité des irrégularités : il est préférable d'avoir le moins possible de points irréguliers dans les maillages puisque dans leur voisinnage, les mailles s'éloignent de la forme typique carré. La minimisation de ces irrégularités contribue donc à maintenir la cohérence et la régularité du maillage, améliorant ainsi la stabilité et la précision des simulations.\\
     \item Alignement le long de la frontière : il est souhaitable que les éléments du maillage soient alignés le long des bords du domaine permettant ainsi de donné une description fidèle du bord du domaine.\\
     \item Éléments de haute qualité : il est recommandé d'utiliser des éléments dont les contours se rapprochent au maximum de la configuration d'un carré ou d'un rectangle. En utilisant un maillage composé d'éléments qui présentent des formes régulières, on peut minimiser les risques de dégénérescence lors des transformations géométriques causées par des éléments déformés ou excessivement étirés.\\
     \item Respect des contraintes de taille : il est essentiel que les éléments du maillage satisfaissent aux exigences de taille définies. Cette condition garantit que le maillage capture de manière appropriée les variations locales de la solution, en allouant davantage de détails là où c'est nécessaire, tout en maintenant une efficacité numérique globale.\\
@@ -426,7 +426,7 @@ La méthode de l'axe médian est puissante pour la génération de maillages qua
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.3]{images/median_axis.png}
+    \includegraphics[scale=0.3]{images/median_axis.pdf}
     \caption{Construction de l'axe médian. Source: \cite{de2009fast}}
     \label{fig:median_axis}
 \end{figure}

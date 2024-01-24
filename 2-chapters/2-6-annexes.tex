@@ -1,9 +1,32 @@
-\chapter{Annexes}
+\chapter*{Annexes}
 \label{chap:annexes}
-\minitoc
+%\minitoc
 
-\[\]
+\section{Caractéristique d'Euler}
 
-Annexes\\
+La Caractéristique d'Euler est un invariant topologique. Autrement dit, si deux \emph{objet} sont topologiquement équivalent alors ils auront la même caractéristique d'Euler.
+
+\section{}
+
+Recherche d'un point dans un maillage\\
 Caractéristique d'Euler\\
 Résolution numérique laplacien-Beltrami\\
+Reprendre le cour sur laplace cotan ou il ya les gradient de trianngle detaillé
+\[\]
+
+Pour les maillages triangulaires, l'opérateur Laplacien $\Delta$ peut être discrétisé sous la forme d'un laplacien de graphe pondéré $L\in\mathbb{R}^{|\mathcal{S}_h|\times|\mathcal{S}_h|}$ donné par \cite{sharp2019vector} (voir Annexe):
+$$
+(L\psi)_p=\frac{1}{2}\sum_{pq\in\mathcal{A}_h}(\cot\theta_r^{pq}-\cot\theta_l^{qp})(\psi_p-\psi_q),
+$$
+à chaque sommet $p\in V$, où $r, l$ désignent les sommets opposés à l'arête $pq$. Une façon de construire $L$ est d'assembler sur chaque triangle $pqr$ une matrice $3\times 3$
+$$
+-\frac{1}{2}
+\begin{bmatrix}
+b+c & -c & -b\\
+-c & a+c & -a\\
+-b & -a & a+b
+\end{bmatrix},
+$$
+correspondant aux entrées de la matrice $L$, avec $a=\cot\theta_p^{qr}$, $b=\cot\theta_q^{rp}$ et $c=\cot\theta_r^{pq}$.
+
+Ainsi, la résolutiond e l'équation conduit à l'obtention d'un systeme linéaire qui une fois résolu nous donne les valeur de $\phi_h$ aux noeuds du maillage.
