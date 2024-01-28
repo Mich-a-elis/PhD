@@ -11,7 +11,8 @@ La Caractéristique d'Euler est un invariant topologique. Autrement dit, si deux
 Recherche d'un point dans un maillage\\
 Caractéristique d'Euler\\
 Résolution numérique laplacien-Beltrami\\
-Reprendre le cour sur laplace cotan ou il ya les gradient de trianngle detaillé
+Reprendre le cour sur laplace cotan ou il ya les gradient de trianngle detaillé\\
+Une affaire en 4 dimension
 \[\]
 
 Pour les maillages triangulaires, l'opérateur Laplacien $\Delta$ peut être discrétisé sous la forme d'un laplacien de graphe pondéré $L\in\mathbb{R}^{|\mathcal{S}_h|\times|\mathcal{S}_h|}$ donné par \cite{sharp2019vector} (voir Annexe):
@@ -30,3 +31,6 @@ $$
 correspondant aux entrées de la matrice $L$, avec $a=\cot\theta_p^{qr}$, $b=\cot\theta_q^{rp}$ et $c=\cot\theta_r^{pq}$.
 
 Ainsi, la résolutiond e l'équation conduit à l'obtention d'un systeme linéaire qui une fois résolu nous donne les valeur de $\phi_h$ aux noeuds du maillage.
+
+\[\]
+trouver un moyen d'expliquer les coin du vrai domaine qui doivent finir par etre present dans B sinon ce n'est pas ce domaine que l'on maille mais un autre

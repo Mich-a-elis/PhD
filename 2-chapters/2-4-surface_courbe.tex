@@ -2,7 +2,19 @@
 \label{chap:surface_courbe}
 \minitoc
 
+$\Omega$ variété de dimension 2\\
+$\Omega_h$
 
+\section{Champ de croix, points singuliers et indices}
+definition champ de croix avec fibré tangent\\
+Les notions de points singuliers et d'indices restent inchangé.\\
+\section{Extension des principaux résultats du cas planaire}
+
+\section{Partitionnement et génération du maillage}
+
+\section{Analyse de convergence}
+
+\section{Génération du champ de croix}
 
 Nous proposons dans cette partie une extension de la méthode présenté dans les parties précédentes aux surfaces courbes. Pour se faire, nous reviendrons dans ce contexte sur les grandes étapes de la méthodes.
 \[\]
@@ -10,6 +22,13 @@ La Difficulté pricipale qui va se poser lorsqu'on se place dans le cadre des su
 \[\]
 Commencçons par passer en revue dans le cadre des surfaces courbes les différents résultats obtenus dans le chapitre \ref{chap:theoritical}
 \[\]
+
+On parlera de $\bar{u}$ et $\bar{u}_h$ en même temps..
+
+Champ de croix\\
+Index avec angle defect\\
+Streamline sur maillage\\
+Theoreme 1, 2, 3\\
 \subsection{Etude de la méthode}
 
 Dans la section précédente, nous avons exposé des algorithmes qui, sous certaines conditions, permettent de subdiviser un domaine en régions à quatres côtés. Dans cette partie, nous allons présenter plusieurs résultats visant à garantir l'efficacité de ces méthodes. Commençons par le cas où le champ de croix est aligné avec le bord du domaine. Nous avons le résultat suivant:
@@ -30,11 +49,11 @@ I_p=
 0& \mbox{ sinon }
 \end{array}
 \right.
-\label{eqn:etude_def_I}
+%\label{eqn:etude_def_I}
 \end{equation}
 Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
 \begin{equation}
-    \label{eqn:etude_hypothese_u}
+    %\label{eqn:etude_hypothese_u}
     \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
 \end{equation}
 où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial\Omega$ orientée positivement et vérifiant $\gamma(0)=\gamma(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}$.
@@ -46,7 +65,7 @@ Soit $\phi$, la fonction définie par l'équation de Laplace suivant:
 \phi(\gamma(t))&=&\theta_{\bar{N}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})),
 \end{array}
 \right.
-\label{eqn:etude_def_phi}
+%\label{eqn:etude_def_phi}
 \end{equation}
 où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}))$ par:
 $$
@@ -55,7 +74,7 @@ $$
 avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$. Nous avons alors le lemme suivant:
 
 \begin{lemma}
-    \label{lem:marvelous_lemma}
+    %\label{lem:marvelous_lemma}
     $\phi(\gamma(1))-\phi(\gamma(0))=0$.
 \end{lemma}
 
@@ -70,11 +89,11 @@ L'opération d'alignement consiste à calculer le champ de croix $\bar{v}$ défi
 0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
 \end{array}
 \right.
-\label{eqn:etude_def_v}
+%\label{eqn:etude_def_v}
 \end{equation}
 Nous avons alors le théorème suivant:
 \begin{theorem}
-\label{thm:theorem2}
+%\label{thm:theorem2}
 Le champ de croix $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$. De plus, pour tout $p\in\Omega$, on a:
 \begin{equation}
 id_{\bar{v}}(p)=
@@ -107,7 +126,7 @@ où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétris
 \phi(\gamma_i(t))&=&\theta_{\bar{N}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
 \end{array}
 \right.
-\label{eqn:etude_def_phi_second}
+%\label{eqn:etude_def_phi_second}
 \end{equation}
 où la fonction $\mathcal{I}$ est donnée pour tout $i\in\llbracket0, n_b-1\rrbracket$, et pour tout $t\in{\gamma_i}^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}))$ par:
 $$
@@ -117,7 +136,7 @@ avec $\widehat{\gamma_i(s)}$ la mesure de l'ouverture angulaire de la frontière
 
 \begin{lemma}
     Pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\phi(\gamma_i(1))-\phi(\gamma_i(0))=0$.
-    \label{lem:marvelous_lemma_second}
+    %\label{lem:marvelous_lemma_second}
 \end{lemma}
 
 
@@ -131,11 +150,11 @@ De manière similaire à la procédure précédente, le champ de croix $\bar{v}$
 0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
 \end{array}
 \right.
-\label{eqn:etude_def_v_second}
+%\label{eqn:etude_def_v_second}
 \end{equation}
 On a alors le théorème suivant:
 \begin{theorem}
-\label{thm:theorem3}
+%\label{thm:theorem3}
 Le champ de croix $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$. De plus, pour tout $p\in\Omega$, on a:
 \begin{equation}
 id_{\bar{v}}(p)=
@@ -163,7 +182,7 @@ Soit $\bar{w}$ un champ de croix presque-$\mathcal{C}^1$ définit sur $\Omega$ e
     &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
-    \label{eqn:etude_hypothese_w}
+    %\label{eqn:etude_hypothese_w}
 \end{equation}
 
 Dans la section \ref{sec:discussion}, nous aborderons les diverses approches pour la construction d'un tel champ de croix
@@ -183,7 +202,7 @@ Après cela, l'opération d'alignement peut être exécutée sur le champ $\bar{
 0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
 \end{array}
 \right.
-\label{eqn:etude_def_v_third}
+%\label{eqn:etude_def_v_third}
 \end{equation}
 
 où $\phi$ est donné par:
@@ -194,12 +213,12 @@ où $\phi$ est donné par:
 \phi(\gamma_i(t))&=&\theta_{\bar{N}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}_c}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}_c})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
 \end{array}
 \right.
-\label{eqn:etude_def_phi_third}
+%\label{eqn:etude_def_phi_third}
 \end{equation}
 
 On a alors le théorème suivant:
 \begin{theorem}
-\label{thm:theorem4}
+%\label{thm:theorem4}
 Le champ de croix $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$. Si de plus $\mathcal{S}_{\bar{w}}=\emptyset$, alors on a $\mathcal{S}_{\bar{v}}\backslash\partial\Omega=\mathcal{S}_{\bar{u}}\backslash\partial\Omega$ et pour tout $p\in\Omega$, on a:
 \begin{equation}
 id_{\bar{v}}(p)=
@@ -225,3 +244,7 @@ Separatrices\\
 Operation d'alignement\\
 Les théorèmes
 generation des champs de croix
+
+\subsection{Connection triviale}
+
+Dans \cite{crane2010trivial, de2010trivial} les auteurs proposent un algorithme pour calculer des connexions triviales avec des singularités prescrites sur des surfaces discrètes générales. Nous adaptons cet algorithme pour construire des champs de croix défini sur les sommets d'un maillage triangulaire.

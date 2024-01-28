@@ -18,7 +18,7 @@ Considérons maintenant un maillage triangulaire $\Omega_h$ de $\Omega$. Par là
 $$
 h:=\max_{T\in\mathcal{T}_h} diam(T)
 $$
-Le diamètre d’un triangle est la distance maximale entre deux points du triangle. Nous notons de plus $\mathcal{A}_h$ et $\mathcal{S}_h$ les ensembles respectivement des sommets et des arêtes de $\Omega_h$. Pour tout $p\in\Omega_h$, nous désignons par $T_p$ la partie du plan formé par l'ensemble des triangles de $\Omega_h$ contenant $p$: $T_p=\displaystyle\cup_{T\in\mathcal{T}_h\atop~p\in T~}T$.
+Le diamètre d’un triangle est la distance maximale entre deux points du triangle. La condition $h\rightarrow 0$ h tend vers 0) signifie que tous les triangles $T_k$ ont un diamètre qui tend vers $0$. Ainsi on a $\bar{\Omega}=\Omega_h$ lorsque $h\rightarrow 0$. Nous notons $\mathcal{A}_h$ et $\mathcal{S}_h$ les ensembles respectivement des sommets et des arêtes de $\Omega_h$. Pour tout $p\in\Omega_h$, nous désignons par $T_p$ la partie du plan formé par l'ensemble des triangles de $\Omega_h$ contenant $p$: $T_p=\displaystyle\cup_{T\in\mathcal{T}_h\atop~p\in T~}T$.
 
 \subsection{Champ de croix}
 
@@ -97,20 +97,21 @@ avec $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriqu
 \begin{itemize}
  \item si $p=S_Z$, alors $\bar{u}_h(p)=0$.\\
  \item sinon la croix $\bar{u}_h(p)$ est donnée par:
-$$
+\begin{equation}
+\label{eqn:etoilage}
 \left\{
 \begin{array}{l}
 \bar{u}_h(p)=\bar{u}_h(\widetilde{p}),\\\\
 \{\widetilde{p}\}=[S_Zp)\cap\partial Z.
 \end{array}
 \right.
-$$
+\end{equation}
 Notons que l'ensemble $[S_Zp)\cap\partial Z$ est bien réduit à un singleton puisque $Z$ est une réunion de simplexes donc convexe.\\
 \end{itemize}
 \end{itemize}
 
 \begin{remark}
-La représentation du champ de croix que nous proposons (dans la suite) se base sur l'angle signé entre les croix des arêtes du maillage. Plus précisément, nous utilisons les variations du champ de croix le long des arêtes pour construire notre représentation en chaque point et pour évaluer les indices des points singuliers. Ainsi, lorsque cette variation angulaire n'est pas définie, notre représentation induit des points singuliers non isolés, comme nous le verrons dans le lemme \ref{lem:isolation_pt_sing}.
+La construction nous avons exposé se base sur l'angle signé entre les croix des arêtes du maillage. Plus précisément, nous utilisons les variations du champ de croix le long des arêtes pour construire notre représentation en chaque point et pour évaluer les indices des points singuliers. Ainsi, lorsque cette variation angulaire n'est pas définie, notre représentation induit des points singuliers non isolés, comme nous le verrons dans le lemme \ref{lem:isolation_pt_sing}.
 Pour palier à ce désagrément, nous imposons dans toute la suite les conditions suivantes:\\
 \begin{itemize}
  \item si on a $Z\subset\mathbf{Z}$ tel que $Z\cap\partial\Omega_h=\emptyset$, on doit avoir pour tout $p\in\partial Z\cap\mathcal{S}_h$, $\bar{u}(p)\neq 0$ et pour tout arête $s_1s_2\subset\partial Z$, $\delta\theta(\bar{u}(s_1),\bar{u}(s_2))$ doit être défini.\\
@@ -119,7 +120,6 @@ Pour palier à ce désagrément, nous imposons dans toute la suite les condition
 Dans la pratique, il sera donc impératif de modifier un maillage qui ne satisfait pas ces contraintes. %La pertinence de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$.
 Étant donné que les points singuliers du champ de croix $\bar{u}$ sont isolés, on peut toujours satisfaire ces contraintes en affinant ou en modifiant localement (par exemple, par des opérations de retournement d'arêtes) un maillage qui ne satisfait pas ces contraintes.
 \end{remark}
-
 
 \subsection{Points singuliers, indice et ligne de champs}
 \label{subsec:pt_sing_ind_lign_champ}
@@ -153,7 +153,8 @@ Si $p\in\partial\Omega_h$ alors l'indice de $p$ est donné par:
 où $\gamma$ dans ce cas est la paramétrisation de $\partial Z_p$ avec $\gamma(0)=\gamma(1)=p$ et $(s_i)_{i\in\llbracket 1, n_s\rrbracket}$ l'ensemble des sommets de $\Omega_h$ appartenant à $\partial Z_p\backslash\{p\}$ et numéroté dans le sens positif.
 
 \begin{proposition}
-    Pour tout $p\in\Omega_h\backslash\partial\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\rrbracket -n_a/4, n_a/4\llbracket$ où $n_a$ est le nombre d'arête de $\Omega_h$ inclut dans $\partial Z_p$.
+\label{prop:ind_sing_zone}
+Pour tout $p\in\Omega_h\backslash\partial\Omega_h$, on a $4id_{\bar{u}_h}(p)\in\rrbracket -n_a/4, n_a/4\llbracket$ où $n_a$ est le nombre d'arête de $\Omega_h$ inclut dans $\partial Z_p$.
 \end{proposition}
 
 \begin{proof}
@@ -237,6 +238,46 @@ On trouve ensuite $p_{i+1}$ en utilisant l'équation \ref{eqn:formule_W} avec $W
         \label{fig:draw_streams_2}
 \end{figure}
 
+
+
+\subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
+Dans cette section, nous procédons à une comparaison entre le champ de croix $\bar{u}$ et sa représentation discrète $\bar{u}_h$. L'objectif est de mieux comprendre l'adéquation entre ces deux formulations et d'évaluer la précision de l'approximation $\bar{u}_h$ par rapport au champ continu $\bar{u}$.
+
+\paragraph{Points singuliers:}
+Une conséquence de la représentation du champ de croix que nous avons présentée est que les points singuliers de $\bar{u}$ ne correspondent pas aux points singuliers de $\bar{u}_h$ ($\mathcal{S}_{\bar{u}}\neq\mathcal{S}_{\bar{u}_h}$). Par exemple, sur la figure \ref{fig:eclatement_point_sing}, nous avons un champ de croix contenant un point singulier d'indice $1$ que nous représentons sur un maillage triangulaire. On observe alors la présence d'une multitude de points singuliers d'indice $1/4$ et d'indices $-1/4$, localisés dans divers triangles (voir la proposition \ref{prop:ind_sing_zone}).
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/u_sing.pdf}
+    \caption{Champ de croix $\bar{u}$.}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/u_h_sing.pdf}
+    \caption{Champ de croix $\bar{u}_h$.}
+\end{subfigure}
+  \caption{Comparaison de la localisation des points singuliers entre $\bar{u}$ et $\bar{u}_h$.}
+  \label{fig:eclatement_point_sing}
+\end{figure}
+
+\paragraph{Singularités d'ordre supérieur:} Cependant, il est possible de représenter des singularités d'ordre supérieur (dont la valeur absolue de l'indice est supérieure à $1/4$) en exploitant la méthode des zones singulières présentée précédemment lors de la construction de la représentation d'un champ de croix sur un maillage triangulaire. Pour ce faire, on réuni des triangles dans un voisinage donné en tant que zone singulière, au sein de laquelle on modifie le champ de croix en utilisant l'équation \eqref{eqn:etoilage}. Par la suite, on sélectionne un point arbitraire dans la zone singulière pour représenter le point singulier unique de cette partie du domaine, et son indice correspond à la somme des indices de tous les points singuliers présents dans les triangles (ceux ayant formé la zone singulière) avant la modification locale du champ de croix (voir la proposition \ref{prop:stream_from_interior_sing}).
+
+Il est essentiel de souligner que dans cette opération, le maillage demeure inchangé. En pratique, on conserve simplement en mémoire les triangles constituant les zones singulières ainsi que le point choisi comme singulier dans la zone. La valeur du champ de croix est ensuite obtenue (si nécessaire) en un point en appliquant l'équation \eqref{eqn:etoilage}.
+
+\paragraph{Convergence:}
+On déclare qu'une suite de champs de croix converge vers un autre champ de croix lorsque les champs d'angles associés convergent les uns vers les autres. Pour comparer une fonction $\eta_h$ définie sur $\Omega_h$ à une fonction définie sur $\Omega$, nous introduisons une opération d'extension, appelée \emph{lift de} $\eta$ et notée $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$. À cette fin, nous supposons que $\Omega$ peut être représenté globalement par une fonction de distance orientée $d$ définie sur un sous-ensemble ouvert $U$ de $\mathbb{R}^2$.
+$$\Omega=\{x\in U,~d(x)=0\},$$
+$d$ dans $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\},~0\leq\alpha\leq 1$). Le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ est alors défini par:
+\begin{equation}
+\eta_h(p)=[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h](p-d(p)N(p))\quad\quad\quad pour~tout~p\in\Omega_h
+\end{equation}
+où $N$ est la normale sortante en $p$.
+
+Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait par construction, qu'il existe $m:T\longrightarrow \mathbb{Z}$ tel que $\theta_{\bar{u}_h}+m\pi/2$ est linéaire dans $T$. En utilisant les résultats de \cite{dziuk1988finite} il en découle que $[\mathbf{L}_{\Omega_h}^{\Omega}\theta_{\bar{u}_h}]$ tend vers $\theta_{\bar{u}}$ sur $\Omega\backslash\cup_{Z\in\mathbf{Z}}Z$ lorsque $h$ tend vers $0$. Or on sait que lorsque $h$ tend vers $0$, le diamètre des triangles du maillage tend vers $0$ e qui entraîne une diminution de la taille des zones singulières $Z$ pour tout $Z\in\mathbf{Z}$. Par conséquent, lorsque $h$ tend vers $0$, le champ scalaire $[\mathbf{L}_{\Omega_h}^{\Omega}\theta_{\bar{u}_h}]$ converge vers $\theta_{\bar{u}}$ sur $\Omega$. On montre ainsi que le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{u}_h]$ sur $\Omega$ du champ de croix $\bar{u}_h$ converge vers le champ de croix $\bar{u}$ sur $\Omega$ lorsque $h$ tend vers $0$.
+
 \section{Partitionnement de $\partial\Omega_h$}
 \label{sec:partitionnement_omega_h}
 
@@ -289,7 +330,7 @@ Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la
     \left\{
     \begin{array}{ll}
     4-4id_{\bar{u}_h}(p) & \mbox{ si } p\in\Omega_h\backslash\partial\Omega_h\\[0.3cm]
-    2-4id_{\bar{u}_h}(p) & \mbox{ si } p\in\partial\Omega_h
+    3-4id_{\bar{u}_h}(p) & \mbox{ si } p\in\partial\Omega_h
     \end{array}
     \right.
 \end{equation}
@@ -806,7 +847,7 @@ où $U_h$ et $V_h$ représentent les discrétisations de $U$ et $V$. Le point $P
     \label{fig:quad_equation_2}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.48\textwidth}
+\begin{subfigure}{0.46\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_3.pdf}
     \caption{Lignes de niveau associées aux valeurs des nœuds de discrétisation situés sur le bord.}
     \label{fig:quad_equation_3}
@@ -916,8 +957,8 @@ En pratique, la résolution de l'équation \eqref{eqn:algorithm_def_phi} est eff
 \[\]
 \vspace{-1cm}
 \begin{enumerate}
-\item Le champ de croix $\bar{v}_h$ conserve certaines propriétés du champ de croix $\bar{u}_h$. Ainsi, on a $\mathcal{S}_{\bar{v}_h}\cap(\Omega_h\backslash\partial\Omega_h)=\mathcal{S}_{\bar{u}h}\cap(\Omega_h\backslash\partial\Omega_h)$, puisque $\phi_h$ est $\mathcal{C}^0$ sur $\Omega_h\backslash\partial\Omega_h$. Les indices des points constituant ces ensembles sont également préservés. Autrement dit, pour tout point $p\in\Omega_h\backslash\partial\Omega_h$, on a $id_{\bar{u}_h}(p)=id_{\bar{v}_h}(p)$.
-\item Pour tout $p\in\partial\Omega_h$, si $p\in\mathcal{S}_h$, alors $id{\bar{v}_h}(p)=I_p$ ; sinon, $id{\bar{v}_h}
+\item Le champ de croix $\bar{v}_h$ conserve certaines propriétés du champ de croix $\bar{u}_h$. Ainsi, on a $\mathcal{S}_{\bar{v}_h}\cap(\Omega_h\backslash\partial\Omega_h)=\mathcal{S}_{\bar{u}_h}\cap(\Omega_h\backslash\partial\Omega_h)$, puisque $\phi_h$ est $\mathcal{C}^0$ sur $\Omega_h\backslash\partial\Omega_h$. Les indices des points constituant ces ensembles sont également préservés. Autrement dit, pour tout point $p\in\Omega_h\backslash\partial\Omega_h$, on a $id_{\bar{u}_h}(p)=id_{\bar{v}_h}(p)$.
+\item Pour tout $p\in\partial\Omega_h$, si $p\in\mathcal{S}_h$, alors $id_{\bar{v}_h}(p)=I_p$ ; sinon, $id_{\bar{v}_h}
 (p)=0$.
 \item Lorsque $\Omega_h$ est un domaine non simplement connexe, la procédure d'alignement reste conforme à celle développée dans le chapitre \ref{chap:theoritical}. Il convient toutefois de définir avec précision $\bar{N}_h$ et $\mathcal{B}$ pour chaque composante connexe de $\partial\Omega_h$.
 \end{enumerate}
@@ -957,9 +998,39 @@ Nous présentons le processus d'alignement à travers un exemple illustré à la
 \section{Analyse de convergence}
 \label{subsec:analyse_convergence}
 
-Dans les sections précédentes, nous avons examiné le problème du partitionnement d'un domaine défini par un maillage triangulaire, ainsi que celui de la génération d'un maillage quadrangulaire à partir du partitionnement construit. Cependant, une condition cruciale pour le bon déroulement de ce processus est que tous les blocs issus du partitionnement possèdent quatre côtés (en d'autres termes, les bords des blocs doivent résulter de l'intersection de quatre séparatrices distinctes). La question qui se pose alors est de savoir qu'est cequi garantit que le processus de partitionnement aboutit bien a un partitionnement en blocs de quatre côtés. La réponse à cette interrogation a été exposée dans le chapitre \ref{chap:theoritical}, à travers les théorèmes \ref{thm:theorem1}, \ref{thm:theorem2}, et \ref{thm:theorem3}. Ces théorèmes établissent la garantie du processus de partitionnement lorsqu'il est appliqué à un champ de croix presque-$\mathcal{C}^1$, aligné par rapport au bord du domaine où il est défini.
+Dans les sections précédentes, nous avons examiné le problème du partitionnement d'un domaine défini par un maillage triangulaire, ainsi que celui de la génération d'un maillage quadrangulaire à partir du partitionnement construit. Cependant, une condition cruciale pour le bon déroulement de ce processus est que tous les blocs issus du partitionnement possèdent quatre côtés (en d'autres termes, les bords des blocs doivent résulter de l'intersection de quatre séparatrices distinctes). La question qui se pose alors est de savoir qu'est ce qui garantit que le processus de partitionnement aboutit bien a un partitionnement en blocs de quatre côtés. La réponse à cette interrogation a été exposée dans le chapitre \ref{chap:theoritical}, à travers les théorèmes \ref{thm:theorem1}, \ref{thm:theorem2} et \ref{thm:theorem3}. Ces théorèmes établissent la garantie du processus de partitionnement lorsqu'il est appliqué à un champ de croix presque-$\mathcal{C}^1$, aligné par rapport au bord du domaine où il est défini.
+
+\begin{lemma}
+$u_h\rightarrow u$
+\end{lemma}
+
+\begin{corollary}
+$\mathcal{S}_{\bar{v}_h}\rightarrow \mathcal{S}_{\bar{v}}$\\
+$\sum id_{\bar{v}_h}= \sum id_{\bar{v}}$\\
+$W_{\bar{u}_h}^h\rightarrow W_{\bar{u}}$ donc Convergence de dirh vers dir\\
+Convergence de Sinth vers Sinth\\
+
+\end{corollary}
+
+\begin{lemma}
+
+\end{lemma}
+
+\begin{lemma}
+
+\end{lemma}
 
 
+\[\]
+Convergence de Ph vers P\\
+Convergence de singh vers sing\\
+Convergence de Sbordh vers Sbord
+
+
+\[\]
+Pour simplifier, nous supposerons que $Cl = Cl_h$. Cette condition signifie en particulier que $Cl$ est un domaine de frontière polygonale (cf. Figure 2).
+
+\[\]
 \color{red}
 Mesh $Q_2$\\
 Hermitte récupere de la courbure
@@ -1029,60 +1100,32 @@ On obtient un champ de croix aligné sur le bord du domaine de calcul et dont le
 
 \subsection{Une expression analytique}
 
-On se donne un configuration composé de la localisation des points singuliers que l'on souhaite ainsi que de leur indice repectif
-On commence par construire un champ de représentation
+Nous donnons ici une expression analytique pour la construction de champ de croix sur $\Omega$.\\
+\begin{itemize}
+\item Soit un ensemble de points $(a_i)_{i\in I}\subset\Omega$, $I\subset\mathbb{N}$,\\
+\item Soit associé à chaque $a_i$ pour tout $i\in I$, une valeur $k_i$ tel que $4k_i\in\mathbb{Z}$,\\
+\item Soit $g:\Omega\longrightarrow\mathbb{S}^1\cup\{(0,0)\}$ défini pour tout $p\in\Omega$ par:\\
 \begin{equation}
 g(p)=
 \left\{
 \begin{array}{ll}
-\mathbf{R}\left(\displaystyle\sum k_i atan2(\overrightarrow{a_ip})\right)(1,~0)^t&\mbox{ si }p=a_i\\\\
-(0,~0) &\mbox{ sinon }
+\mathbf{R}\left(\displaystyle\sum_{i\in I} k_i\arg{\overrightarrow{a_ip}}\right)(1,~0)^t&\mbox{ si }p\neq a_i,~i\in I,\\\\
+(0,~0) &\mbox{ sinon}.
 \end{array}
 \right.
 \end{equation}
-
-Le champ de croix est ensuite obtenu par rotation d'angle $\pi/2$:
+\end{itemize}
+alors l'application $\bar{u}$ défini pour tout $p\in\Omega$ par:\\
 \begin{equation}
 \bar{u}(p)=
 \left\{
 \begin{array}{ll}
-\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)g(p),~ m\in \mathbb{Z}\right\} &\mbox{ si }g(p)\neq (0,0)\\\\
-0& \text{sinon}.
+\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)g(p),~ m\in \mathbb{Z}\right\} &\mbox{ si }g(p)\neq (0,0),\\\\
+0& \text{ sinon}.
 \end{array}
 \right.
 \end{equation}
-Il est à noter que cette construction offre une grande flexibilité dans la mise en place du champ, contrairement à l'approche précédente. On a un contrôle sur la position des points singuliers dans le domaine ainsi que sur leurs indices. Cependant, le champ de croix ainsi obtenu ne dépend d'aucun domaine particulier, car il est construit dans $\mathbb{R}^2$. Par conséquent, contrairement à l'approche précédente, le champ de croix n'est pas nécessairement aligné. Ainsi, il est impératif d'utiliser l'approche d'alignement présentée précédemment pour orienter le champ par rapport au domaine que l'on souhaite mailler.
-\subsection{Connection triviale}
+est un champ de croix dont les points singuliers sont localisés aux points $(a_i)_{i\in I}$ tel que chaque point $a_i$, $i\in I$ est d'indice $k_i$.
 
-Etant donné un maillage triangulaire $\Omega_h$, un moyen de construire un champ de croix arbitraire consiste à calculer une connection sur $\Omega_h$. Cette méthode est présenter dans
+Il est important de souligner que cette construction offre une grande souplesse dans l'établissement du champ, contrairement à l'approche précédente. Elle permet un contrôle précis sur la position des points singuliers dans le domaine ainsi que sur leurs indices. Cependant, le champ de croix ainsi obtenu n'est pas déterminé par le domaine sur lequel il est construit. Par conséquent, contrairement à l'approche précédente, le champ de croix peut ne pas être aligné. Ainsi, il est nécessaire d'appliquer l'approche d'alignement présentée précédemment pour orienter le champ par rapport au domaine que l'on souhaite mailler.
 
-
-
-\subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
-
-À présent, nous nous posons la question de savoir quel lien on peut exhiber entre le champ de coix $\bar{u}$ et sa représentation $\bar{u}_h$ construite dans les parties précedentes.
-
-Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait que $\theta_{\bar{u}_h}$ est linéaire par construction dans $T$. Il vient alors que $\theta_{\bar{u}_h}$ tend vers $\theta_{\bar{u}}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. Autrement dit, $\bar{u}_h$ tend vers $\bar{u}$ sur $\Omega_h\backslash\cup_{p\in\mathcal{S}_{\bar{u}_h}}T_p$ lorsque $h$ tend vers $0$. \color{red} Cependant la somme des indices des points singuliers de $u$ est équivalent à la somme des indices des points singuliers de $\bar{u}_h$.\\
-Pas besoin de modifier le maillage grace etoilage penser a Jovanna\color{black}.
-\[\]
-Une conséquence de la représentation du champ de croix que nous avons présentée est que les points singuliers de $\bar{u}$ ne correspondent pas aux points singuliers de $\bar{u}_h$ ($\mathcal{S}_{\bar{u}}\neq\mathcal{S}_{\bar{u}_h}$). Par exemple, sur la figure \ref{fig:eclatement_point_sing}, nous avons un champ de croix contenant un point singulier d'indice $1$ que nous représentons sur un maillage triangulaire. On observe alors la présence d'une multitude de points singuliers d'indice $1/4$ et d'indices $-1/4$, localisés dans divers triangles. Il est à noter cependant que la somme des indices de ces points singuliers correspond bien à l'indice du point singulier initial. D'où le lemme suivant:
-
-\begin{lemma}
- Soit $\bar{u}_h$ une représentation de $\bar{u}$ sur $\Omega_h$. Alors on a:
- $$
- \sum_{p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega}id_{\bar{u}}(p)=\sum_{p\in\mathcal{S}_{\bar{u}_h}\backslash\partial\Omega_h}id_{\bar{u}_h}(p).
- $$
-\end{lemma}
-
-\begin{proof}
-
-\end{proof}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.27]{images/u_sing.pdf}\hspace{0.2cm}
-  \includegraphics[scale=0.26]{images/u_h_sing.pdf}
-  \caption{.}
-  \label{fig:eclatement_point_sing}
-\end{figure}
