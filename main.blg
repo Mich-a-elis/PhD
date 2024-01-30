@@ -3,46 +3,54 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: references.bib
+Warning--empty publisher in alliez2003anisotropic
+Warning--empty journal in barth2003finite
+Warning--can't use both volume and number fields in bommes2013quad
+Warning--empty publisher in catmull1998recursively
 Warning--can't use both volume and number fields in crane2010trivial
-You've used 12 entries,
+Warning--can't use both volume and number fields in gurung2011squad
+Warning--empty journal in hecht2007maillage
+Warning--can't use both volume and number fields in kalberer2007quadcover
+Warning--can't use both volume and number fields in nieser2011cubecover
+You've used 81 entries,
             1935 wiz_defined-function locations,
-            543 strings with 5958 characters,
-and the built_in function-call counts, 5048 in all, are:
-= -- 499
-> -- 193
-< -- 12
-+ -- 68
-- -- 64
-* -- 387
-:= -- 845
-add.period$ -- 38
-call.type$ -- 12
-change.case$ -- 91
-chr.to.int$ -- 12
-cite$ -- 13
-duplicate$ -- 221
-empty$ -- 361
-format.name$ -- 80
-if$ -- 1026
+            906 strings with 16717 characters,
+and the built_in function-call counts, 32345 in all, are:
+= -- 3237
+> -- 1146
+< -- 81
++ -- 394
+- -- 374
+* -- 2595
+:= -- 5475
+add.period$ -- 250
+call.type$ -- 81
+change.case$ -- 578
+chr.to.int$ -- 81
+cite$ -- 90
+duplicate$ -- 1347
+empty$ -- 2357
+format.name$ -- 493
+if$ -- 6471
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 63
-num.names$ -- 36
-pop$ -- 103
+missing$ -- 86
+newline$ -- 404
+num.names$ -- 243
+pop$ -- 565
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 592
 quote$ -- 0
-skip$ -- 170
+skip$ -- 1037
 stack$ -- 0
-substring$ -- 321
-swap$ -- 53
-text.length$ -- 7
+substring$ -- 2293
+swap$ -- 250
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
-warning$ -- 1
-while$ -- 39
+type$ -- 462
+warning$ -- 9
+while$ -- 277
 width$ -- 0
-write$ -- 158
-(There was 1 warning)
+write$ -- 1045
+(There were 9 warnings)
