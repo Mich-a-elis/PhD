@@ -394,6 +394,11 @@ Schneiders, R. (1996).
   meshes.
 \newblock {\em Engineering with computers}, 12:168--177.
 
+\bibitem[Sharp et~al., 2019]{sharp2019vector}
+Sharp, N., Soliman, Y., and Crane, K. (2019).
+\newblock The vector heat method.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 38(3):1--19.
+
 \bibitem[Shepherd and Johnson, 2008]{shepherd2008hexahedral}
 Shepherd, J.~F. and Johnson, C.~R. (2008).
 \newblock Hexahedral mesh generation constraints.

@@ -38,40 +38,40 @@ Toutes ces méthodes numériques partagent un point commun fondamental : la disc
 
 Le choix du maillage et sa qualité ont un impact significatif sur la précision, la stabilité, l'efficacité et l'exactitude des résultats numériques obtenus. Dans cette partie, nous explorons l'influence du maillage sur les schémas numériques utilisés pour résoudre des problèmes physiques en sciences et en ingénierie.
 
-\paragraph{Précision de la solution :}
+\subsubsection{Précision de la solution}
 
 La question de la précision des résultats dans le contexte de la modélisation numérique est étroitement liée à la qualité du maillage utilisé. Un maillage finement discretisé offre une représentation plus fidèle de la géométrie sous-jacente et des variations spatiales des phénomènes analysés. Cette approche permet de capturer de manière plus précise les gradients élevés présents dans les solutions, ce qui se traduit par des résultats numériques d'une plus grande exactitude. Par exemple, dans la simulation de fluides, un maillage fin peut mieux représenter les tourbillons et les interactions complexes entre les particules fluides. De même, dans la modélisation de structures, un maillage fin peut aider à capturer les déformations locales avec une plus grande précision.
 
 À l'opposé, l'utilisation d'un maillage grossier peut introduire des erreurs substantielles dans les solutions numériques. En effet, les variations spatiales et les détails géométriques sont sous-représentés dans un maillage grossier, ce qui peut conduire à des estimations biaisées ou incorrectes des phénomènes étudiés. Les gradients élevés ne sont pas correctement résolus, ce qui peut aboutir à des approximations inexactes et des prédictions éloignées des véritables comportements.
 
 
-\paragraph{Temps de calcul :}
+\subsubsection{Temps de calcul}
 
 Un des défis incontournables de la modélisation numérique réside dans la gestion des temps de calcul, qui est étroitement liée au nombre d'inconnues à calculer, proportionnel au nombre de cellules. En effet, la finesse du maillage peut avoir un impact significatif sur la durée nécessaire pour effectuer les simulations, en particulier pour les problèmes en trois dimensions.
 
 Pour résoudre le dilemme entre précision et temps de calcul, une variété d'approches peuvent être envisagées. L'une de ces approches repose sur l'adaptation de maillage, consistant à accroître la résolution dans les régions d'intérêt tout en conservant un maillage moins détaillé dans les zones moins critiques. En complément, les techniques de parallélisation se montrent efficaces pour répartir la charge de calcul sur plusieurs processeurs, entraînant une accélération du temps de résolution global. En outre, la réduction du nombre de degrés de liberté contribue à diminuer les coûts mémoire.
 
-\paragraph{Adaptation du maillage :}
+\subsubsection{Adaptation du maillage}
 
 L'adaptation du maillage représente une avancée significative dans le domaine de la modélisation numérique, offrant une approche dynamique pour résoudre efficacement et précisément des problèmes complexes. Les maillages adaptatifs apportent une réponse ingénieuse aux défis posés par des phénomènes variés et hétérogènes en ajustant automatiquement la taille et la distribution des éléments du maillage en fonction des caractéristiques locales du système étudié. L'idée sous-jacente à l'adaptation du maillage est d'assigner davantage de ressources numériques là où elles sont le plus nécessaires pour capturer les détails importants du phénomène. Plutôt que d'utiliser un maillage uniforme, les maillages adaptatifs identifient les zones où des variations significatives se produisent, telles que des gradients élevés de variables physiques ou des interfaces entre différentes phases. En conséquence, les éléments du maillage sont raffinés dans ces régions d'intérêt, permettant une représentation plus fine et plus précise du phénomène, tandis que les régions moins critiques sont traitées avec des éléments plus gros, réduisant ainsi le coût global du calcul.
 
 L'impact positif de cette approche est multiple. Tout d'abord, elle permet de réaliser des simulations plus efficaces en concentrant les ressources de calcul là où elles sont les plus nécessaires. Cela se traduit par des temps de calcul réduits, car les régions moins dynamiques ne nécessitent pas autant de détails pour obtenir une solution précise. Deuxièmement, l'adaptation du maillage améliore la qualité des résultats. Les détails locaux, tels que les chocs ou les frontières complexes, sont mieux capturés, renforçant la validité physique des simulations.
 
-\paragraph{Stabilité du schéma numérique :}
+\subsubsection{Stabilité du schéma numérique}
 
 La stabilité des schémas numériques joue un rôle crucial dans la précision des résultats obtenus lors de simulations numériques. Il convient de noter que cette notion peut être étroitement liée à la taille des éléments du maillage utilisé. Certains schémas numériques, connus sous le nom de schémas conditionnellement stables, présentent une particularité: leur stabilité dépend de la taille du pas de temps et des dimensions des éléments de maillage. Si la taille du pas de temps est choisie de manière inappropriée ou si le maillage est trop fin, cela peut conduire à des instabilités numériques, générant des résultats non convergents ou incorrects.
 
 D'un point de vue pratique, cela signifie que même si l'utilisation d'un maillage fin puisse potentiellement permettre une capture précise des détails géométriques et des variations spatiales, il est essentiel de prendre soigneusement en compte la stabilité du schéma numérique. La forme des éléments et l'inhomogénéité du maillage ont un impact direct sur le nombre de CFL, et le choix d'un pas de temps approprié par rapport à la taille du maillage peut devenir une tâche complexe, impliquant des compromis entre la précision des résultats et la stabilité numérique.
 
 
-\paragraph{Conservation des propriétés physiques :}
+\subsubsection{Conservation des propriétés physiques}
 
 Généralement la modélisation numérique reposent sur la préservation des lois fondamentales de la physique, telles que la conservation de la masse, de l'énergie et de la quantité de mouvement. Ces propriétés jouent un rôle crucial dans la précision et la validité des simulations numériques. Cependant, le choix d'un maillage inadéquat peut entraîner des conséquences néfastes. Des erreurs numériques peuvent surgir, altérant la conservation de ces propriétés physiques cruciales.
 
 Considérons par exemple un fluide en mouvement dans une simulation. Si le maillage n'est pas adapté, il pourrait ne pas représenter correctement les gradients de vitesse, ce qui résulterait en une violation de la conservation de la quantité de mouvement. Cela signifierait que la simulation ne tiendrait pas compte de la manière dont le fluide interagit avec les forces extérieures et ne reproduirait pas fidèlement les comportements réels. De même si les cellules du maillage sont mal positionnées ou de tailles inégales, cela pourrait conduire à une mauvaise estimation des densités et donc à une non-conservation de la masse.
 
 
-\paragraph{Parallélisation :}
+\subsubsection{Parallélisation}
 
 La manière dont le maillage est structuré et organisé peut jouer un rôle crucial dans la parallélisation des calculs numériques, en particulier pour les méthodes qui reposent sur des maillages structurés. La parallélisation est une stratégie clé pour accélérer les simulations numériques en divisant les calculs en plusieurs tâches indépendantes pouvant être exécutées simultanément sur différents processeurs ou cœurs de calcul.
 
@@ -79,7 +79,7 @@ Lorsque le maillage est conçu de manière à ce que les éléments voisins part
 
 Un autre aspect important est la manière dont les données sont échangées entre les processeurs lors de la parallélisation. Un maillage bien structuré peut minimiser les besoins en communications entre les processeurs, car les éléments voisins sont susceptibles de nécessiter moins d'échanges de données. Cela réduit les goulots d'étranglement et améliore la vitesse d'exécution globale.
 
-\paragraph{Intégration dans des géométries complexes :}
+\subsubsection{Intégration dans des géométries complexes}
 
 Un exemple concret de l'importance de l'intégration des problèmes numériques dans des géométries complexes se trouve dans la simulation de flux de fluides à travers des réseaux de canaux sinueux. Considérons un système de canalisations dans une installation industrielle ou un réseau de vaisseaux sanguins dans le corps humain, où les canaux peuvent avoir des formes tortueuses, des embranchements multiples et des variations géométriques importantes.
 
@@ -126,10 +126,7 @@ tandis que la méthode des éléments finis $\mathbb{Q}_k$ est définie par l'es
 $$V_h=\{v\in C(\bar{\Omega)}\text{ tel que }v|_{K}\in\mathbb{Q}_k\text{ pour tout }K\in\mathcal{T}_h\}$$
 où $\mathbb{Q}_k$ est l'ensemble des polynômes à coefficients réels de $\mathbb{R}^N$ dans $\mathbb{R}$ de degré inférieur ou égal à $k$ \textbf{par rapport à chaque variable}, c'est à dire que pour tout $q\in\mathbb{Q}_k$,
 $$q(x)=\displaystyle\sum_{0\leq i_1\leq k,\dots,0\leq i_N\leq k}\alpha_{i_1,\dots,i_N}x_1^{i_1}\dots x_N^{i_N}\text{ avec }x=(x_1,\dots,x_N).$$
-\color{red}
-les degré de liberté des q match bien avec les quad et les degre de liberté des p match bien avec les t
-\color{black}
-Il vient donc qu'à l'ordre $k$, les polynômes de $\mathbb{Q}_k$ ont des termes supplémentaires capables de représenter des solutions plus complexes et des comportements non linéaires plus fidèlement. Ils permettent ainsi une meilleure approximation des fonctions lisses, comme on peut l'observer sur la comparaison entre $\mathbb{P}_1$ et $\mathbb{Q}_1$ sur la figure \ref{fig:p1_vs_p2} \cite{reberol2018maillages}.
+Les éléments $\mathbb{P}_k$ présentent un nombre de degrés de liberté en adéquation avec la forme des triangles, tandis que pour les éléments $\mathbb{Q}_k$, ce nombre s'ajuste à la géométrie des quadrilatères, comme visualisé dans les figures de la table \ref{tab:p1_vs_p2}. À l'ordre $k$, ces derniers comportent des termes supplémentaires capables de représenter des solutions plus complexes et de mieux rendre compte des comportements non linéaires. Cela se traduit par une meilleure approximation des fonctions lisses, comme le démontre la comparaison entre $\mathbb{P}_1$ et $\mathbb{Q}_1$ sur la figure \ref{fig:p1_vs_p2} \cite{reberol2018maillages}.
 
 \begin{table}[!h]
 \centering
@@ -168,26 +165,18 @@ Il vient donc qu'à l'ordre $k$, les polynômes de $\mathbb{Q}_k$ ont des termes
 &&\\
 \hline
 \end{tabular}
-\caption{Distribution usuelle d'angles-index de singularités de bord.}
-\label{tabul}
+\caption{Illustration des degrés de liberté sur les éléments $\mathbb{P}_k$ et $\mathbb{Q}_k$ avec $k\in\{1,2, 3\}$.}
+\label{tab:p1_vs_p2}
 \end{table}
 
-\begin{figure}
+\begin{figure}[!h]
     \centering
     \includegraphics[scale=0.5]{images/comparaison_P_1_P_2.png}
     \caption{Solutions éléments finis de $-\triangle u=2\pi^2sin(\pi x)sin(\pi y)$ dans $\Omega$, $u=0$ sur $\partial\Omega$. Gauche: Maillage triangulaire et quadrilatéral. Milieu: Éléments d’ordre un. Droite: Éléments d’ordre deux. Source : \cite{reberol2018maillages}}.
     \label{fig:p1_vs_p2}
 \end{figure}
 
-Les éléments Qk se révèlent être un choix optimal pour aborder des problèmes exigeant une précision extrême, tels que les simulations de déformations, la modélisation géométrique avancée et l'interpolation de formes complexes. Cependant, leur pertinence s'étend bien au-delà de ces domaines, trouvant des applications étendues dans des champs comme la mécanique. Par exemple, des adaptations spécifiques sont souvent appliquées pour répondre aux besoins particuliers de certaines applications, telles que l'utilisation de quadratures réduites ou l'intégration de modes de déplacement incompatibles \cite{reberol2018maillages}.
-
-Ce qui est remarquable du point de vue de la méthode des éléments finis, c'est que les quadrilatères et les hexaèdres se profilent comme des candidats plus intrigants dans certaines situations. Dans ces contextes, les éléments d'ordre 2 peuvent être astucieusement ajustés pour rivaliser avec la précision des tétraèdres quadratiques, mais avec l'avantage non négligeable d'une complexité de calcul notablement réduite. Cette caractéristique rend les quadrilatères et les hexaèdres particulièrement attrayants pour des simulations et des analyses pointues où l'efficacité computationnelle joue un rôle crucial.
-
-Un autre avantage majeur des éléments Qk est leur utilisation plus efficace des nœuds dans le maillage. Contrairement aux éléments Pk, qui nécessitent davantage de nœuds pour représenter des polynômes de degré supérieur, les éléments Qk utilisent moins de degrés de liberté par élément, ce qui entraîne un maillage plus simple et des temps de calcul plus courts. Pour les simulations de grande échelle ou les problèmes nécessitant des ressources de calcul limitées, les éléments Qk sont donc une option attrayante.
-
-Il est également intéressant de noter que les maillages quadrilatéraux ont besoin de moins d’éléments que les maillages triangulaires pour couvrir la même surface. Par exemple il faut au minimum deux triangles pour mailler un carré unité. De plus, il y'a moins d'arêtes dans un maillage quadrilatéral. Ces diférences se révèlent significatives pour des méthodes comme la méthode de Galerkin discontinue où il faut calculer des flux entre éléments, ou encore les méthodes d’hybridation. D'autres part, en élasticité linéaire et avec la formulation en déplacement, les triangles linéaires sont particulièrement connus pour leurs mauvaises performances, car le maillage ne se déforme pas autant qu'il devrait \cite{reberol2018maillages}.
-
- La structure tensorielle dans le contexte des éléments quadrilatéraux se réfère au fait que côtés ou les arêtes de ces éléments sont naturellement alignés avec les axes de coordonnées. Cela signifie que les directions tangentes et normales sont bien définies le long de ces côtés ou arêtes. Cette propriété intrinsèque simplifie la définition et l'interprétation des fonctions de base dans les cas où les comportements physiques ou mathématiques dépendent de ces directions.
+Ainsi, les éléments $\mathbb{Q}_k$ sur quadrangle se révèlent être un choix optimal pour aborder des problèmes exigeant une précision extrême, tels que les simulations de déformations, la modélisation géométrique avancée et l'interpolation de formes complexes. Dans des domaines fortement élastiques et plastiques, les triangles linéaires sont notoirement reconnus pour leurs performances médiocres, car le maillage ne se déforme pas autant qu'il devrait. En revanche, les quadrilatères, comme mentionné dans \cite{shepherd2008hexahedral}, permettent de réduire à la fois l'erreur d'approximation et le nombre d'éléments par rapport aux triangles. Il est également intéressant de noter que les maillages quadrilatéraux ont besoin de moins d’éléments que les maillages triangulaires pour couvrir la même surface. Ces diférences se révèlent significatives pour des méthodes comme la méthode de Galerkin discontinue où il faut calculer des flux entre éléments, ou encore les méthodes d’hybridation \cite{reberol2018maillages}.
 
  Lors de la modélisation des ondes électromagnétiques par exemple, il est essentiel de prendre en compte les propriétés de continuité et de compatibilité des composantes tangentielles et normales des champs. Les éléments quadrangulaires offrent une base solide pour satisfaire à ces exigences car leurs arêtes et faces partagées permettent un alignement naturel des composantes. En conséquence, il est généralement plus simple et plus efficace de définir des fonctions de base qui préservent les propriétés de continuité et de compatibilité sur ces types de maillages. Cela se traduit par une formulation discrète plus directe des équations de Maxwell, où les termes de sauts et de sauts normaux entre les éléments adjacents peuvent être calculés plus facilement. De plus, les interpolations des champs électromagnétiques aux nœuds du maillage sont plus cohérentes, ce qui peut conduire à des résultats numériques plus précis et stables.
 

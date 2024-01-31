@@ -353,7 +353,9 @@ $$
 
 \begin{lemma}
     \label{lem:index_saga_second}
-    Sous les hypothèses du lemme \ref{lem:index_saga_first}, si $\bar{u}$ est $\mathcal{C}^1$ sur un ensemble convexe $V\subset\Omega$ alors pour tout arc $\Gamma$ de longueur assez petite telle que $V^\Gamma\subset V$ on a $F_{\bar{u}}(\Gamma)=0$.
+    Sous les hypothèses du lemme \ref{lem:index_saga_first}, si $\bar{u}$ est $\mathcal{C}^1$ sur un ensemble convexe $V\subset\Omega$ alors pour tout arc $\Gamma$
+    %de longueur assez petite
+    telle que $V^\Gamma\subset V$ on a $F_{\bar{u}}(\Gamma)=0$.
 \end{lemma}
 
 \begin{proof}
@@ -361,7 +363,7 @@ $$
     $$
     \left|\int_a^b\frac{w'(\gamma(t))\gamma't)}{u(\gamma(t))-z}dt\right|\leq M\int_a^b|\gamma'(t)|dt<2\pi,
     $$
-    pour $\Gamma$ décrivant un arc de longueur inférieure à $2\pi/M$, tel que $V^\Gamma\subset V$ et donc $F_u(\Gamma)=0$.
+    pour $\Gamma$ décrivant un arc de longueur inférieure à $2\pi/M$, tel que $V^\Gamma\subset V$ et donc $F_u(\Gamma)=0$. On généralise ensuite ce résultat à un arc $\Gamma$ de taille quelconque en pavant $V^\Gamma$ avec des boules de rayon plus petit que $1/4\pi$ puis on conclut en utilisant le lemme \ref{lem:index_saga_first}.
 \end{proof}
 
 \begin{lemma}
@@ -402,6 +404,7 @@ En combinant les lemmes \ref{lem:index_saga_first} et \ref{lem:index_saga_second
 On peut alors retrouver les propriétés principales de l'indice, résumées dans le théorème suivant:
 
 \begin{theorem}
+    \label{thm:index}
     L'indice du point $p$ dans le champ $u$ vérifie les propriétés suivantes:
     \begin{enumerate}
         \item $id_{\bar{u}}^\gamma(p)=k/4$, $k\in\mathbb{Z}$,
@@ -417,13 +420,15 @@ On peut alors retrouver les propriétés principales de l'indice, résumées dan
 Par extension, en utilisant le lemme \ref{lem:index_saga_first} on a:
 
 \begin{corollary}
+Soit $V^\Gamma$ une partie de $\Omega$ délimitée par $\Gamma$. On a:
 \begin{equation}
+\label{eqn:Fu_sum}
  F_{\bar{u}}(\Gamma)=\sum_{p\in V^\Gamma\cap\mathcal{S}_{\bar{u}}} id_{\bar{u}}(p)
 \end{equation}
 \end{corollary}
 
 \begin{proof}
-
+Il suffit de recouvrir $V^\Gamma$ en utilisant des boules qui isolent tous les points $p\in V^\Gamma\cap\mathcal{S}_{\bar{u}}$. On applique ensuite le théorème \ref{thm:index} à chaque boule puis l'équation \eqref{eqn:Fu_sum} est obtenue en utilisant le lemme \ref{lem:index_saga_first}.
 \end{proof}
 
 
@@ -487,7 +492,16 @@ Le théorème de Poincaré-Hopf constitue un résultat fondamental en topologie 
     \label{eqn:first_Poincare_Hopf}
     \sum_i id_{\bar{u}}(s_i)=\chi(\Omega),
 \end{equation}
-où la somme est celle des indices des points singuliers de $\bar{u}$ et $\chi(\Omega)$ est la caractéristique d'Euler de $\Omega$. Pour prendre en considération les champs de croix comportant des points singuliers situés sur la frontière du domaine, nous construisons un domaine $\Omega^\epsilon$ englobant $\Omega$ dont la frontiere est une isoline de valeur $\epsilon$ obtenu via la résolution de l'équation de la chaleur dans $\mathbb{R}^2\backslash\Omega$ et tel que $\partial\Omega^\epsilon\cap\Omega=\emptyset$. On construit ensuite le champ de croix $\bar{u}^\epsilon$ pour tout $p\in\Omega^\epsilon$ par:
+où la somme est celle des indices des points singuliers de $\bar{u}$ et $\chi(\Omega)$ est la caractéristique d'Euler de $\Omega$.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.251]{images/Poincare_etendu.pdf}
+  \caption{Extension du domaine pour la prise en compte des points singuliers de bord dans la formule de Poincaré-Hopf.}
+  \label{fig:Poincare_etendu}
+\end{figure}
+
+Pour prendre en considération les champs de croix comportant des points singuliers situés sur la frontière du domaine, nous construisons un domaine $\Omega^\epsilon$ (voir la figure   \ref{fig:Poincare_etendu}) englobant $\Omega$ dont la frontiere est une isoline de valeur $\epsilon$ obtenu via la résolution de l'équation de la chaleur dans $\mathbb{R}^2\backslash\Omega$ et tel que $\partial\Omega^\epsilon\cap\Omega=\emptyset$. On construit ensuite le champ de croix $\bar{u}^\epsilon$ pour tout $p\in\Omega^\epsilon$ par:
 $$
 \bar{u}^\epsilon(p)=
 \left\{
