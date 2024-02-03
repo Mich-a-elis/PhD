@@ -4,111 +4,100 @@
 \contentsline {subsection}{\numberline {1.1.1}Quelques schémas numériques}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Influence du maillage}{4}{subsection.1.1.2}%
 \contentsline {subsubsection}{\numberline {1.1.2.1}Précision de la solution}{4}{subsubsection.1.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.1.2.2}Temps de calcul}{5}{subsubsection.1.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.1.2.3}Adaptation du maillage}{5}{subsubsection.1.1.2.3}%
-\contentsline {subsubsection}{\numberline {1.1.2.4}Stabilité du schéma numérique}{5}{subsubsection.1.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.1.2.2}Temps de calcul}{4}{subsubsection.1.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.1.2.3}Adaptation du maillage}{4}{subsubsection.1.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.1.2.4}Stabilité du schéma numérique}{4}{subsubsection.1.1.2.4}%
 \contentsline {subsubsection}{\numberline {1.1.2.5}Conservation des propriétés physiques}{5}{subsubsection.1.1.2.5}%
-\contentsline {subsubsection}{\numberline {1.1.2.6}Parallélisation}{6}{subsubsection.1.1.2.6}%
-\contentsline {subsubsection}{\numberline {1.1.2.7}Intégration dans des géométries complexes}{6}{subsubsection.1.1.2.7}%
-\contentsline {subsection}{\numberline {1.1.3}Intérêts des maillages quadrilatéraux}{6}{subsection.1.1.3}%
-\contentsline {subsubsection}{\numberline {1.1.3.1}Régularité/ Structuration}{7}{subsubsection.1.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.1.3.2}$\mathbb {P}_k$ vs $\mathbb {Q}_k$}{7}{subsubsection.1.1.3.2}%
-\contentsline {subsubsection}{\numberline {1.1.3.3}Etirement anisotropique}{8}{subsubsection.1.1.3.3}%
-\contentsline {subsubsection}{\numberline {1.1.3.4}Intégration numérique}{9}{subsubsection.1.1.3.4}%
-\contentsline {section}{\numberline {1.2}Maillage}{10}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Maillages à bases de triangles}{10}{subsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.1.1}Méthode de Delaunay}{10}{subsubsection.1.2.1.1}%
-\contentsline {paragraph}{Maillage de Delauney-Voronoï}{11}{section*.4}%
-\contentsline {paragraph}{L'algorithme de Bowyer-Watson}{11}{section*.7}%
-\contentsline {subsubsection}{\numberline {1.2.1.2}Méthode frontale}{12}{subsubsection.1.2.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1.3}Méthode de décomposition spatiale (Quadtree)}{13}{subsubsection.1.2.1.3}%
-\contentsline {subsection}{\numberline {1.2.2}Maillages à bases de quadrilatères}{14}{subsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.2.1}Décomposition de maillages triangulaires en quadrangles}{16}{subsubsection.1.2.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2.2}Méthodes basées sur la paramétrisation}{17}{subsubsection.1.2.2.2}%
-\contentsline {paragraph}{Paramétrisation plane:}{17}{section*.13}%
-\contentsline {paragraph}{Paramétrisation harmonique:}{17}{section*.14}%
-\contentsline {subsubsection}{\numberline {1.2.2.3}Superposition de grille régulière}{18}{subsubsection.1.2.2.3}%
-\contentsline {subsubsection}{\numberline {1.2.2.4}Méthode de l'axe médian}{18}{subsubsection.1.2.2.4}%
-\contentsline {subsubsection}{\numberline {1.2.2.5}Approches basées sur l'avancée de fronts}{19}{subsubsection.1.2.2.5}%
-\contentsline {section}{\numberline {1.3}Maillages quadrilatéraux à partir de champs de croix}{20}{section.1.3}%
-\contentsline {paragraph}{Lien entre les champ de croix et les maillages quadrilatéraux:}{21}{section*.19}%
-\contentsline {paragraph}{Géneration du champ de croix:}{21}{section*.20}%
-\contentsline {paragraph}{Génération d'un maillage correspondant au champ de croix calculé:}{22}{section*.21}%
-\contentsline {section}{\numberline {1.4}Objectif de la thèse}{22}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Organisation du manuscrit}{23}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Communications issues de la thèse}{24}{section.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.0.1}Article soumis}{24}{subsubsection.1.6.0.1}%
-\contentsline {subsubsection}{\numberline {1.6.0.2}Proceeding}{24}{subsubsection.1.6.0.2}%
-\contentsline {subsubsection}{\numberline {1.6.0.3}Communications orales dans des conférences internationales}{24}{subsubsection.1.6.0.3}%
-\contentsline {subsubsection}{\numberline {1.6.0.4}Communications orales dans des conférences nationales}{24}{subsubsection.1.6.0.4}%
-\contentsline {subsubsection}{\numberline {1.6.0.5}Communications dans des séminaires doctorants}{24}{subsubsection.1.6.0.5}%
-\contentsline {subsubsection}{\numberline {1.6.0.6}Logiciels}{24}{subsubsection.1.6.0.6}%
-\contentsline {chapter}{\numberline {2}Génération de maillages quadrilatéraux à partir de champs de croix prescrits}{25}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Cadre théorique}{26}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Champ de croix}{26}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Indice}{28}{subsection.2.1.2}%
-\contentsline {paragraph}{Construction d'un recouvrement de la courbe $\gamma $:}{30}{section*.28}%
-\contentsline {paragraph}{Construction de $\theta _{\overline {u}}^\gamma $ par morceau:}{30}{section*.29}%
-\contentsline {subsection}{\numberline {2.1.3}Théorème de Poincaré-Hopf}{34}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Ligne de champ et séparatrices}{35}{subsection.2.1.4}%
-\contentsline {paragraph}{Définition d'un champ de vecteur de classe $\mathcal {C}^1$ dans un voisinnage de $p_0$.}{36}{section*.33}%
-\contentsline {paragraph}{Construction de la restriction de $\pi _{\overline {u}}^S$ au voisinage de $p_0$.}{36}{section*.34}%
-\contentsline {paragraph}{Construction de la restriction de la ligne de courant au voisinage de $p$.}{36}{section*.35}%
-\contentsline {section}{\numberline {2.2}Méthode de partitionnement à partir d'un champ de croix}{43}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Principe de la méthode}{43}{subsection.2.2.1}%
-\contentsline {paragraph}{Domaine simplement connexe:}{44}{section*.42}%
-\contentsline {paragraph}{Domaine non-simplement connexe:}{49}{section*.46}%
-\contentsline {paragraph}{Correction d'un champ de croix ne vérifiant pas la condition \ref {eqn:principe_hypothese_u_second}:}{51}{section*.49}%
-\contentsline {subsection}{\numberline {2.2.2}Etude de la méthode}{54}{subsection.2.2.2}%
-\contentsline {paragraph}{\'Etude de l'opération d'alignement}{54}{section*.51}%
-\contentsline {section}{\numberline {2.3}Discussions}{63}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Sur la signification pratique de l'hypothèse $0<Card(\mathcal {S}_{\overline {u}})<\infty $}{64}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Sur la conservation des propriétés du champ de croix initial}{64}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Sur les singularités de bord}{64}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Sur la construction du champ de correction}{66}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Sur les multi-matériaux}{69}{subsection.2.3.5}%
-\contentsline {chapter}{\numberline {3}Discrétisation, algorithmes et exemples}{71}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Représentation discrète}{71}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Maillage triangulaire}{71}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Champ de croix}{72}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Points singuliers, indice et ligne de champs}{74}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Lien entre $\overline {u}$ et $\overline {u}_h$}{76}{subsection.3.1.4}%
-\contentsline {paragraph}{Points singuliers:}{76}{section*.61}%
-\contentsline {paragraph}{Singularités d'ordre supérieur:}{77}{section*.63}%
-\contentsline {paragraph}{Convergence:}{78}{section*.64}%
-\contentsline {section}{\numberline {3.2}Partitionnement de $\partial \Omega _h$}{78}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Recherche de points singuliers}{78}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Construction des séparatrices}{79}{subsection.3.2.2}%
-\contentsline {paragraph}{Nombre de séparatrices:}{79}{section*.66}%
-\contentsline {paragraph}{Directions initiales et intégration:}{80}{section*.69}%
-\contentsline {paragraph}{Traversé d'un triangle singulier:}{80}{figure.caption.73}%
-\contentsline {paragraph}{Fusion de séparatrices:}{82}{section*.74}%
-\contentsline {subsection}{\numberline {3.2.3}Assemblage des partitions}{83}{subsection.3.2.3}%
-\contentsline {paragraph}{Intersections de séparatrices:}{84}{section*.76}%
-\contentsline {paragraph}{Identification des partitions:}{84}{section*.77}%
-\contentsline {section}{\numberline {3.3}Génération du maillage quadrilatéral}{87}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Uniformisation}{88}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Interpolation transfinie}{89}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Maillage par tracé direct de lignes de champ dans le champ de croix}{90}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Méthode basée sur des EDP}{90}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Opération d'alignement}{94}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Analyse de convergence}{96}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Génération de champ de croix}{97}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}L'Equation de Laplace}{97}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Une expression analytique}{98}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Extension aux surfaces courbes}{99}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Champ de croix, points singuliers et indices}{99}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Extension des principaux résultats du cas planaire}{99}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Partitionnement et génération du maillage}{99}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Analyse de convergence}{99}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Génération du champ de croix}{99}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Etude de la méthode}{100}{subsection.4.5.1}%
-\contentsline {paragraph}{\'Etude de l'opération d'alignement}{100}{section*.90}%
-\contentsline {section}{\numberline {4.6}Difficulté à l'extension}{102}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Extension des résultats principaux du cas planaire}{102}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Discrétisation}{102}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Connection triviale}{103}{subsection.4.8.1}%
-\contentsline {chapter}{\numberline {5}Conclusion et perspectives}{105}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Caractéristique d'Euler}{107}{section.5.1}%
-\contentsline {section}{\numberline {5.2}}{107}{section.5.2}%
-\contentsline {chapter}{Références}{109}{chapter*.94}%
+\contentsline {subsubsection}{\numberline {1.1.2.6}Parallélisation}{5}{subsubsection.1.1.2.6}%
+\contentsline {subsubsection}{\numberline {1.1.2.7}Intégration dans des géométries complexes}{5}{subsubsection.1.1.2.7}%
+\contentsline {subsection}{\numberline {1.1.3}Intérêts des maillages quadrilatéraux}{5}{subsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.3.1}Régularité/ Structuration}{6}{subsubsection.1.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.1.3.2}$\mathbb {P}_k$ vs $\mathbb {Q}_k$}{6}{subsubsection.1.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.1.3.3}Etirement anisotropique}{6}{subsubsection.1.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.1.3.4}Intégration numérique}{8}{subsubsection.1.1.3.4}%
+\contentsline {section}{\numberline {1.2}Maillage}{8}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Maillages à bases de triangles}{8}{subsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.1.1}Méthode de Delaunay}{8}{subsubsection.1.2.1.1}%
+\contentsline {paragraph}{Maillage de Delauney-Voronoï}{9}{section*.4}%
+\contentsline {paragraph}{L'algorithme de Bowyer-Watson}{10}{section*.7}%
+\contentsline {subsubsection}{\numberline {1.2.1.2}Méthode frontale}{10}{subsubsection.1.2.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1.3}Méthode de décomposition spatiale (Quadtree)}{10}{subsubsection.1.2.1.3}%
+\contentsline {subsection}{\numberline {1.2.2}Maillages à bases de quadrilatères}{11}{subsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.2.1}Décomposition de maillages triangulaires en quadrangles}{13}{subsubsection.1.2.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2.2}Méthodes basées sur la paramétrisation}{14}{subsubsection.1.2.2.2}%
+\contentsline {paragraph}{Paramétrisation plane:}{14}{section*.13}%
+\contentsline {paragraph}{Paramétrisation harmonique:}{14}{section*.14}%
+\contentsline {subsubsection}{\numberline {1.2.2.3}Superposition de grille régulière}{14}{subsubsection.1.2.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.2.4}Méthode de l'axe médian}{14}{subsubsection.1.2.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.2.5}Approches basées sur l'avancée de fronts}{16}{subsubsection.1.2.2.5}%
+\contentsline {section}{\numberline {1.3}Maillages quadrilatéraux à partir de champs de croix}{17}{section.1.3}%
+\contentsline {paragraph}{Lien entre les champ de croix et les maillages quadrilatéraux:}{17}{section*.19}%
+\contentsline {paragraph}{Géneration du champ de croix:}{17}{section*.20}%
+\contentsline {paragraph}{Génération d'un maillage correspondant au champ de croix calculé:}{18}{section*.21}%
+\contentsline {section}{\numberline {1.4}Objectif de la thèse}{18}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Organisation du manuscrit}{19}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Communications issues de la thèse}{20}{section.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.0.1}Article soumis}{20}{subsubsection.1.6.0.1}%
+\contentsline {subsubsection}{\numberline {1.6.0.2}Proceeding}{20}{subsubsection.1.6.0.2}%
+\contentsline {subsubsection}{\numberline {1.6.0.3}Communications orales dans des conférences internationales}{20}{subsubsection.1.6.0.3}%
+\contentsline {subsubsection}{\numberline {1.6.0.4}Communications orales dans des conférences nationales}{20}{subsubsection.1.6.0.4}%
+\contentsline {subsubsection}{\numberline {1.6.0.5}Communications dans des séminaires doctorants}{20}{subsubsection.1.6.0.5}%
+\contentsline {subsubsection}{\numberline {1.6.0.6}Logiciels}{20}{subsubsection.1.6.0.6}%
+\contentsline {chapter}{\numberline {2}Génération de maillages quadrilatéraux à partir de champs de croix prescrits}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Cadre théorique}{21}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Champ de croix}{21}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Indice}{24}{subsection.2.1.2}%
+\contentsline {paragraph}{Construction d'un recouvrement de la courbe $\gamma $:}{25}{section*.28}%
+\contentsline {paragraph}{Construction de $\theta _{\overline {u}}^\gamma $ par morceau:}{26}{section*.29}%
+\contentsline {subsection}{\numberline {2.1.3}Théorème de Poincaré-Hopf}{29}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Ligne de champ et séparatrices}{30}{subsection.2.1.4}%
+\contentsline {paragraph}{Définition d'un champ de vecteur de classe $\mathcal {C}^1$ dans un voisinnage de $p_0$.}{30}{section*.33}%
+\contentsline {paragraph}{Construction de la restriction de $\pi _{\overline {u}}^S$ au voisinage de $p_0$.}{30}{section*.34}%
+\contentsline {paragraph}{Construction de la restriction de la ligne de courant au voisinage de $p$.}{31}{section*.35}%
+\contentsline {section}{\numberline {2.2}Méthode de partitionnement à partir d'un champ de croix}{36}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Principe de la méthode}{36}{subsection.2.2.1}%
+\contentsline {paragraph}{Domaines simplement connexes:}{37}{section*.44}%
+\contentsline {paragraph}{Domaines non-simplement connexes:}{42}{section*.48}%
+\contentsline {paragraph}{Correction d'un champ de croix ne vérifiant pas la condition \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eqn:principe_hypothese_u_second}\unskip \@@italiccorr )}}:}{42}{section*.51}%
+\contentsline {subsection}{\numberline {2.2.2}Etude de la méthode}{45}{subsection.2.2.2}%
+\contentsline {paragraph}{\'Etude de l'opération d'alignement}{46}{section*.53}%
+\contentsline {section}{\numberline {2.3}Discussions}{53}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Sur la signification pratique de l'hypothèse $0<Card(\mathcal {S}_{\overline {u}})<\infty $}{53}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Sur la conservation des propriétés du champ de croix initial}{54}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Sur les singularités de bord}{54}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Sur la construction du champ de correction}{55}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Sur les multi-matériaux}{57}{subsection.2.3.5}%
+\contentsline {chapter}{\numberline {3}Discrétisation, algorithmes et exemples}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Représentation discrète}{59}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Maillage triangulaire}{59}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Champ de croix}{60}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Points singuliers, indice et ligne de champs}{61}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Lien entre $\overline {u}$ et $\overline {u}_h$}{63}{subsection.3.1.4}%
+\contentsline {paragraph}{Points singuliers:}{63}{section*.63}%
+\contentsline {paragraph}{Singularités d'ordre supérieur:}{63}{section*.65}%
+\contentsline {paragraph}{Convergence:}{64}{section*.66}%
+\contentsline {section}{\numberline {3.2}Partitionnement de $\partial \Omega _h$}{65}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Recherche de points singuliers}{65}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Construction des séparatrices}{65}{subsection.3.2.2}%
+\contentsline {paragraph}{Nombre de séparatrices:}{66}{section*.68}%
+\contentsline {paragraph}{Directions initiales et intégration:}{66}{section*.71}%
+\contentsline {paragraph}{Traversé d'un triangle singulier:}{67}{figure.caption.75}%
+\contentsline {paragraph}{Fusion de séparatrices:}{68}{section*.76}%
+\contentsline {subsection}{\numberline {3.2.3}Assemblage des partitions}{70}{subsection.3.2.3}%
+\contentsline {paragraph}{Intersections de séparatrices:}{70}{section*.78}%
+\contentsline {paragraph}{Identification des partitions:}{70}{section*.79}%
+\contentsline {section}{\numberline {3.3}Génération du maillage quadrilatéral}{71}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Uniformisation}{73}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Interpolation transfinie}{74}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Maillage par tracé direct de lignes de champ dans le champ de croix}{75}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Méthode basée sur des EDP}{75}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Opération d'alignement}{77}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Analyse de convergence}{80}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Génération de champ de croix}{81}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}L'Equation de Laplace}{81}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Une expression analytique}{82}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}homogeneisation}{82}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Conclusion et perspectives}{83}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Caractéristique d'Euler}{85}{section.4.1}%
+\contentsline {section}{\numberline {4.2}}{85}{section.4.2}%
+\contentsline {chapter}{Références}{87}{chapter*.95}%

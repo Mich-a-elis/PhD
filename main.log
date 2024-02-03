@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.13)  31 JAN 2024 15:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.12.13)  3 FEB 2024 12:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,10 +6,19 @@ entering extended mode
 (./main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/extsizes/extbook.cls
+Document Class: extbook 1999/01/07 v1.4a NON-Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/extsizes/size8.clo
+File: size8.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/exscale.sty
+Package: exscale 2018/09/24 v2.1i Standard LaTeX package exscale
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+\big@size=\dimen138
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -22,11 +31,11 @@ File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@table=\count193
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen139
 )
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
-e 3.
+e 4.
 
 (./config.tex (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -44,14 +53,14 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@cnth=\count194
 \Gm@cntv=\count195
 \c@Gm@tempcnt=\count196
-\Gm@bindingoffset=\dimen139
-\Gm@wd@mp=\dimen140
-\Gm@odd@mp=\dimen141
-\Gm@even@mp=\dimen142
-\Gm@layoutwidth=\dimen143
-\Gm@layoutheight=\dimen144
-\Gm@layouthoffset=\dimen145
-\Gm@layoutvoffset=\dimen146
+\Gm@bindingoffset=\dimen140
+\Gm@wd@mp=\dimen141
+\Gm@odd@mp=\dimen142
+\Gm@even@mp=\dimen143
+\Gm@layoutwidth=\dimen144
+\Gm@layoutheight=\dimen145
+\Gm@layouthoffset=\dimen146
+\Gm@layoutvoffset=\dimen147
 \Gm@dimlist=\toks17
 )
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrextend.sty
@@ -90,8 +99,8 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count197
 \calc@Bcount=\count198
-\calc@Adimen=\dimen147
-\calc@Bdimen=\dimen148
+\calc@Adimen=\dimen148
+\calc@Bdimen=\dimen149
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 80.
@@ -101,8 +110,8 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen149
-\ESO@tempdimb=\dimen150
+\ESO@tempdima=\dimen150
+\ESO@tempdimb=\dimen151
 
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
@@ -139,12 +148,12 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen151
-\Gin@req@width=\dimen152
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
 )
-\AM@pagewidth=\dimen153
-\AM@pageheight=\dimen154
-\AM@fboxrule=\dimen155
+\AM@pagewidth=\dimen154
+\AM@pageheight=\dimen155
+\AM@fboxrule=\dimen156
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
@@ -163,7 +172,7 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2022/01/26 3.70 The Babel package
 \babel@savecnt=\count269
-\U@D=\dimen156
+\U@D=\dimen157
 \l@unhyphenated=\language87
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
@@ -183,19 +192,19 @@ Package babel Info: Making ! an active character on input line 432.
 Package babel Info: Making ? an active character on input line 433.
 \FBguill@level=\count272
 \FBold@everypar=\toks20
-\FB@Mht=\dimen157
+\FB@Mht=\dimen158
 \mc@charclass=\count273
 \mc@charfam=\count274
 \mc@charslot=\count275
 \std@mcc=\count276
 \dec@mcc=\count277
-\listindentFB=\dimen158
-\descindentFB=\dimen159
-\labelindentFB=\dimen160
-\labelwidthFB=\dimen161
-\leftmarginFB=\dimen162
-\parindentFFN=\dimen163
-\FBfnindent=\dimen164
+\listindentFB=\dimen159
+\descindentFB=\dimen160
+\labelindentFB=\dimen161
+\labelwidthFB=\dimen162
+\leftmarginFB=\dimen163
+\parindentFFN=\dimen164
+\FBfnindent=\dimen165
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/minitoc/minitoc.sty
@@ -267,11 +276,11 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks22
-\ex@=\dimen165
+\ex@=\dimen166
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen166
+\pmbraise@=\dimen167
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
@@ -288,7 +297,7 @@ LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box54
 \strutbox@=\box55
-\big@size=\dimen167
+\big@size=\dimen168
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count287
@@ -301,12 +310,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \column@=\count292
 \maxfields@=\count293
 \andhelp@=\toks24
-\eqnshift@=\dimen168
-\alignsep@=\dimen169
-\tagshift@=\dimen170
-\tagwidth@=\dimen171
-\totwidth@=\dimen172
-\lineht@=\dimen173
+\eqnshift@=\dimen169
+\alignsep@=\dimen170
+\tagshift@=\dimen171
+\tagwidth@=\dimen172
+\totwidth@=\dimen173
+\lineht@=\dimen174
 \@envbody=\toks25
 \multlinegap=\skip56
 \multlinetaggap=\skip57
@@ -348,8 +357,8 @@ Package: amsthm 2020/05/29 v2.20.6
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks33
-\pgfutil@tempdima=\dimen174
-\pgfutil@tempdimb=\dimen175
+\pgfutil@tempdima=\dimen175
+\pgfutil@tempdimb=\dimen176
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -373,16 +382,16 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 ex
 \pgfkeys@tmptoks=\toks36
 ))
-\pgf@x=\dimen176
-\pgf@y=\dimen177
-\pgf@xa=\dimen178
-\pgf@ya=\dimen179
-\pgf@xb=\dimen180
-\pgf@yb=\dimen181
-\pgf@xc=\dimen182
-\pgf@yc=\dimen183
-\pgf@xd=\dimen184
-\pgf@yd=\dimen185
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
+\pgf@xd=\dimen185
+\pgf@yd=\dimen186
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
 \c@pgf@counta=\count294
@@ -422,7 +431,7 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen186
+\pgfmath@dimen=\dimen187
 \pgfmath@count=\count301
 \pgfmath@box=\box57
 \pgfmath@toks=\toks40
@@ -453,32 +462,32 @@ thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen187
-\pgf@picmaxx=\dimen188
-\pgf@picminy=\dimen189
-\pgf@picmaxy=\dimen190
-\pgf@pathminx=\dimen191
-\pgf@pathmaxx=\dimen192
-\pgf@pathminy=\dimen193
-\pgf@pathmaxy=\dimen194
-\pgf@xx=\dimen195
-\pgf@xy=\dimen196
-\pgf@yx=\dimen197
-\pgf@yy=\dimen198
-\pgf@zx=\dimen199
-\pgf@zy=\dimen256
+\pgf@picminx=\dimen188
+\pgf@picmaxx=\dimen189
+\pgf@picminy=\dimen190
+\pgf@picmaxy=\dimen191
+\pgf@pathminx=\dimen192
+\pgf@pathmaxx=\dimen193
+\pgf@pathminy=\dimen194
+\pgf@pathmaxy=\dimen195
+\pgf@xx=\dimen196
+\pgf@xy=\dimen197
+\pgf@yx=\dimen198
+\pgf@yy=\dimen199
+\pgf@zx=\dimen256
+\pgf@zy=\dimen257
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen257
-\pgf@path@lasty=\dimen258
+\pgf@path@lastx=\dimen258
+\pgf@path@lasty=\dimen259
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen259
-\pgf@shorten@start@additional=\dimen260
+\pgf@shorten@end@additional=\dimen260
+\pgf@shorten@start@additional=\dimen261
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
@@ -491,14 +500,14 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen261
+\pgflinewidth=\dimen262
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen262
-\pgf@pt@y=\dimen263
-\pgf@pt@temp=\dimen264
+\pgf@pt@x=\dimen263
+\pgf@pt@y=\dimen264
+\pgf@pt@temp=\dimen265
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -514,11 +523,11 @@ File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen265
+\pgfarrowsep=\dimen266
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen266
+\pgf@max=\dimen267
 \pgf@sys@shading@range@num=\count304
 \pgf@shadingcount=\count305
 )
@@ -554,8 +563,8 @@ File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen267
-\pgf@nodesepend=\dimen268
+\pgf@nodesepstart=\dimen268
+\pgf@nodesepend=\dimen269
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -569,8 +578,8 @@ Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
 Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen269
-\pgffor@skip=\dimen270
+\pgffor@iter=\dimen270
+\pgffor@skip=\dimen271
 \pgffor@stack=\toks43
 \pgffor@toks=\toks44
 ))
@@ -581,16 +590,16 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 .code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@plot@mark@count=\count306
-\pgfplotmarksize=\dimen271
+\pgfplotmarksize=\dimen272
 )
-\tikz@lastx=\dimen272
-\tikz@lasty=\dimen273
-\tikz@lastxsaved=\dimen274
-\tikz@lastysaved=\dimen275
-\tikz@lastmovetox=\dimen276
-\tikz@lastmovetoy=\dimen277
-\tikzleveldistance=\dimen278
-\tikzsiblingdistance=\dimen279
+\tikz@lastx=\dimen273
+\tikz@lasty=\dimen274
+\tikz@lastxsaved=\dimen275
+\tikz@lastysaved=\dimen276
+\tikz@lastmovetox=\dimen277
+\tikz@lastmovetoy=\dimen278
+\tikzleveldistance=\dimen279
+\tikzsiblingdistance=\dimen280
 \tikz@figbox=\box63
 \tikz@figbox@bg=\box64
 \tikz@tempbox=\box65
@@ -619,22 +628,22 @@ Package: mathtools 2021/02/02 v1.28 mathematical typesetting tools
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 \g_MT_multlinerow_int=\count315
-\l_MT_multwidth_dim=\dimen280
+\l_MT_multwidth_dim=\dimen281
 \origjot=\skip61
-\l_MT_shortvdotswithinadjustabove_dim=\dimen281
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen282
-\l_MT_above_intertext_sep=\dimen283
-\l_MT_below_intertext_sep=\dimen284
-\l_MT_above_shortintertext_sep=\dimen285
-\l_MT_below_shortintertext_sep=\dimen286
+\l_MT_shortvdotswithinadjustabove_dim=\dimen282
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen283
+\l_MT_above_intertext_sep=\dimen284
+\l_MT_below_intertext_sep=\dimen285
+\l_MT_above_shortintertext_sep=\dimen286
+\l_MT_below_shortintertext_sep=\dimen287
 \xmathstrut@box=\box67
-\xmathstrut@dim=\dimen287
+\xmathstrut@dim=\dimen288
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen288
+\col@sep=\dimen289
 \ar@mcellbox=\box68
-\extrarowheight=\dimen289
+\extrarowheight=\dimen290
 \NC@list=\toks45
 \extratabsurround=\skip62
 \backup@length=\skip63
@@ -642,11 +651,11 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen290
-\TX@old@table=\dimen291
-\TX@old@col=\dimen292
-\TX@target=\dimen293
-\TX@delta=\dimen294
+\TX@col@width=\dimen291
+\TX@old@table=\dimen292
+\TX@old@col=\dimen293
+\TX@target=\dimen294
+\TX@delta=\dimen295
 \TX@cols=\count316
 \TX@ftn=\toks46
 )
@@ -675,21 +684,21 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \c@tracingmulticols=\count318
 \mult@box=\box70
-\multicol@leftmargin=\dimen295
+\multicol@leftmargin=\dimen296
 \c@unbalance=\count319
 \c@collectmore=\count320
 \doublecol@number=\count321
 \multicoltolerance=\count322
 \multicolpretolerance=\count323
-\full@width=\dimen296
-\page@free=\dimen297
-\premulticols=\dimen298
-\postmulticols=\dimen299
+\full@width=\dimen297
+\page@free=\dimen298
+\premulticols=\dimen299
+\postmulticols=\dimen300
 \multicolsep=\skip64
 \multicolbaselineskip=\skip65
 \partial@page=\box71
 \last@line=\box72
-\maxbalancingoverflow=\dimen300
+\maxbalancingoverflow=\dimen301
 \mult@rightbox=\box73
 \mult@grightbox=\box74
 \mult@firstbox=\box75
@@ -733,9 +742,9 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \c@minrows=\count324
 \c@columnbadness=\count325
 \c@finalcolumnbadness=\count326
-\last@try=\dimen301
-\multicolovershoot=\dimen302
-\multicolundershoot=\dimen303
+\last@try=\dimen302
+\multicolovershoot=\dimen303
+\multicolundershoot=\dimen304
 \mult@nat@firstbox=\box113
 \colbreak@box=\box114
 \mc@col@check@num=\count327
@@ -913,8 +922,8 @@ Package: tocbasic 2021/11/13 v3.35 KOMA-Script package (handling toc-files)
 )
 Package tocbasic Info: setting babel extension for `nlo' on input line 187.
 Package tocbasic Info: setting babel extension for `nls' on input line 188.
-\nomlabelwidth=\dimen304
-\nom@tempdim=\dimen305
+\nomlabelwidth=\dimen305
+\nom@tempdim=\dimen306
 \nomitemsep=\skip134
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -929,7 +938,7 @@ Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-\@linkdim=\dimen306
+\@linkdim=\dimen307
 \Hy@linkcounter=\count338
 \Hy@pagecounter=\count339
 
@@ -966,7 +975,7 @@ Package hyperref Info: Bookmarks ON on input line 4445.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen307
+\XeTeXLinkMargin=\dimen308
 
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -976,8 +985,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count342
-\Field@Width=\dimen308
-\Fld@charsize=\dimen309
+\Field@Width=\dimen309
+\Fld@charsize=\dimen310
 Package hyperref Info: Hyper figures OFF on input line 6076.
 Package hyperref Info: Link nesting OFF on input line 6081.
 Package hyperref Info: Hyper index ON on input line 6084.
@@ -1120,9 +1129,9 @@ readarray: bounds checking OFF
 )
 \savedverbbox=\box130
 \c@VerbboxLineNo=\count364
-\boxtopsep=\dimen310
-\boxbottomsep=\dimen311
-\ps@tempdima=\dimen312
+\boxtopsep=\dimen311
+\boxbottomsep=\dimen312
+\ps@tempdima=\dimen313
 \ps@tempboxa=\box131
 \boxtop@sep=\skip156
 \boxbottom@sep=\skip157
@@ -1177,9 +1186,9 @@ Library (tcolorbox): 'tcbhooks.code.tex' version '5.0.2'
 Library (tcolorbox): 'tcbtheorems.code.tex' version '5.0.2'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '5.0.2'
-\tcbfitdim=\dimen313
-\tcb@lowerfitdim=\dimen314
-\tcb@upperfitdim=\dimen315
+\tcbfitdim=\dimen314
+\tcb@lowerfitdim=\dimen315
+\tcb@upperfitdim=\dimen316
 \tcb@cur@hbadness=\count372
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
 Library (tcolorbox): 'tcbxparse.code.tex' version '5.0.2'
@@ -1192,14 +1201,14 @@ Library (tcolorbox): 'tcblistings.code.tex' version '5.0.2'
 \lst@gtempboxa=\box144
 \lst@token=\toks55
 \lst@length=\count374
-\lst@currlwidth=\dimen316
+\lst@currlwidth=\dimen317
 \lst@column=\count375
 \lst@pos=\count376
-\lst@lostspace=\dimen317
-\lst@width=\dimen318
+\lst@lostspace=\dimen318
+\lst@width=\dimen319
 \lst@newlines=\count377
 \lst@lineno=\count378
-\lst@maxwidth=\dimen319
+\lst@maxwidth=\dimen320
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
@@ -1365,7 +1374,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTpre=\skip163
 \LTpost=\skip164
 \LTchunksize=\count402
-\LTcapwidth=\dimen320
+\LTcapwidth=\dimen321
 \LT@head=\box146
 \LT@firsthead=\box147
 \LT@foot=\box148
@@ -1386,19 +1395,19 @@ Package: glossary-super 2021/11/01 v4.49 (NLCT)
 (/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \c@tracingst=\count407
-\ST@wd=\dimen321
+\ST@wd=\dimen322
 \ST@rightskip=\skip167
 \ST@leftskip=\skip168
 \ST@parfillskip=\skip169
-\ST@pageleft=\dimen322
-\ST@headht=\dimen323
-\ST@tailht=\dimen324
-\ST@pagesofar=\dimen325
-\ST@pboxht=\dimen326
-\ST@lineht=\dimen327
-\ST@prevht=\dimen328
-\ST@toadd=\dimen329
-\ST@dimen=\dimen330
+\ST@pageleft=\dimen323
+\ST@headht=\dimen324
+\ST@tailht=\dimen325
+\ST@pagesofar=\dimen326
+\ST@pboxht=\dimen327
+\ST@lineht=\dimen328
+\ST@prevht=\dimen329
+\ST@toadd=\dimen330
+\ST@dimen=\dimen331
 \ST@pbox=\box151
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
@@ -1416,7 +1425,7 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 \t@pgfplots@toka=\toks65
 \t@pgfplots@tokb=\toks66
 \t@pgfplots@tokc=\toks67
-\pgfplots@tmpa=\dimen331
+\pgfplots@tmpa=\dimen332
 \c@pgfplots@coordindex=\count408
 \c@pgfplots@scanlineindex=\count409
 
@@ -1481,14 +1490,14 @@ e.tex)
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen332
-\pgfdecoratedremainingdistance=\dimen333
-\pgfdecoratedinputsegmentcompleteddistance=\dimen334
-\pgfdecoratedinputsegmentremainingdistance=\dimen335
-\pgf@decorate@distancetomove=\dimen336
+\pgfdecoratedcompleteddistance=\dimen333
+\pgfdecoratedremainingdistance=\dimen334
+\pgfdecoratedinputsegmentcompleteddistance=\dimen335
+\pgfdecoratedinputsegmentremainingdistance=\dimen336
+\pgf@decorate@distancetomove=\dimen337
 \pgf@decorate@repeatstate=\count413
-\pgfdecorationsegmentamplitude=\dimen337
-\pgfdecorationsegmentlength=\dimen338
+\pgfdecorationsegmentamplitude=\dimen338
+\pgfdecorationsegmentlength=\dimen339
 )
 \tikz@lib@dec@box=\box152
 )
@@ -1503,12 +1512,12 @@ decorations.pathreplacing.code.tex))
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
 ntourlua.code.tex)
 \pgfplots@numplots=\count414
-\pgfplots@xmin@reg=\dimen339
-\pgfplots@xmax@reg=\dimen340
-\pgfplots@ymin@reg=\dimen341
-\pgfplots@ymax@reg=\dimen342
-\pgfplots@zmin@reg=\dimen343
-\pgfplots@zmax@reg=\dimen344
+\pgfplots@xmin@reg=\dimen340
+\pgfplots@xmax@reg=\dimen341
+\pgfplots@ymin@reg=\dimen342
+\pgfplots@ymax@reg=\dimen343
+\pgfplots@zmin@reg=\dimen344
+\pgfplots@zmax@reg=\dimen345
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryplotmarks.code.tex
@@ -1625,13 +1634,13 @@ Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen345
-\captionmargin@=\dimen346
-\captionwidth=\dimen347
-\caption@tempdima=\dimen348
-\caption@indent=\dimen349
-\caption@parindent=\dimen350
-\caption@hangindent=\dimen351
+\captionmargin=\dimen346
+\captionmargin@=\dimen347
+\captionwidth=\dimen348
+\caption@tempdima=\dimen349
+\caption@indent=\dimen350
+\caption@parindent=\dimen351
+\caption@hangindent=\dimen352
 Package caption Info: Standard document class detected.
 Package caption Info: french babel package is loaded.
 )
@@ -1664,7 +1673,7 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip171
 \multirow@cntb=\count422
 \multirow@dima=\skip172
-\bigstrutjot=\dimen352
+\bigstrutjot=\dimen353
 )
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/bbold.sty
 Package: bbold 1994/04/06 Bbold symbol package
@@ -1693,12 +1702,12 @@ Package: relsize 2013/03/29 ver 4.1
 \skiplength=\skip179
 \algomargin=\skip180
 \skipalgocfslide=\skip181
-\algowidth=\dimen353
-\inoutsize=\dimen354
-\inoutindent=\dimen355
-\interspacetitleruled=\dimen356
-\interspacealgoruled=\dimen357
-\interspacetitleboxruled=\dimen358
+\algowidth=\dimen354
+\inoutsize=\dimen355
+\inoutindent=\dimen356
+\interspacetitleruled=\dimen357
+\interspacealgoruled=\dimen358
+\interspacetitleboxruled=\dimen359
 \algocf@ruledwidth=\skip182
 \algocf@inoutbox=\box174
 \algocf@inputbox=\box175
@@ -1732,7 +1741,7 @@ File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\arrowsize=\dimen359
+\arrowsize=\dimen360
 ))
 \pgf@layerbox@background=\box182
 \pgf@layerboxsaved@background=\box183
@@ -1824,16 +1833,16 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 \psLoopIndex=\count448
 
 `PSTricks' v3.13  <2022/01/09> (tvz,hv)
-\pst@dima=\dimen360
-\pst@dimb=\dimen361
-\pst@dimc=\dimen362
-\pst@dimd=\dimen363
-\pst@dimg=\dimen364
-\pst@dimh=\dimen365
-\pst@dimm=\dimen366
-\pst@dimn=\dimen367
-\pst@dimo=\dimen368
-\pst@dimp=\dimen369
+\pst@dima=\dimen361
+\pst@dimb=\dimen362
+\pst@dimc=\dimen363
+\pst@dimd=\dimen364
+\pst@dimg=\dimen365
+\pst@dimh=\dimen366
+\pst@dimm=\dimen367
+\pst@dimn=\dimen368
+\pst@dimo=\dimen369
+\pst@dimp=\dimen370
 \pst@hbox=\box187
 \pst@ibox=\box188
 \pst@boxg=\box189
@@ -1852,31 +1861,31 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 --- We are running latex or xelatex ---
 (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.con)
 (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks-color.tex)
-\psunit=\dimen370
-\psxunit=\dimen371
-\psyunit=\dimen372
+\psunit=\dimen371
+\psxunit=\dimen372
+\psyunit=\dimen373
 \pst@C@@rType=\count460
-\pslinewidth=\dimen373
-\psk@startLW=\dimen374
-\psk@endLW=\dimen375
+\pslinewidth=\dimen374
+\psk@startLW=\dimen375
+\psk@endLW=\dimen376
 
 (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks-arrows.tex
-\pshooklength=\dimen376
-\pshookwidth=\dimen377
+\pshooklength=\dimen377
+\pshookwidth=\dimen378
 )
 \pst@customdefs=\toks71
 
 (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks-dots.tex)
-\pslinearc=\dimen378
-\pst@symbolStep=\dimen379
-\pst@symbolWidth=\dimen380
-\pst@symbolLinewidth=\dimen381
+\pslinearc=\dimen379
+\pst@symbolStep=\dimen380
+\pst@symbolWidth=\dimen381
+\pst@symbolLinewidth=\dimen382
 \everypsbox=\toks72
-\psframesep=\dimen382
-\pslabelsep=\dimen383
-\sh@wgridXunit=\dimen384
-\sh@wgridYunit=\dimen385
-\pst@shift=\dimen386
+\psframesep=\dimen383
+\pslabelsep=\dimen384
+\sh@wgridXunit=\dimen385
+\sh@wgridYunit=\dimen386
+\pst@shift=\dimen387
 \ps@imagectr=\count461
 
 (/usr/share/texlive/texmf-dist/tex/generic/pstricks/pstricks.con))
@@ -1930,38 +1939,38 @@ Package: pst-plot 2021/09/23 package wrapper for pst-plot.tex (hv)
 `PST-3d' v1.11, 2010/02/14 (tvz))
 (/usr/share/texlive/texmf-dist/tex/generic/pst-math/pst-math.tex
 `pst-math' v0.64 , (CJ,hv)) `pstricks-add' v3.92, 2021/12/25 (dr,hv)
-\psparallelogramsep=\dimen387
+\psparallelogramsep=\dimen388
 \pst@cntC=\count472
 \pst@stepcount=\count473
-\chart@ColorIndex=\dimen388
-\chart@ColorStep=\dimen389
-\pst@chartHeight=\dimen390
-\pst@chartStackDepth=\dimen391
-\pst@chartStackWidth=\dimen392
+\chart@ColorIndex=\dimen389
+\chart@ColorStep=\dimen390
+\pst@chartHeight=\dimen391
+\pst@chartStackDepth=\dimen392
+\pst@chartStackWidth=\dimen393
 \chart@Toggle=\count474
 \psVectorCtr=\count475
 )
  v1.93, 2021/09/23 (tvz,hv)
-\pstRadUnit=\dimen393
-\pstRadUnitInv=\dimen394
+\pstRadUnit=\dimen394
+\pstRadUnitInv=\dimen395
 \pst@linecnt=\count476
 \RCD@file=\read6
-\psxlabelsep=\dimen395
-\psylabelsep=\dimen396
-\psk@subticksize=\dimen397
-\pst@xticksizeA=\dimen398
-\pst@xticksizeB=\dimen399
-\pst@xticksizeC=\dimen400
-\pst@yticksizeA=\dimen401
-\pst@yticksizeB=\dimen402
-\pst@yticksizeC=\dimen403
+\psxlabelsep=\dimen396
+\psylabelsep=\dimen397
+\psk@subticksize=\dimen398
+\pst@xticksizeA=\dimen399
+\pst@xticksizeB=\dimen400
+\pst@xticksizeC=\dimen401
+\pst@yticksizeA=\dimen402
+\pst@yticksizeB=\dimen403
+\pst@yticksizeC=\dimen404
 \@digitcounter=\count477
-\psk@llx=\dimen404
-\psk@lly=\dimen405
-\psk@urx=\dimen406
-\psk@ury=\dimen407
-\pst@xunit=\dimen408
-\pst@yunit=\dimen409
+\psk@llx=\dimen405
+\psk@lly=\dimen406
+\psk@urx=\dimen407
+\psk@ury=\dimen408
+\pst@xunit=\dimen409
+\pst@yunit=\dimen410
 )
 File: pst-plot.tex 2021/09/23 1.93 `pst-plot' (tvz,hv)
 )
@@ -1987,7 +1996,7 @@ Package: pst-calculate 2019/01/24 v. 0.02(Herbert Voss) Support for caculations
 
 (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2022-02-02 v3.0.46 A comprehensive (SI) units package
-\l__siunitx_angle_tmp_dim=\dimen410
+\l__siunitx_angle_tmp_dim=\dimen411
 \l__siunitx_angle_marker_box=\box190
 \l__siunitx_angle_unit_box=\box191
 \l__siunitx_compound_count_int=\count478
@@ -2002,14 +2011,14 @@ Package: translations 2022/01/04 v1.11 internationalization of LaTeX2e packages
 \l__siunitx_number_round_precision_int=\count482
 \l__siunitx_number_group_minimum_int=\count483
 \l__siunitx_table_tmp_box=\box192
-\l__siunitx_table_tmp_dim=\dimen411
-\l__siunitx_table_column_width_dim=\dimen412
+\l__siunitx_table_tmp_dim=\dimen412
+\l__siunitx_table_column_width_dim=\dimen413
 \l__siunitx_table_integer_box=\box193
 \l__siunitx_table_decimal_box=\box194
 \l__siunitx_table_before_box=\box195
 \l__siunitx_table_after_box=\box196
-\l__siunitx_table_before_dim=\dimen413
-\l__siunitx_table_carry_dim=\dimen414
+\l__siunitx_table_before_dim=\dimen414
+\l__siunitx_table_carry_dim=\dimen415
 \l__siunitx_unit_tmp_int=\count484
 \l__siunitx_unit_position_int=\count485
 \l__siunitx_unit_total_int=\count486
@@ -2044,33 +2053,27 @@ LaTeX Warning: Label `eqn:etude_def_v_second' multiply defined.
 
 LaTeX Warning: Label `eqn:etude_def_v_second@cref' multiply defined.
 
-
-LaTeX Warning: Label `eqn:etude_hypothese_u_second' multiply defined.
-
-
-LaTeX Warning: Label `eqn:etude_hypothese_u_second@cref' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2085,18 +2088,18 @@ LaTeX Font Info:    ... okay on input line 5.
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=455.24411pt
-* \textheight=700.27475pt
+* \textheight=693.34224pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
 * \topmargin=-29.59087pt
 * \headheight=27.12pt
-* \headsep=18.06749pt
-* \topskip=10.0pt
+* \headsep=25.0pt
+* \topskip=9.0pt
 * \footskip=14.22636pt
-* \marginparwidth=115.0pt
-* \marginparsep=7.0pt
+* \marginparwidth=121.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=7.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -2109,13 +2112,13 @@ LaTeX Font Info:    ... okay on input line 5.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count493
-\scratchdimen=\dimen415
+\scratchdimen=\dimen416
 \scratchbox=\box197
 \nofMPsegments=\count494
 \nofMParguments=\count495
 \everyMPshowfont=\toks74
 \MPscratchCnt=\count496
-\MPscratchDim=\dimen416
+\MPscratchDim=\dimen417
 \MPnumerator=\count497
 \makeMPintoPDFobject=\count498
 \everyMPtoPDFconversion=\toks75
@@ -2136,8 +2139,8 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Info: Redefining \degres on input line 5.
-LaTeX Info: Redefining \up on input line 5.
+LaTeX Info: Redefining \degres on input line 6.
+LaTeX Info: Redefining \up on input line 6.
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
@@ -2170,8 +2173,8 @@ Package minitoc(hints) Warning: W0023
 (minitoc(hints))                --- It may be the consequence 
 (minitoc(hints))                of loading the ``hyperref'' package.
 
-Package tocbasic Info: usage of `tocbibind' detected on input line 5.
-Package hyperref Info: Link coloring ON on input line 5.
+Package tocbasic Info: usage of `tocbibind' detected on input line 6.
+Package hyperref Info: Link coloring ON on input line 6.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -2183,9 +2186,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count499
 )
-LaTeX Info: Redefining \ref on input line 5.
-LaTeX Info: Redefining \pageref on input line 5.
-LaTeX Info: Redefining \nameref on input line 5.
+LaTeX Info: Redefining \ref on input line 6.
+LaTeX Info: Redefining \pageref on input line 6.
+LaTeX Info: Redefining \nameref on input line 6.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -2210,7 +2213,7 @@ File: translations-basic-dictionary-french.trsl (french translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `french'. on input line 5.
+or `french'. on input line 6.
  [1
 Non-PDF special ignored!
 <special> header=pstricks.pro
@@ -2246,7 +2249,7 @@ Non-PDF special ignored!
 
 ]
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM main.toc on input line 23.
+(minitoc)             PREPARING MINITOCS FROM main.toc on input line 24.
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc1.
 \openout3 = `main.mtc1'.
@@ -2266,10 +2269,6 @@ Package minitoc Info: I0033
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc5.
 \openout3 = `main.mtc5'.
-
-Package minitoc Info: I0033
-(minitoc)             Writing main.mtc6.
-\openout3 = `main.mtc6'.
 
  (./main.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
@@ -2291,22 +2290,24 @@ LaTeX Font Info:    Trying to load font information for OMX+yhex on input line
 (/usr/share/texlive/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
-) [1
-
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+))
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- (./2-chapters/2-1-introduction.texpdfTeX warning (ext4): destination with the 
-same identifier (name{page.1}) has been already used, duplicate ignored
+
+(./2-chapters/2-1-introduction.texpdfTeX warning (ext4): destination with the s
+ame identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Introduction} [1]pdfTeX warning (ext4): destination with the same 
-identifier (name{page.2}) has been already used, duplicate ignored
+            {Introduction} [1
+
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): dest
+ination with the same identifier (name{page.2}) has been already used, duplicat
+e ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
@@ -2325,16 +2326,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-[3]
-Underfull \hbox (badness 1496) in paragraph at lines 28--29
-[]\T1/cmr/m/n/10 Les mé-thodes SD pour \T1/cmr/m/it/10 Spec-tral Dif-fe-rence \
-T1/cmr/m/n/10 sont des mé-thodes nu-mé-riques ba-sées sur l'ap-
- []
 
-
-Underfull \hbox (badness 3657) in paragraph at lines 28--29
-\T1/cmr/m/n/10 proxi-ma-tion des dé-ri-vées par-tielles à l'aide de fonc-tions 
-de base spec-trale [[],
+Underfull \hbox (badness 4229) in paragraph at lines 22--23
+[]\T1/cmr/m/n/8 Une autre mé-thode nu-mé-rique cou-ram-ment uti-li-sée est la m
+é-thode FEM pour \T1/cmr/m/it/8 Fi-nite Ele-ment Me-thod
  []
 
 
@@ -2342,12 +2337,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-[4] [5]
+[3] [4]
 Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
-[6]
+[5]
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 1
 19.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
@@ -2356,64 +2351,64 @@ Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 124.
 
-<images/P1.pdf, id=447, 479.15009pt x 385.92181pt>
+<images/P1.pdf, id=389, 479.15009pt x 385.92181pt>
 File: images/P1.pdf Graphic file (type pdf)
 <use images/P1.pdf>
 Package pdftex.def Info: images/P1.pdf  used on input line 140.
 (pdftex.def)             Requested size: 119.78722pt x 96.48021pt.
 
-Overfull \vbox (76.08025pt too high) detected at line 140
+Overfull \vbox (80.33026pt too high) detected at line 140
  []
 
-<images/P2.pdf, id=448, 479.15009pt x 385.92181pt>
+<images/P2.pdf, id=390, 479.15009pt x 385.92181pt>
 File: images/P2.pdf Graphic file (type pdf)
 <use images/P2.pdf>
 Package pdftex.def Info: images/P2.pdf  used on input line 140.
 (pdftex.def)             Requested size: 119.78722pt x 96.48021pt.
 
-Overfull \vbox (76.08025pt too high) detected at line 140
+Overfull \vbox (80.33026pt too high) detected at line 140
  []
 
-<images/P3.pdf, id=449, 479.15009pt x 385.92181pt>
+<images/P3.pdf, id=391, 479.15009pt x 385.92181pt>
 File: images/P3.pdf Graphic file (type pdf)
 <use images/P3.pdf>
 Package pdftex.def Info: images/P3.pdf  used on input line 140.
 (pdftex.def)             Requested size: 119.78722pt x 96.48021pt.
 
-Overfull \vbox (76.08025pt too high) detected at line 140
+Overfull \vbox (80.33026pt too high) detected at line 140
  []
 
-<images/Q1.pdf, id=450, 568.52402pt x 568.52402pt>
+<images/Q1.pdf, id=392, 568.52402pt x 568.52402pt>
 File: images/Q1.pdf Graphic file (type pdf)
 <use images/Q1.pdf>
 Package pdftex.def Info: images/Q1.pdf  used on input line 155.
 (pdftex.def)             Requested size: 113.70279pt x 113.70279pt.
 
-Overfull \vbox (93.30283pt too high) detected at line 155
+Overfull \vbox (97.55284pt too high) detected at line 155
  []
 
-<images/Q2.pdf, id=451, 568.52402pt x 568.52402pt>
+<images/Q2.pdf, id=393, 568.52402pt x 568.52402pt>
 File: images/Q2.pdf Graphic file (type pdf)
 <use images/Q2.pdf>
 Package pdftex.def Info: images/Q2.pdf  used on input line 155.
 (pdftex.def)             Requested size: 113.70279pt x 113.70279pt.
 
-Overfull \vbox (93.30283pt too high) detected at line 155
+Overfull \vbox (97.55284pt too high) detected at line 155
  []
 
-<images/Q3.pdf, id=452, 568.52402pt x 568.52402pt>
+<images/Q3.pdf, id=394, 568.52402pt x 568.52402pt>
 File: images/Q3.pdf Graphic file (type pdf)
 <use images/Q3.pdf>
 Package pdftex.def Info: images/Q3.pdf  used on input line 155.
 (pdftex.def)             Requested size: 113.70279pt x 113.70279pt.
 
-Overfull \vbox (93.30283pt too high) detected at line 155
+Overfull \vbox (97.55284pt too high) detected at line 155
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/comparaison_P_1_P_2.png, id=453, 911.65594pt x 617.30624pt>
+<images/comparaison_P_1_P_2.png, id=395, 911.65594pt x 617.30624pt>
 File: images/comparaison_P_1_P_2.png Graphic file (type png)
 <use images/comparaison_P_1_P_2.png>
 Package pdftex.def Info: images/comparaison_P_1_P_2.png  used on input line 174
@@ -2427,7 +2422,7 @@ Overfull \hbox (0.58275pt too wide) in paragraph at lines 174--175
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7] [8 <./images/P1.pdf> <./images/P2.pdf
+[6] [7 <./images/P1.pdf> <./images/P2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/P2.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
@@ -2447,7 +2442,7 @@ le pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/Q3.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] [9 <./images/comparaison_P_1_P_2.png>]
+> <./images/comparaison_P_1_P_2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
@@ -2472,28 +2467,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-[10]
-<images/voronoi_diagram.png, id=549, 336.65775pt x 344.487pt>
+[8]
+<images/voronoi_diagram.png, id=485, 336.65775pt x 344.487pt>
 File: images/voronoi_diagram.png Graphic file (type png)
 <use images/voronoi_diagram.png>
 Package pdftex.def Info: images/voronoi_diagram.png  used on input line 243.
-(pdftex.def)             Requested size: 185.16232pt x 189.46843pt.
-<images/Maillage_delauney.pdf, id=553, 346.92606pt x 339.09615pt>
+(pdftex.def)             Requested size: 201.99619pt x 206.69379pt.
+<images/Maillage_delauney.pdf, id=489, 346.92606pt x 339.09615pt>
 File: images/Maillage_delauney.pdf Graphic file (type pdf)
 <use images/Maillage_delauney.pdf>
 Package pdftex.def Info: images/Maillage_delauney.pdf  used on input line 252.
-(pdftex.def)             Requested size: 208.15723pt x 203.45924pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 3547) in paragraph at lines 257--259
- []\T1/cmr/bx/n/10 L'algorithme de Bowyer-Watson[] \T1/cmr/m/n/10 construit les
- tri-an-gu-la-tions de De-lau-nay par in-duc-tion
- []
-
-
+(pdftex.def)             Requested size: 225.49925pt x 220.40987pt.
+ [9 <./images/voronoi_diagram.png> <./images/Maillage_delauney.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
@@ -2503,7 +2488,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
-[11 <./images/voronoi_diagram.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
@@ -2523,20 +2508,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
-[12 <./images/Maillage_delauney.pdf>]
-<images/moving front method.png, id=602, 780.66656pt x 632.3625pt>
+<images/moving front method.png, id=523, 780.66656pt x 632.3625pt>
 File: images/moving front method.png Graphic file (type png)
 <use images/moving front method.png>
 Package pdftex.def Info: images/moving front method.png  used on input line 291
 .
-(pdftex.def)             Requested size: 273.23738pt x 221.33018pt.
- [13 <./images/moving front method.png>]
-<images/octree decomposition.png, id=619, 447.92343pt x 648.17157pt>
+(pdftex.def)             Requested size: 312.2611pt x 252.94052pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10]
+<images/octree decomposition.png, id=548, 447.92343pt x 648.17157pt>
 File: images/octree decomposition.png Graphic file (type png)
 <use images/octree decomposition.png>
 Package pdftex.def Info: images/octree decomposition.png  used on input line 33
 2.
-(pdftex.def)             Requested size: 268.75612pt x 388.90594pt.
+(pdftex.def)             Requested size: 291.14677pt x 421.30652pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2551,7 +2538,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
-
+[11 <./images/moving front method.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
@@ -2566,7 +2553,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
-<images/Quad_meshes_categories.png, id=624, 86.724pt x 20.4765pt>
+<images/Quad_meshes_categories.png, id=568, 86.724pt x 20.4765pt>
 File: images/Quad_meshes_categories.png Graphic file (type png)
 <use images/Quad_meshes_categories.png>
 Package pdftex.def Info: images/Quad_meshes_categories.png  used on input line 
@@ -2580,7 +2567,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
-[14]
+
 Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
@@ -2590,12 +2577,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 368--369
 
  []
 
-[15 <./images/octree decomposition.png> <./images/Quad_meshes_categories.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
-
+[12 <./images/octree decomposition.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
@@ -2605,7 +2592,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
-<images/tri_to_quad_1.png, id=647, 1097.90175pt x 291.489pt>
+<images/tri_to_quad_1.png, id=580, 1097.90175pt x 291.489pt>
 File: images/tri_to_quad_1.png Graphic file (type png)
 <use images/tri_to_quad_1.png>
 Package pdftex.def Info: images/tri_to_quad_1.png  used on input line 384.
@@ -2615,8 +2602,7 @@ Overfull \hbox (5.87149pt too wide) in paragraph at lines 384--385
  [][] 
  []
 
-[16 <./images/tri_to_quad_1.png>]
-<images/tri_to_quad_2.png, id=666, 1091.87926pt x 286.671pt>
+<images/tri_to_quad_2.png, id=588, 1091.87926pt x 286.671pt>
 File: images/tri_to_quad_2.png Graphic file (type png)
 <use images/tri_to_quad_2.png>
 Package pdftex.def Info: images/tri_to_quad_2.png  used on input line 393.
@@ -2626,7 +2612,7 @@ Overfull \hbox (3.34206pt too wide) in paragraph at lines 393--394
  [][] 
  []
 
-
+[13 <./images/Quad_meshes_categories.png> <./images/tri_to_quad_1.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
@@ -2641,18 +2627,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
-[17 <./images/tri_to_quad_2.png>]
-<images/superpo_grid_1.png, id=689, 1025.63174pt x 439.6425pt>
+<images/superpo_grid_1.png, id=607, 1025.63174pt x 439.6425pt>
 File: images/superpo_grid_1.png Graphic file (type png)
 <use images/superpo_grid_1.png>
 Package pdftex.def Info: images/superpo_grid_1.png  used on input line 422.
-(pdftex.def)             Requested size: 410.24542pt x 175.85388pt.
-<images/superpo_grid_2.png, id=695, 1087.06125pt x 438.438pt>
+(pdftex.def)             Requested size: 456.41252pt x 195.64365pt.
+
+Overfull \hbox (1.16841pt too wide) in paragraph at lines 422--423
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/superpo_grid_2.png, id=613, 1087.06125pt x 438.438pt>
 File: images/superpo_grid_2.png Graphic file (type png)
 <use images/superpo_grid_2.png>
 Package pdftex.def Info: images/superpo_grid_2.png  used on input line 431.
-(pdftex.def)             Requested size: 434.81679pt x 175.37209pt.
- [18 <./images/superpo_grid_1.png> <./images/superpo_grid_2.png>]
+(pdftex.def)             Requested size: 451.12201pt x 181.94836pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 <./images/tri_to_quad_2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
@@ -2687,7 +2683,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 453--454
 
  []
 
-<images/median_axis.pdf, id=714, 1077.89272pt x 862.11348pt>
+[15 <./images/superpo_grid_1.png> <./images/superpo_grid_2.png>]
+<images/median_axis.pdf, id=648, 1077.89272pt x 862.11348pt>
 File: images/median_axis.pdf Graphic file (type pdf)
 <use images/median_axis.pdf>
 Package pdftex.def Info: images/median_axis.pdf  used on input line 460.
@@ -2697,7 +2694,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 470--471
 
  []
@@ -2712,12 +2709,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 474--475
 
  []
 
-<images/step_front_advancing.png, id=733, 728.7225pt x 368.37625pt>
+<images/step_front_advancing.png, id=656, 728.7225pt x 368.37625pt>
 File: images/step_front_advancing.png Graphic file (type png)
 <use images/step_front_advancing.png>
 Package pdftex.def Info: images/step_front_advancing.png  used on input line 48
 0.
-(pdftex.def)             Requested size: 437.23688pt x 221.02744pt.
+(pdftex.def)             Requested size: 451.80328pt x 228.3909pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2731,37 +2728,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 487--488
 
  []
 
-
+[16 <./images/median_axis.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 493--494
 
  []
 
-[20 <./images/median_axis.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 498--500
 
  []
 
-[21 <./images/step_front_advancing.png>]
-<images/stretch.pdf, id=791, 1585.925pt x 546.04pt>
+[17 <./images/step_front_advancing.png>]
+<images/stretch.pdf, id=720, 1585.925pt x 546.04pt>
 File: images/stretch.pdf Graphic file (type pdf)
 <use images/stretch.pdf>
 Package pdftex.def Info: images/stretch.pdf  used on input line 527.
-(pdftex.def)             Requested size: 285.45418pt x 98.28296pt.
-<images/new_cercle.png, id=792, 565.11125pt x 564.1075pt>
+(pdftex.def)             Requested size: 299.73174pt x 103.19876pt.
+<images/new_cercle.png, id=721, 565.11125pt x 564.1075pt>
 File: images/new_cercle.png Graphic file (type png)
 <use images/new_cercle.png>
 Package pdftex.def Info: images/new_cercle.png  used on input line 528.
-(pdftex.def)             Requested size: 124.32486pt x 124.10402pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[22]
+(pdftex.def)             Requested size: 138.44914pt x 138.20323pt.
+ [18 <./images/stretch.pdf> <./images/new_cercle.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 541--542
 
  []
 
-[23 <./images/stretch.pdf> <./images/new_cercle.png>]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
@@ -2771,83 +2764,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 564--565
 
  []
 
-) (./2-chapters/2-2-theoritical.tex [24]
+) (./2-chapters/2-2-theoritical.tex [20]
 Chapitre 2.
 \openout3 = `main.mtc'.
 
 \openout3 = `main.mtc'.
 
-(./main.mtc2) [25
+(./main.mtc2) [21
 
 
 ]
-<images/cross.pdf, id=863, 320.1561pt x 320.1561pt>
+<images/cross.pdf, id=794, 320.1561pt x 320.1561pt>
 File: images/cross.pdf Graphic file (type pdf)
 <use images/cross.pdf>
-Package pdftex.def Info: images/cross.pdf  used on input line 43.
+Package pdftex.def Info: images/cross.pdf  used on input line 44.
 (pdftex.def)             Requested size: 160.07765pt x 160.07765pt.
- [26 <./images/cross.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
-<images/repre_field.pdf, id=891, 734.98589pt x 719.08652pt>
+[22 <./images/cross.pdf>]
+<images/repre_field.pdf, id=824, 827.97331pt x 819.06pt>
 File: images/repre_field.pdf Graphic file (type pdf)
 <use images/repre_field.pdf>
-Package pdftex.def Info: images/repre_field.pdf  used on input line 119.
-(pdftex.def)             Requested size: 220.49747pt x 215.72762pt.
-<images/cross_from_repre_field.pdf, id=892, 725.5908pt x 725.5908pt>
+Package pdftex.def Info: images/repre_field.pdf  used on input line 121.
+(pdftex.def)             Requested size: 223.55579pt x 221.14915pt.
+<images/cross_from_repre_field.pdf, id=825, 846.2817pt x 846.0408pt>
 File: images/cross_from_repre_field.pdf Graphic file (type pdf)
 <use images/cross_from_repre_field.pdf>
 Package pdftex.def Info: images/cross_from_repre_field.pdf  used on input line 
-121.
-(pdftex.def)             Requested size: 217.67892pt x 217.67892pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+123.
+(pdftex.def)             Requested size: 228.4991pt x 228.43407pt.
 File: images/cross_from_repre_field.pdf Graphic file (type pdf)
 <use images/cross_from_repre_field.pdf>
 Package pdftex.def Info: images/cross_from_repre_field.pdf  used on input line 
-128.
-(pdftex.def)             Requested size: 141.49516pt x 141.49516pt.
-<images/scal_field.pdf, id=893, 783.92876pt x 684.5575pt>
+130.
+(pdftex.def)             Requested size: 144.71825pt x 144.67706pt.
+<images/scal_field.pdf, id=826, 897.1116pt x 810.86943pt>
 File: images/scal_field.pdf Graphic file (type pdf)
 <use images/scal_field.pdf>
-Package pdftex.def Info: images/scal_field.pdf  used on input line 130.
-(pdftex.def)             Requested size: 160.70644pt x 140.33519pt.
-<images/result_field.pdf, id=894, 723.70375pt x 725.71124pt>
+Package pdftex.def Info: images/scal_field.pdf  used on input line 132.
+(pdftex.def)             Requested size: 157.88664pt x 142.70851pt.
+<images/result_field.pdf, id=827, 848.20888pt x 848.20888pt>
 File: images/result_field.pdf Graphic file (type pdf)
 <use images/result_field.pdf>
-Package pdftex.def Info: images/result_field.pdf  used on input line 132.
-(pdftex.def)             Requested size: 141.12718pt x 141.51866pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/align_bord.pdf, id=897, 788.7066pt x 789.91112pt>
-File: images/align_bord.pdf Graphic file (type pdf)
-<use images/align_bord.pdf>
-Package pdftex.def Info: images/align_bord.pdf  used on input line 155.
-(pdftex.def)             Requested size: 276.05144pt x 276.47302pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[27]
-Underfull \hbox (badness 1194) in paragraph at lines 179--180
-[]\T1/cmr/m/n/10 Existence : L'en-semble $[] \OMS/cmsy/m/n/10 \ []$ \T1/cmr/m/n
-/10 est non vide. En ef-fet, sup-po-sons que
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
-
- []
-
-[28 <./images/repre_field.pdf> <./images/cross_from_repre_field.pdf
+Package pdftex.def Info: images/result_field.pdf  used on input line 134.
+(pdftex.def)             Requested size: 145.0478pt x 145.0478pt.
+ [23 <./images/repre_field.pdf> <./images/cross_from_repre_field.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/cross_from_repre_field.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
@@ -2860,44 +2824,39 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/scal_field.pdf): PDF inclusion
 pdfTeX warning: /usr/bin/pdflatex (file ./images/result_field.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
-
- []
-
-<images/cross_ang_field.pdf, id=946, 842.14626pt x 724.7075pt>
+<images/align_bord.pdf, id=862, 850.13612pt x 851.09969pt>
+File: images/align_bord.pdf Graphic file (type pdf)
+<use images/align_bord.pdf>
+Package pdftex.def Info: images/align_bord.pdf  used on input line 157.
+(pdftex.def)             Requested size: 272.04912pt x 272.35747pt.
+ [24 <./images/align_bord.pdf>]
+<images/cross_ang_field.pdf, id=881, 842.14626pt x 724.7075pt>
 File: images/cross_ang_field.pdf Graphic file (type pdf)
 <use images/cross_ang_field.pdf>
-Package pdftex.def Info: images/cross_ang_field.pdf  used on input line 217.
+Package pdftex.def Info: images/cross_ang_field.pdf  used on input line 214.
 (pdftex.def)             Requested size: 294.7556pt x 253.65143pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[29 <./images/align_bord.pdf>] [30 <./images/cross_ang_field.pdf>] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 341--344
+ [25 <./images/cross_ang_field.pdf>] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 338--341
 
  []
 
-[32]
-<images/index_-025.pdf, id=1011, 593.3367pt x 595.50484pt>
+[27]
+<images/index_-025.pdf, id=937, 845.07718pt x 847.00443pt>
 File: images/index_-025.pdf Graphic file (type pdf)
 <use images/index_-025.pdf>
-Package pdftex.def Info: images/index_-025.pdf  used on input line 451.
-(pdftex.def)             Requested size: 148.93134pt x 149.47556pt.
-<images/index_025.pdf, id=1012, 591.8913pt x 595.50484pt>
+Package pdftex.def Info: images/index_-025.pdf  used on input line 449.
+(pdftex.def)             Requested size: 149.1544pt x 149.49457pt.
+<images/index_025.pdf, id=938, 844.11362pt x 849.1725pt>
 File: images/index_025.pdf Graphic file (type pdf)
 <use images/index_025.pdf>
-Package pdftex.def Info: images/index_025.pdf  used on input line 453.
-(pdftex.def)             Requested size: 148.56853pt x 149.47556pt.
-<images/index_1.pdf, id=1013, 594.7821pt x 595.50484pt>
+Package pdftex.def Info: images/index_025.pdf  used on input line 451.
+(pdftex.def)             Requested size: 148.98434pt x 149.87723pt.
+<images/index_1.pdf, id=939, 850.13612pt x 851.09969pt>
 File: images/index_1.pdf Graphic file (type pdf)
 <use images/index_1.pdf>
-Package pdftex.def Info: images/index_1.pdf  used on input line 455.
-(pdftex.def)             Requested size: 149.29414pt x 149.47556pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[33] [34 <./images/index_-025.pdf> <./images/index_025.pdf
+Package pdftex.def Info: images/index_1.pdf  used on input line 453.
+(pdftex.def)             Requested size: 150.0473pt x 150.21738pt.
+ [28 <./images/index_-025.pdf> <./images/index_025.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/index_025.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
@@ -2906,30 +2865,25 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/index_025.pdf): PDF inclusion:
 pdfTeX warning: /usr/bin/pdflatex (file ./images/index_1.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
 >]
-<images/Poincare_etendu.pdf, id=1058, 607.79073pt x 428.3202pt>
+<images/Poincare_etendu.pdf, id=976, 607.79073pt x 428.3202pt>
 File: images/Poincare_etendu.pdf Graphic file (type pdf)
 <use images/Poincare_etendu.pdf>
-Package pdftex.def Info: images/Poincare_etendu.pdf  used on input line 499.
-(pdftex.def)             Requested size: 152.5594pt x 107.51114pt.
- [35 <./images/Poincare_etendu.pdf>]
-<images/streamline_construction.pdf, id=1078, 394.5942pt x 330.27391pt>
+Package pdftex.def Info: images/Poincare_etendu.pdf  used on input line 497.
+(pdftex.def)             Requested size: 212.72993pt x 149.9143pt.
+ [29 <./images/Poincare_etendu.pdf>]
+<images/streamline_construction.pdf, id=998, 750.64442pt x 461.3235pt>
 File: images/streamline_construction.pdf Graphic file (type pdf)
 <use images/streamline_construction.pdf>
 Package pdftex.def Info: images/streamline_construction.pdf  used on input line
- 627.
-(pdftex.def)             Requested size: 177.56573pt x 148.62187pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 648--650
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 651--652
+ 625.
+(pdftex.def)             Requested size: 337.78687pt x 207.59366pt.
+ [30 <./images/streamline_construction.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 650--652
 
  []
 
-[36 <./images/streamline_construction.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
@@ -2939,122 +2893,158 @@ Underfull \hbox (badness 10000) in paragraph at lines 670--671
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--672
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 672--673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 696--699
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 718--729
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--733
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
+
+ []
+
+<images/illustr_etoilage.pdf, id=1026, 501.072pt x 546.12032pt>
+File: images/illustr_etoilage.pdf Graphic file (type pdf)
+<use images/illustr_etoilage.pdf>
+Package pdftex.def Info: images/illustr_etoilage.pdf  used on input line 702.
+(pdftex.def)             Requested size: 200.42525pt x 218.44424pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 742--743
-
- []
-
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
+Underfull \hbox (badness 10000) in paragraph at lines 711--712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--775
+Underfull \hbox (badness 10000) in paragraph at lines 712--713
+
+ []
+
+<images/v_bar_almost_continuous_++.pdf, id=1028, 984.31741pt x 794.24733pt>
+File: images/v_bar_almost_continuous_++.pdf Graphic file (type pdf)
+<use images/v_bar_almost_continuous_++.pdf>
+Package pdftex.def Info: images/v_bar_almost_continuous_++.pdf  used on input l
+ine 716.
+(pdftex.def)             Requested size: 344.51625pt x 277.99072pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[31] [32 <./images/illustr_etoilage.pdf> <./images/v_bar_almost_continuous_++.p
+df
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/v_bar_almost_continuous_++.pdf
+): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 741--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--775
+Underfull \hbox (badness 10000) in paragraph at lines 754--756
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--775
-
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 804--805
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 807--808
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
 
  []
 
-[40] [41]
-<images/sepa_5.pdf, id=1155, 798.985pt x 799.98875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--770
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--778
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--778
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--778
+
+ []
+
+[33] [34]
+<images/sepa_5.pdf, id=1091, 798.985pt x 799.98875pt>
 File: images/sepa_5.pdf Graphic file (type pdf)
 <use images/sepa_5.pdf>
-Package pdftex.def Info: images/sepa_5.pdf  used on input line 894.
+Package pdftex.def Info: images/sepa_5.pdf  used on input line 880.
 (pdftex.def)             Requested size: 225.31136pt x 225.59442pt.
-<images/sepa_3.pdf, id=1156, 798.985pt x 799.98875pt>
+<images/sepa_3.pdf, id=1092, 798.985pt x 799.98875pt>
 File: images/sepa_3.pdf Graphic file (type pdf)
 <use images/sepa_3.pdf>
-Package pdftex.def Info: images/sepa_3.pdf  used on input line 896.
+Package pdftex.def Info: images/sepa_3.pdf  used on input line 882.
 (pdftex.def)             Requested size: 225.31136pt x 225.59442pt.
- [42 <./images/sepa_5.pdf> <./images/sepa_3.pdf
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35] [36 <./images/sepa_5.pdf> <./images/sepa_3.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/sepa_3.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 954--955
+Underfull \hbox (badness 10000) in paragraph at lines 940--941
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 955--957
+Underfull \hbox (badness 10000) in paragraph at lines 941--943
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 957--958
+Underfull \hbox (badness 10000) in paragraph at lines 943--944
 
  []
 
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 958--959
+
+Underfull \hbox (badness 10000) in paragraph at lines 944--945
 
  []
 
-<images/demi_disc_align_first.pdf, id=1202, 1533.73pt x 806.01125pt>
+<images/demi_disc_align_first.pdf, id=1138, 1533.73pt x 806.01125pt>
 File: images/demi_disc_align_first.pdf Graphic file (type pdf)
 <use images/demi_disc_align_first.pdf>
 Package pdftex.def Info: images/demi_disc_align_first.pdf  used on input line 9
-70.
+57.
 (pdftex.def)             Requested size: 291.35594pt x 153.10683pt.
-<images/demi_disc_align_second.pdf, id=1203, 1533.73pt x 806.01125pt>
+<images/demi_disc_align_second.pdf, id=1139, 1533.73pt x 806.01125pt>
 File: images/demi_disc_align_second.pdf Graphic file (type pdf)
 <use images/demi_disc_align_second.pdf>
 Package pdftex.def Info: images/demi_disc_align_second.pdf  used on input line 
-976.
+963.
 (pdftex.def)             Requested size: 291.35594pt x 153.10683pt.
-<images/demi_disc_align_third.pdf, id=1204, 1475.5125pt x 739.76375pt>
+<images/demi_disc_align_third.pdf, id=1140, 1475.5125pt x 739.76375pt>
 File: images/demi_disc_align_third.pdf Graphic file (type pdf)
 <use images/demi_disc_align_third.pdf>
 Package pdftex.def Info: images/demi_disc_align_third.pdf  used on input line 9
-82.
+69.
 (pdftex.def)             Requested size: 291.35594pt x 146.06505pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -3068,14 +3058,14 @@ f>
 (epstopdf)                    size: 44360 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/demiDiscValProp-eps
 -converted-to.pdf images/demiDiscValProp.eps>
-(epstopdf)             \includegraphics on input line 998.
+(epstopdf)             \includegraphics on input line 985.
 Package epstopdf Info: Output file is already uptodate.
-<images/demiDiscValProp-eps-converted-to.pdf, id=1206, 1542.76375pt x 774.895pt
+<images/demiDiscValProp-eps-converted-to.pdf, id=1142, 1542.76375pt x 774.895pt
 >
 File: images/demiDiscValProp-eps-converted-to.pdf Graphic file (type pdf)
 <use images/demiDiscValProp-eps-converted-to.pdf>
 Package pdftex.def Info: images/demiDiscValProp-eps-converted-to.pdf  used on i
-nput line 998.
+nput line 985.
 (pdftex.def)             Requested size: 295.90588pt x 148.6268pt.
 Package epstopdf Info: Source file: <images/demiDiscValPropSheet.eps>
 (epstopdf)                    date: 2023-12-13 08:40:40
@@ -3086,28 +3076,49 @@ to.pdf>
 (epstopdf)                    size: 173339 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/demiDiscValPropShee
 t-eps-converted-to.pdf images/demiDiscValPropSheet.eps>
-(epstopdf)             \includegraphics on input line 1004.
+(epstopdf)             \includegraphics on input line 991.
 Package epstopdf Info: Output file is already uptodate.
-<images/demiDiscValPropSheet-eps-converted-to.pdf, id=1207, 359.3425pt x 180.67
+<images/demiDiscValPropSheet-eps-converted-to.pdf, id=1143, 359.3425pt x 180.67
 5pt>
 File: images/demiDiscValPropSheet-eps-converted-to.pdf Graphic file (type pdf)
 <use images/demiDiscValPropSheet-eps-converted-to.pdf>
 Package pdftex.def Info: images/demiDiscValPropSheet-eps-converted-to.pdf  used
- on input line 1004.
+ on input line 991.
 (pdftex.def)             Requested size: 341.43307pt x 171.68161pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/gagaga.pdf, id=1210, 472.76625pt x 181.67876pt>
+<images/gagaga.pdf, id=1146, 472.76625pt x 181.67876pt>
 File: images/gagaga.pdf Graphic file (type pdf)
 <use images/gagaga.pdf>
-Package pdftex.def Info: images/gagaga.pdf  used on input line 1019.
+Package pdftex.def Info: images/gagaga.pdf  used on input line 1006.
 (pdftex.def)             Requested size: 378.2135pt x 145.34319pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44] [45 <./images/demi_disc_align_first.pdf> <./images/demi_disc_align_second.
-pdf
+<images/demi_disc_first_phi_first.pdf, id=1154, 1468.48625pt x 770.88pt>
+File: images/demi_disc_first_phi_first.pdf Graphic file (type pdf)
+<use images/demi_disc_first_phi_first.pdf>
+Package pdftex.def Info: images/demi_disc_first_phi_first.pdf  used on input li
+ne 1029.
+(pdftex.def)             Requested size: 295.90588pt x 155.326pt.
+<images/demi_disc_first_phi_second.pdf, id=1155, 1467.4825pt x 770.88pt>
+File: images/demi_disc_first_phi_second.pdf Graphic file (type pdf)
+<use images/demi_disc_first_phi_second.pdf>
+Package pdftex.def Info: images/demi_disc_first_phi_second.pdf  used on input l
+ine 1035.
+(pdftex.def)             Requested size: 295.90588pt x 155.43187pt.
+<images/demi_disc_first_phi_third.pdf, id=1156, 1411.2725pt x 709.65125pt>
+File: images/demi_disc_first_phi_third.pdf Graphic file (type pdf)
+<use images/demi_disc_first_phi_third.pdf>
+Package pdftex.def Info: images/demi_disc_first_phi_third.pdf  used on input li
+ne 1041.
+(pdftex.def)             Requested size: 295.90588pt x 148.79292pt.
+[37]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[38 <./images/demi_disc_align_first.pdf> <./images/demi_disc_align_second.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_align_second.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
@@ -3116,31 +3127,28 @@ DF inclusion: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_align_third.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
 >]
-<images/demi_disc_first_phi_first.pdf, id=1254, 1468.48625pt x 770.88pt>
-File: images/demi_disc_first_phi_first.pdf Graphic file (type pdf)
-<use images/demi_disc_first_phi_first.pdf>
-Package pdftex.def Info: images/demi_disc_first_phi_first.pdf  used on input li
-ne 1042.
-(pdftex.def)             Requested size: 295.90588pt x 155.326pt.
-<images/demi_disc_first_phi_second.pdf, id=1255, 1467.4825pt x 770.88pt>
-File: images/demi_disc_first_phi_second.pdf Graphic file (type pdf)
-<use images/demi_disc_first_phi_second.pdf>
-Package pdftex.def Info: images/demi_disc_first_phi_second.pdf  used on input l
-ine 1048.
-(pdftex.def)             Requested size: 295.90588pt x 155.43187pt.
-<images/demi_disc_first_phi_third.pdf, id=1256, 1411.2725pt x 709.65125pt>
-File: images/demi_disc_first_phi_third.pdf Graphic file (type pdf)
-<use images/demi_disc_first_phi_third.pdf>
-Package pdftex.def Info: images/demi_disc_first_phi_third.pdf  used on input li
-ne 1054.
-(pdftex.def)             Requested size: 295.90588pt x 148.79292pt.
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1061
+
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1063
 
-[46 <./images/demiDiscValProp-eps-converted-to.pdf> <./images/demiDiscValPropSh
-eet-eps-converted-to.pdf> <./images/gagaga.pdf>] [47 <./images/demi_disc_first_
-phi_first.pdf> <./images/demi_disc_first_phi_second.pdf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1063--1064
+
+ []
+
+[39 <./images/demiDiscValProp-eps-converted-to.pdf> <./images/demiDiscValPropSh
+eet-eps-converted-to.pdf> <./images/gagaga.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1072
+
+ []
+
+[40 <./images/demi_disc_first_phi_first.pdf> <./images/demi_disc_first_phi_seco
+nd.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_first_phi_second.pdf
 ): PDF inclusion: multiple pdfs with page group included in a single page
@@ -3149,64 +3157,103 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_first_phi_second.pdf
 pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_first_phi_third.pdf)
 : PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1088
-
- []
-
-<images/demi_disc_second_phi_first.pdf, id=1309, 1495.5875pt x 785.93625pt>
+<images/demi_disc_second_phi_first.pdf, id=1250, 1495.5875pt x 785.93625pt>
 File: images/demi_disc_second_phi_first.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_first.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_first.pdf  used on input l
-ine 1118.
+ine 1102.
 (pdftex.def)             Requested size: 295.90588pt x 155.49353pt.
-<images/demi_disc_second_phi_second.pdf, id=1312, 1475.5125pt x 739.76375pt>
+<images/demi_disc_second_phi_second.pdf, id=1253, 1475.5125pt x 739.76375pt>
 File: images/demi_disc_second_phi_second.pdf Graphic file (type pdf)
 <use images/demi_disc_second_phi_second.pdf>
 Package pdftex.def Info: images/demi_disc_second_phi_second.pdf  used on input 
-line 1124.
+line 1108.
 (pdftex.def)             Requested size: 295.90588pt x 148.3452pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1136--1137
+Underfull \hbox (badness 10000) in paragraph at lines 1120--1121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
 
  []
 
-[48]
-<images/rect_demi_disc_first.pdf, id=1339, 1361.085pt x 838.13126pt>
+[41 <./images/demi_disc_second_phi_first.pdf> <./images/demi_disc_second_phi_se
+cond.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_second_phi_second.pd
+f): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<images/rect_demi_disc_first.pdf, id=1293, 1361.085pt x 838.13126pt>
 File: images/rect_demi_disc_first.pdf Graphic file (type pdf)
 <use images/rect_demi_disc_first.pdf>
 Package pdftex.def Info: images/rect_demi_disc_first.pdf  used on input line 11
-66.
+50.
 (pdftex.def)             Requested size: 264.0424pt x 162.58447pt.
-<images/rect_demi_disc_second.pdf, id=1340, 1385.175pt x 857.2025pt>
+<images/rect_demi_disc_second.pdf, id=1294, 1385.175pt x 857.2025pt>
 File: images/rect_demi_disc_second.pdf Graphic file (type pdf)
 <use images/rect_demi_disc_second.pdf>
 Package pdftex.def Info: images/rect_demi_disc_second.pdf  used on input line 1
-172.
+156.
 (pdftex.def)             Requested size: 264.0424pt x 163.39336pt.
-<images/rect_demi_disc_third.pdf, id=1341, 1302.8675pt x 783.92876pt>
+<images/rect_demi_disc_third.pdf, id=1295, 1302.8675pt x 783.92876pt>
 File: images/rect_demi_disc_third.pdf Graphic file (type pdf)
 <use images/rect_demi_disc_third.pdf>
 Package pdftex.def Info: images/rect_demi_disc_third.pdf  used on input line 11
-78.
+62.
 (pdftex.def)             Requested size: 264.0424pt x 158.86432pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[49 <./images/demi_disc_second_phi_first.pdf> <./images/demi_disc_second_phi_se
-cond.pdf
+<images/carre_demi_disc_vide_mauvais_first.pdf, id=1303, 800.9925pt x 797.98125
+pt>
+File: images/carre_demi_disc_vide_mauvais_first.pdf Graphic file (type pdf)
+<use images/carre_demi_disc_vide_mauvais_first.pdf>
+Package pdftex.def Info: images/carre_demi_disc_vide_mauvais_first.pdf  used on
+ input line 1183.
+(pdftex.def)             Requested size: 225.3436pt x 224.49255pt.
+<images/carre_demi_disc_vide_mauvais_second.pdf, id=1306, 803.0pt x 801.99625pt
+>
+File: images/carre_demi_disc_vide_mauvais_second.pdf Graphic file (type pdf)
+<use images/carre_demi_disc_vide_mauvais_second.pdf>
+Package pdftex.def Info: images/carre_demi_disc_vide_mauvais_second.pdf  used o
+n input line 1189.
+(pdftex.def)             Requested size: 225.3436pt x 225.05914pt.
+<images/carre_demi_disc_vide_mauvais_third.pdf, id=1307, 770.88pt x 769.87625pt
+>
+File: images/carre_demi_disc_vide_mauvais_third.pdf Graphic file (type pdf)
+<use images/carre_demi_disc_vide_mauvais_third.pdf>
+Package pdftex.def Info: images/carre_demi_disc_vide_mauvais_third.pdf  used on
+ input line 1195.
+(pdftex.def)             Requested size: 227.62206pt x 227.32298pt.
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/demi_disc_second_phi_second.pd
-f): PDF inclusion: multiple pdfs with page group included in a single page
->] [50 <./images/rect_demi_disc_first.pdf> <./images/rect_demi_disc_second.pdf
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/carre_demi_disc_vide_bon_first.pdf, id=1315, 800.9925pt x 801.99625pt>
+File: images/carre_demi_disc_vide_bon_first.pdf Graphic file (type pdf)
+<use images/carre_demi_disc_vide_bon_first.pdf>
+Package pdftex.def Info: images/carre_demi_disc_vide_bon_first.pdf  used on inp
+ut line 1224.
+(pdftex.def)             Requested size: 225.3436pt x 225.62207pt.
+<images/carre_demi_disc_vide_bon_second.pdf, id=1318, 803.0pt x 801.99625pt>
+File: images/carre_demi_disc_vide_bon_second.pdf Graphic file (type pdf)
+<use images/carre_demi_disc_vide_bon_second.pdf>
+Package pdftex.def Info: images/carre_demi_disc_vide_bon_second.pdf  used on in
+put line 1230.
+(pdftex.def)             Requested size: 225.3436pt x 225.05914pt.
+<images/carre_demi_disc_vide_bon_third.pdf, id=1319, 770.88pt x 769.87625pt>
+File: images/carre_demi_disc_vide_bon_third.pdf Graphic file (type pdf)
+<use images/carre_demi_disc_vide_bon_third.pdf>
+Package pdftex.def Info: images/carre_demi_disc_vide_bon_third.pdf  used on inp
+ut line 1236.
+(pdftex.def)             Requested size: 227.62206pt x 227.32298pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42] [43 <./images/rect_demi_disc_first.pdf> <./images/rect_demi_disc_second.pd
+f
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/rect_demi_disc_second.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
@@ -3215,54 +3262,17 @@ F inclusion: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./images/rect_demi_disc_third.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
 >]
-<images/carre_demi_disc_vide_mauvais_first.pdf, id=1396, 800.9925pt x 797.98125
-pt>
-File: images/carre_demi_disc_vide_mauvais_first.pdf Graphic file (type pdf)
-<use images/carre_demi_disc_vide_mauvais_first.pdf>
-Package pdftex.def Info: images/carre_demi_disc_vide_mauvais_first.pdf  used on
- input line 1199.
-(pdftex.def)             Requested size: 225.3436pt x 224.49255pt.
-<images/carre_demi_disc_vide_mauvais_second.pdf, id=1399, 803.0pt x 801.99625pt
->
-File: images/carre_demi_disc_vide_mauvais_second.pdf Graphic file (type pdf)
-<use images/carre_demi_disc_vide_mauvais_second.pdf>
-Package pdftex.def Info: images/carre_demi_disc_vide_mauvais_second.pdf  used o
-n input line 1205.
-(pdftex.def)             Requested size: 225.3436pt x 225.05914pt.
-<images/carre_demi_disc_vide_mauvais_third.pdf, id=1400, 770.88pt x 769.87625pt
->
-File: images/carre_demi_disc_vide_mauvais_third.pdf Graphic file (type pdf)
-<use images/carre_demi_disc_vide_mauvais_third.pdf>
-Package pdftex.def Info: images/carre_demi_disc_vide_mauvais_third.pdf  used on
- input line 1211.
-(pdftex.def)             Requested size: 227.62206pt x 227.32298pt.
+<images/LS89_bis.pdf, id=1376, 884.30376pt x 512.91624pt>
+File: images/LS89_bis.pdf Graphic file (type pdf)
+<use images/LS89_bis.pdf>
+Package pdftex.def Info: images/LS89_bis.pdf  used on input line 1273.
+(pdftex.def)             Requested size: 442.1508pt x 256.45749pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/carre_demi_disc_vide_bon_first.pdf, id=1408, 800.9925pt x 801.99625pt>
-File: images/carre_demi_disc_vide_bon_first.pdf Graphic file (type pdf)
-<use images/carre_demi_disc_vide_bon_first.pdf>
-Package pdftex.def Info: images/carre_demi_disc_vide_bon_first.pdf  used on inp
-ut line 1240.
-(pdftex.def)             Requested size: 225.3436pt x 225.62207pt.
-<images/carre_demi_disc_vide_bon_second.pdf, id=1411, 803.0pt x 801.99625pt>
-File: images/carre_demi_disc_vide_bon_second.pdf Graphic file (type pdf)
-<use images/carre_demi_disc_vide_bon_second.pdf>
-Package pdftex.def Info: images/carre_demi_disc_vide_bon_second.pdf  used on in
-put line 1246.
-(pdftex.def)             Requested size: 225.3436pt x 225.05914pt.
-<images/carre_demi_disc_vide_bon_third.pdf, id=1412, 770.88pt x 769.87625pt>
-File: images/carre_demi_disc_vide_bon_third.pdf Graphic file (type pdf)
-<use images/carre_demi_disc_vide_bon_third.pdf>
-Package pdftex.def Info: images/carre_demi_disc_vide_bon_third.pdf  used on inp
-ut line 1252.
-(pdftex.def)             Requested size: 227.62206pt x 227.32298pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[51] [52 <./images/carre_demi_disc_vide_mauvais_first.pdf> <./images/carre_demi
-_disc_vide_mauvais_second.pdf
+[44 <./images/carre_demi_disc_vide_mauvais_first.pdf> <./images/carre_demi_disc
+_vide_mauvais_second.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/carre_demi_disc_vide_mauvais_s
 econd.pdf): PDF inclusion: multiple pdfs with page group included in a single p
@@ -3272,12 +3282,8 @@ age
 pdfTeX warning: /usr/bin/pdflatex (file ./images/carre_demi_disc_vide_mauvais_t
 hird.pdf): PDF inclusion: multiple pdfs with page group included in a single pa
 ge
->]
-Overfull \vbox (13.53044pt too high) has occurred while \output is active []
-
-
-[53 <./images/carre_demi_disc_vide_bon_first.pdf> <./images/carre_demi_disc_vid
-e_bon_second.pdf
+>] [45 <./images/carre_demi_disc_vide_bon_first.pdf> <./images/carre_demi_disc_
+vide_bon_second.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/carre_demi_disc_vide_bon_secon
 d.pdf): PDF inclusion: multiple pdfs with page group included in a single page
@@ -3285,168 +3291,129 @@ d.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/carre_demi_disc_vide_bon_third
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<images/LS89_bis.pdf, id=1489, 884.30376pt x 512.91624pt>
-File: images/LS89_bis.pdf Graphic file (type pdf)
-<use images/LS89_bis.pdf>
-Package pdftex.def Info: images/LS89_bis.pdf  used on input line 1289.
-(pdftex.def)             Requested size: 442.1508pt x 256.45749pt.
- [54 <./images/LS89_bis.pdf>] [55]
-Underfull \hbox (badness 10000) in paragraph at lines 1443--1446
+>] [46 <./images/LS89_bis.pdf>] [47]
+Underfull \hbox (badness 10000) in paragraph at lines 1413--1416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1443--1446
-
- []
-
-[56]
-Underfull \hbox (badness 10000) in paragraph at lines 1447--1448
+Underfull \hbox (badness 10000) in paragraph at lines 1413--1416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1473--1475
-
- []
-
-[57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 1611--1614
+Underfull \hbox (badness 10000) in paragraph at lines 1417--1418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1611--1614
+Underfull \hbox (badness 10000) in paragraph at lines 1443--1445
 
  []
 
-[59]
-Underfull \hbox (badness 10000) in paragraph at lines 1615--1616
+[48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 1581--1584
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1643--1645
+Underfull \hbox (badness 10000) in paragraph at lines 1581--1584
 
  []
 
-[60] [61] [62]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1585--1586
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 1613--1615
+
+ []
+
+[51] [52]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1861.
+(hyperref)                removing `math shift' on input line 1831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1861.
+(hyperref)                removing `subscript' on input line 1831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bool_gset_true:N' on input line 1861.
+(hyperref)                removing `\bool_gset_true:N' on input line 1831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\g__siunitx_emulation_unit_warning_\bar_boo
-l' on input line 1861.
+l' on input line 1831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\msg_warning:nnnn' on input line 1861.
+(hyperref)                removing `\msg_warning:nnnn' on input line 1831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\infty' on input line 1861.
+(hyperref)                removing `\infty' on input line 1831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1861.
+(hyperref)                removing `math shift' on input line 1831.
 
-[63]
-<images/anneau_cross.pdf, id=1609, 770.88pt x 767.86874pt>
+<images/anneau_cross.pdf, id=1524, 770.88pt x 767.86874pt>
 File: images/anneau_cross.pdf Graphic file (type pdf)
 <use images/anneau_cross.pdf>
-Package pdftex.def Info: images/anneau_cross.pdf  used on input line 1869.
+Package pdftex.def Info: images/anneau_cross.pdf  used on input line 1839.
 (pdftex.def)             Requested size: 231.26578pt x 230.3624pt.
-<images/anneau_mail.pdf, id=1610, 245.718pt x 245.718pt>
+<images/anneau_mail.pdf, id=1525, 245.718pt x 245.718pt>
 File: images/anneau_mail.pdf Graphic file (type pdf)
 <use images/anneau_mail.pdf>
-Package pdftex.def Info: images/anneau_mail.pdf  used on input line 1870.
+Package pdftex.def Info: images/anneau_mail.pdf  used on input line 1840.
 (pdftex.def)             Requested size: 218.68832pt x 218.68832pt.
- [64 <./images/anneau_cross.pdf> <./images/anneau_mail.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/anneau_mail.pdf): PDF inclusio
-n: multiple pdfs with page group included in a single page
->]
-<images/geogebra-export_1.pdf, id=1636, 321.6015pt x 258.72661pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[53]
+<images/geogebra-export_1.pdf, id=1544, 321.6015pt x 258.72661pt>
 File: images/geogebra-export_1.pdf Graphic file (type pdf)
 <use images/geogebra-export_1.pdf>
-Package pdftex.def Info: images/geogebra-export_1.pdf  used on input line 1902.
+Package pdftex.def Info: images/geogebra-export_1.pdf  used on input line 1872.
 
 (pdftex.def)             Requested size: 80.40018pt x 64.68149pt.
 
-Overfull \vbox (44.28152pt too high) detected at line 1902
+Overfull \vbox (48.53154pt too high) detected at line 1872
  []
 
-<images/geogebra-export_2.pdf, id=1637, 568.04218pt x 334.61009pt>
+<images/geogebra-export_2.pdf, id=1545, 568.04218pt x 334.61009pt>
 File: images/geogebra-export_2.pdf Graphic file (type pdf)
 <use images/geogebra-export_2.pdf>
-Package pdftex.def Info: images/geogebra-export_2.pdf  used on input line 1902.
+Package pdftex.def Info: images/geogebra-export_2.pdf  used on input line 1872.
 
 (pdftex.def)             Requested size: 113.60641pt x 66.92082pt.
 
-Overfull \vbox (46.52086pt too high) detected at line 1902
+Overfull \vbox (50.77087pt too high) detected at line 1872
  []
 
-<images/geogebra-export_3.pdf, id=1638, 568.76491pt x 523.23483pt>
+<images/geogebra-export_3.pdf, id=1546, 568.76491pt x 523.23483pt>
 File: images/geogebra-export_3.pdf Graphic file (type pdf)
 <use images/geogebra-export_3.pdf>
-Package pdftex.def Info: images/geogebra-export_3.pdf  used on input line 1902.
+Package pdftex.def Info: images/geogebra-export_3.pdf  used on input line 1872.
 
 (pdftex.def)             Requested size: 113.75096pt x 104.64511pt.
 
-Overfull \vbox (84.24515pt too high) detected at line 1902
+Overfull \vbox (88.49516pt too high) detected at line 1872
  []
 
-<images/yo_1.pdf, id=1646, 1425.325pt x 746.79pt>
-File: images/yo_1.pdf Graphic file (type pdf)
-<use images/yo_1.pdf>
-Package pdftex.def Info: images/yo_1.pdf  used on input line 1926.
-(pdftex.def)             Requested size: 342.08499pt x 179.23326pt.
-<images/yo_2.pdf, id=1647, 1395.2125pt x 699.61375pt>
-File: images/yo_2.pdf Graphic file (type pdf)
-<use images/yo_2.pdf>
-Package pdftex.def Info: images/yo_2.pdf  used on input line 1927.
-(pdftex.def)             Requested size: 334.85783pt x 167.91072pt.
+[54 <./images/anneau_cross.pdf> <./images/anneau_mail.pdf
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+pdfTeX warning: /usr/bin/pdflatex (file ./images/anneau_mail.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+> <./images/geogebra-export_1.pdf
 
-<images/yo_11.pdf, id=1648, 1389.19pt x 729.72626pt>
-File: images/yo_11.pdf Graphic file (type pdf)
-<use images/yo_11.pdf>
-Package pdftex.def Info: images/yo_11.pdf  used on input line 1934.
-(pdftex.def)             Requested size: 333.41241pt x 175.13788pt.
-<images/yo_12.pdf, id=1649, 1334.9875pt x 671.50874pt>
-File: images/yo_12.pdf Graphic file (type pdf)
-<use images/yo_12.pdf>
-Package pdftex.def Info: images/yo_12.pdf  used on input line 1935.
-(pdftex.def)             Requested size: 320.40355pt x 161.16539pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/yo_3.pdf, id=1650, 1449.415pt x 761.84625pt>
-File: images/yo_3.pdf Graphic file (type pdf)
-<use images/yo_3.pdf>
-Package pdftex.def Info: images/yo_3.pdf  used on input line 1942.
-(pdftex.def)             Requested size: 347.8667pt x 182.84683pt.
-<images/yo_4.pdf, id=1651, 1395.2125pt x 700.6175pt>
-File: images/yo_4.pdf Graphic file (type pdf)
-<use images/yo_4.pdf>
-Package pdftex.def Info: images/yo_4.pdf  used on input line 1943.
-(pdftex.def)             Requested size: 334.85783pt x 168.15163pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[65 <./images/geogebra-export_1.pdf> <./images/geogebra-export_2.pdf
+pdfTeX warning: /usr/bin/pdflatex (file ./images/geogebra-export_1.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+> <./images/geogebra-export_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/geogebra-export_2.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
@@ -3454,51 +3421,87 @@ clusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/geogebra-export_3.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
->] [66 <./images/yo_1.pdf> <./images/yo_2.pdf
+>]
+<images/yo_1.pdf, id=1591, 1425.325pt x 746.79pt>
+File: images/yo_1.pdf Graphic file (type pdf)
+<use images/yo_1.pdf>
+Package pdftex.def Info: images/yo_1.pdf  used on input line 1896.
+(pdftex.def)             Requested size: 342.08499pt x 179.23326pt.
+<images/yo_2.pdf, id=1592, 1395.2125pt x 699.61375pt>
+File: images/yo_2.pdf Graphic file (type pdf)
+<use images/yo_2.pdf>
+Package pdftex.def Info: images/yo_2.pdf  used on input line 1897.
+(pdftex.def)             Requested size: 334.85783pt x 167.91072pt.
+<images/yo_11.pdf, id=1593, 1389.19pt x 729.72626pt>
+File: images/yo_11.pdf Graphic file (type pdf)
+<use images/yo_11.pdf>
+Package pdftex.def Info: images/yo_11.pdf  used on input line 1904.
+(pdftex.def)             Requested size: 333.41241pt x 175.13788pt.
+<images/yo_12.pdf, id=1594, 1334.9875pt x 671.50874pt>
+File: images/yo_12.pdf Graphic file (type pdf)
+<use images/yo_12.pdf>
+Package pdftex.def Info: images/yo_12.pdf  used on input line 1905.
+(pdftex.def)             Requested size: 320.40355pt x 161.16539pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/yo_3.pdf, id=1595, 1449.415pt x 761.84625pt>
+File: images/yo_3.pdf Graphic file (type pdf)
+<use images/yo_3.pdf>
+Package pdftex.def Info: images/yo_3.pdf  used on input line 1912.
+(pdftex.def)             Requested size: 347.8667pt x 182.84683pt.
+<images/yo_4.pdf, id=1596, 1395.2125pt x 700.6175pt>
+File: images/yo_4.pdf Graphic file (type pdf)
+<use images/yo_4.pdf>
+Package pdftex.def Info: images/yo_4.pdf  used on input line 1913.
+(pdftex.def)             Requested size: 334.85783pt x 168.15163pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[55 <./images/yo_1.pdf> <./images/yo_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/yo_2.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
->] [67 <./images/yo_11.pdf> <./images/yo_12.pdf
+>] [56 <./images/yo_11.pdf> <./images/yo_12.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/yo_12.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
->] [68 <./images/yo_3.pdf> <./images/yo_4.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/yo_4.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
 >]
-<images/carreDiscPleinCouper domain.pdf, id=1741, 372.19049pt x 372.19049pt>
+<images/carreDiscPleinCouper domain.pdf, id=1643, 372.19049pt x 372.19049pt>
 File: images/carreDiscPleinCouper domain.pdf Graphic file (type pdf)
 <use images/carreDiscPleinCouper domain.pdf>
 Package pdftex.def Info: images/carreDiscPleinCouper domain.pdf  used on input 
-line 2041.
+line 2011.
 (pdftex.def)             Requested size: 199.12277pt x 199.12277pt.
-<images/mesh_quad_6.pdf, id=1742, 250.0542pt x 249.3315pt>
+<images/mesh_quad_6.pdf, id=1644, 250.0542pt x 249.3315pt>
 File: images/mesh_quad_6.pdf Graphic file (type pdf)
 <use images/mesh_quad_6.pdf>
-Package pdftex.def Info: images/mesh_quad_6.pdf  used on input line 2042.
+Package pdftex.def Info: images/mesh_quad_6.pdf  used on input line 2012.
 (pdftex.def)             Requested size: 200.04361pt x 199.46545pt.
-) (./2-chapters/2-3-algorithme.tex [69 <./images/carreDiscPleinCouper domain.pd
-f> <./images/mesh_quad_6.pdf
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./2-chapters/2-3-algorithme.tex [57 <./images/yo_3.pdf> <./images/yo_4.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/yo_4.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>] [58 <./images/carreDiscPleinCouper domain.pdf> <./images/mesh_quad_6.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/mesh_quad_6.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
->] [70
-
-
-]
+>]
 Chapitre 3.
 \openout3 = `main.mtc'.
 
 \openout3 = `main.mtc'.
 
-(./main.mtc3) [71]
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
-
- []
+(./main.mtc3) [59
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+]
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
@@ -3512,60 +3515,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-<images/zone_singuliere_1.pdf, id=1795, 770.88pt x 771.84363pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+<images/zone_singuliere_1.pdf, id=1712, 770.88pt x 771.84363pt>
 File: images/zone_singuliere_1.pdf Graphic file (type pdf)
 <use images/zone_singuliere_1.pdf>
-Package pdftex.def Info: images/zone_singuliere_1.pdf  used on input line 58.
+Package pdftex.def Info: images/zone_singuliere_1.pdf  used on input line 59.
 (pdftex.def)             Requested size: 223.07211pt x 223.34604pt.
-<images/zone_singuliere_2.pdf, id=1796, 770.88pt x 771.84363pt>
+<images/zone_singuliere_2.pdf, id=1713, 770.88pt x 771.84363pt>
 File: images/zone_singuliere_2.pdf Graphic file (type pdf)
 <use images/zone_singuliere_2.pdf>
-Package pdftex.def Info: images/zone_singuliere_2.pdf  used on input line 64.
+Package pdftex.def Info: images/zone_singuliere_2.pdf  used on input line 65.
 (pdftex.def)             Requested size: 223.07211pt x 223.34604pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-
- []
-
-[72]
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
-
- []
-
-[73 <./images/zone_singuliere_1.pdf> <./images/zone_singuliere_2.pdf
+[60 <./images/zone_singuliere_1.pdf> <./images/zone_singuliere_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/zone_singuliere_2.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
@@ -3575,245 +3575,239 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--119
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
-[74]
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
-<images/draw_streams_11.pdf, id=1837, 1295.56017pt x 871.8171pt>
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+<images/draw_streams_11.pdf, id=1749, 1295.56017pt x 871.8171pt>
 File: images/draw_streams_11.pdf Graphic file (type pdf)
 <use images/draw_streams_11.pdf>
-Package pdftex.def Info: images/draw_streams_11.pdf  used on input line 202.
+Package pdftex.def Info: images/draw_streams_11.pdf  used on input line 203.
 (pdftex.def)             Requested size: 318.66948pt x 214.44179pt.
-<images/draw_streams_12.pdf, id=1838, 1332.41785pt x 895.9071pt>
+<images/draw_streams_12.pdf, id=1750, 1332.41785pt x 895.9071pt>
 File: images/draw_streams_12.pdf Graphic file (type pdf)
 <use images/draw_streams_12.pdf>
-Package pdftex.def Info: images/draw_streams_12.pdf  used on input line 207.
+Package pdftex.def Info: images/draw_streams_12.pdf  used on input line 208.
 (pdftex.def)             Requested size: 318.66948pt x 214.27022pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[75]
-<images/draw_streams_21.pdf, id=1858, 1332.41785pt x 874.94879pt>
+<images/draw_streams_21.pdf, id=1756, 1332.41785pt x 874.94879pt>
 File: images/draw_streams_21.pdf Graphic file (type pdf)
 <use images/draw_streams_21.pdf>
-Package pdftex.def Info: images/draw_streams_21.pdf  used on input line 229.
+Package pdftex.def Info: images/draw_streams_21.pdf  used on input line 230.
 (pdftex.def)             Requested size: 318.66948pt x 209.2577pt.
-<images/draw_streams_22.pdf, id=1859, 1332.41785pt x 874.94879pt>
+<images/draw_streams_22.pdf, id=1757, 1332.41785pt x 874.94879pt>
 File: images/draw_streams_22.pdf Graphic file (type pdf)
 <use images/draw_streams_22.pdf>
-Package pdftex.def Info: images/draw_streams_22.pdf  used on input line 234.
+Package pdftex.def Info: images/draw_streams_22.pdf  used on input line 235.
 (pdftex.def)             Requested size: 318.66948pt x 209.2577pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
+(hyperref)                removing `math shift' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bool_gset_true:N' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\g__siunitx_emulation_unit_warning_\bar_boo
-l' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\msg_warning:nnnn' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bool_gset_true:N' on input line 243.
+(hyperref)                removing `\bool_gset_true:N' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\g__siunitx_emulation_unit_warning_\bar_boo
-l' on input line 243.
+l' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\msg_warning:nnnn' on input line 243.
+(hyperref)                removing `\msg_warning:nnnn' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 243.
+(hyperref)                removing `math shift' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
+(hyperref)                removing `math shift' on input line 244.
 
-[76 <./images/draw_streams_11.pdf> <./images/draw_streams_12.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/draw_streams_12.pdf): PDF incl
-usion: multiple pdfs with page group included in a single page
->]
-<images/u_sing.pdf, id=1882, 804.12419pt x 801.95612pt>
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\bool_gset_true:N' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\g__siunitx_emulation_unit_warning_\bar_boo
+l' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\msg_warning:nnnn' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 244.
+
+[62]
+<images/u_sing.pdf, id=1776, 804.12419pt x 801.95612pt>
 File: images/u_sing.pdf Graphic file (type pdf)
 <use images/u_sing.pdf>
-Package pdftex.def Info: images/u_sing.pdf  used on input line 253.
+Package pdftex.def Info: images/u_sing.pdf  used on input line 254.
 (pdftex.def)             Requested size: 225.3436pt x 224.72972pt.
-<images/u_h_sing.pdf, id=1883, 841.22282pt x 838.09113pt>
+<images/u_h_sing.pdf, id=1777, 841.22282pt x 838.09113pt>
 File: images/u_h_sing.pdf Graphic file (type pdf)
 <use images/u_h_sing.pdf>
-Package pdftex.def Info: images/u_h_sing.pdf  used on input line 259.
+Package pdftex.def Info: images/u_h_sing.pdf  used on input line 260.
 (pdftex.def)             Requested size: 225.3436pt x 224.49727pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[77 <./images/draw_streams_21.pdf> <./images/draw_streams_22.pdf
+[63 <./images/draw_streams_11.pdf> <./images/draw_streams_12.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/draw_streams_22.pdf): PDF incl
+pdfTeX warning: /usr/bin/pdflatex (file ./images/draw_streams_12.pdf): PDF incl
 usion: multiple pdfs with page group included in a single page
 >]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 281.
+(hyperref)                removing `math shift' on input line 282.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\partial' on input line 281.
+(hyperref)                removing `\partial' on input line 282.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 281.
+(hyperref)                removing `\Omega' on input line 282.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 281.
+(hyperref)                removing `subscript' on input line 282.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 281.
+(hyperref)                removing `math shift' on input line 282.
 
 
-Package caption Warning: \label without proper reference on input line 289.
+Package caption Warning: \label without proper reference on input line 290.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `alg:discr_algo_main' on page 78 undefined on input li
-ne 284.
+LaTeX Warning: Reference `alg:discr_algo_main' on page 64 undefined on input li
+ne 285.
 
+[64 <./images/draw_streams_21.pdf> <./images/draw_streams_22.pdf
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[78 <./images/u_sing.pdf> <./images/u_h_sing.pdf
+pdfTeX warning: /usr/bin/pdflatex (file ./images/draw_streams_22.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>] [65 <./images/u_sing.pdf> <./images/u_h_sing.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/u_h_sing.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
 >]
-<images/triangle separatrices 3.png, id=1934, 300.1614pt x 266.79675pt>
+<images/triangle separatrices 3.png, id=1850, 300.1614pt x 266.79675pt>
 File: images/triangle separatrices 3.png Graphic file (type png)
 <use images/triangle separatrices 3.png>
 Package pdftex.def Info: images/triangle separatrices 3.png  used on input line
- 340.
+ 341.
 (pdftex.def)             Requested size: 226.62276pt x 201.43234pt.
-<images/triangle separatrices 5.png, id=1935, 298.2342pt x 264.62865pt>
+<images/triangle separatrices 5.png, id=1851, 298.2342pt x 264.62865pt>
 File: images/triangle separatrices 5.png Graphic file (type png)
 <use images/triangle separatrices 5.png>
 Package pdftex.def Info: images/triangle separatrices 5.png  used on input line
- 341.
+ 342.
 (pdftex.def)             Requested size: 225.16772pt x 199.79541pt.
-<images/triangle separatrices bord.png, id=1936, 552.02235pt x 369.0588pt>
+<images/triangle separatrices bord.png, id=1852, 552.02235pt x 369.0588pt>
 File: images/triangle separatrices bord.png Graphic file (type png)
 <use images/triangle separatrices bord.png>
 Package pdftex.def Info: images/triangle separatrices bord.png  used on input l
-ine 348.
+ine 349.
 (pdftex.def)             Requested size: 416.77853pt x 278.6405pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
-[79 <./images/triangle separatrices 3.png> <./images/triangle separatrices 5.pn
-g>]
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
-<images/depart_sepa_1.pdf, id=1951, 1517.67pt x 848.16875pt>
+[66 <./images/triangle separatrices 3.png> <./images/triangle separatrices 5.pn
+g> <./images/triangle separatrices bord.png>]
+<images/depart_sepa_1.pdf, id=1868, 1517.67pt x 848.16875pt>
 File: images/depart_sepa_1.pdf Graphic file (type pdf)
 <use images/depart_sepa_1.pdf>
-Package pdftex.def Info: images/depart_sepa_1.pdf  used on input line 374.
+Package pdftex.def Info: images/depart_sepa_1.pdf  used on input line 375.
 (pdftex.def)             Requested size: 318.66948pt x 178.08186pt.
-<images/depart_sepa_2.pdf, id=1952, 1517.67pt x 848.16875pt>
+<images/depart_sepa_2.pdf, id=1869, 1517.67pt x 848.16875pt>
 File: images/depart_sepa_2.pdf Graphic file (type pdf)
 <use images/depart_sepa_2.pdf>
-Package pdftex.def Info: images/depart_sepa_2.pdf  used on input line 380.
+Package pdftex.def Info: images/depart_sepa_2.pdf  used on input line 381.
 (pdftex.def)             Requested size: 318.66948pt x 178.08186pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/draw_streams_sing_1.pdf, id=1954, 938.30548pt x 833.51402pt>
+<images/draw_streams_sing_1.pdf, id=1871, 938.30548pt x 833.51402pt>
 File: images/draw_streams_sing_1.pdf Graphic file (type pdf)
 <use images/draw_streams_sing_1.pdf>
-Package pdftex.def Info: images/draw_streams_sing_1.pdf  used on input line 400
+Package pdftex.def Info: images/draw_streams_sing_1.pdf  used on input line 401
 .
 (pdftex.def)             Requested size: 225.3436pt x 200.17464pt.
-<images/draw_streams_sing_2.pdf, id=1955, 938.30548pt x 833.51402pt>
+<images/draw_streams_sing_2.pdf, id=1872, 938.30548pt x 833.51402pt>
 File: images/draw_streams_sing_2.pdf Graphic file (type pdf)
 <use images/draw_streams_sing_2.pdf>
-Package pdftex.def Info: images/draw_streams_sing_2.pdf  used on input line 407
+Package pdftex.def Info: images/draw_streams_sing_2.pdf  used on input line 408
 .
 (pdftex.def)             Requested size: 225.3436pt x 200.17464pt.
-<images/draw_streams_sing_3.pdf, id=1956, 938.30548pt x 833.51402pt>
+<images/draw_streams_sing_3.pdf, id=1873, 938.30548pt x 833.51402pt>
 File: images/draw_streams_sing_3.pdf Graphic file (type pdf)
 <use images/draw_streams_sing_3.pdf>
-Package pdftex.def Info: images/draw_streams_sing_3.pdf  used on input line 414
+Package pdftex.def Info: images/draw_streams_sing_3.pdf  used on input line 415
 .
 (pdftex.def)             Requested size: 225.3436pt x 200.17464pt.
-<images/draw_streams_sing_4.pdf, id=1957, 938.30548pt x 845.31807pt>
+<images/draw_streams_sing_4.pdf, id=1874, 938.30548pt x 845.31807pt>
 File: images/draw_streams_sing_4.pdf Graphic file (type pdf)
 <use images/draw_streams_sing_4.pdf>
-Package pdftex.def Info: images/draw_streams_sing_4.pdf  used on input line 421
+Package pdftex.def Info: images/draw_streams_sing_4.pdf  used on input line 422
 .
 (pdftex.def)             Requested size: 225.3436pt x 203.00946pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/decoup_sans_fusion.pdf, id=1958, 1423.23724pt x 733.54048pt>
+<images/decoup_sans_fusion.pdf, id=1875, 1423.23724pt x 733.54048pt>
 File: images/decoup_sans_fusion.pdf Graphic file (type pdf)
 <use images/decoup_sans_fusion.pdf>
-Package pdftex.def Info: images/decoup_sans_fusion.pdf  used on input line 432.
+Package pdftex.def Info: images/decoup_sans_fusion.pdf  used on input line 433.
 
 (pdftex.def)             Requested size: 295.90588pt x 152.50342pt.
-<images/decoup_detect_fusion.pdf, id=1959, 1423.23724pt x 733.54048pt>
+<images/decoup_detect_fusion.pdf, id=1876, 1423.23724pt x 733.54048pt>
 File: images/decoup_detect_fusion.pdf Graphic file (type pdf)
 <use images/decoup_detect_fusion.pdf>
 Package pdftex.def Info: images/decoup_detect_fusion.pdf  used on input line 43
-8.
+9.
 (pdftex.def)             Requested size: 295.90588pt x 152.50342pt.
-<images/decoup_fusion.pdf, id=1960, 1423.23724pt x 733.54048pt>
+<images/decoup_fusion.pdf, id=1877, 1423.23724pt x 733.54048pt>
 File: images/decoup_fusion.pdf Graphic file (type pdf)
 <use images/decoup_fusion.pdf>
-Package pdftex.def Info: images/decoup_fusion.pdf  used on input line 444.
+Package pdftex.def Info: images/decoup_fusion.pdf  used on input line 445.
 (pdftex.def)             Requested size: 295.90588pt x 152.50342pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[80 <./images/triangle separatrices bord.png>] [81 <./images/depart_sepa_1.pdf>
- <./images/depart_sepa_2.pdf>] [82 <./images/draw_streams_sing_1.pdf> <./images
-/draw_streams_sing_2.pdf
+[67 <./images/depart_sepa_1.pdf> <./images/depart_sepa_2.pdf>] [68 <./images/dr
+aw_streams_sing_1.pdf> <./images/draw_streams_sing_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/draw_streams_sing_2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
@@ -3826,21 +3820,21 @@ inclusion: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./images/draw_streams_sing_4.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
 >]
-<images/eclatement_1.pdf, id=2023, 808.94218pt x 810.1467pt>
+<images/eclatement_1.pdf, id=1930, 808.94218pt x 810.1467pt>
 File: images/eclatement_1.pdf Graphic file (type pdf)
 <use images/eclatement_1.pdf>
-Package pdftex.def Info: images/eclatement_1.pdf  used on input line 469.
+Package pdftex.def Info: images/eclatement_1.pdf  used on input line 470.
 (pdftex.def)             Requested size: 223.07211pt x 223.40294pt.
-<images/intersect_stream.pdf, id=2024, 808.21951pt x 810.1467pt>
+<images/intersect_stream.pdf, id=1931, 808.21951pt x 810.1467pt>
 File: images/intersect_stream.pdf Graphic file (type pdf)
 <use images/intersect_stream.pdf>
-Package pdftex.def Info: images/intersect_stream.pdf  used on input line 475.
+Package pdftex.def Info: images/intersect_stream.pdf  used on input line 476.
 (pdftex.def)             Requested size: 223.07211pt x 223.60072pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[83 <./images/decoup_sans_fusion.pdf> <./images/decoup_detect_fusion.pdf
+[69 <./images/decoup_sans_fusion.pdf> <./images/decoup_detect_fusion.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/decoup_detect_fusion.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
@@ -3849,91 +3843,130 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/decoup_detect_fusion.pdf): PDF
 pdfTeX warning: /usr/bin/pdflatex (file ./images/decoup_fusion.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
-<images/insert_pt_1.pdf, id=2051, 607.068pt x 542.26588pt>
+<images/insert_pt_1.pdf, id=1959, 607.068pt x 542.26588pt>
 File: images/insert_pt_1.pdf Graphic file (type pdf)
 <use images/insert_pt_1.pdf>
-Package pdftex.def Info: images/insert_pt_1.pdf  used on input line 503.
+Package pdftex.def Info: images/insert_pt_1.pdf  used on input line 504.
 (pdftex.def)             Requested size: 224.61163pt x 200.63522pt.
-<images/insert_pt_2.pdf, id=2052, 607.068pt x 542.26588pt>
+<images/insert_pt_2.pdf, id=1960, 607.068pt x 542.26588pt>
 File: images/insert_pt_2.pdf Graphic file (type pdf)
 <use images/insert_pt_2.pdf>
-Package pdftex.def Info: images/insert_pt_2.pdf  used on input line 504.
+Package pdftex.def Info: images/insert_pt_2.pdf  used on input line 505.
 (pdftex.def)             Requested size: 224.61163pt x 200.63522pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/decoup_triangle.pdf, id=2053, 810.38759pt x 750.40347pt>
+<images/decoup_triangle.pdf, id=1961, 810.38759pt x 750.40347pt>
 File: images/decoup_triangle.pdf Graphic file (type pdf)
 <use images/decoup_triangle.pdf>
-Package pdftex.def Info: images/decoup_triangle.pdf  used on input line 512.
+Package pdftex.def Info: images/decoup_triangle.pdf  used on input line 513.
 (pdftex.def)             Requested size: 204.85846pt x 189.6958pt.
-<images/decoup_triangle-1.pdf, id=2054, 810.38759pt x 750.40347pt>
+<images/decoup_triangle-1.pdf, id=1962, 810.38759pt x 750.40347pt>
 File: images/decoup_triangle-1.pdf Graphic file (type pdf)
 <use images/decoup_triangle-1.pdf>
-Package pdftex.def Info: images/decoup_triangle-1.pdf  used on input line 518.
+Package pdftex.def Info: images/decoup_triangle-1.pdf  used on input line 519.
 (pdftex.def)             Requested size: 204.85846pt x 189.6958pt.
-<images/decoup_triangle-2.pdf, id=2055, 810.38759pt x 750.40347pt>
+<images/decoup_triangle-2.pdf, id=1963, 810.38759pt x 750.40347pt>
 File: images/decoup_triangle-2.pdf Graphic file (type pdf)
 <use images/decoup_triangle-2.pdf>
-Package pdftex.def Info: images/decoup_triangle-2.pdf  used on input line 524.
+Package pdftex.def Info: images/decoup_triangle-2.pdf  used on input line 525.
 (pdftex.def)             Requested size: 204.85846pt x 189.6958pt.
-<images/decoup_triangle-3.pdf, id=2056, 810.38759pt x 750.40347pt>
+<images/decoup_triangle-3.pdf, id=1964, 810.38759pt x 750.40347pt>
 File: images/decoup_triangle-3.pdf Graphic file (type pdf)
 <use images/decoup_triangle-3.pdf>
-Package pdftex.def Info: images/decoup_triangle-3.pdf  used on input line 530.
+Package pdftex.def Info: images/decoup_triangle-3.pdf  used on input line 531.
 (pdftex.def)             Requested size: 204.85846pt x 189.6958pt.
-<images/decoup_triangle-4.pdf, id=2057, 810.38759pt x 750.40347pt>
+<images/decoup_triangle-4.pdf, id=1965, 810.38759pt x 750.40347pt>
 File: images/decoup_triangle-4.pdf Graphic file (type pdf)
 <use images/decoup_triangle-4.pdf>
-Package pdftex.def Info: images/decoup_triangle-4.pdf  used on input line 536.
+Package pdftex.def Info: images/decoup_triangle-4.pdf  used on input line 537.
 (pdftex.def)             Requested size: 204.85846pt x 189.6958pt.
-<images/decoup_triangle-5.pdf, id=2058, 810.38759pt x 750.40347pt>
+<images/decoup_triangle-5.pdf, id=1966, 810.38759pt x 750.40347pt>
 File: images/decoup_triangle-5.pdf Graphic file (type pdf)
 <use images/decoup_triangle-5.pdf>
-Package pdftex.def Info: images/decoup_triangle-5.pdf  used on input line 542.
+Package pdftex.def Info: images/decoup_triangle-5.pdf  used on input line 543.
 (pdftex.def)             Requested size: 204.85846pt x 189.6958pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[84 <./images/eclatement_1.pdf> <./images/intersect_stream.pdf
+<images/retourn_arete_george-1.pdf, id=1971, 779.91376pt x 401.5pt>
+File: images/retourn_arete_george-1.pdf Graphic file (type pdf)
+<use images/retourn_arete_george-1.pdf>
+Package pdftex.def Info: images/retourn_arete_george-1.pdf  used on input line 
+555.
+(pdftex.def)             Requested size: 214.471pt x 110.40977pt.
+<images/retourn_arete_george-2.pdf, id=1972, 785.93625pt x 405.515pt>
+File: images/retourn_arete_george-2.pdf Graphic file (type pdf)
+<use images/retourn_arete_george-2.pdf>
+Package pdftex.def Info: images/retourn_arete_george-2.pdf  used on input line 
+556.
+(pdftex.def)             Requested size: 216.12714pt x 111.51387pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[70 <./images/eclatement_1.pdf> <./images/intersect_stream.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/intersect_stream.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
 >]
-<images/retourn_arete_george-1.pdf, id=2085, 779.91376pt x 401.5pt>
-File: images/retourn_arete_george-1.pdf Graphic file (type pdf)
-<use images/retourn_arete_george-1.pdf>
-Package pdftex.def Info: images/retourn_arete_george-1.pdf  used on input line 
-554.
-(pdftex.def)             Requested size: 214.471pt x 110.40977pt.
-<images/retourn_arete_george-2.pdf, id=2086, 785.93625pt x 405.515pt>
-File: images/retourn_arete_george-2.pdf Graphic file (type pdf)
-<use images/retourn_arete_george-2.pdf>
-Package pdftex.def Info: images/retourn_arete_george-2.pdf  used on input line 
-555.
-(pdftex.def)             Requested size: 216.12714pt x 111.51387pt.
+<images/retournement_arete-1.pdf, id=2005, 810.38759pt x 750.40347pt>
+File: images/retournement_arete-1.pdf Graphic file (type pdf)
+<use images/retournement_arete-1.pdf>
+Package pdftex.def Info: images/retournement_arete-1.pdf  used on input line 59
+7.
+(pdftex.def)             Requested size: 222.85109pt x 206.35587pt.
+<images/retournement_arete-2.pdf, id=2006, 810.38759pt x 750.40347pt>
+File: images/retournement_arete-2.pdf Graphic file (type pdf)
+<use images/retournement_arete-2.pdf>
+Package pdftex.def Info: images/retournement_arete-2.pdf  used on input line 59
+8.
+(pdftex.def)             Requested size: 222.85109pt x 206.35587pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[85 <./images/insert_pt_1.pdf> <./images/insert_pt_2.pdf
+<images/eclatement_2.pdf, id=2011, 774.73442pt x 774.01169pt>
+File: images/eclatement_2.pdf Graphic file (type pdf)
+<use images/eclatement_2.pdf>
+Package pdftex.def Info: images/eclatement_2.pdf  used on input line 608.
+(pdftex.def)             Requested size: 223.07211pt x 222.86322pt.
+<images/eclatement_3.pdf, id=2012, 628.02629pt x 626.82178pt>
+File: images/eclatement_3.pdf Graphic file (type pdf)
+<use images/eclatement_3.pdf>
+Package pdftex.def Info: images/eclatement_3.pdf  used on input line 614.
+(pdftex.def)             Requested size: 223.07211pt x 222.64284pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/echec_partitionnement_1.pdf, id=2016, 817.13281pt x 817.85548pt>
+File: images/echec_partitionnement_1.pdf Graphic file (type pdf)
+<use images/echec_partitionnement_1.pdf>
+Package pdftex.def Info: images/echec_partitionnement_1.pdf  used on input line
+ 631.
+(pdftex.def)             Requested size: 223.07211pt x 223.2699pt.
+<images/echec_partitionnement_2.pdf, id=2017, 612.12692pt x 595.26389pt>
+File: images/echec_partitionnement_2.pdf Graphic file (type pdf)
+<use images/echec_partitionnement_2.pdf>
+Package pdftex.def Info: images/echec_partitionnement_2.pdf  used on input line
+ 637.
+(pdftex.def)             Requested size: 223.07211pt x 216.91982pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[71 <./images/insert_pt_1.pdf> <./images/insert_pt_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/insert_pt_2.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
->]
-
-LaTeX Warning: Text page 86 contains only floats.
-
-[86 <./images/decoup_triangle.pdf> <./images/decoup_triangle-1.pdf
+>] [72 <./images/decoup_triangle.pdf> <./images/decoup_triangle-1.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/decoup_triangle-1.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
@@ -3953,49 +3986,8 @@ clusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/decoup_triangle-5.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
->]
-<images/retournement_arete-1.pdf, id=2156, 810.38759pt x 750.40347pt>
-File: images/retournement_arete-1.pdf Graphic file (type pdf)
-<use images/retournement_arete-1.pdf>
-Package pdftex.def Info: images/retournement_arete-1.pdf  used on input line 59
-6.
-(pdftex.def)             Requested size: 222.85109pt x 206.35587pt.
-<images/retournement_arete-2.pdf, id=2157, 810.38759pt x 750.40347pt>
-File: images/retournement_arete-2.pdf Graphic file (type pdf)
-<use images/retournement_arete-2.pdf>
-Package pdftex.def Info: images/retournement_arete-2.pdf  used on input line 59
-7.
-(pdftex.def)             Requested size: 222.85109pt x 206.35587pt.
-<images/eclatement_2.pdf, id=2162, 774.73442pt x 774.01169pt>
-File: images/eclatement_2.pdf Graphic file (type pdf)
-<use images/eclatement_2.pdf>
-Package pdftex.def Info: images/eclatement_2.pdf  used on input line 607.
-(pdftex.def)             Requested size: 223.07211pt x 222.86322pt.
-<images/eclatement_3.pdf, id=2163, 628.02629pt x 626.82178pt>
-File: images/eclatement_3.pdf Graphic file (type pdf)
-<use images/eclatement_3.pdf>
-Package pdftex.def Info: images/eclatement_3.pdf  used on input line 613.
-(pdftex.def)             Requested size: 223.07211pt x 222.64284pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/echec_partitionnement_1.pdf, id=2167, 817.13281pt x 817.85548pt>
-File: images/echec_partitionnement_1.pdf Graphic file (type pdf)
-<use images/echec_partitionnement_1.pdf>
-Package pdftex.def Info: images/echec_partitionnement_1.pdf  used on input line
- 630.
-(pdftex.def)             Requested size: 223.07211pt x 223.2699pt.
-<images/echec_partitionnement_2.pdf, id=2168, 612.12692pt x 595.26389pt>
-File: images/echec_partitionnement_2.pdf Graphic file (type pdf)
-<use images/echec_partitionnement_2.pdf>
-Package pdftex.def Info: images/echec_partitionnement_2.pdf  used on input line
- 636.
-(pdftex.def)             Requested size: 223.07211pt x 216.91982pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[87 <./images/retourn_arete_george-1.pdf> <./images/retourn_arete_george-2.pdf
+>] [73 <./images/retourn_arete_george-1.pdf> <./images/retourn_arete_george-2.p
+df
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/retourn_arete_george-2.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
@@ -4007,35 +3999,30 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/retournement_arete-1.pdf): PDF
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/retournement_arete-2.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
->] [88 <./images/eclatement_2.pdf> <./images/eclatement_3.pdf
+> <./images/eclatement_2.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/eclatement_2.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+> <./images/eclatement_3.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/eclatement_3.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
-> <./images/echec_partitionnement_1.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/echec_partitionnement_1.pdf): 
-PDF inclusion: multiple pdfs with page group included in a single page
-> <./images/echec_partitionnement_2.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./images/echec_partitionnement_2.pdf): 
-PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<images/separatrice_echantillonage_1.pdf, id=2233, 770.88pt x 769.67549pt>
+<images/separatrice_echantillonage_1.pdf, id=2124, 770.88pt x 769.67549pt>
 File: images/separatrice_echantillonage_1.pdf Graphic file (type pdf)
 <use images/separatrice_echantillonage_1.pdf>
 Package pdftex.def Info: images/separatrice_echantillonage_1.pdf  used on input
- line 674.
+ line 675.
 (pdftex.def)             Requested size: 223.07211pt x 222.71866pt.
-<images/separatrice_echantillonage_2.pdf, id=2234, 632.3625pt x 631.39888pt>
+<images/separatrice_echantillonage_2.pdf, id=2125, 632.3625pt x 631.39888pt>
 File: images/separatrice_echantillonage_2.pdf Graphic file (type pdf)
 <use images/separatrice_echantillonage_2.pdf>
 Package pdftex.def Info: images/separatrice_echantillonage_2.pdf  used on input
- line 680.
+ line 681.
 (pdftex.def)             Requested size: 223.07211pt x 222.7271pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 693--694
@@ -4052,18 +4039,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 695--696
 
  []
 
-[89 <./images/separatrice_echantillonage_1.pdf> <./images/separatrice_echantill
-onage_2.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./images/separatrice_echantillonage_2.p
-df): PDF inclusion: multiple pdfs with page group included in a single page
->]
-Underfull \hbox (badness 10000) in paragraph at lines 730--731
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
 
  []
 
+[74 <./images/echec_partitionnement_1.pdf> <./images/echec_partitionnement_2.pd
+f
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--733
+pdfTeX warning: /usr/bin/pdflatex (file ./images/echec_partitionnement_2.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 731--732
 
  []
 
@@ -4077,40 +4064,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 734--735
 
  []
 
-<images/transfini_1.pdf, id=2258, 882.6576pt x 772.5663pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--736
+
+ []
+
+<images/transfini_1.pdf, id=2150, 882.6576pt x 772.5663pt>
 File: images/transfini_1.pdf Graphic file (type pdf)
 <use images/transfini_1.pdf>
-Package pdftex.def Info: images/transfini_1.pdf  used on input line 741.
+Package pdftex.def Info: images/transfini_1.pdf  used on input line 742.
 (pdftex.def)             Requested size: 227.62206pt x 199.2239pt.
-<images/transfini_2.pdf, id=2259, 764.61661pt x 763.89388pt>
+<images/transfini_2.pdf, id=2151, 764.61661pt x 763.89388pt>
 File: images/transfini_2.pdf Graphic file (type pdf)
 <use images/transfini_2.pdf>
-Package pdftex.def Info: images/transfini_2.pdf  used on input line 747.
+Package pdftex.def Info: images/transfini_2.pdf  used on input line 748.
 (pdftex.def)             Requested size: 191.20169pt x 191.01962pt.
-<images/transfini_3.pdf, id=2260, 873.0216pt x 763.89388pt>
+<images/transfini_3.pdf, id=2152, 873.0216pt x 763.89388pt>
 File: images/transfini_3.pdf Graphic file (type pdf)
 <use images/transfini_3.pdf>
-Package pdftex.def Info: images/transfini_3.pdf  used on input line 753.
+Package pdftex.def Info: images/transfini_3.pdf  used on input line 754.
 (pdftex.def)             Requested size: 227.62206pt x 199.1672pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/mesh_by_streamline_1.pdf, id=2262, 798.1017pt x 798.1017pt>
+<images/mesh_by_streamline_1.pdf, id=2154, 798.1017pt x 798.1017pt>
 File: images/mesh_by_streamline_1.pdf Graphic file (type pdf)
 <use images/mesh_by_streamline_1.pdf>
 Package pdftex.def Info: images/mesh_by_streamline_1.pdf  used on input line 77
-2.
+3.
 (pdftex.def)             Requested size: 223.07211pt x 223.06508pt.
-<images/mesh_by_streamline_2.pdf, id=2263, 948.6642pt x 773.7708pt>
+<images/mesh_by_streamline_2.pdf, id=2155, 948.6642pt x 773.7708pt>
 File: images/mesh_by_streamline_2.pdf Graphic file (type pdf)
 <use images/mesh_by_streamline_2.pdf>
 Package pdftex.def Info: images/mesh_by_streamline_2.pdf  used on input line 77
-8.
+9.
 (pdftex.def)             Requested size: 223.07211pt x 181.94243pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[90] [91 <./images/transfini_1.pdf> <./images/transfini_2.pdf
+[75 <./images/separatrice_echantillonage_1.pdf> <./images/separatrice_echantill
+onage_2.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./images/separatrice_echantillonage_2.p
+df): PDF inclusion: multiple pdfs with page group included in a single page
+>] [76 <./images/transfini_1.pdf> <./images/transfini_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/transfini_2.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
@@ -4119,56 +4116,61 @@ n: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./images/transfini_3.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
 >]
-<images/quad_equation_1.pdf, id=2298, 873.0216pt x 763.89388pt>
+<images/quad_equation_1.pdf, id=2205, 873.0216pt x 763.89388pt>
 File: images/quad_equation_1.pdf Graphic file (type pdf)
 <use images/quad_equation_1.pdf>
-Package pdftex.def Info: images/quad_equation_1.pdf  used on input line 839.
+Package pdftex.def Info: images/quad_equation_1.pdf  used on input line 840.
 (pdftex.def)             Requested size: 218.51521pt x 191.19446pt.
-<images/quad_equation_2.pdf, id=2299, 873.0216pt x 763.89388pt>
+<images/quad_equation_2.pdf, id=2206, 873.0216pt x 763.89388pt>
 File: images/quad_equation_2.pdf Graphic file (type pdf)
 <use images/quad_equation_2.pdf>
-Package pdftex.def Info: images/quad_equation_2.pdf  used on input line 845.
+Package pdftex.def Info: images/quad_equation_2.pdf  used on input line 846.
 (pdftex.def)             Requested size: 218.51521pt x 191.19446pt.
-<images/quad_equation_3.pdf, id=2300, 875.43057pt x 765.82112pt>
+<images/quad_equation_3.pdf, id=2207, 875.43057pt x 765.82112pt>
 File: images/quad_equation_3.pdf Graphic file (type pdf)
 <use images/quad_equation_3.pdf>
-Package pdftex.def Info: images/quad_equation_3.pdf  used on input line 851.
+Package pdftex.def Info: images/quad_equation_3.pdf  used on input line 852.
 (pdftex.def)             Requested size: 209.41534pt x 183.19318pt.
-<images/quad_equation_4.pdf, id=2301, 873.0216pt x 763.89388pt>
+<images/quad_equation_4.pdf, id=2208, 873.0216pt x 763.89388pt>
 File: images/quad_equation_4.pdf Graphic file (type pdf)
 <use images/quad_equation_4.pdf>
-Package pdftex.def Info: images/quad_equation_4.pdf  used on input line 857.
+Package pdftex.def Info: images/quad_equation_4.pdf  used on input line 858.
 (pdftex.def)             Requested size: 218.51521pt x 191.19446pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/quad_eclatement.pdf, id=2305, 632.3625pt x 631.39888pt>
+
+LaTeX Warning: Reference `chap:surface_courbe' on page 77 undefined on input li
+ne 866.
+
+<images/quad_eclatement.pdf, id=2211, 632.3625pt x 631.39888pt>
 File: images/quad_eclatement.pdf Graphic file (type pdf)
 <use images/quad_eclatement.pdf>
-Package pdftex.def Info: images/quad_eclatement.pdf  used on input line 870.
+Package pdftex.def Info: images/quad_eclatement.pdf  used on input line 871.
 (pdftex.def)             Requested size: 223.07211pt x 222.7271pt.
-<images/quad_carre.pdf, id=2306, 767.02557pt x 767.7483pt>
+<images/quad_carre.pdf, id=2212, 767.02557pt x 767.7483pt>
 File: images/quad_carre.pdf Graphic file (type pdf)
 <use images/quad_carre.pdf>
-Package pdftex.def Info: images/quad_carre.pdf  used on input line 876.
+Package pdftex.def Info: images/quad_carre.pdf  used on input line 877.
 (pdftex.def)             Requested size: 223.07211pt x 223.27391pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[92 <./images/mesh_by_streamline_1.pdf> <./images/mesh_by_streamline_2.pdf
+
+Underfull \hbox (badness 10000) in paragraph at lines 898--900
+
+ []
+
+[77 <./images/mesh_by_streamline_1.pdf> <./images/mesh_by_streamline_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/mesh_by_streamline_2.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: Text page 93 contains only floats.
+LaTeX Warning: Text page 78 contains only floats.
 
-
-Overfull \vbox (5.76007pt too high) has occurred while \output is active []
-
-
-[93 <./images/quad_equation_1.pdf> <./images/quad_equation_2.pdf
+[78 <./images/quad_equation_1.pdf> <./images/quad_equation_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/quad_equation_2.pdf): PDF incl
 usion: multiple pdfs with page group included in a single page
@@ -4181,51 +4183,62 @@ usion: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./images/quad_equation_4.pdf): PDF incl
 usion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 895--897
+Underfull \hbox (badness 10000) in paragraph at lines 918--920
 
  []
 
-[94 <./images/quad_eclatement.pdf> <./images/quad_carre.pdf
+
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 922--923
+
+ []
+
+[79 <./images/quad_eclatement.pdf> <./images/quad_carre.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/quad_carre.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 915--917
 
- []
+LaTeX Warning: Reference `chap:surface_courbe' on page 80 undefined on input li
+ne 957.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 918--919
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 919--920
-
- []
-
-[95]
-<images/alignment_1.pdf, id=2407, 780.75693pt x 783.88863pt>
+<images/alignment_1.pdf, id=2298, 780.75693pt x 783.88863pt>
 File: images/alignment_1.pdf Graphic file (type pdf)
 <use images/alignment_1.pdf>
-Package pdftex.def Info: images/alignment_1.pdf  used on input line 971.
+Package pdftex.def Info: images/alignment_1.pdf  used on input line 974.
 (pdftex.def)             Requested size: 234.45042pt x 235.3837pt.
-<images/alignment_2.pdf, id=2408, 778.82968pt x 834.71848pt>
+<images/alignment_2.pdf, id=2299, 778.82968pt x 834.71848pt>
 File: images/alignment_2.pdf Graphic file (type pdf)
 <use images/alignment_2.pdf>
-Package pdftex.def Info: images/alignment_2.pdf  used on input line 977.
+Package pdftex.def Info: images/alignment_2.pdf  used on input line 980.
 (pdftex.def)             Requested size: 217.60522pt x 233.22284pt.
-<images/alignment_3.pdf, id=2409, 824.84161pt x 824.11888pt>
+<images/alignment_3.pdf, id=2300, 824.84161pt x 824.11888pt>
 File: images/alignment_3.pdf Graphic file (type pdf)
 <use images/alignment_3.pdf>
-Package pdftex.def Info: images/alignment_3.pdf  used on input line 983.
+Package pdftex.def Info: images/alignment_3.pdf  used on input line 986.
 (pdftex.def)             Requested size: 232.17198pt x 231.97148pt.
-<images/alignment_4.pdf, id=2410, 776.6616pt x 777.86612pt>
+<images/alignment_4.pdf, id=2301, 776.6616pt x 777.86612pt>
 File: images/alignment_4.pdf Graphic file (type pdf)
 <use images/alignment_4.pdf>
-Package pdftex.def Info: images/alignment_4.pdf  used on input line 989.
+Package pdftex.def Info: images/alignment_4.pdf  used on input line 992.
 (pdftex.def)             Requested size: 219.4252pt x 219.75945pt.
- [96 <./images/alignment_1.pdf> <./images/alignment_2.pdf
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1011--1015
+
+ []
+
+
+LaTeX Warning: Reference `kowalski2013pde' on page 80 undefined on input line 1
+051.
+
+[80] [81 <./images/alignment_1.pdf> <./images/alignment_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/alignment_2.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
@@ -4238,76 +4251,47 @@ n: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./images/alignment_4.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1012
-
- []
-
-
-LaTeX Warning: Reference `kowalski2013pde' on page 97 undefined on input line 1
-048.
-
-[97]
-Underfull \hbox (badness 10000) in paragraph at lines 1103--1104
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1105--1106
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1106--1107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1107--1108
+Underfull \hbox (badness 10000) in paragraph at lines 1108--1109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
+Underfull \hbox (badness 10000) in paragraph at lines 1109--1110
 
  []
 
-) (./2-chapters/2-4-surface_courbe.tex [98]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
+
+ []
+
+) (./2-chapters/2-5-conclusion.tex [82]
 Chapitre 4.
-\openout3 = `main.mtc'.
-
-\openout3 = `main.mtc'.
-
-(./main.mtc4)
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-[99
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 31--35
-
- []
-
-[100] [101]) [102] (./2-chapters/2-5-conclusion.tex [103] [104
-
-
-]
-Chapitre 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-) (./2-chapters/2-6-annexes.tex [105] [106
+) (./2-chapters/2-6-annexes.tex [83
 
 
-]) (./main.bbl [107] [108
+] [84
 
 
-] [109]
-[110] [111])
+]) (./main.bbl [85] [86
+
+
+] [87] [88])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the main.maf file.
@@ -4329,7 +4313,7 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the main.log file.
 
-[112] (./main.aux)
+[89] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -4337,51 +4321,51 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5D0D017E62D4EAB1C240FF35D5F86E7E;13744.
+(rerunfilecheck)             Checksum: 3B3FEEA50821DEF971805CD7CD007CEC;11420.
  ) 
 Here is how much of TeX's memory you used:
- 71574 strings out of 478287
- 1612114 string characters out of 5849288
- 2247983 words of memory out of 5000000
- 87660 multiletter control sequences out of 15000+600000
- 501374 words of font info for 117 fonts, out of 8000000 for 9000
+ 71516 strings out of 478287
+ 1613997 string characters out of 5849288
+ 2257394 words of memory out of 5000000
+ 87672 multiletter control sequences out of 15000+600000
+ 496341 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,21n,122p,3378b,1034s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,21n,122p,3378b,1001s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.p
-fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfti1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/
-stmary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary7
+e/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0700.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfcc0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfti0800.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd
+/stmary6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary8
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on main.pdf (115 pages, 44555747 bytes).
+Output written on main.pdf (91 pages, 46250480 bytes).
 PDF statistics:
- 2839 PDF objects out of 2984 (max. 8388607)
- 2230 compressed objects within 23 object streams
- 566 named destinations out of 1000 (max. 500000)
- 1276 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2653 PDF objects out of 2984 (max. 8388607)
+ 2065 compressed objects within 21 object streams
+ 508 named destinations out of 1000 (max. 500000)
+ 1206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

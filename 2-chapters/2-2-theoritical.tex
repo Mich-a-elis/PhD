@@ -19,6 +19,7 @@ Dans cette section, nous présentons le concept de champ de croix défini sur un
 Soit $\mathbb{S}^1$ la sphère unité de $\mathbb{R}^2$ définie par $\mathbb{S}^1=\{(x,y)\in\mathbb{R}^2~|~x^2+y^2=1\}$ et soit $\mathcal{Q}$ le groupe de symétrie quadrilatérale défini comme l'ensemble des rotations d'angle $k\pi/2$, $k\in\{0, 1, 2, 3\}$.
 
 \begin{definition}[\cite{beaufort2017computing}]
+\label{def:croix}
   Une croix $\mathbf{c}$ est un élément de $\mathbf{C}:=\mathbb{S}^1/\mathcal{Q}\cup\{0\}$.
 \end{definition}
 
@@ -61,6 +62,7 @@ $\bar{u}$ est de classe $\mathcal{C}^1$ en un point $p$ s'il existe une applicat
 Comme toutes les composantes de $\bar{u}$ sont obtenues par rotations d'angles $m\pi/2$, où $m\in\mathbb{Z}$, la propriété énoncée précédemment peut être reformulée en tant qu'exigence de continuité $C^1$ pour toutes les composantes dans le voisinage de $p$.
 
 \begin{definition}
+\label{def:presqueC1}
     $\bar{u}$ est un champ de croix \emph{presque-$\mathcal{C}^1$} si $Card(\mathcal{S}_{\bar{u}})<\infty$ et si $\bar{u}$ est de classe $\mathcal{C}^1$ en tout point $p\in\Omega\backslash\mathcal{S}_{\bar{u}}$ (où $Card(\mathcal{S}_{\bar{u}})$ est le cardinal de $\mathcal{S}_{\bar{u}}$).
 \end{definition}
 
@@ -116,43 +118,43 @@ Pour finir, puisque $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ alors $\bar{u}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.3]{images/repre_field.pdf}
+  \includegraphics[scale=0.27]{images/repre_field.pdf}
   \hfill
-  \includegraphics[scale=0.3]{images/cross_from_repre_field.pdf}
+  \includegraphics[scale=0.27]{images/cross_from_repre_field.pdf}
   \caption{Illustration d'un champ de représentation (en gauche) et du champ de croix associé (à droite).}
   \label{fig:repr_to_cross}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.195]{images/cross_from_repre_field.pdf}
+  \includegraphics[scale=0.171]{images/cross_from_repre_field.pdf}
   \hfill
-  \includegraphics[scale=0.205]{images/scal_field.pdf}
+  \includegraphics[scale=0.176]{images/scal_field.pdf}
   \hfill
-  \includegraphics[scale=0.195]{images/result_field.pdf}
+  \includegraphics[scale=0.171]{images/result_field.pdf}
   \caption{Illustration de la rotation d'un champ de croix par rapport à un champ d'angle sur un domaine quelconque. \'A gauche : champ de croix initial, au milieu: champ d'angle (en radian), à droite: champ de croix résultant.}
   \label{fig:rot_cross}
 \end{figure}
 
-Pour tout point $p$ situé sur la frontière $\partial\Omega$, nous définissons $N(p)$ comme étant la normale extérieure unitaire. Lorsque la normale n'est pas définie en $p$, nous posons $N(p)=(0,0)$. En accord avec la proposition \ref{prop:cont1}, nous introduisons un champ de croix particulier associé à la frontière de $\Omega$, dite \emph{champ de croix normal} et définit par:
+Pour tout point $p$ situé sur la frontière $\partial\Omega$, nous définissons $n(p)$ comme étant la normale extérieure unitaire. Lorsque la normale n'est pas définie en $p$, nous posons $n(p)=(0,0)$. En accord avec la proposition \ref{prop:cont1}, nous introduisons un champ de croix particulier associé à la frontière de $\Omega$, dite \emph{champ de croix normal} et définit par:
 \begin{equation}
-    \bar{N}(p) =
+    \bar{n}(p) =
 \left\{
     \begin{array}{ll}
-        \left\{\mathbf{R}\left(\frac{m\pi}{2}\right)N(p),~ m\in \mathbb{Z}\right\} &\text{ si }N(p)\neq (0,0),\\\\
+        \left\{\mathbf{R}\left(\frac{m\pi}{2}\right)n(p),~ m\in \mathbb{Z}\right\} &\text{ si }n(p)\neq (0,0),\\\\
         0& \text{ sinon }.
     \end{array}
 \right.
 \end{equation}
 Nous pouvons alors introduire la notion d'alignement du champ de croix par la définition suivante:
 \begin{definition}
-    Le champ de croix $\bar{u}$ est dit aligné par rapport à $\partial\Omega$ ou aligné sur le bord de $\Omega$ si pour tout point $p\in\partial\Omega$, $\bar{u}(p)\in\{\bar{N}(p), 0\}$.
+    Le champ de croix $\bar{u}$ est dit aligné par rapport à $\partial\Omega$ ou aligné sur le bord de $\Omega$ si pour tout point $p\in\partial\Omega$, $\bar{u}(p)\in\{\bar{n}(p), 0\}$.
 \end{definition}
 Nous donnons sur la figure \ref{fig:align_bord} une illustration d'un champ de croix aligné sur le bord d'un domaine.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.35]{images/align_bord.pdf}
+  \includegraphics[scale=0.32]{images/align_bord.pdf}
   \caption{Mise en évidence d'un champ de croix aligné le long du bord d'un carré, avec une annulation du champ dans les coins.}
   \label{fig:align_bord}
 \end{figure}
@@ -176,12 +178,7 @@ Pour commencer, nous définissons la notion d'angle pour une croix. À chaque cr
 \end{lemma}
 
 \begin{proof}
-    Existence: L'ensemble $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]$ est non vide. En effet, supposons que $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]=\emptyset$. Par définition, on sait que pour tout $\mathbf{c}\in\mathbf{C}\backslash\{0\}$, alors on a:\\
-    \begin{itemize}
-     \item soit \\
-     \item soit \\
-    \end{itemize}
-$\left\{\arg c,~c\in \mathbf{c}\right\}=\emptyset$. Autrement dit, $\mathbf{c}=0$ ce qui est exclut.\\
+    Existence: L'ensemble $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]$ est non vide. En effet, $\mathbf{c}$ étant une croix, par définition on a $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]\neq\emptyset$ sauf si $\mathbf{c}=0$ ce qui est exclut.\\
     Unicité: Supposons que $\mathbf{c}$ ait deux angles $\theta_{\mathbf{c}}$ et $\theta^{'}_{\mathbf{c}}$. Par définition il existe $m, m'\in\mathbb{Z}$ et $c,c^{'}\in\mathbf{c}$ tel que:
     $$
     \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=atan2(c_y, c_x)+2m\pi-atan2(c^{'}_y, c^{'}_x)-2m'\pi.
@@ -420,6 +417,7 @@ On peut alors retrouver les propriétés principales de l'indice, résumées dan
 Par extension, en utilisant le lemme \ref{lem:index_saga_first} on a:
 
 \begin{corollary}
+    \label{cor:sum_index}
 Soit $V^\Gamma$ une partie de $\Omega$ délimitée par $\Gamma$. On a:
 \begin{equation}
 \label{eqn:Fu_sum}
@@ -448,11 +446,11 @@ De manière intuitive, l'indice d'un point dans un champ exprime combien de fois
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.251]{images/index_-025.pdf}
+  \includegraphics[scale=0.1765]{images/index_-025.pdf}
   \hfill
-  \includegraphics[scale=0.251]{images/index_025.pdf}
+  \includegraphics[scale=0.1765]{images/index_025.pdf}
   \hfill
-  \includegraphics[scale=0.251]{images/index_1.pdf}
+  \includegraphics[scale=0.1765]{images/index_1.pdf}
   \caption{Gauche: $id_{\bar{u}}(p)=-\frac{1}{4}$, milieu: $id_{\bar{u}}(p)=\frac{1}{4}$, droite: $id_{\bar{u}}(p)=1$}
   \label{fig:index_illustration}
 \end{figure}
@@ -496,7 +494,7 @@ où la somme est celle des indices des points singuliers de $\bar{u}$ et $\chi(\
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.251]{images/Poincare_etendu.pdf}
+  \includegraphics[scale=0.35]{images/Poincare_etendu.pdf}
   \caption{Extension du domaine pour la prise en compte des points singuliers de bord dans la formule de Poincaré-Hopf.}
   \label{fig:Poincare_etendu}
 \end{figure}
@@ -515,7 +513,7 @@ où pour tout $p\in\Omega^\epsilon\backslash\Omega$, $f$ désigne le vecteur gra
 $$
 \sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}} id_{\bar{u}^\epsilon}(p)=\chi(\Omega^\epsilon)
 $$
-Or $\chi(\Omega^\epsilon)=\chi(\Omega)$ donc on a:
+Or $\chi(\Omega^\epsilon)=\chi(\Omega)$ donc on a par le corollaire \ref{cor:sum_index}:
 $$
 \sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}\backslash\partial\Omega} id_{\bar{u}^\epsilon}(p)+\sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}\cap\partial\Omega} id_{\bar{u}^\epsilon}(p)=\chi(\Omega).
 $$
@@ -542,17 +540,17 @@ Pour prendre en considération les champs de croix comportant des points singuli
     f(q)=
     \left\{
     \begin{array}{ll}
-        N(q) & \mbox{ si } q\in[pa],\\[0.5cm]
-        \mathbf{R}\left(\alpha(\tau(q))\left(1-\displaystyle\frac{\pi}{2\pi-\hat{p}}\right)\right)N(\tau(q)) & \mbox{ sinon },
+        n(q) & \mbox{ si } q\in[pa],\\[0.5cm]
+        \mathbf{R}\left(\alpha(\tau(q))\left(1-\displaystyle\frac{\pi}{2\pi-\hat{p}}\right)\right)n(\tau(q)) & \mbox{ sinon },
     \end{array}
     \right.
     \end{equation}
-    où $\tau(q)=p+\|\overrightarrow{pq}\|.\|\overrightarrow{pa}\|^{-1}\overrightarrow{pa}$ et $\alpha(\tau(q))=\widehat{\tau(q)pq}$ est l'angle orienté entre les vecteurs $\overrightarrow{p\tau(q)}$ et $\overrightarrow{pq}$. Il est clair que $f$ est de classe $\mathcal{C}^1$ dans $V_p\backslash\{p\}$ puisque $\tau,\alpha\in\mathcal{C}^1(V_p\backslash\{p\}))$ et que la normale $N$ est $\mathcal{C}^1$ sur $]pa]$. Par conséquent, d'après la Propostion \ref{prop:cont1} le champ de croix $\bar{w}$ défini pour tout $q\in V_p$ par:
+    où $\tau(q)=p+\|\overrightarrow{pq}\|.\|\overrightarrow{pa}\|^{-1}\overrightarrow{pa}$ et $\alpha(\tau(q))=\widehat{\tau(q)pq}$ est l'angle orienté entre les vecteurs $\overrightarrow{p\tau(q)}$ et $\overrightarrow{pq}$. Il est clair que $f$ est de classe $\mathcal{C}^1$ dans $V_p\backslash\{p\}$ puisque $\tau,\alpha\in\mathcal{C}^1(V_p\backslash\{p\}))$ et que la normale $n$ est $\mathcal{C}^1$ sur $]pa]$. Par conséquent, d'après la Propostion \ref{prop:cont1} le champ de croix $\bar{w}$ défini pour tout $q\in V_p$ par:
     \begin{equation}
     \bar{w}(q)=
     \left\{
     \begin{array}{ll}
-        \bar{N}(p) & \mbox{ si } q=p,\\[0.5cm]
+        \bar{n}(p) & \mbox{ si } q=p,\\[0.5cm]
         \left\{\mathbf{R}\left(\displaystyle\frac{m\pi}{2}\right)f(q),~ m\in \mathbb{Z}\right\} & \mbox{ sinon },
     \end{array}
     \right.
@@ -632,7 +630,11 @@ Pour établir ce lemme, nous construisons d'abord l'application $\pi$ restreinte
 \paragraph{Définition d'un champ de vecteur de classe $\mathcal{C}^1$ dans un voisinnage de $p_0$.} D'après la proposition \ref{prop:angular_cont}, il existe une application $\theta_{\bar{u}}^{V_{p_0}}$ de classe $\mathcal{C}^1$ dans un voisinnage $V_{p_0}$ de $p_0$ telle que pour tout $q\in V_{p_0}$, $\theta_{\bar{u}}^{V_{p_0}}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$. Il vient alors qu'il existe $m\in\mathbb{Z}$ tel que l'application $\tau_{p_0}:=\mathbf{R}(\theta_{\bar{u}}^{V_{p_0}}+m\frac{\pi}{2})(1, 0)$ est un champ de vecteur de classe $\mathcal{C}^1$ sur $V_{p_0}$ vérifiant $\tau_{p_0}(p_0)=\overrightarrow{u_0}$.
 
 \paragraph{Construction de la restriction de $\pi_{\bar{u}}^S$ au voisinage de $p_0$.}
-Montrons que si $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$ tel que $\pi_{\bar{u}}^S(p_0)=\overrightarrow{u_0}$ satisfaisant \eqref{eqn:pi_u_S} et \eqref{eqn:streamline} alors $\pi_{\bar{u}}\circ S=\tau_{p_0}\circ S$ sur $V_{p_0}$. Supposons qu'il existe $t\in\mathbb{R}$ tel que $S(t)\in V_{p_0}$ et $\pi_{\bar{u}}^S\circ S(t)\neq\tau_{p_0}\circ S(t)$. Soit $\epsilon>0$ et notons $p'=S(t)$. $\tau_{p_0}$ étant continue sur $V_{p_0}$, on a:
+Montrons que si $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$ tel que $\pi_{\bar{u}}^S(p_0)=\overrightarrow{u_0}$ satisfaisant \eqref{eqn:pi_u_S} et \eqref{eqn:streamline} alors $\pi_{\bar{u}}\circ S=\tau_{p_0}\circ S$ sur $V_{p_0}$. Supposons qu'il existe $t\in\mathbb{R}$ tel que $S(t)\in V_{p_0}$ et $\pi_{\bar{u}}^S\circ S(t)\neq\tau_{p_0}\circ S(t)$. Par continuité de $\tau_{p_0}$
+\[\]
+
+
+Soit $\epsilon>0$ et notons $p'=S(t)$. $\tau_{p_0}$ étant continue sur $V_{p_0}$, on a:
 $$|\tau_{p_0}(p')-\pi^S_{\bar{u}}(p_0)|=|\tau_{p_0}(p')-\tau_{p_0}(p_0)|\leq\epsilon.$$
 Par inégalité triangulaire, il vient que:
 $$|\pi^S_{\bar{u}}(p')-\pi^S_{\bar{u}}(p_0)|\geq|\tau_{p_0}(p')-\pi^S_{\bar{u}}(p')|-\epsilon.$$
@@ -655,7 +657,7 @@ Nous obtenons la séparatrice $S$ en intégrant l'équation \eqref{eqn:streamlin
 
 
 \begin{remark}
-Notons que si $\bar{u}$ est aligné avec la frontière, alors pour tout $p\in \partial \Omega \backslash \mathcal{S}_{\bar{u}}$ tel que la normale extérieure unitaire $N(p)$ au point $p$, est définie, nous avons $SL{\bar{u}}\left(p,\mathbf{R}\left(\pm \frac{\pi}{2}\right)N(p)\right) \subset \partial \Omega$.
+Notons que si $\bar{u}$ est aligné avec la frontière, alors pour tout $p\in \partial \Omega \backslash \mathcal{S}_{\bar{u}}$ tel que la normale extérieure unitaire $n(p)$ au point $p$, est définie, nous avons $SL{\bar{u}}\left(p,\mathbf{R}\left(\pm \frac{\pi}{2}\right)n(p)\right) \subset \partial \Omega$.
 \end{remark}
 
 \begin{definition}[Séparatrice] \label{def:sep}
@@ -676,6 +678,7 @@ Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ et $p\in \Omega\backsla
 \begin{proof}
 Soit $\bar{v}$ défini pour tout $q\in\Omega$ par :
 \begin{equation}
+\label{eqn:equa_etoilage}
 \bar{v}(q)=
 \left\{
 \begin{array}{ll}
@@ -685,7 +688,7 @@ Soit $\bar{v}$ défini pour tout $q\in\Omega$ par :
 \end{array}
 \right.
 \end{equation}
-où $\pi$ est défini pour tout $q\in V_p\backslash\{p\}$ par:
+où $\pi$ est défini pour tout $q\in V_p\backslash\{p\}$ par l'intersection de la demi-droite $[pq)$ avec la courbe $\partial V_p$ (voir la figure \ref{fig:illustr_etoilage}):
 \begin{equation*}
 \left\{
 \begin{array}{ll}
@@ -694,8 +697,28 @@ où $\pi$ est défini pour tout $q\in V_p\backslash\{p\}$ par:
 \end{array}
 \right.
 \end{equation*}
-Notons que $\pi$ est bien définie. En effet, puisque $V_p$ est étoilé et que $\partial V_p$ est de classe $\mathcal{C}^1$, alors pour tout $q\in V_p\backslash\{p\}$, il existe un unique point $\pi(q)\in\partial V_p$.\\\\
-1.\quad Par définition $\bar{v}$ est presque-$\mathcal{C}^1$ dans $\Omega\backslash V_p$ et sur $\partial V_p$. Pour montrer que $\bar{v}$ est presque-$\mathcal{C}^1$ dans $V_p\backslash\{p\}$, il suffit de montrer que $\pi$ est $\mathcal{C}^1$ puisque $\bar{u}$ est $\mathcal{C}^1$ sur $\partial V_p$. Supposons que $\pi$ est $\mathcal{C}^1$. Soit $q\in V_p$ et $h\in\mathbb{R}^2$. Calculons $\pi(q+h)$.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.4]{images/illustr_etoilage.pdf}
+\caption{Illustration de la construction du champ de croix $\bar{v}$ dans $\partial V_p$.}
+\label{fig:illustr_etoilage}
+\end{figure}
+Notons que $\pi$ est bien défini. En effet, puisque $V_p$ est étoilé et que $\partial V_p$ est de classe $\mathcal{C}^1$, alors pour tout $q\in V_p\backslash\{p\}$, il existe un unique point $\pi(q)\in\partial V_p$.
+
+Nous montrons que $\bar{v}$ est presque continue dans $\Omega$ en démontrant cette propriété successivement dans $V_p$, dans $\Omega\backslash V_p$, et sur $\partial V_p$.\\
+\begin{itemize}
+\item Dans $V_p$ (voir Figure \ref{fig:v_bar_almost_continuous}) : Soit $x \in V_p$ fixé et $\epsilon > 0$. Nous voulons montrer qu'il existe $\eta > 0$ tel que pour tout $y \in V_p$, si $|x-y|\leq\eta$, alors $|\widetilde{g}(x)-\widetilde{g}(y)|\leq\epsilon$. Puisque $g'$ est continue, il existe $\eta_g$ tel que pour tout $x', y' \in \partial V_p$, si $|x'-y'|\leq\eta_g$, alors $|g'(x')-g'(y')|\leq\epsilon$. Soit $t^\pm=t_x\pm\eta_g$ avec $\gamma(t_x)=\pi(x)$, et soit $\mathcal{H}_x=V_p\cap\mathrm{C}(\gamma(t^-), p, \gamma(t^+))$, où $\mathrm{C}(\gamma(t^-), p, \gamma(t^+))$ désigne la région du plan délimitée par les demi-droites $[p\gamma(t^-))$ et $[p\gamma(t^+))$. Puisque $p\in V_p$, nous avons $\mathcal{H}_x \neq\emptyset$. De plus, $\mathcal{H}_x$ est ouvert par construction. Cela implique l'existence d'un certain $\eta>0$ tel que $\mathcal{B}(x,\eta)\subset \mathcal{H}_x$, et pour tout $y$ tel que $|x-y|\leq\eta$, nous avons $|\pi(x)-\pi(y)|\leq\eta_g$. Ceci prouve la continuité de $\pi$ et donc la continuité de $\widetilde{g}$ puisque $\bar{u}$ est continue dans $V_p$.\\
+\item Dans $\Omega\backslash V_p$ : $\bar{v}$ est presque continue dans $V_p$ par définition.\\
+\item Sur $\partial V_p$ : $\bar{v}$ est presque continue sur $\partial V_p$ grâce à une jonction continue de deux fonctions continues.\\
+\end{itemize}
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.35]{images/v_bar_almost_continuous_++.pdf}
+\caption{Illustration of the construction of the restriction of $\pi$}
+\label{fig:v_bar_almost_continuous}
+\end{figure}
+
+Pour montrer que $\bar{v}$ est presque-$\mathcal{C}^1$ dans $V_p\backslash\{p\}$, il suffit de montrer que $\pi$ est $\mathcal{C}^1$ puisque $\bar{u}$ est $\mathcal{C}^1$ sur $\partial V_p$. Pour ce faire, nous essayons de calculer la differentielle de $\pi$ et de montrer qu'elle est $\mathcal{C}^0$. Soit $q\in V_p$ et $h\in\mathbb{R}^2$. Calculons $\pi(q+h)$.
 \begin{eqnarray*}
     \pi(q+h)&=&p+\frac{\|\overrightarrow{p\pi(q+h)}\|}{\|\overrightarrow{p(q+h)}\|}\overrightarrow{p(q+h)}\\[0.2cm]
     &=&p+\left(\frac{\|\overrightarrow{p\pi(q)}\|}{\|\overrightarrow{pq}\|}+\frac{<\overrightarrow{p\pi(q)}, (\nabla\pi(q).h)>}{\|\overrightarrow{pq}\|\|\overrightarrow{p\pi(q)}\|}\right)\left(1-\frac{\overrightarrow{pq}.h}{\|\overrightarrow{pq}\|^2}\right)\left(\overrightarrow{pq}+h\right) + o(h^2)\\[0.2cm]
@@ -706,15 +729,15 @@ Notons que $\pi$ est bien définie. En effet, puisque $V_p$ est étoilé et que 
 En posant $e_q=\displaystyle\frac{\overrightarrow{pq}}{\|\overrightarrow{pq}\|}$ et $\lambda_q=\displaystyle\frac{\|\overrightarrow{p\pi(q)}\|}{\|\overrightarrow{pq}\|}$ on obtient:
 
 \begin{eqnarray*}
-    \pi(q+h) = \pi(q)+<e_q,\nabla\pi(q).h>e_q+\lambda_q(-(e_q.h)e_q+h)+o(h^2)
+    \pi(q+h) = \pi(q)+<e_q,\nabla\pi(q).h>e_q+\lambda_q(-(e_q.h)e_q+h)+o(h^2).
 \end{eqnarray*}
-Posons $L(h)=<e_q,\nabla\pi(q).h>e_q+\lambda_q(-(e_q.h)e_q+h)$. La composante de $L(h)$ suivant $\overrightarrow{e_q^\perp}$ est donné par $X=L(h).e_q^\perp=\lambda_q(h.e_q^\perp)$. Nous cherchons ensuite la composante suivant $\overrightarrow{e_q}$: soit $\gamma$ une paramétrisation de $\partial V_p$ sur $I\subset\mathbb{R}$. Puisque $\pi(q+h),\pi(q)\in\partial V_p$, il existe $t_1, t_2\in I$ tel que $\pi(q)=\gamma(t_1)$ et $\pi(q+h)=\gamma(t_2)$. $\gamma$ étant $\mathcal{C}^1$, il existe une fonction dépendant de $h$ noté $m(h)$ tel que $\pi(q+h)-\pi(q)=m(h).\overrightarrow{t}+o(h^2)$ avec $\overrightarrow{t}=\gamma'(t_1).\|\gamma'(t_1)\|^{-1}$. Ce qui implique que $L(h)$ est colinéaire au vecteur $\overrightarrow{t}$. Il vient alors que:
+Posons $L(h)=<e_q,\nabla\pi(q).h>e_q+\lambda_q(-(e_q.h)e_q+h)$. La composante de $L(h)$ suivant $\overrightarrow{e_q^\perp}$ est donnée par $X=L(h).e_q^\perp=\lambda_q(h.e_q^\perp)$ qui est continue en $q$. Nous cherchons ensuite la composante suivant $\overrightarrow{e_q}$: soit $\gamma$ une paramétrisation de $\partial V_p$ sur $I\subset\mathbb{R}$. Puisque $\pi(q+h),\pi(q)\in\partial V_p$, il existe $t_1, t_2\in I$ tel que $\pi(q)=\gamma(t_1)$ et $\pi(q+h)=\gamma(t_2)$. $\gamma$ étant $\mathcal{C}^1$, il existe une fonction dépendant de $h$ notée $m(h)$ telle que $\pi(q+h)-\pi(q)=m(h).\overrightarrow{t}+o(h^2)$ avec $\overrightarrow{t}=\gamma'(t_1).\|\gamma'(t_1)\|^{-1}$. Ce qui implique que $L(h)$ est colinéaire au vecteur $\overrightarrow{t}$. Il vient alors que:
 $$
-\|L(h)\|=\frac{X}{\cos{\alpha}},\mbox{ avec }\cos{\alpha}=\overrightarrow{t}.\overrightarrow{e_q^\perp}
+X=L(h).\overrightarrow{e_q^\perp}=\|L(h)\|\cos{\alpha},\mbox{ avec }\cos{\alpha}=\overrightarrow{t}.\overrightarrow{e_q^\perp}
 $$
-Autrement dit, la composante de $L(h)$ suivant $e_q$ noté $Y$ est donné par:
+Autrement dit, la composante de $L(h)$ suivant $e_q$ notée $Y$ est donnée par:
 $$
-Y=\sqrt{\|L(h)\|^2-X^2}=\frac{1}{\cos{\alpha}}\sqrt{X^2(1+\cos^2\alpha)}
+Y=\pm\sqrt{\|L(h)\|^2-X^2}=\frac{\pm 1}{\cos{\alpha}}\sqrt{X^2(1+\cos^2\alpha)}
 $$
 \begin{comment}
 \begin{figure}[!h]
@@ -724,7 +747,7 @@ $$
 %\label{fig:v_bar_almost_continuous}
 \end{figure}
 \end{comment}
-Finalement, on a $L(h)=X\overrightarrow{e_q^\perp}+ Y\overrightarrow{e_q}$ avec $X$ et $Y$ linéaire et continue. Par conséquent, $\pi$ est bien de classe $\mathcal{C}^1$.\\\\
+avec $\cos{\alpha}\neq 0$. Si $\cos{\alpha}= 0$ alors on a $\overrightarrow{t}.\overrightarrow{e_q^\perp}=0$ ce qui exclut puisque $V_p$ est étoilé par rapport à $p$. Finalement, on a $L(h)=X\overrightarrow{e_q^\perp}+ Y\overrightarrow{e_q}$ avec $X$ et $Y$ linéaire en $h$ et continue en $q$. Par conséquent, $\pi$ est bien de classe $\mathcal{C}^1$.\\\\
 2.\quad Pour tout $q\in V_p\backslash\{p\}$, $\bar{v}(q)\neq 0$ et $\bar{v}(p)=0$. Par conséquent, $\mathcal{S}_{\bar{v}}\cap V_p=\{p\}$. Soit $\gamma$ une paramétrisation de $\partial V_p$ sur $[0, 1]$. Sachant que l'indice de $p$ dans le champ de croix $\bar{v}$ ne dépend pas du chemin, on peut écrire que:
 $$id_{\bar{v}}(p)=\frac{1}{2\pi}\int_{\partial V_p}d\theta_{\bar{v}}.$$
 Or par construction, on a $\bar{v}=\bar{u}$ sur $\partial V_p$ donc on a:
@@ -748,30 +771,10 @@ De plus, si $\partial V_p$ est tangent à $\partial\Omega$ en p, alors on a:
 \end{proposition}
 
 \begin{proof}
-Soit $\bar{v}$ défini pour tout $q\in\Omega$ par :
-\begin{equation}
-\bar{v}(q)=
-\left\{
-\begin{array}{ll}
-0&\mbox{ si }q=p\\[0.25cm]
-\bar{u}(q)&\mbox{ si } q\notin V_p,\\[0.25cm]
-\bar{u}\circ\pi(q)&\mbox{ sinon},
-\end{array}
-\right.
-\end{equation}
-où $\pi$ est défini pour tout $q\in V_p\backslash\{p\}$ par:
-\begin{equation*}
-\left\{
-\begin{array}{ll}
-\pi(q)=p+\displaystyle\frac{\overrightarrow{\|p\pi(q)\|}}{\overrightarrow{\|pq\|}}\overrightarrow{pq},\\[0.5cm]
-\pi(q)\in\partial V_p.
-\end{array}
-\right.
-\end{equation*}
-Notons que $\pi$ est bien définie. En effet, puisque $V_p$ est étoilé et que $\partial V_p$ est de classe $\mathcal{C}^1$, alors pour tout $q\in V_p\backslash\{p\}$, il existe un unique point $\pi(q)\in\partial V_p$.\\\\
-1.\quad De manière analogue à la preuve de la proposition \ref{prop:stream_from_bord_sing} on montre que $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$.\\\\
-2.\quad Soit $q\in\partial V_p$ tel que $\overrightarrow{v_q}:=\overrightarrow{pq}.\|\overrightarrow{pq}\|^{-1} \in \bar{u}(q)$. Alors pour tout $p'\in~]pq)\cap V_p$ on a $\overrightarrow{v_q}\in\bar{v}(p')$. Par conséquent, pour tout $p'\in]pq]$ on a $p'\in SL_{\bar{v}}(q,\overrightarrow{v_q})$. Ainsi en passant à la limite avec $p'\longrightarrow p$ on a $p\in SL_{\bar{v}}(q,\overrightarrow{v_q})$.\\\\
-3.\quad Supposons maintenant que $\partial V_p$ est tangent à $\partial V_p$ en p. Pour tout $q\in V_p\backslash\{p\}$, $\bar{v}(q)\neq 0$ et $\bar{v}(p)=0$. Par conséquent, $\mathcal{S}_{\bar{v}}\cap V_p=\{p\}$. Soit $\gamma$ une paramétrisation de $\partial V_p$ sur $[0, 1]$ avec $\gamma(0)=p=\gamma(1)$. Puisque $\partial V_p$ est tangent à $\partial\Omega$ en p, les vecteurs $\gamma'(0)$ et $\gamma'(1)$ sont tangents à $\partial\Omega$. On a donc:
+Soit $\bar{v}$ défini pour tout $q\in\Omega$ par l'équation \eqref{eqn:equa_etoilage}:\\\\
+1.\quad La proposition \ref{prop:stream_from_interior_sing} montre que $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$.\\\\
+2.\quad Voir la preuve de la proposition \ref{prop:stream_from_interior_sing}.\\\\
+3.\quad Supposons maintenant que $\partial V_p$ est tangent à $\partial V_p$ en p. Pour tout $q\in V_p\backslash\{p\}$, $\bar{v}(q)\neq 0$ et $\bar{v}(p)=0$. Par conséquent, $\mathcal{S}_{\bar{v}}\cap V_p=\{p\}$. Soit $\gamma$ une paramétrisation de $\partial V_p$ sur $[0, 1]$ avec $\gamma(0)=p=\gamma(1)$. Puisque $\partial V_p$ est tangent à $\partial\Omega$ en p, les vecteurs $\gamma'(0)$ et $\gamma'(1)$ sont tangents à $\partial\Omega$. On a donc par le corollaire \ref{cor:sum_index}:
 $$
 id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\hat{p}+\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{v}}^\gamma\right]
 $$
@@ -796,26 +799,21 @@ qui indique la différence angulaire relative entre le champ de croix et le cham
 
 \begin{remark}
 \label{rmk:W_p_gamma}
-La définition de $W_p^\gamma$ dépend du choix de $\theta_{\bar{u}}^\gamma$ donné par le Corollaire \ref{cor:relevement_continu}, qui n'est pas unique mais est défini à une constante près de $m\pi/2$ avec $m\in\mathbb{Z}$. Cela signifie que différents choix de $\theta_{\bar{u}}^\gamma$ peuvent conduire à différentes valeurs de $W_p^\gamma$, mais ils diffèrent seulement par un multiple de $\pi/2$ ce qui n'aura pas d'impact sur ce qui suit.
+La définition de $W_p^\gamma$ dépend du choix de $\theta_{\bar{u}}^\gamma$ donné par le Corollaire \ref{cor:relevement_continu}, qui n'est pas unique mais est défini à une constante près de $m\pi/2$ avec $m\in\mathbb{Z}$. Cela signifie que différents choix de $\theta_{\bar{u}}^\gamma$ peuvent conduire à différentes valeurs de $W_p^\gamma$, mais ils diffèrent seulement d'un multiple de $\pi/2$ ce qui n'aura pas d'impact sur ce qui suit.
 \end{remark}
-
+Le lemme suivant donne un partitionnement du voisinnage d'un point dans un champ de croix en fonction de l'indice du point dans le champ.
 \begin{lemma}
 \label{lem:decoup_voisinnage}
-Soit $p\in\Omega\backslash\partial\Omega$ tel que $id_{\bar{u}}(p)=k/4$ avec $k\in\mathbb{Z}$ et $k\leq 1$. Pour tout $t_0\in[0, 1]$, on a:\\
-
-\begin{itemize}
-    \item[$\bullet$] $\exists (t_i)_{i\in\llbracket1, N_s\rrbracket}\subset[0, 1]$ tel que $N_s=4-k$ et $0\leq t_1<\dots< t_{N_s}\leq 1$,\\
-    \item[$\bullet$] $\exists i\in [0, 1]$ tel que $t_0=t_i$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
+Soit $p\in\Omega\backslash\partial\Omega$ tel que $id_{\bar{u}}(p)=k/4$ avec $k\in\mathbb{Z}$ et $k\leq 1$. Pour tout $t_0\in[0, 1]$, il existe une suite de points $(t_i)_{i\in\llbracket1, N_s\rrbracket}\subset[0, 1]$ avec $N_s=4-k$ tels que $0\leq t_1<\dots< t_{N_s}\leq 1$ et il existe $i\in [0, 1]$ tel que $t_0=t_i$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
 $$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
-\end{itemize}
 \end{lemma}
 
 \begin{proof}
-Étant donné que $id_{\bar{u}}(p)=k/4$, on a:
-$$\int_0^1 d\theta^\gamma_{\bar{u}}=k\frac{\pi}{2}$$
-Or on a $\int_0^1 d\arg{\overrightarrow{p\gamma(t)}}=2\pi$ donc:
+Par le théorème \ref{thm:index}, on a:
+$$\int_0^1 d\theta^\gamma_{\bar{u}}=k\frac{\pi}{2}\mbox{ avec }id_{\bar{u}}(p)=k/4.$$
+Or on a $\displaystyle\int_0^1 d\arg{\overrightarrow{p\gamma(t)}}=2\pi$ donc:
 $$\int_0^1 dW_p^\gamma=(k-4)\frac{\pi}{2}=-N_s\frac{\pi}{2} \mbox{ avec } N_s=4-k.$$
-Définissons maintenant une fonction $h: t \mapsto h(t) \in \mathbb{R}$ comme suit :
+$\gamma$ étant un lacet, on introduit une nouvelle paramétrisation $\gamma\circ h:[t_0, t_0+1[\longrightarrow\partial V_p$ définie par:
 $$
 h(t) =
     \begin{cases}
@@ -823,30 +821,30 @@ h(t) =
         t+1&\mbox{ for }t\in[0,t_0[.
     \end{cases}
 $$
-Il vient alors que:
+Par régularité de $\partial V_p$, $h\in\mathcal{C}^1([t_0, t_0+1[)$. Il vient alors que:
 $$\int_0^1 dW_p^\gamma(t)=\int_{t_0}^{t_0+1} d(W_p^\gamma \circ h).$$
 Posons $t'_1 := t_0$ et définissons la fonction $f$ par:
 $$f: \tau \mapsto \int_{t'_1}^\tau d(W_p^\gamma \circ h).$$
-Comme $f$ est continue sur $[0,1]$, l'application du théorème des valeurs intermédiaires, conduit à l'existence de $(t'_i)_{i\in\llbracket 2,N_s\rrbracket}\subset[0, 1]$ tels que $t'_1<t'_2<\dots<t'_{N_s}$ et pour tout $i\in\llbracket1, N_s\rrbracket$ on a:
+Comme $f$ est continue sur $[0,1]$, l'application du théorème des valeurs intermédiaires, conduit à l'existence de $(t'_i)_{i\in\llbracket 2,N_s\rrbracket}\subset[0, 1]$ tels que $t'_1<t'_2<\dots<t'_{N_s}$ avec pour tout $i\in\llbracket1, N_s\rrbracket$:
 $$\int_{t'_i}^{t'_{i+1}}d(W_p^\gamma\circ h)=-\frac{\pi}{2},$$
-où $t'_{N_s+1}:=t'_1$. Enfin, nous pouvons définir $t_i=h^{-1}(t'_i)$ pour tout $i\in\llbracket 1,N_s\rrbracket$, ce qui donne une suite de $N_s=4-k$ points $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$ tels que $\exists i\in\llbracket 1,N_s\rrbracket$ avec $t_i=t_0$. De plus, $\forall i\in\llbracket 1,N_s\rrbracket$, nous avons:
+où $t'_{N_s+1}:=t'_1$. Enfin, nous pouvons définir $t_i=h^{-1}(t'_i)$ pour tout $i\in\llbracket 1,N_s\rrbracket$, ce qui donne une suite de $N_s=4-k$ points $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$ tels que $\exists i\in\llbracket 1,N_s\rrbracket$ avec $t_i=t_0$. De plus nous avons $\forall i\in\llbracket 1,N_s\rrbracket$:
 $$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
 \end{proof}
 
-En se basant sur ce résultat, nous sommes en mesure d'énoncer la proposition suivante, laquelle permet de déterminer le nombre de séparatrices à attribuer à un point singulier ainsi que leur orientation initiale.
+En se basant sur ce résultat, nous sommes en mesure d'énoncer la proposition suivante, laquelle permet de déterminer le nombre de séparatrices à attribuer à un point singulier ainsi que leurs orientations initiales.
 
 \begin{proposition}
     \label{prop:align_sepa_voisinnage}
-    Soit $p\in\Omega\backslash\partial\Omega$ tel que $id_{\bar{u}}(p)=k/4$ avec $k\in\mathbb{Z}$ et $k\leq 1$. Pour tout $t_0\in[0, 1]$, il existe une suite de points $(t_i)_{i\in\llbracket1, N_s\rrbracket}$ tel que $N_s=4-k$ et $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$ avec $\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i))$. De plus, il existe $i\in [0, 1]$ tel que $t_i=t_0$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
+    Soit $p\in\Omega\backslash\partial\Omega$ tel que $id_{\bar{u}}(p)=k/4$ avec $k\in\mathbb{Z}$ et $k\leq 1$. Il existe une suite de points $(t_i)_{i\in\llbracket1, N_s\rrbracket}$ tel que $N_s=4-k$ et $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$ avec $\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i))$. De plus pour tout $i\in\llbracket 1, N_s\rrbracket$,
     $$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
 \end{proposition}
 
-Selon la Remarque \ref{rmk:W_p_gamma}, il est en effet correct que $W_p^\gamma$ n'est pas unique et peut être défini à une constante près de $m\pi/2,~m\in\mathbb{Z}$. Cependant, dans le contexte du lemme \ref{lem:decoup_voisinnage}, nous pouvons observer que les valeurs de $t_i,~\forall i\in\llbracket 1, N_s\rrbracket$ données ne dépendent pas du choix spécifique de $W_p^\gamma$.
+Selon la Remarque \ref{rmk:W_p_gamma}, il est en effet correct que $W_p^\gamma$ ne soit pas unique et puisse être défini à une constante près de $m\pi/2,~m\in\mathbb{Z}$. Cependant, dans le contexte du lemme \ref{lem:decoup_voisinnage}, nous pouvons observer que les valeurs de $t_i,~\forall i\in\llbracket 1, N_s\rrbracket$ données ne dépendent pas du choix spécifique de $W_p^\gamma$.
 
 \begin{proof}
-Selon le lemme \ref{lem:decoup_voisinnage}, s'il existe $t_0\in[0, 1]$ tel que $\overrightarrow{u_0}=\overrightarrow{p\gamma(t_0)}.\|\overrightarrow{p\gamma(t_0)}\|^{-1}\in\bar{u}(\gamma(t_0))$, alors il existe une suite de points $(t_i)_{i\in\llbracket1, N_s\rrbracket}$ tel que $N_s=4-k$ et $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$. De plus, il existe $i\in [0, 1]$ tel que $t_i=t_0$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
+S'il existe $t_0\in[0, 1]$ tel que $\overrightarrow{u_0}=\overrightarrow{p\gamma(t_0)}.\|\overrightarrow{p\gamma(t_0)}\|^{-1}\in\bar{u}(\gamma(t_0))$, alors selon le lemme \ref{lem:decoup_voisinnage}, il existe une suite de points $(t_i)_{i\in\llbracket1, N_s\rrbracket}$ tel que $N_s=4-k$ et $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$. De plus, il existe $i\in [0, 1]$ tel que $t_i=t_0$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
 $$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
-Remarquons alors que pour tout $i\in\llbracket 1, N_s\rrbracket$, nous avons:$$\overrightarrow{u_i}=\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i)).$$
+Remarquons alors que pour tout $i\in\llbracket 1, N_s\rrbracket$, nous aurons bien:$$\overrightarrow{u_i}=\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i)).$$
 Cela peut être démontré de manière itérative comme suit: puisque $\int_{t_{i-1}}^{t_{i}}dW_p^\gamma=-\frac{\pi}{2}$ alors $\theta^\gamma_{\bar{u}}(t_i)=\arg \overrightarrow{p\gamma(t_i)} +\theta^\gamma_{\bar{u}}(t_{i-1})-\arg \overrightarrow{p\gamma(t_{i-1})}-\frac{\pi}{2}$. Étant donné que $\overrightarrow{p\gamma(t_{i-1})}.\|\overrightarrow{p\gamma(t_{i-1})}\|^{-1}\in\bar{u}(\gamma(t_{i-1}))$, on a $\theta^\gamma_{\bar{u}}(t_{i-1})\equiv\arg \overrightarrow{p\gamma(t_{i-1})}\pmod{\frac{\pi}{2}}$. Par conséquent, on peut en déduire que $\theta^\gamma_{\bar{u}}(t_{i})\equiv\arg \overrightarrow{p\gamma(t_i)}\pmod{\frac{\pi}{2}}$, ce qui prouve que $\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i))$.
 
 Pour compléter la preuve, on doit montrer qu'il existe $t_0\in[0,1]$ tel que $\overrightarrow{p\gamma(t_0)}.\|\overrightarrow{p\gamma(t_0)}\|^{-1}\in\bar{u}(\gamma(t_0))$. Soit $s_0\in[0,1]$ tel que $0<W_p^\gamma(s_0)<\frac{\pi}{2}$. D'après le lemme \ref{lem:decoup_voisinnage}, il existe $s_1>s_0$ tel que $\int_{s_0}^{s_1}dW_p^\gamma=-\frac{\pi}{2}$, ce qui signifie que $W_p^\gamma(s_1)=W_p^\gamma(s_0)-\frac{\pi}{2}<0$. Par le théorème des valeurs intermédiaires, il existe donc $t_0\in[s_0, s_1]$ tel que $W_p^\gamma(t_0)=0$, ce qui implique que $\arg\overrightarrow{p\gamma(t_0)}\in\bar{u}(\gamma(t_0))$. Par conséquent, $\overrightarrow{p\gamma(t_0)}.\|\overrightarrow{p\gamma(t_0)}\|^{-1}\in\bar{u}(\gamma(t_0))$, ce qui complète la preuve.
@@ -869,23 +867,11 @@ $$\int_0^1W_p^\gamma(t)dt=-\frac{\pi}{2}.$$
 et donc $N_s=3-k$.
 \begin{itemize}
 \item Si $k=1$, alors $\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{1-s} dW_p^\gamma= -\frac{\pi}{2}$. En conséquence, on observe l'existence d'un seul secteur.\vspace{0.1cm}
-\item Sinon, si $k<1$. Selon le théorème des valeurs intermédiaires :\vspace{0.1cm}
-\begin{itemize}
-\item[-] Pour $k=0$, il existe $t_1\in]0, 1[$ tel que :
-$$\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{t_1} dW_p^\gamma= -\frac{\pi}{2} \mbox{ et } \lim\limits_{s\rightarrow 0}\displaystyle\int_{t_1}^{1-s} dW_p^\gamma= -\frac{\pi}{2}.$$
-Par conséquent, on observe l'existence de 2 secteurs.\vspace{0.1cm}
-\item[-] Pour $k=-1$, il existe $t_1$ et $t_2$ dans $]0, 1[$, $t_1<t_2$ tels que :
-$$\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{t_1} dW_p^\gamma= -\frac{\pi}{2},~ \int_{t_1}^{t_2}dW^\gamma_p=-\frac{\pi}{2} \mbox{ et } \lim\limits_{s\rightarrow 0}\displaystyle\int_{t_2}^{1-s} dW_p^\gamma= -\frac{\pi}{2}.$$\\\vspace{0.1cm}
-\item[-] Pour $k<0$, il existe $(t_i)_{i\in\llbracket2, N_s\rrbracket}$, avec $0<t_1\leq\dots\leq t_{-k+1}<1$ tels que :
-%\small
-$$\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{t_1} dW_p^\gamma= -\frac{\pi}{2},~ \lim\limits_{s\rightarrow 0}\displaystyle\int_{t_2}^{1-s} dW_p^\gamma= -\frac{\pi}{2} \mbox{ and } \int_{t_1}^{t_{-k+1}}dW^\gamma_p=\sum_{i=1}^{-k}\displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma,$$
-où $\forall i\in\llbracket 1, -k\rrbracket, \displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma=-\frac{\pi}{2}.$
-%\normalsize
-Par conséquent, nous observons l'existence de $2-k$ secteurs.
-La fonction $t\longmapsto\displaystyle\int_{t_1}^t dW_p^\gamma\in\mathcal{C}^0([0,1])$ implique, selon le théorème des valeurs intermédiaires, l'existence de $(t_i)_{i\in\llbracket2, -k+1\rrbracket}\subset[0, 1]$ tels que $\displaystyle\int_{t_1}^{t_f} dW_p^\gamma=\sum_{i=1}^{-k}\displaystyle\int_{t_i}^{t_{i+1}}dW_p^\gamma$ où $\displaystyle\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},~\forall i\in\llbracket1, N_s\rrbracket$ et $t_{N_s+1}:=t_1$.
-Grâce au théorème des valeurs intermédiaires, il existe $t_i$ tel que :
-$$\displaystyle\int_{t_1}^{t_f} dW_p^\gamma= \sum_{i=1}^{-k}\displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma \mbox{ with } \displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma=-\frac{\pi}{2}\mbox{ and } t_f=t_{-k+1}.$$
-\end{itemize}
+\item Sinon, si $k<1$, la fonction $t\longmapsto\displaystyle\int_{0}^t dW_p^\gamma$ étant continue sur $[0,1]$, selon le théorème des valeurs intermédiaires, il existe $(t_i)_{i\in\llbracket 1, N_s-2\rrbracket}\subset[0, 1]$ tels que:
+$$\displaystyle\int_{0}^{1} dW_p^\gamma= \displaystyle\int_{0}^{t_1} dW_p^\gamma+\sum_{i=1}^{N_s-3}\displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma+\displaystyle\int_{t_{N_s-2}}^{1} dW_p^\gamma,$$
+avec
+$$\displaystyle\int_{0}^{t_1} dW_p^\gamma=-\frac{\pi}{2},\displaystyle\int_{t_{N_s-2}}^{1} dW_p^\gamma=-\frac{\pi}{2}\mbox{ et }\displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma=-\frac{\pi}{2}\mbox{ pour }i\in\llbracket 1, N_s-3\rrbracket.$$
+En conséquence, on observe l'existence de $2-k$ secteurs.
 \end{itemize}
 \end{proof}
 La figure \ref{fig:separatrice_illustration} illustre le partitionnement du voisinnages de points singulier par les séparatrices issues de ces points singuliers. En effet, en fonction de l'index du point ces séparatrices divisent le voisinnage du point en un nombre fini de de secteur. Par rapport à ces secteurs, nous avons la proposition suivante:
@@ -944,7 +930,7 @@ Considérons un domaine $\Omega$ borné et fermé dans $\mathbb{R}^2$ possédant
 \vspace{0.2cm}
 1.\quad Identification des points singuliers du champ de croix,\\\vspace{0.2cm}
 2.\quad Détermination du nombre de séparatrices pour chaque point singulier,\\\vspace{0.2cm}
-3.\quad Intégration des séparatrices,\\\vspace{0.2cm}
+3.\quad Intégration des lignes de champ pour construire les séparatrices,\\\vspace{0.2cm}
 4.\quad Identification des régions.\\\vspace{0.2cm}
 \caption{Algorithme de partitionnement}
 \end{algorithm}
@@ -954,15 +940,16 @@ Considérons un domaine $\Omega$ borné et fermé dans $\mathbb{R}^2$ possédant
 \item \textbf{Identification des points singuliers :} l'algorithme commence par identifier les points singuliers dans le champ de croix fourni. Ces points singuliers jouent un rôle critique dans la détermination de la structure du maillage. Ils correspondent à des points $p\in\Omega$, tels que $\bar{u}(p)=0$ (voir la première image de la figure \ref{fig:demi_disc_align_first}).\\
 \item \textbf{Détermination du nombre de séparatrices pour chaque point singulier :}
 le nombre de lignes de champ provenant de chaque point singulier est directement lié à l'indice du point dans le champ de croix Plus précisément, si $p\in\Omega\backslash\partial\Omega$, alors $N_s(p) = 4 - id_{\bar{u}}(p)$, tandis que si $p\in\partial\Omega$, alors $N_s(p) = 2 - id_{\bar{u}}^\partial(p)$ où $N_s(p)$ représente le nombre de séparatrices associé au point $p$ (voir les propositions \ref{prop:align_sepa_voisinnage} et \ref{prop:align_sepa_voisinnage_bord}).\\
-\item \textbf{Intégration des séparatrices :} les séparatrices de chaque point singulier sont initialisé selon la proposition $\ref{prop:stream_from_interior_sing}$ puis intégrées à travers le domaine en utilisant l'équation \eqref{eqn:streamline} (voir la deuxième image de la figure \ref{fig:demi_disc_align_second}). Les directions initiales de ces séparatrices sont déterminées en cherchant des directions alignées avec le champ de croix dans le voisinnage du points singuliers  (voir les propositions \ref{prop:align_sepa_voisinnage} et \ref{prop:align_sepa_voisinnage_bord}).\\
-\item \textbf{Identification des régions :} si aucune des séparatrices ne converge vers un cycle limite alors l'algorithme à converger et les séparatrices construites partitionne avec le bord du domaine le domaine en un ensemble fini de régions.\\
+\item \textbf{Construction des séparatrices :} les séparatrices de chaque point singulier sont initialisées selon la proposition $\ref{prop:stream_from_interior_sing}$ puis les lignes de champs sont intégrées à travers le domaine en utilisant l'équation \eqref{eqn:streamline} (voir la deuxième image de la figure \ref{fig:demi_disc_align_second}). Les directions initiales de ces séparatrices sont déterminées en cherchant des directions alignées avec le champ de croix dans le voisinnage du points singuliers  (voir les propositions \ref{prop:align_sepa_voisinnage} et \ref{prop:align_sepa_voisinnage_bord}).\\
+\item \textbf{Identification des régions :} si aucune des séparatrices ne converge vers un cycle limite alors l'algorithme à converger et les séparatrices construites partitionnent avec le bord du domaine en un ensemble fini de régions.\\
 \end{enumerate}
 
-Examinons à présent les conditions sur le champ de croix qui permettent, à partir de l'algorithme présenté ci-dessus, d'obtenir un maillage quadrilatéral d'un domaine donné.
+On considère que l'algorithme
+\ref{alg:algo_main} a convergé si les constructions de séparatrices ne convergent pas vers des cycles limites. Examinons à présent les conditions sur le champ de croix qui permettent, à partir de l'algorithme présenté ci-dessus, d'obtenir un maillage quadrilatéral d'un domaine donné.
 
 \subsubsection*{Construction à partir d'un champ de croix aligné sur le bord de $\Omega$}
 
-Lorsque le champ de croix est aligné par rapport à $\partial\Omega$, on peut montrer (voir le Théorème \ref{thm:theorem1}) que le partionnement issue de l'Algorithme \ref{alg:algo_main} est constitué de régions ayant 4 côtés. Chacune de ces régions peut alors être mailler en quadrilatères en utilisant une méthode de paramétrisation comme l'interpolation transfinie. Par exemple, sur la figure \ref{fig:demi_disc_align}, nous considérons un champ de croix aligné avec le bord du domaine (voir figure \ref{fig:demi_disc_align_first}). Ce champ comporte deux points singuliers intérieurs d'indice $1/4$ chacun, ainsi que deux points singuliers de bord d'indice $1/4$ chacun. L'application de l'algorithme de partitionnement permet d'obtenir le partitionnement présenté sur la figure \ref{fig:demi_disc_align_second}. Chaque région est ensuite maillé sur la figure \ref{fig:demi_disc_align_third}.
+Lorsque le champ de croix est aligné par rapport à $\partial\Omega$, on peut montrer (voir le Théorème \ref{thm:theorem1}) que le partionnement issue de l'Algorithme \ref{alg:algo_main} est constitué de régions ayant 4 côtés. Chacune de ces régions peut alors être maillée en quadrilatères en utilisant une méthode de paramétrisation comme l'interpolation transfinie. Par exemple, sur la figure \ref{fig:demi_disc_align}, nous considérons un champ de croix aligné avec le bord du domaine (voir figure \ref{fig:demi_disc_align_first}). Ce champ comporte deux points singuliers intérieurs d'indice $1/4$ chacun, ainsi que deux points singuliers de bord d'indice $1/4$ chacun. L'application de l'algorithme de partitionnement permet d'obtenir le partitionnement présenté sur la figure \ref{fig:demi_disc_align_second}. Chaque région est ensuite maillé sur la figure \ref{fig:demi_disc_align_third}.
 
 \begin{figure}[!h]
 \centering
@@ -1024,17 +1011,17 @@ Cependant, lorsqu'un champ de croix, tel que décrit ci-dessus, est utilisé pou
 
 Pour remédier à cette difficulté, nous introduisons une opération sur le champ de croix appelée \emph{opération d'alignement}. L'objectif est d'ajuster le champ de croix pour qu'il soit aligné avec la frontière du domaine. Pour ce faire, nous cherchons un champ scalaire avec une certaine régularité tel que la rotation du champ de croix initial par rapport à ce champ scalaire donne un nouveau champ de croix aligné avec les frontières du domaine tout en préservant certaines propriétés du champ de croix initial. Dans la suite, nous détaillerons cette opération tout en désignant par \emph{champ d'alignement} le champ scalaire décrit ci-dessus. Pour simplifier la présentation, nous mettons en place l'opération d'alignement dans un premier temps sur un domaine simplement connexe avant de l'étendre aux domaines non-simplement connexes.
 
-\paragraph{Domaine simplement connexe:}
-On suppose $\Omega$ simplement connexe. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. A priori, une façon simple de réaliser l'opération d'alignement serait de calculer la différence angulaire entre le champ de croix $\bar{u}$ et le champ de croix normal $\bar{N}$ puis de diffuser continûment cette différence angulaire à l'intérieur du domaine. En faisant cela on construirait un champ scalaire régulier sur tout le domaine tel que la rotation du champ de croix par rapport à ce champ scalaire donnerait un champ de croix aligné sur le bord du domaine et n'affectant pas les points singuliers du champ de croix initial en vertu de la proposition $\ref{prop:cont1}$. Un bon candidat pour la diffusion serait alors l'équation de Laplace donné par:\begin{equation}
+\paragraph{Domaines simplement connexes:}
+On suppose $\Omega$ simplement connexe. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. A priori, une façon simple de réaliser l'opération d'alignement serait de calculer la différence angulaire entre le champ de croix $\bar{u}$ et le champ de croix normal $\bar{n}$ puis de diffuser continûment cette différence angulaire à l'intérieur du domaine. En faisant cela on construirait un champ scalaire régulier sur tout le domaine tel que la rotation du champ de croix par rapport à ce champ scalaire donnerait un champ de croix aligné sur le bord du domaine et n'affectant pas les points singuliers du champ de croix initial en vertu de la proposition $\ref{prop:cont1}$. Un bon candidat pour la diffusion serait alors l'équation de Laplace donné par:\begin{equation}
 \left\{
 \begin{array}{lcll}
 \Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(p) &=& \widehat{(\bar{N}(p); \bar{u}(p))}=\theta_{\bar{N}}(p)-\theta_{\bar{u}}(p)&\mbox{ sur } \partial\Omega,
+\phi(p) &=& \widehat{(\bar{n}(p); \bar{u}(p))}=\theta_{\bar{n}}(p)-\theta_{\bar{u}}(p)&\mbox{ sur } \partial\Omega,
 \end{array}
 \right.
 \label{eqn:first_phi_computation}
 \end{equation}
-où $\widehat{(\bar{N}(p); \bar{u}(p))}$ représente l'angle entre $\bar{N}(p)$ et $\bar{u}(p)$. En définissant $\bar{v}:=\mathbf{R}(\phi)\bar{u}$, il est évident que $\bar{v}=\bar{N}$ sur $\partial\Omega$, impliquant ainsi que $\bar{v}$ est aligné avec $\partial\Omega$. De plus, grâce à la proposition \ref{prop:relation_u_Rthetau}, nous savons que pour tout $p\in\Omega\backslash\partial\Omega$, $id_{\bar{v}}(p)=id_{\bar{u}}(p)$. Par conséquent, si l'algorithme de partitionnement \ref{alg:algo_main} converge lorsqu'il est appliqué à $\bar{v}$, nous obtenons un partitionnement de $\Omega$ en régions à quatre côtés (voir le Théorème \ref{thm:theorem1}). Cependant, une question demeure en suspens : quelle est la valeur des indices des points situés sur le bord de $\Omega$ dans le champ de croix $\bar{v}$? Cela va dépendre de la représentation angulaire choisie pour $\phi$ à un multiple de $\pi/2$ près dans la condition de bord de l'équation \eqref{eqn:first_phi_computation}.
+où $\widehat{(\bar{n}(p); \bar{u}(p))}$ représente l'angle entre $\bar{n}(p)$ et $\bar{u}(p)$. En définissant $\bar{v}:=\mathbf{R}(\phi)\bar{u}$, il est évident que $\bar{v}=\bar{n}$ sur $\partial\Omega$, impliquant ainsi que $\bar{v}$ est aligné avec $\partial\Omega$. De plus, grâce à la proposition \ref{prop:relation_u_Rthetau}, nous savons que pour tout $p\in\Omega\backslash\partial\Omega$, $id_{\bar{v}}(p)=id_{\bar{u}}(p)$. Par conséquent, si l'algorithme de partitionnement \ref{alg:algo_main} converge lorsqu'il est appliqué à $\bar{v}$, nous obtenons un partitionnement de $\Omega$ en régions à quatre côtés (voir le Théorème \ref{thm:theorem1}). Cependant, une question demeure en suspens : quelle est la valeur des indices des points situés sur le bord de $\Omega$ dans le champ de croix $\bar{v}$? Cela va dépendre de la représentation angulaire choisie pour $\phi$ à un multiple de $\pi/2$ près dans la condition de bord de l'équation \eqref{eqn:first_phi_computation}.
 
 \begin{figure}[!h]
 \centering
@@ -1063,35 +1050,32 @@ où $\widehat{(\bar{N}(p); \bar{u}(p))}$ représente l'angle entre $\bar{N}(p)$ 
 En l'état, nous n'avons donc aucun contrôle sur la régularité de cette condition de bord, ce qui entraînera des effets indésirables dans le maillage quadrilatéral construit à partir du partitionnement obtenu. Par exemple, sur la figure \ref{fig:demi_disc_first_cond_phi}, nous considérons un champ de croix initial possédant une singularité d'indice $1/4$ à l'intérieur du domaine (figure \ref{fig:demi_disc_first_cond_phi_first}). Le champ d'alignement est calculé avec l'équation \eqref{eqn:first_phi_computation}, puis le champ de croix $\bar{v}$ est construit. On observe clairement que $\bar{v}$ est bien aligné avec le bord du domaine et conserve la singularité interne du champ de croix initial. Cependant, on remarque l'apparition de singularités de bord dans le champ de croix $\bar{v}$. En appliquant l'algorithme de partitionnement \ref{alg:algo_main} sur $\bar{v}$, le partitionnement obtenu présente des régions à quatre côtés (figure \ref{fig:demi_disc_first_cond_phi_second}) mais, la présence de points singuliers de bord non contrôlés (en termes de positionnement et d'indice) conduit à un maillage quadrilatéral comportant des quadrangles dégénérés (figure \ref{fig:demi_disc_first_cond_phi_third}).
 
 
-Afin de remédier à cette situation, nous allons modifier le processus d'alignement en ajustant la condition de Dirichlet de l'équation \eqref{eqn:first_phi_computation} et en imposant des conditions sur le champ de croix initial $\bar{u}$.
+Afin de contrôler cette situation, nous allons modifier le processus d'alignement en ajustant la condition de Dirichlet de l'équation \eqref{eqn:first_phi_computation} et en imposant des conditions sur le champ de croix initial $\bar{u}$.
 
-Pour commencer, nous définissons l'ensemble des points $\partial\Omega$ qui seront les points singuliers du champ de croix final (issu de l'opération d'alignement). Soit $\mathcal{B}$ cet ensemble. À chaque point $p\in\partial\Omega$, nous associons ensuite un paramètre $I_p$ qui satisfait:
-
+Pour commencer, nous associons à chaque point $p\in\partial\Omega$, un paramètre $I_p$ vérifiant:
 \begin{equation}
-I_p=
-\left\{
-\begin{array}{ll}
-    \displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1&\mbox{ si }p\in\mathcal{B},\\[0.5cm]
-    0&\mbox{ sinon}.
-\end{array}
-\right.
-\label{eqn:hyp_I_p}
+I_p=\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1
 \end{equation}
-
-Un critère a priori pour le choix automatique de ce paramètre sera exposé ultérieurement dans la section \ref{sec:discussion}. Soit $\gamma$, une paramétrisation sur $[0, 1]$ de $\partial\Omega$ dans le sens positif et vérifiant $\gamma(0)=\gamma(1)\notin\mathcal{S}_{\bar{u}}\cup\mathcal{B}$. Nous imposons ensuite la condition suivante sur le champ de croix $\bar{u}$: il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
-\begin{equation}
+Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}$ (une fois l'opération d'alignement réalisée). Un critère a priori pour le choix automatique de ce paramètre sera exposé ultérieurement dans la sous-section \ref{subsec:sing_bord}. Nous définissons ensuite l'ensemble $\mathcal{B}$ qui regroupe les points pour lesquels le paramètre $I_p\neq 0$. Ces points seront singuliers dans le champ de croix $\bar{v}$ (une fois l'opération d'alignement réalisée). %L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ $\bar{n}$. Ces points étant déjà singulier dans $\bar{n}$, ils resteront singuliers dans $\bar{v}$ après l'opération d'alignement.
+Pour finir, il est impératif que le champ de croix $\bar{u}$ satisfasse:\\
+\begin{itemize}
+ \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}})<\infty$,\\
+ \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}}$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
+ \item[$\bullet$] Soit $\gamma$ une paramétrisation de $\partial\Omega$ dans le sens positif. Il existe $\theta_{\bar{u}}^\gamma$ vérifiant:
+ \begin{equation}
     \label{eqn:principe_hypothese_u}
-    \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
+    \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=\chi(\Omega)-\sum_{p\in\mathcal{B}}I_p.
 \end{equation}
+\end{itemize}
 L'opération d'alignement est alors formulé de la manière suivante:\\\\
 \textbf{Opération d'alignement:} étant donné $\bar{u}$, nous définissons le champ de croix $\bar{v}$ pour tout $p\in\Omega$ par:
 \begin{equation}
 \bar{v}(p)=
 \left\{
 \begin{array}{ll}
-\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
-\bar{N}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash\mathcal{B},\\[0.5cm]
-0 & \mbox{ si } p\in\mathcal{B}.
+\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
+\bar{n}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
 \end{array}
 \right.
 \label{eqn:principe_def_v}
@@ -1101,14 +1085,14 @@ où $\phi:\Omega\longrightarrow\mathbb{R}$ est définie comme la solution de l'�
 \left\{
 \begin{array}{lcll}
 \Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(\gamma(t))&=&\theta_{\bar{N}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}})),
+\phi(\gamma(t))&=&\theta_{\bar{n}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})),
 \end{array}
 \right.
 \label{eqn:principe_def_phi}
 \end{equation}
-où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}}))$ par:
+où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}))$ par:
 $$
-\mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
+\mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{n}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{n}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
 $$
 avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$.
 
@@ -1146,7 +1130,7 @@ avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière e
 \label{alg:algo_simply_connected}
 \SetKwInOut{Input}{Entrée}
 \SetKwInOut{Output}{Sortie}
-\Input{$\Omega$ un domaine borné et fermé simplement connexe, champ de croix $\bar{u}$ défini sur $\Omega$, ensemble $\mathcal{B}$, paramètre $I(p)$ pour tout $p\in\partial\Omega$.}
+\Input{$\Omega$ un domaine borné et fermé simplement connexe, champ de croix $\bar{u}$ défini sur $\Omega$, ensemble $\mathcal{B}$, paramètre $I_p$ pour tout $p\in\partial\Omega$.}
 \Output{Partition de $\Omega$ en ensembles de régions.}
 \vspace{0.2cm}
 1.) Calcul du champ d'alignement (voir l'équation \eqref{eqn:principe_def_phi}),\\\vspace{0.2cm}
@@ -1184,7 +1168,7 @@ En appliquant cet algorithme au champ de croix représenté sur la figure \ref{f
 \label{fig:rect_demi_disc}
 \end{figure}
 
-\paragraph{Domaine non-simplement connexe:}
+\paragraph{Domaines non-simplement connexes:}
 Nous supposons maintenant que $\Omega$ est un domaine non-simplement connexe. Autrement dit sa frontière $\partial\Omega$ peut potentiellement être constitué de plusieurs composantes connexes. On a donc $\partial\Omega=\cup_i\Gamma_i$, où $\Gamma_i,~i\in\llbracket 0, n_b-1\rrbracket$ désigne les composantes connexes de $\partial\Omega$ et $n_b$ le nombre de composantes connexes de $\partial\Omega$. Pour tout $i\in\llbracket0, n_b-1\rrbracket$, on note $\gamma_i$ la paramétrisation de $\Gamma_i$ sur $[0, 1]$ dans le sens positif. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. En appliquant le processus présenté dans la partie précédente, la condition \eqref{eqn:principe_hypothese_u} devient:
 
 \begin{equation}
@@ -1227,7 +1211,7 @@ Pour surmonter cette limitation, nous modifions la conditions à imposer sur le 
 \end{equation}
 où $\Gamma_0$ désigne le bord extérieur de $\Omega$. En supposant que le champ de croix $\bar{u}$ vérifie cette condition, la condition de bord de l'équation \eqref{eqn:principe_def_phi} devient:
 $$
-\phi(\gamma_i(t))=\theta_{\bar{N}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}}^{\gamma_i}(t) \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
+\phi(\gamma_i(t))=\theta_{\bar{n}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}}^{\gamma_i}(t) \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
 $$
 \begin{remark}
     On montre (voir le Théorème \ref{thm:theorem3}) que le champ de croix $\bar{v}$ (résultant de l'opération d'alignement) est aligné par rapport à $\partial\Omega$. De plus pour tout $p\in\Omega\backslash\partial\Omega$, $id_{\bar{v}}(p)=id_{\bar{u}}(p)$ et pour tout $p\in\partial\Omega$, $id_{\bar{v}}(p)=I_p$.
@@ -1257,7 +1241,7 @@ La figure \ref{fig:carre_demi_disc_vide_bon} donne une illustration de la constr
 \label{fig:carre_demi_disc_vide_bon}
 \end{figure}
 
-\paragraph{Correction d'un champ de croix ne vérifiant pas la condition \ref{eqn:principe_hypothese_u_second}:} D'après nos observations expérimentales, alors qu'il est relativement aisé de construire des champs de croix conformes à la formule \eqref{eqn:principe_hypothese_u_prime}, la génération de champs de croix respectant la formule \eqref{eqn:principe_hypothese_u_second} de manière simple et efficiente s'avère plus complexe. Par exemple le champ de croix illustré sur la figure \ref{fig:carre_demi_disc_vide_mauvais_first} vérifie \eqref{eqn:principe_hypothese_u_prime} mais pas \eqref{eqn:principe_hypothese_u_second}). Face à cette problématique, nous proposons une solution alternative en introduisant un processus de correction visant à modifier un champ de croix existant, $\bar{u}$ (vérifiant \ref{eqn:principe_hypothese_u_prime}), de manière à ce qu'il respecte la condition \eqref{eqn:principe_hypothese_u_second}. Cette démarche implique l'identification d'un champ d'angle $\omega$ permettant de définir un champ de croix corrigé, $\bar{u}_c$, à travers l'expression $\bar{u}_c:=\mathbf{R}(\omega)\bar{u}$, satisfaisant ainsi :
+\paragraph{Correction d'un champ de croix ne vérifiant pas la condition \eqref{eqn:principe_hypothese_u_second}:} D'après nos observations expérimentales, alors qu'il est relativement aisé de construire des champs de croix conformes à la formule \eqref{eqn:principe_hypothese_u_prime}, la génération de champs de croix respectant la formule \eqref{eqn:principe_hypothese_u_second} de manière simple et efficiente s'avère plus complexe. Par exemple le champ de croix illustré sur la figure \ref{fig:carre_demi_disc_vide_mauvais_first} vérifie \eqref{eqn:principe_hypothese_u_prime} mais pas \eqref{eqn:principe_hypothese_u_second}). Face à cette problématique, nous proposons une solution alternative en introduisant un processus de correction visant à modifier un champ de croix existant, $\bar{u}$ (vérifiant \ref{eqn:principe_hypothese_u_prime}), de manière à ce qu'il respecte la condition \eqref{eqn:principe_hypothese_u_second}. Cette démarche implique l'identification d'un champ d'angle $\omega$ permettant de définir un champ de croix corrigé, $\bar{u}_c$, à travers l'expression $\bar{u}_c:=\mathbf{R}(\omega)\bar{u}$, satisfaisant ainsi :
 \begin{equation}
     \left\{
     \begin{array}{lcll}
@@ -1273,7 +1257,7 @@ De ce fait, le champ de croix corrigé $\bar{u}_c$ répond à la condition \eqre
 \label{alg:algo_non_simply_connected}
 \SetKwInOut{Input}{Entrée}
 \SetKwInOut{Output}{Sortie}
-\Input{$\Omega$ un domaine borné et fermé, champ de croix $\bar{u}$ défini sur $\Omega$, ensemble $\mathcal{B}$, paramètre $I(p)$ pour tout $p\in\partial\Omega$.}
+\Input{$\Omega$ un domaine borné et fermé, champ de croix $\bar{u}$ défini sur $\Omega$, ensemble $\mathcal{B}$, paramètre $I_p$ pour tout $p\in\partial\Omega$.}
 \Output{Partition de $\Omega$ en ensembles de régions.}
 \vspace{0.2cm}
 1.) Correction du champ de croix si nécessaire,\\\vspace{0.2cm}
@@ -1300,9 +1284,9 @@ Soit $\Omega$ un domaine borné et fermé dans $\mathbb{R}^2$ avec une frontièr
 \end{theorem}
 
 \begin{proof}
-Selon les propositions \ref{prop:stream_from_interior_sing} et \ref{prop:stream_from_bord_sing}, chaque point singulier de $u$ donne lieu à un nombre fini de séparatrices. Étant donné que ces séparatrices ne convergent pas vers des cycles limites, elles doivent soit se terminer en un point singulier, soit intersecter la frontière de $\Omega$. En conséquence, les séparatrices de $\bar{u}$ divisent $\Omega$ en régions qui ne contiennent aucun point singulier et qui sont délimitées par des séparatrices.
+Selon les propositions \ref{prop:stream_from_interior_sing} et \ref{prop:stream_from_bord_sing}, chaque point singulier de $u$ donne lieu à un nombre fini de séparatrices. Étant donné que par hypothèse ces séparatrices ne convergent pas vers des cycles limites, elles doivent soit se terminer en un point singulier, soit intersecter la frontière de $\Omega$. En conséquence, les séparatrices de $\bar{u}$ divisent $\Omega$ en régions qui ne contiennent aucun point singulier et qui sont délimitées par des séparatrices.
 
-Soit $\mathcal{R}$ l'une de ces régions. Selon le Théorème de Poincaré-Hopf, on a $\chi(\mathcal{R})=\sum_{i=1}^{n_c} id_{\bar{u}}(c_i)$, où $(c_i)_{i\in\llbracket1,n_c\rrbracket}$ désigne les coins de $\mathcal{R}$ (c'est à dire les points d'intersections des séparatrices formant la région $\mathcal{R}$) et $n_c$ est le nombre de coins. $\chi(\mathcal{R})\geq0$ car, d'après la proposition \ref{prop:loveprop}, nous avons $id_{\bar{u}}(c_i)=1/4>0$ pour chaque coin $c_i$ de $\mathcal{R}$. De plus, on sait que $\chi(\mathcal{R}) = 2 - 2g - b$, où $g$ représente le genre de $\mathcal{R}$ et $b$ le nombre de composantes connexes de $\partial\mathcal{R}$. Comme $\mathcal{R}$ est une partie du plan, on a $g = 0$, ce qui implique que $\chi(\mathcal{R})\in\{0, 1\}$.
+Soit $\mathcal{R}$ l'une de ces régions. Selon le Théorème de Poincaré-Hopf, on a $\chi(\mathcal{R})=\sum_{i=1}^{n_c} id_{\bar{u}}(c_i)$, où $(c_i)_{i\in\llbracket1,n_c\rrbracket}$ désigne les coins de $\mathcal{R}$ (c'est à dire les points d'intersections des séparatrices formant la région $\mathcal{R}$) et $n_c$ est le nombre de coins. $\chi(\mathcal{R})\geq0$ car, d'après la proposition \ref{prop:loveprop}, nous avons $id_{\bar{u}}(c_i)=1/4>0$ pour chaque coin $c_i$ de $\mathcal{R}$. De plus, on sait que $\chi(\mathcal{R}) = 2 - 2g - b$, où $g$ représente le genre de $\mathcal{R}$ et $b$ le nombre de composantes connexes de $\partial\mathcal{R}$ (détail en annexe). Comme $\mathcal{R}$ est une partie du plan, on a $g = 0$, ce qui implique que $\chi(\mathcal{R})\in\{0, 1\}$.
 \begin{itemize}
 \item $\chi(\mathcal{R})=0$: dans ce cas on a $n_c=0$ et $\mathcal{R}=\Omega$. Cela mène à une contradiction puisque, selon les hypothèses du théorème on a $Card(\mathcal{S}_{\bar{u}})>0$.
 \item $\chi(\mathcal{R})=1$: cela implique que :
@@ -1318,7 +1302,7 @@ Soit $\Omega$ un domaine fermé et borné dans $\mathbb{R}^2$ avec une frontièr
 I_p=
 \left\{
 \begin{array}{ll}
-\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1& \mbox{ si } p\in\mathcal{B}\\[0.5cm]
+\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}^*\mbox{ et }k\leq 1& \mbox{ si } p\in\mathcal{B}\\[0.5cm]
 0& \mbox{ sinon }
 \end{array}
 \right.
@@ -1329,22 +1313,8 @@ Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, n
     \label{eqn:etude_hypothese_u}
     \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
 \end{equation}
-où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial\Omega$ orientée positivement et vérifiant $\gamma(0)=\gamma(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}$.
-Soit $\phi$, la fonction définie par l'équation de Laplace suivant:
-\begin{equation}
-\left\{
-\begin{array}{lcll}
-\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(\gamma(t))&=&\theta_{\bar{N}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})),
-\end{array}
-\right.
-\label{eqn:etude_def_phi}
-\end{equation}
-où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}))$ par:
-$$
-\mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
-$$
-avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$. Nous avons alors le lemme suivant:
+où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial\Omega$ orientée positivement et vérifiant $\gamma(0)=\gamma(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}$.
+Soit $\phi$, la fonction définie par l'équation \eqref{eqn:principe_def_phi}. Nous avons alors le lemme suivant:
 
 \begin{lemma}
     \label{lem:marvelous_lemma}
@@ -1353,37 +1323,37 @@ avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière e
 \begin{proof}
     $$
     \begin{array}{lcl}
-        \phi(\gamma(1))-\phi(\gamma(0))&=&\theta^\gamma_{\bar{N}}(1)+\mathcal{I}(1)-\theta_{\bar{u}}(\gamma(1))-(\theta^\gamma_{\bar{N}}(0)+\mathcal{I}(0)-\theta_{\bar{u}}(\gamma(0)))\\\\
-        &=&(\theta^\gamma_{\bar{N}}(1)-\theta_{\bar{N}}^\gamma(0))+(\mathcal{I}(1)-\mathcal{I}(0))-(\theta_{\bar{u}}(\gamma(1))-\theta_{\bar{u}}(\gamma(0))
+        \phi(\gamma(1))-\phi(\gamma(0))&=&\theta^\gamma_{\bar{n}}(1)+\mathcal{I}(1)-\theta_{\bar{u}}(\gamma(1))-(\theta^\gamma_{\bar{n}}(0)+\mathcal{I}(0)-\theta_{\bar{u}}(\gamma(0)))\\\\
+        &=&(\theta^\gamma_{\bar{n}}(1)-\theta_{\bar{n}}^\gamma(0))+(\mathcal{I}(1)-\mathcal{I}(0))-(\theta_{\bar{u}}(\gamma(1))-\theta_{\bar{u}}(\gamma(0))
     \end{array}
     $$
-    En posant $\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})=\{t_1,\dots,t_{n_t}\}$ avec $n_t\in\mathbb{N}^*$ et $t_1<\dots<t_{n_t}$, on a:
+    En posant $\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})=\{t_1,\dots,t_{n_t}\}$ avec $n_t\in\mathbb{N}^*$ et $t_1<\dots<t_{n_t}$, on a:
     $$
     \begin{array}{lcl}
-        \theta_{\bar{N}}^\gamma(1)-\theta^\gamma_{\bar{N}}(0)&=&\theta_{\bar{N}}^\gamma(t_1^-)-\theta_{\bar{N}}^\gamma(0)+\displaystyle\sum_{i=2}^{n_t}\left(\theta_{\bar{N}}^\gamma(t_i^-)-\theta_{\bar{N}}^\gamma(t_{i-1}^+)\right)+\theta_{\bar{N}}^\gamma(0)\\[0.7cm]
-        &&+\theta_{\bar{N}}^\gamma(1)-\theta_{\bar{N}}^\gamma(t_{n_t}^-)+\displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{N}}^\gamma(t_i^+)-\theta_{\bar{N}}^\gamma(t_i^-)\right)-\theta_{\bar{N}}^\gamma(0)\\[0.7cm]
-        &=&\displaystyle\int_0^1d\theta_{\bar{N}}^\gamma+\displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{N}}^\gamma(t_i^+)-\theta_{\bar{N}}^\gamma(t_i^-)\right)\\[0.7cm]
-        \theta_{\bar{N}}^\gamma(1)-\theta^\gamma_{\bar{N}}(0)&=&\displaystyle\int_0^1d\theta_{\bar{N}}^\gamma+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left(\theta_{\bar{N}}^\gamma(s^+)-\theta_{\bar{N}}^\gamma(s^-)\right)
+        \theta_{\bar{n}}^\gamma(1)-\theta^\gamma_{\bar{n}}(0)&=&\theta_{\bar{n}}^\gamma(t_1^-)-\theta_{\bar{n}}^\gamma(0)+\displaystyle\sum_{i=2}^{n_t}\left(\theta_{\bar{n}}^\gamma(t_i^-)-\theta_{\bar{n}}^\gamma(t_{i-1}^+)\right)+\theta_{\bar{n}}^\gamma(0)\\[0.7cm]
+        &&+\theta_{\bar{n}}^\gamma(1)-\theta_{\bar{n}}^\gamma(t_{n_t}^-)+\displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{n}}^\gamma(t_i^+)-\theta_{\bar{n}}^\gamma(t_i^-)\right)-\theta_{\bar{n}}^\gamma(0)\\[0.7cm]
+        &=&\displaystyle\int_0^1d\theta_{\bar{n}}^\gamma+\displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{n}}^\gamma(t_i^+)-\theta_{\bar{n}}^\gamma(t_i^-)\right)\\[0.7cm]
+        \theta_{\bar{n}}^\gamma(1)-\theta^\gamma_{\bar{n}}(0)&=&\displaystyle\int_0^1d\theta_{\bar{n}}^\gamma+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left(\theta_{\bar{n}}^\gamma(s^+)-\theta_{\bar{n}}^\gamma(s^-)\right)
     \end{array}
     $$
     Remarquons aussi que puisque $\mathcal{I}(0)=0$, on a:
     $$
-    \mathcal{I}(1)-\mathcal{I}(0)=\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{N}}(s^+)-\theta^{\gamma}_{\bar{N}}(s^-)\right)\right].
+    \mathcal{I}(1)-\mathcal{I}(0)=\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{n}}(s^+)-\theta^{\gamma}_{\bar{n}}(s^-)\right)\right].
     $$
     Il vient alors que:
     $$
-    \phi(\gamma(1))-\phi(\gamma(0))=\displaystyle\int_0^1d\theta_{\bar{N}}^\gamma+\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)).
+    \phi(\gamma(1))-\phi(\gamma(0))=\displaystyle\int_0^1d\theta_{\bar{n}}^\gamma+\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)).
     $$
     Autrement dit,
     $$
     \begin{array}{lcl}
-        \phi(\gamma(1))-\phi(\gamma(0))&=&\displaystyle\sum_{i=1}^{n_t}\int_{t_i}^{t_{i+1}}d\theta_{\bar{N}}^\gamma+\sum_{s\in\gamma^{-1}(\mathcal{B})}\left(\pi-\widehat{\gamma(s)}\right)\\[0.7cm]
-        &&-\displaystyle\left(\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}2\pi I_{\gamma(s)}+(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0))\right)
+        \phi(\gamma(1))-\phi(\gamma(0))&=&\displaystyle\sum_{i=1}^{n_t}\int_{t_i}^{t_{i+1}}d\theta_{\bar{n}}^\gamma+\sum_{s\in\gamma^{-1}(\mathcal{B})}\left(\pi-\widehat{\gamma(s)}\right)\\[0.7cm]
+        &&-\displaystyle\left(\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}2\pi I_{\gamma(s)}+(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0))\right)
     \end{array}
     $$
     où on a posé $t_{n_t+1}:=t_1$. D'après le théorème des tangentes tournantes \cite{hopf1935drehung, rotskoff2010gauss}, on sait que :
     $$
-    \displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{N}}^\gamma(t_{i+1})-\theta_{\bar{N}}^\gamma(t_i)\right)+\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left(\pi-\widehat{\gamma(s)}\right)=2\pi.
+    \displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{n}}^\gamma(t_{i+1})-\theta_{\bar{n}}^\gamma(t_i)\right)+\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left(\pi-\widehat{\gamma(s)}\right)=2\pi.
     $$
     On obtient alors en utilisant la condition \eqref{eqn:etude_hypothese_u}
     $$
@@ -1399,9 +1369,9 @@ L'opération d'alignement consiste à calculer le champ de croix $\bar{v}$ défi
 \bar{v}(p)=
 \left\{
 \begin{array}{ll}
-\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
-\bar{N}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}),\\[0.5cm]
-0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
+\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
+\bar{n}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
 \end{array}
 \right.
 \label{eqn:etude_def_v}
@@ -1422,29 +1392,29 @@ id_{\bar{v}}(p)=
 \end{theorem}
 
 \begin{proof}
-    Du fait que la fonction $\phi$ définie par l'équation \eqref{eqn:etude_def_phi} est de classe $\mathcal{C}^1$ sur $\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup(\mathcal{S}_{\bar{u}}\cap\partial\Omega)))$, le champ $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$. Cela découle immédiatement de la proposition \ref{prop:cont1}, étant donné que $\bar{u}$ est presque-$\mathcal{C}^1$ sur $\Omega$.
+    Du fait que la fonction $\phi$ définie par l'équation \eqref{eqn:principe_def_phi} est de classe $\mathcal{C}^1$ sur $\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup(\mathcal{S}_{\bar{u}}\cap\partial\Omega)))$, le champ $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$. Cela découle immédiatement de la proposition \ref{prop:cont1}, étant donné que $\bar{u}$ est presque-$\mathcal{C}^1$ sur $\Omega$.
 
-    De plus, $\bar{v}$ est aligné avec $\partial\Omega$. En effet, $\bar{v}(p)=0$ pour tout $p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}$ et $\bar{v}(p)=\bar{N}(p)$ pour tout $p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}})$. Par ailleurs, pour tout $p\in\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})$ on a:
-    $$\theta_{\bar{v}}(\gamma(t_p))=\phi(\gamma(t_p))+\theta_{\bar{u}}^\gamma(t_p)+k\frac{\pi}{2}=\theta_{\bar{N}}^\gamma(t_p)+\mathcal{I}(t_p)-\theta_{\bar{u}}^\gamma(t_p)+\theta_{\bar{u}}^\gamma(t_p)+k\frac{\pi}{2},$$
-    où $t_p\in[0,1]$ tel que $\gamma(t_p)=p$ et $k\in\mathbb{Z}$. Or pour tout $s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap[0, t_p]$ on a:
+    De plus, $\bar{v}$ est aligné avec $\partial\Omega$. En effet, $\bar{v}(p)=0$ pour tout $p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}$ et $\bar{v}(p)=\bar{n}(p)$ pour tout $p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}})$. Par ailleurs, pour tout $p\in\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})$ on a:
+    $$\theta_{\bar{v}}(\gamma(t_p))=\phi(\gamma(t_p))+\theta_{\bar{u}}^\gamma(t_p)+k\frac{\pi}{2}=\theta_{\bar{n}}^\gamma(t_p)+\mathcal{I}(t_p)-\theta_{\bar{u}}^\gamma(t_p)+\theta_{\bar{u}}^\gamma(t_p)+k\frac{\pi}{2},$$
+    où $t_p\in[0,1]$ tel que $\gamma(t_p)=p$ et $k\in\mathbb{Z}$. Or pour tout $s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap[0, t_p]$ on a:
     $$
-    \lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}}(r)\equiv(\pi-\widehat{\gamma(s)})\pmod{\frac{\pi}{2}}.
+    \lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{n}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{n}}(r)\equiv(\pi-\widehat{\gamma(s)})\pmod{\frac{\pi}{2}}.
     $$
     Il vient alors que:
     $$
-    \theta_{\bar{v}}(\gamma(t_p))=\theta_{\bar{N}}^{\gamma}(t_p)+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left[\left(\pi-\widehat{\gamma(s)}-m_s\frac{\pi}{2}\right)-\left(\pi-\widehat{\gamma(s)}+k_s\frac{\pi}{2}\right)\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2},
+    \theta_{\bar{v}}(\gamma(t_p))=\theta_{\bar{n}}^{\gamma}(t_p)+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[\left(\pi-\widehat{\gamma(s)}-m_s\frac{\pi}{2}\right)-\left(\pi-\widehat{\gamma(s)}+k_s\frac{\pi}{2}\right)\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2},
     $$
     où $k_s\in\mathbb{Z}$ et où on a posé $I_{\gamma(s)}=m_s/4$ avec $m_s\in\mathbb{Z}$ et $m_s\leq1$. Autrement dit, on a:
     $$
-    \theta_{\bar{v}}(\gamma(t_p))=\theta_{\bar{N}}^\gamma(t_p)+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2}$$
+    \theta_{\bar{v}}(\gamma(t_p))=\theta_{\bar{n}}^\gamma(t_p)+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2}$$
     et donc:
     $$
-    \theta_{\bar{v}}(\gamma(t_p))\equiv\theta_{\bar{N}}^\gamma(t_p)\pmod{\frac{\pi}{2}}.
+    \theta_{\bar{v}}(\gamma(t_p))\equiv\theta_{\bar{n}}^\gamma(t_p)\pmod{\frac{\pi}{2}}.
     $$
-    Ce qui implique que $\bar{v}(p)=\bar{N}(p)$. On conclut alors que $\bar{v}$ est aligné avec $\partial\Omega$.\\\\
+    Ce qui implique que $\bar{v}(p)=\bar{n}(p)$. On conclut alors que $\bar{v}$ est aligné avec $\partial\Omega$.\\\\
     Nous calculons maintenant pour tout $p\in\Omega$, l'indice de $p$ dans le champ $\bar{v}$. Ainsi, on a:\\
     \begin{itemize}
-        \item[$\bullet$] Si $p\in\Omega\backslash\partial\Omega$, $id_{\bar{v}}(p)=id_{\bar{u}}(p)$ selon la proposition \ref{prop:relation_u_Rthetau}, car la fonction $\phi$ définie par l'équation \eqref{eqn:etude_def_phi} est de classe $\mathcal{C}^1$ sur $\Omega\backslash\partial\Omega$.\\
+        \item[$\bullet$] Si $p\in\Omega\backslash\partial\Omega$, $id_{\bar{v}}(p)=id_{\bar{u}}(p)$ selon la proposition \ref{prop:relation_u_Rthetau}, car la fonction $\phi$ définie par l'équation \eqref{eqn:principe_def_phi} est de classe $\mathcal{C}^1$ sur $\Omega\backslash\partial\Omega$.\\
         \item[$\bullet$] Si $p\in\partial\Omega\backslash\{\gamma(0)\}$ (sachant que $\gamma(0)=\gamma(1)$), on a:
         $$
         id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{v}}^{\mathcal{C}}\right]=\frac{1}{2\pi}\left(\pi-\widehat{p}+(\theta_{\bar{v}}^{\mathcal{C}}(1)-\theta_{\bar{v}}^{\mathcal{C}}(0))\right),
@@ -1457,18 +1427,18 @@ id_{\bar{v}}(p)=
         $$
         \begin{array}{lcl}
         id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\phi(\gamma(t_p^-))+\theta_{\bar{u}}^\gamma(t_p^-)-\phi(\gamma(t_p^+))-\theta_{\bar{u}}^\gamma(t_p^+)\right)\right]\\\\
-        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{N}}^\gamma(t_p^-)-\theta_{\bar{N}}^\gamma(t_p^+)\right)+\left(\mathcal{I}(t_p^-)-\mathcal{I}(t_p^+)\right)\right]
+        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{n}}^\gamma(t_p^-)-\theta_{\bar{n}}^\gamma(t_p^+)\right)+\left(\mathcal{I}(t_p^-)-\mathcal{I}(t_p^+)\right)\right]
         \end{array}
         $$
         Remarquons que:
         \begin{eqnarray*}
-            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)&=&\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap[0, t_p]}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{N}}(s^+) - \theta^{\gamma}_{\bar{N}}(s^-)\right)\right]\\\\
-            &&-\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap[0, t_p[}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{N}}(s^+) - \theta^{\gamma}_{\bar{N}}(s^-)\right)\right]\\\\
-            &=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma}_{\bar{N}}(t_p^+) - \theta^{\gamma}_{\bar{N}}(t_p^-)\right)
+            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)&=&\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap[0, t_p]}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{n}}(s^+) - \theta^{\gamma}_{\bar{n}}(s^-)\right)\right]\\\\
+            &&-\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap[0, t_p[}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{n}}(s^+) - \theta^{\gamma}_{\bar{n}}(s^-)\right)\right]\\\\
+            &=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma}_{\bar{n}}(t_p^+) - \theta^{\gamma}_{\bar{n}}(t_p^-)\right)
         \end{eqnarray*}
         Il vient alors que:
         \begin{eqnarray*}
-        id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\theta^{\gamma}_{\bar{N}}(t_p^+) - \theta^{\gamma}_{\bar{N}}(t_p^-)\right)-\left(\pi-\widehat{p}-2\pi I_p\right)+\left(\theta^{\gamma}_{\bar{N}}(t_p^+) - \theta^{\gamma}_{\bar{N}}(t_p^-)\right)\right]\\\\
+        id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\theta^{\gamma}_{\bar{n}}(t_p^+) - \theta^{\gamma}_{\bar{n}}(t_p^-)\right)-\left(\pi-\widehat{p}-2\pi I_p\right)+\left(\theta^{\gamma}_{\bar{n}}(t_p^+) - \theta^{\gamma}_{\bar{n}}(t_p^-)\right)\right]\\\\
         &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\pi-\widehat{p}-2\pi I_p\right)\right]
         \end{eqnarray*}
         Par conséquent, $id^\partial_{\bar{v}}(p)=I_p$.\\
@@ -1504,25 +1474,25 @@ Nous donnons maintenant la généralisation du théorème précédent aux domain
 \begin{equation}
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p,&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p,&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
+    \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p,&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p,&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
     \label{eqn:etude_hypothese_u_second}
 \end{equation}
-où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétrisation sur $[0, 1]$ de $\Gamma_i$ orientée positivement et vérifiant $\gamma_i(0)=\gamma_i(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}$. L'équation \eqref{eqn:etude_def_phi} devient alors:
+où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétrisation sur $[0, 1]$ de $\Gamma_i$ orientée positivement et vérifiant $\gamma_i(0)=\gamma_i(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}$. L'équation \eqref{eqn:principe_def_phi} devient alors:
 \begin{equation}
 \left\{
 \begin{array}{lcll}
 \Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(\gamma_i(t))&=&\theta_{\bar{N}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
+\phi(\gamma_i(t))&=&\theta_{\bar{n}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
 \end{array}
 \right.
 \label{eqn:etude_def_phi_second}
 \end{equation}
-où la fonction $\mathcal{I}$ est donnée pour tout $i\in\llbracket0, n_b-1\rrbracket$, et pour tout $t\in{\gamma_i}^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}))$ par:
+où la fonction $\mathcal{I}$ est donnée pour tout $i\in\llbracket0, n_b-1\rrbracket$, et pour tout $t\in{\gamma_i}^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}))$ par:
 $$
-\mathcal{I}(t)=\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma_i}_{\bar{N}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma_i}_{\bar{N}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
+\mathcal{I}(t)=\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma_i}_{\bar{n}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma_i}_{\bar{n}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
 $$
 avec $\widehat{\gamma_i(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma_i(s)$. Nous avons alors le lemme suivant:
 
@@ -1534,16 +1504,16 @@ avec $\widehat{\gamma_i(s)}$ la mesure de l'ouverture angulaire de la frontière
 De façon analogue a ce qui est fait dans la preuve du lemme \ref{lem:marvelous_lemma}, on a pour tout $i\in\llbracket 0, n_b-1\rrbracket$:
 $$
 \begin{array}{lcl}
-    \phi(\gamma_i(1))-\phi(\gamma_i(0))&=&\displaystyle\sum_{i=1}^{n_t}\int_{t_i}^{t_{i+1}}d\theta_{\bar{N}}^{\gamma_i}+\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)\\\\
-    &&-\displaystyle\left(\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}2\pi I_{\gamma_i(s)}+(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0))\right)
+    \phi(\gamma_i(1))-\phi(\gamma_i(0))&=&\displaystyle\sum_{i=1}^{n_t}\int_{t_i}^{t_{i+1}}d\theta_{\bar{n}}^{\gamma_i}+\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)\\\\
+    &&-\displaystyle\left(\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}2\pi I_{\gamma_i(s)}+(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0))\right)
 \end{array}
 $$
     où on a posé $t_{n_t+1}:=t_1$. D'après le théorème des tangentes tournantes \cite{hopf1935drehung, rotskoff2010gauss}, on sait que :
     $$
     \left\{
     \begin{array}{ll}
-    \displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{N}}^{\gamma_0}(t_{i+1})-\theta_{\bar{N}}^{\gamma_0}((t_i)\right)+\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)=2\pi.\\\\
-    \displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{N}}^{\gamma_i}(t_{j+1})-\theta_{\bar{N}}^{\gamma_i}(t_j)\right)+\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)=-2\pi&\mbox{ si }i\in\llbracket1, n_b-1\rrbracket.
+    \displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{n}}^{\gamma_0}(t_{i+1})-\theta_{\bar{n}}^{\gamma_0}((t_i)\right)+\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)=2\pi.\\\\
+    \displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{n}}^{\gamma_i}(t_{j+1})-\theta_{\bar{n}}^{\gamma_i}(t_j)\right)+\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)=-2\pi&\mbox{ si }i\in\llbracket1, n_b-1\rrbracket.
     \end{array}
     \right.
     $$
@@ -1551,10 +1521,10 @@ $$
     $$
     \left\{
     \begin{array}{lcl}
-    \phi(\gamma_0(1))-\phi(\gamma_0(0))&=&2\pi-\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)\\\\
-    &&+\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)-2\pi,\\\\
-    \phi(\gamma_i(1))-\phi(\gamma_i(0))&=&-2\pi-\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)\\\\
-    &&+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)+2\pi, \mbox{si }i\in\llbracket 1, n_b-1\rrbracket.
+    \phi(\gamma_0(1))-\phi(\gamma_0(0))&=&2\pi-\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)\\\\
+    &&+\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)-2\pi,\\\\
+    \phi(\gamma_i(1))-\phi(\gamma_i(0))&=&-2\pi-\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)\\\\
+    &&+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)+2\pi, \mbox{si }i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
     $$
@@ -1568,9 +1538,9 @@ De manière similaire à la procédure précédente, le champ de croix $\bar{v}$
 \bar{v}(p)=
 \left\{
 \begin{array}{ll}
-\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
-\bar{N}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}),\\[0.5cm]
-0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
+\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
+\bar{n}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
 \end{array}
 \right.
 \label{eqn:etude_def_v_second}
@@ -1590,29 +1560,29 @@ id_{\bar{v}}(p)=
 \end{equation}
 \end{theorem}
 \begin{proof}
-    Du fait que la fonction $\phi$ définie par l'équation \eqref{eqn:etude_def_phi_second} est de classe $\mathcal{C}^1$ sur $\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup(\mathcal{S}_{\bar{u}}\cap\partial\Omega))$, le champ $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$. Cela découle immédiatement de la proposition \ref{prop:cont1}, étant donné que $\bar{u}$ est presque-$\mathcal{C}^1$ sur $\Omega$.
+    Du fait que la fonction $\phi$ définie par l'équation \eqref{eqn:etude_def_phi_second} est de classe $\mathcal{C}^1$ sur $\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup(\mathcal{S}_{\bar{u}}\cap\partial\Omega))$, le champ $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$. Cela découle immédiatement de la proposition \ref{prop:cont1}, étant donné que $\bar{u}$ est presque-$\mathcal{C}^1$ sur $\Omega$.
 
-    De plus, $\bar{v}$ est aligné avec $\partial\Omega$. En effet, $\bar{v}(p)=0$ pour tout $p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}$ et $\bar{v}(p)=\bar{N}(p)$ pour tout $p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}})$. Par ailleurs, pour tout $p\in\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})$, $\exists i\in\llbracket0, n_b-1\rrbracket$ tel que $p\in\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}})$ et on a:
-    $$\theta_{\bar{v}}(\gamma_i(t_p))=\phi(\gamma_i(t_p))+\theta_{\bar{u}}^{\gamma_i}(t_p)+k\frac{\pi}{2}=\theta_{\bar{N}}^{\gamma_i}(t_p)+\mathcal{I}(t_p)-\theta_{\bar{u}}^{\gamma_i}(t_p)+\theta_{\bar{u}}^{\gamma_i}(t_p)+k\frac{\pi}{2},$$
-    où $t_p\in[0,1]$ tel que $\gamma_i(t_p)=p$ et $k\in\mathbb{Z}$. Or pour tout $s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)\cap[0, t_p]$ on a
+    De plus, $\bar{v}$ est aligné avec $\partial\Omega$. En effet, $\bar{v}(p)=0$ pour tout $p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}$ et $\bar{v}(p)=\bar{n}(p)$ pour tout $p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}})$. Par ailleurs, pour tout $p\in\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})$, $\exists i\in\llbracket0, n_b-1\rrbracket$ tel que $p\in\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})$ et on a:
+    $$\theta_{\bar{v}}(\gamma_i(t_p))=\phi(\gamma_i(t_p))+\theta_{\bar{u}}^{\gamma_i}(t_p)+k\frac{\pi}{2}=\theta_{\bar{n}}^{\gamma_i}(t_p)+\mathcal{I}(t_p)-\theta_{\bar{u}}^{\gamma_i}(t_p)+\theta_{\bar{u}}^{\gamma_i}(t_p)+k\frac{\pi}{2},$$
+    où $t_p\in[0,1]$ tel que $\gamma_i(t_p)=p$ et $k\in\mathbb{Z}$. Or pour tout $s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)\cap[0, t_p]$ on a
     $$
-    \lim_{r\rightarrow s^+}\theta^{\gamma_i}_{\bar{N}}(r) - \lim_{r\rightarrow s^-}\theta^{\gamma_i}_{\bar{N}}(r)\equiv(\pi-\widehat{\gamma(s)})\pmod{\frac{\pi}{2}}.
+    \lim_{r\rightarrow s^+}\theta^{\gamma_i}_{\bar{n}}(r) - \lim_{r\rightarrow s^-}\theta^{\gamma_i}_{\bar{n}}(r)\equiv(\pi-\widehat{\gamma(s)})\pmod{\frac{\pi}{2}}.
     $$
     Il vient alors que:
     $$
-    \theta_{\bar{v}}(\gamma_i(t_p))=\theta_{\bar{N}}^{\gamma_i}(t_p)+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left[\left(\pi-\widehat{\gamma_i(s)}-m_s\frac{\pi}{2}\right)-\left(\pi-\widehat{\gamma_i(s)}+k_s\frac{\pi}{2}\right)\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2},
+    \theta_{\bar{v}}(\gamma_i(t_p))=\theta_{\bar{n}}^{\gamma_i}(t_p)+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left[\left(\pi-\widehat{\gamma_i(s)}-m_s\frac{\pi}{2}\right)-\left(\pi-\widehat{\gamma_i(s)}+k_s\frac{\pi}{2}\right)\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2},
     $$
     où $k_s\in\mathbb{Z}$ et où on a posé $I_{\gamma_i(s)}=m_s/4$ avec $m_s\in\mathbb{Z}$ et $m_s\leq1$. Autrement dit, on a:
     $$
-    \theta_{\bar{v}}(\gamma_i(t_p))=\theta_{\bar{N}}^{\gamma_i}(t_p)+\displaystyle\sum_{s\in{\gamma_i}^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{N}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2}$$
+    \theta_{\bar{v}}(\gamma_i(t_p))=\theta_{\bar{n}}^{\gamma_i}(t_p)+\displaystyle\sum_{s\in{\gamma_i}^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2}$$
     et donc:
     $$
-    \theta_{\bar{v}}(\gamma_i(t_p))\equiv\theta_{\bar{N}}^{\gamma_i}(t_p)\pmod{\frac{\pi}{2}}.
+    \theta_{\bar{v}}(\gamma_i(t_p))\equiv\theta_{\bar{n}}^{\gamma_i}(t_p)\pmod{\frac{\pi}{2}}.
     $$
-    Ce qui implique que $\bar{v}(p)=\bar{N}(p)$. On conclut alors que $\bar{v}$ est aligné avec $\partial\Omega$.\\\\
+    Ce qui implique que $\bar{v}(p)=\bar{n}(p)$. On conclut alors que $\bar{v}$ est aligné avec $\partial\Omega$.\\\\
     Nous calculons maintenant pour tout $p\in\Omega$, l'indice de $p$ dans le champ $\bar{v}$. Ainsi, on a:\\
     \begin{itemize}
-        \item[$\bullet$] Si $p\in\Omega\backslash\partial\Omega$, $id_{\bar{v}}(p)=id_{\bar{u}}(p)$ selon la proposition \ref{prop:relation_u_Rthetau}, car la fonction $\phi$ définie par l'équation \eqref{eqn:etude_def_phi} est de classe $\mathcal{C}^1$ sur $\Omega\backslash\partial\Omega$.\\
+        \item[$\bullet$] Si $p\in\Omega\backslash\partial\Omega$, $id_{\bar{v}}(p)=id_{\bar{u}}(p)$ selon la proposition \ref{prop:relation_u_Rthetau}, car la fonction $\phi$ définie par l'équation \eqref{eqn:etude_def_phi_second} est de classe $\mathcal{C}^1$ sur $\Omega\backslash\partial\Omega$.\\
         \item[$\bullet$] Si $p\in\Gamma_i\backslash\{\gamma_i(0)\}$ (sachant que $\gamma_i(0)=\gamma_i(1)$) avec $i\in\llbracket0, n_b-1\rrbracket$, on a:
         $$
         id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\widehat{p}+\displaystyle\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{v}}^{\mathcal{C}}\right]=\frac{1}{2\pi}\left(\pi-\widehat{p}+(\theta_{\bar{v}}^{\mathcal{C}}(1)-\theta_{\bar{v}}^{\mathcal{C}}(0))\right),
@@ -1625,20 +1595,20 @@ id_{\bar{v}}(p)=
         $$
         \begin{array}{lcl}
         id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\phi(\gamma_i(t_p^-))+\theta_{\bar{u}}^{\gamma_i}(t_p^-)-\phi(\gamma_i(t_p^+))-\theta_{\bar{u}}^{\gamma_i}(t_p^+)\right)\right]\\\\
-        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{N}}^{\gamma_i}(t_p^-)-\theta_{\bar{N}}^{\gamma_i}(t_p^+)\right)+\left(\mathcal{I}(t_p^-)-\mathcal{I}(t_p^+)\right)\right]
+        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{n}}^{\gamma_i}(t_p^-)-\theta_{\bar{n}}^{\gamma_i}(t_p^+)\right)+\left(\mathcal{I}(t_p^-)-\mathcal{I}(t_p^+)\right)\right]
         \end{array}
         $$
         Remarquons que:
         $$
         \begin{array}{ll}
-            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)=&\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)\cap[0, t_p]}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\theta^{\gamma_i}_{\bar{N}}(s^+) - \theta^{\gamma_i}_{\bar{N}}(s^-)\right)\right]\\\\
-            &-\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)\cap[0, t_p[}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\theta^{\gamma_i}_{\bar{N}}(s^+) - \theta^{\gamma_i}_{\bar{N}}(s^-)\right)\right]\\\\
-            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma_i}_{\bar{N}}(t_p^+) - \theta^{\gamma_i}_{\bar{N}}(t_p^-)\right)
+            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)=&\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)\cap[0, t_p]}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\theta^{\gamma_i}_{\bar{n}}(s^+) - \theta^{\gamma_i}_{\bar{n}}(s^-)\right)\right]\\\\
+            &-\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)\cap[0, t_p[}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\theta^{\gamma_i}_{\bar{n}}(s^+) - \theta^{\gamma_i}_{\bar{n}}(s^-)\right)\right]\\\\
+            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma_i}_{\bar{n}}(t_p^+) - \theta^{\gamma_i}_{\bar{n}}(t_p^-)\right)
         \end{array}
         $$
         Il vient alors que:
         \begin{eqnarray*}
-        id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\theta^{\gamma_i}_{\bar{N}}(t_p^+) - \theta^{\gamma_i}_{\bar{N}}(t_p^-)\right)-\left(\pi-\widehat{p}-2\pi I_p\right)+\left(\theta^{\gamma_i}_{\bar{N}}(t_p^+) - \theta^{\gamma_i}_{\bar{N}}(t_p^-)\right)\right]\\\\
+        id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\theta^{\gamma_i}_{\bar{n}}(t_p^+) - \theta^{\gamma_i}_{\bar{n}}(t_p^-)\right)-\left(\pi-\widehat{p}-2\pi I_p\right)+\left(\theta^{\gamma_i}_{\bar{n}}(t_p^+) - \theta^{\gamma_i}_{\bar{n}}(t_p^-)\right)\right]\\\\
         &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\pi-\widehat{p}-2\pi I_p\right)\right]
         \end{eqnarray*}
         Par conséquent, $id^\partial_{\bar{v}}(p)=I_p$.\\
@@ -1646,8 +1616,8 @@ id_{\bar{v}}(p)=
         $$
         \left\{
         \begin{array}{ll}
-         \displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_0}+\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)=2\pi&\mbox{ si }i=0,\\\\
-        \displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_i}+\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)=-2\pi&\mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
+         \displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_0}+\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)=2\pi&\mbox{ si }i=0,\\\\
+        \displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_i}+\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)=-2\pi&\mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
         \end{array}
         \right.
         $$
@@ -1655,11 +1625,11 @@ id_{\bar{v}}(p)=
         $$
         \left\{
         \begin{array}{lcl}
-         2\pi&=&\displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_0}+\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}\left(\theta^{\gamma_0}_{\bar{v}}(s^+)-\theta^{\gamma_0}_{\bar{v}}(s^-)\right)\\\\
-         &&+\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)-\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}\left(\theta^{\gamma_0}_{\bar{v}}(s^+)-\theta^{\gamma_0}_{\bar{v}}(s^-)\right),\\\\
+         2\pi&=&\displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_0}+\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}\left(\theta^{\gamma_0}_{\bar{v}}(s^+)-\theta^{\gamma_0}_{\bar{v}}(s^-)\right)\\\\
+         &&+\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}\left(\pi-\widehat{\gamma_0(s)}\right)-\displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}\left(\theta^{\gamma_0}_{\bar{v}}(s^+)-\theta^{\gamma_0}_{\bar{v}}(s^-)\right),\\\\
          &&\mbox{ si }i=0,\\\\
-        -2\pi&=&\displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_i}+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\theta^{\gamma_i}_{\bar{v}}(s^+) - \theta^{\gamma_i}_{\bar{v}}(s^-)\right)\\\\
-        &&+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)-\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}\left(\theta^{\gamma_i}_{\bar{v}}(s^+)-\theta^{\gamma_i}_{\bar{v}}(s^-)\right),\\\\
+        -2\pi&=&\displaystyle\int_0^1 d\theta_{\bar{v}}^{\gamma_i}+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\theta^{\gamma_i}_{\bar{v}}(s^+) - \theta^{\gamma_i}_{\bar{v}}(s^-)\right)\\\\
+        &&+\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)-\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\theta^{\gamma_i}_{\bar{v}}(s^+)-\theta^{\gamma_i}_{\bar{v}}(s^-)\right),\\\\
         &&\mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
         \end{array}
         \right.
@@ -1669,9 +1639,9 @@ id_{\bar{v}}(p)=
         \left\{
         \begin{array}{ll}
         \theta_{\bar{v}}^{\gamma_0}(1)-\theta_{\bar{v}}^{\gamma_0}(0)+
-         \displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}id^\partial_{\bar{v}}(\gamma_0(s))=2\pi&\mbox{ si }i=0,\\\\
+         \displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}id^\partial_{\bar{v}}(\gamma_0(s))=2\pi&\mbox{ si }i=0,\\\\
         \theta_{\bar{v}}^{\gamma_i}(1)-\theta_{\bar{v}}^{\gamma_i}(0)+
-         \displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}id^\partial_{\bar{v}}(\gamma_i(s))=-2\pi&\mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
+         \displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}id^\partial_{\bar{v}}(\gamma_i(s))=-2\pi&\mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
         \end{array}
         \right.
         $$
@@ -1680,10 +1650,10 @@ id_{\bar{v}}(p)=
         \left\{
         \begin{array}{r}
         \phi(\gamma_0(1))-\phi(\gamma_0(0))+\left(\theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)\right)+
-         \displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0)}id^\partial_{\bar{v}}(\gamma_0(s))=2\pi\\\\
+         \displaystyle\sum_{s\in{\gamma_0}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0)}id^\partial_{\bar{v}}(\gamma_0(s))=2\pi\\\\
          \mbox{ si }i=0,\\\\
         \phi(\gamma_i(1))-\phi(\gamma_i(0))+\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)+
-         \displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i)}id^\partial_{\bar{v}}(\gamma_i(s))=-2\pi\\\\
+         \displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}id^\partial_{\bar{v}}(\gamma_i(s))=-2\pi\\\\
          \mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
         \end{array}
         \right.
@@ -1693,9 +1663,9 @@ id_{\bar{v}}(p)=
         \left\{
         \begin{array}{ll}
         \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)+
-         \displaystyle\sum_{q\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}id^\partial_{\bar{u}}(q)=2\pi&\mbox{ si }i=0,\\\\
+         \displaystyle\sum_{q\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}id^\partial_{\bar{u}}(q)=2\pi&\mbox{ si }i=0,\\\\
         \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)+
-         \displaystyle\sum_{q\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}id^\partial_{\bar{v}}(q)=-2\pi&\mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
+         \displaystyle\sum_{q\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}id^\partial_{\bar{v}}(q)=-2\pi&\mbox{ si }i\in\llbracket 1, n_b-1\rrbracket.
         \end{array}
         \right.
         $$
@@ -1729,15 +1699,15 @@ id_{\bar{v}}(p)=
 
 En cas de non-conformité du champ de croix $\bar{u}$ à la condition \eqref{eqn:etude_hypothese_u_second}, nous introduisons un processus de correction visant à obtenir un champ de croix satisfaisant cette condition. Considérons $\bar{u}$ comme un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, sans nécessité d'alignement sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ tel que:
 \begin{equation}
-    \displaystyle\sum_{i=0}^{n_b-1}\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}}I_p.
+    \displaystyle\sum_{i=0}^{n_b-1}\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}}I_p.
 \end{equation}
-où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétrisation sur $[0, 1]$ de $\Gamma_i$ orientée positivement et vérifiant $\gamma_i(0)=\gamma_i(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}}$.
+où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétrisation sur $[0, 1]$ de $\Gamma_i$ orientée positivement et vérifiant $\gamma_i(0)=\gamma_i(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}$.
 Soit $\bar{w}$ un champ de croix presque-$\mathcal{C}^1$ définit sur $\Omega$ et vérifiant:
 \begin{equation}
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p\right),&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p\right),&\mbox{ sur }\Gamma_i,\\\\
+    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right),&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right),&\mbox{ sur }\Gamma_i,\\\\
     &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
@@ -1765,9 +1735,9 @@ De plus, on a:
     $$
     \left\{
     \begin{array}{lcl}
-    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&-\left(\theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)\right)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p\right)\\\\
+    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&-\left(\theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)\right)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right)\\\\
     &&+\left(\theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)\right)\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p\right)\\\\
+    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right)\\\\
     &&+\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
@@ -1776,8 +1746,8 @@ De plus, on a:
     $$
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
+    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
     $$
@@ -1789,9 +1759,9 @@ Après cela, l'opération d'alignement peut être exécutée sur le champ $\bar{
 \bar{v}(p)=
 \left\{
 \begin{array}{ll}
-\mathbf{R}(\phi(p))\bar{u}_c(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)),\\[0.5cm]
-\bar{N}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)\backslash(\mathcal{B}\cap\mathcal{S}_{\bar{N}}),\\[0.5cm]
-0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{N}}.
+\mathbf{R}(\phi(p))\bar{u}_c(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)),\\[0.5cm]
+\bar{n}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)\backslash(\mathcal{B}\cap\mathcal{S}_{\bar{n}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
 \end{array}
 \right.
 \label{eqn:etude_def_v_third}
@@ -1802,7 +1772,7 @@ où $\phi$ est donné par:
 \left\{
 \begin{array}{lcll}
 \Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(\gamma_i(t))&=&\theta_{\bar{N}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}_c}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{N}}\cup\mathcal{S}_{\bar{u}_c})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
+\phi(\gamma_i(t))&=&\theta_{\bar{n}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}_c}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}_c})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
 \end{array}
 \right.
 \label{eqn:etude_def_phi_third}
@@ -1962,8 +1932,8 @@ La construction du champ de correction proposé dans la partie \ref{subsec:etude
 \begin{equation}
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p\right)&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p\right)&\mbox{ sur }\Gamma_i,\\\\
+    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right)&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right)&\mbox{ sur }\Gamma_i,\\\\
     &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
@@ -1974,8 +1944,8 @@ Pour construire un tel champ de croix, nous proposons plusieurs options. La prem
 \left\{
 \begin{array}{lcll}
     \Delta\varphi &=& 0 & \mbox{ dans }\Omega,\\\\
-    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_0}d\varphi &=& \theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p\right)&\mbox{ sur }\Gamma_0\\\\
-    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_i}d\varphi &=& \theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p\right)&\mbox{ sur }\Gamma_i,\\\\
+    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_0}d\varphi &=& \theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right)&\mbox{ sur }\Gamma_0\\\\
+    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_i}d\varphi &=& \theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right)&\mbox{ sur }\Gamma_i,\\\\
     &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
 \end{array}
 \right.
@@ -1988,8 +1958,8 @@ Une autre alternative pour construire le champ de croix $\bar{w}$ consiste à ca
 \left\{
 \begin{array}{lcll}
     \Delta h &=& 0 & \mbox{ dans }\Omega,\\\\
-    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_0}d\theta_{h} &=&4\left[\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_0}I_p\right)\right]&\mbox{ sur }\Gamma_0\\\\
-    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_i}d\theta_{h} &=& 4\left[\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{N}})\cap\Gamma_i}I_p\right)\right]&\mbox{ sur }\Gamma_i,\\\\
+    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_0}d\theta_{h} &=&4\left[\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right)\right]&\mbox{ sur }\Gamma_0\\\\
+    \displaystyle\frac{1}{2\pi}\displaystyle\int_{\Gamma_i}d\theta_{h} &=& 4\left[\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right)\right]&\mbox{ sur }\Gamma_i,\\\\
     &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
 \end{array}
 \right.
@@ -2016,7 +1986,7 @@ Une dernière possibilité consiste à résoudre directement l'équation vectori
     h(p) &=&
     \left\{
     \begin{array}{ll}
-        \mathbf{R}\displaystyle\left(4(\theta_{\bar{N}}(p)-\theta_{\bar{u}}(p))\right)(1, 0)^t &\text{ si }\bar{N}(p)\neq 0\mbox{ et }\bar{u}(p)\neq 0\\\\
+        \mathbf{R}\displaystyle\left(4(\theta_{\bar{n}}(p)-\theta_{\bar{u}}(p))\right)(1, 0)^t &\text{ si }\bar{n}(p)\neq 0\mbox{ et }\bar{u}(p)\neq 0\\\\
         0& \text{sinon}
     \end{array}
     \right.

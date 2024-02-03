@@ -107,22 +107,10 @@ Cook, W.~A. (1974).
 \newblock {\em International Journal for Numerical Methods in Engineering},
   8(1):27--43.
 
-\bibitem[Crane et~al., 2010]{crane2010trivial}
-Crane, K., Desbrun, M., and Schr{\"o}der, P. (2010).
-\newblock Trivial connections on discrete surfaces.
-\newblock In {\em Computer Graphics Forum}, volume~29, pages 1525--1533. Wiley
-  Online Library.
-
 \bibitem[D'azevedo, 2000]{d2000bilinear}
 D'azevedo, E.~F. (2000).
 \newblock Are bilinear quadrilaterals better than linear triangles?
 \newblock {\em SIAM Journal on Scientific Computing}, 22(1):198--217.
-
-\bibitem[de~Goes and Crane, 2010]{de2010trivial}
-de~Goes, F. and Crane, K. (2010).
-\newblock Trivial connections on discrete surfaces revisited: A simplified
-  algorithm for simply-connected surfaces.
-\newblock Technical report, Technical Report.
 
 \bibitem[de~Moura~Pinto and Freitas, 2009]{de2009fast}
 de~Moura~Pinto, F. and Freitas, C. M. D.~S. (2009).

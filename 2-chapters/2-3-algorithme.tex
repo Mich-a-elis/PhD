@@ -13,6 +13,7 @@ Dans le précédent chapitre, la méthode a été élaborée dans un cadre conti
 Soit $\Omega$ un domaine compact et connexe de $\mathbb{R}^2$ dont le bord $\partial\Omega$ est lisse par morceau. On désigne par $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$.
 
 \subsection{Maillage triangulaire}
+\label{subsec:mesh_tri}
 
 Considérons maintenant un maillage triangulaire $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ représentant une triangulation conforme de $\Omega$. Autrement dit, $\Omega_h$ est formé par l'union de $N_t$ triangles fermés non vide ($\Omega_h=\cup_{k=1}^{N_t}T_k$) tel que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. De plus, tous les sommets de $\Omega_h$ appartiennent à $\Omega$. Nous noterons $\mathcal{T}_h$ l'ensemble des triangles formant $\Omega_h$, l'indice $h$ faisant référence à la finesse du maillage, que l’on définit par le diamètre maximal des triangles constituant $\Omega_h$.
 $$
@@ -272,9 +273,9 @@ On déclare qu'une suite de champs de croix converge vers un autre champ de croi
 $$\Omega=\{x\in U,~d(x)=0\},$$
 $d$ dans $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\},~0\leq\alpha\leq 1$). Le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ est alors défini par:
 \begin{equation}
-\eta_h(p)=[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h](p-d(p)N(p))\quad\quad\quad pour~tout~p\in\Omega_h
+\eta_h(p)=[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h](p-d(p)n(p))\quad\quad\quad pour~tout~p\in\Omega_h
 \end{equation}
-où $N$ est la normale sortante en $p$.
+où $n$ est la normale sortante en $p$.
 
 Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait par construction, qu'il existe $m:T\longrightarrow \mathbb{Z}$ tel que $\theta_{\bar{u}_h}+m\pi/2$ est linéaire dans $T$. En utilisant les résultats de \cite{dziuk1988finite} il en découle que $[\mathbf{L}_{\Omega_h}^{\Omega}\theta_{\bar{u}_h}]$ tend vers $\theta_{\bar{u}}$ sur $\Omega\backslash\cup_{Z\in\mathbf{Z}}Z$ lorsque $h$ tend vers $0$. Or on sait que lorsque $h$ tend vers $0$, le diamètre des triangles du maillage tend vers $0$ e qui entraîne une diminution de la taille des zones singulières $Z$ pour tout $Z\in\mathbf{Z}$. Par conséquent, lorsque $h$ tend vers $0$, le champ scalaire $[\mathbf{L}_{\Omega_h}^{\Omega}\theta_{\bar{u}_h}]$ converge vers $\theta_{\bar{u}}$ sur $\Omega$. On montre ainsi que le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{u}_h]$ sur $\Omega$ du champ de croix $\bar{u}_h$ converge vers le champ de croix $\bar{u}$ sur $\Omega$ lorsque $h$ tend vers $0$.
 
@@ -326,7 +327,7 @@ Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la
 
 \paragraph{Nombre de séparatrices:} Si $p$ est un point singulier de $\bar{u}_h$, alors le nombre de séparatrices $N_s(p)$ associées à $p$ est donné par:
 \begin{equation}
-    N_s(p) = 
+    N_s(p) =
     \left\{
     \begin{array}{ll}
     4-4id_{\bar{u}_h}(p) & \mbox{ si } p\in\Omega_h\backslash\partial\Omega_h\\[0.3cm]
@@ -455,7 +456,7 @@ Nous désignons par \emph{triangle singulier}, tout triangle contenant un point 
 Considérons $T$ comme un triangle contenant un point singulier que doit traverser une séparatrice dont l'origine ne se trouve pas dans $T$. En d'autres termes, le dernier point calculé lors de la construction de cette séparatrice appartient à $T$ et le processus habituel d'intégration a généreé un segment traversant $T$ (voir figure \ref{fig:draw_streams_1}). Dans la suite nous appellerons ce "dernier point" le point d'entrée de la séparatrice dans $T$. On commence en subdivisant $T$ en quatre triangles. Cette subdivision peut être réalisée en reliant, par exemple, les milieux des arêtes de $T$ Il est essentiel de noter que si le point d'entrée coincide avec le milieu d'une arête, un autre point de cette arête doit être choisi pour la subdivision. L'objectif est que le point d'entrée se retrouve associé à un triangle issu de la subdivision et ne contenant pas de point singulier. On peut alors appliquer le processus d'intégration dans ce triangle, tel que décrit précédemment (voir figure \ref{fig:draw_streams_sing_2}). Il ne reste plus qu'à itérer ce schéma de construction jusqu'à ce que la séparatrice sorte de la partie du plan correspondant au triangle initial (voir figures \ref{fig:draw_streams_sing_3} et \ref{fig:draw_streams_sing_4}). On se retouve ainsi avec un raffinement local et adapté du maillage en fonction de la trajectoire de la séparatrice ce qui permet en pratique de ne pas raffiner l'intégralité du maillage pour avoir une bonne approximation de la séparatice. Il convient de souligner qu'il n'est pas nécessaire d'apporter des modifications locales au maillage dans sa globalité. Après avoir construit la séparatrice, nous conservons uniquement ses points de passage et supprimons tout raffinement local utilisé.
 
 
-\paragraph{Fusion de séparatrices:} 
+\paragraph{Fusion de séparatrices:}
 
 
 de manière similaire à ce qui est réalisé dans \cite{marcon2019high}, les séparatrices du champ de croix sont construites simultanément en incrémentant chacune d'elles progressivement, et la rencontre entre deux séparatrices est anticipée en comparant à chaque incrément, d'une part, la distance entre les derniers points calculés et, d'autre part, les directions des derniers segments construits. En d'autres termes, on cherche à déterminer si, à un moment donné, deux séparatrices données avancent dans des directions opposées et si elles sont suffisamment proches l'une de l'autre. On compare ces deux mesures à des seuils prédéfinis, et en fonction du résultat, on décide de fusionner ou non les deux séparatrices.
@@ -784,7 +785,7 @@ Le maillage proprement dit suit alors le même principe. On trace des lignes de 
 \end{figure}
 
 
-
+\color{red}
 \subsection{Méthode basée sur des EDP}
 Cette approche implique de générer le maillage pour un bloc spécifique en résolvant une Équation aux Dérivées Partielles (EDP), en utilisant la forme du contour du bloc comme condition aux bords. Considérons $C_i$, avec $i \in \llbracket 1, 4 \rrbracket$, comme les séparatrices (numérotées dans le sens positif) définissant les côtés d'un bloc particulier, noté $\Gamma$. Supposons que les côtés opposés $C_1$ et $C_3$ soient discrétisés en $m$ nœuds, tandis que les côtés opposés $C_2$ et $C_4$ soient discrétisés en $n$ nœuds. L'idée sous-jacente consiste à élaborer le maillage en construisant deux familles de lignes de niveau, l'une parallèle (au sens où elles ne s'intersectent pas) à $C_1$ et $C_3$, et l'autre orthogonale (au niveau des points d'intersection) à $C_2$ et $C_4$, et inversement pour l'autre famille de lignes de niveau. Soient $U$ et $V$ les solutions des équations suivantes :
 $$
@@ -881,39 +882,41 @@ C'est cette dernière méthode que nous choisissons d'adopter dans notre implém
 \label{fig:maillage_quad_carre}
 \end{figure}
 
+\color{black}
+
 \section{Opération d'alignement}
 
-Abordons à présent la discrétisation de l'opération d'alignement exposée dans le chapitre \ref{chap:theoritical}, en supposant que $\Omega$ soit un domaine simplement connexe. Pour rappel, cette opération vise à créer un champ de croix $\bar{v}=\mathbf{R}(\phi)\bar{u}$ aligné sur $\partial\Omega$ (c'est-à-dire aligné sur le champ de croix $\bar{N}$ associé à la normale sortante de $\partial\Omega$). Ceci est réalisé à partir d'un champ de croix $\bar{u}$ presque-$\mathcal{C}^1$ défini sur $\Omega$, mais non nécessairement aligné par rapport au bord de $\Omega$. La fonction $\phi$ est définie par l'équation \eqref{eqn:principe_def_phi}.
+Abordons à présent la discrétisation de l'opération d'alignement exposée dans le chapitre \ref{chap:theoritical}, en supposant que $\Omega$ soit un domaine simplement connexe. Pour rappel, cette opération vise à créer un champ de croix $\bar{v}=\mathbf{R}(\phi)\bar{u}$ aligné sur $\partial\Omega$ (c'est-à-dire aligné sur le champ de croix $\bar{n}$ associé à la normale sortante de $\partial\Omega$). Ceci est réalisé à partir d'un champ de croix $\bar{u}$ presque-$\mathcal{C}^1$ défini sur $\Omega$, mais non nécessairement aligné par rapport au bord de $\Omega$. La fonction $\phi$ est définie par l'équation \eqref{eqn:principe_def_phi}.
 
-Considérons $\bar{u}_h$ comme une représentation discrète de $\bar{u}$ sur $\Omega_h$. Dans le contexte discret, cette opération équivaut à aligner $\bar{u}_h$ sur un champ de croix défini sur $\partial\Omega_h$ et représentant le champ de croix associé à la normale extérieure de $\partial\Omega$. Commençons par construire cette représentation que nous notons $\bar{N}_h$. Pour tout sommet $a\in\mathcal{S}_h\cap\partial\Omega_h$, avec $b$ et $c$ comme ses sommets voisins également situés sur $\partial\Omega_h$, nous avons :
+Considérons $\bar{u}_h$ comme une représentation discrète de $\bar{u}$ sur $\Omega_h$. Dans le contexte discret, cette opération équivaut à aligner $\bar{u}_h$ sur un champ de croix défini sur $\partial\Omega_h$ et représentant le champ de croix associé à la normale extérieure de $\partial\Omega$. Commençons par construire cette représentation que nous notons $\bar{n}_h$. Pour tout sommet $a\in\mathcal{S}_h\cap\partial\Omega_h$, avec $b$ et $c$ comme ses sommets voisins également situés sur $\partial\Omega_h$, nous avons :
 \begin{equation}
-\bar{N}_h(a)=\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)g(a),~ m\in\mathbb{Z}\right\},
+\bar{n}_h(a)=\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)g(a),~ m\in\mathbb{Z}\right\},
 \end{equation}
 où $g(a)$ est donné par:
 \begin{equation}
 g(a)=\displaystyle\frac{1}{\|\overrightarrow{ab}\|+\|\overrightarrow{ac}\|}\left(\overrightarrow{ab}+\overrightarrow{ac}\right).
 \end{equation}
-Ensuite, on élimine les arêtes de bord où la variation angulaire $\delta\theta$ du champ $\bar{N}_h$ n'est pas définie, soit en effectuant un raffinement local ou global du maillage, soit en insérant dans le maillage un nouveau point situé au milieu de l'arête en question. Ce point sera considéré comme un point singulier dans le champ $\bar{N}_h$, et par conséquent, pour un tel point $a\in\mathcal{S}_h\cap\partial\Omega_h$, nous fixons $\bar{N}_h(a)=0$. Ainsi, on se retrouve avec deux types d'arêtes incluses dans $\partial\Omega_h$ : les arêtes avec un sommet singulier dans $\bar{N}_h$ et les arêtes où la variation angulaire $\delta\theta$ de $\bar{N}_h$ est bien définie. La construction de $\bar{N}_h$ se poursuit alors de la manière suivante : pour tout point $p\in ab$ avec $ab$ une arête incluse dans $\partial\Omega_h$, on a:\\
+Ensuite, on élimine les arêtes de bord où la variation angulaire $\delta\theta$ du champ $\bar{n}_h$ n'est pas définie, soit en effectuant un raffinement local ou global du maillage, soit en insérant dans le maillage un nouveau point situé au milieu de l'arête en question. Ce point sera considéré comme un point singulier dans le champ $\bar{n}_h$, et par conséquent, pour un tel point $a\in\mathcal{S}_h\cap\partial\Omega_h$, nous fixons $\bar{n}_h(a)=0$. Ainsi, on se retrouve avec deux types d'arêtes incluses dans $\partial\Omega_h$ : les arêtes avec un sommet singulier dans $\bar{n}_h$ et les arêtes où la variation angulaire $\delta\theta$ de $\bar{n}_h$ est bien définie. La construction de $\bar{n}_h$ se poursuit alors de la manière suivante : pour tout point $p\in ab$ avec $ab$ une arête incluse dans $\partial\Omega_h$, on a:\\
 \begin{itemize}
-\item[$\bullet$] Si $\delta\theta(\bar{N}_h(a), \bar{N}_h(b))$ est défini, alors:
+\item[$\bullet$] Si $\delta\theta(\bar{n}_h(a), \bar{n}_h(b))$ est défini, alors:
  $$
  \left\{
  \begin{array}{l}
- \bar{N}_h(p)=\mathbf{R}(\theta_p)\bar{N}_h(a),\\\\
- \theta_p = \theta_{\bar{N}_h}(a)+\displaystyle\frac{\|\overrightarrow{ap}\|}{\|\overrightarrow{ab}\|}\delta\theta(\bar{N}_h(a), \bar{N}_h(b)).
+ \bar{n}_h(p)=\mathbf{R}(\theta_p)\bar{n}_h(a),\\\\
+ \theta_p = \theta_{\bar{n}_h}(a)+\displaystyle\frac{\|\overrightarrow{ap}\|}{\|\overrightarrow{ab}\|}\delta\theta(\bar{n}_h(a), \bar{n}_h(b)).
  \end{array}
  \right.
  $$
  \item[$\bullet$] Sinon, par construction, l'un des deux sommets de l'arête $ab$ est nul et l'autre non nul. Supposons sans perte de généralité qu'il s'agit de $a$. On pose alors:
  $$
- \bar{N}_h(p)=\bar{N}_h(b).
+ \bar{n}_h(p)=\bar{n}_h(b).
  $$
 \end{itemize}
-Après la construction du champ de croix $\bar{N}_h$, nous entamons l'opération d'alignement proprement dite. L'objectif est d'ajuster $\bar{u}_h$ pour former un nouveau champ de croix $\bar{v}_h$ tel que $\bar{v}_h=\bar{N}_h$ sur $\Omega_h$, à l'exception d'un nombre limité de points où il s'annule. En d'autres termes, nous visons à ce que, pour tout $p\in\partial\Omega_h$, $\bar{v}_h(p)\in\{\bar{N}_h(p), 0\}$. Pour y parvenir, nous débutons en associant à chaque sommet $p\in\partial\mathcal{S}_h\cap\Omega_h$ un paramètre $I_p$ vérifiant:
+Après la construction du champ de croix $\bar{n}_h$, nous entamons l'opération d'alignement proprement dite. L'objectif est d'ajuster $\bar{u}_h$ pour former un nouveau champ de croix $\bar{v}_h$ tel que $\bar{v}_h=\bar{n}_h$ sur $\Omega_h$, à l'exception d'un nombre limité de points où il s'annule. En d'autres termes, nous visons à ce que, pour tout $p\in\partial\Omega_h$, $\bar{v}_h(p)\in\{\bar{n}_h(p), 0\}$. Pour y parvenir, nous débutons en associant à chaque sommet $p\in\partial\mathcal{S}_h\cap\Omega_h$ un paramètre $I_p$ vérifiant:
 \begin{equation}
 I_p=\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1
 \end{equation}
-Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Un critère a priori pour choisir automatiquement ce paramètre a été exposé dans la sous-section \ref{subsec:sing_bord}. Ensuite, nous définissons l'ensemble $\mathcal{B}$ qui regroupe les points que nous souhaitons rendre singuliers dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Cet ensemble doit, naturellement, inclure tous les points $p$ tels que $I_p\neq 0$, car ces points auront un indice non nul dans $\bar{v}_h$. Cependant, il est également envisageable d'inclure dans $\mathcal{B}$ des points dont le paramètre $I_p$ est nul. L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ de $\bar{N}_h$. Ces points étant déjà singulier dans $\bar{N}_h$, ils resteront singuliers dans $\bar{v}_h$ après l'opération d'alignement. Pour finir, il est impératif que le champ de croix $\bar{u}_h$ satisfasse:\\
+Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Un critère a priori pour choisir automatiquement ce paramètre a été exposé dans la sous-section \ref{subsec:sing_bord}. Ensuite, nous définissons l'ensemble $\mathcal{B}$ qui regroupe les points que nous souhaitons rendre singuliers dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Cet ensemble doit, naturellement, inclure tous les points $p$ tels que $I_p\neq 0$, car ces points auront un indice non nul dans $\bar{v}_h$. Cependant, il est également envisageable d'inclure dans $\mathcal{B}$ des points dont le paramètre $I_p$ est nul. L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ $\bar{n}_h$. Ces points étant déjà singulier dans $\bar{n}_h$, ils resteront singuliers dans $\bar{v}_h$ après l'opération d'alignement. Pour finir, il est impératif que le champ de croix $\bar{u}_h$ satisfasse:\\
 \begin{itemize}
  \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}_h})<\infty$,\\
  \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}_h}$, $id_{\bar{u}_h}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
@@ -929,7 +932,7 @@ Ces critères sont automatiquement vérifiés si les points singuliers de $\bar{
 \left\{
 \begin{array}{ll}
 \mathbf{R}(\phi_h(p))\bar{u}_h(p) & \mbox{ si } p\in\Omega_h\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}_h}),\\[0.5cm]
-\bar{N}_h(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h)\backslash\mathcal{B},\\[0.5cm]
+\bar{n}_h(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h)\backslash\mathcal{B},\\[0.5cm]
 0 & \mbox{ si } p\in\mathcal{B}.
 \end{array}
 \right.
@@ -940,14 +943,14 @@ où $\phi_h$ est définie par l'équation de Laplace suivant:
 \left\{
 \begin{array}{lcll}
 \Delta\phi_h &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi_h(\gamma(t))&=&\theta_{\bar{N}_h}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}_h}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega_h\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}_h})),
+\phi_h(\gamma(t))&=&\theta_{\bar{n}_h}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}_h}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega_h\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}_h})),
 \end{array}
 \right.
 \label{eqn:algorithm_def_phi}
 \end{equation}
 où la fonction $\mathcal{I}$ est donnée par:
 $$
-\mathcal{I}(t)=\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\displaystyle\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{N}_h}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{N}_h}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
+\mathcal{I}(t)=\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\displaystyle\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{n}_h}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{n}_h}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
 $$
 avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$.
 
@@ -960,7 +963,7 @@ En pratique, la résolution de l'équation \eqref{eqn:algorithm_def_phi} est eff
 \item Le champ de croix $\bar{v}_h$ conserve certaines propriétés du champ de croix $\bar{u}_h$. Ainsi, on a $\mathcal{S}_{\bar{v}_h}\cap(\Omega_h\backslash\partial\Omega_h)=\mathcal{S}_{\bar{u}_h}\cap(\Omega_h\backslash\partial\Omega_h)$, puisque $\phi_h$ est $\mathcal{C}^0$ sur $\Omega_h\backslash\partial\Omega_h$. Les indices des points constituant ces ensembles sont également préservés. Autrement dit, pour tout point $p\in\Omega_h\backslash\partial\Omega_h$, on a $id_{\bar{u}_h}(p)=id_{\bar{v}_h}(p)$.
 \item Pour tout $p\in\partial\Omega_h$, si $p\in\mathcal{S}_h$, alors $id_{\bar{v}_h}(p)=I_p$ ; sinon, $id_{\bar{v}_h}
 (p)=0$.
-\item Lorsque $\Omega_h$ est un domaine non simplement connexe, la procédure d'alignement reste conforme à celle développée dans le chapitre \ref{chap:theoritical}. Il convient toutefois de définir avec précision $\bar{N}_h$ et $\mathcal{B}$ pour chaque composante connexe de $\partial\Omega_h$.
+\item Lorsque $\Omega_h$ est un domaine non simplement connexe, la procédure d'alignement reste conforme à celle développée dans le chapitre \ref{chap:theoritical}. Il convient toutefois de définir avec précision $\bar{n}_h$ et $\mathcal{B}$ pour chaque composante connexe de $\partial\Omega_h$.
 \end{enumerate}
 \end{remark}
 Nous présentons le processus d'alignement à travers un exemple illustré à la figure \ref{fig:alignment}.
@@ -1070,7 +1073,7 @@ L'équation de propagation est alors donné par:
 \left\{
 \begin{array}{lcll}
 \Delta u_r &=& 0 &\mbox{ dans }\Omega,\\\\
-u_r(p)&=&\mathcal{R}(\bar{N}) & \mbox{ sur } \partial\Omega,
+u_r(p)&=&\mathcal{R}(\bar{n}) & \mbox{ sur } \partial\Omega,
 \end{array}
 \right.
 \label{eqn:frey_vectoriel}
@@ -1080,14 +1083,14 @@ $$
 \left\{
 \begin{array}{lcll}
 \Delta u_r^1 &=& 0 &\mbox{ dans }\Omega,\\\\
-u_r^1(p)&=&\mathcal{R}(\bar{N}).(1, 0)^t & \mbox{ sur } \partial\Omega.
+u_r^1(p)&=&\mathcal{R}(\bar{n}).(1, 0)^t & \mbox{ sur } \partial\Omega.
 \end{array}
 \right.
 \quad\quad\quad
 \left\{
 \begin{array}{lcll}
 \Delta u_r^2 &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-u_r^2(p)&=&\mathcal{R}(\bar{N}).(0, 1)^t & \mbox{ sur } \partial\Omega.
+u_r^2(p)&=&\mathcal{R}(\bar{n}).(0, 1)^t & \mbox{ sur } \partial\Omega.
 \end{array}
 \right.
 $$
@@ -1129,3 +1132,7 @@ est un champ de croix dont les points singuliers sont localisés aux points $(a_
 
 Il est important de souligner que cette construction offre une grande souplesse dans l'établissement du champ, contrairement à l'approche précédente. Elle permet un contrôle précis sur la position des points singuliers dans le domaine ainsi que sur leurs indices. Cependant, le champ de croix ainsi obtenu n'est pas déterminé par le domaine sur lequel il est construit. Par conséquent, contrairement à l'approche précédente, le champ de croix peut ne pas être aligné. Ainsi, il est nécessaire d'appliquer l'approche d'alignement présentée précédemment pour orienter le champ par rapport au domaine que l'on souhaite mailler.
 
+\section{homogeneisation}
+
+Sans deplacer les points de bord avec le demi disque\\
+puis deplacer les points de bord
