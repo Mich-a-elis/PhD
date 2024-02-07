@@ -269,7 +269,9 @@ Une conséquence de la représentation du champ de croix que nous avons présent
 Il est essentiel de souligner que dans cette opération, le maillage demeure inchangé. En pratique, on conserve simplement en mémoire les triangles constituant les zones singulières ainsi que le point choisi comme singulier dans la zone. La valeur du champ de croix est ensuite obtenue (si nécessaire) en un point en appliquant l'équation \eqref{eqn:etoilage}.
 
 \paragraph{Convergence:}
-On déclare qu'une suite de champs de croix converge vers un autre champ de croix lorsque les champs d'angles associés convergent les uns vers les autres. Pour comparer une fonction $\eta_h$ définie sur $\Omega_h$ à une fonction définie sur $\Omega$, nous introduisons une opération d'extension, appelée \emph{lift de} $\eta$ et notée $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$. À cette fin, nous supposons que $\Omega$ peut être représenté globalement par une fonction de distance orientée $d$ définie sur un sous-ensemble ouvert $U$ de $\mathbb{R}^2$.
+On déclare qu'une suite de champs de croix converge vers un autre champ de croix lorsque les champs d'angles associés convergent les uns vers les autres.
+
+Pour comparer une fonction $\eta_h$ définie sur $\Omega_h$ à une fonction définie sur $\Omega$, nous introduisons une opération d'extension, appelée \emph{lift de} $\eta$ et notée $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$. À cette fin, nous supposons que $\Omega$ peut être représenté globalement par une fonction de distance orientée $d$ définie sur un sous-ensemble ouvert $U$ de $\mathbb{R}^2$.
 $$\Omega=\{x\in U,~d(x)=0\},$$
 $d$ dans $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\},~0\leq\alpha\leq 1$). Le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ est alors défini par:
 \begin{equation}
@@ -810,7 +812,7 @@ V(p)&=& 0 & \mbox{ sur } C_4.
 \right.
 $$
 \[\]
-Les lignes de niveau des champs scalaires $U$ et $V$ forment ainsi une grille régulière à partir de laquelle on peut déduire un maillage pour le bloc $\Gamma$. Pour ce faire, il suffit de considérer les lignes de niveau correspondant aux valeurs prises par les nœuds de discrétisation sur les bords de ces champs. Cela est illustré dans les figures \ref{fig:quad_equation_1}, \ref{fig:quad_equation_2} et \ref{fig:quad_equation_3}. Dans cet exemple, nous choisissons $m=n=12$. Les intersections des lignes de niveaux sont alors considérées comme des nœuds du maillage, et les éléments du maillage sont construits en reliant ces nœuds. Cependant, un tel maillage peut être insatisfaisant car on observe que les cellules ne sont pas homogènes, surtout aux abords du bloc. Pour remédier à cela, nous introduisons une grille régulière notée $(u_{ij}){\substack{i\in\llbracket 1, n\rrbracket\j\in\llbracket 1, m\rrbracket}}$ de taille $n\times m$, dont les nœuds $u{ij}$ sont donnés par:
+Les lignes de niveau des champs scalaires $U$ et $V$ forment ainsi une grille régulière à partir de laquelle on peut déduire un maillage pour le bloc $\Gamma$. Pour ce faire, il suffit de considérer les lignes de niveau correspondant aux valeurs prises par les nœuds de discrétisation sur les bords de ces champs. Cela est illustré dans les figures \ref{fig:quad_equation_1}, \ref{fig:quad_equation_2} et \ref{fig:quad_equation_3}. Dans cet exemple, nous choisissons $m=n=12$. Les intersections des lignes de niveaux sont alors considérées comme des nœuds du maillage, et les éléments du maillage sont construits en reliant ces nœuds. Cependant, un tel maillage peut être insatisfaisant car on observe que les cellules ne sont pas homogènes. De plus, les noeuds du bords ne correspondent pas forcément au discrétrisation des séparatrices ce qui entraîne un déphase des noeuds entre deux blocs voisins et donc une non-conformité du maillage. Pour remédier à cela, nous introduisons une grille régulière notée $(u_{ij}){\substack{i\in\llbracket 1, n\rrbracket\j\in\llbracket 1, m\rrbracket}}$ de taille $n\times m$, dont les nœuds $u{ij}$ sont donnés par:
 \begin{equation}
 u_{ij}=(u_{ij}^x, u_{ij}^y)=(i-1, j-1),\quad i\in\llbracket 1, n\rrbracket,\quad j\in\llbracket 1, m\rrbracket.
 \end{equation}
@@ -1001,11 +1003,70 @@ Nous présentons le processus d'alignement à travers un exemple illustré à la
 \section{Analyse de convergence}
 \label{subsec:analyse_convergence}
 
-Dans les sections précédentes, nous avons examiné le problème du partitionnement d'un domaine défini par un maillage triangulaire, ainsi que celui de la génération d'un maillage quadrangulaire à partir du partitionnement construit. Cependant, une condition cruciale pour le bon déroulement de ce processus est que tous les blocs issus du partitionnement possèdent quatre côtés (en d'autres termes, les bords des blocs doivent résulter de l'intersection de quatre séparatrices distinctes). La question qui se pose alors est de savoir qu'est ce qui garantit que le processus de partitionnement aboutit bien a un partitionnement en blocs de quatre côtés. La réponse à cette interrogation a été exposée dans le chapitre \ref{chap:theoritical}, à travers les théorèmes \ref{thm:theorem1}, \ref{thm:theorem2} et \ref{thm:theorem3}. Ces théorèmes établissent la garantie du processus de partitionnement lorsqu'il est appliqué à un champ de croix presque-$\mathcal{C}^1$, aligné par rapport au bord du domaine où il est défini.
+Dans les sections précédentes, nous avons examiné le problème du partitionnement d'un domaine défini par un maillage triangulaire, ainsi que celui de la génération d'un maillage quadrangulaire à partir du partitionnement construit. Dans cette partie, nous montrons que le maillage construit est bien un maillage du domaine de départ $\Omega$. Pour se faire il suffit de montrer que le partitionnement construit sur $\Omega_h$ que nous notons $P_h$ converge vers un partitionnement de $\Omega$ ayant des partitions de quatre côtés.
+
+Pour commencer, remarquo
+
+
+Cependant, une condition cruciale pour le bon déroulement de ce processus est que tous les blocs issus du partitionnement possèdent quatre côtés (en d'autres termes, les bords des blocs doivent résulter de l'intersection de quatre séparatrices distinctes). La question qui se pose alors est de savoir qu'est ce qui garantit que le processus de partitionnement aboutit bien a un partitionnement en blocs de quatre côtés. La réponse à cette interrogation a été exposée dans le chapitre \ref{chap:theoritical}, à travers les théorèmes \ref{thm:theorem1}, \ref{thm:theorem2} et \ref{thm:theorem3}. Ces théorèmes établissent la garantie du processus de partitionnement lorsqu'il est appliqué à un champ de croix presque-$\mathcal{C}^1$, aligné par rapport au bord du domaine où il est défini.
+
+On veut montrer que le maillage produit est bien un maillage quadrilatéral de $\Omega$. Pour cela, il suffit de montrer que les partitionnement $P_h$ tendent vers un partitionnement de $\Omega$ ayant des partions de quatres côtés.
+
+$v_h$ tend vers $v$ qui partitionne $\Omega$ en régions de quatre côtés. Notons $P$ ce partitionnement.
+
+Nous allons donc montrer que le partitionnement $P_h$ construit sur $\Omega$ converge vers $P$ ce qui nous permet de dire que pour $h$ assez fin, $P_h$ sera un partitionnement de quatre côtés. $P_h$ ayant été construit à partir des séparatrices de $v_h$, il suffit donc de montrer que $v_h$ converge vers les séparatrices de $v$.
+
+$\Omega_h$ tend vers $\Omega$ donc nh tend vers n. le champ phih est une approximation element fini du probleme continu:
+
+Sachant que Lnh tend vers n sur Omega, il vient que Lphih tend vers phi sur Omega. Par conséquent Lthetavh converge vers thetav sur Omega et par suite vh tend vers v.
+$v_h$ tend vers $v$. en effet,
+\begin{lemma}
+Le champ de croix $\bar{v}_h$ converge vers le champ de croix $\bar{v}$ vérifiant:
+\textbf{Opération d'alignement:} étant donné $\bar{u}$, nous définissons le champ de croix $\bar{v}$ pour tout $p\in\Omega$ par:
+\begin{equation}
+\bar{v}(p)=
+\left\{
+\begin{array}{ll}
+\mathbf{R}(\phi(p))\bar{u}(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}),\\[0.5cm]
+\bar{n}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}}\cap\partial\Omega)\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}),\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
+\end{array}
+\right.
+\label{eqn:principe_def_v}
+\end{equation}
+où $\phi:\Omega\longrightarrow\mathbb{R}$ est définie comme la solution de l'équation de Laplace suivante:
+\begin{equation}
+\left\{
+\begin{array}{lcll}
+\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+\phi(\gamma(t))&=&\theta_{\bar{n}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})),
+\end{array}
+\right.
+\label{eqn:principe_def_phi}
+\end{equation}
+où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}))$ par:
+$$
+\mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{n}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{n}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
+$$
+avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$.
+$u_h\rightarrow u$
+\end{lemma}
 
 \begin{lemma}
 $u_h\rightarrow u$
 \end{lemma}
+
+\begin{lemma}
+$u_h\rightarrow u$
+\end{lemma}
+
+\begin{lemma}
+$u_h\rightarrow u$
+\end{lemma}
+
+L'ensemble des points singuliers de $v_h$ tend vers l'ensemble des points singuliers de $v$
+
+Les séparatrices interne de $v_h$ convergent vers les séparatrices de $v$: en effet, l'ensemble des points singuliers de $v_h$ converge vers l'ensemble des points singuliers de $v$ et les directions de sortie des séparatrices de $v_h$ converge vers les directions de sorties des séparatrices de $v$. Ce la découle directement du fait que $v_h$ converger vers $v$ lorsque $h$ tend vers $0$.
 
 \begin{corollary}
 $\mathcal{S}_{\bar{v}_h}\rightarrow \mathcal{S}_{\bar{v}}$\\
@@ -1034,11 +1095,36 @@ Convergence de Sbordh vers Sbord
 Pour simplifier, nous supposerons que $Cl = Cl_h$. Cette condition signifie en particulier que $Cl$ est un domaine de frontière polygonale (cf. Figure 2).
 
 \[\]
+remarque les quad de bord on pour base les triangles de bord, mesh quad plus fin que le tri
+motivation, reconstitué la courbure de
 \color{red}
-Mesh $Q_2$\\
 Hermitte récupere de la courbure
 \color{black}
+Pour finir il faut que le bord soit une separatrice
 
+\section{Reconstitution du bord du domaine}
+Remarquons que dans ce que nous avons présenté jusqu'a présent, les mailles quadrilatéral construit sur le bord du domaine ont leur noeuds déposé sur les aretes de bord du maillage triangulaire ayant servi à la construction. Cependant, dans les codes de calcul, on pourrait être amené a interpolé la courbure sur la frontière du maillage quadrialtéral. c'est par exemple le cas lorsqu'on a des conditions limites qui font intervenir la dérivée normale. face a une telle situation les calculs de reconstitution de normal seront donc dependant de la resolution obtenu pour les mailles de bord lors de la construction du maillage quadrilatéral. Ainsi, si le pas demandé pour le maillage quadrilatéral est plus fin que le pas du maillage triangulaire sur lequel se base la construction, on ne pourra pas récupérer  fait avec les noeuds de bord du maillage quadrilatéral et donc plus le bord
+pouvoir expliciter omega tilde permet de se passer des triangles de bord et de ne plus etre assujeti
+
+
+
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/non_hermite_mesh_tri.pdf}
+    \caption{Champ de croix $\bar{u}_h$}
+    \label{fig:alignment_1}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/non_hermite_quad.pdf}
+    \caption{Champ scalaire $\phi_h$ (en randian)}
+    \label{fig:alignment_2}
+\end{subfigure}
+\caption{Illustration du processus d'alignement dans un cadre discret.}
+\label{fig:alignment}
+\end{figure}
 
 
 \section{Génération de champ de croix}
@@ -1132,7 +1218,27 @@ est un champ de croix dont les points singuliers sont localisés aux points $(a_
 
 Il est important de souligner que cette construction offre une grande souplesse dans l'établissement du champ, contrairement à l'approche précédente. Elle permet un contrôle précis sur la position des points singuliers dans le domaine ainsi que sur leurs indices. Cependant, le champ de croix ainsi obtenu n'est pas déterminé par le domaine sur lequel il est construit. Par conséquent, contrairement à l'approche précédente, le champ de croix peut ne pas être aligné. Ainsi, il est nécessaire d'appliquer l'approche d'alignement présentée précédemment pour orienter le champ par rapport au domaine que l'on souhaite mailler.
 
-\section{homogeneisation}
+\section{Homogeneisation}
 
+Comme dit dans l'introduction \ref{thesis_target} les champs de croix générer en propageant la normale extérieur à l'intérieur du domaine \cite{kowalski2013pde} produisent une distribution de singularités pouvant conduire à un partitionnement invalide ou non souhaité. Par exemple le champ de croix présenté sur la figure ... Un problème notable survient dans les domaines extrêmement étirés, tandis qu'une autre préoccupation concerne les formes de partitionnement qui entraînent des tailles de cellules très non uniformes (voir figure \ref{fig:dom_etire_mesh_inhomogene}).
+Comme
 Sans deplacer les points de bord avec le demi disque\\
-puis deplacer les points de bord
+puis deplacer les points de bord\\
+Tout en conservant la configuration en bloc structurée du maillage
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{images/non_homo_cross_field.pdf}
+    \caption{Champ de croix $\bar{u}_h$}
+    \label{fig:alignment_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{images/non_homo_mesh_quad.pdf}
+    \caption{Champ scalaire $\phi_h$ (en randian)}
+    \label{fig:alignment_2}
+\end{subfigure}
+\caption{Illustration du processus d'alignement dans un cadre discret.}
+\label{fig:alignment}
+\end{figure}

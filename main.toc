@@ -93,11 +93,21 @@
 \contentsline {subsection}{\numberline {3.3.4}Méthode basée sur des EDP}{75}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Opération d'alignement}{77}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Analyse de convergence}{80}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Génération de champ de croix}{81}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}L'Equation de Laplace}{81}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Une expression analytique}{82}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}homogeneisation}{82}{section.3.7}%
-\contentsline {chapter}{\numberline {4}Conclusion et perspectives}{83}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Caractéristique d'Euler}{85}{section.4.1}%
-\contentsline {section}{\numberline {4.2}}{85}{section.4.2}%
-\contentsline {chapter}{Références}{87}{chapter*.95}%
+\contentsline {section}{\numberline {3.6}Reconstitution du bord du domaine}{82}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Génération de champ de croix}{82}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}L'Equation de Laplace}{82}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Une expression analytique}{83}{subsection.3.7.2}%
+\contentsline {section}{\numberline {3.8}Homogeneisation}{84}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Extension aux surfaces courbes}{85}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Champ de croix, points singuliers, indices et séparatrices}{85}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Partitionnement}{88}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Extension des résultats principaux du cas planaire}{88}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Operation d'alignement}{88}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Etude de la méthode}{88}{subsection.4.3.2}%
+\contentsline {paragraph}{\'Etude de l'opération d'alignement}{89}{section*.96}%
+\contentsline {section}{\numberline {4.4}Analyse de convergence}{96}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Génération de champs de croix}{96}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusion et perspectives}{101}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Caractéristique d'Euler}{103}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Opérateur Laplacien discret}{103}{section.5.2}%
+\contentsline {chapter}{Références}{107}{chapter*.100}%

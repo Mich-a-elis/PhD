@@ -10,815 +10,122 @@ Dans ce chapitre, nous exposons une généralisation des notions abordés au deu
 
 Dans cette section, nous revisitions les définitions et concepts introduits dans le chapitre \ref{chap:theoritical}. Un champ de croix $\bar{u}$ défini sur $\Omega$ associe à chaque point $p$ de $\Omega$ une croix (voir la définition \ref{def:croix}) définie dans l'espace tangent $T_p\Omega$. L'ensemble $\mathcal{S}_{\bar{u}_h}$, désignant l'ensemble des points singuliers de $\bar{u}_h$, est formé des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$ et on dira que le champ de croix est presque-$\mathcal{C}^1$ s'il satisfait à la définition \ref{def:presqueC1}. En ajustant l'opérateur de rotation de manière à ce que la rotation d'une croix s'effectue autour de la normale surfacique définie au point, la proposition \ref{prop:cont1} permet de réaliser la rotation d'un champ de croix défini sur une surface par rapport à un champ d'angle défini sur cette même surface.
 
-Contrairement au cas planaire
+Contrairement au cas planaire où l'on disposais d'une réference globale pour le calcul des angles des croix, ici on se donne une référence arbitraire en chaque espace tangent de la surface permettant ainsi de calculer l'angle de la croix relativement à cette référence. On retrouve alors la formule de l'indice d'un point $p$ dans un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$:
 
-Nous désignerons par $\Omega_h$ un maillage triangulaire de $\Omega$ vérifiant les contraintes définis dans la sous-section \ref{subsec:mesh_tri}.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.3]{images/repre_field.pdf}
-  \hfill
-  \includegraphics[scale=0.3]{images/cross_from_repre_field.pdf}
-  \caption{Illustration d'un champ de représentation (en gauche) et du champ de croix associé (à droite).}
-  \label{fig:repr_to_cross}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.195]{images/cross_from_repre_field.pdf}
-  \hfill
-  \includegraphics[scale=0.205]{images/scal_field.pdf}
-  \hfill
-  \includegraphics[scale=0.195]{images/result_field.pdf}
-  \caption{Illustration de la rotation d'un champ de croix par rapport à un champ d'angle sur un domaine quelconque. \'A gauche : champ de croix initial, au milieu: champ d'angle (en radian), à droite: champ de croix résultant.}
-  \label{fig:rot_cross}
-\end{figure}
-
-Pour tout point $p$ situé sur la frontière $\partial\Omega$, nous définissons $N(p)$ comme étant la normale extérieure unitaire. Lorsque la normale n'est pas définie en $p$, nous posons $N(p)=(0,0)$. En accord avec la proposition \ref{prop:cont1}, nous introduisons un champ de croix particulier associé à la frontière de $\Omega$, dite \emph{champ de croix normal} et définit par:
 \begin{equation}
-    \bar{N}(p) =
+\label{eqn:index_surf}
+    id_{\bar{u}}(p)=\displaystyle\frac{1}{2\pi}\int_0^1 d\theta_{\bar{u}}^\gamma.
+\end{equation}
+La définition des lignes de champ des champs de croix sur les surfaces courbes ainsi que les propriétés des séparatrices demeurent valident dans ce nouveau cadre. Cependant, notons que pour l'intégration des lignes de champ à partir de points singuliers (séparatrices), le voisinnage étoilé permettant de modifier localement le champde croix pour permettre le démarragede la séparatrices doit être de taille assez petit. Plus concrètement, il faut que ce voisinnage soit homémorphe au plan pour pouvoir mettre en oeuvre l'opération de modification du champ que nous avons introduit dans la proposition \ref{prop:stream_from_interior_sing}. A partir de là, on retrouve facilement les résultat concernant le lien entre le nombre de séparatrice associé à un point singulier et l'indice du point.
+
+Examinons maintenant ce que devient ces concepts dans un cadre discret. Soit $\Omega_h$ un maillage triangulaire de $\Omega$ vérifiant les contraintes définis dans la sous-section \ref{subsec:mesh_tri} et soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$.
+\\
+definition de delta avec cosinus\\
+on definit ensuite les zone singuliere comme dans le chapitre 3\\
+definir ensuite la represenatation en projetant sur les triangles\\
+
+
+Nous cherchons maintenant à construire une représentation du champ de croix $\bar{u}$ sur le maillage triangulaire $\Omega_h$. Pour ce faire, nous allons nous orienter en nous basant sur les différentes opérations que nous devrons effectuer sur cette représentation en prenant comme modèle les opérations réalisées sur $\bar{u}$ dans le chapitre \ref{chap:theoritical}. Observons que nous devrons calculer la variation de l'angle des croix le long d'un arc paramétré, notamment pour déterminer l'indice de points ou pour quantifier la variation du champ de croix dans une partie du domaine. En limitant ces arcs aux bords des triangles, il devient évident qu'il est possible de simplifier le problème en connaissant la variation des croix le long des arêtes du triangle. En d'autres termes, il nous faut une notion de variation d'angle entre deux croix quelconques. Nous avons alors la définition suivante:
+
+\begin{definition}
+Soient deux croix $\mathbf{c}_1,\mathbf{c}_2$ non nulles. L'angle signé entre $\mathbf{c}_1$ et $\mathbf{c}_2$ noté $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) est l'unique élément de l'ensemble:
+$$
+\{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}:=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
+$$
+\end{definition}
+Cette fonction mesure la variation angulaire entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a:
+$$
+\theta_{\mathbf{c}_2}=\theta_{\mathbf{c}_1}+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
+$$
+Une conséquence directe de cette définition est l'antisymétrie de l'angle, ce qui se traduit par:
+$$
+\delta\theta(\mathbf{c}_1, \mathbf{c}_2)=-\delta\theta(\mathbf{c}_2,\mathbf{c}_1).
+$$
+Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini lorsque $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$.
+Cette définition nous permet d'introduire l'assertion suivante.
+\begin{assertion}
+\label{ass:triangle_singulier}
+ Soit triangle $T$ et de sommets $s_1$, $s_2$ et $s_3$ vérifiant l'une des propriétés suivantes:\\
+ \begin{itemize}
+  \item[1.] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$,\\%[-0.2cm]
+  \item[2.] il existe  $i,j\in\llbracket 1, 3\rrbracket$, tel que  $\delta\theta(\bar{u}(s_i),\bar{u}(s_{j}))$ n'est pas défini,\\%[-0.2cm]
+  \item[3.] pour tout $i\in\llbracket 1, 3\rrbracket$, $\bar{u}(s_i)\neq 0$ et $\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$ où on a posé $s_4:=s_1$.\\[-0.2cm]
+ \end{itemize}
+\end{assertion}
+
+On peut subdiviser l'ensemble des triangles vérifiant l'assertion \ref{ass:triangle_singulier} en plusieurs partitions, dont les parties du plan correspondant seront appelées \emph{zones singulières}. Pour assembler ces partitions, on regroupe les triangles singuliers qui ont un ou plusieurs triangles singuliers comme voisins. Voici un exemple illustrant la construction de zones singulières sur la figure \ref{fig:zone_singuliere}. Dans ce cas, on se donne une configuration où la couleur rouge indique les lieux où l'une des propriétés de l'assertion \ref{ass:triangle_singulier} est vérifiée. Nous affichons ensuite les zones singulières correspondantes en bleu. Cette configuration particulière conduit à la création de cinq zones singulières que nous présentons sur la même figure. Dans la suite, nous utiliserons la notation $\mathbf{Z}=\cup_{i=1}^{N_Z}Z_i$ pour représenter la partie du plan occupé par l'ensemble des zones singulières. Ici, $Z_i$ désigne une zone singulière spécifique, et $N_z$ représente le nombre total de zones singulières. Ce nombre est nécessairefini puisque le champ de croix $\bar{u}$ possède un nombre fini de points singuliers. Nous associons ensuite à chaque zone singulière $Z\in \mathbf{Z}$ un point arbitrairement choisi dans $Z$, que nous notons $S_Z$ (par exemple, lorsque $Z$ est réduit à un unique triangle, on peut choisir $S_Z$ comme le barycentre du triangle en question).
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/zone_singuliere_1.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/zone_singuliere_2.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
+\caption{Illustration de la construction de zones singulières.}
+\label{fig:zone_singuliere}
+\end{figure}
+
+Avec ces outils, nous sommes à présent en mesure de présenter notre proposition de représentation $\bar{u}_h$ sur $\Omega_h$ d'un champ de croix $\bar{u}$ défini sur $\Omega$. Pour tout $p\in\Omega_h$, nous définissons $\bar{u}_h$ de la manière suivante:\\
+
+\begin{itemize}
+\item[$\bullet$] si $p\in(\mathcal{S}_h\backslash\mathbf{Z})\cap\partial Z$, alors $\bar{u}_h(p)=\bar{u}(p)$.\\%[-0.3cm]
+\item[$\bullet$] si $p\in\Omega_h\backslash\mathbf{Z}$ alors il existe $T\in\mathcal{T}_h$ tel que $p\in T$ et $T$ ne vérifie pas l'assertion \ref{ass:triangle_singulier}. On pose alors:
+$$
 \left\{
-    \begin{array}{ll}
-        \left\{\mathbf{R}\left(\frac{m\pi}{2}\right)N(p),~ m\in \mathbb{Z}\right\} &\text{ si }N(p)\neq (0,0),\\\\
-        0& \text{ sinon }.
-    \end{array}
-\right.
-\end{equation}
-Nous pouvons alors introduire la notion d'alignement du champ de croix par la définition suivante:
-\begin{definition}
-    Le champ de croix $\bar{u}$ est dit aligné par rapport à $\partial\Omega$ ou aligné sur le bord de $\Omega$ si pour tout point $p\in\partial\Omega$, $\bar{u}(p)\in\{\bar{N}(p), 0\}$.
-\end{definition}
-Nous donnons sur la figure \ref{fig:align_bord} une illustration d'un champ de croix aligné sur le bord d'un domaine.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.35]{images/align_bord.pdf}
-  \caption{Mise en évidence d'un champ de croix aligné le long du bord d'un carré, avec une annulation du champ dans les coins.}
-  \label{fig:align_bord}
-\end{figure}
-
-\subsection{Indice}
-
-L'indice de Poincaré est un concept mathématique très usité dans la topologie et la géométrie différentielle. Il permet de quantifier le comportement des courbes et des champs de vecteurs à travers leurs singularités. Dans cette partie, à l'instar du concept d'indices pour les champs de vecteurs, nous introduisons un indice spécifique pour les champs de croix. Cet indice sera plus tard relié à la notion de \emph{séparatrices}.
-
-Pour commencer, nous définissons la notion d'angle pour une croix. À chaque croix, nous associons une représentation angulaire. Cette approche consiste à attribuer à la croix une valeur représentant son orientation par rapport à une référence donnée.
-
-\begin{definition}
-    \label{def:cross_angle}
-    Soit une croix $\mathbf{c}\in\mathbf{C}\backslash\{0\}$. L'angle associé à $\mathbf{c}$ est donné par l'unique élément de l'ensemble:
-    %$$\left\{\theta_{\bar{u}}\right\} :=
-    $$\{\theta_{\mathbf{c}}\} := \left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right],$$
-    où $\arg c\equiv atan2(c_y, c_x)\pmod{2\pi}$ est l'argument complexe de $c=(c_x, x_y)$ pour tout $c\in\mathbf{c}$.
-\end{definition}
-
-\begin{lemma}
-    L'angle donné par la définition \ref{def:cross_angle} est bien défini.
-\end{lemma}
-
-\begin{proof}
-    Existence: L'ensemble $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]$ est non vide. En effet, supposons que $\left\{\arg c,~c\in \mathbf{c}\right\} \cap \left]-\frac{\pi}{4},\frac{\pi}{4}\right]=\emptyset$. Par définition, on sait que pour tout $\mathbf{c}\in\mathbf{C}\backslash\{0\}$, alors on a:\\
-    \begin{itemize}
-     \item soit \\
-     \item soit \\
-    \end{itemize}
-$\left\{\arg c,~c\in \mathbf{c}\right\}=\emptyset$. Autrement dit, $\mathbf{c}=0$ ce qui est exclut.\\
-    Unicité: Supposons que $\mathbf{c}$ ait deux angles $\theta_{\mathbf{c}}$ et $\theta^{'}_{\mathbf{c}}$. Par définition il existe $m, m'\in\mathbb{Z}$ et $c,c^{'}\in\mathbf{c}$ tel que:
-    $$
-    \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=atan2(c_y, c_x)+2m\pi-atan2(c^{'}_y, c^{'}_x)-2m'\pi.
-    $$
-    De plus par définition il existe $l\in\mathbb{Z}$ tel que:
-    $$
-    atan2(c^{'}_y,c^{'}_x)=atan2(c_y,c_x)+l\frac{\pi}{2}.
-    $$
-    On a donc:
-    $$
-    \theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}=2m\pi-2m'\pi-l\frac{\pi}{2}=k\frac{\pi}{2},
-    $$
-    où $k=4m-4m'-l$.
-    Sachant que $\theta_{\mathbf{c}},\theta_{\mathbf{c}}^{'}\in\left]-\frac{\pi}{4},\frac{\pi}{4}\right]$, on a $\theta_{\mathbf{c}}-\theta^{'}_{\mathbf{c}}\in\left]-\frac{\pi}{2},\frac{\pi}{2}\right[$ ce qui implique que:
-    $$
-    -\frac{\pi}{2}<k\frac{\pi}{2}<\frac{\pi}{2}.
-    $$
-    Il vient donc que $k=0$ puisque $k\in\mathbb{Z}$. Autrement dit, $\theta_{\mathbf{c}}=\theta_{\mathbf{c}}^{'}$.
-\end{proof}
-
-%Comme dans \cite{beaufort2017computing}, $\Theta$ peut être vue comme l'angle minimum des vecteurs composant la croix $\mathbf{c}$.
-
-En considérant un champ de croix $\bar{u}$, la définition précédente nous autorise donc à attribuer à $\bar{u}$ un champ scalaire formé par les angles des croix de $\bar{u}$. Ce champ est défini de la manière suivante :
-
-\begin{definition}
-    Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$. Le champ d'angle associé à $\bar{u}$ est l'application définie par:
-    $$\theta_{\bar{u}}:p\in\Omega\backslash\mathcal{S}_{\bar{u}}\longmapsto\theta_{\bar{u}}(p):=\theta_{\bar{u}(p)},$$
-    où $\theta_{\bar{u}(p)}$ est l'angle de la croix $\bar{u}(p)$ donné par la définition \ref{def:cross_angle}.
-\end{definition}
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.35]{images/cross_ang_field.pdf}
-  \caption{Illustration d'un champ de croix et du champ d'angle (en radian) correspondant.}
-  \label{fig:cross_field}
-\end{figure}
-
-
-Nous énonçons à présent le résultat suivant, qui constitue un outil précieux pour analyser la régularité d'un champ de croix donné à partir de la régularité du champ d'angle qui lui est associé.
-
-\begin{proposition}
-    \label{prop:angular_cont}
-    Soit $\bar{u}$ un champ de croix sur $\Omega$. $\bar{u}$ est de classe $\mathcal{C}^1$ en un point $p\in\Omega$ si et seulement s'il existe $V_p\subset \Omega \backslash \mathcal{S}_{\bar{u}}$, un voisinage de $p$, et une fonction $\theta_{\bar{u}}^{V_p}:V_p \rightarrow \mathbb{R}$ telle que $\theta_{\bar{u}}^{V_p}\in \mathcal{C}^1(V_p)$ et vérifiant $\theta_{\bar{u}}^{V_p}(q)\equiv\theta_{\bar{u}}(q) \pmod{\frac{\pi}{2}}$, pour tout $q\in V_p$.
-\end{proposition}
-
-
-\begin{proof}
-    Supposons que $\bar{u}$ est de classe $\mathcal{C}^1$ en un point $p\in\Omega$. Par définition, il existe une application $\pi_{\bar{u}}$ de classe $\mathcal{C}^1$ dans un voisinage $V_p$ de $p$. Par conséquent, la fonction $\theta_{\bar{u}}^{V_p}:=\arg \pi_{\bar{u}}$ est de classe $\mathcal{C}^1$ dans $V_p$. De plus, pour tout $q\in V_p$, $\pi_u(q)\in\bar{u}(q)$ autrement dit, pour tout $q\in V_p$, il existe $m\in\mathbb{Z}$ tel que $\arg\pi_{\bar{u}}(q)=\theta_{\bar{u}}(q)+m\frac{\pi}{2}$. On en déduit que $\theta_{\bar{u}}^{V_p}$ vérifie $\theta^{V_p}_{\bar{u}}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$ pour tout $q\in V_p$.
-
-    Réciproquement, supposons qu'il existe $V_p\subset \Omega \backslash \mathcal{S}_{\bar{u}}$, un voisinage de $p$, et une fonction $\theta_{\bar{u}}^{V_p}:V_p \rightarrow \mathbb{R}$ telle que $\theta_{\bar{u}}^{V_p}\in \mathcal{C}^1(V_p)$ et vérifiant $\theta_{\bar{u}}^{V_p}(q)\equiv\theta_{\bar{u}}(q) \pmod{\frac{\pi}{2}}$, pour tout $q\in V_p$. Il vient que l'application $\pi_{\bar{u}}:=\mathbf{R}(\theta_{\bar{u}}^V)(1,0)$ est de classe $\mathcal{C}^1$ sur $V_p$. De plus, pour tout $q\in V_p$, $\pi_{\bar{u}}(q)\in \bar{u}(q)$ puisqu'il existe $m\in\mathbb{Z}$ tel que $\arg\pi_{\bar{u}}(q)=\theta_{\bar{u}}(q)+m\frac{\pi}{2}$. Ainsi $\bar{u}$ est de classe $\mathcal{C}^1$ en $p$.
-\end{proof}
-
-
-Grâce au résultat précédent, nous pouvons déduire le corollaire suivant permettant de construire le relèvement continu de l'angle d'un champ de croix le long d'une courbe paramétrée.
-
-\begin{corollary}
-    \label{cor:relevement_continu}
-    Soit $\gamma: [0, 1] \longrightarrow \Omega$ un arc sur $\Omega$ et $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ tel que pour tout $p\in\gamma([0, 1])$, $\bar{u}(p)\neq 0$. Alors, il existe $\theta^\gamma_{\bar{u}}: [0, 1] \longrightarrow \mathbb{R}$  une fonction de classe $\mathcal{C}^1$ sur $]0,1[$ telle que $\theta^\gamma_{\bar{u}}(t) \equiv \theta_{\bar{u}}(\gamma(t)) \pmod{\frac{\pi}{2}}$. De plus, si $\alpha_{\bar{u}}^\gamma$ et $\beta_{\bar{u}}^\gamma$ sont deux fonctions de classe $\mathcal{C}^1$ satisfaisant cette propriété, alors il existe $m \in \mathbb{Z}$ tel que $\alpha_{\bar{u}}^\gamma(t) = \beta_{\bar{u}}^\gamma(t) + m\frac{\pi}{2}$ pour tout $t \in [0, 1]$.
-\end{corollary}
-
-\begin{proof}
-    Pour démontrer ce résultat, nous commençons par construire un recouvrement fini de $\gamma$. Nous construisons ensuite $\theta_{\bar{u}}^\gamma$ par morceaux sur les éléments du recouvrement.
-
-    \paragraph{Construction d'un recouvrement de la courbe $\gamma$:} Soit $p\in\gamma([0, 1])$. D'après la proposition \ref{prop:angular_cont}, il existe $V_p\subset\Omega\backslash\mathcal{S}_{\bar{u}}$ et une fonction $\theta_{\bar{u}}^{V_p}\in\mathcal{C}^1$ vérifiant $\theta_{\bar{u}}^{V_p}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$ pour tout $q\in V_p$. Notons maintenant $\widetilde{V_p}$ la composante connexe de l'ensemble $V_p\cap\gamma([0, 1])$ et contenant $p$. Il est clair que la famille $(\widetilde{V_p})_{p\in\gamma([0, 1])}$ recouvre $\gamma([0, 1])$ puisque $\displaystyle\cup_{p\in\gamma([0, 1])}\widetilde{V_p}$ contient $\gamma([0, 1])$. $\gamma$ étant continu et $[0, 1]$ étant compact, on peut extraire de ce recouvrement, un sous-recouvrement fini de $\gamma([0, 1])$. Autrement dit, il existe $I\subset\mathbb{N}$ une partie finie de $\mathbb{N}$ et une sous-famille $(V_i)_{i\in I}$ de $(\widetilde{V_p})_{p\in\gamma([0, 1])}$ recouvrant $\gamma([0, 1])$.
-
-    \paragraph{Construction de $\theta_{\bar{u}}^\gamma$ par morceau:} Soit $\{p_0\}=\gamma^{-1}(0)$ et $V_0\in(V_i)_{i\in I}$ tel que $p_0\in V_0$. On définit $\theta_{\bar{u}}^\gamma(t):=\theta_{\bar{u}}^{V_0}\circ\gamma(t)$ pour tout $t\in\gamma^{-1}(V_0\cap\gamma([0, 1]))$. Il est clair que $\theta_{\bar{u}}^\gamma\in\mathcal{C}^1(\gamma^{-1}(V_0\cap\gamma(]0, 1[))$ et $\theta_{\bar{u}}^\gamma(t)\equiv\theta_{\bar{u}}(\gamma(t))\pmod{\frac{\pi}{2}}$ pour tout $t\in\gamma^{-1}(V_0\cap\gamma([0, 1]))$. À partir de là, nous itérons la construction de $\theta^\gamma_{\bar{u}}$ de la manière suivante: pour $n>0$, on choisit le point $p_n$ tel que $p_n\in\partial V_{n-1}\cap\gamma([0, 1])$ et $p_n\notin\{p_0,\dots,p_{n-1}\}$. On choisit ensuite $V_n$ tel que $V_n\in(V_i)_{i\in I}$, $V_n\neq V_k,~k<n$ et $p_n\in V_n$. D'après la proposition \ref{prop:angular_cont}, il existe $\theta_{\bar{u}}^{V_n}\in\mathcal{C}^1(V_n)$ et pour tout $q\in V_n$, $\theta_{\bar{u}}^{V_n}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$. Soit $m\in\mathbb{Z}$ tel que $\theta^{V_n}_{\bar{u}}\circ\gamma(t)+m\frac{\pi}{2}=\theta^\gamma_{\bar{u}}(t)$ pour tout $t\in\gamma^{-1}(V_{n-1}\cap\gamma([0, 1]))\cap\gamma^{-1}(V_n\cap\gamma([0, 1]))$. On définit alors $\theta_{\bar{u}}^\gamma(t):=\theta^{V_n}_{\bar{u}}\circ\gamma(t)+m\frac{\pi}{2}$ pour tout $t\in\gamma^{-1}(V_n\cap\gamma([0, 1)])$. Il est clair que $\theta_{\bar{u}}^\gamma$ ainsi définit est de classe $\mathcal{C}^1$ sur $\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma(]0, 1[))$ et $\theta_{\bar{u}}^\gamma(t)\equiv\theta_{\bar{u}}\circ\gamma(t)\pmod{\frac{\pi}{2}}$ pour tout $t\in\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma([0, 1]))$. On poursuit itérativement cette construction jusqu'à ce que $\cup_{k=0}^n\gamma^{-1}(V_k\cap\gamma([0, 1]))=\gamma([0, 1])$. Le nombre d'itération à faire est fini puisque $(V_i)_{i\in I}$ est un recouvrement fini de $\gamma([0, 1])$.
-    \[\]
-    Supposons maintenant que $\alpha_{\bar{u}}^\gamma$ et $\beta_{\bar{u}}^\gamma$ soient deux fonctions de classe $\mathcal{C}^1$ qui satisfont cette propriété, alors, il existe des fonctions $g:[0, 1]\longrightarrow\mathbb{Z}$ et $h:[0, 1]\longrightarrow\mathbb{Z}$ telles que $\alpha^\gamma_{\bar{u}}(t) = \theta_{\bar{u}}(\gamma(t)) + g(t)\frac{\pi}{2}$ et $\beta^\gamma_{\bar{u}}(t) =\theta_{\bar{u}}(\gamma(t)) + h(t)\frac{\pi}{2}$. Par conséquent, pour tout $t\in[0, 1]$ on a:
-    $$\alpha_{\bar{u}}^\gamma(t) = \beta_{\bar{u}}^\gamma(t) + g(t)\frac{\pi}{2}-h(t)\frac{\pi}{2}.$$
-    $\alpha^\gamma_{\bar{u}}$ et $\beta^\gamma_{\bar{u}}$ étant continue sur $[0, 1]$, il vient que la fonction $g-h$ est continue sur $[0, 1]$. Autrement dit, $g-h$ est constant car continue et à valeur dans $\mathbb{Z}$. Soit $m\in\mathbb{Z}$ tel que $m=(g-h)(t)$, pour tout $t\in[0, 1]$, On a:
-    $$\forall t\in[0, 1],\quad\alpha_{\bar{u}}^\gamma(t) = \beta_{\bar{u}}^\gamma(t) + m\frac{\pi}{2}.$$
-\end{proof}
-
-Le relèvement continu du champ de croix le long d'une courbe paramétrée permet de quantifier le nombre de fois que le champ tourne sur lui-même le long de la courbe. Cependant, la construction du Corollaire \ref{cor:relevement_continu} ne fonctionne pas si $\mathcal{S}_{\bar{u}}\cap\gamma([0,1])\neq\emptyset$. Dans ce cas, nous construisons le relèvement par morceaux le long de $\gamma$ de la manière suivante :
-
-Soit $I:=\gamma^{-1}(\mathcal{S}_{\bar{u}}\cap\gamma([0, 1]))\cup\{0, 1\}$. On a $Card(I)<\infty$ puisque $Card(\mathcal{S}_{\bar{u}})<\infty$. Il existe donc $(t_i)_{i\in\llbracket 1, n_I\rrbracket}\subset[0,1]$ tel que $I=(t_i)_{i\in\llbracket 1, n_I\rrbracket}$ avec $0=t_1<\dots<t_{n_I}=1$ et $n_I=Card(I)$. Par construction, il est clair que pour tout $i\in\llbracket 1, n_I-1 \rrbracket$, on a $\mathcal{S}_{\bar{u}}\cap\gamma(]t_i, t_{i+1}[)=\emptyset$. Ainsi, à partir du Corollaire \ref{cor:relevement_continu}, nous pouvons construire pour tout $i\in\llbracket 1, n_I-1\rrbracket$ une fonction $\theta^{\gamma_i}_{\bar{u}}$ sur $[0,1]$ et de classe $\mathcal{C}^1$ sur $]0,1[$ telle que $\theta_{\bar{u}}^{\gamma_i}(t)\equiv\theta_{\bar{u}}(\gamma_i(t))\pmod{\frac{\pi}{2}}$ avec $\gamma_i$, l'arc défini sur $[0, 1]$ par :
-$$
-\forall t\in[0, 1],~\gamma_i(t)=\gamma(t_i+t(t_{i+1}-t_i)).
-$$
-Finalement, le relèvement $\theta_{\bar{u}}^\gamma$ le long de $\gamma$ est donné par:
-\begin{eqnarray*}
-    \forall i\in\llbracket 1, n_I\rrbracket,~\forall t\in]t_i, t_{i+1}[,~\theta_{\bar{u}}^\gamma(t)=\theta_{\bar{u}}^{\gamma_i}\left(\frac{t-t_i}{t_{i+1}-t_i}\right).
-\end{eqnarray*}
-
-
-
-Grâce à cette notion, nous sommes désormais en mesure de définir l'indice d'un point dans un champ de croix.
-
-
-
-\begin{comment}
-    \begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.25]{images/lifting_cross_ang.pdf}\hspace{0.5cm}
-  \includegraphics[scale=0.45]{images/lifting_courbe.pdf}
-  \caption{Illustration du relèvement continu d'un champ de croix (à gauche avec son champ d'angle associé en radian) le long de courbes paramétriques. En bleu: la courbe paramétrique intérieur, en rouge la courbe paramétrique représentant le bord du domaine.}
-  \label{fig:lifting}
-\end{figure}
-\end{comment}
-
-\begin{definition}
-    On appelle chemin fermé tout lacet $\Gamma$ qui est $\mathcal{C}^0\cap\mathcal{C}^1_m$. On appellera paramétrisation simple de $\Gamma$, toute paramétrisation $\gamma : I\subset\mathbb{R}\longrightarrow\Gamma$ telle que l’ensemble $\{s\in I, \exists t\in I,~s\neq t,~ \gamma(s) = \gamma(t)\}$ est d’intérieur vide dans $\mathbb{R}$.
-\end{definition}
-
-Dans tout ce qui suit, les paramétrisations des lacets seront supposées être des paramétrisations simple et on aura par définition l'intégrale sur $\Gamma$ d'une fonction notée $f$ par rapport au lacet $\gamma$ de $\Gamma$
-$$
-\int_\gamma f:=\int_If(\gamma(s))\gamma'(s)ds,
-$$
-indépendante de $\gamma$. On notera $V^\Gamma$ une partie de $\Omega$ délimitée par $\Gamma$. Soit $\overrightarrow{n}(q)$ la normale extérieur en $q$ à $V^\Gamma$. On dit que $\gamma$ paramétrise $\Gamma$ dans le sens positif si pour tout $t\in I$, $(\gamma'(t)\wedge\overrightarrow{n}(\gamma(t))).(0,0,1)^t>0$ Dans la suite, nous adoptons la notation suivante:
-
-$$
-\int_\Gamma d\theta_{\bar{u}}:=\int_\gamma d\theta_{\bar{u}}:=\int_a^b d\theta_{\bar{u}}^\gamma.
-$$
-
-\begin{lemma}
-    \label{lem:index_saga_first}
-    Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ et $\Gamma$ un chemin fermé dont $\gamma$ est une paramétrisation sur $[a,b]$. La fonction $F(\Gamma)$ suivante
-    $$
-    F_{\bar{u}}(\Gamma):=\frac{1}{2\pi}\int_a^b d\theta_{\bar{u}}^\gamma,
-    $$
-    vérifie $4F_{\bar{u}}(\Gamma)\in\mathbb{Z}$. En outre, si $(V^{\Gamma_i})_{i\in\llbracket 1, n_\Gamma\rrbracket}$ forme une partition de $V^\Gamma$ telle que $\bar{u}(p)\neq 0,~\forall p\in\Gamma_i,~\forall i\in\llbracket 1, n_\Gamma\rrbracket$, alors on a:
-    \begin{equation}
-        F_{\bar{u}}(\Gamma)=\sum_{i=1}^{n_\Gamma}F_{\bar{u}}(\Gamma_i).
-        \label{eqn:sum_F_u}
-    \end{equation}
-\end{lemma}
-
-\begin{proof}
-    Soit $w(p)-z=e^{4i\theta_{\bar{u}}^\gamma(p)}$ si $\bar{u}(p)\neq 0$ et $w(p)-z=0$ sinon, avec $z\in\mathbb{C}$ alors on a (comme dans \cite{rudin1998analyse}):
-    $$
-    \int_\gamma\frac{dw}{w-z}=\int_\gamma d \ln(w-z)=\int_\gamma 4id\theta_{\bar{u}}^\gamma.
-    $$
-    Il vient donc que:
-    $$
-    2\pi F_{\bar{u}}(\Gamma)=\frac{1}{4}Im\left(\int_\gamma\frac{dw}{w-z}\right).
-    $$
-    Montrer que $4F_{\bar{u}}(\Gamma)\in\mathbb{Z}$ revient alors à montrer que:
-    $$
-    exp\left(\int_a^b\frac{w'(\gamma(t))\gamma'(t)}{w(\gamma(t))-z}dt\right)=1
-    $$
-    si $w\circ\gamma(t)\neq z$ hormis un sous-ensemble discret de valeurs $t\in[a, b]$ (ce qui est le cas pour $z = 0$ avec $\bar{u}$ n’ayant que des zéros isolés).\\
-    Posons
-    $$
-    \varphi(t):=exp\left(\int_a^t\frac{w'(\gamma(t))\gamma'(t)}{w(\gamma(t))-z}dt\right),~t\in[a,b],
-    $$
-    $\varphi$ est de classe $\mathcal{C}^1$ par morceau et vérifie:
-    $$
-    \frac{\varphi'}{\varphi}=\frac{\gamma'.w'\circ\gamma}{w'\circ\gamma-z},
-    $$
-    Il vient alors que la fonction $\varphi/(w\circ\gamma-z)$ est continue, dérivable presque partout ($w\in\mathcal{C}^1$ et $\gamma\in\mathcal{C}^0\cap\mathcal{C}^1_m$) de dérivée nulle donc elle est constante (presque partout, donc partout car continue) et comme $\varphi(a)=1$, on a:
-    $$
-    \varphi(t)=\frac{w(\gamma(t))-z}{w(\gamma(a))-z},
-    $$
-    En utilisant maintenant le fait que $\gamma(a)=\gamma(b)$, il vient que $\varphi(b)=1$ et donc finalement
-    $$
-    \exists k\in\mathbb{Z},~\int_a^b\frac{w'(\gamma(t))\gamma't)}{w(\gamma(t))-z}dt=2ik\pi.
-    $$
-    Ainsi $4F_{\bar{u}}(\Gamma)\in\mathbb{Z}$.\\\\
-    Pour la propriété d'additivité de $F_{\bar{u}}$ on commence par décomposer les frontières de chaque $V^{\Gamma_i}$ de la manière suivante: $\Gamma_{i,0}=\Gamma_i\cap\Gamma$ et $\Gamma_{i,j}=\Gamma_i\cap\Gamma_j$ pour $j\neq i$. Par convention on pose $\Gamma_{i,i}=\emptyset$, $\forall i\in\llbracket 1, n_\Gamma\rrbracket$. On a alors $\Gamma_i=\cup_{j\in\llbracket1, n_\Gamma\rrbracket}\Gamma_{i,j}$ et $\Gamma_{i,j}=\Gamma_{j,i}$ et on peut écrire:
-    $$
-    \sum_{i=1}^{n_\Gamma}F_{\bar{u}}(\Gamma_i)=\frac{1}{2\pi}\sum_{i=1}^{n_\Gamma}\sum_{j=0}^{n_\Gamma}\int_{\Gamma_{i,j}}d\theta_{\bar{u}}^\gamma=\frac{1}{2\pi}\sum_{i=1}^{n_\Gamma}\int_{\Gamma\cap\Gamma_i}d\theta_{\bar{u}}+\frac{1}{2\pi}\sum_{i=1}^{n_\Gamma}\sum_{j=1}^{n_\Gamma}\int_{\Gamma_{i,j}}d\theta_{\bar{u}}.
-    $$
-    Autrement dit,
-    $$
-    \sum_{i=1}^{n_\Gamma}F_{\bar{u}}(\Gamma_i)=F_{\bar{u}}(\Gamma)+\frac{1}{2\pi}\sum_{i=1}^{n_\Gamma}\int_{\Gamma_{i,i}}d\theta_{\bar{u}}+\frac{1}{2\pi}\sum_{1\leq i<j\leq n_\Gamma}\int_{\Gamma_{i,j}\cup\Gamma_{j,i}}d\theta_{\bar{u}}.
-    $$
-    Dans l'équation précédente, le second terme s'annule car $\Gamma_{i,i}=\emptyset$ et le dernier terme vaut lui aussi zéro car $\Gamma_{i,j}\cup\Gamma_{j,i}$ représente un lacet et par hypothèse $\bar{u}$ est $\mathcal{C}^1$ sur $\Gamma_i\cap\Gamma_j$. D'où le résultat.
-\end{proof}
-
-\begin{lemma}
-    \label{lem:index_saga_second}
-    Sous les hypothèses du lemme \ref{lem:index_saga_first}, si $\bar{u}$ est $\mathcal{C}^1$ sur un ensemble convexe $V\subset\Omega$ alors pour tout arc $\Gamma$
-    %de longueur assez petite
-    telle que $V^\Gamma\subset V$ on a $F_{\bar{u}}(\Gamma)=0$.
-\end{lemma}
-
-\begin{proof}
-    Il suffit de remarquer que si $u$ est de classe $\mathcal{C}^1$ sur $V^\Gamma$ alors $w'$ est bornée par une constante $M>0$ sur $V^\Gamma$ et donc on a:
-    $$
-    \left|\int_a^b\frac{w'(\gamma(t))\gamma't)}{u(\gamma(t))-z}dt\right|\leq M\int_a^b|\gamma'(t)|dt<2\pi,
-    $$
-    pour $\Gamma$ décrivant un arc de longueur inférieure à $2\pi/M$, tel que $V^\Gamma\subset V$ et donc $F_u(\Gamma)=0$. On généralise ensuite ce résultat à un arc $\Gamma$ de taille quelconque en pavant $V^\Gamma$ avec des boules de rayon plus petit que $1/4\pi$ puis on conclut en utilisant le lemme \ref{lem:index_saga_first}.
-\end{proof}
-
-\begin{lemma}
-    \label{lem:index_saga_third}
-    Pour tout voisinnage $V^\Gamma$ de $p$ tel que $u\in\mathcal{C}^1(V^\Gamma\backslash\{p\})$, on a pour tous chemins fermés $\Gamma_1$ et $\Gamma_2$ on a:
-    $$
-    p\in V^{\Gamma_i}\subset V^\Gamma, \forall i=1, 2\Longrightarrow F_{\bar{u}}(\Gamma_1)=F_{\bar{u}}(\Gamma_2).
-    $$
-\end{lemma}
-
-\begin{proof}
-    Soient $\Gamma_1$ et $\Gamma_2$ deux lacets vérifiant les hypothèses du lemme. En notant $V_3=V^{\Gamma_1}\cap V^{\Gamma_2}$ et $\Gamma_3=\partial V^{\Gamma_3}$ qui est $\mathcal{C}^0\cap\mathcal{C}^1_m$ et $(V^i_j)_{j\in\llbracket 1, k_i\rrbracket}$ les composantes connexes de $V^{\Gamma_i}\backslash V^3$, pour $i=1,2$. En notant $\Gamma_i^j=\partial V^i_j$, qui est donc $\mathcal{C}^0\cap\mathcal{C}^1_m$. En appliquant \eqref{eqn:sum_F_u}, on obtient:
-    $$
-    \forall i=1,2,~F_{\bar{u}}(\Gamma_i)=\sum_{j=1,\dots,k_i}F_{\bar{u}}(\Gamma_i^j)=F_{\bar{u}}(\Gamma_3),
-    $$
-    par le lemme \ref{lem:index_saga_second} car $u$ est $\mathcal{C}^1$ sur chaque $V^i_j\subset V^\Gamma\backslash\{p\}$. D'où le résultat.
-\end{proof}
-
-En combinant les lemmes \ref{lem:index_saga_first} et \ref{lem:index_saga_second}, on obtient alors:
-
-\begin{definition}
-    Pour un champ $u$ n'ayant que des irrégularités isolées, on appelle indice du point p dans le champ $u$ la valeur:
-    $$
-    id_{\bar{u}}(p):=F_{\bar{u}}(\Gamma),
-    $$
-    où $\Gamma$ est un chemin fermé paramétré dans le sens positif tel que $p\in V^\Gamma$ et $u\in\mathcal{C}^1(V^\Gamma\backslash\{p\})$.
-    \label{def:index}
-\end{definition}
-
-\begin{proposition}
-    La définition \ref{def:index} est bien posée.
-\end{proposition}
-
-\begin{proof}
-    Il s'agit d'une conséquence directe du lemme \ref{lem:index_saga_third}.
-\end{proof}
-
-On peut alors retrouver les propriétés principales de l'indice, résumées dans le théorème suivant:
-
-\begin{theorem}
-    \label{thm:index}
-    L'indice du point $p$ dans le champ $u$ vérifie les propriétés suivantes:
-    \begin{enumerate}
-        \item $id_{\bar{u}}^\gamma(p)=k/4$, $k\in\mathbb{Z}$,
-        \item si $u$ est $\mathcal{C}^1$ en $p$ alors $id_{\bar{u}}(p)=0$,
-        \item pour tout chemin fermé $\Gamma$ tel que $p\in V^\Gamma$ et que $\bar{u}\in\mathcal{C}^1(V^\Gamma\backslash\{p\})$, $id_{\bar{u}}^\gamma(p)=F_{\bar{u}}(\Gamma)$.
-    \end{enumerate}
-\end{theorem}
-
-\begin{proof}
-    Ces résultats sont respectivement des conséquences directes des lemmes \ref{lem:index_saga_first}, \ref{lem:index_saga_second} et \ref{lem:index_saga_third}.
-\end{proof}
-
-Par extension, en utilisant le lemme \ref{lem:index_saga_first} on a:
-
-\begin{corollary}
-Soit $V^\Gamma$ une partie de $\Omega$ délimitée par $\Gamma$. On a:
-\begin{equation}
-\label{eqn:Fu_sum}
- F_{\bar{u}}(\Gamma)=\sum_{p\in V^\Gamma\cap\mathcal{S}_{\bar{u}}} id_{\bar{u}}(p)
-\end{equation}
-\end{corollary}
-
-\begin{proof}
-Il suffit de recouvrir $V^\Gamma$ en utilisant des boules qui isolent tous les points $p\in V^\Gamma\cap\mathcal{S}_{\bar{u}}$. On applique ensuite le théorème \ref{thm:index} à chaque boule puis l'équation \eqref{eqn:Fu_sum} est obtenue en utilisant le lemme \ref{lem:index_saga_first}.
-\end{proof}
-
-
-\begin{comment}
-    \begin{definition}[Indice]
-    \label{def:index}
-    Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ définit sur $\Omega$ et un point $p$ dans $\Omega\backslash\partial\Omega$. L'indice de $p$ dans le champ de croix $\bar{u}$ est donné par la quantité:
-    \begin{equation}
-    id_{\bar{u}}(p) =\frac{1}{2\pi}\int_0^1d\theta_{\bar{u}}^\gamma,
-    \label{eqn:Indexinterior}
-    \end{equation}
-    où $\gamma :[0 ; 1]\longrightarrow \Omega$ est un lacet entourant $p$, n'englobant aucun autre point singulier de $\bar{u}$ et paramétrisé dans le sens anti-horaire.
-    \end{definition}
-\end{comment}
-
-De manière intuitive, l'indice d'un point dans un champ exprime combien de fois le champ semble s'enrouler autour de lui-même près de ce point (voir la figure \ref{fig:index_illustration}).
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.251]{images/index_-025.pdf}
-  \hfill
-  \includegraphics[scale=0.251]{images/index_025.pdf}
-  \hfill
-  \includegraphics[scale=0.251]{images/index_1.pdf}
-  \caption{Gauche: $id_{\bar{u}}(p)=-\frac{1}{4}$, milieu: $id_{\bar{u}}(p)=\frac{1}{4}$, droite: $id_{\bar{u}}(p)=1$}
-  \label{fig:index_illustration}
-\end{figure}
-
-Après avoir énoncé cette définition, on peut se demander comment l'indice d'un point évolue lorsqu'on effectue la rotation sur le champ de croix. Le résultat suivant fournit une réponse à cette interrogation.
-
-\begin{proposition}
-\label{prop:relation_u_Rthetau}
-Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$ et $\theta:\Omega \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ sur $\Omega$, alors pour tout $p\in \Omega\backslash\partial\Omega,~id_{\bar{u}}(p)=id_{\mathbf{R}(\theta)\bar{u}}(p)$.
-\end{proposition}
-
-\begin{proof}
-Posons $\bar{v}:=\mathbf{R}(\theta)\bar{u}$. Soit $p\in\Omega\backslash\partial\Omega$ et $\gamma:[0, 1]\longrightarrow\Omega$ un lacet dans $\Omega$ entourant $p$ et n'englobant aucun autre point singulier de $\bar{u}$. $\bar{u}$ étant un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$, il existe donc $\theta_{\bar{u}}^\gamma\in\mathcal{C}^1(]0, 1[)$. Soit $\theta_{\bar{v}}^\gamma:=\theta\circ\gamma+\theta_{\bar{u}}^\gamma$. D'une part $\theta_{\bar{v}}^\gamma$ est de classe $\mathcal{C}^1$ sur $]0, 1[$ puisque $\theta\in\mathcal{C}^1(\Omega)$. D'autre part d'après la proposition \ref{prop:angular_cont}, $\theta_{\bar{v}}^\gamma(t)\equiv\theta(\gamma(t))+\theta_{\bar{u}}(\gamma(t))\pmod{\frac{\pi}{2}}$ et en utilisant la proposition \ref{prop:cont1} il vient que $\theta_{\bar{v}}^\gamma(t)\equiv\theta_{\bar{v}}(\gamma(t))\pmod{\frac{\pi}{2}}$. On a donc:
-\begin{eqnarray*}
-    id_{\bar{v}}(p)&=&\frac{1}{2\pi}\int_0^1 d\theta_{\bar{v}}^\gamma,\\
-    &=&\frac{1}{2\pi}\left[\int_0^1 d(\theta\circ\gamma)+\int_0^1 d\theta_{\bar{u}}^\gamma\right],\\
-    id_{\bar{v}}(p)&=&\frac{1}{2\pi}\left[\oint_\gamma d\theta+\int_0^1 d\theta_{\bar{u}}^\gamma\right].
-\end{eqnarray*}
-Or $\oint_\gamma d\theta=0$ puisque $\theta\in\mathcal{C}^1(\Omega)$. Autrement dit on a:
-$$id_{\bar{v}}(p)=\frac{1}{2\pi}\int_0^1 d\theta_{\bar{u}}^\gamma=id_{\bar{u}}(p).$$
-\end{proof}
-
-Si $p\in\partial\Omega$ et le champ de croix $\bar{u}$ est aligné avec $\partial\Omega$, nous construisons une extension à la définition \ref{def:index} de la manière suivante: nous choisissons un lacet $\gamma\subset\Omega$ et paramétré sur $[0, 1]$ tel que $\gamma(0)=p=\gamma(1)$ et les vecteurs $\gamma'(0)$ et $\gamma'(1)$ sont tangents à $\partial\Omega$. On suppose de plus que $\gamma$ n'englobe pas d'autres points singulier de $\bar{u}$ à par $p$. L'indice de $p$ est alors donné par:
-
-\begin{equation}
-id^\partial_{\bar{u}}(p) = \frac{1}{2\pi}\left[\pi-\hat{p}+\underbrace{\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{u}}^\gamma}_{\delta\theta(p)}\right]=\frac{1}{2\pi}\left[\pi-\hat{p}+\delta\theta(p)\right],
-\label{eqn:Indexboundary}
-\end{equation}
-où $\hat{p}$ est la mesure de l'angle d'ouverture du bord en $p$. %Nous reviendrons sur cette définition dans la partie \ref{subsec:etude_de_la_methode} pour donner un lien entre l'index intérieur et l'index de bord.
-
-\subsection{Théorème de Poincaré-Hopf}
-\label{subsec:Poincare_Hopf}
-
-Le théorème de Poincaré-Hopf constitue un résultat fondamental en topologie différentielle, établissant un lien profond entre les propriétés topologiques d'une variété différentielle compacte et les singularités d'un champ de vecteurs défini sur cette variété. Ce théorème fournit une manière précise de quantifier le nombre et le type de points singuliers d'un champ de vecteurs sur une variété compacte. En particulier, il établit une relation entre la somme des indices de ces points singuliers et la caractéristique d'Euler de la variété. Les auteurs de \cite{ray2008n} fournissent une adaptation de ce théorème aux champs de croix. Ainsi si $\bar{u}$ est un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$ alors nous avons la formule suivante:
-
-\begin{equation}
-    \label{eqn:first_Poincare_Hopf}
-    \sum_i id_{\bar{u}}(s_i)=\chi(\Omega),
-\end{equation}
-où la somme est celle des indices des points singuliers de $\bar{u}$ et $\chi(\Omega)$ est la caractéristique d'Euler de $\Omega$.
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.251]{images/Poincare_etendu.pdf}
-  \caption{Extension du domaine pour la prise en compte des points singuliers de bord dans la formule de Poincaré-Hopf.}
-  \label{fig:Poincare_etendu}
-\end{figure}
-
-Pour prendre en considération les champs de croix comportant des points singuliers situés sur la frontière du domaine, nous construisons un domaine $\Omega^\epsilon$ (voir la figure   \ref{fig:Poincare_etendu}) englobant $\Omega$ dont la frontiere est une isoline de valeur $\epsilon$ obtenu via la résolution de l'équation de la chaleur dans $\mathbb{R}^2\backslash\Omega$ et tel que $\partial\Omega^\epsilon\cap\Omega=\emptyset$. On construit ensuite le champ de croix $\bar{u}^\epsilon$ pour tout $p\in\Omega^\epsilon$ par:
-$$
-\bar{u}^\epsilon(p)=
-\left\{
-\begin{array}{ll}
-\bar{u}(p)& \mbox{ si } p\in\Omega,\\[0.5cm]
-\left\{\mathbf{R}\left(\displaystyle\frac{m\pi}{2}\right)f(p),~ m\in \mathbb{Z}\right\} & \mbox{ sinon },
+\begin{array}{l}
+\theta_1 = \theta_{\bar{u}_h}(s_1)\\\\
+\theta_2 = \theta_1 + \delta\theta(\bar{u}_h(s_1),\bar{u}_h(s_2))\\\\
+\theta_3 = \theta_2 + \delta\theta(\bar{u}_h(s_2),\bar{u}_h(s_3))
 \end{array}
 \right.
 $$
-où pour tout $p\in\Omega^\epsilon\backslash\Omega$, $f$ désigne le vecteur gradient à l'isoline en $p$. Par construction, $\bar{u}^\epsilon$ est aligné sur le bord de $\Omega^\epsilon$ et $\mathcal{S}_{\bar{u}^\epsilon}\cap\partial\Omega^\epsilon=\emptyset$ Autrement dit, on a:
+où $s_1$, $s_2$ et $s_3$ sont les sommets du triangle $T$. La croix $\bar{u}_h(p)$ est alors donnée par:
 $$
-\sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}} id_{\bar{u}^\epsilon}(p)=\chi(\Omega^\epsilon)
+\left\{
+\begin{array}{l}
+\bar{u}_h(p)=\displaystyle\left\{\mathbf{R}\left(\theta_p+m\frac{\pi}{2}\right)(1,0)^t,~m\in\mathbb{Z}\right\},\\\\
+\theta_p=\displaystyle\sum_{i\in\llbracket1, 3\rrbracket}\lambda_i\theta_i,
+\end{array}
+\right.
 $$
-Or $\chi(\Omega^\epsilon)=\chi(\Omega)$ donc on a:
-$$
-\sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}\backslash\partial\Omega} id_{\bar{u}^\epsilon}(p)+\sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}\cap\partial\Omega} id_{\bar{u}^\epsilon}(p)=\chi(\Omega).
-$$
-Sachant que pour tout $p\in\partial\Omega$ on a $id_{\bar{u}^\epsilon}(p)=id^\partial_{\bar{u}}(p)$ alors
-\begin{eqnarray}
-    \label{eqn:poin_hopf_gen}
-    \sum_{p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega} id_{\bar{u}}(p)+\sum_{p\in\mathcal{S}_{\bar{u}}\cap\partial\Omega} id^\partial_{\bar{u}}(p)&=&\chi(\Omega).
-\end{eqnarray}
-Nous posons alors l'équation \eqref{eqn:poin_hopf_gen} comme la généralisation de la formule de Poincaré-Hopf aux champs de croix aligné sur le bord du domaine et possédant des points singuliers de bord.
-
-
-\begin{comment}
-Pour prendre en considération les champs de croix comportant des points singuliers situés sur la frontière du domaine, nous introduisons le lemme suivant. Celui-ci établit une relation entre l'indice d'un point sur la frontière dans un champ de croix et l'indice intérieur de ce point dans un champ de croix étendu sur une zone englobant le point.
- \begin{lemma}
-    \label{lem:lemme_poinc_hopf}
-    Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec le bord de $\Omega$ et soit $p\in\partial\Omega$. Il existe un voisinnage $V_p\subset\mathbb{R}^2$ de $p$ et un champ de croix $\bar{v}$ presque-$\mathcal{C}^1$ sur $\Omega\cup V_p$ tel que $\mathcal{S}_{\bar{v}}=\mathcal{S}_{\bar{u}}$ et $id_{\bar{v}}(p) = id^\partial_{\bar{u}}(p)$.
-\end{lemma}
-
-\color{red}
-\begin{proof}
-    Soit $V_p=\bar{\mathcal{D}(p, \epsilon)}\backslash\mathring{\Omega}$ où $\bar{\mathcal{D}(p, \epsilon)}$ est le disque fermé centré en $p$ et de rayon $\epsilon>0$, tel que $\bar{\mathcal{D}(p, \epsilon)}\cap\partial\Omega=[pa]\cup[pb]$ avec $\{a, b\} = \partial\bar{\mathcal{D}(p, \epsilon)}\cap\partial\Omega$. $[pa]$ (respectivement $[pb]$) désigne le segment de droite $(pa)$ (respectivement $(pb)$) et les points $a$ et $b$ sont choisis de tel sorte que $\overrightarrow{ap}\wedge\overrightarrow{pb}>0$. On suppose de plus que $(V_p\cap\mathcal{S}_{\bar{u}})\backslash\{p\}=\emptyset$. Remarquons que $\Omega\cap V_p=[pa]\cap[pb]$. Soit $f$ la fonction définie pour tout $q\in V_p$ par:
-
-    \begin{equation}
-    f(q)=
-    \left\{
-    \begin{array}{ll}
-        N(q) & \mbox{ si } q\in[pa],\\[0.5cm]
-        \mathbf{R}\left(\alpha(\tau(q))\left(1-\displaystyle\frac{\pi}{2\pi-\hat{p}}\right)\right)N(\tau(q)) & \mbox{ sinon },
-    \end{array}
-    \right.
-    \end{equation}
-    où $\tau(q)=p+\|\overrightarrow{pq}\|.\|\overrightarrow{pa}\|^{-1}\overrightarrow{pa}$ et $\alpha(\tau(q))=\widehat{\tau(q)pq}$ est l'angle orienté entre les vecteurs $\overrightarrow{p\tau(q)}$ et $\overrightarrow{pq}$. Il est clair que $f$ est de classe $\mathcal{C}^1$ dans $V_p\backslash\{p\}$ puisque $\tau,\alpha\in\mathcal{C}^1(V_p\backslash\{p\}))$ et que la normale $N$ est $\mathcal{C}^1$ sur $]pa]$. Par conséquent, d'après la Propostion \ref{prop:cont1} le champ de croix $\bar{w}$ défini pour tout $q\in V_p$ par:
-    \begin{equation}
-    \bar{w}(q)=
-    \left\{
-    \begin{array}{ll}
-        \bar{N}(p) & \mbox{ si } q=p,\\[0.5cm]
-        \left\{\mathbf{R}\left(\displaystyle\frac{m\pi}{2}\right)f(q),~ m\in \mathbb{Z}\right\} & \mbox{ sinon },
-    \end{array}
-    \right.
-    \end{equation}
-    est presque-$\mathcal{C}^1$ sur $V_p\backslash\Omega$. Remarquons que pour tout $q\in\Omega\cap V_p$, $\bar{u}(q)=\bar{w}(q)$ puisque par définition si $q\in[pa]$, $\bar{u}(q)=\bar{w}(q)$ et pour tout $q\in]pb]$, $f(q)$maintenant $\bar{v}$, le champ de croix défini pour tout $q\in\Omega\cup V_p$ par:
-    \begin{equation}
-    \bar{v}(q)=
-    \left\{
-    \begin{array}{lcll}
-    \bar{u}(q) & \mbox{ si } q\in\Omega,\\[0.5cm]
-    \bar{w}(q) & \mbox{ sinon }.
-    \end{array}
-    \right.
-    \end{equation}
-    $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega\cup V_p$ avec $\mathcal{S}_{\bar{v}}=\mathcal{S}_{\bar{u}}$ et $id_{\bar{v}}(p)=id_{\bar{u}}(p)$. On a alors:
-    \begin{eqnarray*}
-        id_{\bar{w}}(p)&=&\int_{\partial V_p}d\theta_{\bar{w}},\\
-        &=&\int_{\partial V_p\backslash\Omega}d\theta_{\bar{w}}+\int_{\partial V_p\backslash(\partial V_p\backslash\Omega)d\theta_{\bar{w}}}d\theta_{\bar{w}}\\\\
-        id_{\bar{w}}(p)&=&\pi-\hat{p}+2\pi id^\partial_{\bar{u}}(p)-\pi+\hat{p}.
-    \end{eqnarray*}
-Ce qui montre que $id_{\bar{w}}(p)=id^\partial_{\bar{u}}(p)$.
-\end{proof}
-\color{black}
-Grâce à ce lemme, la formule de Poincaré-Hopf \eqref{eqn:first_Poincare_Hopf} peut être écrite sur le domaine $\Omega\cup(\cup_{p\in\mathcal{S}_{\bar{u}}\cap\partial\Omega}V_p)$. Autrement dit, on a:
-$$
-\sum_{p\in\mathcal{S}_{\bar{w}}} id_{\bar{w}}(p)=\chi(\Omega\cup(\cup_{p\in\mathcal{S}_{\bar{u}}\cap\partial\Omega}V_p))
-$$
-Or $\chi(\Omega\cup(\cup_{p\in\mathcal{S}_{\bar{u}}\cap\partial\Omega}V_p))=\chi(\Omega)$ donc on a:
-$$
-\sum_{p\in\mathcal{S}_{\bar{w}}\backslash\partial\Omega} id_{\bar{w}}(p)+\sum_{p\in\mathcal{S}_{\bar{w}}\cap\partial\Omega} id_{\bar{w}}(p)=\chi(\Omega).
-$$
-D'après le lemme \ref{lem:lemme_poinc_hopf} on a $id_{\bar{w}}(p)=id^\partial_{\bar{u}}(p)$ pour tout $p\in\mathcal{}$:
-\begin{eqnarray}
-    \label{eqn:poin_hopf_gen}
-    \sum_{p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega} id_{\bar{u}}(p)+\sum_{p\in\mathcal{S}_{\bar{w}}\cap\partial\Omega} id^\partial_{\bar{u}}(p)&=&\chi(\Omega).
-\end{eqnarray}
-Nous posons alors l'équation \eqref{eqn:poin_hopf_gen} comme la généralisation de la formule de Poincaré-Hopf aux champs de croix aligné sur le bord du domaine et possédant des points singuliers de bord.
-\end{comment}
-
-\subsection{Ligne de champ et séparatrices}
-
-Le dernier point de cette section concerne un outil indispensable dans la technique de maillage qui est la construction de lignes de champ. En réalité, ces lignes seront les frontières des sous-régions générées par l'algorithme.
-Comme pour les champs vectoriels, une ligne de champ d'un champ de croix $\bar{u}$ est définie comme une courbe continûment différentiable dans $\Omega$. Plus précisément, nous avons la définition suivante :
-
-\begin{definition}
-\label{def:SL}
-Soit $\bar{u}$ un champ croisé presque-$\mathcal{C}^1$. Étant donné un point $p_0\in \Omega\backslash \mathcal{S}_{\bar{u}}$ et une direction $\overrightarrow{u_0}\in \bar{u}(p_0)$, une ligne de champ émanant de $p_0$ selon $\overrightarrow{u_0}\in \mathbb{R}^2$, notée par $SL{\bar{u}}(p_0,\overrightarrow{u_0})$, est la courbe $S$ telle que :
-
-\begin{enumerate}
-\item il existe $\pi_{\bar{u}}^S:\Omega\longrightarrow\mathbb{R}^2$ une application telle que $\pi_{\bar{u}}^S(p_0)=\overrightarrow{u_0}$ et pour tout $p\in Im S$ il existe un voisinnage $V_p$ de $p$ tel que:
-\begin{equation}
-\label{eqn:pi_u_S}
-\pi_{\bar{u}}^S\in\mathcal{C}^1(V_p) \mbox{ et }  \forall q\in V_p, \pi_{\bar{u}}^S(q)\in \bar{u}(q),
-\end{equation}
-\item $S$ est une solution maximale dans $\Omega$ de l'équation différentielle
-\begin{equation}
-\label{eqn:streamline}
-\frac{dS(t)}{dt}=\pi_{\bar{u}}^S(S(t)),t\in \mathbb{R} \text{ et }  S(0)=p_0.
-\end{equation}
-\end{enumerate}
-\end{definition}
-
-\begin{lemma}
-\label{lem:def_streamline_lemma}
-La courbe $SL_{\bar{u}}(p_0,\overrightarrow{u_0})$ proposée dans la définition~\ref{def:SL} est bien définie.
-\end{lemma}
-
-\begin{proof}
-Pour établir ce lemme, nous construisons d'abord l'application $\pi$ restreinte au voisinage de $p$ et procédons ensuite à la construction de la ligne de champ restreinte au voisinage de $p$. La ligne de champ complète est ensuite formée en étendant itérativement cette construction à chaque voisinage successif (voir figure \ref{fig:streamline_construction}).\
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.5]{images/streamline_construction.pdf}
-\caption{Illustration de la preuve du lemme \ref{lem:def_streamline_lemma}.}
-\label{fig:streamline_construction}
-\end{figure}
-
-\paragraph{Définition d'un champ de vecteur de classe $\mathcal{C}^1$ dans un voisinnage de $p_0$.} D'après la proposition \ref{prop:angular_cont}, il existe une application $\theta_{\bar{u}}^{V_{p_0}}$ de classe $\mathcal{C}^1$ dans un voisinnage $V_{p_0}$ de $p_0$ telle que pour tout $q\in V_{p_0}$, $\theta_{\bar{u}}^{V_{p_0}}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$. Il vient alors qu'il existe $m\in\mathbb{Z}$ tel que l'application $\tau_{p_0}:=\mathbf{R}(\theta_{\bar{u}}^{V_{p_0}}+m\frac{\pi}{2})(1, 0)$ est un champ de vecteur de classe $\mathcal{C}^1$ sur $V_{p_0}$ vérifiant $\tau_{p_0}(p_0)=\overrightarrow{u_0}$.
-
-\paragraph{Construction de la restriction de $\pi_{\bar{u}}^S$ au voisinage de $p_0$.}
-Montrons que si $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$ tel que $\pi_{\bar{u}}^S(p_0)=\overrightarrow{u_0}$ satisfaisant \eqref{eqn:pi_u_S} et \eqref{eqn:streamline} alors $\pi_{\bar{u}}\circ S=\tau_{p_0}\circ S$ sur $V_{p_0}$. Supposons qu'il existe $t\in\mathbb{R}$ tel que $S(t)\in V_{p_0}$ et $\pi_{\bar{u}}^S\circ S(t)\neq\tau_{p_0}\circ S(t)$. Soit $\epsilon>0$ et notons $p'=S(t)$. $\tau_{p_0}$ étant continue sur $V_{p_0}$, on a:
-$$|\tau_{p_0}(p')-\pi^S_{\bar{u}}(p_0)|=|\tau_{p_0}(p')-\tau_{p_0}(p_0)|\leq\epsilon.$$
-Par inégalité triangulaire, il vient que:
-$$|\pi^S_{\bar{u}}(p')-\pi^S_{\bar{u}}(p_0)|\geq|\tau_{p_0}(p')-\pi^S_{\bar{u}}(p')|-\epsilon.$$
-Or on sait que $\pi^S_{\bar{u}}(p')\in{\bar{u}}(p')$, $\tau_{p_0}(p')\in{\bar{u}}(p')$ et $\pi_{\bar{u}}^S(p')\neq\tau_{p_0}(p')$, ce qui implique que $\pi^S_{\bar{u}}(p')=R(k\pi/2)\tau_{p_0}(p')$ où $k\in\mathbb{Z}\backslash 4\mathbb{Z}$, et donc que $|\pi^S_{\bar{u}}(p')-\tau_{p_0}(p')|\geq\sqrt{2}$. Par conséquent, on a:
-$$|\pi^S_{\bar{u}}(p')-\pi^S_{\bar{u}}(p_0)|\geq|\sqrt{2}-\epsilon.$$
-Ce qui contredit le fait que $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$.
-
-
-\paragraph{Construction de la restriction de la ligne de courant au voisinage de $p$.}
-Selon ce qui a été établi précédemment, $S$ satisfait l'équation suivante dans $V_{p_0}$ :\begin{equation}
-\label{eqn:streamline_in_V}
-\frac{dS(t)}{dt}=\tau_{p_0}(S(t)),t\in \mathbb{R} \text{ et }  S(0)=p_0.
-\end{equation}
-Nous obtenons la séparatrice $S$ en intégrant l'équation \eqref{eqn:streamline_in_V} jusqu'à ce que $u(s(t))=0$ ou que $s(t)\in\partial V_{p_0}$ pour $t>0$ (respectivement, $t<0$). Sans perte de généralité, notons $t_1$ le moment auquel cela se produit et $S(t_1)=p_1$.\\
+avec $(\lambda_i)_{i\in\llbracket 1, 3\rrbracket}$ les coordonnées barycentriques de $p$ dans le triangle $T$. Autrement dit, ils vérifient $p=\sum_{i=1}^3\lambda_i s_i$ et $\sum_{i=1}^3\lambda_i=1$.\\
+\item[$\bullet$] si $p\in\mathbf{Z}$ alors il existe une zone singulière $Z\subset\mathbf{Z}$ tel que $p\in Z$. On a alors:\\
 \begin{itemize}
-\item[-] Si $\bar{u}(p_1)=0$, alors $S(t)$ est la ligne de champ construite existe et est unique,\\
-\item[-] Sinon, nous pouvons étendre l'ensemble $S$ en répétant la construction précédemment décrite dans un voisinage de $p_1$. Cela implique de définir un champ vectoriel continu à proximité de $p_1$ et de construire la ligne de champ en fonction de ce champ étendu. En appliquant itérativement ce processus dans chaque voisinage, nous pouvons étendre et affiner progressivement la ligne de courant, en garantissant sa régularité dans tout le domaine.
+ \item si $p=S_Z$, alors $\bar{u}_h(p)=0$.\\
+ \item sinon la croix $\bar{u}_h(p)$ est donnée par:
+\begin{equation}
+\label{eqn:etoilage}
+\left\{
+\begin{array}{l}
+\bar{u}_h(p)=\bar{u}_h(\widetilde{p}),\\\\
+\{\widetilde{p}\}=[S_Zp)\cap\partial Z.
+\end{array}
+\right.
+\end{equation}
+Notons que l'ensemble $[S_Zp)\cap\partial Z$ est bien réduit à un singleton puisque $Z$ est une réunion de simplexes donc convexe.\\
 \end{itemize}
-\end{proof}
-
+\end{itemize}
 
 \begin{remark}
-Notons que si $\bar{u}$ est aligné avec la frontière, alors pour tout $p\in \partial \Omega \backslash \mathcal{S}_{\bar{u}}$ tel que la normale extérieure unitaire $N(p)$ au point $p$, est définie, nous avons $SL{\bar{u}}\left(p,\mathbf{R}\left(\pm \frac{\pi}{2}\right)N(p)\right) \subset \partial \Omega$.
+La construction nous avons exposé se base sur l'angle signé entre les croix des arêtes du maillage. Plus précisément, nous utilisons les variations du champ de croix le long des arêtes pour construire notre représentation en chaque point et pour évaluer les indices des points singuliers. Ainsi, lorsque cette variation angulaire n'est pas définie, notre représentation induit des points singuliers non isolés, comme nous le verrons dans le lemme \ref{lem:isolation_pt_sing}.
+Pour palier à ce désagrément, nous imposons dans toute la suite les conditions suivantes:\\
+\begin{itemize}
+ \item si on a $Z\subset\mathbf{Z}$ tel que $Z\cap\partial\Omega_h=\emptyset$, on doit avoir pour tout $p\in\partial Z\cap\mathcal{S}_h$, $\bar{u}(p)\neq 0$ et pour tout arête $s_1s_2\subset\partial Z$, $\delta\theta(\bar{u}(s_1),\bar{u}(s_2))$ doit être défini.\\
+ \item si on a $Z\subset\mathbf{Z}$ tel que $Z\cap\partial\Omega_h\neq\emptyset$, on impose $S_Z\in\partial\Omega_h$ et on doit avoir pour tout $p\in(\partial Z\cap\mathcal{S}_h)\backslash\{S_Z\}$, $\bar{u}(p)\neq 0$ et pour tout arête $s_1s_2\subset\partial Z$, $\delta\theta(\bar{u}(s_1),\bar{u}(s_2))$ doit être défini.\\
+\end{itemize}
+Dans la pratique, il sera donc impératif de modifier un maillage qui ne satisfait pas ces contraintes. %La pertinence de ces contraintes prend tout son sens par la suite, avec l'approche de construction que nous proposons pour représenter $\bar{u}$ sur $\Omega_h$.
+Étant donné que les points singuliers du champ de croix $\bar{u}$ sont isolés, on peut toujours satisfaire ces contraintes en affinant ou en modifiant localement (par exemple, par des opérations de retournement d'arêtes) un maillage qui ne satisfait pas ces contraintes.
 \end{remark}
 
-\begin{definition}[Séparatrice] \label{def:sep}
-Une séparatrice dans un champ de croix est une ligne de champ qui commence ou se termine en un point singulier.
-\end{definition}
-
-Cette définition d'une séparatrice induit un problème bien connu dans les équations différentielles ordinaires : comment tracer une ligne de champ à partir d'un point singulier donné ? Cette question peut être difficile étant donné que $\bar{u}(p)={0}$ pour tout $p\in \mathcal{S}_{\bar{u}}$. Cependant, nous proposons le résultat suivant qui sera utilisé par la suite pour résoudre ce problème.
-\begin{proposition}
-\label{prop:stream_from_interior_sing}
-Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ et $p\in \Omega\backslash\partial\Omega$. Soit $V_p\subset\Omega$ un voisinnage de $p$ tel que le bord $\partial V_p$ de $V_p$ est de classe $\mathcal{C}^1$ et $\partial V_p\cap\mathcal{S}_{\bar{u}}=\emptyset$. On suppose de plus que $V_p$ est étoilé par rapport à $p$. Alors il existe un champ de croix $\bar{v}$ tel que:\\[-0.3cm]
-\begin{enumerate}
-\item $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$,\\[-0.3cm]
-\item $\mathcal{S}_{\bar{v}}\cap V_p =\{p\}$ et $id_{\bar{v}}(p)=\sum_{q\in \mathcal{S}_{\bar{u}}\cap V_p} id_{\bar{u}}(q)$,\\[-0.3cm]
-\item pour tout $q\in \partial V_p$ tel que $\overrightarrow{v_q}:=\overrightarrow{pq}.\|\overrightarrow{pq}\|^{-1}\in \bar{u}(q)$, le point $p$ appartient à la ligne de champ $SL_{\bar{v}}(q,\overrightarrow{v_q})$.\\[-0.3cm]
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
-Soit $\bar{v}$ défini pour tout $q\in\Omega$ par :
-\begin{equation}
-\bar{v}(q)=
-\left\{
-\begin{array}{ll}
-0&\mbox{ si }q=p\\[0.25cm]
-\bar{u}(q)&\mbox{ si } q\notin V_p,\\[0.25cm]
-\bar{u}\circ\pi(q)&\mbox{ sinon},
-\end{array}
-\right.
-\end{equation}
-où $\pi$ est défini pour tout $q\in V_p\backslash\{p\}$ par l'intersection de la demi-droite $[pq)$ avec la courbe $\partial V_p$ (voir la figure \ref{}):
-\begin{equation*}
-\left\{
-\begin{array}{ll}
-\pi(q)=p+\displaystyle\frac{\overrightarrow{\|p\pi(q)\|}}{\overrightarrow{\|pq\|}}\overrightarrow{pq},\\[0.5cm]
-\pi(q)\in\partial V_p.
-\end{array}
-\right.
-\end{equation*}
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.35]{images/illustr_etoilage.pdf}
-\caption{Illustration de la construction du champ de croix $\bar{v}$ dans $\partial V_p$.}
-\label{fig:illustr_etoilage}
-\end{figure}
-Notons que $\pi$ est bien défini. En effet, puisque $V_p$ est étoilé et que $\partial V_p$ est de classe $\mathcal{C}^1$, alors pour tout $q\in V_p\backslash\{p\}$, il existe un unique point $\pi(q)\in\partial V_p$.
-
-Nous montrons que $\bar{v}$ est presque continue dans $\Omega$ en démontrant cette propriété successivement dans $V_p$, dans $\Omega\backslash V_p$, et sur $\partial V_p$.\\
-\begin{itemize}
-\item Dans $V_p$ (voir Figure \ref{fig:v_bar_almost_continuous}) : Soit $x \in V_p$ fixé et $\epsilon > 0$. Nous voulons montrer qu'il existe $\eta > 0$ tel que pour tout $y \in V_p$, si $|x-y|\leq\eta$, alors $|\widetilde{g}(x)-\widetilde{g}(y)|\leq\epsilon$. Puisque $g'$ est continue, il existe $\eta_g$ tel que pour tout $x', y' \in \partial V_p$, si $|x'-y'|\leq\eta_g$, alors $|g'(x')-g'(y')|\leq\epsilon$. Soit $t^\pm=t_x\pm\eta_g$ avec $\gamma(t_x)=\pi(x)$, et soit $\mathcal{H}_x=V_p\cap\mathrm{C}(\gamma(t^-), p, \gamma(t^+))$, où $\mathrm{C}(\gamma(t^-), p, \gamma(t^+))$ désigne la région du plan délimitée par les demi-droites $[p\gamma(t^-))$ et $[p\gamma(t^+))$. Puisque $p\in V_p$, nous avons $\mathcal{H}_x \neq\emptyset$. De plus, $\mathcal{H}_x$ est ouvert par construction. Cela implique l'existence d'un certain $\eta>0$ tel que $\mathcal{B}(x,\eta)\subset \mathcal{H}_x$, et pour tout $y$ tel que $|x-y|\leq\eta$, nous avons $|\pi(x)-\pi(y)|\leq\eta_g$. Ceci prouve la continuité de $\pi$ et donc la continuité de $\widetilde{g}$ puisque $\bar{u}$ est continue dans $V_p$.\\
-\item Dans $\Omega\backslash V_p$ : $\bar{v}$ est presque continue dans $V_p$ par définition.\\
-\item Sur $\partial V_p$ : $\bar{v}$ est presque continue sur $\partial V_p$ grâce à une jonction continue de deux fonctions continues.\\
-\end{itemize}
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.3]{images/v_bar_almost_continuous_++.pdf}
-\caption{Illustration of the construction of the restriction of $\pi$}
-\label{fig:v_bar_almost_continuous}
-\end{figure}
-
-Nous montrons maintenant que
 
 
-
-1.\quad Par définition $\bar{v}$ est presque-$\mathcal{C}^1$ dans $\Omega\backslash V_p$ et sur $\partial V_p$.
-
-
-
-
-
-Pour montrer que $\bar{v}$ est presque-$\mathcal{C}^1$ dans $V_p\backslash\{p\}$, il suffit de montrer que $\pi$ est $\mathcal{C}^1$ puisque $\bar{u}$ est $\mathcal{C}^1$ sur $\partial V_p$. Supposons que $\pi$ est $\mathcal{C}^1$. Soit $q\in V_p$ et $h\in\mathbb{R}^2$. Calculons $\pi(q+h)$.
-\begin{eqnarray*}
-    \pi(q+h)&=&p+\frac{\|\overrightarrow{p\pi(q+h)}\|}{\|\overrightarrow{p(q+h)}\|}\overrightarrow{p(q+h)}\\[0.2cm]
-    &=&p+\left(\frac{\|\overrightarrow{p\pi(q)}\|}{\|\overrightarrow{pq}\|}+\frac{<\overrightarrow{p\pi(q)}, (\nabla\pi(q).h)>}{\|\overrightarrow{pq}\|\|\overrightarrow{p\pi(q)}\|}\right)\left(1-\frac{\overrightarrow{pq}.h}{\|\overrightarrow{pq}\|^2}\right)\left(\overrightarrow{pq}+h\right) + o(h^2)\\[0.2cm]
-    &=&\pi(q)+\frac{<\overrightarrow{p\pi(q)}, (\nabla\pi(q).h)>}{\|\overrightarrow{pq}\|\|\overrightarrow{p\pi(q)}\|}\overrightarrow{pq}-\frac{\|\overrightarrow{p\pi(q)}\|}{\|\overrightarrow{pq}\|}\frac{\overrightarrow{pq}.h}{\|\overrightarrow{pq}\|^2}\overrightarrow{pq}+\frac{\|\overrightarrow{p\pi(q)}\|}{\|\overrightarrow{pq}\|}h+o(h^2)\\[0.2cm]
-    \pi(q+h)&=&\pi(q)+\frac{<\overrightarrow{p\pi(q)}, (\nabla\pi(q).h)>}{\|\overrightarrow{pq}\|\|\overrightarrow{p\pi(q)}\|}\overrightarrow{pq}+\frac{\|\overrightarrow{p\pi(q)}\|}{\|\overrightarrow{pq}\|}\left(\frac{\overrightarrow{pq}.h}{\|\overrightarrow{pq}\|^2}\overrightarrow{pq}+h\right)+o(h^2)
-\end{eqnarray*}
-
-En posant $e_q=\displaystyle\frac{\overrightarrow{pq}}{\|\overrightarrow{pq}\|}$ et $\lambda_q=\displaystyle\frac{\|\overrightarrow{p\pi(q)}\|}{\|\overrightarrow{pq}\|}$ on obtient:
-
-\begin{eqnarray*}
-    \pi(q+h) = \pi(q)+<e_q,\nabla\pi(q).h>e_q+\lambda_q(-(e_q.h)e_q+h)+o(h^2)
-\end{eqnarray*}
-Posons $L(h)=<e_q,\nabla\pi(q).h>e_q+\lambda_q(-(e_q.h)e_q+h)$. La composante de $L(h)$ suivant $\overrightarrow{e_q^\perp}$ est donné par $X=L(h).e_q^\perp=\lambda_q(h.e_q^\perp)$. Nous cherchons ensuite la composante suivant $\overrightarrow{e_q}$: soit $\gamma$ une paramétrisation de $\partial V_p$ sur $I\subset\mathbb{R}$. Puisque $\pi(q+h),\pi(q)\in\partial V_p$, il existe $t_1, t_2\in I$ tel que $\pi(q)=\gamma(t_1)$ et $\pi(q+h)=\gamma(t_2)$. $\gamma$ étant $\mathcal{C}^1$, il existe une fonction dépendant de $h$ noté $m(h)$ tel que $\pi(q+h)-\pi(q)=m(h).\overrightarrow{t}+o(h^2)$ avec $\overrightarrow{t}=\gamma'(t_1).\|\gamma'(t_1)\|^{-1}$. Ce qui implique que $L(h)$ est colinéaire au vecteur $\overrightarrow{t}$. Il vient alors que:
-$$
-\|L(h)\|=\frac{X}{\cos{\alpha}},\mbox{ avec }\cos{\alpha}=\overrightarrow{t}.\overrightarrow{e_q^\perp}
-$$
-Autrement dit, la composante de $L(h)$ suivant $e_q$ noté $Y$ est donné par:
-$$
-Y=\sqrt{\|L(h)\|^2-X^2}=\frac{1}{\cos{\alpha}}\sqrt{X^2(1+\cos^2\alpha)}
-$$
-\begin{comment}
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.4]{img/im_future.png}
-\caption{}%Illustration de la construction de la restriction de $\pi$.}
-%\label{fig:v_bar_almost_continuous}
-\end{figure}
-\end{comment}
-Finalement, on a $L(h)=X\overrightarrow{e_q^\perp}+ Y\overrightarrow{e_q}$ avec $X$ et $Y$ linéaire et continue. Par conséquent, $\pi$ est bien de classe $\mathcal{C}^1$.\\\\
-2.\quad Pour tout $q\in V_p\backslash\{p\}$, $\bar{v}(q)\neq 0$ et $\bar{v}(p)=0$. Par conséquent, $\mathcal{S}_{\bar{v}}\cap V_p=\{p\}$. Soit $\gamma$ une paramétrisation de $\partial V_p$ sur $[0, 1]$. Sachant que l'indice de $p$ dans le champ de croix $\bar{v}$ ne dépend pas du chemin, on peut écrire que:
-$$id_{\bar{v}}(p)=\frac{1}{2\pi}\int_{\partial V_p}d\theta_{\bar{v}}.$$
-Or par construction, on a $\bar{v}=\bar{u}$ sur $\partial V_p$ donc on a:
-$$id_{\bar{v}}(p)=\frac{1}{2\pi}\int_{\partial V_p}d\theta_{\bar{u}}=\sum_{q\in\mathcal{S}_{\bar{u}}\cap V_p}id_{\bar{u}}(q).$$\\\\
-3.\quad Soit $q\in\partial V_p$ tel que $\overrightarrow{v_q}:=\overrightarrow{pq}.\|\overrightarrow{pq}\|^{-1} \in \bar{u}(q)$. Alors pour tout $p'\in~]pq)\cap V_p$ on a $\overrightarrow{v_q}\in\bar{v}(p')$. Par conséquent, pour tout $p'\in]pq]$ on a $p'\in SL_{\bar{v}}(q,\overrightarrow{v_q})$. Ainsi en passant à la limite avec $p'\longrightarrow p$ on a $p\in SL_{\bar{v}}(q,\overrightarrow{v_q})$.
-\end{proof}
-
-En extension de la proposition \ref{prop:stream_from_interior_sing}, nous introduisons la proposition suivante, qui décrit une procédure pour tracer une ligne de courant à partir d'un point singulier spécifié sur la frontière.
-
-\begin{proposition}
-\label{prop:stream_from_bord_sing}
-Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ et $p\in\partial\Omega$. Considérons un voisinage $V_p\subset\Omega$ de $p$ tel que $p\in\partial V_p$ et $\partial V_p$ soit de classe $\mathcal{C}^1$. On suppose de plus que $(\partial V_p\backslash\{p\})\cap\mathcal{S}_{\bar{u}}=\emptyset$ et que $V_p$ est étoilé par rapport à $p$. Alors, il existe un champ de croix $\bar{v}$ tel que:
-\begin{enumerate}
-\item[1.] $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$,\\[-0.3cm]
-\item[2.] pour tout $q\in \partial V_p$ tel que $\overrightarrow{v_q}:=\overrightarrow{pq}.\|\overrightarrow{pq}\|^{-1}\in \bar{u}(q)$, le point $p$ appartient à la ligne de champ $SL_{\bar{v}}(q,\overrightarrow{v_q})$.\\[-0.3cm]
-\end{enumerate}
-De plus, si $\partial V_p$ est tangent à $\partial\Omega$ en p, alors on a:
-\begin{enumerate}
-\item[3.] $\mathcal{S}_{\bar{v}}\cap V_p =\{p\}$ et $id^\partial_{\bar{v}}(p)=\sum_{q\in \mathcal{S}_{\bar{u}}\cap V_p} id_{\bar{u}}(q)$.\\[-0.3cm]
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
-Soit $\bar{v}$ défini pour tout $q\in\Omega$ par :
-\begin{equation}
-\bar{v}(q)=
-\left\{
-\begin{array}{ll}
-0&\mbox{ si }q=p\\[0.25cm]
-\bar{u}(q)&\mbox{ si } q\notin V_p,\\[0.25cm]
-\bar{u}\circ\pi(q)&\mbox{ sinon},
-\end{array}
-\right.
-\end{equation}
-où $\pi$ est défini pour tout $q\in V_p\backslash\{p\}$ par:
-\begin{equation*}
-\left\{
-\begin{array}{ll}
-\pi(q)=p+\displaystyle\frac{\overrightarrow{\|p\pi(q)\|}}{\overrightarrow{\|pq\|}}\overrightarrow{pq},\\[0.5cm]
-\pi(q)\in\partial V_p.
-\end{array}
-\right.
-\end{equation*}
-Notons que $\pi$ est bien définie. En effet, puisque $V_p$ est étoilé et que $\partial V_p$ est de classe $\mathcal{C}^1$, alors pour tout $q\in V_p\backslash\{p\}$, il existe un unique point $\pi(q)\in\partial V_p$.\\\\
-1.\quad De manière analogue à la preuve de la proposition \ref{prop:stream_from_bord_sing} on montre que $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$.\\\\
-2.\quad Soit $q\in\partial V_p$ tel que $\overrightarrow{v_q}:=\overrightarrow{pq}.\|\overrightarrow{pq}\|^{-1} \in \bar{u}(q)$. Alors pour tout $p'\in~]pq)\cap V_p$ on a $\overrightarrow{v_q}\in\bar{v}(p')$. Par conséquent, pour tout $p'\in]pq]$ on a $p'\in SL_{\bar{v}}(q,\overrightarrow{v_q})$. Ainsi en passant à la limite avec $p'\longrightarrow p$ on a $p\in SL_{\bar{v}}(q,\overrightarrow{v_q})$.\\\\
-3.\quad Supposons maintenant que $\partial V_p$ est tangent à $\partial V_p$ en p. Pour tout $q\in V_p\backslash\{p\}$, $\bar{v}(q)\neq 0$ et $\bar{v}(p)=0$. Par conséquent, $\mathcal{S}_{\bar{v}}\cap V_p=\{p\}$. Soit $\gamma$ une paramétrisation de $\partial V_p$ sur $[0, 1]$ avec $\gamma(0)=p=\gamma(1)$. Puisque $\partial V_p$ est tangent à $\partial\Omega$ en p, les vecteurs $\gamma'(0)$ et $\gamma'(1)$ sont tangents à $\partial\Omega$. On a donc:
-$$
-id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\hat{p}+\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{v}}^\gamma\right]
-$$
-Or par construction, on a $\bar{v}=\bar{u}$ sur $\partial V_p$ donc on a:
-$$id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\hat{p}+\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{u}}^\gamma\right]=\sum_{q\in\mathcal{S}_{\bar{u}}\cap V_p}id_{\bar{u}}(q).$$
-
-\end{proof}
-
-
-\begin{comment}
-Dans la suite de ce travail, nous faisons systématiquement correspondre un champ de croix donné avec un champ reconstruit obtenu en applicant la construction donnée dans les propositions \ref{prop:stream_from_interior_sing} et \ref{prop:stream_from_bord_sing}, en utilisant la même notation pour les deux (le champ et sa reconstruction) afin de ne pas alourdir la présentation. Ainsi étant donné un champ de croix $\bar{u}$ presque-$\mathcal{C}^1$ sur $\Omega$, nous adoptons les notations suivantes : pour tout point $p\in\mathcal{S}_{\bar{u}}$, nous notons $V_p^*$ le voisinage dans lequel le champ a été reconstruit, et $\gamma$ une paramétrisation sur $[0, 1]$ de $\partial V_p^*$ dans le sens anti-horaire.
-\end{comment}
-
-D'après les propositions \ref{prop:stream_from_interior_sing} et \ref{prop:stream_from_bord_sing}, pour tracer une séparatrice à partir d'un point singulier dans un champ de croix, il est nécessaire de disposer d'un vecteur dont le point d'application coïncide avec le point singulier en question et qui est aligné avec le champ de croix dans un voisinage de ce point singulier. Voisinnage dans lequel le champ a préalablement été modifié grâces aux propositions \ref{prop:stream_from_interior_sing} et \ref{prop:stream_from_bord_sing}. La question qui se pose alors est de savoir si de tels vecteurs existent, et combien de ces vecteurs sont disponibles pour chaque point singulier. Autrement dit, on cherche à déterminer combien de séparatrices peuvent être associées à un point singulier donné, ainsi que leurs orientations initiales. Nous exposons ci-après plusieurs résultats permettant de répondre à cette problématique.
-
-Dans ce qui suit, nous adopterons les notations suivantes. \'Etant donné $p\in\Omega$ nous désignons par $V_p\subset\Omega$ un voisinnage de $p$ tel que le bord $\partial V_p$ de $V_p$ est de classe $\mathcal{C}^1$ et $\partial V_p\cap\mathcal{S}_{\bar{u}}=\emptyset$. Soit $\gamma$ une paramétrisation sur $[0, 1]$ dans le sens positif de $\partial V_p$. Nous désignons par $W_p^\gamma$ la fonction définie par:
-\begin{equation}
-\label{eqn:Winding}
-W_p^\gamma:t\in[0, 1]\longmapsto \theta^\gamma_{\bar{u}}(t)-\arg \overrightarrow{p\gamma(t)},
-\end{equation}
-qui indique la différence angulaire relative entre le champ de croix et le champ radial au point $p$ (où $\arg \overrightarrow{p\gamma(t)}$ désigne l'argument complexe de $\overrightarrow{p\gamma(t)}$).
-
-\begin{remark}
-\label{rmk:W_p_gamma}
-La définition de $W_p^\gamma$ dépend du choix de $\theta_{\bar{u}}^\gamma$ donné par le Corollaire \ref{cor:relevement_continu}, qui n'est pas unique mais est défini à une constante près de $m\pi/2$ avec $m\in\mathbb{Z}$. Cela signifie que différents choix de $\theta_{\bar{u}}^\gamma$ peuvent conduire à différentes valeurs de $W_p^\gamma$, mais ils diffèrent seulement par un multiple de $\pi/2$ ce qui n'aura pas d'impact sur ce qui suit.
-\end{remark}
-
-\begin{lemma}
-\label{lem:decoup_voisinnage}
-Soit $p\in\Omega\backslash\partial\Omega$ tel que $id_{\bar{u}}(p)=k/4$ avec $k\in\mathbb{Z}$ et $k\leq 1$. Pour tout $t_0\in[0, 1]$, on a:\\
-
-\begin{itemize}
-    \item[$\bullet$] $\exists (t_i)_{i\in\llbracket1, N_s\rrbracket}\subset[0, 1]$ tel que $N_s=4-k$ et $0\leq t_1<\dots< t_{N_s}\leq 1$,\\
-    \item[$\bullet$] $\exists i\in [0, 1]$ tel que $t_0=t_i$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
-$$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
-\end{itemize}
-\end{lemma}
-
-\begin{proof}
-Étant donné que $id_{\bar{u}}(p)=k/4$, on a:
-$$\int_0^1 d\theta^\gamma_{\bar{u}}=k\frac{\pi}{2}$$
-Or on a $\int_0^1 d\arg{\overrightarrow{p\gamma(t)}}=2\pi$ donc:
-$$\int_0^1 dW_p^\gamma=(k-4)\frac{\pi}{2}=-N_s\frac{\pi}{2} \mbox{ avec } N_s=4-k.$$
-Définissons maintenant une fonction $h: t \mapsto h(t) \in \mathbb{R}$ comme suit :
-$$
-h(t) =
-    \begin{cases}
-        t&\mbox{ for }t\in[t_0, 1], \\
-        t+1&\mbox{ for }t\in[0,t_0[.
-    \end{cases}
-$$
-Il vient alors que:
-$$\int_0^1 dW_p^\gamma(t)=\int_{t_0}^{t_0+1} d(W_p^\gamma \circ h).$$
-Posons $t'_1 := t_0$ et définissons la fonction $f$ par:
-$$f: \tau \mapsto \int_{t'_1}^\tau d(W_p^\gamma \circ h).$$
-Comme $f$ est continue sur $[0,1]$, l'application du théorème des valeurs intermédiaires, conduit à l'existence de $(t'_i)_{i\in\llbracket 2,N_s\rrbracket}\subset[0, 1]$ tels que $t'_1<t'_2<\dots<t'_{N_s}$ et pour tout $i\in\llbracket1, N_s\rrbracket$ on a:
-$$\int_{t'_i}^{t'_{i+1}}d(W_p^\gamma\circ h)=-\frac{\pi}{2},$$
-où $t'_{N_s+1}:=t'_1$. Enfin, nous pouvons définir $t_i=h^{-1}(t'_i)$ pour tout $i\in\llbracket 1,N_s\rrbracket$, ce qui donne une suite de $N_s=4-k$ points $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$ tels que $\exists i\in\llbracket 1,N_s\rrbracket$ avec $t_i=t_0$. De plus, $\forall i\in\llbracket 1,N_s\rrbracket$, nous avons:
-$$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
-\end{proof}
-
-En se basant sur ce résultat, nous sommes en mesure d'énoncer la proposition suivante, laquelle permet de déterminer le nombre de séparatrices à attribuer à un point singulier ainsi que leur orientation initiale.
-
-\begin{proposition}
-    \label{prop:align_sepa_voisinnage}
-    Soit $p\in\Omega\backslash\partial\Omega$ tel que $id_{\bar{u}}(p)=k/4$ avec $k\in\mathbb{Z}$ et $k\leq 1$. Pour tout $t_0\in[0, 1]$, il existe une suite de points $(t_i)_{i\in\llbracket1, N_s\rrbracket}$ tel que $N_s=4-k$ et $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$ avec $\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i))$. De plus, il existe $i\in [0, 1]$ tel que $t_i=t_0$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
-    $$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
-\end{proposition}
-
-Selon la Remarque \ref{rmk:W_p_gamma}, il est en effet correct que $W_p^\gamma$ n'est pas unique et peut être défini à une constante près de $m\pi/2,~m\in\mathbb{Z}$. Cependant, dans le contexte du lemme \ref{lem:decoup_voisinnage}, nous pouvons observer que les valeurs de $t_i,~\forall i\in\llbracket 1, N_s\rrbracket$ données ne dépendent pas du choix spécifique de $W_p^\gamma$.
-
-\begin{proof}
-Selon le lemme \ref{lem:decoup_voisinnage}, s'il existe $t_0\in[0, 1]$ tel que $\overrightarrow{u_0}=\overrightarrow{p\gamma(t_0)}.\|\overrightarrow{p\gamma(t_0)}\|^{-1}\in\bar{u}(\gamma(t_0))$, alors il existe une suite de points $(t_i)_{i\in\llbracket1, N_s\rrbracket}$ tel que $N_s=4-k$ et $0\leq t_1\leq\dots\leq t_{N_s}\leq 1$. De plus, il existe $i\in [0, 1]$ tel que $t_i=t_0$, et pour tout $i\in\llbracket 1, N_s\rrbracket$,
-$$\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},\mbox{ où }t_{N_s+1}:=t_1.$$
-Remarquons alors que pour tout $i\in\llbracket 1, N_s\rrbracket$, nous avons:$$\overrightarrow{u_i}=\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i)).$$
-Cela peut être démontré de manière itérative comme suit: puisque $\int_{t_{i-1}}^{t_{i}}dW_p^\gamma=-\frac{\pi}{2}$ alors $\theta^\gamma_{\bar{u}}(t_i)=\arg \overrightarrow{p\gamma(t_i)} +\theta^\gamma_{\bar{u}}(t_{i-1})-\arg \overrightarrow{p\gamma(t_{i-1})}-\frac{\pi}{2}$. Étant donné que $\overrightarrow{p\gamma(t_{i-1})}.\|\overrightarrow{p\gamma(t_{i-1})}\|^{-1}\in\bar{u}(\gamma(t_{i-1}))$, on a $\theta^\gamma_{\bar{u}}(t_{i-1})\equiv\arg \overrightarrow{p\gamma(t_{i-1})}\pmod{\frac{\pi}{2}}$. Par conséquent, on peut en déduire que $\theta^\gamma_{\bar{u}}(t_{i})\equiv\arg \overrightarrow{p\gamma(t_i)}\pmod{\frac{\pi}{2}}$, ce qui prouve que $\overrightarrow{p\gamma(t_i)}.\|\overrightarrow{p\gamma(t_i)}\|^{-1}\in\bar{u}(\gamma(t_i))$.
-
-Pour compléter la preuve, on doit montrer qu'il existe $t_0\in[0,1]$ tel que $\overrightarrow{p\gamma(t_0)}.\|\overrightarrow{p\gamma(t_0)}\|^{-1}\in\bar{u}(\gamma(t_0))$. Soit $s_0\in[0,1]$ tel que $0<W_p^\gamma(s_0)<\frac{\pi}{2}$. D'après le lemme \ref{lem:decoup_voisinnage}, il existe $s_1>s_0$ tel que $\int_{s_0}^{s_1}dW_p^\gamma=-\frac{\pi}{2}$, ce qui signifie que $W_p^\gamma(s_1)=W_p^\gamma(s_0)-\frac{\pi}{2}<0$. Par le théorème des valeurs intermédiaires, il existe donc $t_0\in[s_0, s_1]$ tel que $W_p^\gamma(t_0)=0$, ce qui implique que $\arg\overrightarrow{p\gamma(t_0)}\in\bar{u}(\gamma(t_0))$. Par conséquent, $\overrightarrow{p\gamma(t_0)}.\|\overrightarrow{p\gamma(t_0)}\|^{-1}\in\bar{u}(\gamma(t_0))$, ce qui complète la preuve.
-\end{proof}
-
-Ce résultat peut être étendu à un point de bord de la manière suivante:
-
-\begin{proposition}
-\label{prop:align_sepa_voisinnage_bord}
-Soit $p\in\partial\Omega$ tel que $id_u(p)=k/4$ avec $k\in\mathbb{Z}$ et $k\leq 1$. Au point $p$, il y a $N_s=3-k$ séparatrices qui convergent, incluant les frontières de $\Omega$, divisant ainsi le voisinage de $p$ en $2-k$ secteurs. De plus, à l'intérieur de chaque secteur, on a:
-$$\int_0^1W_p^\gamma(t)dt=-\frac{\pi}{2}.$$
-\end{proposition}
-
-\begin{proof}
-Étant donné que $id_u(p)=k/4$, en utilisant l'équation \eqref{eqn:Indexboundary}, on a:
-\begin{eqnarray*}
-    \lim\limits_{s\rightarrow 0}\displaystyle\int_s^{1-s} dW_p^\gamma&=&\frac{k\pi}{2}+\hat{p}-\pi-\hat{p}\\
-    &=&(k-2)\frac{\pi}{2}=-(N_s-1)\frac{\pi}{2},
-\end{eqnarray*}
-et donc $N_s=3-k$.
-\begin{itemize}
-\item Si $k=1$, alors $\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{1-s} dW_p^\gamma= -\frac{\pi}{2}$. En conséquence, on observe l'existence d'un seul secteur.\vspace{0.1cm}
-\item Sinon, si $k<1$. Selon le théorème des valeurs intermédiaires :\vspace{0.1cm}
-\begin{itemize}
-\item[-] Pour $k=0$, il existe $t_1\in]0, 1[$ tel que :
-$$\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{t_1} dW_p^\gamma= -\frac{\pi}{2} \mbox{ et } \lim\limits_{s\rightarrow 0}\displaystyle\int_{t_1}^{1-s} dW_p^\gamma= -\frac{\pi}{2}.$$
-Par conséquent, on observe l'existence de 2 secteurs.\vspace{0.1cm}
-\item[-] Pour $k=-1$, il existe $t_1$ et $t_2$ dans $]0, 1[$, $t_1<t_2$ tels que :
-$$\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{t_1} dW_p^\gamma= -\frac{\pi}{2},~ \int_{t_1}^{t_2}dW^\gamma_p=-\frac{\pi}{2} \mbox{ et } \lim\limits_{s\rightarrow 0}\displaystyle\int_{t_2}^{1-s} dW_p^\gamma= -\frac{\pi}{2}.$$\\\vspace{0.1cm}
-\item[-] Pour $k<0$, il existe $(t_i)_{i\in\llbracket2, N_s\rrbracket}$, avec $0<t_1\leq\dots\leq t_{-k+1}<1$ tels que :
-%\small
-$$\lim\limits_{s\rightarrow 0}\displaystyle\int_s^{t_1} dW_p^\gamma= -\frac{\pi}{2},~ \lim\limits_{s\rightarrow 0}\displaystyle\int_{t_2}^{1-s} dW_p^\gamma= -\frac{\pi}{2} \mbox{ and } \int_{t_1}^{t_{-k+1}}dW^\gamma_p=\sum_{i=1}^{-k}\displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma,$$
-où $\forall i\in\llbracket 1, -k\rrbracket, \displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma=-\frac{\pi}{2}.$
-%\normalsize
-Par conséquent, nous observons l'existence de $2-k$ secteurs.
-La fonction $t\longmapsto\displaystyle\int_{t_1}^t dW_p^\gamma\in\mathcal{C}^0([0,1])$ implique, selon le théorème des valeurs intermédiaires, l'existence de $(t_i)_{i\in\llbracket2, -k+1\rrbracket}\subset[0, 1]$ tels que $\displaystyle\int_{t_1}^{t_f} dW_p^\gamma=\sum_{i=1}^{-k}\displaystyle\int_{t_i}^{t_{i+1}}dW_p^\gamma$ où $\displaystyle\int_{t_i}^{t_{i+1}}dW_p^\gamma=-\frac{\pi}{2},~\forall i\in\llbracket1, N_s\rrbracket$ et $t_{N_s+1}:=t_1$.
-Grâce au théorème des valeurs intermédiaires, il existe $t_i$ tel que :
-$$\displaystyle\int_{t_1}^{t_f} dW_p^\gamma= \sum_{i=1}^{-k}\displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma \mbox{ with } \displaystyle\int_{t_i}^{t_{i+1}} dW_p^\gamma=-\frac{\pi}{2}\mbox{ and } t_f=t_{-k+1}.$$
-\end{itemize}
-\end{itemize}
-\end{proof}
-La figure \ref{fig:separatrice_illustration} illustre le partitionnement du voisinnages de points singulier par les séparatrices issues de ces points singuliers. En effet, en fonction de l'index du point ces séparatrices divisent le voisinnage du point en un nombre fini de de secteur. Par rapport à ces secteurs, nous avons la proposition suivante:
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.282]{images/sepa_5.pdf}

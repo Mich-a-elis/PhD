@@ -107,10 +107,28 @@ Cook, W.~A. (1974).
 \newblock {\em International Journal for Numerical Methods in Engineering},
   8(1):27--43.
 
+\bibitem[Crane, 2019]{crane2019n}
+Crane, K. (2019).
+\newblock The n-dimensional cotangent formula.
+\newblock {\em Online note. URL: https://www. cs. cmu. edu/\~{}
+  kmcrane/Projects/Other/nDCotanFormula. pdf}, pages 11--32.
+
+\bibitem[Crane et~al., 2010]{crane2010trivial}
+Crane, K., Desbrun, M., and Schr{\"o}der, P. (2010).
+\newblock Trivial connections on discrete surfaces.
+\newblock In {\em Computer Graphics Forum}, volume~29, pages 1525--1533. Wiley
+  Online Library.
+
 \bibitem[D'azevedo, 2000]{d2000bilinear}
 D'azevedo, E.~F. (2000).
 \newblock Are bilinear quadrilaterals better than linear triangles?
 \newblock {\em SIAM Journal on Scientific Computing}, 22(1):198--217.
+
+\bibitem[de~Goes and Crane, 2010]{de2010trivial}
+de~Goes, F. and Crane, K. (2010).
+\newblock Trivial connections on discrete surfaces revisited: A simplified
+  algorithm for simply-connected surfaces.
+\newblock Technical report, Technical Report.
 
 \bibitem[de~Moura~Pinto and Freitas, 2009]{de2009fast}
 de~Moura~Pinto, F. and Freitas, C. M. D.~S. (2009).
@@ -118,6 +136,13 @@ de~Moura~Pinto, F. and Freitas, C. M. D.~S. (2009).
   boundaries.
 \newblock In {\em 2009 XXII Brazilian Symposium on Computer Graphics and Image
   Processing}, pages 96--103. IEEE.
+
+\bibitem[de~Saint-Gervais, 2014]{Henri_Paul_de_Saint_Gervais}
+de~Saint-Gervais, H.~P. (2014).
+\newblock Un invariant topologique : la caractéristique d’euler-poincaré
+  d’une surface fermée.
+\newblock
+  https://analysis-situs.math.cnrs.fr/Un-invariant-topologique-la-caracteristique-d-Euler-Poincare-d-une-surface-fermee.html.
 
 \bibitem[Dziuk, 1988]{dziuk1988finite}
 Dziuk, G. (1988).
@@ -423,6 +448,10 @@ Tam, T. (1991).
 \newblock 2d finite element mesh generation by medial axis subdivision.
 \newblock {\em Advances in engineering software and workstations},
   13(5-6):313--324.
+
+\bibitem[Tianye, ]{operatorlecture}
+Tianye, L.
+\newblock Lecture 12: Discrete laplacian.
 
 \bibitem[Van~den Abeele et~al., 2008]{van2008stability}
 Van~den Abeele, K., Lacor, C., and Wang, Z.~J. (2008).

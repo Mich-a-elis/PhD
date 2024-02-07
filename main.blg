@@ -7,49 +7,52 @@ Warning--empty publisher in alliez2003anisotropic
 Warning--empty journal in barth2003finite
 Warning--can't use both volume and number fields in bommes2013quad
 Warning--empty publisher in catmull1998recursively
+Warning--can't use both volume and number fields in crane2010trivial
 Warning--can't use both volume and number fields in gurung2011squad
 Warning--empty journal in hecht2007maillage
 Warning--can't use both volume and number fields in kalberer2007quadcover
 Warning--can't use both volume and number fields in nieser2011cubecover
-You've used 80 entries,
+Warning--empty year in operatorlecture
+Warning--empty journal in operatorlecture
+You've used 85 entries,
             1935 wiz_defined-function locations,
-            903 strings with 16536 characters,
-and the built_in function-call counts, 31837 in all, are:
-= -- 3180
-> -- 1133
-< -- 78
-+ -- 392
-- -- 370
-* -- 2563
-:= -- 5400
-add.period$ -- 246
-call.type$ -- 80
-change.case$ -- 570
-chr.to.int$ -- 80
-cite$ -- 88
-duplicate$ -- 1321
-empty$ -- 2321
-format.name$ -- 486
-if$ -- 6355
+            924 strings with 17317 characters,
+and the built_in function-call counts, 33678 in all, are:
+= -- 3372
+> -- 1185
+< -- 85
++ -- 410
+- -- 386
+* -- 2690
+:= -- 5709
+add.period$ -- 261
+call.type$ -- 85
+change.case$ -- 604
+chr.to.int$ -- 85
+cite$ -- 96
+duplicate$ -- 1405
+empty$ -- 2451
+format.name$ -- 509
+if$ -- 6731
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 86
-newline$ -- 399
-num.names$ -- 240
-pop$ -- 557
+missing$ -- 89
+newline$ -- 423
+num.names$ -- 255
+pop$ -- 588
 preamble$ -- 1
-purify$ -- 585
+purify$ -- 618
 quote$ -- 0
-skip$ -- 1013
+skip$ -- 1085
 stack$ -- 0
-substring$ -- 2259
-swap$ -- 237
-text.length$ -- 28
+substring$ -- 2385
+swap$ -- 259
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 456
-warning$ -- 8
-while$ -- 274
+type$ -- 486
+warning$ -- 11
+while$ -- 290
 width$ -- 0
-write$ -- 1030
-(There were 8 warnings)
+write$ -- 1092
+(There were 11 warnings)
