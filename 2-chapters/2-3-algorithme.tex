@@ -17,11 +17,12 @@ Soit $\Omega$ un domaine compact et connexe de $\mathbb{R}^2$ dont le bord $\par
 
 Considérons maintenant un maillage triangulaire $\Omega_h$ de $\Omega$. Par là, nous entendons que $\Omega_h$ est une surface polygonale compacte de $\mathbb{R}^2$ représentant une triangulation conforme de $\Omega$. Autrement dit, $\Omega_h$ est formé par l'union de $N_t$ triangles fermés non vide ($\Omega_h=\cup_{k=1}^{N_t}T_k$) tel que tout intersection entre deux triangles est soit vide, soit un sommet, soit une arête. De plus, tous les sommets de $\Omega_h$ appartiennent à $\Omega$. Nous noterons $\mathcal{T}_h$ l'ensemble des triangles formant $\Omega_h$, l'indice $h$ faisant référence à la finesse du maillage, que l’on définit par le diamètre maximal des triangles constituant $\Omega_h$.
 $$
-h:=\max_{T\in\mathcal{T}_h} diam(T)
+h:=\max_{T\in\mathcal{T}_h} diam(T).
 $$
 Le diamètre d’un triangle est la distance maximale entre deux points du triangle. La condition $h\rightarrow 0$ h tend vers 0) signifie que tous les triangles $T_k$ ont un diamètre qui tend vers $0$. Ainsi on a $\bar{\Omega}=\Omega_h$ lorsque $h\rightarrow 0$. Nous notons $\mathcal{A}_h$ et $\mathcal{S}_h$ les ensembles respectivement des sommets et des arêtes de $\Omega_h$. Pour tout $p\in\Omega_h$, nous désignons par $T_p$ la partie du plan formé par l'ensemble des triangles de $\Omega_h$ contenant $p$: $T_p=\displaystyle\cup_{T\in\mathcal{T}_h\atop~p\in T~}T$.
 
 \subsection{Champ de croix}
+\label{subsec:discr_champ_de_croix}
 
 Nous cherchons maintenant à construire une représentation du champ de croix $\bar{u}$ sur le maillage triangulaire $\Omega_h$. Pour ce faire, nous allons nous orienter en nous basant sur les différentes opérations que nous devrons effectuer sur cette représentation en prenant comme modèle les opérations réalisées sur $\bar{u}$ dans le chapitre \ref{chap:theoritical}. Observons que nous devrons calculer la variation de l'angle des croix le long d'un arc paramétré, notamment pour déterminer l'indice de points ou pour quantifier la variation du champ de croix dans une partie du domaine. En limitant ces arcs aux bords des triangles, il devient évident qu'il est possible de simplifier le problème en connaissant la variation des croix le long des arêtes du triangle. En d'autres termes, il nous faut une notion de variation d'angle entre deux croix quelconques. Nous avons alors la définition suivante:
 
@@ -242,6 +243,8 @@ On trouve ensuite $p_{i+1}$ en utilisant l'équation \ref{eqn:formule_W} avec $W
 
 
 \subsection{Lien entre $\bar{u}$ et $\bar{u}_h$}
+\label{Lien_u_u_h}
+
 Dans cette section, nous procédons à une comparaison entre le champ de croix $\bar{u}$ et sa représentation discrète $\bar{u}_h$. L'objectif est de mieux comprendre l'adéquation entre ces deux formulations et d'évaluer la précision de l'approximation $\bar{u}_h$ par rapport au champ continu $\bar{u}$.
 
 \paragraph{Points singuliers:}
@@ -269,16 +272,26 @@ Une conséquence de la représentation du champ de croix que nous avons présent
 Il est essentiel de souligner que dans cette opération, le maillage demeure inchangé. En pratique, on conserve simplement en mémoire les triangles constituant les zones singulières ainsi que le point choisi comme singulier dans la zone. La valeur du champ de croix est ensuite obtenue (si nécessaire) en un point en appliquant l'équation \eqref{eqn:etoilage}.
 
 \paragraph{Convergence:}
-On déclare qu'une suite de champs de croix converge vers un autre champ de croix lorsque les champs d'angles associés convergent les uns vers les autres.
+Soit $\eta$ une fonction définie sur $\Omega$ et $\eta_h$ sa représentation élément fini définie sur $\Omega_h$. Notons que $\bar{\Omega}$ ne correspond pas nécessairement à la réunion des triangles de $\Omega_h$ (voir figure \ref{fig:Omega_vs_Omega_h}). Par conséquent, le support de $\eta$ et de $\eta_h$ ne coïncide pas. Pour comparer ces deux fonctions, nous nous appuyons sur les travaux de \cite{dziuk1988finite} en introduisant une opération d'extension appelée \emph{lift}, qui permet d'étendre $\eta_h$ sur $\Omega$. Cette extension est notée $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$.
 
-Pour comparer une fonction $\eta_h$ définie sur $\Omega_h$ à une fonction définie sur $\Omega$, nous introduisons une opération d'extension, appelée \emph{lift de} $\eta$ et notée $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$. À cette fin, nous supposons que $\Omega$ peut être représenté globalement par une fonction de distance orientée $d$ définie sur un sous-ensemble ouvert $U$ de $\mathbb{R}^2$.
-$$\Omega=\{x\in U,~d(x)=0\},$$
-$d$ dans $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\},~0\leq\alpha\leq 1$). Le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ est alors défini par:
+Supposons alors que $\Omega$ peut être représenté globalement par une fonction de distance orientée $d$ définie sur un sous-ensemble ouvert $U$ de $\mathbb{R}^2$.
+\[
+\Omega=\{x\in U,~d(x)=0\},
+\]
+où $d$ est dans $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\},~0\leq\alpha\leq 1$). Le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ est alors défini par :
 \begin{equation}
-\eta_h(p)=[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h](p-d(p)n(p))\quad\quad\quad pour~tout~p\in\Omega_h
 \end{equation}
-où $n$ est la normale sortante en $p$.
+où $n$ est la normale sortante en $p$. Il résulte des travaux de \cite{dziuk1988finite} que $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ converge vers $\eta$, et que l'erreur de représentation de la géométrie (d'ordre 2) est négligeable par rapport à l'erreur d'approximation du schéma numérique.
 
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.45]{images/Omega_vs_Omega_h.pdf}
+  \caption{Comparaison de $\Omega$ et $\Omega_h$.}
+  \label{fig:Omega_vs_Omega_h}
+\end{figure}
+
+Nous cherchons donc a appliquer se résultat pour comparer le champ de croix $\bar{u}_h$ défini sur $\Omega_h$ et le champ de croix $\bar{u}$ défini sur $\Omega$. On dira qu'une suite de champs de croix converge vers un autre champ de croix lorsque les champs d'angles associés convergent les uns vers les autres.
 Pour tout $T\in\mathcal{T}_h$ avec $T$ non-singulier, on sait par construction, qu'il existe $m:T\longrightarrow \mathbb{Z}$ tel que $\theta_{\bar{u}_h}+m\pi/2$ est linéaire dans $T$. En utilisant les résultats de \cite{dziuk1988finite} il en découle que $[\mathbf{L}_{\Omega_h}^{\Omega}\theta_{\bar{u}_h}]$ tend vers $\theta_{\bar{u}}$ sur $\Omega\backslash\cup_{Z\in\mathbf{Z}}Z$ lorsque $h$ tend vers $0$. Or on sait que lorsque $h$ tend vers $0$, le diamètre des triangles du maillage tend vers $0$ e qui entraîne une diminution de la taille des zones singulières $Z$ pour tout $Z\in\mathbf{Z}$. Par conséquent, lorsque $h$ tend vers $0$, le champ scalaire $[\mathbf{L}_{\Omega_h}^{\Omega}\theta_{\bar{u}_h}]$ converge vers $\theta_{\bar{u}}$ sur $\Omega$. On montre ainsi que le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{u}_h]$ sur $\Omega$ du champ de croix $\bar{u}_h$ converge vers le champ de croix $\bar{u}$ sur $\Omega$ lorsque $h$ tend vers $0$.
 
 \section{Partitionnement de $\partial\Omega_h$}
@@ -289,7 +302,6 @@ L'adaptation de l'algorithme de partitionnement \ref{alg:algo_main} au maillage 
 \vspace{0.5cm}
 \RestyleAlgo{ruled}
 \begin{algorithm}[h!]
-\label{alg:discr_algo_main}
 \renewcommand{\algorithmcfname}{Algorithme}%
 \SetAlgoLined
 \Entree{$\Omega_h$ un maillage triangulaire, champ de croix $\bar{u}_h$}
@@ -300,8 +312,10 @@ L'adaptation de l'algorithme de partitionnement \ref{alg:algo_main} au maillage 
 3.\quad Intégration des séparatrices\\[0.2cm]
 4.\quad Identification des régions\\[0.2cm]
 \caption{Partitionnement $\Omega_h$}
+\label{alg:discr_algo_main}
 \end{algorithm}
 \vspace{0.5cm}
+
 
 \subsection{Recherche de points singuliers}
 
@@ -498,7 +512,7 @@ Dans cette phase, notre objectif est de découper le maillage triangulaire initi
 Considérons $T$ comme un triangle de $\Omega_h$ traversé par certains segments des séparatrices construites (voir figure \ref{fig:exemple_insert_pt_0}). Pour insérer ces segments dans $T$, nous commençons par introduire les points de bord de ces segments tout en conservant la structure en triangles du triangle initial. De cette manière, nous obtenons un raffinement triangulaire de $T$. Pour insérer un point $p$ dans $T$ (s'il ne fait pas encore parti du raffinement), on commence par identifier l'élément ou des deux éléments de $T$ contenant ce point. Ensuite, l'insertion de $p$ s'opère dans ces éléments en générant de nouveaux triangles de la manière suivante (voir figure \ref{fig:insert_pt}):\\
 \begin{itemize}
  \item si $p$ se trouve à l'intérieur d'un triangle $K\subset T$ alors son insertion génère trois nouveaux triangles par liaison de $p$ aux sommets de $K$.\\
- \item si $p$ se trouve sur une arête d'un triangle $K\subset T$, alors don insertion engendre deux nouveaux triangles par liaison de $p$ au sommet opposé à l'arête concernée.
+ \item si $p$ se trouve sur une arête d'un triangle $K\subset T$, alors don insertion engendre deux nouveaux triangles par liaison de $p$ au sommet opposé à l'arête concernée.\\
 \end{itemize}
 
 \begin{figure}[h!]
@@ -562,7 +576,7 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 
 \vspace{0.5cm}
 \RestyleAlgo{ruled}
-\begin{algorithm}[H]
+\begin{algorithm}[h!]
 \label{alg:retournement_arete}
 \renewcommand{\algorithmcfname}{Algorithme}%
 \SetAlgoLined
@@ -592,7 +606,7 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 \end{algorithm}
 \vspace{0.5cm}
 
-En appliquant cet algorithme (\ref{alg:retournement_arete}) à l'exemple de la figure \ref{fig:exemple_insert_pt}, on observe que le segment $GH$ n'est pas inclus parmi les arêtes de $T_{mesh}$. On forme ensuite $T_{GH}$ à partir des triangles $BDG$ et $BHD$. En modifiant l'arête $DB$ en $GH$, nous constatons que le polygone $DGBH$ reste convexe, confirmant ainsi le succès du retournement d'arête. Cela nous donne les nouveaux triangles $DGH$ et $GBH$ inclus parmi les triangles de $T_{mesh}$, ainsi que l'arête $GH$ ajoutée aux arêtes de $T_{mesh}$ que nous cherchions à récupérer (voir figure \ref{fig:retournement_arete}).
+En appliquant cet algorithme (Algorithme \ref{alg:retournement_arete}) à l'exemple de la figure \ref{fig:exemple_insert_pt}, on observe que le segment $GH$ n'est pas inclus parmi les arêtes de $T_{mesh}$. On forme ensuite $T_{GH}$ à partir des triangles $BDG$ et $BHD$. En modifiant l'arête $DB$ en $GH$, nous constatons que le polygone $DGBH$ reste convexe, confirmant ainsi le succès du retournement d'arête. Cela nous donne les nouveaux triangles $DGH$ et $GBH$ inclus parmi les triangles de $T_{mesh}$, ainsi que l'arête $GH$ ajoutée aux arêtes de $T_{mesh}$ que nous cherchions à récupérer (voir figure \ref{fig:retournement_arete}).
 
 \begin{figure}[h!]
 \centering
@@ -602,7 +616,7 @@ En appliquant cet algorithme (\ref{alg:retournement_arete}) à l'exemple de la f
 \label{fig:retournement_arete}
 \end{figure}
 
-En appliquant le processus précédemment décrit sur l'exemple de la figure \ref{fig:detect_intersection}, on modifie localement chaque triangle traversé par une séparatrice ce qui nous donne un maillage global adapté au partitionnement effectué. Il ne reste plus qu'à récupérer chaque partition sous la forme d'un sous-maillage, ce qui peut être réalisé grâce à un algorithme glouton (voir Annexe). Le résultat est illustré sur la figure \ref{fig:eclatement}.
+En appliquant le processus précédemment décrit à l'exemple de la figure \ref{fig:detect_intersection}, on modifie localement chaque triangle traversé par une séparatrice ce qui nous donne un maillage global adapté au partitionnement effectué. Il ne reste plus qu'à récupérer chaque partition sous la forme d'un sous-maillage, ce qui peut être réalisé grâce à un algorithme glouton (voir Annexe). Le résultat est illustré sur la figure \ref{fig:eclatement}.
 
 \begin{figure}[h!]
 \centering
@@ -787,7 +801,6 @@ Le maillage proprement dit suit alors le même principe. On trace des lignes de 
 \end{figure}
 
 
-\color{red}
 \subsection{Méthode basée sur des EDP}
 Cette approche implique de générer le maillage pour un bloc spécifique en résolvant une Équation aux Dérivées Partielles (EDP), en utilisant la forme du contour du bloc comme condition aux bords. Considérons $C_i$, avec $i \in \llbracket 1, 4 \rrbracket$, comme les séparatrices (numérotées dans le sens positif) définissant les côtés d'un bloc particulier, noté $\Gamma$. Supposons que les côtés opposés $C_1$ et $C_3$ soient discrétisés en $m$ nœuds, tandis que les côtés opposés $C_2$ et $C_4$ soient discrétisés en $n$ nœuds. L'idée sous-jacente consiste à élaborer le maillage en construisant deux familles de lignes de niveau, l'une parallèle (au sens où elles ne s'intersectent pas) à $C_1$ et $C_3$, et l'autre orthogonale (au niveau des points d'intersection) à $C_2$ et $C_4$, et inversement pour l'autre famille de lignes de niveau. Soient $U$ et $V$ les solutions des équations suivantes :
 $$
@@ -812,9 +825,31 @@ V(p)&=& 0 & \mbox{ sur } C_4.
 \right.
 $$
 \[\]
-Les lignes de niveau des champs scalaires $U$ et $V$ forment ainsi une grille régulière à partir de laquelle on peut déduire un maillage pour le bloc $\Gamma$. Pour ce faire, il suffit de considérer les lignes de niveau correspondant aux valeurs prises par les nœuds de discrétisation sur les bords de ces champs. Cela est illustré dans les figures \ref{fig:quad_equation_1}, \ref{fig:quad_equation_2} et \ref{fig:quad_equation_3}. Dans cet exemple, nous choisissons $m=n=12$. Les intersections des lignes de niveaux sont alors considérées comme des nœuds du maillage, et les éléments du maillage sont construits en reliant ces nœuds. Cependant, un tel maillage peut être insatisfaisant car on observe que les cellules ne sont pas homogènes. De plus, les noeuds du bords ne correspondent pas forcément au discrétrisation des séparatrices ce qui entraîne un déphase des noeuds entre deux blocs voisins et donc une non-conformité du maillage. Pour remédier à cela, nous introduisons une grille régulière notée $(u_{ij}){\substack{i\in\llbracket 1, n\rrbracket\j\in\llbracket 1, m\rrbracket}}$ de taille $n\times m$, dont les nœuds $u{ij}$ sont donnés par:
+Les lignes de niveau des champs scalaires $U$ et $V$ forment ainsi une grille régulière à partir de laquelle on peut déduire un maillage pour le bloc $\Gamma$. Pour ce faire, il suffit de considérer les lignes de niveau correspondant aux valeurs prises par les nœuds de discrétisation sur les bords de ces champs. Cela est illustré dans les figures \ref{fig:quad_equation_1}, \ref{fig:quad_equation_2} et \ref{fig:quad_equation_3}. Dans cet exemple, nous choisissons $m=n=12$. Les intersections des lignes de niveaux sont alors considérées comme des nœuds du maillage, et les éléments du maillage sont construits en reliant ces nœuds. Cependant, un tel maillage peut être insatisfaisant car on observe que les cellules ne sont pas homogènes. De plus, les noeuds du bords ne correspondent pas forcément au discrétrisation des séparatrices ce qui entraîne un déphase des noeuds entre deux blocs voisins et donc une non-conformité du maillage. Pour remédier à cela, nous introduisons une grille régulière notée $(u_{ij})_{\substack{i\in\llbracket 1, n\rrbracket\\j\in\llbracket 1, m\rrbracket}}$  de taille $n\times m$ à partir duquel nous construisons le maillage sur le bloc. Pour ce faire:\\\\
+Soit $C_1^k$, $k\in\llbracket 1, n\rrbracket$, les $n$ noeuds du côté $C_1$.\\\\
+Soit $C_2^k$, $k\in\llbracket 1, m\rrbracket$, les $m$ noeuds du côté $C_2$.\\\\
+Soit $C_3^k$, $k\in\llbracket 1, n\rrbracket$, les $n$ noeuds du côté $C_3$.\\\\
+Soit $C_4^k$, $k\in\llbracket 1, m\rrbracket$, les $m$ noeuds du côté $C_4$.\\\\
+Les nœuds $u{ij}=(u_{ij}^x, u_{ij}^y)$ de la grille $(u_{ij})_{\substack{i\in\llbracket 1, n\rrbracket\\j\in\llbracket 1, m\rrbracket}}$ sont alors  donnés par:
 \begin{equation}
-u_{ij}=(u_{ij}^x, u_{ij}^y)=(i-1, j-1),\quad i\in\llbracket 1, n\rrbracket,\quad j\in\llbracket 1, m\rrbracket.
+u_{ij}=
+\left\{
+\begin{array}{ll}
+(U(C_1^j), V(C_1^j)),&\mbox{ pour } j=1 \mbox{ et } i\in\llbracket 1, m\rrbracket\\\\
+(U(C_2^i), V(C_2^i)),&\mbox{ pour } i=1 \mbox{ et } j\in\llbracket 1, n\rrbracket\\\\
+(U(C_3^j), V(C_3^j)),&\mbox{ pour } j=1 \mbox{ et } i\in\llbracket 1, m\rrbracket\\\\
+(U(C_4^i), V(C_4^i)),&\mbox{ pour } i=1 \mbox{ et } j\in\llbracket 1, n\rrbracket
+\end{array}
+\right.
+\end{equation}
+et pour tout $i\in\llbracket 2, n-1\rrbracket$ et $j\in\llbracket 2, m-1\rrbracket$, on a:
+\begin{equation}
+\left\{
+\begin{array}{ll}
+u_{ij}^x=u_{1j}^x+\displaystyle\frac{j-1}{m-1}\left(u_{nj}^x-u_{1j}^x\right),\\\\
+u_{ij}^y=u_{i1}^y+\displaystyle\frac{i-1}{n-1}\left(u_{im}^x-u_{i1}^y\right).
+\end{array}
+\right.
 \end{equation}
 Le maillage (voir \ref{fig:quad_equation_4}) est alors obtenu en cherchant dans $\Gamma$ et en reliant les points $P_{ij}=(P_{ij}^x, P_{ij}^y)$, $i\in\llbracket 2, n-1\rrbracket$, $j\in\llbracket 2, m-1\rrbracket$ vérifiant:
 \begin{equation}
@@ -884,7 +919,6 @@ C'est cette dernière méthode que nous choisissons d'adopter dans notre implém
 \label{fig:maillage_quad_carre}
 \end{figure}
 
-\color{black}
 
 \section{Opération d'alignement}
 
@@ -896,6 +930,7 @@ Considérons $\bar{u}_h$ comme une représentation discrète de $\bar{u}$ sur $\
 \end{equation}
 où $g(a)$ est donné par:
 \begin{equation}
+\label{eqn:n_reconstruit}
 g(a)=\displaystyle\frac{1}{\|\overrightarrow{ab}\|+\|\overrightarrow{ac}\|}\left(\overrightarrow{ab}+\overrightarrow{ac}\right).
 \end{equation}
 Ensuite, on élimine les arêtes de bord où la variation angulaire $\delta\theta$ du champ $\bar{n}_h$ n'est pas définie, soit en effectuant un raffinement local ou global du maillage, soit en insérant dans le maillage un nouveau point situé au milieu de l'arête en question. Ce point sera considéré comme un point singulier dans le champ $\bar{n}_h$, et par conséquent, pour un tel point $a\in\mathcal{S}_h\cap\partial\Omega_h$, nous fixons $\bar{n}_h(a)=0$. Ainsi, on se retrouve avec deux types d'arêtes incluses dans $\partial\Omega_h$ : les arêtes avec un sommet singulier dans $\bar{n}_h$ et les arêtes où la variation angulaire $\delta\theta$ de $\bar{n}_h$ est bien définie. La construction de $\bar{n}_h$ se poursuit alors de la manière suivante : pour tout point $p\in ab$ avec $ab$ une arête incluse dans $\partial\Omega_h$, on a:\\
@@ -1003,26 +1038,8 @@ Nous présentons le processus d'alignement à travers un exemple illustré à la
 \section{Analyse de convergence}
 \label{subsec:analyse_convergence}
 
-Dans les sections précédentes, nous avons examiné le problème du partitionnement d'un domaine défini par un maillage triangulaire, ainsi que celui de la génération d'un maillage quadrangulaire à partir du partitionnement construit. Dans cette partie, nous montrons que le maillage construit est bien un maillage du domaine de départ $\Omega$. Pour se faire il suffit de montrer que le partitionnement construit sur $\Omega_h$ que nous notons $P_h$ converge vers un partitionnement de $\Omega$ ayant des partitions de quatre côtés.
-
-Pour commencer, remarquo
-
-
-Cependant, une condition cruciale pour le bon déroulement de ce processus est que tous les blocs issus du partitionnement possèdent quatre côtés (en d'autres termes, les bords des blocs doivent résulter de l'intersection de quatre séparatrices distinctes). La question qui se pose alors est de savoir qu'est ce qui garantit que le processus de partitionnement aboutit bien a un partitionnement en blocs de quatre côtés. La réponse à cette interrogation a été exposée dans le chapitre \ref{chap:theoritical}, à travers les théorèmes \ref{thm:theorem1}, \ref{thm:theorem2} et \ref{thm:theorem3}. Ces théorèmes établissent la garantie du processus de partitionnement lorsqu'il est appliqué à un champ de croix presque-$\mathcal{C}^1$, aligné par rapport au bord du domaine où il est défini.
-
-On veut montrer que le maillage produit est bien un maillage quadrilatéral de $\Omega$. Pour cela, il suffit de montrer que les partitionnement $P_h$ tendent vers un partitionnement de $\Omega$ ayant des partions de quatres côtés.
-
-$v_h$ tend vers $v$ qui partitionne $\Omega$ en régions de quatre côtés. Notons $P$ ce partitionnement.
-
-Nous allons donc montrer que le partitionnement $P_h$ construit sur $\Omega$ converge vers $P$ ce qui nous permet de dire que pour $h$ assez fin, $P_h$ sera un partitionnement de quatre côtés. $P_h$ ayant été construit à partir des séparatrices de $v_h$, il suffit donc de montrer que $v_h$ converge vers les séparatrices de $v$.
-
-$\Omega_h$ tend vers $\Omega$ donc nh tend vers n. le champ phih est une approximation element fini du probleme continu:
-
-Sachant que Lnh tend vers n sur Omega, il vient que Lphih tend vers phi sur Omega. Par conséquent Lthetavh converge vers thetav sur Omega et par suite vh tend vers v.
-$v_h$ tend vers $v$. en effet,
-\begin{lemma}
-Le champ de croix $\bar{v}_h$ converge vers le champ de croix $\bar{v}$ vérifiant:
-\textbf{Opération d'alignement:} étant donné $\bar{u}$, nous définissons le champ de croix $\bar{v}$ pour tout $p\in\Omega$ par:
+Dans les sections précédentes, nous avons examiné la problématique du partitionnement d'un domaine défini par un maillage triangulaire, ainsi que celle de la génération d'un maillage quadrangulaire à partir du partitionnement ainsi construit. Cette section a pour objectif de démontrer que le maillage obtenu à partir du champ de croix résultant de l'opération d'alignement constitue effectivement un maillage du domaine initial $\Omega$. Pour cela, il suffit de démontrer que le partitionnement construit sur $\Omega_h$, que nous notons $\mathcal{P}_h$, converge vers un partitionnement de $\Omega$ comprenant des partitions quadrilatérales.\\\\
+Soit $\bar{v}$ le champ de croix définit par:
 \begin{equation}
 \bar{v}(p)=
 \left\{
@@ -1032,7 +1049,7 @@ Le champ de croix $\bar{v}_h$ converge vers le champ de croix $\bar{v}$ vérifia
 0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
 \end{array}
 \right.
-\label{eqn:principe_def_v}
+\label{eqn:continuous_def_v}
 \end{equation}
 où $\phi:\Omega\longrightarrow\mathbb{R}$ est définie comme la solution de l'équation de Laplace suivante:
 \begin{equation}
@@ -1042,99 +1059,67 @@ où $\phi:\Omega\longrightarrow\mathbb{R}$ est définie comme la solution de l'�
 \phi(\gamma(t))&=&\theta_{\bar{n}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})),
 \end{array}
 \right.
-\label{eqn:principe_def_phi}
+\label{eqn:continuous_def_phi}
 \end{equation}
 où la fonction $\mathcal{I}$ est donnée pour tout $t\in\gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}))$ par:
 $$
 \mathcal{I}(t)=\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{n}}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{n}}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
 $$
-avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$.
-$u_h\rightarrow u$
-\end{lemma}
+avec $\widehat{\gamma(s)}$ représentant la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$. Selon le théorème \ref{thm:theorem1} du chapitre \ref{chap:theoritical}, l'algorithme \ref{alg:algo_main} permet, en l'absence de convergence de séparatrices vers un cycle limite, de partir de $\bar{v}$ pour créer un partitionnement $\mathcal{P}$ de $\Omega$ tel que toutes les partitions soient formées par quatre séparatrices disjointes. Afin d'atteindre l'objectif énoncé, il est donc nécessaire de démontrer que les séparatrices $SL_h$ du partitionnement $\mathcal{P}_h$ convergent vers les séparatrices du partitionnement $\mathcal{P}$ lorsque $h$ tend vers $0$.\\\\
+ Notons que, par construction, $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{n}_h]$ converge vers $\bar{n}$ lorsque $h$ tend vers 0, puisque $\Omega_h$ tend vers $\Omega$. Il en est de même pour le champ de croix initial $\bar{u}_h$ (voir la sous-section \ref{Lien_u_u_h}). Ainsi, le problème \eqref{eqn:algorithm_def_phi} constitue une approximation du problème \eqref{eqn:continuous_def_v}. Par conséquent, on a $[\mathbf{L}_{\Omega_h}^{\Omega}\theta_{\bar{v}_h}]=[\mathbf{L}_{\Omega_h}^{\Omega}(\phi_h+\theta_{\bar{u}_h})]$ qui tend vers $\theta_{\bar{v}}=\phi+\theta_{\bar{u}}$. En d'autres termes, le champ de croix $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{v}h]$ converge vers le champ de croix $\bar{v}$ sur $\Omega_h$. On en déduit alors que les séparatrices de $\bar{v}$ internes à $\Omega_h$ convergent vers les séparatrices de $\bar{v}$ internes à $\Omega$. En effet, étant donné que $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{v}_h]$ converge vers $\bar{v}$, l'ensemble des points singuliers de $\bar{v}_h$ converge vers l'ensemble des points singuliers de $\bar{v}$ et, de plus, les directions de sortie des séparatrices de $\bar{v}h$ calculées avec la fonction $W^\gamma_{\bar{v}_h}$ convergent vers les directions de sortie des séparatrices de $\bar{v}$.\\\\
+ Pour la convergence des séparatrices de bord, deux analyses sont possibles. Premièrement, comme $\Omega_h$ tend vers $\Omega$ lorsque $h$ tend vers 0, il en va de même pour $\partial\Omega_h$, qui converge vers $\partial\Omega$. Ainsi, en considérant $\partial\Omega_h$ comme une approximation de la séparatrice de bord de $\bar{v}_h$, on obtient la convergence recherchée.\\\\
+Une analyse plus approfondie consiste à ne pas considérer $\partial\Omega_h$ comme la séparatrice de bord de $\bar{v}_h$. Remarquons que le champ de croix $\bar{n}_h$ n'est pas aligné avec $\partial\Omega_h$. Nous définissons alors le domaine $\widetilde{\Omega_h}$ dont le bord $\partial\widetilde{\Omega_h}$ est aligné avec le champ de croix $\bar{n}_h$. Ainsi, les séparatrices de bord de $\bar{v}_h$ sont maintenant données (sans approximation) par le bord $\partial\widetilde{\Omega_h}$ de $\widetilde{\Omega_h}$. Notons que $[\mathbf{L}_{\Omega_h}^{\widetilde{\Omega_h}}\bar{v}_h]$ converge vers $\bar{v}_h$, puisque $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{v}_h]$ converge vers $\bar{v}_h$. Il en découle que les séparatrices de $[\mathbf{L}_{\Omega_h}^{\widetilde{\Omega_h}}\bar{v}_h]$ convergent vers les séparatrices de $\bar{v}$, y compris les séparatrices de bord qui correspondent au bord $\partial\widetilde{\Omega_h}$ de $\widetilde{\Omega_h}$. L'intérêt d'une telle analyse réside dans le fait qu'elle permet, en pratique, de reconstruire une approximation d'ordre élevé du bord de $\Omega_h$, comme nous le verrons dans la section suivante.
 
-\begin{lemma}
-$u_h\rightarrow u$
-\end{lemma}
-
-\begin{lemma}
-$u_h\rightarrow u$
-\end{lemma}
-
-\begin{lemma}
-$u_h\rightarrow u$
-\end{lemma}
-
-L'ensemble des points singuliers de $v_h$ tend vers l'ensemble des points singuliers de $v$
-
-Les séparatrices interne de $v_h$ convergent vers les séparatrices de $v$: en effet, l'ensemble des points singuliers de $v_h$ converge vers l'ensemble des points singuliers de $v$ et les directions de sortie des séparatrices de $v_h$ converge vers les directions de sorties des séparatrices de $v$. Ce la découle directement du fait que $v_h$ converger vers $v$ lorsque $h$ tend vers $0$.
-
-\begin{corollary}
-$\mathcal{S}_{\bar{v}_h}\rightarrow \mathcal{S}_{\bar{v}}$\\
-$\sum id_{\bar{v}_h}= \sum id_{\bar{v}}$\\
-$W_{\bar{u}_h}^h\rightarrow W_{\bar{u}}$ donc Convergence de dirh vers dir\\
-Convergence de Sinth vers Sinth\\
-
-\end{corollary}
-
-\begin{lemma}
-
-\end{lemma}
-
-\begin{lemma}
-
-\end{lemma}
-
-
-\[\]
-Convergence de Ph vers P\\
-Convergence de singh vers sing\\
-Convergence de Sbordh vers Sbord
-
-
-\[\]
-Pour simplifier, nous supposerons que $Cl = Cl_h$. Cette condition signifie en particulier que $Cl$ est un domaine de frontière polygonale (cf. Figure 2).
-
-\[\]
-remarque les quad de bord on pour base les triangles de bord, mesh quad plus fin que le tri
-motivation, reconstitué la courbure de
-\color{red}
-Hermitte récupere de la courbure
-\color{black}
-Pour finir il faut que le bord soit une separatrice
 
 \section{Reconstitution du bord du domaine}
-Remarquons que dans ce que nous avons présenté jusqu'a présent, les mailles quadrilatéral construit sur le bord du domaine ont leur noeuds déposé sur les aretes de bord du maillage triangulaire ayant servi à la construction. Cependant, dans les codes de calcul, on pourrait être amené a interpolé la courbure sur la frontière du maillage quadrialtéral. c'est par exemple le cas lorsqu'on a des conditions limites qui font intervenir la dérivée normale. face a une telle situation les calculs de reconstitution de normal seront donc dependant de la resolution obtenu pour les mailles de bord lors de la construction du maillage quadrilatéral. Ainsi, si le pas demandé pour le maillage quadrilatéral est plus fin que le pas du maillage triangulaire sur lequel se base la construction, on ne pourra pas récupérer  fait avec les noeuds de bord du maillage quadrilatéral et donc plus le bord
-pouvoir expliciter omega tilde permet de se passer des triangles de bord et de ne plus etre assujeti
-
-
-
-
+Notons qu'à ce stade de la présentation, les mailles quadrilatérales construites sur le bord du domaine ont leurs nœuds positionnés le long des arêtes de bord du maillage triangulaire utilisé pour la construction. Toutefois, dans les codes de calcul, il peut être nécessaire d'interpoler la courbure le long de la frontière du maillage quadrilatéral, notamment dans le cas de conditions limites impliquant la dérivée normale, telles que les conditions aux limites de Neumann et de Robin. Face à une telle situation, les calculs de reconstitution de la normale dépendront de la résolution obtenue pour les mailles de bord lors de la construction du maillage quadrilatéral (voir figure \ref{fig:mail_tri_vs_mail_quad}). Ainsi, si la finesse demandée pour le maillage quadrilatéral est supérieure à celle du maillage triangulaire servant de base à la construction, il sera impossible de récupérer de manière précise les informations avec les nœuds de bord du maillage quadrilatéral. Par conséquent, explicitement définir $\Omega_{\tilde{h}}$ permet de se dispenser des triangles de bord et de ne plus être contraint par cette dépendance.\\\\
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.65\textwidth}
     \includegraphics[width=\textwidth]{images/non_hermite_mesh_tri.pdf}
-    \caption{Champ de croix $\bar{u}_h$}
-    \label{fig:alignment_1}
+    \caption{Maillage triangulaire.}
+    \label{fig:mail_tri_vs_mail_quad_1}
 \end{subfigure}
 \\[0.5cm]
 \begin{subfigure}{0.65\textwidth}
     \includegraphics[width=\textwidth]{images/non_hermite_quad.pdf}
-    \caption{Champ scalaire $\phi_h$ (en randian)}
-    \label{fig:alignment_2}
+    \caption{Maillage quadrilatéral.}
+    \label{fig:mail_tri_vs_mail_quad_2}
 \end{subfigure}
-\caption{Illustration du processus d'alignement dans un cadre discret.}
-\label{fig:alignment}
+\caption{Illustration d'un maillage quadrilatéral plus fin que le maillage triangulaire sous-jacent.}
+\label{fig:mail_tri_vs_mail_quad}
 \end{figure}
+En utilisant une interpolation d'hermitte, on peut ainsi construire une reconstitution de régularité $\mathcal{C}^1$, $\partial\widetilde{\Omega_h}$ de $\partial\Omega_h$. Plus concrètement, soit $a$ et $b$ deux sommets de $\Omega_h$. L'arête $ab$ est remplacé par le polynôme $P$ défini pour tout $p\in ab$ par:
+\[P(p) = q_a(p)P_a(p)+q_b(p)P_b(p),\]
+où la fonction $q_x$, $x\in\{a, b\}$ est donné pour tout $p\in ab$ par:
+\[q_x(p) = \prod_{y\in\{a,b\}, y\neq x} \left(\frac{p - y}{x - y}\right)^2,\]
+et la fonction $P_x$, $x\in\{a, b\}$ est donné pour tout $p\in ab$ par:
+\[P_x(p) = x + (p - x) \left(\mathcal{N}(x) - q_x'(x)x\right),\]
+avec
+\[q_x(x)=1,\quad\quad
+q_x'(x)=\sum_{y\in\{a,b\}, y\neq x}\frac{2}{x - y},\quad\quad
+\forall j \neq i \quad q_x'(y) = q_x(y) = 0.
+\]
+et $\mathcal{N}(x)$ est la normale sortante en $x$ définit par l'équation \eqref{eqn:n_reconstruit}. Nous illustrons sur la figure \ref{fig:hermite} la Reconstitution d'une arête donné par ces deux sommets ainsi que les normales en ces sommets.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.8]{images/hermite.pdf}
+\caption{Illustration de la reconstitution d'une arête de bord par le molynôme d'Hermite.}
+\label{fig:hermite}
+\end{figure}
+
 
 
 \section{Génération de champ de croix}
 \label{subsec:gen_cross_field}
 
-Nous terminons ce chapitre en exposant quelques méthodes de génération de champ de croix que l'on rencontre daans la littérature. Dans notre travail, nous avons notemment utilisé ces méthodes pour créer les champ de croix initiaux qui sont le point d'entrée de notre opération d'alignement.
+Nous terminons ce chapitre en exposant quelques méthodes de génération de champ de croix que l'on rencontre dans la littérature. Dans notre travail, nous avons notemment utilisé ces méthodes pour créer les champ de croix initiaux qui sont le point d'entrée de notre opération d'alignement.
 
 \subsection{L'Equation de Laplace}
 
-L'idée principale de cette méthode tel que décrite dans \ref{kowalski2013pde} consiste à propager dans le domaine de calcul un champ de vecteur unitaire prescrit sur la frontière. On formule alors cette construction dans la résolution de l'équation de Laplace avec dees condition de Dirichlet sur la frontière donné par les croix associées aux normales sortantes. L'ensemble des champs de croix ne formant pas un expace vectoriel, on utilise à la place un champ de représentation donné par:
+L'idée principale de cette méthode tel que décrite dans \cite{kowalski2013pde} consiste à propager dans le domaine de calcul un champ de vecteur unitaire prescrit sur la frontière. On formule alors cette construction dans la résolution de l'équation de Laplace avec dees condition de Dirichlet sur la frontière donné par les croix associées aux normales sortantes. L'ensemble des champs de croix ne formant pas un expace vectoriel, on utilise à la place un champ de représentation donné par:
 $$
 \mathcal{R}: \mathbf{c}\in\mathbf{C}\mapsto\mathcal{R}(\mathbf{c})=
 \left\{
@@ -1220,25 +1205,34 @@ Il est important de souligner que cette construction offre une grande souplesse 
 
 \section{Homogeneisation}
 
-Comme dit dans l'introduction \ref{thesis_target} les champs de croix générer en propageant la normale extérieur à l'intérieur du domaine \cite{kowalski2013pde} produisent une distribution de singularités pouvant conduire à un partitionnement invalide ou non souhaité. Par exemple le champ de croix présenté sur la figure ... Un problème notable survient dans les domaines extrêmement étirés, tandis qu'une autre préoccupation concerne les formes de partitionnement qui entraînent des tailles de cellules très non uniformes (voir figure \ref{fig:dom_etire_mesh_inhomogene}).
+Comme dit dans l'introduction \ref{thesis_target} les champs de croix générer en propageant la normale extérieur à l'intérieur du domaine (voir la sous-section \ref{thesis_target} et \cite{kowalski2013pde}) produisent une distribution de singularités pouvant conduire à un partitionnement invalide ou non souhaité. Par exemple le champ de croix présenté sur la figure \ref{fig:non_homogene_cross_field} présente des points singuliers très rapprochés ce qui a pour effet de produire un partitionnement non-homogène et  et donc des mailles de tailles très inhomogène dans le maillage final obtenu (voir figure \ref{fig:non_homogene_mesh_quad}). Dans cette partie, nous proposons de modifier le maillage obtenu afin répondre à cette préoccupation tout en la configuration en blocs structurés du maillage obtenu.\\\\
+Nous optimisons le maillage quadrilatéral en utilisant une méthode CVT pour \emph{Centroid Voronoi Tesselation} (voir \cite{chen2004mesh}). Il s'agit d'un algorithme local visant à améliorer la qualité du maillage, principalement la régularité de la forme, en ajustant la position d'un sommet $s$ dans son patch local $T_{s}$, qui comprend tous les simplexes contenant $s$, sans modifier la connectivité. Ainsi, le sommet $s$ se transforme en $s^*$ donné par:
+$$s^*=\displaystyle\frac{1}{\displaystyle\sum_{T\in T_s}|T|}\left(\displaystyle\sum_{T\in T_s}b_T|T|\right),$$
+avec $b_T=\sum_{i=1}^3s_i/3$ est le barycentre du triangle $T$ et $(s_i)_{\in\llbracket 1, 3\rrbracket}$ sont les sommets de $T$.
+
+A défaut de pouvoir produire directement un nouveau cham
+
+Déplacer chaque noeud au centre de masse de ces cellules adjacentes
+.. Un problème notable survient dans les domaines extrêmement étirés, tandis qu'une autre préoccupation concerne les formes de partitionnement qui entraînent des tailles de cellules très non uniformes (voir figure \ref{fig:dom_etire_mesh_inhomogene}).
 Comme
 Sans deplacer les points de bord avec le demi disque\\
 puis deplacer les points de bord\\
-Tout en conservant la configuration en bloc structurée du maillage
+Tout en conservant la configuration en bloc structurée du maillage\\
+tester avec un domaine troué
 
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.5\textwidth}
     \includegraphics[width=\textwidth]{images/non_homo_cross_field.pdf}
     \caption{Champ de croix $\bar{u}_h$}
-    \label{fig:alignment_1}
+    \label{fig:non_homogene_cross_field}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.5\textwidth}
     \includegraphics[width=\textwidth]{images/non_homo_mesh_quad.pdf}
     \caption{Champ scalaire $\phi_h$ (en randian)}
-    \label{fig:alignment_2}
+    \label{fig:non_homogene_mesh_quad}
 \end{subfigure}
 \caption{Illustration du processus d'alignement dans un cadre discret.}
-\label{fig:alignment}
+\label{fig:non_homogene}
 \end{figure}

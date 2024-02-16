@@ -77,37 +77,42 @@
 \contentsline {paragraph}{Singularités d'ordre supérieur:}{63}{section*.65}%
 \contentsline {paragraph}{Convergence:}{64}{section*.66}%
 \contentsline {section}{\numberline {3.2}Partitionnement de $\partial \Omega _h$}{65}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Recherche de points singuliers}{65}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Construction des séparatrices}{65}{subsection.3.2.2}%
-\contentsline {paragraph}{Nombre de séparatrices:}{66}{section*.68}%
-\contentsline {paragraph}{Directions initiales et intégration:}{66}{section*.71}%
-\contentsline {paragraph}{Traversé d'un triangle singulier:}{67}{figure.caption.75}%
-\contentsline {paragraph}{Fusion de séparatrices:}{68}{section*.76}%
-\contentsline {subsection}{\numberline {3.2.3}Assemblage des partitions}{70}{subsection.3.2.3}%
-\contentsline {paragraph}{Intersections de séparatrices:}{70}{section*.78}%
-\contentsline {paragraph}{Identification des partitions:}{70}{section*.79}%
+\contentsline {subsection}{\numberline {3.2.1}Recherche de points singuliers}{66}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Construction des séparatrices}{66}{subsection.3.2.2}%
+\contentsline {paragraph}{Nombre de séparatrices:}{66}{section*.69}%
+\contentsline {paragraph}{Directions initiales et intégration:}{66}{section*.72}%
+\contentsline {paragraph}{Traversé d'un triangle singulier:}{67}{figure.caption.76}%
+\contentsline {paragraph}{Fusion de séparatrices:}{67}{section*.77}%
+\contentsline {subsection}{\numberline {3.2.3}Assemblage des partitions}{68}{subsection.3.2.3}%
+\contentsline {paragraph}{Intersections de séparatrices:}{68}{section*.79}%
+\contentsline {paragraph}{Identification des partitions:}{68}{section*.80}%
 \contentsline {section}{\numberline {3.3}Génération du maillage quadrilatéral}{71}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Uniformisation}{73}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Interpolation transfinie}{74}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.1}Uniformisation}{71}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Interpolation transfinie}{75}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Maillage par tracé direct de lignes de champ dans le champ de croix}{75}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Méthode basée sur des EDP}{75}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Opération d'alignement}{77}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Analyse de convergence}{80}{section.3.5}%
+\contentsline {subsection}{\numberline {3.3.4}Méthode basée sur des EDP}{76}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Opération d'alignement}{78}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Analyse de convergence}{81}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Reconstitution du bord du domaine}{82}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Génération de champ de croix}{82}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}L'Equation de Laplace}{82}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Une expression analytique}{83}{subsection.3.7.2}%
-\contentsline {section}{\numberline {3.8}Homogeneisation}{84}{section.3.8}%
-\contentsline {chapter}{\numberline {4}Extension aux surfaces courbes}{85}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Champ de croix, points singuliers, indices et séparatrices}{85}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Partitionnement}{88}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Extension des résultats principaux du cas planaire}{88}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Operation d'alignement}{88}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Etude de la méthode}{88}{subsection.4.3.2}%
-\contentsline {paragraph}{\'Etude de l'opération d'alignement}{89}{section*.96}%
-\contentsline {section}{\numberline {4.4}Analyse de convergence}{96}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Génération de champs de croix}{96}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusion et perspectives}{101}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Caractéristique d'Euler}{103}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Opérateur Laplacien discret}{103}{section.5.2}%
-\contentsline {chapter}{Références}{107}{chapter*.100}%
+\contentsline {section}{\numberline {3.7}Génération de champ de croix}{83}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}L'Equation de Laplace}{84}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Une expression analytique}{84}{subsection.3.7.2}%
+\contentsline {section}{\numberline {3.8}Homogeneisation}{85}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Extension aux surfaces courbes}{87}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Champ de croix, points singuliers, indices et séparatrices}{87}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Partitionnement de $\partial \Omega _h$ et maillage}{90}{section.4.2}%
+\contentsline {paragraph}{Traversé d'un triangle singulier:}{90}{figure.caption.101}%
+\contentsline {paragraph}{Fusion de séparatrices:}{92}{section*.102}%
+\contentsline {subsection}{\numberline {4.2.1}Assemblage des partitions}{92}{subsection.4.2.1}%
+\contentsline {paragraph}{Intersections de séparatrices:}{92}{section*.103}%
+\contentsline {paragraph}{Identification des partitions:}{92}{section*.104}%
+\contentsline {section}{\numberline {4.3}Génération du maillage quadrilatéral}{92}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Uniformisation}{92}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Opération d'alignement}{92}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Extension des résultats principaux du cas planaire}{95}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Operation d'alignement}{95}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Etude de la méthode}{95}{subsection.4.5.2}%
+\contentsline {paragraph}{\'Etude de l'opération d'alignement}{96}{section*.110}%
+\contentsline {section}{\numberline {4.6}Analyse de convergence}{102}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Génération de champs de croix}{102}{section.4.7}%
+\contentsline {chapter}{Références}{107}{chapter*.111}%

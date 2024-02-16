@@ -94,6 +94,11 @@ Catmull, E. and Clark, J. (1998).
 \newblock In {\em Seminal graphics: pioneering efforts that shaped the field},
   pages 183--188.
 
+\bibitem[Chen, 2004]{chen2004mesh}
+Chen, L. (2004).
+\newblock Mesh smoothing schemes based on optimal delaunay triangulations.
+\newblock In {\em IMR}, pages 109--120. Citeseer.
+
 \bibitem[Cohen-Steiner et~al., 2002]{cohen2002conforming}
 Cohen-Steiner, D., De~Verdiere, E.~C., and Yvinec, M. (2002).
 \newblock Conforming delaunay triangulations in 3d.
@@ -106,12 +111,6 @@ Cook, W.~A. (1974).
   meshes.
 \newblock {\em International Journal for Numerical Methods in Engineering},
   8(1):27--43.
-
-\bibitem[Crane, 2019]{crane2019n}
-Crane, K. (2019).
-\newblock The n-dimensional cotangent formula.
-\newblock {\em Online note. URL: https://www. cs. cmu. edu/\~{}
-  kmcrane/Projects/Other/nDCotanFormula. pdf}, pages 11--32.
 
 \bibitem[Crane et~al., 2010]{crane2010trivial}
 Crane, K., Desbrun, M., and Schr{\"o}der, P. (2010).
@@ -136,13 +135,6 @@ de~Moura~Pinto, F. and Freitas, C. M. D.~S. (2009).
   boundaries.
 \newblock In {\em 2009 XXII Brazilian Symposium on Computer Graphics and Image
   Processing}, pages 96--103. IEEE.
-
-\bibitem[de~Saint-Gervais, 2014]{Henri_Paul_de_Saint_Gervais}
-de~Saint-Gervais, H.~P. (2014).
-\newblock Un invariant topologique : la caractéristique d’euler-poincaré
-  d’une surface fermée.
-\newblock
-  https://analysis-situs.math.cnrs.fr/Un-invariant-topologique-la-caracteristique-d-Euler-Poincare-d-une-surface-fermee.html.
 
 \bibitem[Dziuk, 1988]{dziuk1988finite}
 Dziuk, G. (1988).
@@ -407,11 +399,6 @@ Schneiders, R. (1996).
   meshes.
 \newblock {\em Engineering with computers}, 12:168--177.
 
-\bibitem[Sharp et~al., 2019]{sharp2019vector}
-Sharp, N., Soliman, Y., and Crane, K. (2019).
-\newblock The vector heat method.
-\newblock {\em ACM Transactions on Graphics (TOG)}, 38(3):1--19.
-
 \bibitem[Shepherd and Johnson, 2008]{shepherd2008hexahedral}
 Shepherd, J.~F. and Johnson, C.~R. (2008).
 \newblock Hexahedral mesh generation constraints.
@@ -448,10 +435,6 @@ Tam, T. (1991).
 \newblock 2d finite element mesh generation by medial axis subdivision.
 \newblock {\em Advances in engineering software and workstations},
   13(5-6):313--324.
-
-\bibitem[Tianye, ]{operatorlecture}
-Tianye, L.
-\newblock Lecture 12: Discrete laplacian.
 
 \bibitem[Van~den Abeele et~al., 2008]{van2008stability}
 Van~den Abeele, K., Lacor, C., and Wang, Z.~J. (2008).

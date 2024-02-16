@@ -1,8 +1,16 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Champ de croix, points singuliers, indices et séparatrices}{\reset@font\mtcSfont 85}{section.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Partitionnement}{\reset@font\mtcSfont 88}{section.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Extension des résultats principaux du cas planaire}{\reset@font\mtcSfont 88}{section.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Operation d'alignement}{\reset@font\mtcSSfont 88}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Etude de la méthode}{\reset@font\mtcSSfont 88}{subsection.4.3.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \'Etude de l'opération d'alignement}{\reset@font\mtcPfont 89}{section*.96}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Analyse de convergence}{\reset@font\mtcSfont 96}{section.4.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Génération de champs de croix}{\reset@font\mtcSfont 96}{section.4.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Champ de croix, points singuliers, indices et séparatrices}{\reset@font\mtcSfont 87}{section.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Partitionnement de $\partial \Omega _h$ et maillage}{\reset@font\mtcSfont 90}{section.4.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Traversé d'un triangle singulier:}{\reset@font\mtcPfont 90}{figure.caption.101}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Fusion de séparatrices:}{\reset@font\mtcPfont 92}{section*.102}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Assemblage des partitions}{\reset@font\mtcSSfont 92}{subsection.4.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Intersections de séparatrices:}{\reset@font\mtcPfont 92}{section*.103}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Identification des partitions:}{\reset@font\mtcPfont 92}{section*.104}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Génération du maillage quadrilatéral}{\reset@font\mtcSfont 92}{section.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Uniformisation}{\reset@font\mtcSSfont 92}{subsection.4.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Opération d'alignement}{\reset@font\mtcSfont 92}{section.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Extension des résultats principaux du cas planaire}{\reset@font\mtcSfont 95}{section.4.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.1}Operation d'alignement}{\reset@font\mtcSSfont 95}{subsection.4.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.2}Etude de la méthode}{\reset@font\mtcSSfont 95}{subsection.4.5.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \'Etude de l'opération d'alignement}{\reset@font\mtcPfont 96}{section*.110}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.6}Analyse de convergence}{\reset@font\mtcSfont 102}{section.4.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.7}Génération de champs de croix}{\reset@font\mtcSfont 102}{section.4.7}}

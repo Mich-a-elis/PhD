@@ -8,50 +8,34 @@ Dans ce chapitre, nous exposons une généralisation des notions abordés au deu
 
 \section{Champ de croix, points singuliers, indices et séparatrices}
 
-Dans cette section, nous revisitions les définitions et concepts introduits dans le chapitre \ref{chap:theoritical}. Un champ de croix $\bar{u}$ défini sur $\Omega$ associe à chaque point $p$ de $\Omega$ une croix (voir la définition \ref{def:croix}) définie dans l'espace tangent $T_p\Omega$. L'ensemble $\mathcal{S}_{\bar{u}_h}$, désignant l'ensemble des points singuliers de $\bar{u}_h$, est formé des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$ et on dira que le champ de croix est presque-$\mathcal{C}^1$ s'il satisfait à la définition \ref{def:presqueC1}. En ajustant l'opérateur de rotation de manière à ce que la rotation d'une croix s'effectue autour de la normale surfacique définie au point, la proposition \ref{prop:cont1} permet de réaliser la rotation d'un champ de croix défini sur une surface par rapport à un champ d'angle défini sur cette même surface.
-
-Contrairement au cas planaire où l'on disposais d'une réference globale pour le calcul des angles des croix, ici on se donne une référence arbitraire en chaque espace tangent de la surface permettant ainsi de calculer l'angle de la croix relativement à cette référence. On retrouve alors la formule de l'indice d'un point $p$ dans un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$:
-
+Dans cette section, nous revenons sur les définitions et concepts introduits dans le chapitre \ref{chap:theoritical}. Un champ de croix $\bar{u}$ défini sur $\Omega$ attribue à chaque point $p$ de $\Omega$ une croix (voir la définition \ref{def:croix}) dans l'espace tangent $T_p\Omega$. L'ensemble $\mathcal{S}_{\bar{u}_h}$, désignant les points singuliers de $\bar{u}_h$, est composé des points $p \in \Omega_h$ tels que $\bar{u}_h(p) = 0$. On dit que le champ de croix est presque-$\mathcal{C}^1$ s'il satisfait à la définition \ref{def:presqueC1}. En ajustant l'opérateur de rotation pour permettre la rotation d'une croix autour de la normale surfacique au point considéré, la proposition \ref{prop:cont1} autorise la rotation d'un champ de croix défini sur une surface par rapport à un champ d'angle défini sur cette même surface.\\\\
+À la différence du cas planaire où une référence globale était disponible pour le calcul des angles des croix, dans ce contexte, nous choisissons une référence arbitraire pour chaque espace tangent de la surface, permettant ainsi de déterminer l'angle de la croix par rapport à cette référence. Cette approche conduit à la formule de l'indice d'un point $p$ dans un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ :
 \begin{equation}
 \label{eqn:index_surf}
-    id_{\bar{u}}(p)=\displaystyle\frac{1}{2\pi}\int_0^1 d\theta_{\bar{u}}^\gamma.
+id_{\bar{u}}(p) = \frac{1}{2\pi}\int_0^1 d\theta_{\bar{u}}^\gamma,
 \end{equation}
-La définition des lignes de champ des champs de croix sur les surfaces courbes ainsi que les propriétés des séparatrices demeurent valident dans ce nouveau cadre. Cependant, notons que pour l'intégration des lignes de champ à partir de points singuliers (séparatrices), le voisinnage étoilé permettant de modifier localement le champde croix pour permettre le démarragede la séparatrices doit être de taille assez petit. Plus concrètement, il faut que ce voisinnage soit homémorphe au plan pour pouvoir mettre en oeuvre l'opération de modification du champ que nous avons introduit dans la proposition \ref{prop:stream_from_interior_sing}. A partir de là, on retrouve facilement les résultat concernant le lien entre le nombre de séparatrice associé à un point singulier et l'indice du point.
+où $\gamma$ est un chemin fermé inclus dans $\Omega$, paramétré dans le sens positif, encerclant uniquement le point $p$ sans inclure d'autres points singuliers de $\bar{u}$, et tel que la partie de $\Omega$ délimitée par $\gamma$ est homéomorphe à $\mathbb{R}^2$. Les définitions des lignes de champ pour les champs de croix sur les surfaces courbes ainsi que les propriétés des séparatrices restent applicables dans ce nouveau cadre. Cependant, il convient de noter que pour intégrer les lignes de champ à partir de points singuliers (séparatrices), le voisinage étoilé permettant de modifier localement le champ de croix pour faciliter le démarrage de la séparatrice doit être de taille suffisamment réduite. Plus précisément, ce voisinage doit être homéomorphe au plan pour mettre en œuvre l'opération de modification du champ introduite dans la proposition \ref{prop:stream_from_interior_sing}. À partir de là, les résultats établissant le lien entre le nombre de séparatrices associées à un point singulier et l'indice du point sont aisément retrouvés. Nous illustrons sur la figure \ref{fig:separatrice_illustration_surface} les séparatrices d'un point d'indice $1/4$ et d'un point d'indice $-1/4$.\\
 
-Examinons maintenant ce que devient ces concepts dans un cadre discret. Soit $\Omega_h$ un maillage triangulaire de $\Omega$ vérifiant les contraintes définis dans la sous-section \ref{subsec:mesh_tri} et soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$.
-\\
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.282]{images/surface_sepa_5.pdf}
+\\[0.5cm]
+  \includegraphics[scale=0.282]{images/surface_sepa_3.pdf}
+  \caption{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (en haut) et d'indice $1/4$ (en bas).}
+  \label{fig:separatrice_illustration_surface}
+\end{figure}
+
+Examinons maintenant ce que devient ces concepts dans un cadre discret. Soit $\Omega_h$ un maillage triangulaire de $\Omega$ vérifiant les contraintes définis dans la sous-section \ref{subsec:mesh_tri} et soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$. L'évaluation de l'assertion \ref{ass:triangle_singulier} s'effectue en projetant les champ de croix sur un même espace tangent. On définit ensuite les zones singulières comme précedemment (voir \ref{subsec:discr_champ_de_croix}).
+
+
 definition de delta avec cosinus\\
 on definit ensuite les zone singuliere comme dans le chapitre 3\\
 definir ensuite la represenatation en projetant sur les triangles\\
+on se retrouve ainsi avec une definition par morceau
 
+\ref{alg:discr_algo_main}
 
-Nous cherchons maintenant à construire une représentation du champ de croix $\bar{u}$ sur le maillage triangulaire $\Omega_h$. Pour ce faire, nous allons nous orienter en nous basant sur les différentes opérations que nous devrons effectuer sur cette représentation en prenant comme modèle les opérations réalisées sur $\bar{u}$ dans le chapitre \ref{chap:theoritical}. Observons que nous devrons calculer la variation de l'angle des croix le long d'un arc paramétré, notamment pour déterminer l'indice de points ou pour quantifier la variation du champ de croix dans une partie du domaine. En limitant ces arcs aux bords des triangles, il devient évident qu'il est possible de simplifier le problème en connaissant la variation des croix le long des arêtes du triangle. En d'autres termes, il nous faut une notion de variation d'angle entre deux croix quelconques. Nous avons alors la définition suivante:
-
-\begin{definition}
-Soient deux croix $\mathbf{c}_1,\mathbf{c}_2$ non nulles. L'angle signé entre $\mathbf{c}_1$ et $\mathbf{c}_2$ noté $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) est l'unique élément de l'ensemble:
-$$
-\{\delta\theta(\mathbf{c}_1,\mathbf{c}_2)\}:=\left\{\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}+k\frac{\pi}{2},~k\in\mathbb{Z}\right\}\cap\left]-\frac{\pi}{4}, \frac{\pi}{4}\right[.
-$$
-\end{definition}
-Cette fonction mesure la variation angulaire entre $\mathbf{c}_1$ et $\mathbf{c}_2$ de $\mathbf{c}_1$ vers $\mathbf{c}_2$. Autrement dit, on a:
-$$
-\theta_{\mathbf{c}_2}=\theta_{\mathbf{c}_1}+\delta\theta(\mathbf{c}_1,\mathbf{c}_2).
-$$
-Une conséquence directe de cette définition est l'antisymétrie de l'angle, ce qui se traduit par:
-$$
-\delta\theta(\mathbf{c}_1, \mathbf{c}_2)=-\delta\theta(\mathbf{c}_2,\mathbf{c}_1).
-$$
-Nous dirons que $\delta\theta(\mathbf{c}_1,\mathbf{c}_2$) n'est pas défini lorsque $|\theta_{\mathbf{c}_2}-\theta_{\mathbf{c}_1}|=\pi/4$.
-Cette définition nous permet d'introduire l'assertion suivante.
-\begin{assertion}
-\label{ass:triangle_singulier}
- Soit triangle $T$ et de sommets $s_1$, $s_2$ et $s_3$ vérifiant l'une des propriétés suivantes:\\
- \begin{itemize}
-  \item[1.] il existe $i\in\llbracket 1, 3\rrbracket$ tel que $\bar{u}(s_i)=0$,\\%[-0.2cm]
-  \item[2.] il existe  $i,j\in\llbracket 1, 3\rrbracket$, tel que  $\delta\theta(\bar{u}(s_i),\bar{u}(s_{j}))$ n'est pas défini,\\%[-0.2cm]
-  \item[3.] pour tout $i\in\llbracket 1, 3\rrbracket$, $\bar{u}(s_i)\neq 0$ et $\sum_{i=1}^3\delta\theta(\bar{u}(s_i),\bar{u}(s_{i+1}))\neq 0$ où on a posé $s_4:=s_1$.\\[-0.2cm]
- \end{itemize}
-\end{assertion}
 
 On peut subdiviser l'ensemble des triangles vérifiant l'assertion \ref{ass:triangle_singulier} en plusieurs partitions, dont les parties du plan correspondant seront appelées \emph{zones singulières}. Pour assembler ces partitions, on regroupe les triangles singuliers qui ont un ou plusieurs triangles singuliers comme voisins. Voici un exemple illustrant la construction de zones singulières sur la figure \ref{fig:zone_singuliere}. Dans ce cas, on se donne une configuration où la couleur rouge indique les lieux où l'une des propriétés de l'assertion \ref{ass:triangle_singulier} est vérifiée. Nous affichons ensuite les zones singulières correspondantes en bleu. Cette configuration particulière conduit à la création de cinq zones singulières que nous présentons sur la même figure. Dans la suite, nous utiliserons la notation $\mathbf{Z}=\cup_{i=1}^{N_Z}Z_i$ pour représenter la partie du plan occupé par l'ensemble des zones singulières. Ici, $Z_i$ désigne une zone singulière spécifique, et $N_z$ représente le nombre total de zones singulières. Ce nombre est nécessairefini puisque le champ de croix $\bar{u}$ possède un nombre fini de points singuliers. Nous associons ensuite à chaque zone singulière $Z\in \mathbf{Z}$ un point arbitrairement choisi dans $Z$, que nous notons $S_Z$ (par exemple, lorsque $Z$ est réduit à un unique triangle, on peut choisir $S_Z$ comme le barycentre du triangle en question).
 
@@ -126,53 +110,343 @@ Dans la pratique, il sera donc impératif de modifier un maillage qui ne satisfa
 
 
 
+
+
+\section{Partitionnement de $\partial\Omega_h$ et maillage}
+\label{sec:partitionnement_omega_h}
+
+Nous abordons maintenant la question du partitionnement du maillage $\Omega_h$ représentant le domaine $\Omega_h$. De façon similare à ce que nous avons présenter dans le cas planaire, nous nous basons sur l'algorithme \ref{alg:discr_algo_main}.
+
+Les points singuliers coincidant exactement avec les points $S_Z$ où $Z\subset\mathbf{Z}$ leur recherche consiste donc à retrouver ces points. Il faut ensuite déterminer le nombre de séparatrices par points singuliers ainsi que leur direction de départ grâce à la fonction $W_{p_0}^\gamma$ où ici $p_0$ désigne le point singulier et $\gamma$ est une paramétrisation du bord $\partial Z_{p_0}$ de la zone singuliere $Z_{p_0}$ contenant $p_0$. On intègre ensuite les lignes de champs sur la surface triangulée. Cependant, contrairement au cas planaire les triangles ne se trouve pas tous dans le même plan. Le passage d'une ligne de champ d'un triangle à son voisin se fait alors en projetant le vecteur d'intégration dans le plan du triangle voisin. Nous illustrons cela sur la figure ...
+
+
+Une fois les points singuliers de $\bar{u}_h$ identifiés, nous procédons à la création des séparatrices sur $\Omega_h$.
+
+\paragraph{Traversé d'un triangle singulier:}
+
 \begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.282]{images/sepa_5.pdf}
-  \hfill
-  \includegraphics[scale=0.282]{images/sepa_3.pdf}
-  \caption{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).}
-  \label{fig:separatrice_illustration}
+\centering
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_1.pdf}
+    \caption{\'Echec d'intégration d'une séparatrice dans un triangle singulier.}
+    \label{fig:draw_streams_sing_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_2.pdf}
+    \caption{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.}
+    \label{fig:draw_streams_sing_2}
+\end{subfigure}
+\\[0.8cm]
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_3.pdf}
+    \caption{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.}
+    \label{fig:draw_streams_sing_3}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/draw_streams_sing_4.pdf}
+    \caption{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.}
+    \label{fig:draw_streams_sing_4}
+\end{subfigure}
+\caption{Illustration de l'intégration d'une séparatice dans un triangle singulier.}
+\label{fig:draw_streams_sing}
 \end{figure}
 
-\begin{proposition}
-\label{prop:loveprop}
-Considérons un secteur tel que décrit ci-dessus. Lorsqu'il est traité comme une singularité de bord du secteur, le point $p$ a un indice de $1/4$.
-\end{proposition}
+\begin{figure}[!h]
+\centering
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/decoup_sans_fusion.pdf}
+    \caption{Intégration de séparatrices sans fusion.}
+    \label{fig:decoup_sans_fusion}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/decoup_detect_fusion.pdf}
+    \caption{Détection d'une fusion.}
+    \label{fig:decoup_detect_fusion}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/decoup_fusion.pdf}
+    \caption{Intégration de séparatrices avec fusion.}
+    \label{fig:decoup_fusion}
+\end{subfigure}
+\caption{Illustration de la fusion de séparatrices.}
+\label{fig:fusion}
+\end{figure}
 
-\begin{proof}
-Supposons que le secteur soit défini par deux séparatrices avec des directions initiales $\overrightarrow{p\gamma(t_i)}$ et $\overrightarrow{p\gamma(t_{i+1})}$, qui sont alignées avec la frontière du secteur. Soit $C$, la paramétrisation de la courbe définie par $p\gamma(t_i)$, $p\gamma(t_{i+1})$ et la partie de $\gamma$ coincé dans le secteur. L'indice de $p$ est alors donné par:
-\begin{eqnarray*}
-id^\partial_{\bar{u}}(p)&=&\frac{1}{2\pi}\left[\pi-\hat{p}+\lim\limits_{s\rightarrow 0}\int_{s-t_i}^{s-t_{i+1}}d\theta_{\bar{u}}^\gamma\right]\\
-&=&\frac{1}{2\pi}\left[\pi-\hat{p}+\left(\hat{p}+\lim\limits_{s\rightarrow 0}\int_{s-t_i}^{s-t_{i+1}}dW_p^\gamma\right)\right]\\
-&=&\frac{1}{2\pi}\left[\pi-\frac{\pi}{2}\right]\\
-id^\partial_{\bar{u}}(p)&=&\frac{1}{4}.
-\end{eqnarray*}
-\end{proof}
 
-De manière analogue à ce qui est fait dans \cite{viertel2019approach}, la proposition \ref{prop:loveprop} implique que l'apparence de chaque coin d'un secteur est celle d'un angle droit par rapport au champ de croix.
+Nous désignons par \emph{triangle singulier}, tout triangle contenant un point singulier. Lors de l'intégration d'une séparatrice, il peut arriver qu'elle doive traverser un triangle singulier. Dans ce cas, le processus d'intégration tel que décrit précédemment peut échouer (voir la figure \ref{fig:draw_streams_sing_1}). Cela résulte du fait que le champ d'angle associé au champ de croix dans le triangle n'est pas continue et présente des variations importantes. Pour surmonter ce problème, nous cherchons à représenter la séparatrice dans le triangle singulier en utilisant une succession d'autres segments calculés par un raffinement local du maillage à l'intérieur du triangle singulier. L'objectif est d'isoler le point singulier par rapport à la trajectoire de la séparatrice. Voici le procédé:
 
-\begin{comment}
+Considérons $T$ comme un triangle contenant un point singulier que doit traverser une séparatrice dont l'origine ne se trouve pas dans $T$. En d'autres termes, le dernier point calculé lors de la construction de cette séparatrice appartient à $T$ et le processus habituel d'intégration a généreé un segment traversant $T$ (voir figure \ref{fig:draw_streams_1}). Dans la suite nous appellerons ce "dernier point" le point d'entrée de la séparatrice dans $T$. On commence en subdivisant $T$ en quatre triangles. Cette subdivision peut être réalisée en reliant, par exemple, les milieux des arêtes de $T$ Il est essentiel de noter que si le point d'entrée coincide avec le milieu d'une arête, un autre point de cette arête doit être choisi pour la subdivision. L'objectif est que le point d'entrée se retrouve associé à un triangle issu de la subdivision et ne contenant pas de point singulier. On peut alors appliquer le processus d'intégration dans ce triangle, tel que décrit précédemment (voir figure \ref{fig:draw_streams_sing_2}). Il ne reste plus qu'à itérer ce schéma de construction jusqu'à ce que la séparatrice sorte de la partie du plan correspondant au triangle initial (voir figures \ref{fig:draw_streams_sing_3} et \ref{fig:draw_streams_sing_4}). On se retouve ainsi avec un raffinement local et adapté du maillage en fonction de la trajectoire de la séparatrice ce qui permet en pratique de ne pas raffiner l'intégralité du maillage pour avoir une bonne approximation de la séparatice. Il convient de souligner qu'il n'est pas nécessaire d'apporter des modifications locales au maillage dans sa globalité. Après avoir construit la séparatrice, nous conservons uniquement ses points de passage et supprimons tout raffinement local utilisé.
+
+
+\paragraph{Fusion de séparatrices:}
+
+
+de manière similaire à ce qui est réalisé dans \cite{marcon2019high}, les séparatrices du champ de croix sont construites simultanément en incrémentant chacune d'elles progressivement, et la rencontre entre deux séparatrices est anticipée en comparant à chaque incrément, d'une part, la distance entre les derniers points calculés et, d'autre part, les directions des derniers segments construits. En d'autres termes, on cherche à déterminer si, à un moment donné, deux séparatrices données avancent dans des directions opposées et si elles sont suffisamment proches l'une de l'autre. On compare ces deux mesures à des seuils prédéfinis, et en fonction du résultat, on décide de fusionner ou non les deux séparatrices.
+
+La fusion se réalise en créant une nouvelle séparatrice par une fusion linéaire des points des deux séparatrices impliquées. Pour se faire, chaque séparatrice est prolongée à travers $\Omega_h$ jusqu'à atteindre la position de départ de l'autre, tout en maintenant le même nombre de points pour chacune des séparatrices. L'intérêt de fusionner les séparatrices réside dans la réduction de leur nombre, ce qui se traduit directement par une diminution du nombre de régions générées lors du découpage du domaine. Nous illustrons la fusion de deux séparatrices sur la figure \ref{fig:fusion}. Il est remarquable que la non-fusion des séparatrices génère davantage de régions, certaines étant fortement étirées et non homogènes par rapport aux autres, ce qui est une source potentielle d'inhomogénéité des mailles dans les maillages quadrilatéraux.
+
+
+\subsection{Assemblage des partitions}
+
+Une fois les séparatrices construites, nous procédons à la subdivision du maillage triangulaire $\Omega_h$ en plusieurs régions distinctes. Cette opération consiste à modifier $\Omega_h$ en y intégrant les segments formant les séparatrices, créant ainsi un nouveau maillage. Notre objectif est de délimiter chaque région sous forme de sous-maillage distinct de $\Omega_h$. Ce processus débute par l'identification des frontières de ces régions via la localisation des points d'intersection entre les séparatrices, suivie de l'extraction de chaque région individuelle.
+
+\paragraph{Intersections de séparatrices:}
+
+Comme annoncé, la première étape de ce processus consiste à déterminer les frontières des régions. La recherche des points d'intersection entre les séparatrices peut être réalisée localement dans chaque triangle et simultanément. Étant donné que les séparatrices sont constituées de segments, il suffit de vérifier l'intersection de ces segments les uns par rapport aux autres. En découpant les séparatrices au niveau de ces points d'intersection, cela met en évidence les contours des régions, comme illustré sur la figure \ref{fig:detect_intersection} avec une couleur différente pour chaque séparatice.
+
+\paragraph{Identification des partitions:}
+Dans cette phase, notre objectif est de découper le maillage triangulaire initial $\Omega_h$ en plusieurs sous-maillages, représentant chacun une partition. Pour y parvenir, nous enrichissons $\Omega_h$ en y insérant les points qui constituent les séparatrices, puis nous ajustons le maillage pour qu'i
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/eclatement_1.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/intersect_stream.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
+\caption{Intersection de séparatrices.}
+\label{fig:detect_intersection}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/eclatement_2.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/eclatement_3.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
+\caption{Extraction des régions en tant que sous-maillages.}
+\label{fig:eclatement}
+\end{figure}
+
+
+\section{Génération du maillage quadrilatéral}
+\label{sec:gen_mesh_quad}
+
+\subsection{Uniformisation}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/separatrice_echantillonage_1.pdf}
+    %\caption{Insertion de $D$.}
+    %\label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/separatrice_echantillonage_2.pdf}
+    %\caption{Insertion de $E$.}
+    %\label{fig:quad_carre}
+\end{subfigure}
+\caption{Exemple d'identification de séparatrices parallèles.}
+\label{fig:separatrice_echantillonage}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_eclatement.pdf}
+    %\caption{Insertion de $D$.}
+    \label{fig:quad_eclatement}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{images/quad_carre.pdf}
+    %\caption{Insertion de $E$.}
+    \label{fig:quad_carre}
+\end{subfigure}
+\caption{Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref{fig:separatrice_echantillonage}.}
+\label{fig:maillage_quad_carre}
+\end{figure}
+
+\color{black}
+
+\section{Opération d'alignement}
+
+Abordons à présent la discrétisation de l'opération d'alignement exposée dans le chapitre \ref{chap:theoritical}, en supposant que $\Omega$ soit un domaine simplement connexe. Pour rappel, cette opération vise à créer un champ de croix $\bar{v}=\mathbf{R}(\phi)\bar{u}$ aligné sur $\partial\Omega$ (c'est-à-dire aligné sur le champ de croix $\bar{n}$ associé à la normale sortante de $\partial\Omega$). Ceci est réalisé à partir d'un champ de croix $\bar{u}$ presque-$\mathcal{C}^1$ défini sur $\Omega$, mais non nécessairement aligné par rapport au bord de $\Omega$. La fonction $\phi$ est définie par l'équation \eqref{eqn:principe_def_phi}.
+
+Considérons $\bar{u}_h$ comme une représentation discrète de $\bar{u}$ sur $\Omega_h$. Dans le contexte discret, cette opération équivaut à aligner $\bar{u}_h$ sur un champ de croix défini sur $\partial\Omega_h$ et représentant le champ de croix associé à la normale extérieure de $\partial\Omega$. Commençons par construire cette représentation que nous notons $\bar{n}_h$. Pour tout sommet $a\in\mathcal{S}_h\cap\partial\Omega_h$, avec $b$ et $c$ comme ses sommets voisins également situés sur $\partial\Omega_h$, nous avons :
+\begin{equation}
+\bar{n}_h(a)=\displaystyle\left\{\mathbf{R}\left(\frac{m\pi}{2}\right)g(a),~ m\in\mathbb{Z}\right\},
+\end{equation}
+où $g(a)$ est donné par:
+\begin{equation}
+g(a)=\displaystyle\frac{1}{\|\overrightarrow{ab}\|+\|\overrightarrow{ac}\|}\left(\overrightarrow{ab}+\overrightarrow{ac}\right).
+\end{equation}
+Ensuite, on élimine les arêtes de bord où la variation angulaire $\delta\theta$ du champ $\bar{n}_h$ n'est pas définie, soit en effectuant un raffinement local ou global du maillage, soit en insérant dans le maillage un nouveau point situé au milieu de l'arête en question. Ce point sera considéré comme un point singulier dans le champ $\bar{n}_h$, et par conséquent, pour un tel point $a\in\mathcal{S}_h\cap\partial\Omega_h$, nous fixons $\bar{n}_h(a)=0$. Ainsi, on se retrouve avec deux types d'arêtes incluses dans $\partial\Omega_h$ : les arêtes avec un sommet singulier dans $\bar{n}_h$ et les arêtes où la variation angulaire $\delta\theta$ de $\bar{n}_h$ est bien définie. La construction de $\bar{n}_h$ se poursuit alors de la manière suivante : pour tout point $p\in ab$ avec $ab$ une arête incluse dans $\partial\Omega_h$, on a:\\
+\begin{itemize}
+\item[$\bullet$] Si $\delta\theta(\bar{n}_h(a), \bar{n}_h(b))$ est défini, alors:
+ $$
+ \left\{
+ \begin{array}{l}
+ \bar{n}_h(p)=\mathbf{R}(\theta_p)\bar{n}_h(a),\\\\
+ \theta_p = \theta_{\bar{n}_h}(a)+\displaystyle\frac{\|\overrightarrow{ap}\|}{\|\overrightarrow{ab}\|}\delta\theta(\bar{n}_h(a), \bar{n}_h(b)).
+ \end{array}
+ \right.
+ $$
+ \item[$\bullet$] Sinon, par construction, l'un des deux sommets de l'arête $ab$ est nul et l'autre non nul. Supposons sans perte de généralité qu'il s'agit de $a$. On pose alors:
+ $$
+ \bar{n}_h(p)=\bar{n}_h(b).
+ $$
+\end{itemize}
+Après la construction du champ de croix $\bar{n}_h$, nous entamons l'opération d'alignement proprement dite. L'objectif est d'ajuster $\bar{u}_h$ pour former un nouveau champ de croix $\bar{v}_h$ tel que $\bar{v}_h=\bar{n}_h$ sur $\Omega_h$, à l'exception d'un nombre limité de points où il s'annule. En d'autres termes, nous visons à ce que, pour tout $p\in\partial\Omega_h$, $\bar{v}_h(p)\in\{\bar{n}_h(p), 0\}$. Pour y parvenir, nous débutons en associant à chaque sommet $p\in\partial\mathcal{S}_h\cap\Omega_h$ un paramètre $I_p$ vérifiant:
+\begin{equation}
+I_p=\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1
+\end{equation}
+Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Un critère a priori pour choisir automatiquement ce paramètre a été exposé dans la sous-section \ref{subsec:sing_bord}. Ensuite, nous définissons l'ensemble $\mathcal{B}$ qui regroupe les points que nous souhaitons rendre singuliers dans le champ de croix $\bar{v}_h$ (une fois l'opération d'alignement réalisée). Cet ensemble doit, naturellement, inclure tous les points $p$ tels que $I_p\neq 0$, car ces points auront un indice non nul dans $\bar{v}_h$. Cependant, il est également envisageable d'inclure dans $\mathcal{B}$ des points dont le paramètre $I_p$ est nul. L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ $\bar{n}_h$. Ces points étant déjà singulier dans $\bar{n}_h$, ils resteront singuliers dans $\bar{v}_h$ après l'opération d'alignement. Pour finir, il est impératif que le champ de croix $\bar{u}_h$ satisfasse:\\
+\begin{itemize}
+ \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}_h})<\infty$,\\
+ \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}_h}$, $id_{\bar{u}_h}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
+ \item[$\bullet$] Soit $\gamma$ une paramétrisation de $\partial\Omega_h$ dans le sens positif. Il existe $\theta_{\bar{u}_h}^\gamma$ vérifiant:
+ \begin{equation}
+    \label{eqn:etude_hyp_u_simple}
+    \theta_{\bar{u}_h}^\gamma(1)-\theta_{\bar{u}_h}^\gamma(0)=\chi(\Omega_h)-\sum_{p\in\mathcal{B}}I_p.
+\end{equation}
+\end{itemize}
+Ces critères sont automatiquement vérifiés si les points singuliers de $\bar{u}$ sont isolés et que le maillage $\Omega_h$ est adapté à la représentation discrète que nous avons présentée dans la sous-section \ref{sec:repr_discrete}. Le champ de croix $\bar{v}_h$ est alors défini pour tout $p\in\Omega_h$ par:
+\begin{equation}
+\bar{v}_h(p)=
+\left\{
+\begin{array}{ll}
+\mathbf{R}(\phi_h(p))\bar{u}_h(p) & \mbox{ si } p\in\Omega_h\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}_h}),\\[0.5cm]
+\bar{n}_h(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}_h}\cap\partial\Omega_h)\backslash\mathcal{B},\\[0.5cm]
+0 & \mbox{ si } p\in\mathcal{B}.
+\end{array}
+\right.
+\label{eqn:etude_def_v_second}
+\end{equation}
+où $\phi_h$ est définie par l'équation de Laplace suivant:
+\begin{equation}
+\left\{
+\begin{array}{lcll}
+\Delta\phi_h &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
+\phi_h(\gamma(t))&=&\theta_{\bar{n}_h}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}_h}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega_h\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{u}_h})),
+\end{array}
+\right.
+\label{eqn:algorithm_def_phi}
+\end{equation}
+où la fonction $\mathcal{I}$ est donnée par:
+$$
+\mathcal{I}(t)=\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B})}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\displaystyle\lim\limits_{r\rightarrow s^+}\theta^{\gamma}_{\bar{n}_h}(r) - \lim\limits_{r\rightarrow s^-}\theta^{\gamma}_{\bar{n}_h}(r)\right)\right]\mathbb{1}_{[0, t]}(s),
+$$
+avec $\widehat{\gamma(s)}$ la mesure de l'ouverture angulaire de la frontière en $\gamma(s)$.
+
+En pratique, la résolution de l'équation \eqref{eqn:algorithm_def_phi} est effectuée par la méthode des éléments finis $\mathbb{P}_1$, en utilisant la formule du Laplacien cotangente pour la discrétisation de l'opérateur Laplacien \cite{solomon2014laplace, nealen2006laplacian, belkin2008discrete} (voir Annexe \ref{chap:annexes} pour plus de détails). Cette approche est privilégiée en raison de sa simplicité, facilitant l'extension de l'opération d'alignement dans le cas des surfaces courbes dans l'espace (voir le chapitre \ref{chap:surface_courbe}).
+
+\begin{remark}
 \[\]
-commentaires sur les secteurs\\
-on retrouve ici la notion de valence évoqué dans l'introduction.
-un point sera dit régulier si Ns= autrement dit si id=
-reprendre les dessin sur l'illustration des index, tracer les sepatrices pour visulaiser ce qu'est un secteur.
-\end{comment}
+\vspace{-1cm}
+\begin{enumerate}
+\item Le champ de croix $\bar{v}_h$ conserve certaines propriétés du champ de croix $\bar{u}_h$. Ainsi, on a $\mathcal{S}_{\bar{v}_h}\cap(\Omega_h\backslash\partial\Omega_h)=\mathcal{S}_{\bar{u}_h}\cap(\Omega_h\backslash\partial\Omega_h)$, puisque $\phi_h$ est $\mathcal{C}^0$ sur $\Omega_h\backslash\partial\Omega_h$. Les indices des points constituant ces ensembles sont également préservés. Autrement dit, pour tout point $p\in\Omega_h\backslash\partial\Omega_h$, on a $id_{\bar{u}_h}(p)=id_{\bar{v}_h}(p)$.
+\item Pour tout $p\in\partial\Omega_h$, si $p\in\mathcal{S}_h$, alors $id_{\bar{v}_h}(p)=I_p$ ; sinon, $id_{\bar{v}_h}
+(p)=0$.
+\item Lorsque $\Omega_h$ est un domaine non simplement connexe, la procédure d'alignement reste conforme à celle développée dans le chapitre \ref{chap:theoritical}. Il convient toutefois de définir avec précision $\bar{n}_h$ et $\mathcal{B}$ pour chaque composante connexe de $\partial\Omega_h$.
+\end{enumerate}
+\end{remark}
+Nous présentons le processus d'alignement à travers un exemple illustré à la figure \ref{fig:alignment}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.515\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_1.pdf}
+    \caption{Champ de croix $\bar{u}_h$}
+    \label{fig:alignment_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.478\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_2.pdf}
+    \caption{Champ scalaire $\phi_h$ (en randian)}
+    \label{fig:alignment_2}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.51\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_3.pdf}
+    \caption{Champ de croix $\bar{v}_h$ (suite à l'opération d'alignement).}
+    \label{fig:alignment_3}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.482\textwidth}
+    \includegraphics[width=\textwidth]{images/alignment_4.pdf}
+    \caption{Maillage.}
+    \label{fig:alignment_4}
+\end{subfigure}
+\caption{Illustration du processus d'alignement dans un cadre discret.}
+\label{fig:alignment}
+\end{figure}
 
 
 
-Champ de croix, Représentation\\
-Points singuliers\\
-Indices\\
-Séparatrices
 
 
 
-\section{Partitionnement}
 
-Algorithme de partitionnnement\\
-Construction des séparatrices\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Extension des résultats principaux du cas planaire}
 
 somme de champs de croix\\
@@ -617,131 +891,6 @@ id_{\bar{v}}(p)=
         $$
     \end{itemize}
 \end{proof}
-
-En cas de non-conformité du champ de croix $\bar{u}$ à la condition \eqref{eqn:etude_hypothese_u_second}, nous introduisons un processus de correction visant à obtenir un champ de croix satisfaisant cette condition. Considérons $\bar{u}$ comme un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, sans nécessité d'alignement sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ tel que:
-\begin{equation}
-    \displaystyle\sum_{i=0}^{n_b-1}\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}}I_p.
-\end{equation}
-où pour tout $i\in\llbracket0, n_b-1\rrbracket$, $\gamma_i$ est une paramétrisation sur $[0, 1]$ de $\Gamma_i$ orientée positivement et vérifiant $\gamma_i(0)=\gamma_i(1)\notin\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}}$.
-Soit $\bar{w}$ un champ de croix presque-$\mathcal{C}^1$ définit sur $\Omega$ et vérifiant:
-\begin{equation}
-    \left\{
-    \begin{array}{lcll}
-    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right),&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right),&\mbox{ sur }\Gamma_i,\\\\
-    &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
-    \end{array}
-    \right.
-    \label{eqn:etude_hypothese_w}
-\end{equation}
-
-Dans la section \ref{sec:discussion}, nous aborderons les diverses approches pour la construction d'un tel champ de croix
-
-\begin{proposition}
-    Le champ de croix $\bar{u}_c$ défini par $\bar{u}_c:=\mathbf{R}(\theta_{\bar{w}})\bar{u}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et vérifie la condition \eqref{eqn:etude_hypothese_u_second}.
-\end{proposition}
-
-\begin{proof}
-$\bar{w}$ étant presque-$\mathcal{C}^1$ sur $\Omega$, il s'ensuit que $\bar{u}_c$ est presque-$\mathcal{C}^1$ sur $\Omega$ d'après la proposition \ref{prop:cont1}.
-De plus, on a:
-    $$
-    \left\{
-    \begin{array}{lcll}
-    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&\theta_{\bar{w}}^{\gamma_0}(1)+\theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(0),&\mbox{sur }\Gamma_0\\\\
-    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&\theta_{\bar{w}}^{\gamma_i}(1)+\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(0),&\mbox{sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
-    \end{array}
-    \right.
-    $$
-    En utilisant l'hypothèse \eqref{eqn:etude_hypothese_w}, on obtient:
-    $$
-    \left\{
-    \begin{array}{lcl}
-    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&-\left(\theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)\right)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right)\\\\
-    &&+\left(\theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)\right)\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right)\\\\
-    &&+\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
-    \end{array}
-    \right.
-    $$
-    Autrement dit,
-    $$
-    \left\{
-    \begin{array}{lcll}
-    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
-    \end{array}
-    \right.
-    $$
-    D'où le résultat.
-\end{proof}
-
-Après cela, l'opération d'alignement peut être exécutée sur le champ $\bar{u}_c$, aboutissant au champ de croix $\bar{v}$ défini pour tout $p\in\Omega$ par :
-\begin{equation}
-\bar{v}(p)=
-\left\{
-\begin{array}{ll}
-\mathbf{R}(\phi(p))\bar{u}_c(p) & \mbox{ si } p\in\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)),\\[0.5cm]
-\bar{n}(p) & \mbox{ si } p\in(\mathcal{S}_{\bar{u}_c}\cap\partial\Omega)\backslash(\mathcal{B}\cap\mathcal{S}_{\bar{n}}),\\[0.5cm]
-0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
-\end{array}
-\right.
-\label{eqn:etude_def_v_third}
-\end{equation}
-
-où $\phi$ est donné par:
-\begin{equation}
-\left\{
-\begin{array}{lcll}
-\Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(\gamma_i(t))&=&\theta_{\bar{n}}^{\gamma_i}(t)+\mathcal{I}(t)-\theta_{\bar{u}_c}^{\gamma_i}(t) & \mbox{ sur } \gamma_i^{-1}(\Gamma_i\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}_c})),~\forall i\in\llbracket 0, n_b-1\rrbracket.
-\end{array}
-\right.
-\label{eqn:etude_def_phi_third}
-\end{equation}
-
-On a alors le théorème suivant:
-\begin{theorem}
-\label{thm:theorem4}
-Le champ de croix $\bar{v}$ est presque-$\mathcal{C}^1$ sur $\Omega$ et aligné avec $\partial\Omega$. Si de plus $\mathcal{S}_{\bar{w}}=\emptyset$, alors on a $\mathcal{S}_{\bar{v}}\backslash\partial\Omega=\mathcal{S}_{\bar{u}}\backslash\partial\Omega$ et pour tout $p\in\Omega$, on a:
-\begin{equation}
-id_{\bar{v}}(p)=
-\left\{
-\begin{array}{ll}
-    id_{\bar{u}}(p) & \mbox{ si } p\in\Omega\backslash\partial\Omega,\\\\
-    I_p & \mbox{ sinon }.
-\end{array}
-\right.
-\end{equation}
-\end{theorem}
-
-\begin{proof}
-Du fait que $\bar{u}_c$ est presque-$\mathcal{C}^1$ sur $\Omega$, il en découle que $\bar{v}$ est également presque-$\mathcal{C}^1$ sur $\Omega$, conformément à la proposition \ref{prop:cont1}. De plus, comme $\bar{u}_c$ satisfait la condition \eqref{eqn:etude_hypothese_u_second}, l'application du théorème \ref{thm:theorem3} permet d'affirmer que $\bar{v}$ est aligné par rapport à $\partial\Omega$.
-
-
-Supposons maintenant que $\mathcal{S}_{\bar{w}}=\emptyset$. Dans ce cas, $\theta_{\bar{w}}$ est une fonction de classe $\mathcal{C}^1$ sur $\Omega$ et d'après la proposition \ref{prop:cont1}, on a $\mathcal{S}_{\bar{u}_c}=\mathcal{S}_{\bar{u}}$. Le même argument permet d'avoir $\mathcal{S}_{\bar{v}}\backslash\partial\Omega=\mathcal{S}_{\bar{u}_c}\backslash\partial\Omega$ (puisque $\phi$ est de classe $\mathcal{C}^1$ dans $\Omega\backslash\partial\Omega$) et donc de conclure que $\mathcal{S}_{\bar{v}}=\mathcal{S}_{\bar{u}}$.
-
-Finalement, sachant que le champ de croix $\bar{u}_c$ satisfait la condition \eqref{eqn:etude_hypothese_u_second} l'application du théorème \ref{thm:theorem3} à ce dernier permet de garantir que pour tout $p\in\Omega$, on a:
-\begin{equation}
-id_{\bar{v}}(p)=
-\left\{
-\begin{array}{ll}
-    id_{\bar{u}_c}(p) & \mbox{ si } p\in\Omega\backslash\partial\Omega,\\\\
-    I_p & \mbox{ sinon }.
-\end{array}
-\right.
-\end{equation}
-Par conséquent l'application de la proposition \ref{prop:relation_u_Rthetau} permet d'avoir (puisque $\theta_{\bar{w}}$ est de classe $\mathcal{C}^1$),
-\begin{equation}
-id_{\bar{v}}(p)=
-\left\{
-\begin{array}{ll}
-    id_{\bar{u}}(p) & \mbox{ si } p\in\Omega\backslash\partial\Omega,\\\\
-    I_p & \mbox{ sinon }.
-\end{array}
-\right.
-\end{equation}
-\end{proof}
-
 
 
 

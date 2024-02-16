@@ -7,24 +7,24 @@
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Singularités d'ordre supérieur:}{\reset@font\mtcPfont 63}{section*.65}}
 {\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Convergence:}{\reset@font\mtcPfont 64}{section*.66}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Partitionnement de $\partial \Omega _h$}{\reset@font\mtcSfont 65}{section.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Recherche de points singuliers}{\reset@font\mtcSSfont 65}{subsection.3.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Construction des séparatrices}{\reset@font\mtcSSfont 65}{subsection.3.2.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Nombre de séparatrices:}{\reset@font\mtcPfont 66}{section*.68}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Directions initiales et intégration:}{\reset@font\mtcPfont 66}{section*.71}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Traversé d'un triangle singulier:}{\reset@font\mtcPfont 67}{figure.caption.75}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Fusion de séparatrices:}{\reset@font\mtcPfont 68}{section*.76}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Assemblage des partitions}{\reset@font\mtcSSfont 70}{subsection.3.2.3}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Intersections de séparatrices:}{\reset@font\mtcPfont 70}{section*.78}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Identification des partitions:}{\reset@font\mtcPfont 70}{section*.79}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Recherche de points singuliers}{\reset@font\mtcSSfont 66}{subsection.3.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Construction des séparatrices}{\reset@font\mtcSSfont 66}{subsection.3.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Nombre de séparatrices:}{\reset@font\mtcPfont 66}{section*.69}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Directions initiales et intégration:}{\reset@font\mtcPfont 66}{section*.72}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Traversé d'un triangle singulier:}{\reset@font\mtcPfont 67}{figure.caption.76}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Fusion de séparatrices:}{\reset@font\mtcPfont 67}{section*.77}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Assemblage des partitions}{\reset@font\mtcSSfont 68}{subsection.3.2.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Intersections de séparatrices:}{\reset@font\mtcPfont 68}{section*.79}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Identification des partitions:}{\reset@font\mtcPfont 68}{section*.80}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Génération du maillage quadrilatéral}{\reset@font\mtcSfont 71}{section.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Uniformisation}{\reset@font\mtcSSfont 73}{subsection.3.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Interpolation transfinie}{\reset@font\mtcSSfont 74}{subsection.3.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Uniformisation}{\reset@font\mtcSSfont 71}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Interpolation transfinie}{\reset@font\mtcSSfont 75}{subsection.3.3.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Maillage par tracé direct de lignes de champ dans le champ de croix}{\reset@font\mtcSSfont 75}{subsection.3.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.4}Méthode basée sur des EDP}{\reset@font\mtcSSfont 75}{subsection.3.3.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Opération d'alignement}{\reset@font\mtcSfont 77}{section.3.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Analyse de convergence}{\reset@font\mtcSfont 80}{section.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.4}Méthode basée sur des EDP}{\reset@font\mtcSSfont 76}{subsection.3.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Opération d'alignement}{\reset@font\mtcSfont 78}{section.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Analyse de convergence}{\reset@font\mtcSfont 81}{section.3.5}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.6}Reconstitution du bord du domaine}{\reset@font\mtcSfont 82}{section.3.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.7}Génération de champ de croix}{\reset@font\mtcSfont 82}{section.3.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.7.1}L'Equation de Laplace}{\reset@font\mtcSSfont 82}{subsection.3.7.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.7.2}Une expression analytique}{\reset@font\mtcSSfont 83}{subsection.3.7.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.8}Homogeneisation}{\reset@font\mtcSfont 84}{section.3.8}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.7}Génération de champ de croix}{\reset@font\mtcSfont 83}{section.3.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.7.1}L'Equation de Laplace}{\reset@font\mtcSSfont 84}{subsection.3.7.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.7.2}Une expression analytique}{\reset@font\mtcSSfont 84}{subsection.3.7.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.8}Homogeneisation}{\reset@font\mtcSfont 85}{section.3.8}}

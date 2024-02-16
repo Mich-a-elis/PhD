@@ -317,7 +317,7 @@ $$
     $$
     Montrer que $4F_{\bar{u}}(\Gamma)\in\mathbb{Z}$ revient alors à montrer que:
     $$
-    exp\left(\int_a^b\frac{w'(\gamma(t))\gamma'(t)}{w(\gamma(t))-z}dt\right)=1
+    exp\left(\int_a^b\frac{w'(\gamma(t))\gamma'(t)}{w(\gamma(t))-z}dt\right)=1,
     $$
     si $w\circ\gamma(t)\neq z$ hormis un sous-ensemble discret de valeurs $t\in[a, b]$ (ce qui est le cas pour $z = 0$ avec $\bar{u}$ n’ayant que des zéros isolés).\\
     Posons
@@ -421,7 +421,7 @@ Par extension, en utilisant le lemme \ref{lem:index_saga_first} on a:
 Soit $V^\Gamma$ une partie de $\Omega$ délimitée par $\Gamma$. On a:
 \begin{equation}
 \label{eqn:Fu_sum}
- F_{\bar{u}}(\Gamma)=\sum_{p\in V^\Gamma\cap\mathcal{S}_{\bar{u}}} id_{\bar{u}}(p)
+ F_{\bar{u}}(\Gamma)=\sum_{p\in V^\Gamma\cap\mathcal{S}_{\bar{u}}} id_{\bar{u}}(p).
 \end{equation}
 \end{corollary}
 
@@ -511,7 +511,7 @@ $$
 $$
 où pour tout $p\in\Omega^\epsilon\backslash\Omega$, $f$ désigne le vecteur gradient à l'isoline en $p$. Par construction, $\bar{u}^\epsilon$ est aligné sur le bord de $\Omega^\epsilon$ et $\mathcal{S}_{\bar{u}^\epsilon}\cap\partial\Omega^\epsilon=\emptyset$ Autrement dit, on a:
 $$
-\sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}} id_{\bar{u}^\epsilon}(p)=\chi(\Omega^\epsilon)
+\sum_{p\in\mathcal{S}_{\bar{u}^\epsilon}} id_{\bar{u}^\epsilon}(p)=\chi(\Omega^\epsilon).
 $$
 Or $\chi(\Omega^\epsilon)=\chi(\Omega)$ donc on a par le corollaire \ref{cor:sum_index}:
 $$
@@ -630,17 +630,20 @@ Pour établir ce lemme, nous construisons d'abord l'application $\pi$ restreinte
 \paragraph{Définition d'un champ de vecteur de classe $\mathcal{C}^1$ dans un voisinnage de $p_0$.} D'après la proposition \ref{prop:angular_cont}, il existe une application $\theta_{\bar{u}}^{V_{p_0}}$ de classe $\mathcal{C}^1$ dans un voisinnage $V_{p_0}$ de $p_0$ telle que pour tout $q\in V_{p_0}$, $\theta_{\bar{u}}^{V_{p_0}}(q)\equiv\theta_{\bar{u}}(q)\pmod{\frac{\pi}{2}}$. Il vient alors qu'il existe $m\in\mathbb{Z}$ tel que l'application $\tau_{p_0}:=\mathbf{R}(\theta_{\bar{u}}^{V_{p_0}}+m\frac{\pi}{2})(1, 0)$ est un champ de vecteur de classe $\mathcal{C}^1$ sur $V_{p_0}$ vérifiant $\tau_{p_0}(p_0)=\overrightarrow{u_0}$.
 
 \paragraph{Construction de la restriction de $\pi_{\bar{u}}^S$ au voisinage de $p_0$.}
-Montrons que si $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$ tel que $\pi_{\bar{u}}^S(p_0)=\overrightarrow{u_0}$ satisfaisant \eqref{eqn:pi_u_S} et \eqref{eqn:streamline} alors $\pi_{\bar{u}}\circ S=\tau_{p_0}\circ S$ sur $V_{p_0}$. Supposons qu'il existe $t\in\mathbb{R}$ tel que $S(t)\in V_{p_0}$ et $\pi_{\bar{u}}^S\circ S(t)\neq\tau_{p_0}\circ S(t)$. Par continuité de $\tau_{p_0}$
-\[\]
+Montrons que si $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$ tel que $\pi_{\bar{u}}^S(p_0)=\overrightarrow{u_0}$ satisfaisant \eqref{eqn:pi_u_S} et \eqref{eqn:streamline}, alors $\pi_{\bar{u}}\circ S=\tau_{p_0}\circ S$ sur $V_{p_0}$. Supposons qu'il existe $t\in\mathbb{R}$ tel que $p'=S(t)\in V_{p_0}$ et $\pi_{\bar{u}}^S\circ S(t)\neq\tau_{p_0}\circ S(t)$.
 
-
-Soit $\epsilon>0$ et notons $p'=S(t)$. $\tau_{p_0}$ étant continue sur $V_{p_0}$, on a:
-$$|\tau_{p_0}(p')-\pi^S_{\bar{u}}(p_0)|=|\tau_{p_0}(p')-\tau_{p_0}(p_0)|\leq\epsilon.$$
+Soit $\epsilon>0$. $\tau_{p_0}$ étant continue sur $V_{p_0}$, pour $p$ assez proche de $p_0$, on a:
+$$|\tau_{p_0}(p)-\pi^S_{\bar{u}}(p_0)|=|\tau_{p_0}(p)-\tau_{p_0}(p_0)|\leq\epsilon.$$
 Par inégalité triangulaire, il vient que:
-$$|\pi^S_{\bar{u}}(p')-\pi^S_{\bar{u}}(p_0)|\geq|\tau_{p_0}(p')-\pi^S_{\bar{u}}(p')|-\epsilon.$$
-Or on sait que $\pi^S_{\bar{u}}(p')\in{\bar{u}}(p')$, $\tau_{p_0}(p')\in{\bar{u}}(p')$ et $\pi_{\bar{u}}^S(p')\neq\tau_{p_0}(p')$, ce qui implique que $\pi^S_{\bar{u}}(p')=R(k\pi/2)\tau_{p_0}(p')$ où $k\in\mathbb{Z}\backslash 4\mathbb{Z}$, et donc que $|\pi^S_{\bar{u}}(p')-\tau_{p_0}(p')|\geq\sqrt{2}$. Par conséquent, on a:
-$$|\pi^S_{\bar{u}}(p')-\pi^S_{\bar{u}}(p_0)|\geq|\sqrt{2}-\epsilon.$$
-Ce qui contredit le fait que $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$.
+$$|\pi^S_{\bar{u}}(p)-\pi^S_{\bar{u}}(p_0)|\geq|\tau_{p_0}(p)-\pi^S_{\bar{u}}(p^)|-\epsilon.$$
+Or on sait que $\pi^S_{\bar{u}}(p')\in{\bar{u}}(p')$, $\tau_{p_0}(p')\in{\bar{u}}(p')$ et $\pi_{\bar{u}}^S(p')\neq\tau_{p_0}(p')$, ce qui implique que $\pi^S_{\bar{u}}(p')=R(k\pi/2)\tau_{p_0}(p')$ où $k\in\mathbb{Z}\backslash 4\mathbb{Z}$, et donc que $|\pi^S_{\bar{u}}(p')-\tau_{p_0}(p')|\geq\sqrt{2}$. Par conséquent, si $p'$ est assez proche de $p_0$, en l'occurrence nous prenons $p'\in\mathcal{B}(p_0,\epsilon)$ on a:
+\[
+\epsilon \geq |p' - p_0| \geq |\pi^S_{\bar{u}}(p') - \pi^S_{\bar{u}}(p_0)| \geq |\sqrt{2} - \epsilon|,
+\]
+puisque $\pi^S_{\bar{u}}$ est uniformément continue avec une constante de $1$. Cela conduit à une contradiction en prenant $\epsilon = \sqrt{2}/4$. % contredit le fait que $\pi_{\bar{u}}^S\in\mathcal{C}^1(V_{p_0})$.
+
+Si $p' \notin \mathcal{B}(p_0, \epsilon)$, on choisit un nouveau point $p_0^1$ à la frontière de cette boule. Ensuite, on établit le raisonnement précédent avec ce nouveau point si $p' \in \mathcal{B}(p_0^1, \epsilon)$. Dans le cas contraire, on avance itérativement jusqu'à avoir $p'$ dans la boule.
+
 
 
 \paragraph{Construction de la restriction de la ligne de courant au voisinage de $p$.}
@@ -703,9 +706,7 @@ où $\pi$ est défini pour tout $q\in V_p\backslash\{p\}$ par l'intersection de 
 \caption{Illustration de la construction du champ de croix $\bar{v}$ dans $\partial V_p$.}
 \label{fig:illustr_etoilage}
 \end{figure}
-Notons que $\pi$ est bien défini. En effet, puisque $V_p$ est étoilé et que $\partial V_p$ est de classe $\mathcal{C}^1$, alors pour tout $q\in V_p\backslash\{p\}$, il existe un unique point $\pi(q)\in\partial V_p$.
-
-Nous montrons que $\bar{v}$ est presque continue dans $\Omega$ en démontrant cette propriété successivement dans $V_p$, dans $\Omega\backslash V_p$, et sur $\partial V_p$.\\
+Notons que $\pi$ est bien défini. En effet, puisque $V_p$ est étoilé et que $\partial V_p$ est de classe $\mathcal{C}^1$, alors pour tout $q\in V_p\backslash\{p\}$, il existe un unique point $\pi(q)\in\partial V_p$. Nous montrons que $\bar{v}$ est presque continue dans $\Omega$ en démontrant cette propriété successivement dans $V_p$, dans $\Omega\backslash V_p$, et sur $\partial V_p$.\\
 \begin{itemize}
 \item Dans $V_p$ (voir Figure \ref{fig:v_bar_almost_continuous}) : Soit $x \in V_p$ fixé et $\epsilon > 0$. Nous voulons montrer qu'il existe $\eta > 0$ tel que pour tout $y \in V_p$, si $|x-y|\leq\eta$, alors $|\widetilde{g}(x)-\widetilde{g}(y)|\leq\epsilon$. Puisque $g'$ est continue, il existe $\eta_g$ tel que pour tout $x', y' \in \partial V_p$, si $|x'-y'|\leq\eta_g$, alors $|g'(x')-g'(y')|\leq\epsilon$. Soit $t^\pm=t_x\pm\eta_g$ avec $\gamma(t_x)=\pi(x)$, et soit $\mathcal{H}_x=V_p\cap\mathrm{C}(\gamma(t^-), p, \gamma(t^+))$, où $\mathrm{C}(\gamma(t^-), p, \gamma(t^+))$ désigne la région du plan délimitée par les demi-droites $[p\gamma(t^-))$ et $[p\gamma(t^+))$. Puisque $p\in V_p$, nous avons $\mathcal{H}_x \neq\emptyset$. De plus, $\mathcal{H}_x$ est ouvert par construction. Cela implique l'existence d'un certain $\eta>0$ tel que $\mathcal{B}(x,\eta)\subset \mathcal{H}_x$, et pour tout $y$ tel que $|x-y|\leq\eta$, nous avons $|\pi(x)-\pi(y)|\leq\eta_g$. Ceci prouve la continuité de $\pi$ et donc la continuité de $\widetilde{g}$ puisque $\bar{u}$ est continue dans $V_p$.\\
 \item Dans $\Omega\backslash V_p$ : $\bar{v}$ est presque continue dans $V_p$ par définition.\\
@@ -733,11 +734,11 @@ En posant $e_q=\displaystyle\frac{\overrightarrow{pq}}{\|\overrightarrow{pq}\|}$
 \end{eqnarray*}
 Posons $L(h)=<e_q,\nabla\pi(q).h>e_q+\lambda_q(-(e_q.h)e_q+h)$. La composante de $L(h)$ suivant $\overrightarrow{e_q^\perp}$ est donnée par $X=L(h).e_q^\perp=\lambda_q(h.e_q^\perp)$ qui est continue en $q$. Nous cherchons ensuite la composante suivant $\overrightarrow{e_q}$: soit $\gamma$ une paramétrisation de $\partial V_p$ sur $I\subset\mathbb{R}$. Puisque $\pi(q+h),\pi(q)\in\partial V_p$, il existe $t_1, t_2\in I$ tel que $\pi(q)=\gamma(t_1)$ et $\pi(q+h)=\gamma(t_2)$. $\gamma$ étant $\mathcal{C}^1$, il existe une fonction dépendant de $h$ notée $m(h)$ telle que $\pi(q+h)-\pi(q)=m(h).\overrightarrow{t}+o(h^2)$ avec $\overrightarrow{t}=\gamma'(t_1).\|\gamma'(t_1)\|^{-1}$. Ce qui implique que $L(h)$ est colinéaire au vecteur $\overrightarrow{t}$. Il vient alors que:
 $$
-X=L(h).\overrightarrow{e_q^\perp}=\|L(h)\|\cos{\alpha},\mbox{ avec }\cos{\alpha}=\overrightarrow{t}.\overrightarrow{e_q^\perp}
+X=L(h).\overrightarrow{e_q^\perp}=\|L(h)\|\cos{\alpha},\mbox{ avec }\cos{\alpha}=\overrightarrow{t}.\overrightarrow{e_q^\perp}.
 $$
 Autrement dit, la composante de $L(h)$ suivant $e_q$ notée $Y$ est donnée par:
 $$
-Y=\pm\sqrt{\|L(h)\|^2-X^2}=\frac{\pm 1}{\cos{\alpha}}\sqrt{X^2(1+\cos^2\alpha)}
+Y=\pm\sqrt{\|L(h)\|^2-X^2}=\frac{\pm 1}{\cos{\alpha}}\sqrt{X^2(1+\cos^2\alpha)},
 $$
 \begin{comment}
 \begin{figure}[!h]
@@ -776,7 +777,7 @@ Soit $\bar{v}$ défini pour tout $q\in\Omega$ par l'équation \eqref{eqn:equa_et
 2.\quad Voir la preuve de la proposition \ref{prop:stream_from_interior_sing}.\\\\
 3.\quad Supposons maintenant que $\partial V_p$ est tangent à $\partial V_p$ en p. Pour tout $q\in V_p\backslash\{p\}$, $\bar{v}(q)\neq 0$ et $\bar{v}(p)=0$. Par conséquent, $\mathcal{S}_{\bar{v}}\cap V_p=\{p\}$. Soit $\gamma$ une paramétrisation de $\partial V_p$ sur $[0, 1]$ avec $\gamma(0)=p=\gamma(1)$. Puisque $\partial V_p$ est tangent à $\partial\Omega$ en p, les vecteurs $\gamma'(0)$ et $\gamma'(1)$ sont tangents à $\partial\Omega$. On a donc par le corollaire \ref{cor:sum_index}:
 $$
-id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\hat{p}+\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{v}}^\gamma\right]
+id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\hat{p}+\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{v}}^\gamma\right].
 $$
 Or par construction, on a $\bar{v}=\bar{u}$ sur $\partial V_p$ donc on a:
 $$id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\hat{p}+\lim\limits_{s\rightarrow 0}\int_s^{1-s}d\theta_{\bar{u}}^\gamma\right]=\sum_{q\in\mathcal{S}_{\bar{u}}\cap V_p}id_{\bar{u}}(q).$$
@@ -1064,7 +1065,7 @@ Pour finir, il est impératif que le champ de croix $\bar{u}$ satisfasse:\\
  \item[$\bullet$] Soit $\gamma$ une paramétrisation de $\partial\Omega$ dans le sens positif. Il existe $\theta_{\bar{u}}^\gamma$ vérifiant:
  \begin{equation}
     \label{eqn:principe_hypothese_u}
-    \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=\chi(\Omega)-\sum_{p\in\mathcal{B}}I_p.
+    \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
 \end{equation}
 \end{itemize}
 L'opération d'alignement est alors formulé de la manière suivante:\\\\
@@ -1203,8 +1204,8 @@ Pour surmonter cette limitation, nous modifions la conditions à imposer sur le 
 \begin{equation}
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_0}I_p,&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_i}I_p,&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
+    \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_0}I_p&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_i}I_p&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
     \label{eqn:principe_hypothese_u_second}
@@ -1245,8 +1246,8 @@ La figure \ref{fig:carre_demi_disc_vide_bon} donne une illustration de la constr
 \begin{equation}
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_0}I_p,&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_i}I_p,&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
+    \theta_{\bar{u}_c}^{\gamma_0}(1)-\theta_{\bar{u}_c}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_0}I_p&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{u}_c}^{\gamma_i}(1)-\theta_{\bar{u}_c}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in\mathcal{B}\cap\Gamma_i}I_p&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
 \end{equation}
@@ -1286,7 +1287,7 @@ Soit $\Omega$ un domaine borné et fermé dans $\mathbb{R}^2$ avec une frontièr
 \begin{proof}
 Selon les propositions \ref{prop:stream_from_interior_sing} et \ref{prop:stream_from_bord_sing}, chaque point singulier de $u$ donne lieu à un nombre fini de séparatrices. Étant donné que par hypothèse ces séparatrices ne convergent pas vers des cycles limites, elles doivent soit se terminer en un point singulier, soit intersecter la frontière de $\Omega$. En conséquence, les séparatrices de $\bar{u}$ divisent $\Omega$ en régions qui ne contiennent aucun point singulier et qui sont délimitées par des séparatrices.
 
-Soit $\mathcal{R}$ l'une de ces régions. Selon le Théorème de Poincaré-Hopf, on a $\chi(\mathcal{R})=\sum_{i=1}^{n_c} id_{\bar{u}}(c_i)$, où $(c_i)_{i\in\llbracket1,n_c\rrbracket}$ désigne les coins de $\mathcal{R}$ (c'est à dire les points d'intersections des séparatrices formant la région $\mathcal{R}$) et $n_c$ est le nombre de coins. $\chi(\mathcal{R})\geq0$ car, d'après la proposition \ref{prop:loveprop}, nous avons $id_{\bar{u}}(c_i)=1/4>0$ pour chaque coin $c_i$ de $\mathcal{R}$. De plus, on sait que $\chi(\mathcal{R}) = 2 - 2g - b$, où $g$ représente le genre de $\mathcal{R}$ et $b$ le nombre de composantes connexes de $\partial\mathcal{R}$ (détail en annexe). Comme $\mathcal{R}$ est une partie du plan, on a $g = 0$, ce qui implique que $\chi(\mathcal{R})\in\{0, 1\}$.
+Soit $\mathcal{R}$ l'une de ces régions. Selon le Théorème de Poincaré-Hopf, on a $\chi(\mathcal{R})=\sum_{i=1}^{n_c} id_{\bar{u}}(c_i)$, où $(c_i)_{i\in\llbracket1,n_c\rrbracket}$ désigne les coins de $\mathcal{R}$ (c'est à dire les points d'intersections des séparatrices formant la région $\mathcal{R}$) et $n_c$ est le nombre de coins. $\chi(\mathcal{R})\geq0$ car, d'après la proposition \ref{prop:loveprop}, nous avons $id_{\bar{u}}(c_i)=1/4>0$ pour chaque coin $c_i$ de $\mathcal{R}$. De plus, on sait que $\chi(\mathcal{R}) = 2 - 2g - b$, où $g$ représente le genre de $\mathcal{R}$ et $b$ le nombre de composantes connexes de $\partial\mathcal{R}$ (détail en Annexe). Comme $\mathcal{R}$ est une partie du plan, on a $g = 0$, ce qui implique que $\chi(\mathcal{R})\in\{0, 1\}$.
 \begin{itemize}
 \item $\chi(\mathcal{R})=0$: dans ce cas on a $n_c=0$ et $\mathcal{R}=\Omega$. Cela mène à une contradiction puisque, selon les hypothèses du théorème on a $Card(\mathcal{S}_{\bar{u}})>0$.
 \item $\chi(\mathcal{R})=1$: cela implique que :
@@ -1324,7 +1325,7 @@ Soit $\phi$, la fonction définie par l'équation \eqref{eqn:principe_def_phi}. 
     $$
     \begin{array}{lcl}
         \phi(\gamma(1))-\phi(\gamma(0))&=&\theta^\gamma_{\bar{n}}(1)+\mathcal{I}(1)-\theta_{\bar{u}}(\gamma(1))-(\theta^\gamma_{\bar{n}}(0)+\mathcal{I}(0)-\theta_{\bar{u}}(\gamma(0)))\\\\
-        &=&(\theta^\gamma_{\bar{n}}(1)-\theta_{\bar{n}}^\gamma(0))+(\mathcal{I}(1)-\mathcal{I}(0))-(\theta_{\bar{u}}(\gamma(1))-\theta_{\bar{u}}(\gamma(0))
+        &=&(\theta^\gamma_{\bar{n}}(1)-\theta_{\bar{n}}^\gamma(0))+(\mathcal{I}(1)-\mathcal{I}(0))-(\theta_{\bar{u}}(\gamma(1))-\theta_{\bar{u}}(\gamma(0)).
     \end{array}
     $$
     En posant $\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})=\{t_1,\dots,t_{n_t}\}$ avec $n_t\in\mathbb{N}^*$ et $t_1<\dots<t_{n_t}$, on a:
@@ -1333,7 +1334,7 @@ Soit $\phi$, la fonction définie par l'équation \eqref{eqn:principe_def_phi}. 
         \theta_{\bar{n}}^\gamma(1)-\theta^\gamma_{\bar{n}}(0)&=&\theta_{\bar{n}}^\gamma(t_1^-)-\theta_{\bar{n}}^\gamma(0)+\displaystyle\sum_{i=2}^{n_t}\left(\theta_{\bar{n}}^\gamma(t_i^-)-\theta_{\bar{n}}^\gamma(t_{i-1}^+)\right)+\theta_{\bar{n}}^\gamma(0)\\[0.7cm]
         &&+\theta_{\bar{n}}^\gamma(1)-\theta_{\bar{n}}^\gamma(t_{n_t}^-)+\displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{n}}^\gamma(t_i^+)-\theta_{\bar{n}}^\gamma(t_i^-)\right)-\theta_{\bar{n}}^\gamma(0)\\[0.7cm]
         &=&\displaystyle\int_0^1d\theta_{\bar{n}}^\gamma+\displaystyle\sum_{i=1}^{n_t}\left(\theta_{\bar{n}}^\gamma(t_i^+)-\theta_{\bar{n}}^\gamma(t_i^-)\right)\\[0.7cm]
-        \theta_{\bar{n}}^\gamma(1)-\theta^\gamma_{\bar{n}}(0)&=&\displaystyle\int_0^1d\theta_{\bar{n}}^\gamma+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left(\theta_{\bar{n}}^\gamma(s^+)-\theta_{\bar{n}}^\gamma(s^-)\right)
+        \theta_{\bar{n}}^\gamma(1)-\theta^\gamma_{\bar{n}}(0)&=&\displaystyle\int_0^1d\theta_{\bar{n}}^\gamma+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left(\theta_{\bar{n}}^\gamma(s^+)-\theta_{\bar{n}}^\gamma(s^-)\right).
     \end{array}
     $$
     Remarquons aussi que puisque $\mathcal{I}(0)=0$, on a:
@@ -1348,7 +1349,7 @@ Soit $\phi$, la fonction définie par l'équation \eqref{eqn:principe_def_phi}. 
     $$
     \begin{array}{lcl}
         \phi(\gamma(1))-\phi(\gamma(0))&=&\displaystyle\sum_{i=1}^{n_t}\int_{t_i}^{t_{i+1}}d\theta_{\bar{n}}^\gamma+\sum_{s\in\gamma^{-1}(\mathcal{B})}\left(\pi-\widehat{\gamma(s)}\right)\\[0.7cm]
-        &&-\displaystyle\left(\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}2\pi I_{\gamma(s)}+(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0))\right)
+        &&-\displaystyle\left(\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}2\pi I_{\gamma(s)}+(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0))\right),
     \end{array}
     $$
     où on a posé $t_{n_t+1}:=t_1$. D'après le théorème des tangentes tournantes \cite{hopf1935drehung, rotskoff2010gauss}, on sait que :
@@ -1406,7 +1407,7 @@ id_{\bar{v}}(p)=
     $$
     où $k_s\in\mathbb{Z}$ et où on a posé $I_{\gamma(s)}=m_s/4$ avec $m_s\in\mathbb{Z}$ et $m_s\leq1$. Autrement dit, on a:
     $$
-    \theta_{\bar{v}}(\gamma(t_p))=\theta_{\bar{n}}^\gamma(t_p)+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2}$$
+    \theta_{\bar{v}}(\gamma(t_p))=\theta_{\bar{n}}^\gamma(t_p)+\displaystyle\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2},$$
     et donc:
     $$
     \theta_{\bar{v}}(\gamma(t_p))\equiv\theta_{\bar{n}}^\gamma(t_p)\pmod{\frac{\pi}{2}}.
@@ -1421,25 +1422,25 @@ id_{\bar{v}}(p)=
         $$
         où $\mathcal{C}$ est un lacet paramétré sur $[0, 1]$ tel que $\mathcal{C}(0)=p=\mathcal{C}(1)$ et les vecteurs $\mathcal{C}'(0)$ et $\mathcal{C}'(1)$ sont tangents à $\partial\Omega$. De plus, $\mathcal{C}$ n'englobe aucun autre point singulier de $\bar{u}$. Soit $t_p\in]0, 1[$ tel que $\gamma(t_p)=p$. On a:
         $$
-        id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{v}}^\gamma(t_p^-)-\theta_{\bar{v}}^\gamma(t_p^+)\right)\right]
+        id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{v}}^\gamma(t_p^-)-\theta_{\bar{v}}^\gamma(t_p^+)\right)\right],
         $$
         où on a noté $\lim_{t\rightarrow t_p^+}\theta^\gamma_{\bar{v}}(t)=\theta^\gamma_{\bar{v}}(t_p^+)$ et $\lim_{t\rightarrow t_p^-}\theta^\gamma_{\bar{v}}(t)=\theta_{\bar{v}}^\gamma(t_p^-)$. Autrement dit, on a:
         $$
         \begin{array}{lcl}
         id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\phi(\gamma(t_p^-))+\theta_{\bar{u}}^\gamma(t_p^-)-\phi(\gamma(t_p^+))-\theta_{\bar{u}}^\gamma(t_p^+)\right)\right]\\\\
-        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{n}}^\gamma(t_p^-)-\theta_{\bar{n}}^\gamma(t_p^+)\right)+\left(\mathcal{I}(t_p^-)-\mathcal{I}(t_p^+)\right)\right]
+        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{n}}^\gamma(t_p^-)-\theta_{\bar{n}}^\gamma(t_p^+)\right)+\left(\mathcal{I}(t_p^-)-\mathcal{I}(t_p^+)\right)\right].
         \end{array}
         $$
         Remarquons que:
         \begin{eqnarray*}
             \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)&=&\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap[0, t_p]}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{n}}(s^+) - \theta^{\gamma}_{\bar{n}}(s^-)\right)\right]\\\\
             &&-\sum_{s\in\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap[0, t_p[}\left[\left(\pi-\widehat{\gamma(s)}-2\pi I_{\gamma(s)}\right)-\left(\theta^{\gamma}_{\bar{n}}(s^+) - \theta^{\gamma}_{\bar{n}}(s^-)\right)\right]\\\\
-            &=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma}_{\bar{n}}(t_p^+) - \theta^{\gamma}_{\bar{n}}(t_p^-)\right)
+            &=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma}_{\bar{n}}(t_p^+) - \theta^{\gamma}_{\bar{n}}(t_p^-)\right).
         \end{eqnarray*}
         Il vient alors que:
         \begin{eqnarray*}
         id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\theta^{\gamma}_{\bar{n}}(t_p^+) - \theta^{\gamma}_{\bar{n}}(t_p^-)\right)-\left(\pi-\widehat{p}-2\pi I_p\right)+\left(\theta^{\gamma}_{\bar{n}}(t_p^+) - \theta^{\gamma}_{\bar{n}}(t_p^-)\right)\right]\\\\
-        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\pi-\widehat{p}-2\pi I_p\right)\right]
+        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\pi-\widehat{p}-2\pi I_p\right)\right].
         \end{eqnarray*}
         Par conséquent, $id^\partial_{\bar{v}}(p)=I_p$.\\
         \item[$\bullet$] Supposons maintenant que $p=\gamma(0)=\gamma(1)$. Puisque $\bar{v}$ est aligné par rapport à $\partial\Omega$, en appliquant le théorème de Poincaré-Hopf à $\bar{v}$, on obtient :
@@ -1449,7 +1450,7 @@ id_{\bar{v}}(p)=
         % BIEN SUR ICI ON PEUT DIRE QUE LA SOMME DES ID_V= SOMME DES ID_U MAIS CE N'EST PAS DE CA ON A BESOIN. oN A BESOIN DE THETA_U_1-THETA_U_0 ET ON NE SAIT PAS MONTRER QUE SOMME DES ID_U=THETA_U_1-THETA_U_0 A CAUSE DE THETA_U^GAMMA
         Sachant que $\sum_{q\in\Omega\backslash\partial\Omega}id_{\bar{v}}(q)=\theta_{\bar{v}}^\gamma(1)-\theta_{\bar{v}}^\gamma(0)$ (puisqu'il sagit du nombre de fois que $\bar{v}$ tourne sur lui même le long de $\gamma$), il vient que :
         $$
-        \phi(\gamma(1))-\phi(\gamma(0))+\left(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)\right)+\sum_{q\in\partial\Omega}id_{\bar{v}}^\gamma(q)=\chi(\Omega)
+        \phi(\gamma(1))-\phi(\gamma(0))+\left(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)\right)+\sum_{q\in\partial\Omega}id_{\bar{v}}^\gamma(q)=\chi(\Omega).
         $$
         D'après le lemme \ref{lem:marvelous_lemma}, $\phi(\gamma(1))-\phi(\gamma(0))=0$. On a donc:
         $$
@@ -1461,7 +1462,7 @@ id_{\bar{v}}(p)=
         $$
         Autrement dit,
         $$
-        id^\partial_{\bar{v}}(p) - I_p =\chi(\Omega)-\left[\left(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)\right)+\sum_{q\in\partial\Omega} I_q\right]
+        id^\partial_{\bar{v}}(p) - I_p =\chi(\Omega)-\left[\left(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)\right)+\sum_{q\in\partial\Omega} I_q\right].
         $$
         Finalement, en utilisant la condition \eqref{eqn:etude_hypothese_u}, on obtient:
         $$
@@ -1474,8 +1475,8 @@ Nous donnons maintenant la généralisation du théorème précédent aux domain
 \begin{equation}
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p,&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p,&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
+    \theta_{\bar{u}}^{\gamma_0}(1)-\theta_{\bar{u}}^{\gamma_0}(0)&=&2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p&\mbox{ sur }\Gamma_0,\\\\
+    \theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)&=&-2\pi-2\pi\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p&\mbox{ sur }\Gamma_i,~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.
     \label{eqn:etude_hypothese_u_second}
@@ -1505,7 +1506,7 @@ De façon analogue a ce qui est fait dans la preuve du lemme \ref{lem:marvelous_
 $$
 \begin{array}{lcl}
     \phi(\gamma_i(1))-\phi(\gamma_i(0))&=&\displaystyle\sum_{i=1}^{n_t}\int_{t_i}^{t_{i+1}}d\theta_{\bar{n}}^{\gamma_i}+\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}\left(\pi-\widehat{\gamma_i(s)}\right)\\\\
-    &&-\displaystyle\left(\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}2\pi I_{\gamma_i(s)}+(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0))\right)
+    &&-\displaystyle\left(\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)}2\pi I_{\gamma_i(s)}+(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0))\right),
 \end{array}
 $$
     où on a posé $t_{n_t+1}:=t_1$. D'après le théorème des tangentes tournantes \cite{hopf1935drehung, rotskoff2010gauss}, on sait que :
@@ -1574,7 +1575,7 @@ id_{\bar{v}}(p)=
     $$
     où $k_s\in\mathbb{Z}$ et où on a posé $I_{\gamma_i(s)}=m_s/4$ avec $m_s\in\mathbb{Z}$ et $m_s\leq1$. Autrement dit, on a:
     $$
-    \theta_{\bar{v}}(\gamma_i(t_p))=\theta_{\bar{n}}^{\gamma_i}(t_p)+\displaystyle\sum_{s\in{\gamma_i}^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2}$$
+    \theta_{\bar{v}}(\gamma_i(t_p))=\theta_{\bar{n}}^{\gamma_i}(t_p)+\displaystyle\sum_{s\in{\gamma_i}^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})}\left[-m_s\frac{\pi}{2}+k_s\frac{\pi}{2}\right]\mathbb{1}_{[0, t_p]}(s)+k\frac{\pi}{2},$$
     et donc:
     $$
     \theta_{\bar{v}}(\gamma_i(t_p))\equiv\theta_{\bar{n}}^{\gamma_i}(t_p)\pmod{\frac{\pi}{2}}.
@@ -1589,7 +1590,7 @@ id_{\bar{v}}(p)=
         $$
         où $\mathcal{C}$ est un lacet paramétré sur $[0, 1]$ tel que $\mathcal{C}(0)=p=\mathcal{C}(1)$ et les vecteurs $\mathcal{C}'(0)$ et $\mathcal{C}'(1)$ sont tangents à $\partial\Omega$. De plus, $\mathcal{C}$ n'englobe aucun autre point singulier de $\bar{u}$. Soit $t_p\in]0, 1[$ tel que $\gamma_i(t_p)=p$. On a:
         $$
-        id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{v}}^{\gamma_i}(t_p^-)-\theta_{\bar{v}}^{\gamma_i}(t_p^+)\right)\right]
+        id^\partial_{\bar{v}}(p)=\frac{1}{2\pi}\left[\pi-\widehat{p}+\left(\theta_{\bar{v}}^{\gamma_i}(t_p^-)-\theta_{\bar{v}}^{\gamma_i}(t_p^+)\right)\right],
         $$
         où on a noté $\lim_{t\rightarrow t_p^+}\theta^{\gamma_i}_{\bar{v}}(t)=\theta^{\gamma_i}_{\bar{v}}(t_p^+)$ et $\lim_{t\rightarrow t_p^-}\theta^{\gamma_i}_{\bar{v}}(t)=\theta_{\bar{v}}^{\gamma_i}(t_p^-)$. Autrement dit, on a:
         $$
@@ -1603,13 +1604,13 @@ id_{\bar{v}}(p)=
         \begin{array}{ll}
             \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)=&\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)\cap[0, t_p]}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\theta^{\gamma_i}_{\bar{n}}(s^+) - \theta^{\gamma_i}_{\bar{n}}(s^-)\right)\right]\\\\
             &-\displaystyle\sum_{s\in{\gamma_i}^{-1}((\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i)\cap[0, t_p[}\left[\left(\pi-\widehat{\gamma_i(s)}-2\pi I_{\gamma_i(s)}\right)-\left(\theta^{\gamma_i}_{\bar{n}}(s^+) - \theta^{\gamma_i}_{\bar{n}}(s^-)\right)\right]\\\\
-            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma_i}_{\bar{n}}(t_p^+) - \theta^{\gamma_i}_{\bar{n}}(t_p^-)\right)
+            \mathcal{I}(t_p^+)-\mathcal{I}(t_p^-)=&\left(\pi-\widehat{p}-2\pi I_p\right)-\left(\theta^{\gamma_i}_{\bar{n}}(t_p^+) - \theta^{\gamma_i}_{\bar{n}}(t_p^-)\right).
         \end{array}
         $$
         Il vient alors que:
         \begin{eqnarray*}
         id^\partial_{\bar{v}}(p)&=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\theta^{\gamma_i}_{\bar{n}}(t_p^+) - \theta^{\gamma_i}_{\bar{n}}(t_p^-)\right)-\left(\pi-\widehat{p}-2\pi I_p\right)+\left(\theta^{\gamma_i}_{\bar{n}}(t_p^+) - \theta^{\gamma_i}_{\bar{n}}(t_p^-)\right)\right]\\\\
-        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\pi-\widehat{p}-2\pi I_p\right)\right]
+        &=&\displaystyle\frac{1}{2\pi}\left[\pi-\widehat{p}-\left(\pi-\widehat{p}-2\pi I_p\right)\right].
         \end{eqnarray*}
         Par conséquent, $id^\partial_{\bar{v}}(p)=I_p$.\\
         \item[$\bullet$] Supposons maintenant que $p\in\Gamma_i$ tel que $p=\gamma_i(0)=\gamma_i(1)$ avec $i\in\llbracket0, n_b-1\rrbracket$. De ce qui précède, il ressort que $\bar{v}$ est aligné par rapport à $\partial\Omega$ donc aligné sur $\Gamma_i$. Par conséquent, d'après le théorème des tangentes tournantes \cite{hopf1935drehung, rotskoff2010gauss}, on a:
@@ -1706,8 +1707,8 @@ Soit $\bar{w}$ un champ de croix presque-$\mathcal{C}^1$ définit sur $\Omega$ e
 \begin{equation}
     \left\{
     \begin{array}{lcll}
-    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right),&\mbox{ sur }\Gamma_0\\\\
-    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right),&\mbox{ sur }\Gamma_i,\\\\
+    \theta_{\bar{w}}^{\gamma_0}(1)-\theta_{\bar{w}}^{\gamma_0}(0)&=&\theta_{\bar{u}}^{\gamma_0}(0)-\theta_{\bar{u}}^{\gamma_0}(1)+2\pi\left(1-\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_0}I_p\right)&\mbox{ sur }\Gamma_0\\\\
+    \theta_{\bar{w}}^{\gamma_i}(1)-\theta_{\bar{w}}^{\gamma_i}(0)&=&\theta_{\bar{u}}^{\gamma_i}(0)-\theta_{\bar{u}}^{\gamma_i}(1)-2\pi\left(1+\displaystyle\sum_{p\in(\mathcal{B}\cup\mathcal{S}_{\bar{n}})\cap\Gamma_i}I_p\right)&\mbox{ sur }\Gamma_i,\\\\
     &&&~\forall i\in\llbracket 1, n_b-1\rrbracket.
     \end{array}
     \right.

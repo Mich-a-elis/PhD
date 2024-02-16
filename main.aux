@@ -600,6 +600,8 @@
 \newlabel{subsec:mesh_tri}{{3.1.1}{59}{Maillage triangulaire}{subsection.3.1.1}{}}
 \newlabel{subsec:mesh_tri@cref}{{[subsection][1][3,1]3.1.1}{[1][59][]59}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Champ de croix}{60}{subsection.3.1.2}\protected@file@percent }
+\newlabel{subsec:discr_champ_de_croix}{{3.1.2}{60}{Champ de croix}{subsection.3.1.2}{}}
+\newlabel{subsec:discr_champ_de_croix@cref}{{[subsection][2][3,1]3.1.2}{[1][59][]60}}
 \newlabel{ass:triangle_singulier}{{3.2}{60}{}{definition.3.2}{}}
 \newlabel{ass:triangle_singulier@cref}{{[assertion][2][3]3.2}{[1][60][]60}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration de la construction de zones singulières.\relax }}{60}{figure.caption.60}\protected@file@percent }
@@ -627,8 +629,12 @@
 \newlabel{fig:draw_streams_1}{{3.2}{63}{Approximation d'une ligne de champ par la méthode de Heun's.\relax }{figure.caption.61}{}}
 \newlabel{fig:draw_streams_1@cref}{{[figure][2][3]3.2}{[1][62][]63}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Lien entre $\overline  {u}$ et $\overline  {u}_h$}{63}{subsection.3.1.4}\protected@file@percent }
+\newlabel{Lien_u_u_h}{{3.1.4}{63}{Lien entre $\bar {u}$ et $\bar {u}_h$}{subsection.3.1.4}{}}
+\newlabel{Lien_u_u_h@cref}{{[subsection][4][3,1]3.1.4}{[1][62][]63}}
 \@writefile{toc}{\contentsline {paragraph}{Points singuliers:}{63}{section*.63}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Singularités d'ordre supérieur:}{63}{section*.65}\protected@file@percent }
+\citation{dziuk1988finite}
+\citation{dziuk1988finite}
 \citation{dziuk1988finite}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Approche alternative pour l'intéfration des lignes de champ dans un champ de croix.\relax }}{64}{figure.caption.62}\protected@file@percent }
 \newlabel{fig:draw_streams_2}{{3.3}{64}{Approche alternative pour l'intéfration des lignes de champ dans un champ de croix.\relax }{figure.caption.62}{}}
@@ -637,348 +643,423 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Comparaison de la localisation des points singuliers entre $\overline  {u}$ et $\overline  {u}_h$.\relax }}{65}{figure.caption.64}\protected@file@percent }
 \newlabel{fig:eclatement_point_sing}{{3.4}{65}{Comparaison de la localisation des points singuliers entre $\bar {u}$ et $\bar {u}_h$.\relax }{figure.caption.64}{}}
 \newlabel{fig:eclatement_point_sing@cref}{{[figure][4][3]3.4}{[1][63][]65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Comparaison de $\Omega $ et $\Omega _h$.\relax }}{65}{figure.caption.67}\protected@file@percent }
+\newlabel{fig:Omega_vs_Omega_h}{{3.5}{65}{Comparaison de $\Omega $ et $\Omega _h$.\relax }{figure.caption.67}{}}
+\newlabel{fig:Omega_vs_Omega_h@cref}{{[figure][5][3]3.5}{[1][64][]65}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Partitionnement de $\partial \Omega _h$}{65}{section.3.2}\protected@file@percent }
 \newlabel{sec:partitionnement_omega_h}{{3.2}{65}{Partitionnement de $\partial \Omega _h$}{section.3.2}{}}
-\newlabel{sec:partitionnement_omega_h@cref}{{[section][2][3]3.2}{[1][64][]65}}
-\newlabel{alg:discr_algo_main}{{\caption@xref {alg:discr_algo_main}{ on input line 292}}{65}{Partitionnement de $\partial \Omega _h$}{algocf.caption.67}{}}
-\newlabel{alg:discr_algo_main@cref}{{[algocfline][4][]4}{[1][65][]65}}
+\newlabel{sec:partitionnement_omega_h@cref}{{[section][2][3]3.2}{[1][65][]65}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Partitionnement $\Omega _h$\relax }}{65}{algocf.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Recherche de points singuliers}{65}{subsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Construction des séparatrices}{65}{subsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Nombre de séparatrices:}{66}{section*.68}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }}{66}{figure.caption.69}\protected@file@percent }
-\newlabel{fig:init_streams_int}{{3.5}{66}{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }{figure.caption.69}{}}
-\newlabel{fig:init_streams_int@cref}{{[figure][5][3]3.5}{[1][66][]66}}
+\newlabel{alg:discr_algo_main}{{4}{65}{Partitionnement de $\partial \Omega _h$}{algocf.4}{}}
+\newlabel{alg:discr_algo_main@cref}{{[algocf][4][]4}{[1][65][]65}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Recherche de points singuliers}{66}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Construction des séparatrices}{66}{subsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Nombre de séparatrices:}{66}{section*.69}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }}{66}{figure.caption.70}\protected@file@percent }
-\newlabel{fig:init_streams_bord}{{3.6}{66}{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }{figure.caption.70}{}}
-\newlabel{fig:init_streams_bord@cref}{{[figure][6][3]3.6}{[1][66][]66}}
-\@writefile{toc}{\contentsline {paragraph}{Directions initiales et intégration:}{66}{section*.71}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Illustration des directions de sortie des séparatrices d'un point singulier d'indice $1/4$, utilisant deux méthodes distinctes.\relax }}{67}{figure.caption.72}\protected@file@percent }
-\newlabel{fig:first_dir}{{3.7}{67}{Illustration des directions de sortie des séparatrices d'un point singulier d'indice $1/4$, utilisant deux méthodes distinctes.\relax }{figure.caption.72}{}}
-\newlabel{fig:first_dir@cref}{{[figure][7][3]3.7}{[1][67][]67}}
-\@writefile{toc}{\contentsline {paragraph}{Traversé d'un triangle singulier:}{67}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:init_streams_int}{{3.6}{66}{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }{figure.caption.70}{}}
+\newlabel{fig:init_streams_int@cref}{{[figure][6][3]3.6}{[1][66][]66}}
+\@writefile{toc}{\contentsline {paragraph}{Directions initiales et intégration:}{66}{section*.72}\protected@file@percent }
 \citation{marcon2019high}
-\newlabel{fig:draw_streams_sing_1}{{3.8a}{68}{\'Echec d'intégration d'une séparatrice dans un triangle singulier.\relax }{figure.caption.74}{}}
-\newlabel{fig:draw_streams_sing_1@cref}{{[subfigure][1][3,8]3.8a}{[1][67][]68}}
-\newlabel{sub@fig:draw_streams_sing_1}{{a}{68}{\'Echec d'intégration d'une séparatrice dans un triangle singulier.\relax }{figure.caption.74}{}}
-\newlabel{sub@fig:draw_streams_sing_1@cref}{{[subfigure][1][3,8]3.8a}{[1][67][]68}}
-\newlabel{fig:draw_streams_sing_2}{{3.8b}{68}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.\relax }{figure.caption.74}{}}
-\newlabel{fig:draw_streams_sing_2@cref}{{[subfigure][2][3,8]3.8b}{[1][67][]68}}
-\newlabel{sub@fig:draw_streams_sing_2}{{b}{68}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.\relax }{figure.caption.74}{}}
-\newlabel{sub@fig:draw_streams_sing_2@cref}{{[subfigure][2][3,8]3.8b}{[1][67][]68}}
-\newlabel{fig:draw_streams_sing_3}{{3.8c}{68}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.\relax }{figure.caption.74}{}}
-\newlabel{fig:draw_streams_sing_3@cref}{{[subfigure][3][3,8]3.8c}{[1][67][]68}}
-\newlabel{sub@fig:draw_streams_sing_3}{{c}{68}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.\relax }{figure.caption.74}{}}
-\newlabel{sub@fig:draw_streams_sing_3@cref}{{[subfigure][3][3,8]3.8c}{[1][67][]68}}
-\newlabel{fig:draw_streams_sing_4}{{3.8d}{68}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.\relax }{figure.caption.74}{}}
-\newlabel{fig:draw_streams_sing_4@cref}{{[subfigure][4][3,8]3.8d}{[1][67][]68}}
-\newlabel{sub@fig:draw_streams_sing_4}{{d}{68}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.\relax }{figure.caption.74}{}}
-\newlabel{sub@fig:draw_streams_sing_4@cref}{{[subfigure][4][3,8]3.8d}{[1][67][]68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration de l'intégration d'une séparatice dans un triangle singulier.\relax }}{68}{figure.caption.74}\protected@file@percent }
-\newlabel{fig:draw_streams_sing}{{3.8}{68}{Illustration de l'intégration d'une séparatice dans un triangle singulier.\relax }{figure.caption.74}{}}
-\newlabel{fig:draw_streams_sing@cref}{{[figure][8][3]3.8}{[1][67][]68}}
-\@writefile{toc}{\contentsline {paragraph}{Fusion de séparatrices:}{68}{section*.76}\protected@file@percent }
-\newlabel{fig:decoup_sans_fusion}{{3.9a}{69}{Intégration de séparatrices sans fusion.\relax }{figure.caption.75}{}}
-\newlabel{fig:decoup_sans_fusion@cref}{{[subfigure][1][3,9]3.9a}{[1][67][]69}}
-\newlabel{sub@fig:decoup_sans_fusion}{{a}{69}{Intégration de séparatrices sans fusion.\relax }{figure.caption.75}{}}
-\newlabel{sub@fig:decoup_sans_fusion@cref}{{[subfigure][1][3,9]3.9a}{[1][67][]69}}
-\newlabel{fig:decoup_detect_fusion}{{3.9b}{69}{Détection d'une fusion.\relax }{figure.caption.75}{}}
-\newlabel{fig:decoup_detect_fusion@cref}{{[subfigure][2][3,9]3.9b}{[1][67][]69}}
-\newlabel{sub@fig:decoup_detect_fusion}{{b}{69}{Détection d'une fusion.\relax }{figure.caption.75}{}}
-\newlabel{sub@fig:decoup_detect_fusion@cref}{{[subfigure][2][3,9]3.9b}{[1][67][]69}}
-\newlabel{fig:decoup_fusion}{{3.9c}{69}{Intégration de séparatrices avec fusion.\relax }{figure.caption.75}{}}
-\newlabel{fig:decoup_fusion@cref}{{[subfigure][3][3,9]3.9c}{[1][67][]69}}
-\newlabel{sub@fig:decoup_fusion}{{c}{69}{Intégration de séparatrices avec fusion.\relax }{figure.caption.75}{}}
-\newlabel{sub@fig:decoup_fusion@cref}{{[subfigure][3][3,9]3.9c}{[1][67][]69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Illustration de la fusion de séparatrices.\relax }}{69}{figure.caption.75}\protected@file@percent }
-\newlabel{fig:fusion}{{3.9}{69}{Illustration de la fusion de séparatrices.\relax }{figure.caption.75}{}}
-\newlabel{fig:fusion@cref}{{[figure][9][3]3.9}{[1][67][]69}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }}{67}{figure.caption.71}\protected@file@percent }
+\newlabel{fig:init_streams_bord}{{3.7}{67}{Illustration du maillage quadrilatéral d'un anneau à partir d'un champ de croix radial.\relax }{figure.caption.71}{}}
+\newlabel{fig:init_streams_bord@cref}{{[figure][7][3]3.7}{[1][66][]67}}
+\@writefile{toc}{\contentsline {paragraph}{Traversé d'un triangle singulier:}{67}{figure.caption.76}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fusion de séparatrices:}{67}{section*.77}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Illustration des directions de sortie des séparatrices d'un point singulier d'indice $1/4$, utilisant deux méthodes distinctes.\relax }}{68}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:first_dir}{{3.8}{68}{Illustration des directions de sortie des séparatrices d'un point singulier d'indice $1/4$, utilisant deux méthodes distinctes.\relax }{figure.caption.73}{}}
+\newlabel{fig:first_dir@cref}{{[figure][8][3]3.8}{[1][66][]68}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Assemblage des partitions}{68}{subsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Intersections de séparatrices:}{68}{section*.79}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Identification des partitions:}{68}{section*.80}\protected@file@percent }
+\citation{georgegeneration}
+\newlabel{fig:draw_streams_sing_1}{{3.9a}{69}{\'Echec d'intégration d'une séparatrice dans un triangle singulier.\relax }{figure.caption.75}{}}
+\newlabel{fig:draw_streams_sing_1@cref}{{[subfigure][1][3,9]3.9a}{[1][67][]69}}
+\newlabel{sub@fig:draw_streams_sing_1}{{a}{69}{\'Echec d'intégration d'une séparatrice dans un triangle singulier.\relax }{figure.caption.75}{}}
+\newlabel{sub@fig:draw_streams_sing_1@cref}{{[subfigure][1][3,9]3.9a}{[1][67][]69}}
+\newlabel{fig:draw_streams_sing_2}{{3.9b}{69}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.\relax }{figure.caption.75}{}}
+\newlabel{fig:draw_streams_sing_2@cref}{{[subfigure][2][3,9]3.9b}{[1][67][]69}}
+\newlabel{sub@fig:draw_streams_sing_2}{{b}{69}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.\relax }{figure.caption.75}{}}
+\newlabel{sub@fig:draw_streams_sing_2@cref}{{[subfigure][2][3,9]3.9b}{[1][67][]69}}
+\newlabel{fig:draw_streams_sing_3}{{3.9c}{69}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.\relax }{figure.caption.75}{}}
+\newlabel{fig:draw_streams_sing_3@cref}{{[subfigure][3][3,9]3.9c}{[1][67][]69}}
+\newlabel{sub@fig:draw_streams_sing_3}{{c}{69}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.\relax }{figure.caption.75}{}}
+\newlabel{sub@fig:draw_streams_sing_3@cref}{{[subfigure][3][3,9]3.9c}{[1][67][]69}}
+\newlabel{fig:draw_streams_sing_4}{{3.9d}{69}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.\relax }{figure.caption.75}{}}
+\newlabel{fig:draw_streams_sing_4@cref}{{[subfigure][4][3,9]3.9d}{[1][67][]69}}
+\newlabel{sub@fig:draw_streams_sing_4}{{d}{69}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.\relax }{figure.caption.75}{}}
+\newlabel{sub@fig:draw_streams_sing_4@cref}{{[subfigure][4][3,9]3.9d}{[1][67][]69}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Illustration de l'intégration d'une séparatice dans un triangle singulier.\relax }}{69}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:draw_streams_sing}{{3.9}{69}{Illustration de l'intégration d'une séparatice dans un triangle singulier.\relax }{figure.caption.75}{}}
+\newlabel{fig:draw_streams_sing@cref}{{[figure][9][3]3.9}{[1][67][]69}}
 \citation{georgegeneration}
 \citation{georgegeneration}
-\citation{georgegeneration}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Intersection de séparatrices.\relax }}{70}{figure.caption.77}\protected@file@percent }
-\newlabel{fig:detect_intersection}{{3.10}{70}{Intersection de séparatrices.\relax }{figure.caption.77}{}}
-\newlabel{fig:detect_intersection@cref}{{[figure][10][3]3.10}{[1][69][]70}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Assemblage des partitions}{70}{subsection.3.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Intersections de séparatrices:}{70}{section*.78}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Identification des partitions:}{70}{section*.79}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Direction de sortie différentes.\relax }}{71}{figure.caption.80}\protected@file@percent }
-\newlabel{fig:insert_pt}{{3.11}{71}{Direction de sortie différentes.\relax }{figure.caption.80}{}}
-\newlabel{fig:insert_pt@cref}{{[figure][11][3]3.11}{[1][70][]71}}
-\newlabel{alg:retournement_arete}{{5}{71}{Identification des partitions:}{algocfline.5}{}}
-\newlabel{alg:retournement_arete@cref}{{[algocfline][5][]5}{[1][70][]71}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Forçage des segments des séparatrices\relax }}{71}{algocf.5}\protected@file@percent }
+\newlabel{fig:decoup_sans_fusion}{{3.10a}{70}{Intégration de séparatrices sans fusion.\relax }{figure.caption.76}{}}
+\newlabel{fig:decoup_sans_fusion@cref}{{[subfigure][1][3,10]3.10a}{[1][67][]70}}
+\newlabel{sub@fig:decoup_sans_fusion}{{a}{70}{Intégration de séparatrices sans fusion.\relax }{figure.caption.76}{}}
+\newlabel{sub@fig:decoup_sans_fusion@cref}{{[subfigure][1][3,10]3.10a}{[1][67][]70}}
+\newlabel{fig:decoup_detect_fusion}{{3.10b}{70}{Détection d'une fusion.\relax }{figure.caption.76}{}}
+\newlabel{fig:decoup_detect_fusion@cref}{{[subfigure][2][3,10]3.10b}{[1][67][]70}}
+\newlabel{sub@fig:decoup_detect_fusion}{{b}{70}{Détection d'une fusion.\relax }{figure.caption.76}{}}
+\newlabel{sub@fig:decoup_detect_fusion@cref}{{[subfigure][2][3,10]3.10b}{[1][67][]70}}
+\newlabel{fig:decoup_fusion}{{3.10c}{70}{Intégration de séparatrices avec fusion.\relax }{figure.caption.76}{}}
+\newlabel{fig:decoup_fusion@cref}{{[subfigure][3][3,10]3.10c}{[1][67][]70}}
+\newlabel{sub@fig:decoup_fusion}{{c}{70}{Intégration de séparatrices avec fusion.\relax }{figure.caption.76}{}}
+\newlabel{sub@fig:decoup_fusion@cref}{{[subfigure][3][3,10]3.10c}{[1][67][]70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Illustration de la fusion de séparatrices.\relax }}{70}{figure.caption.76}\protected@file@percent }
+\newlabel{fig:fusion}{{3.10}{70}{Illustration de la fusion de séparatrices.\relax }{figure.caption.76}{}}
+\newlabel{fig:fusion@cref}{{[figure][10][3]3.10}{[1][67][]70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Intersection de séparatrices.\relax }}{71}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:detect_intersection}{{3.11}{71}{Intersection de séparatrices.\relax }{figure.caption.78}{}}
+\newlabel{fig:detect_intersection@cref}{{[figure][11][3]3.11}{[1][67][]71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Direction de sortie différentes.\relax }}{71}{figure.caption.81}\protected@file@percent }
+\newlabel{fig:insert_pt}{{3.12}{71}{Direction de sortie différentes.\relax }{figure.caption.81}{}}
+\newlabel{fig:insert_pt@cref}{{[figure][12][3]3.12}{[1][69][]71}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Génération du maillage quadrilatéral}{71}{section.3.3}\protected@file@percent }
 \newlabel{sec:gen_mesh_quad}{{3.3}{71}{Génération du maillage quadrilatéral}{section.3.3}{}}
 \newlabel{sec:gen_mesh_quad@cref}{{[section][3][3]3.3}{[1][71][]71}}
-\newlabel{fig:exemple_insert_pt_0}{{3.12a}{72}{Triangle traversé par des séparatrices.\relax }{figure.caption.81}{}}
-\newlabel{fig:exemple_insert_pt_0@cref}{{[subfigure][1][3,12]3.12a}{[1][70][]72}}
-\newlabel{sub@fig:exemple_insert_pt_0}{{a}{72}{Triangle traversé par des séparatrices.\relax }{figure.caption.81}{}}
-\newlabel{sub@fig:exemple_insert_pt_0@cref}{{[subfigure][1][3,12]3.12a}{[1][70][]72}}
-\newlabel{fig:exemple_insert_pt_1}{{3.12b}{72}{Insertion de $D$.\relax }{figure.caption.81}{}}
-\newlabel{fig:exemple_insert_pt_1@cref}{{[subfigure][2][3,12]3.12b}{[1][70][]72}}
-\newlabel{sub@fig:exemple_insert_pt_1}{{b}{72}{Insertion de $D$.\relax }{figure.caption.81}{}}
-\newlabel{sub@fig:exemple_insert_pt_1@cref}{{[subfigure][2][3,12]3.12b}{[1][70][]72}}
-\newlabel{fig:exemple_insert_pt_2}{{3.12c}{72}{Insertion de $E$.\relax }{figure.caption.81}{}}
-\newlabel{fig:exemple_insert_pt_2@cref}{{[subfigure][3][3,12]3.12c}{[1][70][]72}}
-\newlabel{sub@fig:exemple_insert_pt_2}{{c}{72}{Insertion de $E$.\relax }{figure.caption.81}{}}
-\newlabel{sub@fig:exemple_insert_pt_2@cref}{{[subfigure][3][3,12]3.12c}{[1][70][]72}}
-\newlabel{fig:exemple_insert_pt_3}{{3.12d}{72}{Insertion de $F$.\relax }{figure.caption.81}{}}
-\newlabel{fig:exemple_insert_pt_3@cref}{{[subfigure][4][3,12]3.12d}{[1][70][]72}}
-\newlabel{sub@fig:exemple_insert_pt_3}{{d}{72}{Insertion de $F$.\relax }{figure.caption.81}{}}
-\newlabel{sub@fig:exemple_insert_pt_3@cref}{{[subfigure][4][3,12]3.12d}{[1][70][]72}}
-\newlabel{fig:exemple_insert_pt_4}{{3.12e}{72}{Insertion de $G$.\relax }{figure.caption.81}{}}
-\newlabel{fig:exemple_insert_pt_4@cref}{{[subfigure][5][3,12]3.12e}{[1][70][]72}}
-\newlabel{sub@fig:exemple_insert_pt_4}{{e}{72}{Insertion de $G$.\relax }{figure.caption.81}{}}
-\newlabel{sub@fig:exemple_insert_pt_4@cref}{{[subfigure][5][3,12]3.12e}{[1][70][]72}}
-\newlabel{fig:exemple_insert_pt_5}{{3.12f}{72}{Insertion de $H$.\relax }{figure.caption.81}{}}
-\newlabel{fig:exemple_insert_pt_5@cref}{{[subfigure][6][3,12]3.12f}{[1][70][]72}}
-\newlabel{sub@fig:exemple_insert_pt_5}{{f}{72}{Insertion de $H$.\relax }{figure.caption.81}{}}
-\newlabel{sub@fig:exemple_insert_pt_5@cref}{{[subfigure][6][3,12]3.12f}{[1][70][]72}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Adaptation locale du triangle en fonction des points de passage des séparatrices.\relax }}{72}{figure.caption.81}\protected@file@percent }
-\newlabel{fig:exemple_insert_pt}{{3.12}{72}{Adaptation locale du triangle en fonction des points de passage des séparatrices.\relax }{figure.caption.81}{}}
-\newlabel{fig:exemple_insert_pt@cref}{{[figure][12][3]3.12}{[1][70][]72}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Forçage par retournement. Source: \cite  {georgegeneration}.\relax }}{73}{figure.caption.82}\protected@file@percent }
-\newlabel{fig:retournement_arete_george}{{3.13}{73}{Forçage par retournement. Source: \cite {georgegeneration}.\relax }{figure.caption.82}{}}
-\newlabel{fig:retournement_arete_george@cref}{{[figure][13][3]3.13}{[1][70][]73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Retrournement d'arête suite à l'exemple de la figure \ref  {fig:exemple_insert_pt}.\relax }}{73}{figure.caption.83}\protected@file@percent }
-\newlabel{fig:retournement_arete}{{3.14}{73}{Retrournement d'arête suite à l'exemple de la figure \ref {fig:exemple_insert_pt}.\relax }{figure.caption.83}{}}
-\newlabel{fig:retournement_arete@cref}{{[figure][14][3]3.14}{[1][71][]73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Extraction des régions en tant que sous-maillages.\relax }}{73}{figure.caption.84}\protected@file@percent }
-\newlabel{fig:eclatement}{{3.15}{73}{Extraction des régions en tant que sous-maillages.\relax }{figure.caption.84}{}}
-\newlabel{fig:eclatement@cref}{{[figure][15][3]3.15}{[1][71][]73}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Uniformisation}{73}{subsection.3.3.1}\protected@file@percent }
-\citation{cook1974body}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Echec du Partitionnement. Tous les partitions n'ont pas 4 côtés.\relax }}{74}{figure.caption.85}\protected@file@percent }
-\newlabel{fig:echec_partitionnement}{{3.16}{74}{Echec du Partitionnement. Tous les partitions n'ont pas 4 côtés.\relax }{figure.caption.85}{}}
-\newlabel{fig:echec_partitionnement@cref}{{[figure][16][3]3.16}{[1][71][]74}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Uniformisation}{71}{subsection.3.3.1}\protected@file@percent }
+\newlabel{fig:exemple_insert_pt_0}{{3.13a}{72}{Triangle traversé par des séparatrices.\relax }{figure.caption.82}{}}
+\newlabel{fig:exemple_insert_pt_0@cref}{{[subfigure][1][3,13]3.13a}{[1][69][]72}}
+\newlabel{sub@fig:exemple_insert_pt_0}{{a}{72}{Triangle traversé par des séparatrices.\relax }{figure.caption.82}{}}
+\newlabel{sub@fig:exemple_insert_pt_0@cref}{{[subfigure][1][3,13]3.13a}{[1][69][]72}}
+\newlabel{fig:exemple_insert_pt_1}{{3.13b}{72}{Insertion de $D$.\relax }{figure.caption.82}{}}
+\newlabel{fig:exemple_insert_pt_1@cref}{{[subfigure][2][3,13]3.13b}{[1][69][]72}}
+\newlabel{sub@fig:exemple_insert_pt_1}{{b}{72}{Insertion de $D$.\relax }{figure.caption.82}{}}
+\newlabel{sub@fig:exemple_insert_pt_1@cref}{{[subfigure][2][3,13]3.13b}{[1][69][]72}}
+\newlabel{fig:exemple_insert_pt_2}{{3.13c}{72}{Insertion de $E$.\relax }{figure.caption.82}{}}
+\newlabel{fig:exemple_insert_pt_2@cref}{{[subfigure][3][3,13]3.13c}{[1][69][]72}}
+\newlabel{sub@fig:exemple_insert_pt_2}{{c}{72}{Insertion de $E$.\relax }{figure.caption.82}{}}
+\newlabel{sub@fig:exemple_insert_pt_2@cref}{{[subfigure][3][3,13]3.13c}{[1][69][]72}}
+\newlabel{fig:exemple_insert_pt_3}{{3.13d}{72}{Insertion de $F$.\relax }{figure.caption.82}{}}
+\newlabel{fig:exemple_insert_pt_3@cref}{{[subfigure][4][3,13]3.13d}{[1][69][]72}}
+\newlabel{sub@fig:exemple_insert_pt_3}{{d}{72}{Insertion de $F$.\relax }{figure.caption.82}{}}
+\newlabel{sub@fig:exemple_insert_pt_3@cref}{{[subfigure][4][3,13]3.13d}{[1][69][]72}}
+\newlabel{fig:exemple_insert_pt_4}{{3.13e}{72}{Insertion de $G$.\relax }{figure.caption.82}{}}
+\newlabel{fig:exemple_insert_pt_4@cref}{{[subfigure][5][3,13]3.13e}{[1][69][]72}}
+\newlabel{sub@fig:exemple_insert_pt_4}{{e}{72}{Insertion de $G$.\relax }{figure.caption.82}{}}
+\newlabel{sub@fig:exemple_insert_pt_4@cref}{{[subfigure][5][3,13]3.13e}{[1][69][]72}}
+\newlabel{fig:exemple_insert_pt_5}{{3.13f}{72}{Insertion de $H$.\relax }{figure.caption.82}{}}
+\newlabel{fig:exemple_insert_pt_5@cref}{{[subfigure][6][3,13]3.13f}{[1][69][]72}}
+\newlabel{sub@fig:exemple_insert_pt_5}{{f}{72}{Insertion de $H$.\relax }{figure.caption.82}{}}
+\newlabel{sub@fig:exemple_insert_pt_5@cref}{{[subfigure][6][3,13]3.13f}{[1][69][]72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Adaptation locale du triangle en fonction des points de passage des séparatrices.\relax }}{72}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:exemple_insert_pt}{{3.13}{72}{Adaptation locale du triangle en fonction des points de passage des séparatrices.\relax }{figure.caption.82}{}}
+\newlabel{fig:exemple_insert_pt@cref}{{[figure][13][3]3.13}{[1][69][]72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Forçage par retournement. Source: \cite  {georgegeneration}.\relax }}{73}{figure.caption.83}\protected@file@percent }
+\newlabel{fig:retournement_arete_george}{{3.14}{73}{Forçage par retournement. Source: \cite {georgegeneration}.\relax }{figure.caption.83}{}}
+\newlabel{fig:retournement_arete_george@cref}{{[figure][14][3]3.14}{[1][70][]73}}
+\newlabel{alg:retournement_arete}{{\caption@xref {alg:retournement_arete}{ on input line 580}}{73}{Identification des partitions:}{algocf.caption.84}{}}
+\newlabel{alg:retournement_arete@cref}{{[algocfline][5][]5}{[1][70][]73}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Forçage des segments des séparatrices\relax }}{73}{algocf.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces Retrournement d'arête suite à l'exemple de la figure \ref  {fig:exemple_insert_pt}.\relax }}{73}{figure.caption.85}\protected@file@percent }
+\newlabel{fig:retournement_arete}{{3.15}{73}{Retrournement d'arête suite à l'exemple de la figure \ref {fig:exemple_insert_pt}.\relax }{figure.caption.85}{}}
+\newlabel{fig:retournement_arete@cref}{{[figure][15][3]3.15}{[1][70][]73}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Extraction des régions en tant que sous-maillages.\relax }}{74}{figure.caption.86}\protected@file@percent }
+\newlabel{fig:eclatement}{{3.16}{74}{Extraction des régions en tant que sous-maillages.\relax }{figure.caption.86}{}}
+\newlabel{fig:eclatement@cref}{{[figure][16][3]3.16}{[1][71][]74}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Echec du Partitionnement. Tous les partitions n'ont pas 4 côtés.\relax }}{74}{figure.caption.87}\protected@file@percent }
+\newlabel{fig:echec_partitionnement}{{3.17}{74}{Echec du Partitionnement. Tous les partitions n'ont pas 4 côtés.\relax }{figure.caption.87}{}}
+\newlabel{fig:echec_partitionnement@cref}{{[figure][17][3]3.17}{[1][71][]74}}
 \newlabel{alg:separatrice_echantillonage}{{6}{74}{Uniformisation}{algocfline.6}{}}
-\newlabel{alg:separatrice_echantillonage@cref}{{[algocfline][6][]6}{[1][74][]74}}
+\newlabel{alg:separatrice_echantillonage@cref}{{[algocfline][6][]6}{[1][73][]74}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {6}{\ignorespaces Assemblage de séparatrices parallèles.\relax }}{74}{algocf.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Interpolation transfinie}{74}{subsection.3.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces Exemple d'identification de séparatrices parallèles.\relax }}{75}{figure.caption.86}\protected@file@percent }
-\newlabel{fig:separatrice_echantillonage}{{3.17}{75}{Exemple d'identification de séparatrices parallèles.\relax }{figure.caption.86}{}}
-\newlabel{fig:separatrice_echantillonage@cref}{{[figure][17][3]3.17}{[1][74][]75}}
+\citation{cook1974body}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Exemple d'identification de séparatrices parallèles.\relax }}{75}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:separatrice_echantillonage}{{3.18}{75}{Exemple d'identification de séparatrices parallèles.\relax }{figure.caption.88}{}}
+\newlabel{fig:separatrice_echantillonage@cref}{{[figure][18][3]3.18}{[1][74][]75}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Interpolation transfinie}{75}{subsection.3.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Maillage par tracé direct de lignes de champ dans le champ de croix}{75}{subsection.3.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Méthode basée sur des EDP}{75}{subsection.3.3.4}\protected@file@percent }
-\newlabel{fig:transfini_1}{{3.18a}{76}{Discrétisation des séparatrices bordant le bloc.\relax }{figure.caption.87}{}}
-\newlabel{fig:transfini_1@cref}{{[subfigure][1][3,18]3.18a}{[1][75][]76}}
-\newlabel{sub@fig:transfini_1}{{a}{76}{Discrétisation des séparatrices bordant le bloc.\relax }{figure.caption.87}{}}
-\newlabel{sub@fig:transfini_1@cref}{{[subfigure][1][3,18]3.18a}{[1][75][]76}}
-\newlabel{fig:transfini_2}{{3.18b}{76}{Maillage du carré unité.\relax }{figure.caption.87}{}}
-\newlabel{fig:transfini_2@cref}{{[subfigure][2][3,18]3.18b}{[1][75][]76}}
-\newlabel{sub@fig:transfini_2}{{b}{76}{Maillage du carré unité.\relax }{figure.caption.87}{}}
-\newlabel{sub@fig:transfini_2@cref}{{[subfigure][2][3,18]3.18b}{[1][75][]76}}
-\newlabel{fig:transfini_3}{{3.18c}{76}{Maillage du bloc par transformation du maillage du carré unité (interpolation transfinie).\relax }{figure.caption.87}{}}
-\newlabel{fig:transfini_3@cref}{{[subfigure][3][3,18]3.18c}{[1][75][]76}}
-\newlabel{sub@fig:transfini_3}{{c}{76}{Maillage du bloc par transformation du maillage du carré unité (interpolation transfinie).\relax }{figure.caption.87}{}}
-\newlabel{sub@fig:transfini_3@cref}{{[subfigure][3][3,18]3.18c}{[1][75][]76}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Illustration du processus d'interpolation transfinie.\relax }}{76}{figure.caption.87}\protected@file@percent }
-\newlabel{fig:transfini}{{3.18}{76}{Illustration du processus d'interpolation transfinie.\relax }{figure.caption.87}{}}
-\newlabel{fig:transfini@cref}{{[figure][18][3]3.18}{[1][75][]76}}
-\newlabel{fig:mesh_by_streamline_1}{{\caption@xref {fig:mesh_by_streamline_1}{ on input line 777}}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.88}{}}
-\newlabel{fig:mesh_by_streamline_1@cref}{{[subsection][3][3,3]3.3.3}{[1][75][]77}}
-\newlabel{sub@fig:mesh_by_streamline_1}{{}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.88}{}}
-\newlabel{sub@fig:mesh_by_streamline_1@cref}{{[subsection][3][3,3]3.3.3}{[1][75][]77}}
-\newlabel{fig:mesh_by_streamline_2}{{\caption@xref {fig:mesh_by_streamline_2}{ on input line 783}}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.88}{}}
-\newlabel{fig:mesh_by_streamline_2@cref}{{[subsection][3][3,3]3.3.3}{[1][75][]77}}
-\newlabel{sub@fig:mesh_by_streamline_2}{{}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.88}{}}
-\newlabel{sub@fig:mesh_by_streamline_2@cref}{{[subsection][3][3,3]3.3.3}{[1][75][]77}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Maillage par tracé direct de lignes de champ dans le champ de croix.\relax }}{77}{figure.caption.88}\protected@file@percent }
-\newlabel{fig:mesh_by_streamline}{{3.19}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix.\relax }{figure.caption.88}{}}
-\newlabel{fig:mesh_by_streamline@cref}{{[figure][19][3]3.19}{[1][75][]77}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Opération d'alignement}{77}{section.3.4}\protected@file@percent }
-\newlabel{fig:quad_equation_1}{{3.20a}{78}{Champ scalaire $V$.\relax }{figure.caption.89}{}}
-\newlabel{fig:quad_equation_1@cref}{{[subfigure][1][3,20]3.20a}{[1][77][]78}}
-\newlabel{sub@fig:quad_equation_1}{{a}{78}{Champ scalaire $V$.\relax }{figure.caption.89}{}}
-\newlabel{sub@fig:quad_equation_1@cref}{{[subfigure][1][3,20]3.20a}{[1][77][]78}}
-\newlabel{fig:quad_equation_2}{{3.20b}{78}{Champ scalaire $U$.\relax }{figure.caption.89}{}}
-\newlabel{fig:quad_equation_2@cref}{{[subfigure][2][3,20]3.20b}{[1][77][]78}}
-\newlabel{sub@fig:quad_equation_2}{{b}{78}{Champ scalaire $U$.\relax }{figure.caption.89}{}}
-\newlabel{sub@fig:quad_equation_2@cref}{{[subfigure][2][3,20]3.20b}{[1][77][]78}}
-\newlabel{fig:quad_equation_3}{{3.20c}{78}{Lignes de niveau associées aux valeurs des nœuds de discrétisation situés sur le bord.\relax }{figure.caption.89}{}}
-\newlabel{fig:quad_equation_3@cref}{{[subfigure][3][3,20]3.20c}{[1][77][]78}}
-\newlabel{sub@fig:quad_equation_3}{{c}{78}{Lignes de niveau associées aux valeurs des nœuds de discrétisation situés sur le bord.\relax }{figure.caption.89}{}}
-\newlabel{sub@fig:quad_equation_3@cref}{{[subfigure][3][3,20]3.20c}{[1][77][]78}}
-\newlabel{fig:quad_equation_4}{{3.20d}{78}{Maillage.\relax }{figure.caption.89}{}}
-\newlabel{fig:quad_equation_4@cref}{{[subfigure][4][3,20]3.20d}{[1][77][]78}}
-\newlabel{sub@fig:quad_equation_4}{{d}{78}{Maillage.\relax }{figure.caption.89}{}}
-\newlabel{sub@fig:quad_equation_4@cref}{{[subfigure][4][3,20]3.20d}{[1][77][]78}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Illustration du maillage d'un bloc par résolution d'EDP.\relax }}{78}{figure.caption.89}\protected@file@percent }
-\newlabel{fig:quad_equation}{{3.20}{78}{Illustration du maillage d'un bloc par résolution d'EDP.\relax }{figure.caption.89}{}}
-\newlabel{fig:quad_equation@cref}{{[figure][20][3]3.20}{[1][77][]78}}
-\newlabel{fig:quad_eclatement}{{\caption@xref {fig:quad_eclatement}{ on input line 875}}{79}{Méthode basée sur des EDP}{figure.caption.90}{}}
-\newlabel{fig:quad_eclatement@cref}{{[subsection][4][3,3]3.3.4}{[1][77][]79}}
-\newlabel{sub@fig:quad_eclatement}{{}{79}{Méthode basée sur des EDP}{figure.caption.90}{}}
-\newlabel{sub@fig:quad_eclatement@cref}{{[subsection][4][3,3]3.3.4}{[1][77][]79}}
-\newlabel{fig:quad_carre}{{\caption@xref {fig:quad_carre}{ on input line 881}}{79}{Méthode basée sur des EDP}{figure.caption.90}{}}
-\newlabel{fig:quad_carre@cref}{{[subsection][4][3,3]3.3.4}{[1][77][]79}}
-\newlabel{sub@fig:quad_carre}{{}{79}{Méthode basée sur des EDP}{figure.caption.90}{}}
-\newlabel{sub@fig:quad_carre@cref}{{[subsection][4][3,3]3.3.4}{[1][77][]79}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref  {fig:separatrice_echantillonage}.\relax }}{79}{figure.caption.90}\protected@file@percent }
-\newlabel{fig:maillage_quad_carre}{{3.21}{79}{Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref {fig:separatrice_echantillonage}.\relax }{figure.caption.90}{}}
-\newlabel{fig:maillage_quad_carre@cref}{{[figure][21][3]3.21}{[1][77][]79}}
-\newlabel{eqn:etude_hyp_u_simple}{{3.17}{79}{Opération d'alignement}{equation.3.4.17}{}}
-\newlabel{eqn:etude_hyp_u_simple@cref}{{[equation][17][3]3.17}{[1][79][]79}}
+\newlabel{fig:transfini_1}{{3.19a}{76}{Discrétisation des séparatrices bordant le bloc.\relax }{figure.caption.89}{}}
+\newlabel{fig:transfini_1@cref}{{[subfigure][1][3,19]3.19a}{[1][75][]76}}
+\newlabel{sub@fig:transfini_1}{{a}{76}{Discrétisation des séparatrices bordant le bloc.\relax }{figure.caption.89}{}}
+\newlabel{sub@fig:transfini_1@cref}{{[subfigure][1][3,19]3.19a}{[1][75][]76}}
+\newlabel{fig:transfini_2}{{3.19b}{76}{Maillage du carré unité.\relax }{figure.caption.89}{}}
+\newlabel{fig:transfini_2@cref}{{[subfigure][2][3,19]3.19b}{[1][75][]76}}
+\newlabel{sub@fig:transfini_2}{{b}{76}{Maillage du carré unité.\relax }{figure.caption.89}{}}
+\newlabel{sub@fig:transfini_2@cref}{{[subfigure][2][3,19]3.19b}{[1][75][]76}}
+\newlabel{fig:transfini_3}{{3.19c}{76}{Maillage du bloc par transformation du maillage du carré unité (interpolation transfinie).\relax }{figure.caption.89}{}}
+\newlabel{fig:transfini_3@cref}{{[subfigure][3][3,19]3.19c}{[1][75][]76}}
+\newlabel{sub@fig:transfini_3}{{c}{76}{Maillage du bloc par transformation du maillage du carré unité (interpolation transfinie).\relax }{figure.caption.89}{}}
+\newlabel{sub@fig:transfini_3@cref}{{[subfigure][3][3,19]3.19c}{[1][75][]76}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces Illustration du processus d'interpolation transfinie.\relax }}{76}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:transfini}{{3.19}{76}{Illustration du processus d'interpolation transfinie.\relax }{figure.caption.89}{}}
+\newlabel{fig:transfini@cref}{{[figure][19][3]3.19}{[1][75][]76}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Méthode basée sur des EDP}{76}{subsection.3.3.4}\protected@file@percent }
+\newlabel{fig:mesh_by_streamline_1}{{\caption@xref {fig:mesh_by_streamline_1}{ on input line 791}}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.90}{}}
+\newlabel{fig:mesh_by_streamline_1@cref}{{[subsection][3][3,3]3.3.3}{[1][76][]77}}
+\newlabel{sub@fig:mesh_by_streamline_1}{{}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.90}{}}
+\newlabel{sub@fig:mesh_by_streamline_1@cref}{{[subsection][3][3,3]3.3.3}{[1][76][]77}}
+\newlabel{fig:mesh_by_streamline_2}{{\caption@xref {fig:mesh_by_streamline_2}{ on input line 797}}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.90}{}}
+\newlabel{fig:mesh_by_streamline_2@cref}{{[subsection][3][3,3]3.3.3}{[1][76][]77}}
+\newlabel{sub@fig:mesh_by_streamline_2}{{}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix}{figure.caption.90}{}}
+\newlabel{sub@fig:mesh_by_streamline_2@cref}{{[subsection][3][3,3]3.3.3}{[1][76][]77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.20}{\ignorespaces Maillage par tracé direct de lignes de champ dans le champ de croix.\relax }}{77}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:mesh_by_streamline}{{3.20}{77}{Maillage par tracé direct de lignes de champ dans le champ de croix.\relax }{figure.caption.90}{}}
+\newlabel{fig:mesh_by_streamline@cref}{{[figure][20][3]3.20}{[1][76][]77}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Opération d'alignement}{78}{section.3.4}\protected@file@percent }
+\newlabel{eqn:n_reconstruit}{{3.16}{78}{Opération d'alignement}{equation.3.4.16}{}}
+\newlabel{eqn:n_reconstruit@cref}{{[equation][16][3]3.16}{[1][78][]78}}
+\newlabel{fig:quad_equation_1}{{3.21a}{79}{Champ scalaire $V$.\relax }{figure.caption.91}{}}
+\newlabel{fig:quad_equation_1@cref}{{[subfigure][1][3,21]3.21a}{[1][78][]79}}
+\newlabel{sub@fig:quad_equation_1}{{a}{79}{Champ scalaire $V$.\relax }{figure.caption.91}{}}
+\newlabel{sub@fig:quad_equation_1@cref}{{[subfigure][1][3,21]3.21a}{[1][78][]79}}
+\newlabel{fig:quad_equation_2}{{3.21b}{79}{Champ scalaire $U$.\relax }{figure.caption.91}{}}
+\newlabel{fig:quad_equation_2@cref}{{[subfigure][2][3,21]3.21b}{[1][78][]79}}
+\newlabel{sub@fig:quad_equation_2}{{b}{79}{Champ scalaire $U$.\relax }{figure.caption.91}{}}
+\newlabel{sub@fig:quad_equation_2@cref}{{[subfigure][2][3,21]3.21b}{[1][78][]79}}
+\newlabel{fig:quad_equation_3}{{3.21c}{79}{Lignes de niveau associées aux valeurs des nœuds de discrétisation situés sur le bord.\relax }{figure.caption.91}{}}
+\newlabel{fig:quad_equation_3@cref}{{[subfigure][3][3,21]3.21c}{[1][78][]79}}
+\newlabel{sub@fig:quad_equation_3}{{c}{79}{Lignes de niveau associées aux valeurs des nœuds de discrétisation situés sur le bord.\relax }{figure.caption.91}{}}
+\newlabel{sub@fig:quad_equation_3@cref}{{[subfigure][3][3,21]3.21c}{[1][78][]79}}
+\newlabel{fig:quad_equation_4}{{3.21d}{79}{Maillage.\relax }{figure.caption.91}{}}
+\newlabel{fig:quad_equation_4@cref}{{[subfigure][4][3,21]3.21d}{[1][78][]79}}
+\newlabel{sub@fig:quad_equation_4}{{d}{79}{Maillage.\relax }{figure.caption.91}{}}
+\newlabel{sub@fig:quad_equation_4@cref}{{[subfigure][4][3,21]3.21d}{[1][78][]79}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.21}{\ignorespaces Illustration du maillage d'un bloc par résolution d'EDP.\relax }}{79}{figure.caption.91}\protected@file@percent }
+\newlabel{fig:quad_equation}{{3.21}{79}{Illustration du maillage d'un bloc par résolution d'EDP.\relax }{figure.caption.91}{}}
+\newlabel{fig:quad_equation@cref}{{[figure][21][3]3.21}{[1][78][]79}}
 \citation{solomon2014laplace}
 \citation{nealen2006laplacian}
 \citation{belkin2008discrete}
-\newlabel{eqn:etude_def_v_second}{{3.18}{80}{Opération d'alignement}{equation.3.4.18}{}}
-\newlabel{eqn:etude_def_v_second@cref}{{[equation][18][3]3.18}{[1][79][]80}}
-\newlabel{eqn:algorithm_def_phi}{{3.19}{80}{Opération d'alignement}{equation.3.4.19}{}}
-\newlabel{eqn:algorithm_def_phi@cref}{{[equation][19][3]3.19}{[1][80][]80}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Analyse de convergence}{80}{section.3.5}\protected@file@percent }
-\newlabel{subsec:analyse_convergence}{{3.5}{80}{Analyse de convergence}{section.3.5}{}}
-\newlabel{subsec:analyse_convergence@cref}{{[section][5][3]3.5}{[1][80][]80}}
-\newlabel{eqn:principe_def_v}{{3.20}{80}{}{equation.3.5.20}{}}
-\newlabel{eqn:principe_def_v@cref}{{[equation][20][3]3.20}{[1][80][]80}}
-\newlabel{fig:alignment_1}{{3.22a}{81}{Champ de croix $\bar {u}_h$\relax }{figure.caption.91}{}}
-\newlabel{fig:alignment_1@cref}{{[subfigure][1][3,22]3.22a}{[1][80][]81}}
-\newlabel{sub@fig:alignment_1}{{a}{81}{Champ de croix $\bar {u}_h$\relax }{figure.caption.91}{}}
-\newlabel{sub@fig:alignment_1@cref}{{[subfigure][1][3,22]3.22a}{[1][80][]81}}
-\newlabel{fig:alignment_2}{{3.22b}{81}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.91}{}}
-\newlabel{fig:alignment_2@cref}{{[subfigure][2][3,22]3.22b}{[1][80][]81}}
-\newlabel{sub@fig:alignment_2}{{b}{81}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.91}{}}
-\newlabel{sub@fig:alignment_2@cref}{{[subfigure][2][3,22]3.22b}{[1][80][]81}}
-\newlabel{fig:alignment_3}{{3.22c}{81}{Champ de croix $\bar {v}_h$ (suite à l'opération d'alignement).\relax }{figure.caption.91}{}}
-\newlabel{fig:alignment_3@cref}{{[subfigure][3][3,22]3.22c}{[1][80][]81}}
-\newlabel{sub@fig:alignment_3}{{c}{81}{Champ de croix $\bar {v}_h$ (suite à l'opération d'alignement).\relax }{figure.caption.91}{}}
-\newlabel{sub@fig:alignment_3@cref}{{[subfigure][3][3,22]3.22c}{[1][80][]81}}
-\newlabel{fig:alignment_4}{{3.22d}{81}{Maillage.\relax }{figure.caption.91}{}}
-\newlabel{fig:alignment_4@cref}{{[subfigure][4][3,22]3.22d}{[1][80][]81}}
-\newlabel{sub@fig:alignment_4}{{d}{81}{Maillage.\relax }{figure.caption.91}{}}
-\newlabel{sub@fig:alignment_4@cref}{{[subfigure][4][3,22]3.22d}{[1][80][]81}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Illustration du processus d'alignement dans un cadre discret.\relax }}{81}{figure.caption.91}\protected@file@percent }
-\newlabel{fig:alignment}{{3.22}{81}{Illustration du processus d'alignement dans un cadre discret.\relax }{figure.caption.91}{}}
-\newlabel{fig:alignment@cref}{{[figure][22][3]3.22}{[1][80][]81}}
-\newlabel{eqn:principe_def_phi}{{3.21}{81}{}{equation.3.5.21}{}}
-\newlabel{eqn:principe_def_phi@cref}{{[equation][21][3]3.21}{[1][80][]81}}
+\newlabel{fig:quad_eclatement}{{\caption@xref {fig:quad_eclatement}{ on input line 910}}{80}{Méthode basée sur des EDP}{figure.caption.92}{}}
+\newlabel{fig:quad_eclatement@cref}{{[subsection][4][3,3]3.3.4}{[1][78][]80}}
+\newlabel{sub@fig:quad_eclatement}{{}{80}{Méthode basée sur des EDP}{figure.caption.92}{}}
+\newlabel{sub@fig:quad_eclatement@cref}{{[subsection][4][3,3]3.3.4}{[1][78][]80}}
+\newlabel{fig:quad_carre}{{\caption@xref {fig:quad_carre}{ on input line 916}}{80}{Méthode basée sur des EDP}{figure.caption.92}{}}
+\newlabel{fig:quad_carre@cref}{{[subsection][4][3,3]3.3.4}{[1][78][]80}}
+\newlabel{sub@fig:quad_carre}{{}{80}{Méthode basée sur des EDP}{figure.caption.92}{}}
+\newlabel{sub@fig:quad_carre@cref}{{[subsection][4][3,3]3.3.4}{[1][78][]80}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.22}{\ignorespaces Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref  {fig:separatrice_echantillonage}.\relax }}{80}{figure.caption.92}\protected@file@percent }
+\newlabel{fig:maillage_quad_carre}{{3.22}{80}{Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref {fig:separatrice_echantillonage}.\relax }{figure.caption.92}{}}
+\newlabel{fig:maillage_quad_carre@cref}{{[figure][22][3]3.22}{[1][78][]80}}
+\newlabel{eqn:etude_hyp_u_simple}{{3.18}{80}{Opération d'alignement}{equation.3.4.18}{}}
+\newlabel{eqn:etude_hyp_u_simple@cref}{{[equation][18][3]3.18}{[1][80][]80}}
+\newlabel{eqn:etude_def_v_second}{{3.19}{80}{Opération d'alignement}{equation.3.4.19}{}}
+\newlabel{eqn:etude_def_v_second@cref}{{[equation][19][3]3.19}{[1][80][]80}}
+\newlabel{eqn:algorithm_def_phi}{{3.20}{80}{Opération d'alignement}{equation.3.4.20}{}}
+\newlabel{eqn:algorithm_def_phi@cref}{{[equation][20][3]3.20}{[1][80][]80}}
+\newlabel{fig:alignment_1}{{3.23a}{81}{Champ de croix $\bar {u}_h$\relax }{figure.caption.93}{}}
+\newlabel{fig:alignment_1@cref}{{[subfigure][1][3,23]3.23a}{[1][81][]81}}
+\newlabel{sub@fig:alignment_1}{{a}{81}{Champ de croix $\bar {u}_h$\relax }{figure.caption.93}{}}
+\newlabel{sub@fig:alignment_1@cref}{{[subfigure][1][3,23]3.23a}{[1][81][]81}}
+\newlabel{fig:alignment_2}{{3.23b}{81}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.93}{}}
+\newlabel{fig:alignment_2@cref}{{[subfigure][2][3,23]3.23b}{[1][81][]81}}
+\newlabel{sub@fig:alignment_2}{{b}{81}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.93}{}}
+\newlabel{sub@fig:alignment_2@cref}{{[subfigure][2][3,23]3.23b}{[1][81][]81}}
+\newlabel{fig:alignment_3}{{3.23c}{81}{Champ de croix $\bar {v}_h$ (suite à l'opération d'alignement).\relax }{figure.caption.93}{}}
+\newlabel{fig:alignment_3@cref}{{[subfigure][3][3,23]3.23c}{[1][81][]81}}
+\newlabel{sub@fig:alignment_3}{{c}{81}{Champ de croix $\bar {v}_h$ (suite à l'opération d'alignement).\relax }{figure.caption.93}{}}
+\newlabel{sub@fig:alignment_3@cref}{{[subfigure][3][3,23]3.23c}{[1][81][]81}}
+\newlabel{fig:alignment_4}{{3.23d}{81}{Maillage.\relax }{figure.caption.93}{}}
+\newlabel{fig:alignment_4@cref}{{[subfigure][4][3,23]3.23d}{[1][81][]81}}
+\newlabel{sub@fig:alignment_4}{{d}{81}{Maillage.\relax }{figure.caption.93}{}}
+\newlabel{sub@fig:alignment_4@cref}{{[subfigure][4][3,23]3.23d}{[1][81][]81}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces Illustration du processus d'alignement dans un cadre discret.\relax }}{81}{figure.caption.93}\protected@file@percent }
+\newlabel{fig:alignment}{{3.23}{81}{Illustration du processus d'alignement dans un cadre discret.\relax }{figure.caption.93}{}}
+\newlabel{fig:alignment@cref}{{[figure][23][3]3.23}{[1][81][]81}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Analyse de convergence}{81}{section.3.5}\protected@file@percent }
+\newlabel{subsec:analyse_convergence}{{3.5}{81}{Analyse de convergence}{section.3.5}{}}
+\newlabel{subsec:analyse_convergence@cref}{{[section][5][3]3.5}{[1][81][]81}}
+\newlabel{eqn:continuous_def_v}{{3.21}{82}{Analyse de convergence}{equation.3.5.21}{}}
+\newlabel{eqn:continuous_def_v@cref}{{[equation][21][3]3.21}{[1][82][]82}}
+\newlabel{eqn:continuous_def_phi}{{3.22}{82}{Analyse de convergence}{equation.3.5.22}{}}
+\newlabel{eqn:continuous_def_phi@cref}{{[equation][22][3]3.22}{[1][82][]82}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Reconstitution du bord du domaine}{82}{section.3.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Génération de champ de croix}{82}{section.3.7}\protected@file@percent }
-\newlabel{subsec:gen_cross_field}{{3.7}{82}{Génération de champ de croix}{section.3.7}{}}
-\newlabel{subsec:gen_cross_field@cref}{{[section][7][3]3.7}{[1][82][]82}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}L'Equation de Laplace}{82}{subsection.3.7.1}\protected@file@percent }
-\newlabel{eqn:frey_vectoriel}{{3.22}{82}{L'Equation de Laplace}{equation.3.7.22}{}}
-\newlabel{eqn:frey_vectoriel@cref}{{[equation][22][3]3.22}{[1][82][]82}}
-\newlabel{fig:alignment_1}{{3.23a}{83}{Champ de croix $\bar {u}_h$\relax }{figure.caption.92}{}}
-\newlabel{fig:alignment_1@cref}{{[subfigure][1][3,23]3.23a}{[1][82][]83}}
-\newlabel{sub@fig:alignment_1}{{a}{83}{Champ de croix $\bar {u}_h$\relax }{figure.caption.92}{}}
-\newlabel{sub@fig:alignment_1@cref}{{[subfigure][1][3,23]3.23a}{[1][82][]83}}
-\newlabel{fig:alignment_2}{{3.23b}{83}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.92}{}}
-\newlabel{fig:alignment_2@cref}{{[subfigure][2][3,23]3.23b}{[1][82][]83}}
-\newlabel{sub@fig:alignment_2}{{b}{83}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.92}{}}
-\newlabel{sub@fig:alignment_2@cref}{{[subfigure][2][3,23]3.23b}{[1][82][]83}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.23}{\ignorespaces Illustration du processus d'alignement dans un cadre discret.\relax }}{83}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:alignment}{{3.23}{83}{Illustration du processus d'alignement dans un cadre discret.\relax }{figure.caption.92}{}}
-\newlabel{fig:alignment@cref}{{[figure][23][3]3.23}{[1][82][]83}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Une expression analytique}{83}{subsection.3.7.2}\protected@file@percent }
 \citation{kowalski2013pde}
-\@writefile{toc}{\contentsline {section}{\numberline {3.8}Homogeneisation}{84}{section.3.8}\protected@file@percent }
-\newlabel{fig:alignment_1}{{3.24a}{84}{Champ de croix $\bar {u}_h$\relax }{figure.caption.93}{}}
-\newlabel{fig:alignment_1@cref}{{[subfigure][1][3,24]3.24a}{[1][84][]84}}
-\newlabel{sub@fig:alignment_1}{{a}{84}{Champ de croix $\bar {u}_h$\relax }{figure.caption.93}{}}
-\newlabel{sub@fig:alignment_1@cref}{{[subfigure][1][3,24]3.24a}{[1][84][]84}}
-\newlabel{fig:alignment_2}{{3.24b}{84}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.93}{}}
-\newlabel{fig:alignment_2@cref}{{[subfigure][2][3,24]3.24b}{[1][84][]84}}
-\newlabel{sub@fig:alignment_2}{{b}{84}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.93}{}}
-\newlabel{sub@fig:alignment_2@cref}{{[subfigure][2][3,24]3.24b}{[1][84][]84}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Illustration du processus d'alignement dans un cadre discret.\relax }}{84}{figure.caption.93}\protected@file@percent }
-\newlabel{fig:alignment}{{3.24}{84}{Illustration du processus d'alignement dans un cadre discret.\relax }{figure.caption.93}{}}
-\newlabel{fig:alignment@cref}{{[figure][24][3]3.24}{[1][84][]84}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Extension aux surfaces courbes}{85}{chapter.4}\protected@file@percent }
+\newlabel{fig:mail_tri_vs_mail_quad_1}{{3.24a}{83}{Maillage triangulaire.\relax }{figure.caption.94}{}}
+\newlabel{fig:mail_tri_vs_mail_quad_1@cref}{{[subfigure][1][3,24]3.24a}{[1][82][]83}}
+\newlabel{sub@fig:mail_tri_vs_mail_quad_1}{{a}{83}{Maillage triangulaire.\relax }{figure.caption.94}{}}
+\newlabel{sub@fig:mail_tri_vs_mail_quad_1@cref}{{[subfigure][1][3,24]3.24a}{[1][82][]83}}
+\newlabel{fig:mail_tri_vs_mail_quad_2}{{3.24b}{83}{Maillage quadrilatéral.\relax }{figure.caption.94}{}}
+\newlabel{fig:mail_tri_vs_mail_quad_2@cref}{{[subfigure][2][3,24]3.24b}{[1][82][]83}}
+\newlabel{sub@fig:mail_tri_vs_mail_quad_2}{{b}{83}{Maillage quadrilatéral.\relax }{figure.caption.94}{}}
+\newlabel{sub@fig:mail_tri_vs_mail_quad_2@cref}{{[subfigure][2][3,24]3.24b}{[1][82][]83}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.24}{\ignorespaces Illustration d'un maillage quadrilatéral plus fin que le maillage triangulaire sous-jacent.\relax }}{83}{figure.caption.94}\protected@file@percent }
+\newlabel{fig:mail_tri_vs_mail_quad}{{3.24}{83}{Illustration d'un maillage quadrilatéral plus fin que le maillage triangulaire sous-jacent.\relax }{figure.caption.94}{}}
+\newlabel{fig:mail_tri_vs_mail_quad@cref}{{[figure][24][3]3.24}{[1][82][]83}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.25}{\ignorespaces Illustration de la reconstitution d'une arête de bord par le molynôme d'Hermite.\relax }}{83}{figure.caption.95}\protected@file@percent }
+\newlabel{fig:hermite}{{3.25}{83}{Illustration de la reconstitution d'une arête de bord par le molynôme d'Hermite.\relax }{figure.caption.95}{}}
+\newlabel{fig:hermite@cref}{{[figure][25][3]3.25}{[1][83][]83}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Génération de champ de croix}{83}{section.3.7}\protected@file@percent }
+\newlabel{subsec:gen_cross_field}{{3.7}{83}{Génération de champ de croix}{section.3.7}{}}
+\newlabel{subsec:gen_cross_field@cref}{{[section][7][3]3.7}{[1][83][]83}}
+\citation{kowalski2013pde}
+\citation{chen2004mesh}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}L'Equation de Laplace}{84}{subsection.3.7.1}\protected@file@percent }
+\newlabel{eqn:frey_vectoriel}{{3.23}{84}{L'Equation de Laplace}{equation.3.7.23}{}}
+\newlabel{eqn:frey_vectoriel@cref}{{[equation][23][3]3.23}{[1][84][]84}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Une expression analytique}{84}{subsection.3.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Homogeneisation}{85}{section.3.8}\protected@file@percent }
+\newlabel{fig:non_homogene_cross_field}{{3.26a}{86}{Champ de croix $\bar {u}_h$\relax }{figure.caption.96}{}}
+\newlabel{fig:non_homogene_cross_field@cref}{{[subfigure][1][3,26]3.26a}{[1][85][]86}}
+\newlabel{sub@fig:non_homogene_cross_field}{{a}{86}{Champ de croix $\bar {u}_h$\relax }{figure.caption.96}{}}
+\newlabel{sub@fig:non_homogene_cross_field@cref}{{[subfigure][1][3,26]3.26a}{[1][85][]86}}
+\newlabel{fig:non_homogene_mesh_quad}{{3.26b}{86}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.96}{}}
+\newlabel{fig:non_homogene_mesh_quad@cref}{{[subfigure][2][3,26]3.26b}{[1][85][]86}}
+\newlabel{sub@fig:non_homogene_mesh_quad}{{b}{86}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.96}{}}
+\newlabel{sub@fig:non_homogene_mesh_quad@cref}{{[subfigure][2][3,26]3.26b}{[1][85][]86}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.26}{\ignorespaces Illustration du processus d'alignement dans un cadre discret.\relax }}{86}{figure.caption.96}\protected@file@percent }
+\newlabel{fig:non_homogene}{{3.26}{86}{Illustration du processus d'alignement dans un cadre discret.\relax }{figure.caption.96}{}}
+\newlabel{fig:non_homogene@cref}{{[figure][26][3]3.26}{[1][85][]86}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Extension aux surfaces courbes}{87}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Extension aux surfaces courbes}{85}{chapter.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {xchapter}{Extension aux surfaces courbes}{85}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {xchapter}{Extension aux surfaces courbes}{87}{chapter.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {xchapter}{Extension aux surfaces courbes}{87}{chapter.4}\protected@file@percent }
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chap:surface_courbe}{{4}{85}{Extension aux surfaces courbes}{chapter.4}{}}
-\newlabel{chap:surface_courbe@cref}{{[chapter][4][]4}{[1][85][]85}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Champ de croix, points singuliers, indices et séparatrices}{85}{section.4.1}\protected@file@percent }
-\newlabel{eqn:index_surf}{{4.1}{85}{Champ de croix, points singuliers, indices et séparatrices}{equation.4.1.1}{}}
-\newlabel{eqn:index_surf@cref}{{[equation][1][4]4.1}{[1][85][]85}}
-\newlabel{ass:triangle_singulier}{{4.2}{86}{}{definition.4.2}{}}
-\newlabel{ass:triangle_singulier@cref}{{[assertion][2][4]4.2}{[1][86][]86}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Illustration de la construction de zones singulières.\relax }}{86}{figure.caption.94}\protected@file@percent }
-\newlabel{fig:zone_singuliere}{{4.1}{86}{Illustration de la construction de zones singulières.\relax }{figure.caption.94}{}}
-\newlabel{fig:zone_singuliere@cref}{{[figure][1][4]4.1}{[1][86][]86}}
-\newlabel{eqn:etoilage}{{4.2}{87}{Champ de croix, points singuliers, indices et séparatrices}{equation.4.1.2}{}}
-\newlabel{eqn:etoilage@cref}{{[equation][2][4]4.2}{[1][87][]87}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).\relax }}{87}{figure.caption.95}\protected@file@percent }
-\newlabel{fig:separatrice_illustration}{{4.2}{87}{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (à gauche) et d'indice $1/4$ (à droite).\relax }{figure.caption.95}{}}
-\newlabel{fig:separatrice_illustration@cref}{{[figure][2][4]4.2}{[1][87][]87}}
-\newlabel{prop:loveprop}{{4.4}{87}{}{definition.4.4}{}}
-\newlabel{prop:loveprop@cref}{{[proposition][4][4]4.4}{[1][87][]87}}
-\citation{viertel2019approach}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Partitionnement}{88}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Extension des résultats principaux du cas planaire}{88}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Operation d'alignement}{88}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Etude de la méthode}{88}{subsection.4.3.2}\protected@file@percent }
-\newlabel{subsec:etude_de_la_methode}{{4.3.2}{88}{Etude de la méthode}{subsection.4.3.2}{}}
-\newlabel{subsec:etude_de_la_methode@cref}{{[subsection][2][4,3]4.3.2}{[1][88][]88}}
-\newlabel{thm:theorem1}{{4.5}{88}{}{definition.4.5}{}}
-\newlabel{thm:theorem1@cref}{{[theorem][5][4]4.5}{[1][88][]88}}
+\newlabel{chap:surface_courbe}{{4}{87}{Extension aux surfaces courbes}{chapter.4}{}}
+\newlabel{chap:surface_courbe@cref}{{[chapter][4][]4}{[1][87][]87}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Champ de croix, points singuliers, indices et séparatrices}{87}{section.4.1}\protected@file@percent }
+\newlabel{eqn:index_surf}{{4.1}{87}{Champ de croix, points singuliers, indices et séparatrices}{equation.4.1.1}{}}
+\newlabel{eqn:index_surf@cref}{{[equation][1][4]4.1}{[1][87][]87}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (en haut) et d'indice $1/4$ (en bas).\relax }}{88}{figure.caption.97}\protected@file@percent }
+\newlabel{fig:separatrice_illustration_surface}{{4.1}{88}{Gauche: Illustration des séparatrices émanant de points singuliers d'indice $-1/4$ (en haut) et d'indice $1/4$ (en bas).\relax }{figure.caption.97}{}}
+\newlabel{fig:separatrice_illustration_surface@cref}{{[figure][1][4]4.1}{[1][87][]88}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration de la construction de zones singulières.\relax }}{89}{figure.caption.98}\protected@file@percent }
+\newlabel{fig:zone_singuliere}{{4.2}{89}{Illustration de la construction de zones singulières.\relax }{figure.caption.98}{}}
+\newlabel{fig:zone_singuliere@cref}{{[figure][2][4]4.2}{[1][88][]89}}
+\newlabel{eqn:etoilage}{{4.2}{89}{Champ de croix, points singuliers, indices et séparatrices}{equation.4.1.2}{}}
+\newlabel{eqn:etoilage@cref}{{[equation][2][4]4.2}{[1][89][]89}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Partitionnement de $\partial \Omega _h$ et maillage}{90}{section.4.2}\protected@file@percent }
+\newlabel{sec:partitionnement_omega_h}{{4.2}{90}{Partitionnement de $\partial \Omega _h$ et maillage}{section.4.2}{}}
+\newlabel{sec:partitionnement_omega_h@cref}{{[section][2][4]4.2}{[1][89][]90}}
+\newlabel{fig:draw_streams_sing_1}{{4.3a}{90}{\'Echec d'intégration d'une séparatrice dans un triangle singulier.\relax }{figure.caption.100}{}}
+\newlabel{fig:draw_streams_sing_1@cref}{{[subfigure][1][4,3]4.3a}{[1][90][]90}}
+\newlabel{sub@fig:draw_streams_sing_1}{{a}{90}{\'Echec d'intégration d'une séparatrice dans un triangle singulier.\relax }{figure.caption.100}{}}
+\newlabel{sub@fig:draw_streams_sing_1@cref}{{[subfigure][1][4,3]4.3a}{[1][90][]90}}
+\newlabel{fig:draw_streams_sing_2}{{4.3b}{90}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.\relax }{figure.caption.100}{}}
+\newlabel{fig:draw_streams_sing_2@cref}{{[subfigure][2][4,3]4.3b}{[1][90][]90}}
+\newlabel{sub@fig:draw_streams_sing_2}{{b}{90}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 1.\relax }{figure.caption.100}{}}
+\newlabel{sub@fig:draw_streams_sing_2@cref}{{[subfigure][2][4,3]4.3b}{[1][90][]90}}
+\newlabel{fig:draw_streams_sing_3}{{4.3c}{90}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.\relax }{figure.caption.100}{}}
+\newlabel{fig:draw_streams_sing_3@cref}{{[subfigure][3][4,3]4.3c}{[1][90][]90}}
+\newlabel{sub@fig:draw_streams_sing_3}{{c}{90}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 2.\relax }{figure.caption.100}{}}
+\newlabel{sub@fig:draw_streams_sing_3@cref}{{[subfigure][3][4,3]4.3c}{[1][90][]90}}
+\newlabel{fig:draw_streams_sing_4}{{4.3d}{90}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.\relax }{figure.caption.100}{}}
+\newlabel{fig:draw_streams_sing_4@cref}{{[subfigure][4][4,3]4.3d}{[1][90][]90}}
+\newlabel{sub@fig:draw_streams_sing_4}{{d}{90}{Processus d'intégration d'une séparatice dans un triangle singulier: étape 3.\relax }{figure.caption.100}{}}
+\newlabel{sub@fig:draw_streams_sing_4@cref}{{[subfigure][4][4,3]4.3d}{[1][90][]90}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Illustration de l'intégration d'une séparatice dans un triangle singulier.\relax }}{90}{figure.caption.100}\protected@file@percent }
+\newlabel{fig:draw_streams_sing}{{4.3}{90}{Illustration de l'intégration d'une séparatice dans un triangle singulier.\relax }{figure.caption.100}{}}
+\newlabel{fig:draw_streams_sing@cref}{{[figure][3][4]4.3}{[1][90][]90}}
+\@writefile{toc}{\contentsline {paragraph}{Traversé d'un triangle singulier:}{90}{figure.caption.101}\protected@file@percent }
+\newlabel{fig:decoup_sans_fusion}{{4.4a}{91}{Intégration de séparatrices sans fusion.\relax }{figure.caption.101}{}}
+\newlabel{fig:decoup_sans_fusion@cref}{{[subfigure][1][4,4]4.4a}{[1][90][]91}}
+\newlabel{sub@fig:decoup_sans_fusion}{{a}{91}{Intégration de séparatrices sans fusion.\relax }{figure.caption.101}{}}
+\newlabel{sub@fig:decoup_sans_fusion@cref}{{[subfigure][1][4,4]4.4a}{[1][90][]91}}
+\newlabel{fig:decoup_detect_fusion}{{4.4b}{91}{Détection d'une fusion.\relax }{figure.caption.101}{}}
+\newlabel{fig:decoup_detect_fusion@cref}{{[subfigure][2][4,4]4.4b}{[1][90][]91}}
+\newlabel{sub@fig:decoup_detect_fusion}{{b}{91}{Détection d'une fusion.\relax }{figure.caption.101}{}}
+\newlabel{sub@fig:decoup_detect_fusion@cref}{{[subfigure][2][4,4]4.4b}{[1][90][]91}}
+\newlabel{fig:decoup_fusion}{{4.4c}{91}{Intégration de séparatrices avec fusion.\relax }{figure.caption.101}{}}
+\newlabel{fig:decoup_fusion@cref}{{[subfigure][3][4,4]4.4c}{[1][90][]91}}
+\newlabel{sub@fig:decoup_fusion}{{c}{91}{Intégration de séparatrices avec fusion.\relax }{figure.caption.101}{}}
+\newlabel{sub@fig:decoup_fusion@cref}{{[subfigure][3][4,4]4.4c}{[1][90][]91}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Illustration de la fusion de séparatrices.\relax }}{91}{figure.caption.101}\protected@file@percent }
+\newlabel{fig:fusion}{{4.4}{91}{Illustration de la fusion de séparatrices.\relax }{figure.caption.101}{}}
+\newlabel{fig:fusion@cref}{{[figure][4][4]4.4}{[1][90][]91}}
+\citation{marcon2019high}
+\@writefile{toc}{\contentsline {paragraph}{Fusion de séparatrices:}{92}{section*.102}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Assemblage des partitions}{92}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Intersections de séparatrices:}{92}{section*.103}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Identification des partitions:}{92}{section*.104}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Intersection de séparatrices.\relax }}{92}{figure.caption.105}\protected@file@percent }
+\newlabel{fig:detect_intersection}{{4.5}{92}{Intersection de séparatrices.\relax }{figure.caption.105}{}}
+\newlabel{fig:detect_intersection@cref}{{[figure][5][4]4.5}{[1][92][]92}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Génération du maillage quadrilatéral}{92}{section.4.3}\protected@file@percent }
+\newlabel{sec:gen_mesh_quad}{{4.3}{92}{Génération du maillage quadrilatéral}{section.4.3}{}}
+\newlabel{sec:gen_mesh_quad@cref}{{[section][3][4]4.3}{[1][92][]92}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Uniformisation}{92}{subsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Opération d'alignement}{92}{section.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Extraction des régions en tant que sous-maillages.\relax }}{93}{figure.caption.106}\protected@file@percent }
+\newlabel{fig:eclatement}{{4.6}{93}{Extraction des régions en tant que sous-maillages.\relax }{figure.caption.106}{}}
+\newlabel{fig:eclatement@cref}{{[figure][6][4]4.6}{[1][92][]93}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Exemple d'identification de séparatrices parallèles.\relax }}{93}{figure.caption.107}\protected@file@percent }
+\newlabel{fig:separatrice_echantillonage}{{4.7}{93}{Exemple d'identification de séparatrices parallèles.\relax }{figure.caption.107}{}}
+\newlabel{fig:separatrice_echantillonage@cref}{{[figure][7][4]4.7}{[1][92][]93}}
+\newlabel{fig:quad_eclatement}{{\caption@xref {fig:quad_eclatement}{ on input line 271}}{94}{Uniformisation}{figure.caption.108}{}}
+\newlabel{fig:quad_eclatement@cref}{{[subsection][1][4,3]4.3.1}{[1][92][]94}}
+\newlabel{sub@fig:quad_eclatement}{{}{94}{Uniformisation}{figure.caption.108}{}}
+\newlabel{sub@fig:quad_eclatement@cref}{{[subsection][1][4,3]4.3.1}{[1][92][]94}}
+\newlabel{fig:quad_carre}{{\caption@xref {fig:quad_carre}{ on input line 277}}{94}{Uniformisation}{figure.caption.108}{}}
+\newlabel{fig:quad_carre@cref}{{[subsection][1][4,3]4.3.1}{[1][92][]94}}
+\newlabel{sub@fig:quad_carre}{{}{94}{Uniformisation}{figure.caption.108}{}}
+\newlabel{sub@fig:quad_carre@cref}{{[subsection][1][4,3]4.3.1}{[1][92][]94}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref  {fig:separatrice_echantillonage}.\relax }}{94}{figure.caption.108}\protected@file@percent }
+\newlabel{fig:maillage_quad_carre}{{4.8}{94}{Illustration du maillage des blocs résultant du partitionnement de l'exemple présenté à la figure \ref {fig:separatrice_echantillonage}.\relax }{figure.caption.108}{}}
+\newlabel{fig:maillage_quad_carre@cref}{{[figure][8][4]4.8}{[1][92][]94}}
+\newlabel{eqn:etude_hyp_u_simple}{{4.6}{94}{Opération d'alignement}{equation.4.4.6}{}}
+\newlabel{eqn:etude_hyp_u_simple@cref}{{[equation][6][4]4.6}{[1][94][]94}}
+\newlabel{eqn:etude_def_v_second}{{4.7}{94}{Opération d'alignement}{equation.4.4.7}{}}
+\newlabel{eqn:etude_def_v_second@cref}{{[equation][7][4]4.7}{[1][94][]94}}
+\citation{solomon2014laplace}
+\citation{nealen2006laplacian}
+\citation{belkin2008discrete}
+\newlabel{eqn:algorithm_def_phi}{{4.8}{95}{Opération d'alignement}{equation.4.4.8}{}}
+\newlabel{eqn:algorithm_def_phi@cref}{{[equation][8][4]4.8}{[1][94][]95}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Extension des résultats principaux du cas planaire}{95}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Operation d'alignement}{95}{subsection.4.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Etude de la méthode}{95}{subsection.4.5.2}\protected@file@percent }
+\newlabel{subsec:etude_de_la_methode}{{4.5.2}{95}{Etude de la méthode}{subsection.4.5.2}{}}
+\newlabel{subsec:etude_de_la_methode@cref}{{[subsection][2][4,5]4.5.2}{[1][95][]95}}
+\newlabel{thm:theorem1}{{4.3}{95}{}{definition.4.3}{}}
+\newlabel{thm:theorem1@cref}{{[theorem][3][4]4.3}{[1][95][]95}}
+\newlabel{fig:alignment_1}{{4.9a}{96}{Champ de croix $\bar {u}_h$\relax }{figure.caption.109}{}}
+\newlabel{fig:alignment_1@cref}{{[subfigure][1][4,9]4.9a}{[1][95][]96}}
+\newlabel{sub@fig:alignment_1}{{a}{96}{Champ de croix $\bar {u}_h$\relax }{figure.caption.109}{}}
+\newlabel{sub@fig:alignment_1@cref}{{[subfigure][1][4,9]4.9a}{[1][95][]96}}
+\newlabel{fig:alignment_2}{{4.9b}{96}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.109}{}}
+\newlabel{fig:alignment_2@cref}{{[subfigure][2][4,9]4.9b}{[1][95][]96}}
+\newlabel{sub@fig:alignment_2}{{b}{96}{Champ scalaire $\phi _h$ (en randian)\relax }{figure.caption.109}{}}
+\newlabel{sub@fig:alignment_2@cref}{{[subfigure][2][4,9]4.9b}{[1][95][]96}}
+\newlabel{fig:alignment_3}{{4.9c}{96}{Champ de croix $\bar {v}_h$ (suite à l'opération d'alignement).\relax }{figure.caption.109}{}}
+\newlabel{fig:alignment_3@cref}{{[subfigure][3][4,9]4.9c}{[1][95][]96}}
+\newlabel{sub@fig:alignment_3}{{c}{96}{Champ de croix $\bar {v}_h$ (suite à l'opération d'alignement).\relax }{figure.caption.109}{}}
+\newlabel{sub@fig:alignment_3@cref}{{[subfigure][3][4,9]4.9c}{[1][95][]96}}
+\newlabel{fig:alignment_4}{{4.9d}{96}{Maillage.\relax }{figure.caption.109}{}}
+\newlabel{fig:alignment_4@cref}{{[subfigure][4][4,9]4.9d}{[1][95][]96}}
+\newlabel{sub@fig:alignment_4}{{d}{96}{Maillage.\relax }{figure.caption.109}{}}
+\newlabel{sub@fig:alignment_4@cref}{{[subfigure][4][4,9]4.9d}{[1][95][]96}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Illustration du processus d'alignement dans un cadre discret.\relax }}{96}{figure.caption.109}\protected@file@percent }
+\newlabel{fig:alignment}{{4.9}{96}{Illustration du processus d'alignement dans un cadre discret.\relax }{figure.caption.109}{}}
+\newlabel{fig:alignment@cref}{{[figure][9][4]4.9}{[1][95][]96}}
+\@writefile{toc}{\contentsline {paragraph}{\'Etude de l'opération d'alignement}{96}{section*.110}\protected@file@percent }
+\newlabel{eqn:etude_def_I}{{4.9}{96}{\'Etude de l'opération d'alignement}{equation.4.5.9}{}}
+\newlabel{eqn:etude_def_I@cref}{{[equation][9][4]4.9}{[1][95][]96}}
+\newlabel{eqn:etude_hypothese_u}{{4.10}{96}{\'Etude de l'opération d'alignement}{equation.4.5.10}{}}
+\newlabel{eqn:etude_hypothese_u@cref}{{[equation][10][4]4.10}{[1][95][]96}}
 \citation{hopf1935drehung}
 \citation{rotskoff2010gauss}
-\@writefile{toc}{\contentsline {paragraph}{\'Etude de l'opération d'alignement}{89}{section*.96}\protected@file@percent }
-\newlabel{eqn:etude_def_I}{{4.3}{89}{\'Etude de l'opération d'alignement}{equation.4.3.3}{}}
-\newlabel{eqn:etude_def_I@cref}{{[equation][3][4]4.3}{[1][88][]89}}
-\newlabel{eqn:etude_hypothese_u}{{4.4}{89}{\'Etude de l'opération d'alignement}{equation.4.3.4}{}}
-\newlabel{eqn:etude_hypothese_u@cref}{{[equation][4][4]4.4}{[1][89][]89}}
-\newlabel{eqn:etude_def_phi}{{4.5}{89}{\'Etude de l'opération d'alignement}{equation.4.3.5}{}}
-\newlabel{eqn:etude_def_phi@cref}{{[equation][5][4]4.5}{[1][89][]89}}
-\newlabel{lem:marvelous_lemma}{{4.6}{89}{}{definition.4.6}{}}
-\newlabel{lem:marvelous_lemma@cref}{{[lemma][6][4]4.6}{[1][89][]89}}
-\newlabel{eqn:etude_def_v}{{4.6}{90}{\'Etude de l'opération d'alignement}{equation.4.3.6}{}}
-\newlabel{eqn:etude_def_v@cref}{{[equation][6][4]4.6}{[1][90][]90}}
-\newlabel{thm:theorem2}{{4.7}{90}{}{definition.4.7}{}}
-\newlabel{thm:theorem2@cref}{{[theorem][7][4]4.7}{[1][90][]90}}
-\newlabel{eqn:etude_hypothese_u_second}{{4.8}{91}{\'Etude de l'opération d'alignement}{equation.4.3.8}{}}
-\newlabel{eqn:etude_hypothese_u_second@cref}{{[equation][8][4]4.8}{[1][91][]91}}
-\newlabel{eqn:etude_def_phi_second}{{4.9}{91}{\'Etude de l'opération d'alignement}{equation.4.3.9}{}}
-\newlabel{eqn:etude_def_phi_second@cref}{{[equation][9][4]4.9}{[1][91][]91}}
+\newlabel{eqn:etude_def_phi}{{4.11}{97}{\'Etude de l'opération d'alignement}{equation.4.5.11}{}}
+\newlabel{eqn:etude_def_phi@cref}{{[equation][11][4]4.11}{[1][96][]97}}
+\newlabel{lem:marvelous_lemma}{{4.4}{97}{}{definition.4.4}{}}
+\newlabel{lem:marvelous_lemma@cref}{{[lemma][4][4]4.4}{[1][97][]97}}
+\newlabel{eqn:etude_def_v}{{4.12}{98}{\'Etude de l'opération d'alignement}{equation.4.5.12}{}}
+\newlabel{eqn:etude_def_v@cref}{{[equation][12][4]4.12}{[1][97][]98}}
+\newlabel{thm:theorem2}{{4.5}{98}{}{definition.4.5}{}}
+\newlabel{thm:theorem2@cref}{{[theorem][5][4]4.5}{[1][97][]98}}
 \citation{hopf1935drehung}
 \citation{rotskoff2010gauss}
-\newlabel{lem:marvelous_lemma_second}{{4.8}{92}{}{definition.4.8}{}}
-\newlabel{lem:marvelous_lemma_second@cref}{{[lemma][8][4]4.8}{[1][91][]92}}
-\newlabel{eqn:etude_def_v_second}{{4.10}{92}{\'Etude de l'opération d'alignement}{equation.4.3.10}{}}
-\newlabel{eqn:etude_def_v_second@cref}{{[equation][10][4]4.10}{[1][92][]92}}
-\newlabel{thm:theorem3}{{4.9}{92}{}{definition.4.9}{}}
-\newlabel{thm:theorem3@cref}{{[theorem][9][4]4.9}{[1][92][]92}}
+\newlabel{eqn:etude_hypothese_u_second}{{4.14}{99}{\'Etude de l'opération d'alignement}{equation.4.5.14}{}}
+\newlabel{eqn:etude_hypothese_u_second@cref}{{[equation][14][4]4.14}{[1][99][]99}}
+\newlabel{eqn:etude_def_phi_second}{{4.15}{99}{\'Etude de l'opération d'alignement}{equation.4.5.15}{}}
+\newlabel{eqn:etude_def_phi_second@cref}{{[equation][15][4]4.15}{[1][99][]99}}
+\newlabel{lem:marvelous_lemma_second}{{4.6}{99}{}{definition.4.6}{}}
+\newlabel{lem:marvelous_lemma_second@cref}{{[lemma][6][4]4.6}{[1][99][]99}}
+\newlabel{eqn:etude_def_v_second}{{4.16}{100}{\'Etude de l'opération d'alignement}{equation.4.5.16}{}}
+\newlabel{eqn:etude_def_v_second@cref}{{[equation][16][4]4.16}{[1][100][]100}}
+\newlabel{thm:theorem3}{{4.7}{100}{}{definition.4.7}{}}
+\newlabel{thm:theorem3@cref}{{[theorem][7][4]4.7}{[1][100][]100}}
 \citation{hopf1935drehung}
 \citation{rotskoff2010gauss}
-\newlabel{eqn:etude_hypothese_w}{{4.13}{95}{\'Etude de l'opération d'alignement}{equation.4.3.13}{}}
-\newlabel{eqn:etude_hypothese_w@cref}{{[equation][13][4]4.13}{[1][95][]95}}
-\newlabel{eqn:etude_def_v_third}{{4.14}{95}{\'Etude de l'opération d'alignement}{equation.4.3.14}{}}
-\newlabel{eqn:etude_def_v_third@cref}{{[equation][14][4]4.14}{[1][95][]95}}
-\newlabel{eqn:etude_def_phi_third}{{4.15}{95}{\'Etude de l'opération d'alignement}{equation.4.3.15}{}}
-\newlabel{eqn:etude_def_phi_third@cref}{{[equation][15][4]4.15}{[1][95][]95}}
-\newlabel{thm:theorem4}{{4.11}{95}{}{definition.4.11}{}}
-\newlabel{thm:theorem4@cref}{{[theorem][11][4]4.11}{[1][95][]95}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Analyse de convergence}{96}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Génération de champs de croix}{96}{section.4.5}\protected@file@percent }
-\newlabel{thm:theorem1}{{4.12}{97}{}{definition.4.12}{}}
-\newlabel{thm:theorem1@cref}{{[theorem][12][4]4.12}{[1][97][]97}}
-\newlabel{eqn:etude_hypothese_u_second}{{4.24}{98}{Génération de champs de croix}{equation.4.5.24}{}}
-\newlabel{eqn:etude_hypothese_u_second@cref}{{[equation][24][4]4.24}{[1][98][]98}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Analyse de convergence}{102}{section.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Génération de champs de croix}{102}{section.4.7}\protected@file@percent }
+\newlabel{thm:theorem1}{{4.8}{103}{}{definition.4.8}{}}
+\newlabel{thm:theorem1@cref}{{[theorem][8][4]4.8}{[1][103][]103}}
+\newlabel{eqn:etude_hypothese_u_second}{{4.23}{104}{Génération de champs de croix}{equation.4.7.23}{}}
+\newlabel{eqn:etude_hypothese_u_second@cref}{{[equation][23][4]4.23}{[1][104][]104}}
 \citation{crane2010trivial}
 \citation{de2010trivial}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion et perspectives}{101}{chapter.5}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Conclusion et perspectives}{101}{chapter.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {xchapter}{Conclusion et perspectives}{101}{chapter.5}\protected@file@percent }
-\@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chap:conclusion}{{5}{101}{Conclusion et perspectives}{chapter.5}{}}
-\newlabel{chap:conclusion@cref}{{[chapter][5][]5}{[1][101][]101}}
-\citation{Henri_Paul_de_Saint_Gervais}
-\citation{operatorlecture}
-\citation{crane2019n}
-\@writefile{@@@}{\chapterbegin }
-\newlabel{chap:annexes}{{5}{103}{Annexes}{chapter*.99}{}}
-\newlabel{chap:annexes@cref}{{[chapter][5][]5}{[1][103][]103}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Caractéristique d'Euler}{103}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Opérateur Laplacien discret}{103}{section.5.2}\protected@file@percent }
-\citation{sharp2019vector}
 \bibstyle{apalike}
 \bibdata{references}
 \bibcite{allaire2005analyse}{Allaire, 2005}
@@ -997,23 +1078,22 @@
 \bibcite{bunin2008towards}{Bunin, 2008}
 \bibcite{campen2015quantized}{Campen et~al., 2015}
 \bibcite{catmull1998recursively}{Catmull and Clark, 1998}
+\bibcite{chen2004mesh}{Chen, 2004}
 \bibcite{cohen2002conforming}{Cohen-Steiner et~al., 2002}
 \bibcite{cook1974body}{Cook, 1974}
-\bibcite{crane2019n}{Crane, 2019}
 \bibcite{crane2010trivial}{Crane et~al., 2010}
 \bibcite{d2000bilinear}{D'azevedo, 2000}
 \bibcite{de2010trivial}{de~Goes and Crane, 2010}
 \bibcite{de2009fast}{de~Moura~Pinto and Freitas, 2009}
-\bibcite{Henri_Paul_de_Saint_Gervais}{de~Saint-Gervais, 2014}
 \bibcite{dziuk1988finite}{Dziuk, 1988}
 \bibcite{ern2004theory}{Ern and Guermond, 2004}
 \bibcite{fogg2015automatic}{Fogg et~al., 2015}
 \bibcite{forsythe1961finite}{Forsythe et~al., 1961}
 \bibcite{georgegeneration}{George, 1991}
 \bibcite{george1997triangulation}{George and Borouchaki, 1997}
-\@writefile{@@@}{\chapterbegin }
-\@writefile{toc}{\contentsline {chapter}{Références}{107}{chapter*.100}\protected@file@percent }
 \bibcite{george2013mesh}{George and Frey, 2013}
+\@writefile{@@@}{\chapterbegin }
+\@writefile{toc}{\contentsline {chapter}{Références}{107}{chapter*.111}\protected@file@percent }
 \bibcite{george1994advancing}{George and Seveno, 1994}
 \bibcite{gourdain2010advanced}{Gourdain et~al., 2010}
 \bibcite{gurung2011squad}{Gurung et~al., 2011}
@@ -1053,14 +1133,12 @@
 \bibcite{rotskoff2010gauss}{Rotskoff, 2010}
 \bibcite{rudin1998analyse}{Rudin, 1998}
 \bibcite{schneiders1996grid}{Schneiders, 1996}
-\bibcite{sharp2019vector}{Sharp et~al., 2019}
 \bibcite{shepherd2008hexahedral}{Shepherd and Johnson, 2008}
 \bibcite{smith1985numerical}{Smith, 1985}
 \bibcite{solomon2014laplace}{Solomon et~al., 2014}
 \bibcite{stummel2006difference}{Stummel, 2006}
 \bibcite{taghavi1994automatic}{Taghavi, 1994}
 \bibcite{tam19912d}{Tam, 1991}
-\bibcite{operatorlecture}{Tianye, }
 \bibcite{van2008stability}{Van~den Abeele et~al., 2008}
 \bibcite{viertel2019approach}{Viertel and Osting, 2019}
 \bibcite{watson1981computing}{Watson, 1981}
