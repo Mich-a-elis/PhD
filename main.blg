@@ -3,6 +3,10 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: references.bib
+Repeated entry---line 819 of file references.bib
+ : @inproceedings{crane2010trivial
+ :                                ,
+I'm skipping whatever remains of this entry
 Warning--empty publisher in alliez2003anisotropic
 Warning--empty journal in barth2003finite
 Warning--can't use both volume and number fields in bommes2013quad
@@ -12,45 +16,47 @@ Warning--can't use both volume and number fields in gurung2011squad
 Warning--empty journal in hecht2007maillage
 Warning--can't use both volume and number fields in kalberer2007quadcover
 Warning--can't use both volume and number fields in nieser2011cubecover
-You've used 82 entries,
+Warning--empty year in operatorlecture
+Warning--empty journal in operatorlecture
+You've used 85 entries,
             1935 wiz_defined-function locations,
-            911 strings with 16819 characters,
-and the built_in function-call counts, 32836 in all, are:
-= -- 3292
-> -- 1153
-< -- 83
-+ -- 396
-- -- 376
-* -- 2625
-:= -- 5546
-add.period$ -- 254
-call.type$ -- 82
-change.case$ -- 584
-chr.to.int$ -- 82
-cite$ -- 91
-duplicate$ -- 1374
-empty$ -- 2399
-format.name$ -- 496
-if$ -- 6583
+            926 strings with 17268 characters,
+and the built_in function-call counts, 33866 in all, are:
+= -- 3396
+> -- 1179
+< -- 86
++ -- 408
+- -- 384
+* -- 2698
+:= -- 5721
+add.period$ -- 262
+call.type$ -- 85
+change.case$ -- 602
+chr.to.int$ -- 85
+cite$ -- 96
+duplicate$ -- 1421
+empty$ -- 2475
+format.name$ -- 505
+if$ -- 6786
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 87
-newline$ -- 409
-num.names$ -- 246
-pop$ -- 573
+missing$ -- 90
+newline$ -- 423
+num.names$ -- 255
+pop$ -- 591
 preamble$ -- 1
-purify$ -- 598
+purify$ -- 617
 quote$ -- 0
-skip$ -- 1059
+skip$ -- 1098
 stack$ -- 0
-substring$ -- 2337
-swap$ -- 260
-text.length$ -- 31
+substring$ -- 2417
+swap$ -- 269
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 468
-warning$ -- 9
-while$ -- 282
+type$ -- 486
+warning$ -- 11
+while$ -- 293
 width$ -- 0
-write$ -- 1059
-(There were 9 warnings)
+write$ -- 1093
+(There was 1 error message)

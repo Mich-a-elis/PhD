@@ -14,6 +14,25 @@ $$
 est indépendant du choix de cette décomposition polyédrale. On l’appelle caractéristique d’Euler de $\Sigma$ et on la note $\chi(\Sigma)$.
 \end{definition}
 
+Nous illustrons cette invariance sur la figure \ref{fig:carre_euler} avec deux triangulation différente d'un même domaine.
+
+
+\begin{figure}
+\begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{images/carre_euler_1.pdf}
+    %\caption{Maillage triangulaire.}
+    %\label{fig:mail_tri_vs_mail_quad_1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{images/carre_euler_2.pdf}
+    %\caption{Maillage quadrilatéral.}
+    %\label{fig:mail_tri_vs_mail_quad_2}
+\end{subfigure}
+\caption{Illustration de l'invariance de la caractéristique d'Euler. A gauche on a une triangulation de 30 sommets, 71 arêtes et 42 triangles et à droite, on a une triangulation de 142 sommets, 383 arêtes et 242 triangles.}
+\label{fig:carre_euler}
+\end{figure}
+
 La caractéristique d'Euler d'une surface orientable $\Sigma$ peut être calculée à partir de son genre $g$ et du nombre $b$ de composante connexe de son bord:
 $$
 \chi(\Sigma) = 2-2g-b.
@@ -128,44 +147,11 @@ Enfin, nous obtenons la matrice laplacienne cotangente \(L\):
 L_{ij} =
 \begin{cases}
 \displaystyle\frac{1}{2} \sum_{i\sim j} (\cot \alpha_j + \cot \beta_j), & \text{si } i = j, \\\\
--\displaystyle\frac{1}{2} (\cot \alpha_j + \cot \beta_j), & \text{si } i \sim j, \\\\
+-\displaystyle\frac{1}{2} (\cot \alpha_j + \cot \beta_j), & \text{si } i \neq j, \\\\
 0, & \text{sinon}.
 \end{cases}
 \]
 
-\(i \sim j\) signifie que le sommet \(i\) et le sommet \(j\) sont adjacents.
 
-\newpage
-Recherche d'un point dans un maillage\\
-Caractéristique d'Euler\\
-Résolution numérique laplacien-Beltrami\\
-Reprendre le cour sur laplace cotan ou il ya les gradient de trianngle detaillé\\
-\[\]
-
-Pour les maillages triangulaires, l'opérateur Laplacien $\Delta$ peut être discrétisé sous la forme d'un laplacien de graphe pondéré $L\in\mathbb{R}^{|\mathcal{S}_h|\times|\mathcal{S}_h|}$ donné par \cite{sharp2019vector} (voir Annexe):
-$$
-(L\psi)_p=\frac{1}{2}\sum_{pq\in\mathcal{A}_h}(\cot\theta_r^{pq}-\cot\theta_l^{qp})(\psi_p-\psi_q),
-$$
-à chaque sommet $p\in V$, où $r, l$ désignent les sommets opposés à l'arête $pq$. Une façon de construire $L$ est d'assembler sur chaque triangle $pqr$ une matrice $3\times 3$
-$$
--\frac{1}{2}
-\begin{bmatrix}
-b+c & -c & -b\\
--c & a+c & -a\\
--b & -a & a+b
-\end{bmatrix},
-$$
-correspondant aux entrées de la matrice $L$, avec $a=\cot\theta_p^{qr}$, $b=\cot\theta_q^{rp}$ et $c=\cot\theta_r^{pq}$.
-
-Ainsi, la résolutiond e l'équation conduit à l'obtention d'un systeme linéaire qui une fois résolu nous donne les valeur de $\phi_h$ aux noeuds du maillage.
-
-\[\]
-trouver un moyen d'expliquer les coin du vrai domaine qui doivent finir par etre present dans B sinon ce n'est pas ce domaine que l'on maille mais un autre
-
-
-\[\]
-theoreme des tangentes tournantes
-
-
-\[\]
-Algorithme glouton pour le partitionnement en sous maillage
+%theoreme des tangentes tournantes
+%Algorithme glouton pour le partitionnement en sous maillage

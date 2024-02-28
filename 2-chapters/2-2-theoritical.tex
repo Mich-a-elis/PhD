@@ -118,9 +118,9 @@ Pour finir, puisque $\mathcal{S}_{\bar{u}}=\mathcal{S}_{\bar{v}}$ alors $\bar{u}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.27]{images/repre_field.pdf}
+  \includegraphics[scale=0.26]{images/repre_field.pdf}
   \hfill
-  \includegraphics[scale=0.27]{images/cross_from_repre_field.pdf}
+  \includegraphics[scale=0.26]{images/cross_from_repre_field.pdf}
   \caption{Illustration d'un champ de représentation (en gauche) et du champ de croix associé (à droite).}
   \label{fig:repr_to_cross}
 \end{figure}
@@ -1086,7 +1086,7 @@ où $\phi:\Omega\longrightarrow\mathbb{R}$ est définie comme la solution de l'�
 \left\{
 \begin{array}{lcll}
 \Delta\phi &=& 0 &\mbox{ dans }\Omega,\\[0.5cm]
-\phi(\gamma(t))&=&\theta_{\bar{n}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}(\gamma(t))& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})),
+\phi(\gamma(t))&=&\theta_{\bar{n}}^\gamma(t)+\mathcal{I}(t)-\theta_{\bar{u}}^\gamma(t)& \mbox{ sur } \gamma^{-1}(\partial\Omega\backslash(\mathcal{B}\cup\mathcal{S}_{\bar{n}}\cup\mathcal{S}_{\bar{u}})),
 \end{array}
 \right.
 \label{eqn:principe_def_phi}
@@ -1324,8 +1324,8 @@ Soit $\phi$, la fonction définie par l'équation \eqref{eqn:principe_def_phi}. 
 \begin{proof}
     $$
     \begin{array}{lcl}
-        \phi(\gamma(1))-\phi(\gamma(0))&=&\theta^\gamma_{\bar{n}}(1)+\mathcal{I}(1)-\theta_{\bar{u}}(\gamma(1))-(\theta^\gamma_{\bar{n}}(0)+\mathcal{I}(0)-\theta_{\bar{u}}(\gamma(0)))\\\\
-        &=&(\theta^\gamma_{\bar{n}}(1)-\theta_{\bar{n}}^\gamma(0))+(\mathcal{I}(1)-\mathcal{I}(0))-(\theta_{\bar{u}}(\gamma(1))-\theta_{\bar{u}}(\gamma(0)).
+        \phi(\gamma(1))-\phi(\gamma(0))&=&\theta^\gamma_{\bar{n}}(1)+\mathcal{I}(1)-\theta_{\bar{u}}(\gamma(1))-(\theta^\gamma_{\bar{n}}(0)+\mathcal{I}(0)-\theta_{\bar{u}}^\gamma(0))\\\\
+        &=&(\theta^\gamma_{\bar{n}}(1)-\theta_{\bar{n}}^\gamma(0))+(\mathcal{I}(1)-\mathcal{I}(0))-(\theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)).
     \end{array}
     $$
     En posant $\gamma^{-1}(\mathcal{B}\cup\mathcal{S}_{\bar{n}})=\{t_1,\dots,t_{n_t}\}$ avec $n_t\in\mathbb{N}^*$ et $t_1<\dots<t_{n_t}$, on a:
@@ -1544,7 +1544,7 @@ De manière similaire à la procédure précédente, le champ de croix $\bar{v}$
 0 & \mbox{ si } p\in\mathcal{B}\cup\mathcal{S}_{\bar{n}}.
 \end{array}
 \right.
-\label{eqn:etude_def_v_second}
+%\label{eqn:etude_def_v_second}
 \end{equation}
 On a alors le théorème suivant:
 \begin{theorem}

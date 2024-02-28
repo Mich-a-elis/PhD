@@ -213,14 +213,14 @@ Une illustration de ce processus est donné sur la figure \ref{fig:draw_streams_
         \label{fig:draw_streams_1}
 \end{figure}
 
-Une approche alternative, plus efficace et rapide pour construire les segments $[p_ip_{i+1}]$ pour $i\geq 1$, consiste à exploiter la proposition \ref{prop:align_sepa_voisinnage}. Considérons $L_T=SL_{\bar{u}_h}\cap T$, la portion de la ligne de champ $SL_{\bar{u}_h}$ se trouvant dans un triangle $T$ et que l'on souhaite représenter par un segment $[p_ip_{i+1}]$. Ici, $p_i$ et $p_{i+1}$ représentent les points d'intersection entre $L$ et le bord de $T$ (c'est-à-dire, $\{p_i, p_{i+1}\}=L\cap\partial T$) et le but est de trouver le point $p_{i+1}$. Or d'après la proposition \ref{prop:align_sepa_voisinnage}, nous savons que pour tout $p\in L_T$ on a:
+Une approche alternative, plus efficace et rapide pour construire les segments $[p_ip_{i+1}]$ pour $i\geq 1$, consiste à exploiter la proposition \ref{prop:align_sepa_voisinnage}. Considérons $L_T=SL_{\bar{u}_h}\cap T$, la portion de la ligne de champ $SL_{\bar{u}_h}$ se trouvant dans un triangle $T$ et que l'on souhaite représenter par un segment $[p_ip_{i+1}]$. Ici, $p_i$ et $p_{i+1}$ représentent les points d'intersection entre $L$ et le bord de $T$ (c'est-à-dire, $\{p_i, p_{i+1}\}=L\cap\partial T$) et le but est de trouver le point $p_{i+1}$. Or en modifiant le champ $\bar{u}_h$ dans le triangle d'après la proposition \ref{prop:align_sepa_voisinnage} on sait que l'on a $p\in T$ tel que:
 \begin{equation}
 W^\gamma_{\bar{u}_h}(p_{i+1})-W^\gamma_{\bar{u}_h}(p_i)=-\pi,
 \label{eqn:formule_W}
 \end{equation}
 où $\gamma$ est une paramétrisation sur $[0, 1]$ de $\partial T$ dans le sens positif et pour tout $t\in[0, 1]$ on a $W^\gamma_{\bar{u}_h}(t)=\theta_{\bar{u}_h}^\gamma(t)-\arg{\overrightarrow{p\gamma(t)}}$. Il suffit donc de trouver une approximation du point $p$ puis d'exploiter l'équation \ref{eqn:formule_W} pour trouver une approximation de $p_{i+1}$. Dans notre cas, nous choisissons comme approximation du point $p$, le point $p_i^{'}$ vérifiant:
 $$
-p_i^{'}\in T\mbox{ et }\overrightarrow{p_ip_i^{'}}=\epsilon\overrightarrow{p_{i-1}p_i}, \mbox{ avec }\epsilon\in]0, 1[.
+p_i^{'}\in T\mbox{ et }\overrightarrow{p_ip_i^{'}}=\epsilon\overrightarrow{p_{i-1}p_i}, \mbox{ avec }\epsilon\in]0, 1[ \mbox{ très petit}.
 $$
 On trouve ensuite $p_{i+1}$ en utilisant l'équation \ref{eqn:formule_W} avec $W^\gamma_{\bar{u}_h}(t)=\theta_{\bar{u}_h}^\gamma(t)-\arg{\overrightarrow{p_i^{'}\gamma(t)}}$ (voir la figure \ref{fig:draw_streams_2}).
 
@@ -280,13 +280,14 @@ Supposons alors que $\Omega$ peut être représenté globalement par une fonctio
 \]
 où $d$ est dans $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\},~0\leq\alpha\leq 1$). Le lift $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ est alors défini par :
 \begin{equation}
+\eta_h(p)=[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h](p-d(p)n(p))\mbox{ pour tout }p\in\Omega_h,
 \end{equation}
-où $n$ est la normale sortante en $p$. Il résulte des travaux de \cite{dziuk1988finite} que $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ converge vers $\eta$, et que l'erreur de représentation de la géométrie (d'ordre 2) est négligeable par rapport à l'erreur d'approximation du schéma numérique.
+où $n(p)$ est la normale sortante en $p$. Il résulte des travaux de \cite{dziuk1988finite} que $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ converge vers $\eta$, et que l'erreur de représentation de la géométrie (d'ordre 2) est négligeable par rapport à l'erreur d'approximation du schéma numérique.
 
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.45]{images/Omega_vs_Omega_h.pdf}
+  \includegraphics[scale=0.5]{images/Omega_vs_Omega_h.pdf}
   \caption{Comparaison de $\Omega$ et $\Omega_h$.}
   \label{fig:Omega_vs_Omega_h}
 \end{figure}
@@ -519,7 +520,7 @@ Considérons $T$ comme un triangle de $\Omega_h$ traversé par certains segments
 \centering
 \includegraphics[scale=0.37]{images/insert_pt_1.pdf}\hfill
 \includegraphics[scale=0.37]{images/insert_pt_2.pdf}
-\caption{Direction de sortie différentes.}
+\caption{Insertion d'un point dans un triangle.}
 \label{fig:insert_pt}
 \end{figure}
 
@@ -536,7 +537,7 @@ Considérons $T$ comme un triangle de $\Omega_h$ traversé par certains segments
     \caption{Insertion de $D$.}
     \label{fig:exemple_insert_pt_1}
 \end{subfigure}
-\\[0.5cm]
+\\[0.1cm]
 \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{images/decoup_triangle-2.pdf}
     \caption{Insertion de $E$.}
@@ -548,7 +549,7 @@ Considérons $T$ comme un triangle de $\Omega_h$ traversé par certains segments
     \caption{Insertion de $F$.}
     \label{fig:exemple_insert_pt_3}
 \end{subfigure}
-\\[0.5cm]
+\\[0.1cm]
 \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{images/decoup_triangle-4.pdf}
     \caption{Insertion de $G$.}
@@ -577,7 +578,6 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 \vspace{0.5cm}
 \RestyleAlgo{ruled}
 \begin{algorithm}[h!]
-\label{alg:retournement_arete}
 \renewcommand{\algorithmcfname}{Algorithme}%
 \SetAlgoLined
 \Entree{Triangle $T$, Liste des séparatrices}
@@ -603,6 +603,7 @@ Sur la figure illustrée par la référence \ref{fig:exemple_insert_pt}, nous av
 \vspace{0.2cm}
 }
 \caption{Forçage des segments des séparatrices}
+\label{alg:retournement_arete}
 \end{algorithm}
 \vspace{0.5cm}
 
@@ -802,6 +803,7 @@ Le maillage proprement dit suit alors le même principe. On trace des lignes de 
 
 
 \subsection{Méthode basée sur des EDP}
+\label{method_based_edp}
 Cette approche implique de générer le maillage pour un bloc spécifique en résolvant une Équation aux Dérivées Partielles (EDP), en utilisant la forme du contour du bloc comme condition aux bords. Considérons $C_i$, avec $i \in \llbracket 1, 4 \rrbracket$, comme les séparatrices (numérotées dans le sens positif) définissant les côtés d'un bloc particulier, noté $\Gamma$. Supposons que les côtés opposés $C_1$ et $C_3$ soient discrétisés en $m$ nœuds, tandis que les côtés opposés $C_2$ et $C_4$ soient discrétisés en $n$ nœuds. L'idée sous-jacente consiste à élaborer le maillage en construisant deux familles de lignes de niveau, l'une parallèle (au sens où elles ne s'intersectent pas) à $C_1$ et $C_3$, et l'autre orthogonale (au niveau des points d'intersection) à $C_2$ et $C_4$, et inversement pour l'autre famille de lignes de niveau. Soient $U$ et $V$ les solutions des équations suivantes :
 $$
 \left\{
@@ -873,25 +875,25 @@ Avec une discrétisation linéaire par morceaux des champs scalaires $U$ et $V$ 
 où $U_h$ et $V_h$ représentent les discrétisations de $U$ et $V$. Le point $P_{ij}$ est alors déterminé par $P_{ij}=\sum_{k=1}^3\lambda_kA_k$. Les points $P_{1j}$, $P_{i1}$, $P_{nj}$, $P_{im}$, avec $i \in \llbracket 1, n \rrbracket$ et $j \in \llbracket 1, m \rrbracket$, sont définis par les nœuds de discrétisation des points de bord.
 \begin{figure}[h!]
 \centering
-\begin{subfigure}{0.48\textwidth}
+\begin{subfigure}{0.455\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_1.pdf}
     \caption{Champ scalaire $V$.}
     \label{fig:quad_equation_1}
 \end{subfigure}
-\\[0.5cm]
-\begin{subfigure}{0.48\textwidth}
+\\[0.2cm]
+\begin{subfigure}{0.455\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_2.pdf}
     \caption{Champ scalaire $U$.}
     \label{fig:quad_equation_2}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.46\textwidth}
+\begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_3.pdf}
     \caption{Lignes de niveau associées aux valeurs des nœuds de discrétisation situés sur le bord.}
     \label{fig:quad_equation_3}
 \end{subfigure}
-\\[0.5cm]
-\begin{subfigure}{0.48\textwidth}
+\\[0.2cm]
+\begin{subfigure}{0.455\textwidth}
     \includegraphics[width=\textwidth]{images/quad_equation_4.pdf}
     \caption{Maillage.}
     \label{fig:quad_equation_4}
@@ -1007,21 +1009,21 @@ Nous présentons le processus d'alignement à travers un exemple illustré à la
 
 \begin{figure}[h!]
 \centering
-\begin{subfigure}{0.515\textwidth}
+\begin{subfigure}{0.5\textwidth}
     \includegraphics[width=\textwidth]{images/alignment_1.pdf}
     \caption{Champ de croix $\bar{u}_h$}
     \label{fig:alignment_1}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.478\textwidth}
+\begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{images/alignment_2.pdf}
     \caption{Champ scalaire $\phi_h$ (en randian)}
     \label{fig:alignment_2}
 \end{subfigure}
-\\[0.5cm]
-\begin{subfigure}{0.51\textwidth}
+\\[0.1cm]
+\begin{subfigure}{0.5\textwidth}
     \includegraphics[width=\textwidth]{images/alignment_3.pdf}
-    \caption{Champ de croix $\bar{v}_h$ (suite à l'opération d'alignement).}
+    \caption{Champ de croix $\bar{v}_h$.}
     \label{fig:alignment_3}
 \end{subfigure}
 \hfill
@@ -1070,54 +1072,13 @@ avec $\widehat{\gamma(s)}$ représentant la mesure de l'ouverture angulaire de l
  Pour la convergence des séparatrices de bord, deux analyses sont possibles. Premièrement, comme $\Omega_h$ tend vers $\Omega$ lorsque $h$ tend vers 0, il en va de même pour $\partial\Omega_h$, qui converge vers $\partial\Omega$. Ainsi, en considérant $\partial\Omega_h$ comme une approximation de la séparatrice de bord de $\bar{v}_h$, on obtient la convergence recherchée.\\\\
 Une analyse plus approfondie consiste à ne pas considérer $\partial\Omega_h$ comme la séparatrice de bord de $\bar{v}_h$. Remarquons que le champ de croix $\bar{n}_h$ n'est pas aligné avec $\partial\Omega_h$. Nous définissons alors le domaine $\widetilde{\Omega_h}$ dont le bord $\partial\widetilde{\Omega_h}$ est aligné avec le champ de croix $\bar{n}_h$. Ainsi, les séparatrices de bord de $\bar{v}_h$ sont maintenant données (sans approximation) par le bord $\partial\widetilde{\Omega_h}$ de $\widetilde{\Omega_h}$. Notons que $[\mathbf{L}_{\Omega_h}^{\widetilde{\Omega_h}}\bar{v}_h]$ converge vers $\bar{v}_h$, puisque $[\mathbf{L}_{\Omega_h}^{\Omega}\bar{v}_h]$ converge vers $\bar{v}_h$. Il en découle que les séparatrices de $[\mathbf{L}_{\Omega_h}^{\widetilde{\Omega_h}}\bar{v}_h]$ convergent vers les séparatrices de $\bar{v}$, y compris les séparatrices de bord qui correspondent au bord $\partial\widetilde{\Omega_h}$ de $\widetilde{\Omega_h}$. L'intérêt d'une telle analyse réside dans le fait qu'elle permet, en pratique, de reconstruire une approximation d'ordre élevé du bord de $\Omega_h$, comme nous le verrons dans la section suivante.
 
-
-\section{Reconstitution du bord du domaine}
-Notons qu'à ce stade de la présentation, les mailles quadrilatérales construites sur le bord du domaine ont leurs nœuds positionnés le long des arêtes de bord du maillage triangulaire utilisé pour la construction. Toutefois, dans les codes de calcul, il peut être nécessaire d'interpoler la courbure le long de la frontière du maillage quadrilatéral, notamment dans le cas de conditions limites impliquant la dérivée normale, telles que les conditions aux limites de Neumann et de Robin. Face à une telle situation, les calculs de reconstitution de la normale dépendront de la résolution obtenue pour les mailles de bord lors de la construction du maillage quadrilatéral (voir figure \ref{fig:mail_tri_vs_mail_quad}). Ainsi, si la finesse demandée pour le maillage quadrilatéral est supérieure à celle du maillage triangulaire servant de base à la construction, il sera impossible de récupérer de manière précise les informations avec les nœuds de bord du maillage quadrilatéral. Par conséquent, explicitement définir $\Omega_{\tilde{h}}$ permet de se dispenser des triangles de bord et de ne plus être contraint par cette dépendance.\\\\
-\begin{figure}[h!]
-\centering
-\begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{images/non_hermite_mesh_tri.pdf}
-    \caption{Maillage triangulaire.}
-    \label{fig:mail_tri_vs_mail_quad_1}
-\end{subfigure}
-\\[0.5cm]
-\begin{subfigure}{0.65\textwidth}
-    \includegraphics[width=\textwidth]{images/non_hermite_quad.pdf}
-    \caption{Maillage quadrilatéral.}
-    \label{fig:mail_tri_vs_mail_quad_2}
-\end{subfigure}
-\caption{Illustration d'un maillage quadrilatéral plus fin que le maillage triangulaire sous-jacent.}
-\label{fig:mail_tri_vs_mail_quad}
-\end{figure}
-En utilisant une interpolation d'hermitte, on peut ainsi construire une reconstitution de régularité $\mathcal{C}^1$, $\partial\widetilde{\Omega_h}$ de $\partial\Omega_h$. Plus concrètement, soit $a$ et $b$ deux sommets de $\Omega_h$. L'arête $ab$ est remplacé par le polynôme $P$ défini pour tout $p\in ab$ par:
-\[P(p) = q_a(p)P_a(p)+q_b(p)P_b(p),\]
-où la fonction $q_x$, $x\in\{a, b\}$ est donné pour tout $p\in ab$ par:
-\[q_x(p) = \prod_{y\in\{a,b\}, y\neq x} \left(\frac{p - y}{x - y}\right)^2,\]
-et la fonction $P_x$, $x\in\{a, b\}$ est donné pour tout $p\in ab$ par:
-\[P_x(p) = x + (p - x) \left(\mathcal{N}(x) - q_x'(x)x\right),\]
-avec
-\[q_x(x)=1,\quad\quad
-q_x'(x)=\sum_{y\in\{a,b\}, y\neq x}\frac{2}{x - y},\quad\quad
-\forall j \neq i \quad q_x'(y) = q_x(y) = 0.
-\]
-et $\mathcal{N}(x)$ est la normale sortante en $x$ définit par l'équation \eqref{eqn:n_reconstruit}. Nous illustrons sur la figure \ref{fig:hermite} la Reconstitution d'une arête donné par ces deux sommets ainsi que les normales en ces sommets.
-
-
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.8]{images/hermite.pdf}
-\caption{Illustration de la reconstitution d'une arête de bord par le molynôme d'Hermite.}
-\label{fig:hermite}
-\end{figure}
-
-
-
 \section{Génération de champ de croix}
 \label{subsec:gen_cross_field}
 
 Nous terminons ce chapitre en exposant quelques méthodes de génération de champ de croix que l'on rencontre dans la littérature. Dans notre travail, nous avons notemment utilisé ces méthodes pour créer les champ de croix initiaux qui sont le point d'entrée de notre opération d'alignement.
 
 \subsection{L'Equation de Laplace}
+\label{subsec:laplace_equation_generation}
 
 L'idée principale de cette méthode tel que décrite dans \cite{kowalski2013pde} consiste à propager dans le domaine de calcul un champ de vecteur unitaire prescrit sur la frontière. On formule alors cette construction dans la résolution de l'équation de Laplace avec dees condition de Dirichlet sur la frontière donné par les croix associées aux normales sortantes. L'ensemble des champs de croix ne formant pas un expace vectoriel, on utilise à la place un champ de représentation donné par:
 $$
@@ -1204,35 +1165,58 @@ est un champ de croix dont les points singuliers sont localisés aux points $(a_
 Il est important de souligner que cette construction offre une grande souplesse dans l'établissement du champ, contrairement à l'approche précédente. Elle permet un contrôle précis sur la position des points singuliers dans le domaine ainsi que sur leurs indices. Cependant, le champ de croix ainsi obtenu n'est pas déterminé par le domaine sur lequel il est construit. Par conséquent, contrairement à l'approche précédente, le champ de croix peut ne pas être aligné. Ainsi, il est nécessaire d'appliquer l'approche d'alignement présentée précédemment pour orienter le champ par rapport au domaine que l'on souhaite mailler.
 
 \section{Homogeneisation}
+\label{sec:Homogeneisation_algo}
 
-Comme dit dans l'introduction \ref{thesis_target} les champs de croix générer en propageant la normale extérieur à l'intérieur du domaine (voir la sous-section \ref{thesis_target} et \cite{kowalski2013pde}) produisent une distribution de singularités pouvant conduire à un partitionnement invalide ou non souhaité. Par exemple le champ de croix présenté sur la figure \ref{fig:non_homogene_cross_field} présente des points singuliers très rapprochés ce qui a pour effet de produire un partitionnement non-homogène et  et donc des mailles de tailles très inhomogène dans le maillage final obtenu (voir figure \ref{fig:non_homogene_mesh_quad}). Dans cette partie, nous proposons de modifier le maillage obtenu afin répondre à cette préoccupation tout en la configuration en blocs structurés du maillage obtenu.\\\\
-Nous optimisons le maillage quadrilatéral en utilisant une méthode CVT pour \emph{Centroid Voronoi Tesselation} (voir \cite{chen2004mesh}). Il s'agit d'un algorithme local visant à améliorer la qualité du maillage, principalement la régularité de la forme, en ajustant la position d'un sommet $s$ dans son patch local $T_{s}$, qui comprend tous les simplexes contenant $s$, sans modifier la connectivité. Ainsi, le sommet $s$ se transforme en $s^*$ donné par:
+Comme évoqué dans l'introduction \ref{thesis_target}, les champs de croix générés en propageant la normale de l'extérieur vers l'intérieur du domaine (voir sous-section \ref{thesis_target} et \cite{kowalski2013pde}) peuvent donner lieu à une distribution de singularités susceptible de conduire à un partitionnement invalide ou non souhaité. À titre d'exemple, le champ de croix illustré dans la figure \ref{fig:non_homogene_cross_field} présente des points singuliers très rapprochés, entraînant une partition non homogène. Cela se traduit par des mailles de tailles très inégales dans le maillage final obtenu, comme illustré dans la figure \ref{fig:non_homogene_mesh_quad}. Dans cette section, nous proposons d'apporter des modifications au maillage résultant afin de remédier à cette problématique, tout en préservant la configuration en blocs structurés du maillage.\\\\
+Nous procédons à l'optimisation du maillage quadrilatéral en recourant à une méthode appelée CVT, pour \emph{Centroid Voronoi Tesselation} (voir \cite{chen2004mesh}). Cet algorithme, de nature locale, vise à améliorer la qualité du maillage, notamment la régularité de la forme. Il opère en ajustant la position d'un sommet $s$ au sein de son patch local $T_{s}$, qui englobe tous les simplex contenant $s$, sans altérer la connectivité. Ainsi, le sommet $s$ se transforme en $s^*$, défini par:
 $$s^*=\displaystyle\frac{1}{\displaystyle\sum_{T\in T_s}|T|}\left(\displaystyle\sum_{T\in T_s}b_T|T|\right),$$
-avec $b_T=\sum_{i=1}^3s_i/3$ est le barycentre du triangle $T$ et $(s_i)_{\in\llbracket 1, 3\rrbracket}$ sont les sommets de $T$.
-
-A défaut de pouvoir produire directement un nouveau cham
-
-Déplacer chaque noeud au centre de masse de ces cellules adjacentes
-.. Un problème notable survient dans les domaines extrêmement étirés, tandis qu'une autre préoccupation concerne les formes de partitionnement qui entraînent des tailles de cellules très non uniformes (voir figure \ref{fig:dom_etire_mesh_inhomogene}).
-Comme
-Sans deplacer les points de bord avec le demi disque\\
-puis deplacer les points de bord\\
-Tout en conservant la configuration en bloc structurée du maillage\\
-tester avec un domaine troué
+où $b_T=\frac{\sum_{i=1}^3s_i}{3}$ représente le barycentre du triangle $T$ et $(s_i)_{i\in\llbracket 1, 3\rrbracket}$ désigne les sommets de $T$. Cette transformation est mise en œuvre pour optimiser localement la qualité du maillage sans altérer la connectivité. La figure \ref{fig:non_homogene} illustre le processus d'optimisation appliqué au maillage initialement présenté dans la figure \ref{fig:homogene}. Un exemple supplémentaire est proposé dans la figure \ref{fig:homo_demiDisc}.
 
 \begin{figure}[h!]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{images/non_homo_cross_field.pdf}
-    \caption{Champ de croix $\bar{u}_h$}
+    \caption{Champ de croix.}
     \label{fig:non_homogene_cross_field}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.46\textwidth}
     \includegraphics[width=\textwidth]{images/non_homo_mesh_quad.pdf}
-    \caption{Champ scalaire $\phi_h$ (en randian)}
+    \caption{Maillage quadrilatéral}
     \label{fig:non_homogene_mesh_quad}
 \end{subfigure}
-\caption{Illustration du processus d'alignement dans un cadre discret.}
+\caption{Exemple d'un maillage non homogène.}
 \label{fig:non_homogene}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.34]{images/homogeneiser.pdf}
+\caption{Homogénéisation du maillage présenté sur la figure \ref{fig:non_homogene}.}
+\label{fig:homogene}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/non_homo_demiDisc.pdf}
+    \caption{Maillage non-homogène du demi disque.}
+    \label{fig:homo_demiDisc_1}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/homo_sans_bord_demiDisc.pdf}
+    \caption{Homogénéisation sans prise en compte du bord.}
+    \label{fig:homo_demiDisc_2}
+\end{subfigure}
+\\[0.5cm]
+\begin{subfigure}{0.65\textwidth}
+    \includegraphics[width=\textwidth]{images/homo_avec_bord_demiDisc.pdf}
+    \caption{Homogénéisation complète}
+    \label{fig:homo_demiDisc_3}
+\end{subfigure}
+\caption{Illustration du processus d'homogénéisation sur un autre exemple.}
+\label{fig:homo_demiDisc}
 \end{figure}

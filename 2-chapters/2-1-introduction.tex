@@ -537,12 +537,11 @@ Lors des simulations numériques, prendre en compte les conditions aux limites e
 Nous étendons enfin cette approche aux surfaces courbes, et à l'instar de \cite{viertel2019approach}, nous établissons un cadre théorique pour analyser la régularité des champs croisés, tout en présentant une série d'opérations qui facilitent leur manipulation.
 
 \section{Organisation du manuscrit}
+Ce mémoire est organisé de la manière suivante:\\\\
+Le \textbf{\color{blue!50!black}{Chapitre \ref{chap:theoritical}}} formalise la notion de champ de croix dans le but de la comprendre en vue de l'utiliser comme point d'entrée d'une méthode de génération de maillage quadrilatéral. Nous abordons les notions d'angles, de points singuliers, d'indice, et de ligne de champ d'un champ de croix. L'intégration d'une ligne de champ à partir d'un point singulier est soigneusement étudiée, tout comme le comportement local du champ de croix au voisinage d'un point singulier. Ensuite, nous mettons en place un processus de partitionnement ainsi que les hypothèses permettant à ce partitionnement de conduire à une décomposition d'un domaine à quatre côtés. Sur cette base, nous présentons un processus dit \emph{d'alignement}, permettant de définir un champ de croix puis de l'adapter à un domaine en vue de générer à partir de ce dernier un maillage quadrilatéral. Ce processus est initialement présenté pour des domaines simplement connexes puis généralisé à des domaines non-simplement connexes.\\\\
+Dans le \textbf{\color{blue!50!black}{Chapitre \ref{chap:alorithme}}}, nous abordons la discrétisation de la méthode présentée dans le  \ref{chap:theoritical}. Pour ce faire, nous définissons une représentation discrète du champ de croix sur un maillage triangulaire. Cette représentation nous permet de retrouver une version discrète des notions présentées dans le cadre continu. Ainsi, nous pouvons mettre en œuvre une version discrète du processus de partitionnement permettant d'aboutir à une décomposition du maillage triangulaire. Nous montrons alors qu'une telle décomposition convergera lorsqu'on raffine le maillage vers une décomposition en régions de quatre côtés, qui se trouve être la décomposition du domaine continu.\\\\
+Dans le \textbf{\color{blue!50!black}{Chapitre \ref{chap:surface_courbe}}}, nous étendons les approches développées au cas des surfaces courbes dans l'espace. La difficulté principale dans ce cadre réside dans l'absence de référence globale pour le domaine considéré. Nous reprenons le résultat permettant de garantir le bon fonctionnement du partitionnement, puis nous retrouvons le processus d'alignement dans le cas des domaines non simplement connexes. Une approche alternative est présentée, consistant à créer un repère global à partir de l'équation de la chaleur vectorielle. Enfin, nous abordons, comme dans le chapitre \ref{chap:alorithme}, l'analyse de convergence du maillage généré.
 
- Ce mémoire est organisé de la manière suivante:\\
-
- Dans le \textbf{\color{blue!50!black}{Chapitre 1}}
-
-\newpage
 \section{Communications issues de la thèse}
 
 Les travaux de recherche effectués ont mené aux communications suivantes:

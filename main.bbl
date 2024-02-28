@@ -112,6 +112,12 @@ Cook, W.~A. (1974).
 \newblock {\em International Journal for Numerical Methods in Engineering},
   8(1):27--43.
 
+\bibitem[Crane, 2019]{crane2019n}
+Crane, K. (2019).
+\newblock The n-dimensional cotangent formula.
+\newblock {\em Online note. URL: https://www. cs. cmu. edu/\~{}
+  kmcrane/Projects/Other/nDCotanFormula. pdf}, pages 11--32.
+
 \bibitem[Crane et~al., 2010]{crane2010trivial}
 Crane, K., Desbrun, M., and Schr{\"o}der, P. (2010).
 \newblock Trivial connections on discrete surfaces.
@@ -122,12 +128,6 @@ Crane, K., Desbrun, M., and Schr{\"o}der, P. (2010).
 D'azevedo, E.~F. (2000).
 \newblock Are bilinear quadrilaterals better than linear triangles?
 \newblock {\em SIAM Journal on Scientific Computing}, 22(1):198--217.
-
-\bibitem[de~Goes and Crane, 2010]{de2010trivial}
-de~Goes, F. and Crane, K. (2010).
-\newblock Trivial connections on discrete surfaces revisited: A simplified
-  algorithm for simply-connected surfaces.
-\newblock Technical report, Technical Report.
 
 \bibitem[de~Moura~Pinto and Freitas, 2009]{de2009fast}
 de~Moura~Pinto, F. and Freitas, C. M. D.~S. (2009).
@@ -196,6 +196,13 @@ Gurung, T., Laney, D., Lindstrom, P., and Rossignac, J. (2011).
 \bibitem[Hecht, 2007]{hecht2007maillage}
 Hecht, F. (2007).
 \newblock Maillage 2d, 3d, adaptation.
+
+\bibitem[Henri~Paul, 2014]{Henri_Paul_de_Saint_Gervais}
+Henri~Paul, d. S.-G. (2014).
+\newblock Un invariant topologique : la caractéristique d’euler-poincaré
+  d’une surface fermée.
+\newblock
+  https://analysis-situs.math.cnrs.fr/Un-invariant-topologique-la-caracteristique-d-Euler-Poincare-d-une-surface-fermee.html.
 
 \bibitem[H{\"o}hring et~al., 1997]{hohring1997mesh}
 H{\"o}hring, R.~H., M{\"u}ller-Hannemann, M., and Wiehe, K. (1997).
@@ -399,6 +406,11 @@ Schneiders, R. (1996).
   meshes.
 \newblock {\em Engineering with computers}, 12:168--177.
 
+\bibitem[Sharp et~al., 2019]{sharp2019vector}
+Sharp, N., Soliman, Y., and Crane, K. (2019).
+\newblock The vector heat method.
+\newblock {\em ACM Transactions on Graphics (TOG)}, 38(3):1--19.
+
 \bibitem[Shepherd and Johnson, 2008]{shepherd2008hexahedral}
 Shepherd, J.~F. and Johnson, C.~R. (2008).
 \newblock Hexahedral mesh generation constraints.
@@ -435,6 +447,10 @@ Tam, T. (1991).
 \newblock 2d finite element mesh generation by medial axis subdivision.
 \newblock {\em Advances in engineering software and workstations},
   13(5-6):313--324.
+
+\bibitem[Tianye, ]{operatorlecture}
+Tianye, L.
+\newblock Lecture 12: Discrete laplacian.
 
 \bibitem[Van~den Abeele et~al., 2008]{van2008stability}
 Van~den Abeele, K., Lacor, C., and Wang, Z.~J. (2008).
