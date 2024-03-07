@@ -18,45 +18,45 @@ Warning--can't use both volume and number fields in kalberer2007quadcover
 Warning--can't use both volume and number fields in nieser2011cubecover
 Warning--empty year in operatorlecture
 Warning--empty journal in operatorlecture
-You've used 85 entries,
+You've used 87 entries,
             1935 wiz_defined-function locations,
-            926 strings with 17268 characters,
-and the built_in function-call counts, 33866 in all, are:
-= -- 3396
-> -- 1179
-< -- 86
-+ -- 408
-- -- 384
-* -- 2698
-:= -- 5721
-add.period$ -- 262
-call.type$ -- 85
-change.case$ -- 602
-chr.to.int$ -- 85
-cite$ -- 96
-duplicate$ -- 1421
-empty$ -- 2475
-format.name$ -- 505
-if$ -- 6786
+            935 strings with 17588 characters,
+and the built_in function-call counts, 34622 in all, are:
+= -- 3463
+> -- 1225
+< -- 88
++ -- 424
+- -- 400
+* -- 2763
+:= -- 5861
+add.period$ -- 268
+call.type$ -- 87
+change.case$ -- 619
+chr.to.int$ -- 87
+cite$ -- 98
+duplicate$ -- 1448
+empty$ -- 2518
+format.name$ -- 525
+if$ -- 6927
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 90
-newline$ -- 423
-num.names$ -- 255
-pop$ -- 591
+missing$ -- 93
+newline$ -- 433
+num.names$ -- 261
+pop$ -- 610
 preamble$ -- 1
-purify$ -- 617
+purify$ -- 635
 quote$ -- 0
-skip$ -- 1098
+skip$ -- 1119
 stack$ -- 0
-substring$ -- 2417
-swap$ -- 269
-text.length$ -- 32
+substring$ -- 2441
+swap$ -- 272
+text.length$ -- 33
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 486
+type$ -- 496
 warning$ -- 11
-while$ -- 293
+while$ -- 297
 width$ -- 0
-write$ -- 1093
+write$ -- 1118
 (There was 1 error message)

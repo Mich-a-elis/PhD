@@ -99,6 +99,11 @@ Chen, L. (2004).
 \newblock Mesh smoothing schemes based on optimal delaunay triangulations.
 \newblock In {\em IMR}, pages 109--120. Citeseer.
 
+\bibitem[Chen et~al., 2018]{chen2018metric}
+Chen, W., Zheng, X., Ke, J., Lei, N., Luo, Z., and Gu, X. (2018).
+\newblock Metric based quadrilateral mesh generation.
+\newblock {\em arXiv preprint arXiv:1811.12604}.
+
 \bibitem[Cohen-Steiner et~al., 2002]{cohen2002conforming}
 Cohen-Steiner, D., De~Verdiere, E.~C., and Yvinec, M. (2002).
 \newblock Conforming delaunay triangulations in 3d.
@@ -451,6 +456,11 @@ Tam, T. (1991).
 \bibitem[Tianye, ]{operatorlecture}
 Tianye, L.
 \newblock Lecture 12: Discrete laplacian.
+
+\bibitem[Trucco and Verri, 1998]{trucco1998introductory}
+Trucco, E. and Verri, A. (1998).
+\newblock {\em Introductory techniques for 3-D computer vision}, volume 201.
+\newblock Prentice Hall Englewood Cliffs.
 
 \bibitem[Van~den Abeele et~al., 2008]{van2008stability}
 Van~den Abeele, K., Lacor, C., and Wang, Z.~J. (2008).
