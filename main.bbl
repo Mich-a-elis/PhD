@@ -46,6 +46,11 @@ Belkin, M., Sun, J., and Wang, Y. (2008).
 \newblock In {\em Proceedings of the twenty-fourth annual symposium on
   Computational geometry}, pages 278--287.
 
+\bibitem[Bethuel et~al., 1994]{bethuel1994ginzburg}
+Bethuel, F., Brezis, H., H{\'e}lein, F., et~al. (1994).
+\newblock {\em Ginzburg-landau vortices}, volume~13.
+\newblock Springer.
+
 \bibitem[Blacker and Stephenson, 1991]{blacker1991paving}
 Blacker, T.~D. and Stephenson, M.~B. (1991).
 \newblock Paving: A new approach to automated quadrilateral mesh generation.

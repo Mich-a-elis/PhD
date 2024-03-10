@@ -319,20 +319,24 @@ La Figure \ref{solutionheat} présente un exemple de la solution de l'équation,
 Dans cette section, de manière similaire à l'étude exposée dans la section précédente, nous nous posons la question de savoir si le maillage quadrilatéral obtenu par la méthode précédemment décrite est bien un maillage du domaine de départ $\Omega$. Pour répondre à cette question, il suffit de montrer que le partitionnement construit sur $\Omega_h$, que nous notons $\mathcal{P}_h$, converge vers un partitionnement de $\Omega$ comprenant des partitions quadrilatérales.
 
 Notons cependant que le lift à considérer ici est un lift surfacique et dépend de toute la surface. Plus précisément, si $\eta$ est une fonction définie sur $\Omega$ et $\eta_h$ sa représentation élément fini définie sur $\Omega_h$, alors le lift de $\eta_h$ de $\Omega_h$ vers $\Omega$ est donné par :
-
 \begin{equation}
 \eta_h(p)=[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h](p-d(p)N(p))\text{ pour tout }p\in\Omega_h,
 \end{equation}
-
-où $N(p)$ est la normale sortante en $p$. Il résulte des travaux de \cite{dziuk1988finite} que $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ converge vers $\eta$, et que l'erreur de représentation de la géométrie (d'ordre 2) est négligeable par rapport à l'erreur d'approximation du schéma numérique.
-
-En supposant alors que $\Omega$ peut être représenté globalement par une fonction de distance orientée $d$ définie sur un sous-ensemble ouvert $U$ de $\mathbb{R}^2$.
-
+où $N(p)$ est la normale sortante en $p$. Nous supposons que $\Omega$ est représenté globalement par une fonction de distance orientée $d$ définie sur un sous-ensemble ouvert $U$ de $\mathbb{R}^2$ tel que
 \[
 \Omega=\{x\in U,~d(x)=0\},
 \]
+avec $d$ appartenant à $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\}$, $0\leq\alpha\leq 1$). Il résulte des travaux de \cite{dziuk1988finite} que $[\mathbf{L}_{\Omega_h}^{\Omega}\eta_h]$ converge vers $\eta$, et que l'erreur de représentation de la géométrie est d'ordre $2$, là où l'erreur d'approximation du schéma numérique est d'ordre $1$.
 
-où $d$ est dans $\mathcal{C}^{k,\alpha}(U)$, $\nabla d\neq 0$ ($k\in\mathbb{N}\cup\{0\},~0\leq\alpha\leq 1$), le reste de l'analyse est ensuite équivalent à ce qui a été fait dans la section précédente. Plus précisément, on peut voir que les séparatrices construites sur $\Omega_h$ suite à l'opération d'alignement (discrète) convergent vers les séparatrices d'un champ de croix continu $\bar{v}$ sur $\Omega$ dont le partitionnement est à quatre côtés.
+La suite de l'analyse est analogue à ce qui a été fait dans la sous-section \ref{subsec:analyse_convergence}. Plus précisément, en adoptant les mêmes notations, on retrouve la même inégalité entre la ligne de champ du champ $\bar{v}$ d'origine $p$ et de vecteur initial $w$ (notée $I(p,w,\bar{v})$) et l'approximation d'une ligne de champ du champ $\bar{v}_h$ de même origine avec le même vecteur initial (notée $I_h(p,w,\bar{v}_h)$):
+\begin{eqnarray*}
+||I(p,w,\bar{v})-I_h(p,w,\bar{v}_h)||&\leq& ||I(p,w,\bar{v}_h)-I_h(p,w,\bar{v}_h)|| +\\\\
+&&||I(p,w,[\mathbf{L}_{\Omega_h}^{\Omega}\bar{v}_h])-I(p,w,\bar{v}_h)||+\\\\
+&&||I(p,w,\bar{v})-I(p,w,[\mathbf{L}_{\Omega_h}^{\Omega}\bar{v}_h])||.
+\end{eqnarray*}
+On a:
+$$||I(p,w,\bar{v})-I_h(p,w,\bar{v}_h)||\xrightarrow[h \to 0]{} 0,$$
+puisque chaque terme converge vers $0$. Ainsi, on déduit que les séparatrices internes construites sur $\Omega_h$ convergent vers les séparatrices internes construites sur $\Omega$ et, puisque $\Omega_h$ converge vers $\Omega$, on a la convergence des séparatrices de bord.
 
 
 \section{Génération de champs de croix}
@@ -352,7 +356,7 @@ Il s'agit de la version surfacique de la méthode présentée dans la sous-secti
 f(p)&=&\left(\cos(4\theta_{\bar{n}}(p)), \sin(4\theta_{\bar{n}}(p))\right) & \mbox{ sur } \partial\Omega,
 \end{array}
 \right.
-\label{eqn:frey_vectoriel}
+%\label{eqn:frey_vectoriel}
 \end{equation}
 
 Le champ de croix $\bar{u}$ est ensuite donné pour tout $p\in\Omega$ par:
@@ -400,16 +404,16 @@ avec $\mathbf{k}$ la matrice de rigidité élémentaire dans le cas scalaire que
 
 
 
-\subsection{Connexion triviale}
+\subsection{Connexions triviales}
 
 Dans \cite{crane2010trivial}, les auteurs présentent un algorithme simple pour construire des connexions sur des surfaces discrètes qui sont aussi lisses que possible partout, sauf sur un ensemble de singularités isolées avec un indice donné. Ces connexions sont résolues en résolvant un seul système linéaire construit à partir d'opérateurs standards. Nous exposons ici cet algorithme pour un domaine simplement connexe où les singularités sont spécifiées par rapport aux triangles.
 
-Soit $\Omega_h$ un maillage triangulaire, et nous cherchons à construire un champ de croix $\bar{u}_h$ sur $\Omega_h$. Pour ce faire, nous cherchons à résoudre un ensemble d'angles d'ajustement qui indiquent comment faire pivoter un vecteur chaque fois qu'il se déplace le long d'une arête. Soit $x$ ce champ de vecteur d'angle d'ajustement. Remarquons que $x$ est donc un vecteur de réels dont la taille est égale au nombre d'arêtes. Nous attribuons une orientation arbitraire à chaque arête, puis orientons chaque triangle dans le sens positif de la normale au triangle. Nous construisons ensuite une matrice $A$ représentant les interactions entre les triangles et les arêtes du maillage. Il s'agit donc d'une matrice rectangulaire ayant comme nombre de lignes le nombre de triangles et comme nombre de colonnes le nombre d'arêtes, définie par :
+Soit $\Omega_h$ un maillage triangulaire. Nous souhaitons construire un champ de croix $\bar{u}_h$ sur $\Omega_h$. Pour ce faire, nous cherchons à résoudre un ensemble d'angles d'ajustement qui indiquent comment faire pivoter un vecteur chaque fois qu'il se déplace le long d'une arête. Soit $x$ ce champ de vecteur d'angle d'ajustement. Remarquons que $x$ est donc un vecteur de réels dont la taille est égale au nombre d'arêtes. Nous attribuons une orientation arbitraire à chaque arête, puis orientons chaque triangle dans le sens positif de la normale au triangle. Nous construisons ensuite une matrice $A$ représentant les interactions entre les triangles et les arêtes du maillage. Il s'agit donc d'une matrice rectangulaire ayant comme nombre de lignes le nombre de triangles et comme nombre de colonnes le nombre d'arêtes, définie par :
 
 $$A_{ij} =
 \begin{cases}
-1 & \text{si l'arête } i \text{ est contenu dans le triangle } j \text{ avec la même orientation} \\\\
--1 & \text{si l'arête } i \text{ est contenu dans le triangle } j \text{ avec l'orientation contraire} \\\\
+1 & \text{si l'arête } i \text{ est contenu dans le triangle } j \text{ avec la même orientation}, \\\\
+-1 & \text{si l'arête } i \text{ est contenu dans le triangle } j \text{ avec l'orientation contraire}, \\\\
 0 & \text{sinon}.
 \end{cases}
 $$

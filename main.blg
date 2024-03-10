@@ -3,10 +3,6 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: references.bib
-Repeated entry---line 819 of file references.bib
- : @inproceedings{crane2010trivial
- :                                ,
-I'm skipping whatever remains of this entry
 Warning--empty publisher in alliez2003anisotropic
 Warning--empty journal in barth2003finite
 Warning--can't use both volume and number fields in bommes2013quad
@@ -18,45 +14,45 @@ Warning--can't use both volume and number fields in kalberer2007quadcover
 Warning--can't use both volume and number fields in nieser2011cubecover
 Warning--empty year in operatorlecture
 Warning--empty journal in operatorlecture
-You've used 87 entries,
+You've used 88 entries,
             1935 wiz_defined-function locations,
-            935 strings with 17588 characters,
-and the built_in function-call counts, 34622 in all, are:
-= -- 3463
-> -- 1225
-< -- 88
-+ -- 424
-- -- 400
-* -- 2763
-:= -- 5861
-add.period$ -- 268
-call.type$ -- 87
-change.case$ -- 619
-chr.to.int$ -- 87
-cite$ -- 98
-duplicate$ -- 1448
-empty$ -- 2518
-format.name$ -- 525
-if$ -- 6927
+            938 strings with 17713 characters,
+and the built_in function-call counts, 35002 in all, are:
+= -- 3496
+> -- 1248
+< -- 89
++ -- 432
+- -- 408
+* -- 2796
+:= -- 5931
+add.period$ -- 271
+call.type$ -- 88
+change.case$ -- 626
+chr.to.int$ -- 88
+cite$ -- 99
+duplicate$ -- 1462
+empty$ -- 2541
+format.name$ -- 534
+if$ -- 6999
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 93
-newline$ -- 433
-num.names$ -- 261
-pop$ -- 610
+missing$ -- 95
+newline$ -- 438
+num.names$ -- 264
+pop$ -- 620
 preamble$ -- 1
-purify$ -- 635
+purify$ -- 643
 quote$ -- 0
-skip$ -- 1119
+skip$ -- 1130
 stack$ -- 0
-substring$ -- 2441
-swap$ -- 272
-text.length$ -- 33
+substring$ -- 2453
+swap$ -- 274
+text.length$ -- 34
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 496
+type$ -- 500
 warning$ -- 11
-while$ -- 297
+while$ -- 299
 width$ -- 0
-write$ -- 1118
-(There was 1 error message)
+write$ -- 1131
+(There were 11 warnings)

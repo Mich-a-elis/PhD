@@ -1146,9 +1146,14 @@ u_r^2(p)&=&\mathcal{R}(\bar{n}).(0, 1)^t & \mbox{ sur } \partial\Omega.
 $$
 En pratique, ces équations sont approchées en utilisant la méthode des éléments finis de Galerkin appliquée à un maillage triangulaire $\Omega_h$ de $\Omega$ avec des éléments $P_1$-Lagrange. On assemble ensuite $u_r$ puis on reconstitu $\bar{u}$ pour tout $p\in\Omega$ par:
 $$
-\bar{u}(p)=\mathcal{R}^{-1}(u_r(p))
+\bar{u}(p)=\mathcal{R}^{-1}(u_r(p)).
 $$
 On obtient un champ de croix aligné sur le bord du domaine de calcul et dont les point singulier de bord correspondent à une rotation minimale du champ de croix dans le voisinnage du point.
+
+Dans la littérature, \cite{beaufort2017computing, viertel2019approach}, cette équation est souvent contrainte en imposant l'unitarité de la norme des croix du champ de croix. Cependant, le problème n'a alors pas de solution. Par pénalisation, on se retrouve alors avec l'équation de Ginzburg-Landau. Dans \cite{bethuel1994ginzburg}, les auteurs montrent qu'il existe des solutions généralisées pour cette équation.
+
+Dans notre travail, nous n'imposons pas cette contrainte car nous nous intéressons simplement à l'orientation des croix, quitte à renormaliser ces croix après la résolution de l'équation de Laplace.
+
 
 
 \subsection{Une expression analytique}

@@ -216,13 +216,13 @@ Une autre considération importante concerne la gestion des domaines périodique
 Dans notre étude, les quadrilatères construits le long du bord du domaine ont leurs nœuds positionnés le long des arêtes du maillage triangulaire utilisé pour la construction. Cependant, dans les codes de calcul, il peut être nécessaire d'interpoler la courbure le long de la frontière du maillage quadrilatéral, surtout dans le cas de conditions limites impliquant la dérivée normale, telles que les conditions aux limites de Neumann et de Robin. Face à une telle situation, les calculs de reconstitution de la normale dépendront de la résolution obtenue pour les mailles du bord lors de la construction du maillage quadrilatéral (voir la figure \ref{fig:mail_tri_vs_mail_quad}). Ainsi, si la finesse demandée pour le maillage quadrilatéral est supérieure à celle du maillage triangulaire servant de base à la construction, il sera impossible de récupérer de manière précise les informations avec les nœuds de bord du maillage quadrilatéral. Par conséquent, la définition explicite de $\Omega_{\tilde{h}}$ permet de se libérer des triangles de bord et de ne plus être contraint par cette dépendance.\\\\
 \begin{figure}[h!]
 \centering
-\begin{subfigure}{0.65\textwidth}
+\begin{subfigure}{0.6\textwidth}
     \includegraphics[width=\textwidth]{images/non_hermite_mesh_tri.pdf}
     \caption{Maillage triangulaire.}
     \label{fig:mail_tri_vs_mail_quad_1}
 \end{subfigure}
 \\[0.5cm]
-\begin{subfigure}{0.65\textwidth}
+\begin{subfigure}{0.6\textwidth}
     \includegraphics[width=\textwidth]{images/non_hermite_quad.pdf}
     \caption{Maillage quadrilatéral.}
     \label{fig:mail_tri_vs_mail_quad_2}
@@ -247,7 +247,7 @@ Nous illustrons sur la figure \ref{fig:hermite} la Reconstitution d'une arête d
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.8]{images/hermite.pdf}
+\includegraphics[scale=0.55]{images/hermite.pdf}
 \caption{Illustration de la reconstitution d'une arête de bord par le molynôme d'Hermite.}
 \label{fig:hermite}
 \end{figure}

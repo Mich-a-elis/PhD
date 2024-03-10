@@ -105,12 +105,12 @@
 \contentsline {paragraph}{\'Etude de l'opération d'alignement}{136}{section*.109}%
 \contentsline {section}{\numberline {4.4}Analyse de convergence}{139}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Génération de champs de croix}{140}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}L'\'Equation de Laplace}{140}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Connexion triviale}{141}{subsection.4.5.2}%
-\contentsline {chapter}{\numberline {5}Conclusion et perspectives}{143}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusion}{143}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Perspectives}{144}{section.5.2}%
-\contentsline {chapter}{\numberline {A}Caractéristique d'Euler}{155}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Opérateur Laplacien discret}{157}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Algorithme de coloriage}{163}{appendix.C}%
-\contentsline {chapter}{Références}{165}{appendix*.134}%
+\contentsline {subsection}{\numberline {4.5.1}L'\'Equation de Laplace}{141}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Connexions triviales}{142}{subsection.4.5.2}%
+\contentsline {chapter}{\numberline {5}Conclusion et perspectives}{145}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusion}{145}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Perspectives}{146}{section.5.2}%
+\contentsline {chapter}{\numberline {A}Caractéristique d'Euler}{157}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Opérateur Laplacien discret}{159}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Algorithme de coloriage}{165}{appendix.C}%
+\contentsline {chapter}{Références}{167}{appendix*.134}%
