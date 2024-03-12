@@ -256,6 +256,18 @@ Kowalski, N., Ledoux, F., and Frey, P. (2013).
 \newblock In {\em Proceedings of the 21st international meshing roundtable},
   pages 137--154. Springer.
 
+\bibitem[Kuth et~al., 2023]{kuth2023edge}
+Kuth, B., Oberberger, M., Chajdas, M., and Meyer, Q. (2023).
+\newblock Edge-friend: Fast and deterministic catmull-clark subdivision
+  surfaces.
+\newblock In {\em Computer Graphics Forum}, volume~42, page e14863. Wiley
+  Online Library.
+
+\bibitem[Lee, 2018]{lee2018introduction}
+Lee, J.~M. (2018).
+\newblock {\em Introduction to Riemannian manifolds}, volume~2.
+\newblock Springer.
+
 \bibitem[LeVeque, 2002]{leveque2002finite}
 LeVeque, R.~J. (2002).
 \newblock {\em Finite volume methods for hyperbolic problems}, volume~31.
@@ -466,6 +478,11 @@ Tianye, L.
 Trucco, E. and Verri, A. (1998).
 \newblock {\em Introductory techniques for 3-D computer vision}, volume 201.
 \newblock Prentice Hall Englewood Cliffs.
+
+\bibitem[Vallet, 2008]{vallet:tel-01748689}
+Vallet, B. (2008).
+\newblock {\em {Bases de fonctions sur les vari{\'e}t{\'e}s}}.
+\newblock Theses, {Institut National Polytechnique de Lorraine - INPL}.
 
 \bibitem[Van~den Abeele et~al., 2008]{van2008stability}
 Van~den Abeele, K., Lacor, C., and Wang, Z.~J. (2008).

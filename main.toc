@@ -110,7 +110,8 @@
 \contentsline {chapter}{\numberline {5}Conclusion et perspectives}{145}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Conclusion}{145}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Perspectives}{146}{section.5.2}%
-\contentsline {chapter}{\numberline {A}Caractéristique d'Euler}{157}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Opérateur Laplacien discret}{159}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Algorithme de coloriage}{165}{appendix.C}%
+\contentsline {chapter}{\numberline {A}Caractéristique d'Euler}{155}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Opérateur Laplacien discret}{157}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Une approche pour la discrétisation du problème d'adaptation}{163}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Algorithme de coloriage}{165}{appendix.D}%
 \contentsline {chapter}{Références}{167}{appendix*.134}%

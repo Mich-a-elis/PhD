@@ -940,7 +940,7 @@ Considérons un domaine $\Omega$ borné et fermé dans $\mathbb{R}^2$ possédant
 \begin{enumerate}
 \item \textbf{Identification des points singuliers :} l'algorithme commence par identifier les points singuliers dans le champ de croix fourni. Ces points singuliers jouent un rôle critique dans la détermination de la structure du maillage. Ils correspondent à des points $p\in\Omega$, tels que $\bar{u}(p)=0$ (voir la première image de la figure \ref{fig:demi_disc_align_first}).\\
 \item \textbf{Détermination du nombre de séparatrices pour chaque point singulier :}
-le nombre de lignes de champ provenant de chaque point singulier est directement lié à l'indice du point dans le champ de croix Plus précisément, si $p\in\Omega\backslash\partial\Omega$, alors $N_s(p) = 4 - id_{\bar{u}}(p)$, tandis que si $p\in\partial\Omega$, alors $N_s(p) = 2 - id_{\bar{u}}^\partial(p)$ où $N_s(p)$ représente le nombre de séparatrices associé au point $p$ (voir les propositions \ref{prop:align_sepa_voisinnage} et \ref{prop:align_sepa_voisinnage_bord}).\\
+le nombre de lignes de champ provenant de chaque point singulier est directement lié à l'indice du point dans le champ de croix Plus précisément, si $p\in\Omega\backslash\partial\Omega$, alors $N_s(p) = 4 - 4id_{\bar{u}}(p)$, tandis que si $p\in\partial\Omega$, alors $N_s(p) = 4 - 4id_{\bar{u}}^\partial(p)$ où $N_s(p)$ représente le nombre de séparatrices associé au point $p$ (voir les propositions \ref{prop:align_sepa_voisinnage} et \ref{prop:align_sepa_voisinnage_bord}).\\
 \item \textbf{Construction des séparatrices :} les séparatrices de chaque point singulier sont initialisées selon la proposition $\ref{prop:stream_from_interior_sing}$ puis les lignes de champs sont intégrées à travers le domaine en utilisant l'équation \eqref{eqn:streamline} (voir la deuxième image de la figure \ref{fig:demi_disc_align_second}). Les directions initiales de ces séparatrices sont déterminées en cherchant des directions alignées avec le champ de croix dans le voisinnage du points singuliers  (voir les propositions \ref{prop:align_sepa_voisinnage} et \ref{prop:align_sepa_voisinnage_bord}).\\
 \item \textbf{Identification des régions :} si aucune des séparatrices ne converge vers un cycle limite alors l'algorithme à converger et les séparatrices construites partitionnent avec le bord du domaine en un ensemble fini de régions.\\
 \end{enumerate}
@@ -1058,9 +1058,9 @@ Pour commencer, nous associons à chaque point $p\in\partial\Omega$, un paramèt
 I_p=\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1
 \end{equation}
 Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}$ (une fois l'opération d'alignement réalisée). Un critère a priori pour le choix automatique de ce paramètre sera exposé ultérieurement dans la sous-section \ref{subsec:sing_bord}. Nous définissons ensuite l'ensemble $\mathcal{B}$ qui regroupe les points pour lesquels le paramètre $I_p\neq 0$. Ces points seront singuliers dans le champ de croix $\bar{v}$ (une fois l'opération d'alignement réalisée). %L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ $\bar{n}$. Ces points étant déjà singulier dans $\bar{n}$, ils resteront singuliers dans $\bar{v}$ après l'opération d'alignement.
-Pour finir, il est impératif que le champ de croix $\bar{u}$ satisfasse:\\
+Pour finir, il est impératif que le champ de croix $\bar{u}$ ainsi que l'ensemble $\mathcal{B}$ satisfassent:\\
 \begin{itemize}
- \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}})<\infty$,\\
+ \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}})+Card(\mathcal{B})< \infty$,\\
  \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}}$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
  \item[$\bullet$] Soit $\gamma$ une paramétrisation de $\partial\Omega$ dans le sens positif. Il existe $\theta_{\bar{u}}^\gamma$ vérifiant:
  \begin{equation}
@@ -1164,13 +1164,12 @@ En appliquant cet algorithme au champ de croix représenté sur la figure \ref{f
     \caption{Maillage quadilatéral du domaine présentant un quadrangle dégénéré.}
     \label{fig:rect_demi_disc_third}
 \end{subfigure}
-
 \caption{Une autre illustration de l'opération d'alignement à partir du champ d'angle donné.}
 \label{fig:rect_demi_disc}
 \end{figure}
 
 \paragraph{Domaines non-simplement connexes:}
-Nous supposons maintenant que $\Omega$ est un domaine non-simplement connexe. Autrement dit sa frontière $\partial\Omega$ peut potentiellement être constitué de plusieurs composantes connexes. On a donc $\partial\Omega=\cup_i\Gamma_i$, où $\Gamma_i,~i\in\llbracket 0, n_b-1\rrbracket$ désigne les composantes connexes de $\partial\Omega$ et $n_b$ le nombre de composantes connexes de $\partial\Omega$. Pour tout $i\in\llbracket0, n_b-1\rrbracket$, on note $\gamma_i$ la paramétrisation de $\Gamma_i$ sur $[0, 1]$ dans le sens positif. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. En appliquant le processus présenté dans la partie précédente, la condition \eqref{eqn:principe_hypothese_u} devient:
+Nous supposons maintenant que $\Omega$ est un domaine non-simplement connexe. Autrement dit sa frontière $\partial\Omega$ peut potentiellement être constitué de plusieurs composantes connexes. On a donc $\partial\Omega=\cup_i\Gamma_i$, où $\Gamma_i,~i\in\llbracket 0, n_b-1\rrbracket$ désigne les composantes connexes de $\partial\Omega$ et $n_b$ le nombre de composantes connexes de $\partial\Omega$. Pour tout $i\in\llbracket0, n_b-1\rrbracket$, on note $\gamma_i$ la paramétrisation de $\Gamma_i$ sur $[0, 1]$ dans le sens positif. Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$ et non-nécessairement aligné sur le bord de $\Omega$ tel que pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus que $0\leq Card(\mathcal{S}_{\bar{u}})+Card(\mathcal{B})< \infty$. En appliquant le processus présenté dans la partie précédente, la condition \eqref{eqn:principe_hypothese_u} devient:
 
 \begin{equation}
     \sum_{i=0}^{n_b-1}\left(\theta_{\bar{u}}^{\gamma_i}(1)-\theta_{\bar{u}}^{\gamma_i}(0)\right)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.
@@ -1309,7 +1308,7 @@ I_p=
 \right.
 \label{eqn:etude_def_I}
 \end{equation}
-Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que $0<Card(\mathcal{S}_{\bar{u}})<\infty$ et pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
+Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus que $0\leq Card(\mathcal{S}_{\bar{u}})+Card(\mathcal{B})< \infty$ et qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
 \begin{equation}
     \label{eqn:etude_hypothese_u}
     \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.

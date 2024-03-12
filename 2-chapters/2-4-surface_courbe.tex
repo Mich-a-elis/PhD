@@ -229,7 +229,7 @@ Une approche pour résoudre ce problème pourrait consister à introduire des po
 
 Considérons maintenant que $\Omega$ est simplement connexe et que le champ de croix $\bar{u}$ n'est pas nécessairement aligné sur $\partial\Omega$ mais vérifie:
 \begin{itemize}
- \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}})<\infty$,\\
+ \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}})Card(\mathcal{B})<\infty$,\\
  \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}}$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
  \item[$\bullet$] Etant donné $I_p$ définit pour tout $p$ par:
 \begin{equation}
@@ -268,14 +268,18 @@ Dans ce contexte, $\gamma$ représente une paramétrisation de la frontière $\p
 
 La formulation de la condition de bord de l'équation \ref{eqn:principe_def_phi_space} est motivée par l'absence de référence globale dans ce cas particulier (surface courbe dans l'espace). Une alternative consiste à construire un champ de croix sur $\Omega$ sans aucun point singulier et à le considérer comme une référence globale sur la surface. Nous avons adopter la méthode de la chaleur pour la diffusion, telle que présentée dans \cite{sharp2019vector}. Cette méthode propage un vecteur donné en fonction de l'équation de la chaleur, permettant ainsi la construction d'un cadre de référence global pour la surface. Cela facilite le calcul précis des angles du champ croisé et son alignement avec la frontière de la surface non-plane.
 
-Plus précisément, nous construisons un champ de vecteurs $w$ sur la surface en utilisant l'équation \eqref{heatequation}, avec des conditions aux limites de Neumann homogènes. Nous amorçons la résolution en initialisant l'équation avec un champ de vecteurs égal à un vecteur arbitraire dans l'espace tangent d'un point arbitraire et mis à zéro partout ailleurs sur la surface. En résolvant cette équation sur une très courte période de temps, nous obtenons un champ de vecteurs dépourvu de singularités. L'étape suivante consiste à générer un repère en chaque point en effectuant une rotation du champ de vecteurs obtenu.
+Plus précisément, nous construisons un champ de vecteurs $w$ sur la surface en utilisant l'équation \eqref{eqn:heatequation}, avec des conditions aux limites de Neumann homogènes. Nous amorçons la résolution en initialisant l'équation avec un champ de vecteurs égal à un vecteur arbitraire dans l'espace tangent d'un point arbitraire et mis à zéro partout ailleurs sur la surface. En résolvant cette équation sur une très courte période de temps, nous obtenons un champ de vecteurs dépourvu de singularités. L'étape suivante consiste à générer un repère en chaque point en effectuant une rotation du champ de vecteurs obtenu.
 
 \begin{equation}
-\label{heatequation}
-\frac{\partial w}{\partial t} = \nabla^2 w,
+\left\{
+\begin{array}{lcll}
+\displaystyle\frac{\partial w}{\partial t} & = & \nabla^2 w &\mbox{ dans }\Omega,\\[0.5cm]
+\nabla w.n&=&0 & \mbox{ sur } \partial\Omega.
+\end{array}
+\right.
+\label{eqn:heatequation}
 \end{equation}
-
-La Figure \ref{solutionheat} présente un exemple de la solution de l'équation, tandis que la Figure \ref{globalframe} illustre le repère global résultant obtenu. Nous exposons ensuite le processus d'alignement à partir d'un champ de croix non aligné avec le bord du domaine (voir Figure \ref{nonalign}). Ce champ de croix est ensuite aligné grâce au processus d'alignement, où les angles sont calculés à partir du champ de référence global. On obtient alors un découpage en régions à quatre côtés, comme présenté sur la Figure \ref{align}. D'autres illustrations sont présentées sur la Figure \ref{another}.
+où $n$ désigne la normale sortante au bord de $\Omega$. La Figure \ref{solutionheat} présente un exemple de la solution de l'équation, tandis que la Figure \ref{globalframe} illustre le repère global résultant obtenu. Nous exposons ensuite le processus d'alignement à partir d'un champ de croix non aligné avec le bord du domaine (voir Figure \ref{nonalign}). Ce champ de croix est ensuite aligné grâce au processus d'alignement, où les angles sont calculés à partir du champ de référence global. On obtient alors un découpage en régions à quatre côtés, comme présenté sur la Figure \ref{align}. D'autres illustrations sont présentées sur la Figure \ref{another}.
 
 \begin{figure}[!h]
 \centering
@@ -297,6 +301,7 @@ La Figure \ref{solutionheat} présente un exemple de la solution de l'équation,
 \caption{Champ de croix non aligné.}
 \label{nonalign}
 \end{figure}
+
 
 \begin{figure}[!h]
 \centering
@@ -408,32 +413,33 @@ avec $\mathbf{k}$ la matrice de rigidité élémentaire dans le cas scalaire que
 
 Dans \cite{crane2010trivial}, les auteurs présentent un algorithme simple pour construire des connexions sur des surfaces discrètes qui sont aussi lisses que possible partout, sauf sur un ensemble de singularités isolées avec un indice donné. Ces connexions sont résolues en résolvant un seul système linéaire construit à partir d'opérateurs standards. Nous exposons ici cet algorithme pour un domaine simplement connexe où les singularités sont spécifiées par rapport aux triangles.
 
-Soit $\Omega_h$ un maillage triangulaire. Nous souhaitons construire un champ de croix $\bar{u}_h$ sur $\Omega_h$. Pour ce faire, nous cherchons à résoudre un ensemble d'angles d'ajustement qui indiquent comment faire pivoter un vecteur chaque fois qu'il se déplace le long d'une arête. Soit $x$ ce champ de vecteur d'angle d'ajustement. Remarquons que $x$ est donc un vecteur de réels dont la taille est égale au nombre d'arêtes. Nous attribuons une orientation arbitraire à chaque arête, puis orientons chaque triangle dans le sens positif de la normale au triangle. Nous construisons ensuite une matrice $A$ représentant les interactions entre les triangles et les arêtes du maillage. Il s'agit donc d'une matrice rectangulaire ayant comme nombre de lignes le nombre de triangles et comme nombre de colonnes le nombre d'arêtes, définie par :
+Soit $\Omega_h$ un maillage triangulaire. Nous souhaitons construire un champ de croix $\bar{u}_h$ sur $\Omega_h$. Pour ce faire, nous cherchons à résoudre un ensemble d'angles d'ajustement qui indique comment faire pivoter un vecteur chaque fois qu'il se déplace le long d'une arête. Soit $\alpha$ ce champ d'angle d'ajustement et notons $\alpha_{ij}$ l'angle d'ajustement associé à l'arête $s_is_j$ de sommets $s_i$ et $s_j$. Remarquons que $\alpha$ est donc un vecteur de réels dont la taille est égale au nombre d'arêtes. Nous attribuons une orientation arbitraire à chaque arête, puis orientons chaque triangle dans le sens positif de la normale au triangle. Nous construisons ensuite une matrice $A$ représentant les interactions entre les triangles et les arêtes du maillage. Il s'agit donc d'une matrice rectangulaire ayant comme nombre de lignes le nombre de triangles et comme nombre de colonnes le nombre d'arêtes, définie par :
 
 $$A_{ij} =
 \begin{cases}
-1 & \text{si l'arête } i \text{ est contenu dans le triangle } j \text{ avec la même orientation}, \\\\
--1 & \text{si l'arête } i \text{ est contenu dans le triangle } j \text{ avec l'orientation contraire}, \\\\
+1 & \text{si l'arête } i \text{ est contenue dans le triangle } j \text{ avec la même orientation}, \\\\
+-1 & \text{si l'arête } i \text{ est contenue dans le triangle } j \text{ avec l'orientation contraire}, \\\\
 0 & \text{sinon}.
 \end{cases}
 $$
-our contrôler le placement des singularités, nous spécifions pour chaque triangle l'indice $k_i$ désiré, puis nous assemblons le vecteur $b$ donné pour chaque triangle $T_i$ par :
+pour contrôler le placement des singularités, nous spécifions pour chaque triangle l'indice $k_i$ désiré, puis nous assemblons le vecteur $b$ donné pour chaque triangle $T_i$ par :
 $$
-b_i = 2k_i\pi-K_i
+b_i = 2k_i\pi-K_i,
 $$
-où $K_i$ désigne le défaut d'angle autour du triangle $T_i$ dû à la rotation de la normale surfacique autour du triangle. Enfin, pour calculer les angles d'ajustement, nous résolvons le problème convexe :
+où $K_i$ désigne le défaut d'angle (holonomie) autour du triangle $T_i$ dû à la rotation de la normale surfacique autour du triangle. Enfin, pour calculer les angles d'ajustement, nous résolvons le problème convexe :
 \[
-\min_x \|x\|_2 \quad \text{tel que} \quad Ax = b.
+\min_\alpha \|\alpha\|_2 \quad \text{tel que} \quad A\alpha = b.
 \]
-Une fois que nous avons le vecteur $x$, la construction d'un champ de croix est simple. Nous attribuons une croix arbitraire en un point que nous propageons sur le reste des sommets du maillage. Sur une arête $s_is_j$, pour trouver la croix au sommet $s_j$ étant donné la croix en un sommet $s_i$, nous avons :
+Dans le cas où la matrice $A$ a un rang plein, la méthode des multiplicateurs de Lagrange donne une solution unique. Cette solution est donnée par la formule $\alpha = -A^T (AA^T)^{-1} b$. Dans ce cas, la solution est unique car la contrainte linéaire est suffisamment restrictive pour éliminer toute ambiguïté dans la solution. Une fois que nous avons le vecteur $\alpha$, la construction d'un champ de croix est simple. Nous attribuons une croix arbitraire en un point que nous propageons sur le reste des sommets du maillage. Sur une arête $s_is_j$, pour trouver la croix au sommet $s_j$ étant donné la croix en un sommet $s_i$, nous avons :
 $$
 \bar{u}_h(s_j)=
 \begin{cases}
 \{\mathbf{R}(\beta_j+m\pi/2)X_{s_j},\quad m\in\llbracket0, 3\rrbracket\}\\\\
-\beta_j = \beta_i - \theta_{ij} + \theta_{ji} - x_{ij},
+\beta_j = \beta_i - \theta_{ij} + \theta_{ji} - \alpha_{ij},
 \end{cases}
 $$
-où $\beta_k$ est l'angle par rapport à la référence $X_{s_k}$ défini au sommet $s_k$, et $x_{ij}$ est l'angle d'ajustement de l'arête $s_is_j$. Enfin, $\theta_{ij}$ et $\theta_{ji}$ sont respectivement les angles entre l'arête $s_is_j$ et les références fixées aux sommets $s_i$ et $s_j$.
+où $\beta_k$ est l'angle par rapport à la référence $X_{s_k}$ défini au sommet $s_k$, et $\alpha_{ij}$ est l'angle d'ajustement de l'arête $s_is_j$. Enfin, $\theta_{ij}$ et $\theta_{ji}$ sont respectivement les angles entre l'arête $s_is_j$ et les références fixées aux sommets $s_i$ et $s_j$. Les champs de croix illustrés sur les figures \ref{fig:separatrice_illustration_surface} et \ref{nonalign} ont été généré avec cette approche.
+
 
 %somme de champs de croix\\
 %connexion\\
