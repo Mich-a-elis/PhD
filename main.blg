@@ -1,6 +1,12 @@
 This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
+A level-1 auxiliary file: 2-chapters/2-1-introduction.aux
+A level-1 auxiliary file: 2-chapters/2-2-theoritical.aux
+A level-1 auxiliary file: 2-chapters/2-3-algorithme.aux
+A level-1 auxiliary file: 2-chapters/2-4-surface_courbe.aux
+A level-1 auxiliary file: 2-chapters/2-5-conclusion.aux
+A level-1 auxiliary file: 2-chapters/2-6-annexes.aux
 The style file: apalike.bst
 Database file #1: references.bib
 Repeated entry---line 897 of file references.bib
@@ -21,7 +27,7 @@ Warning--empty year in operatorlecture
 Warning--empty journal in operatorlecture
 You've used 91 entries,
             1935 wiz_defined-function locations,
-            953 strings with 18097 characters,
+            959 strings with 18275 characters,
 and the built_in function-call counts, 36117 in all, are:
 = -- 3607
 > -- 1285

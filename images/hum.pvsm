@@ -14346,11 +14346,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectionVisibility" id="12398.SelectionVisibility" number_of_elements="1">
@@ -14467,11 +14462,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ColorByLODIndex" id="12398.ColorByLODIndex" number_of_elements="1">
@@ -14546,11 +14536,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="12398.GlyphType" number_of_elements="1">
@@ -14648,11 +14633,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OSPRayScaleFunction" id="12398.OSPRayScaleFunction" number_of_elements="1">
@@ -14690,11 +14670,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OpacityArrayComponent" id="12398.OpacityArrayComponent" number_of_elements="1">
@@ -14852,11 +14827,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="12398.SelectTCoordArray" number_of_elements="1">
@@ -15026,11 +14996,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ShaderPreset" id="12398.ShaderPreset" number_of_elements="1">
@@ -15188,11 +15153,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectionVisibility" id="12716.SelectionVisibility" number_of_elements="1">
@@ -15200,7 +15160,7 @@
         <Domain name="bool" id="12716.SelectionVisibility.bool"/>
       </Property>
       <Property name="Visibility" id="12716.Visibility" number_of_elements="1">
-        <Element index="0" value="0"/>
+        <Element index="0" value="1"/>
         <Domain name="bool" id="12716.Visibility.bool"/>
       </Property>
       <Property name="Ambient" id="12716.Ambient" number_of_elements="1">
@@ -15309,11 +15269,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ColorByLODIndex" id="12716.ColorByLODIndex" number_of_elements="1">
@@ -15388,11 +15343,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="12716.GlyphType" number_of_elements="1">
@@ -15490,11 +15440,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OSPRayScaleFunction" id="12716.OSPRayScaleFunction" number_of_elements="1">
@@ -15532,11 +15477,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OpacityArrayComponent" id="12716.OpacityArrayComponent" number_of_elements="1">
@@ -15694,11 +15634,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="12716.SelectTCoordArray" number_of_elements="1">
@@ -15868,11 +15803,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ShaderPreset" id="12716.ShaderPreset" number_of_elements="1">
@@ -16030,11 +15960,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectionVisibility" id="13258.SelectionVisibility" number_of_elements="1">
@@ -16042,7 +15967,7 @@
         <Domain name="bool" id="13258.SelectionVisibility.bool"/>
       </Property>
       <Property name="Visibility" id="13258.Visibility" number_of_elements="1">
-        <Element index="0" value="0"/>
+        <Element index="0" value="1"/>
         <Domain name="bool" id="13258.Visibility.bool"/>
       </Property>
       <Property name="Ambient" id="13258.Ambient" number_of_elements="1">
@@ -16050,9 +15975,9 @@
         <Domain name="range" id="13258.Ambient.range"/>
       </Property>
       <Property name="AmbientColor" id="13258.AmbientColor" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="1"/>
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
         <Domain name="range" id="13258.AmbientColor.range"/>
       </Property>
       <Property name="Anisotropy" id="13258.Anisotropy" number_of_elements="1">
@@ -16151,11 +16076,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ColorByLODIndex" id="13258.ColorByLODIndex" number_of_elements="1">
@@ -16184,9 +16104,9 @@
         <Domain name="range" id="13258.Diffuse.range"/>
       </Property>
       <Property name="DiffuseColor" id="13258.DiffuseColor" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="1"/>
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
         <Domain name="range" id="13258.DiffuseColor.range"/>
       </Property>
       <Property name="EdgeColor" id="13258.EdgeColor" number_of_elements="3">
@@ -16230,11 +16150,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="13258.GlyphType" number_of_elements="1">
@@ -16332,11 +16247,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OSPRayScaleFunction" id="13258.OSPRayScaleFunction" number_of_elements="1">
@@ -16374,11 +16284,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OpacityArrayComponent" id="13258.OpacityArrayComponent" number_of_elements="1">
@@ -16536,11 +16441,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="13258.SelectTCoordArray" number_of_elements="1">
@@ -16710,11 +16610,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ShaderPreset" id="13258.ShaderPreset" number_of_elements="1">
@@ -16872,11 +16767,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectionVisibility" id="13800.SelectionVisibility" number_of_elements="1">
@@ -16884,7 +16774,7 @@
         <Domain name="bool" id="13800.SelectionVisibility.bool"/>
       </Property>
       <Property name="Visibility" id="13800.Visibility" number_of_elements="1">
-        <Element index="0" value="0"/>
+        <Element index="0" value="1"/>
         <Domain name="bool" id="13800.Visibility.bool"/>
       </Property>
       <Property name="Ambient" id="13800.Ambient" number_of_elements="1">
@@ -16892,9 +16782,9 @@
         <Domain name="range" id="13800.Ambient.range"/>
       </Property>
       <Property name="AmbientColor" id="13800.AmbientColor" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="1"/>
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
         <Domain name="range" id="13800.AmbientColor.range"/>
       </Property>
       <Property name="Anisotropy" id="13800.Anisotropy" number_of_elements="1">
@@ -16993,11 +16883,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ColorByLODIndex" id="13800.ColorByLODIndex" number_of_elements="1">
@@ -17026,9 +16911,9 @@
         <Domain name="range" id="13800.Diffuse.range"/>
       </Property>
       <Property name="DiffuseColor" id="13800.DiffuseColor" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="1"/>
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
         <Domain name="range" id="13800.DiffuseColor.range"/>
       </Property>
       <Property name="EdgeColor" id="13800.EdgeColor" number_of_elements="3">
@@ -17072,11 +16957,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="13800.GlyphType" number_of_elements="1">
@@ -17174,11 +17054,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OSPRayScaleFunction" id="13800.OSPRayScaleFunction" number_of_elements="1">
@@ -17216,11 +17091,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OpacityArrayComponent" id="13800.OpacityArrayComponent" number_of_elements="1">
@@ -17378,11 +17248,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="13800.SelectTCoordArray" number_of_elements="1">
@@ -17552,11 +17417,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ShaderPreset" id="13800.ShaderPreset" number_of_elements="1">
@@ -17714,11 +17574,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectionVisibility" id="14102.SelectionVisibility" number_of_elements="1">
@@ -17726,7 +17581,7 @@
         <Domain name="bool" id="14102.SelectionVisibility.bool"/>
       </Property>
       <Property name="Visibility" id="14102.Visibility" number_of_elements="1">
-        <Element index="0" value="0"/>
+        <Element index="0" value="1"/>
         <Domain name="bool" id="14102.Visibility.bool"/>
       </Property>
       <Property name="Ambient" id="14102.Ambient" number_of_elements="1">
@@ -17734,9 +17589,9 @@
         <Domain name="range" id="14102.Ambient.range"/>
       </Property>
       <Property name="AmbientColor" id="14102.AmbientColor" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="1"/>
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
         <Domain name="range" id="14102.AmbientColor.range"/>
       </Property>
       <Property name="Anisotropy" id="14102.Anisotropy" number_of_elements="1">
@@ -17835,11 +17690,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ColorByLODIndex" id="14102.ColorByLODIndex" number_of_elements="1">
@@ -17868,9 +17718,9 @@
         <Domain name="range" id="14102.Diffuse.range"/>
       </Property>
       <Property name="DiffuseColor" id="14102.DiffuseColor" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="1"/>
+        <Element index="0" value="0"/>
+        <Element index="1" value="0"/>
+        <Element index="2" value="0"/>
         <Domain name="range" id="14102.DiffuseColor.range"/>
       </Property>
       <Property name="EdgeColor" id="14102.EdgeColor" number_of_elements="3">
@@ -17914,11 +17764,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="14102.GlyphType" number_of_elements="1">
@@ -18016,11 +17861,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OSPRayScaleFunction" id="14102.OSPRayScaleFunction" number_of_elements="1">
@@ -18058,11 +17898,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="OpacityArrayComponent" id="14102.OpacityArrayComponent" number_of_elements="1">
@@ -18220,11 +18055,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="14102.SelectTCoordArray" number_of_elements="1">
@@ -18394,11 +18224,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ShaderPreset" id="14102.ShaderPreset" number_of_elements="1">
@@ -20057,17 +19882,7 @@
       </Property>
       <Property name="SelectionPointFieldDataArrayName" id="12956.SelectionPointFieldDataArrayName" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="12956.SelectionPointFieldDataArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="12956.SelectionPointFieldDataArrayName.array_list"/>
       </Property>
       <Property name="SelectionVisibility" id="12956.SelectionVisibility" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -20178,17 +19993,7 @@
         <Element index="2" value=""/>
         <Element index="3" value=""/>
         <Element index="4" value=""/>
-        <Domain name="array_list" id="12956.ColorArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="12956.ColorArrayName.array_list"/>
       </Property>
       <Property name="ColorByLODIndex" id="12956.ColorByLODIndex" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -20258,15 +20063,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="12956.GlyphTableIndexArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="12956.GlyphType" number_of_elements="1">
@@ -20359,17 +20155,7 @@
       </Property>
       <Property name="OSPRayScaleArray" id="12956.OSPRayScaleArray" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="12956.OSPRayScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="12956.OSPRayScaleArray.array_list"/>
       </Property>
       <Property name="OSPRayScaleFunction" id="12956.OSPRayScaleFunction" number_of_elements="1">
         <Proxy value="12882"/>
@@ -20401,26 +20187,11 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="12956.OpacityArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="12956.OpacityArray.array_list"/>
       </Property>
       <Property name="OpacityArrayComponent" id="12956.OpacityArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="12956.OpacityArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="12956.OpacityArrayComponent.comps"/>
       </Property>
       <Property name="OpacityArrayName" id="12956.OpacityArrayName" number_of_elements="5">
         <Element index="0" value=""/>
@@ -20428,17 +20199,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="12956.OpacityArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="12956.OpacityArrayName.array_list"/>
       </Property>
       <Property name="OpacityByArray" id="12956.OpacityByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -20446,12 +20207,7 @@
       </Property>
       <Property name="OpacityComponent" id="12956.OpacityComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="12956.OpacityComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="12956.OpacityComponent.comps"/>
       </Property>
       <Property name="OpacityTransferFunction" id="12956.OpacityTransferFunction" number_of_elements="1">
         <Proxy value="12883"/>
@@ -20534,12 +20290,7 @@
       </Property>
       <Property name="ScaleArrayComponent" id="12956.ScaleArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="12956.ScaleArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="12956.ScaleArrayComponent.comps"/>
       </Property>
       <Property name="ScaleByArray" id="12956.ScaleByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -20593,35 +20344,18 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="12956.SelectNormalArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectOrientationVectors" id="12956.SelectOrientationVectors" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="12956.SelectOrientationVectors.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectScaleArray" id="12956.SelectScaleArray" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="12956.SelectScaleArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="12956.SelectTCoordArray" number_of_elements="1">
@@ -20634,10 +20368,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="12956.SelectTangentArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectionCellLabelBold" id="12956.SelectionCellLabelBold" number_of_elements="1">
@@ -20786,17 +20516,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="12956.SetScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="12956.SetScaleArray.array_list"/>
       </Property>
       <Property name="ShaderPreset" id="12956.ShaderPreset" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -20958,17 +20678,7 @@
       </Property>
       <Property name="SelectionPointFieldDataArrayName" id="13498.SelectionPointFieldDataArrayName" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="13498.SelectionPointFieldDataArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="13498.SelectionPointFieldDataArrayName.array_list"/>
       </Property>
       <Property name="SelectionVisibility" id="13498.SelectionVisibility" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -21079,17 +20789,7 @@
         <Element index="2" value=""/>
         <Element index="3" value=""/>
         <Element index="4" value=""/>
-        <Domain name="array_list" id="13498.ColorArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="13498.ColorArrayName.array_list"/>
       </Property>
       <Property name="ColorByLODIndex" id="13498.ColorByLODIndex" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -21159,15 +20859,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="13498.GlyphTableIndexArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="13498.GlyphType" number_of_elements="1">
@@ -21260,17 +20951,7 @@
       </Property>
       <Property name="OSPRayScaleArray" id="13498.OSPRayScaleArray" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="13498.OSPRayScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="13498.OSPRayScaleArray.array_list"/>
       </Property>
       <Property name="OSPRayScaleFunction" id="13498.OSPRayScaleFunction" number_of_elements="1">
         <Proxy value="13424"/>
@@ -21302,26 +20983,11 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="13498.OpacityArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="13498.OpacityArray.array_list"/>
       </Property>
       <Property name="OpacityArrayComponent" id="13498.OpacityArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="13498.OpacityArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="13498.OpacityArrayComponent.comps"/>
       </Property>
       <Property name="OpacityArrayName" id="13498.OpacityArrayName" number_of_elements="5">
         <Element index="0" value=""/>
@@ -21329,17 +20995,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="13498.OpacityArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="13498.OpacityArrayName.array_list"/>
       </Property>
       <Property name="OpacityByArray" id="13498.OpacityByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -21347,12 +21003,7 @@
       </Property>
       <Property name="OpacityComponent" id="13498.OpacityComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="13498.OpacityComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="13498.OpacityComponent.comps"/>
       </Property>
       <Property name="OpacityTransferFunction" id="13498.OpacityTransferFunction" number_of_elements="1">
         <Proxy value="13425"/>
@@ -21435,12 +21086,7 @@
       </Property>
       <Property name="ScaleArrayComponent" id="13498.ScaleArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="13498.ScaleArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="13498.ScaleArrayComponent.comps"/>
       </Property>
       <Property name="ScaleByArray" id="13498.ScaleByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -21494,35 +21140,18 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="13498.SelectNormalArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectOrientationVectors" id="13498.SelectOrientationVectors" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="13498.SelectOrientationVectors.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectScaleArray" id="13498.SelectScaleArray" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="13498.SelectScaleArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="13498.SelectTCoordArray" number_of_elements="1">
@@ -21535,10 +21164,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="13498.SelectTangentArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectionCellLabelBold" id="13498.SelectionCellLabelBold" number_of_elements="1">
@@ -21687,17 +21312,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="13498.SetScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="13498.SetScaleArray.array_list"/>
       </Property>
       <Property name="ShaderPreset" id="13498.ShaderPreset" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -21859,17 +21474,7 @@
       </Property>
       <Property name="SelectionPointFieldDataArrayName" id="14342.SelectionPointFieldDataArrayName" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="14342.SelectionPointFieldDataArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14342.SelectionPointFieldDataArrayName.array_list"/>
       </Property>
       <Property name="SelectionVisibility" id="14342.SelectionVisibility" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -21980,17 +21585,7 @@
         <Element index="2" value=""/>
         <Element index="3" value=""/>
         <Element index="4" value=""/>
-        <Domain name="array_list" id="14342.ColorArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14342.ColorArrayName.array_list"/>
       </Property>
       <Property name="ColorByLODIndex" id="14342.ColorByLODIndex" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -22060,15 +21655,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14342.GlyphTableIndexArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="14342.GlyphType" number_of_elements="1">
@@ -22161,17 +21747,7 @@
       </Property>
       <Property name="OSPRayScaleArray" id="14342.OSPRayScaleArray" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="14342.OSPRayScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14342.OSPRayScaleArray.array_list"/>
       </Property>
       <Property name="OSPRayScaleFunction" id="14342.OSPRayScaleFunction" number_of_elements="1">
         <Proxy value="14268"/>
@@ -22203,26 +21779,11 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="14342.OpacityArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14342.OpacityArray.array_list"/>
       </Property>
       <Property name="OpacityArrayComponent" id="14342.OpacityArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="14342.OpacityArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="14342.OpacityArrayComponent.comps"/>
       </Property>
       <Property name="OpacityArrayName" id="14342.OpacityArrayName" number_of_elements="5">
         <Element index="0" value=""/>
@@ -22230,17 +21791,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="14342.OpacityArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14342.OpacityArrayName.array_list"/>
       </Property>
       <Property name="OpacityByArray" id="14342.OpacityByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -22248,12 +21799,7 @@
       </Property>
       <Property name="OpacityComponent" id="14342.OpacityComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="14342.OpacityComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="14342.OpacityComponent.comps"/>
       </Property>
       <Property name="OpacityTransferFunction" id="14342.OpacityTransferFunction" number_of_elements="1">
         <Proxy value="14269"/>
@@ -22336,12 +21882,7 @@
       </Property>
       <Property name="ScaleArrayComponent" id="14342.ScaleArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="14342.ScaleArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="14342.ScaleArrayComponent.comps"/>
       </Property>
       <Property name="ScaleByArray" id="14342.ScaleByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -22395,35 +21936,18 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14342.SelectNormalArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectOrientationVectors" id="14342.SelectOrientationVectors" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14342.SelectOrientationVectors.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectScaleArray" id="14342.SelectScaleArray" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14342.SelectScaleArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="14342.SelectTCoordArray" number_of_elements="1">
@@ -22436,10 +21960,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14342.SelectTangentArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectionCellLabelBold" id="14342.SelectionCellLabelBold" number_of_elements="1">
@@ -22588,17 +22108,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="14342.SetScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14342.SetScaleArray.array_list"/>
       </Property>
       <Property name="ShaderPreset" id="14342.ShaderPreset" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -22760,24 +22270,14 @@
       </Property>
       <Property name="SelectionPointFieldDataArrayName" id="14582.SelectionPointFieldDataArrayName" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="14582.SelectionPointFieldDataArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14582.SelectionPointFieldDataArrayName.array_list"/>
       </Property>
       <Property name="SelectionVisibility" id="14582.SelectionVisibility" number_of_elements="1">
         <Element index="0" value="1"/>
         <Domain name="bool" id="14582.SelectionVisibility.bool"/>
       </Property>
       <Property name="Visibility" id="14582.Visibility" number_of_elements="1">
-        <Element index="0" value="1"/>
+        <Element index="0" value="0"/>
         <Domain name="bool" id="14582.Visibility.bool"/>
       </Property>
       <Property name="Ambient" id="14582.Ambient" number_of_elements="1">
@@ -22881,17 +22381,7 @@
         <Element index="2" value=""/>
         <Element index="3" value=""/>
         <Element index="4" value=""/>
-        <Domain name="array_list" id="14582.ColorArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14582.ColorArrayName.array_list"/>
       </Property>
       <Property name="ColorByLODIndex" id="14582.ColorByLODIndex" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -22961,15 +22451,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14582.GlyphTableIndexArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="GlyphType" id="14582.GlyphType" number_of_elements="1">
@@ -23062,17 +22543,7 @@
       </Property>
       <Property name="OSPRayScaleArray" id="14582.OSPRayScaleArray" number_of_elements="1">
         <Element index="0" value="verts_cross_0"/>
-        <Domain name="array_list" id="14582.OSPRayScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14582.OSPRayScaleArray.array_list"/>
       </Property>
       <Property name="OSPRayScaleFunction" id="14582.OSPRayScaleFunction" number_of_elements="1">
         <Proxy value="14508"/>
@@ -23104,26 +22575,11 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="14582.OpacityArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14582.OpacityArray.array_list"/>
       </Property>
       <Property name="OpacityArrayComponent" id="14582.OpacityArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="14582.OpacityArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="14582.OpacityArrayComponent.comps"/>
       </Property>
       <Property name="OpacityArrayName" id="14582.OpacityArrayName" number_of_elements="5">
         <Element index="0" value=""/>
@@ -23131,17 +22587,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="14582.OpacityArrayName.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14582.OpacityArrayName.array_list"/>
       </Property>
       <Property name="OpacityByArray" id="14582.OpacityByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -23149,12 +22595,7 @@
       </Property>
       <Property name="OpacityComponent" id="14582.OpacityComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="14582.OpacityComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="14582.OpacityComponent.comps"/>
       </Property>
       <Property name="OpacityTransferFunction" id="14582.OpacityTransferFunction" number_of_elements="1">
         <Proxy value="14509"/>
@@ -23237,12 +22678,7 @@
       </Property>
       <Property name="ScaleArrayComponent" id="14582.ScaleArrayComponent" number_of_elements="1">
         <Element index="0" value="0"/>
-        <Domain name="comps" id="14582.ScaleArrayComponent.comps">
-          <Entry value="0" text="X"/>
-          <Entry value="1" text="Y"/>
-          <Entry value="2" text="Z"/>
-          <Entry value="3" text="Magnitude"/>
-        </Domain>
+        <Domain name="comps" id="14582.ScaleArrayComponent.comps"/>
       </Property>
       <Property name="ScaleByArray" id="14582.ScaleByArray" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -23296,35 +22732,18 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14582.SelectNormalArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectOrientationVectors" id="14582.SelectOrientationVectors" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14582.SelectOrientationVectors.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectScaleArray" id="14582.SelectScaleArray" number_of_elements="1">
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14582.SelectScaleArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="SelectTCoordArray" id="14582.SelectTCoordArray" number_of_elements="1">
@@ -23337,10 +22756,6 @@
         <Element index="0" value="None"/>
         <Domain name="array_list" id="14582.SelectTangentArray.array_list">
           <String text="None"/>
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
         </Domain>
       </Property>
       <Property name="SelectionCellLabelBold" id="14582.SelectionCellLabelBold" number_of_elements="1">
@@ -23489,17 +22904,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_0"/>
-        <Domain name="array_list" id="14582.SetScaleArray.array_list">
-          <String text="verts_cross_0"/>
-          <String text="verts_cross_1"/>
-          <String text="verts_cross_2"/>
-          <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14582.SetScaleArray.array_list"/>
       </Property>
       <Property name="ShaderPreset" id="14582.ShaderPreset" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -24443,11 +23848,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ScaleFactor" id="12522.ScaleFactor" number_of_elements="1">
@@ -24543,11 +23943,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ScaleFactor" id="13064.ScaleFactor" number_of_elements="1">
@@ -24643,11 +24038,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ScaleFactor" id="13606.ScaleFactor" number_of_elements="1">
@@ -24743,11 +24133,6 @@
           <String text="verts_cross_1"/>
           <String text="verts_cross_2"/>
           <String text="verts_cross_3"/>
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
         </Domain>
       </Property>
       <Property name="ScaleFactor" id="13908.ScaleFactor" number_of_elements="1">
@@ -24811,13 +24196,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_norm_0"/>
-        <Domain name="array_list" id="12746.SelectInputScalars.array_list">
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="12746.SelectInputScalars.array_list"/>
       </Property>
       <Property name="ThresholdMethod" id="12746.ThresholdMethod" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -24861,13 +24240,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_norm_0"/>
-        <Domain name="array_list" id="13288.SelectInputScalars.array_list">
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="13288.SelectInputScalars.array_list"/>
       </Property>
       <Property name="ThresholdMethod" id="13288.ThresholdMethod" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -24911,13 +24284,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_norm_0"/>
-        <Domain name="array_list" id="14132.SelectInputScalars.array_list">
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14132.SelectInputScalars.array_list"/>
       </Property>
       <Property name="ThresholdMethod" id="14132.ThresholdMethod" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -24961,13 +24328,7 @@
         <Element index="2" value=""/>
         <Element index="3" value="0"/>
         <Element index="4" value="verts_cross_norm_0"/>
-        <Domain name="array_list" id="14372.SelectInputScalars.array_list">
-          <String text="verts_cross_norm_0"/>
-          <String text="verts_cross_norm_1"/>
-          <String text="verts_cross_norm_2"/>
-          <String text="verts_cross_norm_3"/>
-          <String text="verts_scal"/>
-        </Domain>
+        <Domain name="array_list" id="14372.SelectInputScalars.array_list"/>
       </Property>
       <Property name="ThresholdMethod" id="14372.ThresholdMethod" number_of_elements="1">
         <Element index="0" value="0"/>
@@ -25196,8 +24557,8 @@
         <Domain name="bool" id="15053.CenterAxesVisibility.bool"/>
       </Property>
       <Property name="CenterOfRotation" id="15053.CenterOfRotation" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
+        <Element index="0" value="0.04000002145767212"/>
+        <Element index="1" value="0.5000000079162419"/>
         <Element index="2" value="0"/>
       </Property>
       <Property name="CollectGeometryThreshold" id="15053.CollectGeometryThreshold" number_of_elements="1">
@@ -25306,7 +24667,7 @@
         <Domain name="range" id="15053.ImageReductionFactor.range"/>
       </Property>
       <Property name="InteractionMode" id="15053.InteractionMode" number_of_elements="1">
-        <Element index="0" value="3"/>
+        <Element index="0" value="1"/>
         <Domain name="enum" id="15053.InteractionMode.enum">
           <Entry value="0" text="3D"/>
           <Entry value="1" text="2D"/>
@@ -25418,7 +24779,7 @@
         <Element index="0" value="20"/>
         <Domain name="range" id="15053.RemoteRenderThreshold.range"/>
       </Property>
-      <Property name="Representations" id="15053.Representations" number_of_elements="15">
+      <Property name="Representations" id="15053.Representations" number_of_elements="14">
         <Proxy value="12398"/>
         <Proxy value="12416"/>
         <Proxy value="12424"/>
@@ -25433,7 +24794,6 @@
         <Proxy value="14600"/>
         <Proxy value="14815"/>
         <Proxy value="15040"/>
-        <Proxy value="15188"/>
       </Property>
       <Property name="RotationFactor" id="15053.RotationFactor" number_of_elements="1">
         <Element index="0" value="1"/>
@@ -25560,7 +24920,7 @@
         <Domain name="bool" id="15053.UseToneMapping.bool"/>
       </Property>
       <Property name="ViewSize" id="15053.ViewSize" number_of_elements="2">
-        <Element index="0" value="1529"/>
+        <Element index="0" value="1554"/>
         <Element index="1" value="862"/>
       </Property>
       <Property name="ViewTime" id="15053.ViewTime" number_of_elements="1">
@@ -25587,36 +24947,36 @@
         <Element index="0" value="0"/>
       </Property>
       <Property name="CameraFocalPoint" id="15053.CameraFocalPoint" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
+        <Element index="0" value="0.04000002145767212"/>
+        <Element index="1" value="0.5000000079162419"/>
         <Element index="2" value="0"/>
       </Property>
       <Property name="CameraFocalPointInfo" id="15053.CameraFocalPointInfo" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
+        <Element index="0" value="0.04000002145767212"/>
+        <Element index="1" value="0.5000000079162419"/>
         <Element index="2" value="0"/>
       </Property>
       <Property name="CameraParallelScale" id="15053.CameraParallelScale" number_of_elements="1">
-        <Element index="0" value="1.4142135623730951"/>
+        <Element index="0" value="0.9565779417040323"/>
       </Property>
       <Property name="CameraParallelScaleInfo" id="15053.CameraParallelScaleInfo" number_of_elements="1">
-        <Element index="0" value="1.4142135623730951"/>
+        <Element index="0" value="0.9565779417040323"/>
       </Property>
       <Property name="CameraPosition" id="15053.CameraPosition" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="5.464101615137755"/>
+        <Element index="0" value="0.04000002145767212"/>
+        <Element index="1" value="0.5000000079162419"/>
+        <Element index="2" value="4.472079359551762"/>
       </Property>
       <Property name="CameraPositionInfo" id="15053.CameraPositionInfo" number_of_elements="3">
-        <Element index="0" value="1"/>
-        <Element index="1" value="1"/>
-        <Element index="2" value="5.464101615137755"/>
+        <Element index="0" value="0.04000002145767212"/>
+        <Element index="1" value="0.5000000079162419"/>
+        <Element index="2" value="4.472079359551762"/>
       </Property>
       <Property name="CameraViewAngle" id="15053.CameraViewAngle" number_of_elements="1">
-        <Element index="0" value="22.737819025522043"/>
+        <Element index="0" value="30"/>
       </Property>
       <Property name="CameraViewAngleInfo" id="15053.CameraViewAngleInfo" number_of_elements="1">
-        <Element index="0" value="22.737819025522043"/>
+        <Element index="0" value="30"/>
       </Property>
       <Property name="CameraViewUp" id="15053.CameraViewUp" number_of_elements="3">
         <Element index="0" value="0"/>
@@ -26000,9 +25360,7 @@
           <Property source_property="TextAnnotationColor" target_id="13101" target_property="PolarAxisLabelColor" unlink_if_modified="1"/>
           <Property source_property="TextAnnotationColor" target_id="13101" target_property="PolarAxisTitleColor" unlink_if_modified="1"/>
           <Property source_property="TextAnnotationColor" target_id="13101" target_property="SecondaryRadialAxesTextColor" unlink_if_modified="1"/>
-          <Property source_property="ForegroundColor" target_id="13258" target_property="AmbientColor" unlink_if_modified="1"/>
           <Property source_property="SurfaceColor" target_id="13258" target_property="BackfaceDiffuseColor" unlink_if_modified="1"/>
-          <Property source_property="SurfaceColor" target_id="13258" target_property="DiffuseColor" unlink_if_modified="1"/>
           <Property source_property="EdgeColor" target_id="13258" target_property="EdgeColor" unlink_if_modified="1"/>
           <Property source_property="InteractiveSelectionColor" target_id="13258" target_property="InteractiveSelectionColor" unlink_if_modified="1"/>
           <Property source_property="SelectionColor" target_id="13258" target_property="SelectionColor" unlink_if_modified="1"/>
@@ -26032,9 +25390,7 @@
           <Property source_property="TextAnnotationColor" target_id="13643" target_property="PolarAxisLabelColor" unlink_if_modified="1"/>
           <Property source_property="TextAnnotationColor" target_id="13643" target_property="PolarAxisTitleColor" unlink_if_modified="1"/>
           <Property source_property="TextAnnotationColor" target_id="13643" target_property="SecondaryRadialAxesTextColor" unlink_if_modified="1"/>
-          <Property source_property="ForegroundColor" target_id="13800" target_property="AmbientColor" unlink_if_modified="1"/>
           <Property source_property="SurfaceColor" target_id="13800" target_property="BackfaceDiffuseColor" unlink_if_modified="1"/>
-          <Property source_property="SurfaceColor" target_id="13800" target_property="DiffuseColor" unlink_if_modified="1"/>
           <Property source_property="EdgeColor" target_id="13800" target_property="EdgeColor" unlink_if_modified="1"/>
           <Property source_property="InteractiveSelectionColor" target_id="13800" target_property="InteractiveSelectionColor" unlink_if_modified="1"/>
           <Property source_property="SelectionColor" target_id="13800" target_property="SelectionColor" unlink_if_modified="1"/>
@@ -26049,9 +25405,7 @@
           <Property source_property="TextAnnotationColor" target_id="13945" target_property="PolarAxisLabelColor" unlink_if_modified="1"/>
           <Property source_property="TextAnnotationColor" target_id="13945" target_property="PolarAxisTitleColor" unlink_if_modified="1"/>
           <Property source_property="TextAnnotationColor" target_id="13945" target_property="SecondaryRadialAxesTextColor" unlink_if_modified="1"/>
-          <Property source_property="ForegroundColor" target_id="14102" target_property="AmbientColor" unlink_if_modified="1"/>
           <Property source_property="SurfaceColor" target_id="14102" target_property="BackfaceDiffuseColor" unlink_if_modified="1"/>
-          <Property source_property="SurfaceColor" target_id="14102" target_property="DiffuseColor" unlink_if_modified="1"/>
           <Property source_property="EdgeColor" target_id="14102" target_property="EdgeColor" unlink_if_modified="1"/>
           <Property source_property="InteractiveSelectionColor" target_id="14102" target_property="InteractiveSelectionColor" unlink_if_modified="1"/>
           <Property source_property="SelectionColor" target_id="14102" target_property="SelectionColor" unlink_if_modified="1"/>

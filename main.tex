@@ -5,13 +5,13 @@
 % ===================== DOCUMENT ============================== % 
 \begin{document}
 \raggedbottom
-%\includepdf[scale=1]{couverture_these.pdf}
+\includepdf[scale=1]{couverture_these.pdf}
 \cleardoublepage
-\newpage
+%\newpage
 \thispagestyle{empty}
-\mbox{}
-\newpage
-\cleardoublepage
+%\mbox{}
+%\newpage
+%\cleardoublepage
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \pagestyle{fancy}
@@ -30,27 +30,37 @@
 \pdfbookmark[0]{\contentsname}{Contents}
 \tableofcontents
 %\renewcommand{\nomname}{Acronymes et Notations}
-%\printnomenclature[2.5 cm] 
+%\printnomenclature[2.5 cm]
 %\cleardoublepage
 %\adjustmtc
 %-------------------------------------------------------------%
 
 \pagenumbering{arabic}
 
-\input{2-chapters/2-1-introduction}
+\include{2-chapters/2-1-introduction}
 
-\input{2-chapters/2-2-theoritical}
+\include{2-chapters/2-2-theoritical}
 
-\input{2-chapters/2-3-algorithme}
+\include{2-chapters/2-3-algorithme}
 
-\input{2-chapters/2-4-surface_courbe}
+\include{2-chapters/2-4-surface_courbe}
 
-\input{2-chapters/2-5-conclusion}
+\include{2-chapters/2-5-conclusion}
+
 \appendix
-\input{2-chapters/2-6-annexes}
+\include{2-chapters/2-6-annexes}
 %\printbibliography
+
+
+\listoffigures
 
 \bibliographystyle{apalike}
 \bibliography{references}
+
+
+% Include the abstract
+\cleardoublepage
+\input{3-abstract/abstract}
+
 \end{document}
 
