@@ -1060,7 +1060,7 @@ I_p=\displaystyle\frac{k}{4}\mbox{ avec }k\in\mathbb{Z}\mbox{ et }k\leq 1
 Ce paramètre représente l'indice désiré pour les points de bord dans le champ de croix $\bar{v}$ (une fois l'opération d'alignement réalisée). Un critère a priori pour le choix automatique de ce paramètre sera exposé ultérieurement dans la sous-section \ref{subsec:sing_bord}. Nous définissons ensuite l'ensemble $\mathcal{B}$ qui regroupe les points pour lesquels le paramètre $I_p\neq 0$. Ces points seront singuliers dans le champ de croix $\bar{v}$ (une fois l'opération d'alignement réalisée). %L'ensemble $\mathcal{B}$ doit aussi inclure les points singuliers du champ $\bar{n}$. Ces points étant déjà singulier dans $\bar{n}$, ils resteront singuliers dans $\bar{v}$ après l'opération d'alignement.
 Pour finir, il est impératif que le champ de croix $\bar{u}$ ainsi que l'ensemble $\mathcal{B}$ satisfassent:\\
 \begin{itemize}
- \item[$\bullet$] $0\leq Card(\mathcal{S}_{\bar{u}})+Card(\mathcal{B})< \infty$,\\
+ \item[$\bullet$] $0< Card(\mathcal{S}_{\bar{u}})+Card(\mathcal{B})< \infty$,\\
  \item[$\bullet$] Pour tout point $p\in\mathcal{S}_{\bar{u}}$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$,\\
  \item[$\bullet$] Soit $\gamma$ une paramétrisation de $\partial\Omega$ dans le sens positif. Il existe $\theta_{\bar{u}}^\gamma$ vérifiant:
  \begin{equation}
@@ -1308,7 +1308,7 @@ I_p=
 \right.
 \label{eqn:etude_def_I}
 \end{equation}
-Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus que $0\leq Card(\mathcal{S}_{\bar{u}})+Card(\mathcal{B})< \infty$ et qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
+Soit $\bar{u}$ un champ de croix presque-$\mathcal{C}^1$ défini sur $\Omega$, non nécessairement aligné sur $\partial\Omega$, tel que pour tout point $p\in\mathcal{S}_{\bar{u}}\backslash\partial\Omega$, $id_{\bar{u}}(p)=k/4$, avec $k\in\mathbb{Z}$ et $k\leq 1$. On suppose de plus que $0< Card(\mathcal{S}_{\bar{u}})+Card(\mathcal{B})< \infty$ et qu'il existe $\theta_{\bar{u}}^\gamma$ un relèvement continu de $\bar{u}$ le long de $\gamma$ tel que:
 \begin{equation}
     \label{eqn:etude_hypothese_u}
     \theta_{\bar{u}}^\gamma(1)-\theta_{\bar{u}}^\gamma(0)=2\pi\chi(\Omega)-2\pi\sum_{p\in\mathcal{B}}I_p.

@@ -1,0 +1,230 @@
+\documentclass[compress,10pt,aspectratio=169]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Thème beamer ONERA :
+% Options :
+%%%%%%%%%%%%%%%%%%%%%%%
+%     - english -> biblio en anglais [défaut en français]
+%	  (se sert de la mise en forme bibliographique onera.bst de Frédéric Cassaing (Frederic.Cassaing@onera.fr)
+%	  (+url de la page de remerciement renvoie vers le site ONERA en anglais [défaut renvoie sur le site en français]).
+%     - customnumbering -> permet d'afficher la numérotation des diapositives de manière élégante.
+%	  (/!\ la compilation peut être longue avec cette option si il y a beaucoup de diapositives ! Il vaut mieux alors compiler sans l'option
+%	   puis compiler une fois les diapositives finalisées).
+%     - DR, CD, SD, S, TS -> ajout de la mention 'DIFFUSION RESTREINTE' ou 'CONFIDENTIEL DEFENSE' ou 'SECRET DEFENSE' ou 'SECRET' ou 'TRES SECRET'(rouge) dans le footer de la présentation. (Note, il ne faut choisir qu'une seule mention à la fois!)
+%     - SF -> ajout de la mention 'SPECIAL FRANCE' (bleu) dans le footer de la présentation
+\usetheme[customnumbering]{onera}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Packages additionnels
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amssymb,amsfonts}
+
+% Dessin (Note : le package 'tikz' est chargé par défaut avec le thème ONERA ainsi que l'option 'positioning')
+\usepackage{tikz-3dplot}
+\usetikzlibrary{shapes.misc}
+\tikzset{cross/.style={cross out, draw=black, fill=none, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={2pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Définition de la page de titre %%%%%  A COMPLETER OU IL Y A DEJA DU TEXTE !!!   %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[Joli titre un peu long]{Présentation pour une JDD réussie, avec un titre long sur plusieurs lignes !!!}
+\subtitle[]{Jean Truc, doctorant XA,  \\
+département XXXX/Unité, \href{mailto:jean.truc@onera.fr}{\texttt{jean.truc@onera.fr}}}
+\author[J. Truc]{}
+\date[aujoud'hui]{}
+\directors{Alphonse Bidule\textsuperscript{2}, René Machin\textsuperscript{1}}
+\encadrant{Fernand Chose\textsuperscript{1}}
+\grant{Ils donnent les sous !}
+\tutor{} % D'autres personnes importantes (DGA etc.)
+\institute{\inst{1}ONERA,\inst{2}AUTRE}
+\logoUn{figbeameronera/extralogo1} %N'apparaît que si est rempli
+\logoDeux{} %N'apparaît que si est rempli
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Début du document
+\begin{document}
+
+% Page de titre (optionnel) %
+\MakeTitlePage
+
+
+
+%%%%%%%%%%%%%%%%%
+% CORPS DE LA PRESENTATION %
+%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+\frametitle{Titre de diapositive}
+\framesubtitle{Sous-titre de diapositive}
+    Diapositive n° : \insertframenumber
+\end{frame}
+
+\begin{frame} 
+\frametitle{Exemples d'énumération pour cette réunion importante} 
+\framesubtitle{Cet exemple se sert de l'overlay des listes.} 
+\begin{enumerate} 
+\item<1-| alert@1> Une première énumération TR\`ES importante \only<1>{(en rouge avec ``alert'')}
+\item<2-> Une deuxième. 
+\item<3-> Une troisième. 
+\item<4-> Et enfin une dernière (la $4^{\mbox{è}}$).
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Illustration d'une liste}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+    \centering
+    \underline{Illustration avec le style de liste par défaut :}
+	\begin{itemize}
+	    \item item 1
+    	    \item item 2
+	\end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \underline{Illustration avec un style de puce personnalisé :}
+    	\begin{itemize}
+    	    \item[\textcolor{red}{$\rightarrow$}] item 1
+    	    \item[\textcolor{red}{$\rightarrow$}] item 2
+    	\end{itemize}
+    \begin{flushleft}
+    \footnotesize NOTE :\\
+    le package 'enumitem' est en conflit avec la définition des puces de beamer, mais les puces peuvent être personnalisées manuellement.
+    \end{flushleft}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{\begin{tabular}{l}Un long titre qui peut être utilisé mais doit être inclus\\dans un tableau pour pouvoir le mettre sur plusieurs lignes\end{tabular}}
+    Diapositive n° : \insertframenumber
+\end{frame}
+
+\begin{frame}{Exemples de citations}
+On trouve beaucoup de choses intéressantes pour cette réunion importante dans \cite{Lee_TGRS94}, ça \cite{Zebker_TGRS92,Rosen_IEEEProceedings00}, et égalemement dans \cite{Elfouhaily_JGR97,Elfouhaily_WRM03,Guerin_WRM10}
+\end{frame}
+
+\begin{frame}{Exemples de boîtes prédéfinies}
+\begin{onerablock}{OneraBlock}
+Une boîte onera par défaut avec un titre
+\end{onerablock}
+
+\begin{onerablock}{}
+Une boîte onera par défaut sans titre
+\end{onerablock}
+
+\begin{center}
+    \begin{onerablock}[hbox,drop fuzzy shadow=green!50!blue!50,colframe=red!50]{OneraBlock avec options}
+        Une boîte onera avec un titre et des options supplémentaires
+    \end{onerablock}
+\end{center}
+\end{frame}
+
+\begin{frame}{Exemple d'équations dans des boîtes personnalisées}{$\rightarrow$ Utilise le package 'tcolorbox' pour les boîtes}
+\bigcenter % Fonction permettant de centrer par rapport à la largeur du papier, et pas seulement par rapport à la largeur du texte
+\begin{tcolorbox}[title={Une équation simple avec une tcolorbox de base}]
+\centering
+$3=1+2+3-1-2$
+\end{tcolorbox}
+
+\vspace{20pt}
+\begin{onerablock}[hbox,drop fuzzy shadow,sharp corners]{Une équation plus complexe}
+\centering
+$
+I_s=\dfrac{1}{\pi Q_z^2}\int\limits_{\mathrm{R}^2}\mathrm{e}^{-\mathrm{i}\vec{Q_H}\cdot\vec{r}}\left[\mathrm{e}^{-Q_z^2\left[\rho(\vec{0})-\rho(\vec{r})\right]}-\mathrm{e}^{-Q_z^2\rho(\vec{0})}\right]d\vec{r}
+$
+\end{onerablock}
+\end{frame}
+
+\begin{frame}{Exemple d'illustration d'une figure tikz 3d}{$\rightarrow$ Utilise le package 'tikz-3dplot'}
+\begin{center}
+\tdplotsetmaincoords{60}{30}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.75, every node/.style={scale=0.8}]
+%\only<1-2>{
+	\pgfmathsetmacro{\B}{3};
+	\pgfmathsetmacro{\Mx}{\B/2};\pgfmathsetmacro{\My}{0};\pgfmathsetmacro{\Mz}{4}; % Coordonnées du point M
+	\pgfmathsetmacro{\Pox}{4};\pgfmathsetmacro{\Poy}{-2};\pgfmathsetmacro{\Poz}{0};
+	\coordinate (O) at (0,0,0);
+	\coordinate (M) at (\Mx,\My,\Mz);
+	\coordinate (E) at (-\Mx,\My,\Mz);
+	\coordinate (P0) at (\Pox,\Poy,\Poz);
+	\coordinate (Pxz) at (\Pox,0,\Poz);
+	\coordinate (Pxy) at (\Pox,\Poy,0);
+	\coordinate (Pyz) at (0,\Poy,\Poz);
+	% Repère terrestre
+	\draw[very thick,-stealth] (O) -- (1,0,0) node[anchor=south west]{$\hat{x}$};\draw (-\B/2-1,0,0) -- (4.5,0,0);
+	\draw[very thick,-stealth] (O) -- (0,1,0) node[anchor=south east]{$\hat{y}$};\draw (0,-3,0) -- (0,3,0);
+	\draw[very thick,-stealth] (O) -- (0,0,1) node[anchor=south east]{$\hat{z}$};\draw (0,0,-1) -- (0,0,5);
+	\draw[color=black,fill=black] (0,0,0) circle (0.06cm);\draw[] (-0.1,-0.1,0) node[left]{$O$};
+	\draw[ultra thin] (0,-3,\Mz) -- (0,3,\Mz);\draw[ultra thin] (M) -- (\Mx+1,\My,\Mz);\draw[ultra thin] (-\Mx-1,\My,\Mz) -- (E);
+	% Baseline
+	\draw[very thick] (E) node[cross=3pt] {} node[above] {$E$} -- (M) node[cross=3pt] {} node[below left] {$M$};
+	% Point P au sol
+	\draw (M) -- (P0) node [cross=3pt] {} node[below left] {$P_0$};\draw (E) -- (P0);
+	\draw[dashed] (P0) -- (Pxz) -- (M);\draw[dashed] (0,\Poy,0) -- (Pxy);
+		% Tracer de l'angle theta(gamma)
+	\draw[dashed] (\Mx,\My,\Mz-1.75) -- (\Mx,\My,\Mz+0.5);
+	\tdplotgetpolarcoords{\Pox-\Mx}{\Poy-\My}{\Poz-\Mz}; % Recupere les coordonnees du vecteur MP0
+	\tdplotsetthetaplanecoords{\tdplotresphi};
+	\tdplotdrawarc[tdplot_rotated_coords,red]{(M)}{1.5}{180}{\tdplotrestheta}{below left}{$\theta(\gamma)$};
+		% Tracer de l'angle gamma
+	\tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta-90}{0};
+	\tdplotdrawarc[tdplot_rotated_coords]{(M)}{2.5}{0}{15.5}{below right}{$\gamma(<0)$};
+	% Repère unitaire lié à l'antenne maître
+	\tdplotsetrotatedcoordsorigin{(M)};
+	\draw[red,-stealth,very thick,tdplot_rotated_coords] (0,0,0) -- (1,0,0) node[midway, below left] {$\widehat{u_M}$};
+		% Tracé de Bpara
+	\pgfmathsetmacro{\Bpara}{\B*cos(\tdplotresphi)*sin(180-\tdplotrestheta)};
+	\draw[green!80!blue!60,very thick,tdplot_rotated_coords] (0,0,0) -- (-\Bpara,0,0) node[near end,right] {$B_{\parallel}$};
+	\draw[green!80!blue!60,dashed,tdplot_rotated_coords] (E) -- (-\Bpara,0,0) ;
+		% Tracé de vm
+	\pgfmathsetmacro{\vmx}{0};\pgfmathsetmacro{\vmy}{1};\pgfmathsetmacro{\vmz}{0};
+	\draw[red,-stealth,very thick] (M) -- (\Mx+\vmx,\My+\vmy,\Mz+\vmz) node[above] {$\widehat{v_M}$};
+\only<2>{
+		% Tracé de utheta
+	\tdplotgetpolarcoords{\Pox-\Mx}{0-\My}{\Poz-\Mz}; % Recupere les coordonnees du vecteur 
+	\tdplotsetthetaplanecoords{\tdplotresphi};
+	\tdplotdrawarc[tdplot_rotated_coords,blue]{(M)}{1.5}{180}{\tdplotrestheta}{below right}{$\theta_0$}; % Trace l'angle theta
+	\tdplotsetrotatedcoords{0}{\tdplotrestheta-90}{0};
+	\tdplotsetrotatedcoordsorigin{(M)};
+	\draw[tdplot_rotated_coords,blue,-stealth,very thick] (0,0,0) -- (1,0,0) node[midway, right] {$\widehat{u_0}$};
+	\draw[tdplot_rotated_coords] (0.25,0,0) -- (0.25,0.25,0) -- (0,0.25,0);
+}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Exemple d'ajout d'images}
+\begin{columns}[t]
+    \begin{column}{0.5\textwidth}
+        \centering
+        Ajout d'une image bitmap (\texttt{.png})\\\vspace{10pt}
+	\includegraphics[width=0.75\textheight]{./figbeameronera/fond-onera-plein-43_small.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \centering
+        Ajout d'une image pdf (\texttt{.pdf})\\\vspace{10pt}
+        \includegraphics[width=1\textwidth]{./figbeameronera/logo-onera-ident-pantone660-HD.pdf}
+    \end{column}
+\end{columns}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%
+% Page de remerciements (optionnel) %
+%%%%%%%%%%%%%%%%%%%
+\ThankYouFrame{Merci de votre attention !\\\vspace{10pt}Des questions ?}
+
+%%%%%%%%%%%%%%
+% Bibliographie (optionnel) %
+%%%%%%%%%%%%%%
+\ReferencesFrames{./biblio}
+
+
+
+\end{document}
