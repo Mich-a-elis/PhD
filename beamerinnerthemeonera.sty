@@ -136,15 +136,15 @@
     
     \ifx\insertencadrant\@empty\else%
      \begin{beamercolorbox}[wd=0.95\paperwidth,#1]{directors}
-       \usebeamercolor[fg]{author}\usebeamerfont{author}\directorstitle{}\insertdirectors%
+        \usebeamercolor[fg]{author}\usebeamerfont{author}\directorstitle{}\insertdirectors%
      \end{beamercolorbox}
     \fi
     
-    \ifx\insertencadrant\@empty\else%
-     \begin{beamercolorbox}[wd=0.95\paperwidth,#1]{encadrant}
-       \usebeamercolor[fg]{author}\usebeamerfont{author}\encadranttitle\insertencadrant%
-     \end{beamercolorbox}
-    \fi
+    %\ifx\insertencadrant\@empty\else%
+     %\begin{beamercolorbox}[wd=0.95\paperwidth,#1]{encadrant}
+       %\usebeamercolor[fg]{author}\usebeamerfont{author}\encadranttitle\insertencadrant%
+     %\end{beamercolorbox}
+    %\fi
     
     \ifx\insertgrant\@empty\else%
      \begin{beamercolorbox}[wd=0.95\paperwidth,#1]{grant}

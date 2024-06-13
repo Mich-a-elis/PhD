@@ -2,6 +2,17 @@
 %\documentclass[8pt,a4paper,twoside]{extbook}
 
 \include{config}
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
 % ===================== DOCUMENT ============================== % 
 \begin{document}
 \raggedbottom
@@ -23,8 +34,23 @@
 \dominitoc
 \pagenumbering{roman}
 \setcounter{page}{1}
-%\chapter*{Remerciements}
+\chapter*{Remerciements}
+\input{2-chapters/2-0-remerciements}
 %\input{./remerciements.tex}
+
+\cleardoublepage
+\begin{dedication}
+
+\vspace{2\baselineskip}
+\vspace{2\baselineskip}
+\vspace{2\baselineskip}
+\vspace{2\baselineskip}
+\vspace{2\baselineskip}
+\vspace{2\baselineskip}
+À Daniel DOTSE
+
+\vspace{\baselineskip}
+\end{dedication}
 
 \cleardoublepage
 \pdfbookmark[0]{\contentsname}{Contents}
@@ -35,7 +61,10 @@
 %\adjustmtc
 %-------------------------------------------------------------%
 
-\pagenumbering{arabic}
+
+
+\mainmatter
+\pagestyle{fancy}
 
 \include{2-chapters/2-1-introduction}
 

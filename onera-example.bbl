@@ -1,0 +1,78 @@
+\providecommand{\onerabstbox}[1][]{\mbox{#1}} \makeatletter
+  \providecommand{\ifONERA@english}{\ifx10} \ifONERA@english
+  \providecommand{\janname}{January}\providecommand{\febname}{February}
+  \providecommand{\marname}{March}\providecommand{\aprname}{April}
+  \providecommand{\mayname}{May}\providecommand{\junname}{June}
+  \providecommand{\julname}{July}\providecommand{\augname}{August}
+  \providecommand{\sepname}{September}\providecommand{\octname}{October}
+  \providecommand{\novname}{November}\providecommand{\decname}{December}
+  \providecommand{\Inname}{In}\providecommand{\inname}{in}
+  \providecommand{\andname}{and}\providecommand{\ofname}{of}
+  \providecommand{\techreportname}{Technical report}
+  \providecommand{\masterthesisname}{Master's thesis}
+  \providecommand{\phdthesisname}{PhD thesis}
+  \providecommand{\editorname}{editor} \providecommand{\editorsname}{editors}
+  \providecommand{\editionname}{edition} \providecommand{\editedbyname}{edited
+  by} \else
+  \providecommand{\janname}{janvier}\providecommand{\febname}{f\'evrier}
+  \providecommand{\marname}{mars}\providecommand{\aprname}{avril}
+  \providecommand{\mayname}{mai}\providecommand{\junname}{juin}
+  \providecommand{\julname}{juillet}\providecommand{\augname}{ao\^ut}
+  \providecommand{\sepname}{septembre}\providecommand{\octname}{octobre}
+  \providecommand{\novname}{novembre}\providecommand{\decname}{d\'ecembre}
+  \providecommand{\Inname}{Dans}\providecommand{\inname}{dans}
+  \providecommand{\andname}{et}\providecommand{\ofname}{de}
+  \providecommand{\techreportname}{Rapport Technique}
+  \providecommand{\masterthesisname}{Rapport de fin d'\'etudes}
+  \providecommand{\phdthesisname}{Th\`ese de doctorat}
+  \providecommand{\editorname}{r\'edacteur en chef}
+  \providecommand{\editorsname}{r\'edacteurs en chef}
+  \providecommand{\editionname}{\'edition} \providecommand{\editedbyname}{sous
+  la direction de} \fi\makeatother\hbadness=9000
+\begin{thebibliography}{1}
+
+\bibitem{Lee_TGRS94}
+J.-S. \onerabstbox[{Lee}], K.~W. \onerabstbox[{Hoppel}], S.~A.
+  \onerabstbox[{Mango}] \andname{} A.~R. \onerabstbox[{Miller}],
+\newblock {\it Intensity and phase statistics of multilook polarimetric and
+  interferometric SAR imagery\/},
+\newblock IEEE Transactions on Geoscience and Remote Sensing, 32 (5),
+  pp.~1017--1028 (Sep. 1994).
+
+\bibitem{Zebker_TGRS92}
+H.~A. \onerabstbox[{Zebker}] \andname{} J.~\onerabstbox[{Villasenor}],
+\newblock {\it Decorrelation in interferometric radar echoes\/},
+\newblock IEEE Transactions on Geoscience and Remote Sensing, 30 (5),
+  pp.~950--959 (Sep. 1992).
+
+\bibitem{Rosen_IEEEProceedings00}
+P.~A. \onerabstbox[{Rosen}], S.~\onerabstbox[{Hensley}], I.~R.
+  \onerabstbox[{Joughin}], F.~K. \onerabstbox[{Li}], S.~N.
+  \onerabstbox[{Madsen}], E.~\onerabstbox[{Rodriguez}] \andname{} R.~M.
+  \onerabstbox[{Goldstein}],
+\newblock {\it Synthetic aperture radar interferometry\/},
+\newblock Proceedings of the IEEE, 88 (3), pp.~333--382 (March 2000).
+
+\bibitem{Elfouhaily_JGR97}
+T.~\onerabstbox[Elfouhaily], B.~\onerabstbox[Chapron],
+  K.~\onerabstbox[Katsaros] \andname{} D.~\onerabstbox[Vandemark],
+\newblock {\it A unified directional spectrum for long and short wind-driven
+  waves\/},
+\newblock Journal of Geophysical Research, 102 (C7), pp.~15781--15796 (1997).
+
+\bibitem{Elfouhaily_WRM03}
+T.~\onerabstbox[Elfouhaily], S.~\onerabstbox[Guignard],
+  R.~\onerabstbox[Awadallah] \andname{} D.~R. \onerabstbox[Thompson],
+\newblock {\it Local and non-local curvature approximation: a new asymptotic
+  theory for wave scattering\/},
+\newblock Waves in Random Media, 13 (4), pp.~321--337 (2003),
+\newblock \url{http://dx.doi.org/10.1088/0959-7174/13/4/308}.
+
+\bibitem{Guerin_WRM10}
+C.-A. \onerabstbox[Guerin], G.~\onerabstbox[Soriano] \andname{}
+  B.~\onerabstbox[Chapron],
+\newblock {\it The weighted curvature approximation in scattering from sea
+  surfaces\/},
+\newblock Waves in Random and Complex Media, 20 (3), pp.~364--384 (2010).
+
+\end{thebibliography}
