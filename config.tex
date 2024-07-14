@@ -1,0 +1,589 @@
+\usepackage[a4paper,left=25mm,right=25mm,bottom=1.5cm,top=15mm,headheight=27.12pt,footskip=0.5cm,includehead,includefoot,bindingoffset=0pt]{geometry}
+\usepackage[cleardoublepage=empty]{scrextend}
+\usepackage{pdfpages}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{minitoc}
+\mtcselectlanguage{french}
+\usepackage{graphicx}
+\usepackage{amsmath,amstext,amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{mathtools}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+%\usepackage[noend]{algpseudocode}
+%\usepackage{algorithm2e}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{imakeidx}
+\usepackage{float}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[intoc]{nomencl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{fancyhdr}
+\usepackage{appendix}
+\usepackage{stackengine}
+\usepackage{scalerel}
+\usepackage{verbatimbox}
+\usepackage{fourier-orns}
+%\usepackage{frbib}
+\usepackage[most]{tcolorbox}
+\usepackage[toc,acronym,nonumberlist]{glossaries}
+\hypersetup{colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={green!50!black},
+    urlcolor={red!80!black}
+}
+\usepackage{tikz}
+\usepackage{pgfplots,pgfplotstable}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc,spy,shapes,patterns} 
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[nottoc]{tocbibind}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{bbold}
+
+\usepackage{algorithm2e}
+\renewcommand{\listalgorithmcfname}{Liste des Algorithmes}%
+\renewcommand{\algorithmcfname}{Algorithme}%
+\renewcommand{\algorithmautorefname}{algorithme}%
+\renewcommand{\algorithmcflinename}{ligne}%
+%\renewcommand{\algocf@typo}{\ }%
+%\renewcommand{\@algocf@procname}{Proc\'edure}%
+%\renewcommand{\@algocf@funcname}{Fonction}%
+\renewcommand{\procedureautorefname}{proc\'edure}%
+\renewcommand{\functionautorefname}{fonction}%
+%\renewcommand{\algocf@languagechoosen}{french}%
+
+%\SetKwHangingKw{HDonnees}{Donnees$\rightarrow$}
+%\SetKwInpsut{Donnees}{Donn\'ees}%
+%\SetKwInput{Res}{R\'esultat}%
+\SetKwInput{Entrees}{Entr\'ees}%
+\SetKwInput{Entree}{Entr\'ees}%
+\SetKwInput{Sortie}{Sortie}%
+\SetKwInput{Sorties}{Sorties}%
+%\SetKw{KwA}{\`a}%
+%\SetKw{Retour}{retourner}%
+%\SetKwBlock{Deb}{d\'ebut}{fin}%
+\SetKwRepeat{Repeter}{r\'ep\'eter}{jusqu'\`a}%
+%
+\SetKwIF{Si}{SinonSi}{Sinon}{si}{alors}{sinon si}{sinon}{fin si}%
+\SetKwSwitch{Suivant}{Cas}{Autre}{suivant}{faire}{cas o\`u}{autres cas}{fin cas}{fin d'alternative}%
+\SetKwFor{Pour}{pour}{faire}{fin pour}%
+\SetKwFor{PourPar}{pour}{faire en parall\`ele}{fin pour}%
+\SetKwFor{PourCh}{pour chaque}{faire}{fin pour chaque}%
+\SetKwFor{PourTous}{pour tous}{faire}{fin pour tous}%
+\SetKwFor{Tq}{tant que}{faire}{fin tq}%
+
+
+
+\newcommand{\introchap}[1]{%
+	\chapter*{#1}
+	\addstarredchapter{#1}
+	\markboth{\uppercase{#1}}{}		
+}
+
+\newcommand{\prodscal}[2]{\left\langle#1,#2\right\rangle} % produit scalaire
+\newcommand{\norme}[1]{\left\lVert#1\right\rVert} %norme
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} %abs
+\newcommand{\enstq}[2]{\left\{#1\mathrel{}\middle|\mathrel{}#2\right\}} %ensemble tel que
+\newcommand\V[1]{\overrightarrow{#1}} %vecteur
+
+\sloppy % pour que les mots ne depassent pas en fin de ligne
+\newcommand{\bleu}[1]{{\color{blue} #1 }}
+\newcommand{\rouge}[1]{{\color{red} #1 }}
+
+\usepackage{multirow}
+\usepackage{array}
+\newcommand{\ds}{\displaystyle}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcommand{\supp}{\mathrm{Supp}}
+\setcounter{MaxMatrixCols}{20}
+
+\addto\captionsfrench{\renewcommand{\bibname}{Références}}
+\addto\captionsfrench{\renewcommand{\nomname}{Notations}}
+\addtocounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+% Exclure les paragraphes et les sous-sous-sections de la table des matières
+\setcounter{tocdepth}{2}
+
+%%%%% TIKZ
+\usetikzlibrary{shadows,arrows,positioning}
+% Define the layers to draw the diagram
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% Define block styles
+\tikzstyle{materia}=[draw, fill=blue!20, text width=6.0em, text centered, minimum height=1.5em,drop shadow]
+\tikzstyle{etape} = [materia, text width=8em, minimum width=10em,
+  minimum height=3em, rounded corners, drop shadow]
+  \tikzstyle{materia2}=[draw, fill=blue!20, text width=6.0em, text centered, minimum height=1.5em,drop shadow]
+\tikzstyle{etapered} = [materia2, text width=8em, minimum width=10em,
+  minimum height=3em, rounded corners, drop shadow]
+\tikzstyle{texto} = [above, text width=6em, text centered]
+\tikzstyle{linepart} = [draw, thick, color=black!50, -latex', dashed]
+\tikzstyle{line} = [draw, thick, color=black!50, -latex']
+\tikzstyle{ur}=[draw, text centered, minimum height=0.01em]
+
+% Define distances for bordering
+\newcommand{\blockdist}{1.3}
+\newcommand{\edgedist}{1.5}
+
+\newcommand{\etape}[2]{node (p#1) [etape]
+  {#2}}
+
+% Draw background
+\newcommand{\background}[5]{%
+  \begin{pgfonlayer}{background}
+    % Left-top corner of the background rectangle
+    \path (#1.west |- #2.north)+(-0.5,0.25) node (a1) {};
+    % Right-bottom corner of the background rectanle
+    \path (#3.east |- #4.south)+(+0.5,-0.25) node (a2) {};
+    % Draw the background
+    \path[fill=yellow!20,rounded corners, draw=black!50, dashed]
+      (a1) rectangle (a2);
+      \path (#3.east |- #2.north)+(0,0.25)--(#1.west |- #2.north) node[midway] (#5-n) {};
+      \path (#3.east |- #2.south)+(0,-0.35)--(#1.west |- #2.south) node[midway] (#5-s) {};
+      \path (#3.east |- #2.north)+(0.7,0)--(#3.east |- #4.south) node[midway] (#5-w) {};
+  \end{pgfonlayer}}
+
+% ------ ENVIRONNEMENTS ------%
+
+\definecolor{bleudefrance}{rgb}{0.19, 0.55, 0.91}
+\definecolor{vertolive}{rgb}{0.33, 0.42, 0.18}
+\definecolor{bluepy}{HTML}{1F77B4}
+\definecolor{orangepy}{HTML}{FF7F0E}
+\definecolor{greenpy}{HTML}{2CA02C}
+\definecolor{redpy}{HTML}{D62728}
+
+\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
+\def \nomtheoreme#1{\ifempty{#1} \hspace{-5mm} \else\normalfont #1 \fi}
+
+\newtcbtheorem[number within=chapter]{Prop}{}{
+        enhanced,
+        rounded corners,
+        attach boxed title to top left={
+            xshift=10mm,
+            yshift=-3.5mm,
+            yshifttext=1mm
+        },
+        top=1.5em,
+        coltitle=black,
+        colback=white,
+        colframe=red,
+        fonttitle=\bfseries,
+        boxed title style={
+            rounded corners,
+            size=small,
+            colback=white!20,
+            colframe=red,
+        } 
+    }{thm}
+    
+\newtcbtheorem[number within=chapter]{Definition}{}{
+        enhanced,
+        rounded corners,
+        attach boxed title to top left={
+            xshift=10mm,
+            yshift=-3.5mm,
+            yshifttext=1mm
+        },
+        top=1.5em,
+        coltitle=black,
+        colback=white,
+        colframe=bleudefrance,
+        fonttitle=\bfseries,
+        boxed title style={
+            rounded corners,
+            size=small,
+            colback=white!20,
+            colframe=bleudefrance,
+        }  
+    }{def}
+
+\newtheorem{definition}{Définition}[chapter]
+\newtheorem{theorem}[definition]{Théorème}
+\newtheorem{remark}[definition]{Remarque}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollaire}
+\newtheorem{lemma}[definition]{Lemme}
+\newtheorem{example}[definition]{Exemple}
+\newtheorem{assertion}[definition]{Assertion}
+%\newtheorem{algorithm}{Algorithme}[chapter]
+\addto\captionsfrench{\def\proofname{Preuve}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\renewcommand{\thefootnote}{\alph{footnote}}
+
+
+\newlength\glyphwidth
+\newcommand\talldot{%
+\ThisStyle{%
+%%%% 1ST ARGUMENT OF \stackengine (GAP BETWEEN STACKED DOTS)
+  \stackengine{.0ex}{$\SavedStyle.$}{$\SavedStyle.$}{O}{c}{F}{F}{S}%
+}}
+\newsavebox\hatglyphCONTENT
+
+\newcommand\hatglyph{\ThisStyle{\scalerel*{\usebox{\hatglyphCONTENT}}%
+                     {\SavedStyle\talldot}}}
+\newcommand\shifthat[2]{%
+  \ThisStyle{%
+%%%% 1ST ARGUMENT OF \stackengine (GAP BETWEEN GLYPH AND \hatglyph)
+    \stackengine{0.0ex}{\(\SavedStyle#2\)}%
+                {\(\rule{#1}{0ex}\SavedStyle\hatglyph\)}{O}{c}{F}{T}{S}%
+  }%
+}
+\renewcommand\widehat[1]{%
+  \ThisStyle{\setlength\glyphwidth{\widthof{$\SavedStyle x$}}%
+    \if A#1\shifthat{0.5\glyphwidth}{#1}\else
+    \if B#1\shifthat{0.2\glyphwidth}{#1}\else
+    \if x#1\shifthat{0.1\glyphwidth}{#1}\else
+    \shifthat{0.15\glyphwidth}{#1}% THIS IS THE DEFAULT VALUE
+    \fi
+    \fi
+    \fi
+  }%
+}
+
+\def\Dcalb{\bm{\mathcal D}}
+\def\Gcalb{\bm{\mathcal G}}
+\def\Kcalb{\bm{\mathcal K}}
+\def\Scalb{\bm{\mathcal S}}
+\def\Tcalb{\bm{\mathcal T}}
+
+\def\E{\textit{\textbf{E}}\,}
+\def\H{\textit{\textbf{H}}\,}
+\def\Ec{\displaystyle\widehat{\E}}
+\def\Hc{\displaystyle\widehat{\H}}
+\def\n{\textbf{n}}
+\def\Ei{\ensuremath{\Eb^{\,i}}}
+\def\Hi{\ensuremath{\Hb^{\,i}}}
+\def\Ed{\ensuremath{\Eb^{\,d}}}
+\def\Hd{\ensuremath{\Hb^{\,d}}}
+\def\Re{\text{Re}}
+\def\eR{\mathbb{R}}
+\def\AS{\backslash}
+\renewcommand{\bar}[1]{\overline{#1}}
+\def\e0{\epsilon_0}
+\def\m0{\mu_0}
+\def\w{\omega}
+\def\J{\textit{\textbf{J}}\,}
+\def\M{\textit{\textbf{M}}\,}
+
+% ====== COULEURS ====== %
+
+\definecolor{bleudefrance}{rgb}{0.19, 0.55, 0.91}
+\definecolor{vertolive}{rgb}{0.33, 0.42, 0.18}
+\definecolor{bluepy}{HTML}{1F77B4}
+\definecolor{orangepy}{HTML}{FF7F0E}
+
+% ====== POLICE ====== %
+
+\newcommand{\It}[1]{\textit{#1}}
+\newcommand{\Bf}[1]{\textbf{#1}}
+
+% ====== LETTRES CAPITALES ====== %
+
+\def\A{{A}}
+\def\B{{B}}
+\def\C{{C}}
+\def\D{{\text{D}}}
+\def\E{{E}}
+\def\F{{F}}
+\def\G{{G}}
+\def\H{{H}}
+\def\I{{I}}
+\def\J{{\text{J}}}
+\def\K{{K}}
+\def\L{{L}}
+\def\M{{M}}
+\def\N{{\text{N}}}
+\def\O{{O}}
+\def\P{{\text{P}}}
+\def\Q{{Q}}
+\def\R{{R}}
+\def\S{{\text{S}}}
+\def\T{{\text{T}}}
+\def\U{{U}}
+\def\V{{\text{V}}}
+\def\W{{W}}
+\def\X{{X}}
+\def\Y{{\text{Y}}}
+\def\Z{{\text{Z}}}
+
+% ====== LETTRES MINUSCULES ====== %
+
+\def\j{{\text{j}}}
+\def\v{{\text{v}}}
+
+% ====== LETTRES CAPITALES GRAS ====== %
+
+\def\Eb{{\bf E}}
+\def\Hb{{\bf H}}
+\def\Jb{{\bf J}}
+\def\Mb{{\bf M}}
+\def\phib{\boldsymbol{\phi}}
+\def\Phib{\boldsymbol{\Phi}}
+\def\psib{\boldsymbol{\psi}}
+\def\Psib{\boldsymbol{\Psi}}
+
+% ====== LETTRES MINUSCULES GRAS ====== %
+
+\def\jb{{\bf j}}
+\def\ub{{\bf u}}
+\def\vb{{\bf v}}
+
+% ====== LETTRES CALLIGRAPHIQUES ====== %
+
+\def\Acal{{\mathcal A}}
+\def\Bcal{{\mathcal B}}
+\def\Ccal{{\mathcal C}}
+\def\Dcal{{\mathcal D}}
+\def\Ecal{{\mathcal E}}
+\def\Fcal{{\mathcal F}}
+\def\Gcal{{\mathcal G}}
+\def\Hcal{{\mathcal H}}
+\def\Ical{{\mathcal I}}
+\def\Jcal{{\mathcal J}}
+\def\Kcal{{\mathcal K}}
+\def\Lcal{{\mathcal L}}
+\def\Mcal{{\mathcal M}}
+\def\Ncal{{\mathcal N}}
+\def\Ocal{{\mathcal O}}
+\def\Pcal{{\mathcal P}}
+\def\Qcal{{\mathcal Q}}
+\def\Rcal{{\mathcal R}}
+\def\Scal{{\mathcal S}}
+\def\Tcal{{\mathcal T}}
+\def\Ucal{{\mathcal U}}
+\def\Vcal{{\mathcal V}}
+\def\Wcal{{\mathcal W}}
+\def\Xcal{{\mathcal X}}
+\def\Ycal{{\mathcal Y}}
+\def\Zcal{{\mathcal Z}}
+
+% ====== MATHÉMATIQUES ====== %
+
+\newcommand{\thicktilde}[1]{\mathbf{\tilde{\text{$#1$}}}}
+\newcommand{\interv}[1]{\ensuremath{[\![#1]\!]}}
+\newcommand{\MI}[1]{\ensuremath{\hat{#1}}}
+\newcommand{\pair}[3]{\ensuremath{\overline{#1_{#3}#2_{#3}}}}
+\def\im{{\bf i}}
+\newcommand{\FEV}{\ensuremath{\mathcal{H}}}
+\newcommand{\FEM}{\ensuremath{\text{H}}}
+\newcommand{\dual}[2]{\langle#1,#2\rangle}
+\newcommand{\norm}[2]{\ensuremath{\|#1\|_{#2}}}
+\def\ne{{\tiny{N}}}
+\def\un{u_\ne}
+\def\uh{{\tt u}}
+\def\uhi{{\tt u}_i}
+\def\xi{{X_i}}
+\def\uhn{{\tt u}_{\ne}}
+\def\uhni{{\tt u}_{\ne i}}
+\def\uinc{u^{i}}
+\def\varphibf{\bm{\varphi}}
+\def\Hoij{\H_{1_{ij}}}
+\newcommand{\strkron}{\ensuremath{\,\underline{\overline{\otimes}}\,}}
+\newcommand{\contract}{\ensuremath{\bullet}}
+\newcommand{\multind}[3]{\ensuremath{#1_{#2},\hdots,#1_{#3}}}
+\newcommand{\Sum}[2]{\ensuremath{\sum\limits_{#1}^{#2}}}
+\newcommand{\Prod}[2]{\ensuremath{\prod\limits_{#1}^{#2}}}
+\def\cC{\mathbb{C}}
+\def\cR{\mathbb{R}}
+\def\cN{\mathbb{N}}
+\def\cK{\mathbb{K}}
+\def\mtimes{\times\cdots\times}
+\def\reshape{\texttt{reshape}}
+%\renewcommand{\algorithmicrequire}{\textbf{In :}}
+%\renewcommand{\algorithmicensure}{\textbf{Out :}}
+\newcommand{\zkron}{\ensuremath{\oslash}}
+\def\maxvol{\texttt{maxvol}}
+\def\rmaxvol{\texttt{rect_maxvol}}
+\def\ttSVD{\texttt{TT-SVD}}
+\def\ttCross{\texttt{TT-Cross}}
+\def\rounding{\texttt{rounding}}
+\def\kkt{\texttt{KKT}}
+\def\vec{\text{vec}}
+\newcommand{\matSubTT}[2]{\ensuremath{#1_{#2}}}
+\newcommand{\subTT}[2]{\ensuremath{#1_{#2}}}
+\newcommand{\frameMat}[2]{\ensuremath{#1_{\neq#2}}}
+\def\amen{\texttt{AMEN}}
+\def\mamen{\texttt{MAMEN}}
+\def\inv{\texttt{AMEN-Inverse}}
+\def\lrsweep{\texttt{leftToRightSweep}}
+\def\rlsweep{\texttt{rightToLeftSweep}}
+\newcommand{\modeUnfold}[2]{\ensuremath{#1^{(#2)}}}
+\newcommand{\unfold}[2]{\ensuremath{\underline{#1}_{#2}}}
+\def\qttMVPo{\texttt{QTT-MVP1}}
+\def\qttMVPb{\texttt{QTT-MVP2}}
+\def\bdmMvp{\texttt{BDM-MVP1}}
+\def\bdmMvpb{\texttt{BDM-MVP2}}
+\def\nlbda{\ensuremath{n_{\lambda}}}
+\def\Sg{[\S]}
+\def\Ng{[\N]}
+\def\Dg{[\D]}
+\def\Tg{[\T]}
+\newcommand{\glk}[1]{[#1]}
+\def\dx{\text{d}x}
+\def\dy{\text{d}y}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\def\Id{\text{Id}}
+\def\nx{\ensuremath{{\bf n} \times}}
+\newcommand{\pow}[1]{^{#1}}
+
+% ====== NOTATIONS ====== %
+
+\def\Hmat{$\mathcal{H}$-matrix}
+\def\Hmats{$\mathcal{H}$-matrices}
+\def\cad{c'est-à-dire\,}
+\def\id{c.-à-d.}
+\def\CPUbuild{$\text{CPU}_{\footnotesize \sf build}$}
+\def\CPUmvp{$\text{CPU}_{\footnotesize{\sf mvp}}$}
+\def\MEMbuild{$\text{MEM}_{\footnotesize \sf build}$}
+\def\CPUsolve{$\text{CPU}_{\footnotesize \sf solve}$}
+\def\oeuvre{\oe uvre}
+\def\ttVec{TT-tenseur}
+\def\ttMat{TT-matrice}
+\newcommand{\prc}{PREC}
+\newcommand{\slie}{SIE}
+\newcommand{\hie}{HIE}
+\newcommand{\bdmo}{BDM1}
+\newcommand{\bdmd}{BDM2}
+\newcommand{\bdmt}{BDM3}
+\newcommand{\bdmtb}{BDM3$_{\sf bis}$}
+
+% ====== TIKZ ====== %
+
+\DeclareRobustCommand{\legendsquare}[1]{%
+  \tikz[baseline=(a.south)]{\node[#1, inner sep=.8ex, outer sep=0] (a) {};}%
+}
+\newcommand{\mysize}{0.8}
+\newcommand{\Qgrid}[1]{
+    \foreach \row in {1, ...,#1} {
+    \draw ($(\row-1,0)$)--($(\row - 1,#1-1)$);
+    \draw ($(0,\row-1)$)--($(#1-1,\row-1)$);
+    }}
+\newcommand{\Tgrid}{
+    \foreach \row in {1, ...,5} {
+    \draw ($(\row-1,0)$)--($(\row - 1,4)$);
+    \draw ($(0,\row-1)$)--($(4,\row-1)$);
+    }
+    \foreach \row in {1, ...,4} {
+    \foreach \col in {1,...,4}{
+    \draw ($(\row-1,\col)$)--($(\row,\col-1)$);
+    }}}    
+\newcommand{\Cube}[5]{
+    \draw[ultra thin,fill=#5]($(#1,#2,#3)$)--($(#1+#4,#2,#3)$)--($(#1+#4,#2+#4,#3)$)--($(#1,#2+#4,#3)$)--cycle;
+    \draw[ultra thin,fill=#5]($(#1+#4,#2,#3)$)--($(#1+#4,#2,#3-#4)$)--($(#1+#4,#2+#4,#3-#4)$)--($(#1+#4,#2+#4,#3)$)--cycle;
+    \draw[ultra thin,fill=#5]($(#1,#2+#4,#3)$)--($(#1,#2+#4,#3-#4)$)--($(#1+#4,#2+#4,#3-#4)$)--($(#1+#4,#2+#4,#3)$)--cycle;
+    }    
+    
+\newcommand{\sizecirc}{\small}
+\newcommand{\Square}[3]{
+    \draw[line width=0.25mm]($(#1,#2)$)--($(#1+#3,#2)$)--($(#1+#3,#2+#3)$)--($(#1,#2+#3)$)--cycle;}
+    
+\newcommand{\SquareCirc}[5]{
+    \draw[line width=0.01mm]($(#1,#2)$)--($(#1+#3,#2)$)--($(#1+#3,#2+#3)$)--($(#1,#2+#3)$)--cycle;
+    \draw ($(#1+0.25*#3,#2+0.25*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.5*#3,#2+0.25*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.75*#3,#2+0.25*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.25*#3,#2+0.5*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.5*#3,#2+0.5*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.75*#3,#2+0.5*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.25*#3,#2+0.75*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.5*#3,#2+0.75*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.75*#3,#2+0.75*#3)$) node{{#5\color{#4}$\bullet$}};
+    }
+    
+    
+\newcommand{\SquareCircBis}[5]{
+    \draw[line width=0.01mm]($(#1,#2)$)--($(#1+#3,#2)$)--($(#1+#3,#2+#3)$)--($(#1,#2+#3)$)--cycle;
+    \draw ($(#1+0.5*#3,#2+0.25*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.25*#3,#2+0.5*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.75*#3,#2+0.75*#3)$) node{{#5\color{#4}$\bullet$}};
+    }
+    
+\newcommand{\SquareCircRed}[5]{
+    \draw[line width=0.01mm]($(#1,#2)$)--($(#1+#3,#2)$)--($(#1+#3,#2+#3)$)--($(#1,#2+#3)$)--cycle;
+    \draw ($(#1+0.25*#3,#2+0.5*#3)$) node{{#5\color{#4}$\bullet$}};
+    }    
+    
+\newcommand{\SquareCircBlue}[5]{
+    \draw[line width=0.01mm]($(#1,#2)$)--($(#1+#3,#2)$)--($(#1+#3,#2+#3)$)--($(#1,#2+#3)$)--cycle;
+    \draw ($(#1+0.5*#3,#2+0.25*#3)$) node{{#5\color{#4}$\bullet$}};
+    \draw ($(#1+0.75*#3,#2+0.75*#3)$) node{{#5\color{#4}$\bullet$}};
+    }
+    
+\newcommand{\SquareCircBlueBis}[5]{
+    \draw[line width=0.01mm]($(#1,#2)$)--($(#1+#3,#2)$)--($(#1+#3,#2+#3)$)--($(#1,#2+#3)$)--cycle;
+    \draw ($(#1+0.75*#3,#2+0.75*#3)$) node{{#5\color{#4}$\bullet$}};
+    }
+    
+\newcommand{\Circ}[4]{\draw ($(#1,#2)$) node{{#4\color{#3}$\bullet$}};}
+
+\newcommand{\CrochetL}[3]{
+\draw[line width=0.4mm](#1-0.2,#2)--(#1-0.2,#2+#3);
+\draw[line width=0.4mm](#1-0.22,#2)--(#1-0.1,#2);
+\draw[line width=0.4mm](#1-0.22,#2+#3)--(#1-0.1,#2+#3);
+}
+
+\newcommand{\CrochetR}[3]{
+\draw[line width=0.4mm](#1+0.2,#2)--(#1+0.2,#2+#3);
+\draw[line width=0.4mm](#1+0.22,#2)--(#1+0.1,#2);
+\draw[line width=0.4mm](#1+0.22,#2+#3)--(#1+0.1,#2+#3);
+}
+\usetikzlibrary{fpu}
+\usepackage{xint, xinttools}
+\makeatletter
+\def\@weierstrassgeneralterm #1#2#3{(0.1/#3*#2(#3*#1*pi r))}
+
+\def\@weierstrassseries #1#2#3{
+    \xintListWithSep{+}
+                    {\xintApply {\@weierstrassgeneralterm{#1}{#2}}
+                                {\xintApply{\xintiiPow {2}}{\xintSeq {0}{#3}}}}%
+}
+
+\def\SetWeierstrass #1#2{% #1=\x or \y, etc..., #2=summation from 0 to #2
+    \fdef\weierstrasscos {\@weierstrassseries {#1}{cos}{#2}}%
+    \fdef\weierstrasssin {\@weierstrassseries {#1}{sin}{#2}}%
+}
+\makeatother
+
+
+
+\newcommand{\myacr}[1]{\acrlong*{#1} ou \acrshort*{#1}}
+\let\mylistof\listof
+\renewcommand\listof[2]{\mylistof{algorithm}{Liste des algorithmes}}
+\renewcommand{\listfigurename}{Liste des figures}
+% pour palier au problème de niveau des algos
+\makeatletter
+\providecommand*{\toclevel@algorithm}{0}
+\makeatother
+
+\newenvironment{vcenterpage}
+{\newpage\vspace*{\fill}\thispagestyle{empty}\renewcommand{\headrulewidth}{0pt}}
+{\vspace*{\fill}}
+
+\usepackage{yhmath}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{pstricks-add}
+
+\usepackage{mathtools}
+
+\usepackage{pdfpages}
+
+
+
+
